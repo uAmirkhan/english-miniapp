@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>English: прогресс</title>
+<!-- Данные приходят во фрагменте ссылки (#z=...), фрагмент не уходит на сервер.
+     Читаем его ДО скрипта Telegram: тот дописывает в hash свои параметры. -->
+<script>window.__HASH = location.hash;</script>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+:root {
+  --bg: var(--tg-theme-bg-color, #fff); --fg: var(--tg-theme-text-color, #1b1b1f);
+  --mut: var(--tg-theme-hint-color, #8a8a93); --card: var(--tg-theme-secondary-bg-color, #f2f2f5);
+  --acc: var(--tg-theme-button-color, #2f7cf6); --acc-fg: var(--tg-theme-button-text-color, #fff);
+  --ok: #1f9d55; --bad: #d64545; --warn: #c98a00;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not(.tg) { --bg: #17181c; --fg: #ececf1; --card: #23252b; --mut: #8d8f99; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+main { max-width: 560px; margin: 0 auto; padding: 12px 16px 96px; }
+.tabs { display: flex; gap: 8px; position: sticky; top: 0; background: var(--bg); padding: 8px 0; z-index: 2; }
+.tabs button { flex: 1; }
+button { font: inherit; border: 0; border-radius: 10px; padding: 10px 12px; background: var(--card); color: var(--fg); cursor: pointer; }
+button.on, button.primary { background: var(--acc); color: var(--acc-fg); }
+button:disabled { opacity: .5; }
+.card button { background: var(--bg); border: 1px solid color-mix(in srgb, var(--mut) 45%, transparent); }
+.card button.on { background: var(--acc); color: var(--acc-fg); border-color: var(--acc); }
+.card { background: var(--card); border-radius: 14px; padding: 14px; margin: 10px 0; }
+.row { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.big { font-size: 44px; font-weight: 700; line-height: 1; }
+.mut { color: var(--mut); font-size: 13px; }
+.up { color: var(--ok); } .down { color: var(--bad); }
+.err { background: color-mix(in srgb, var(--bad) 15%, var(--bg)); border-left: 4px solid var(--bad); }
+.bar { height: 10px; border-radius: 6px; background: color-mix(in srgb, var(--mut) 25%, transparent); overflow: hidden; margin-top: 8px; }
+.bar > i { display: block; height: 100%; background: var(--acc); }
+.ach { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+.ach div { padding: 10px; border-radius: 10px; background: var(--bg); font-size: 13px; }
+.ach .got { outline: 2px solid var(--ok); }
+.ach .no { opacity: .55; }
+svg { width: 100%; height: 120px; display: block; }
+h2 { font-size: 15px; margin: 0 0 6px; }
+.task p { margin: 0 0 8px; font-size: 16px; }
+.opts { display: flex; gap: 8px; flex-wrap: wrap; }
+input, textarea { width: 100%; font: inherit; padding: 10px; border-radius: 10px; border: 1px solid color-mix(in srgb, var(--mut) 40%, transparent); background: var(--bg); color: var(--fg); }
+textarea { min-height: 60px; resize: vertical; }
+.res { margin-top: 6px; font-size: 14px; min-height: 1em; }
+.timer { font-size: 56px; font-weight: 700; text-align: center; font-variant-numeric: tabular-nums; }
+#send { width: 100%; padding: 14px; font-size: 16px; }
+.hidden { display: none; }
+</style>
+</head>
+<body>
+<main>
+  <div class="tabs"><button id="t-prog" class="on">Прогресс</button><button id="t-task">Задания</button></div>
+  <div id="errs"></div>
+  <section id="prog"></section>
+  <section id="task" class="hidden"></section>
+</main>
+<script>
+"use strict";
+const TG = window.Telegram && Telegram.WebApp;
+const IN_TG = !!(TG && TG.platform && TG.platform !== "unknown");
+if (IN_TG) { document.documentElement.classList.add("tg"); TG.ready(); TG.expand(); }
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const LIMIT = 4096;   // sendData режется по БАЙТАМ, не символам
+let D = null, ANS = {};
+
+function showErr(list) {
+  $("#errs").innerHTML = list.length ? `<div class="card err"><b>Ошибки данных</b><br>${list.map(esc).join("<br>")}</div>` : "";
+}
+
+async function decode(z) {
+  const b64 = z.replace(/-/g, "+").replace(/_/g, "/") + "===".slice((z.length + 3) % 4);
+  const bytes = Uint8Array.from(atob(b64), (c) => c.charCodeAt(0));
+  if (!("DecompressionStream" in window)) throw new Error("Этот Telegram слишком старый: нет DecompressionStream. Обнови приложение.");
+  const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream("deflate-raw"));
+  return JSON.parse(await new Response(stream).text());
+}
+
+function chart(values, labels, { suffix = "", max = null, min = null } = {}) {
+  const pts = values.map((v, i) => [i, v]).filter(([, v]) => v !== null && v !== undefined);
+  if (!pts.length) return `<p class="mut">Пока нет данных.</p>`;
+  const W = 300, H = 110, P = 18;
+  const lo = min ?? Math.min(...pts.map((p) => p[1])), hi = max ?? Math.max(...pts.map((p) => p[1]));
+  const span = hi - lo || 1, n = Math.max(values.length - 1, 1);
+  const xy = pts.map(([i, v]) => [P + (i / n) * (W - 2 * P), H - P - ((v - lo) / span) * (H - 2 * P)]);
+  const last = xy[xy.length - 1], lv = pts[pts.length - 1][1];
+  return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img">
+    <polyline fill="none" stroke="var(--acc)" stroke-width="2.5" vector-effect="non-scaling-stroke" points="${xy.map((p) => p.join(",")).join(" ")}"/>
+    ${xy.map((p) => `<circle cx="${p[0]}" cy="${p[1]}" r="2.5" fill="var(--acc)"/>`).join("")}
+    <text x="${Math.min(last[0], W - 40)}" y="${Math.max(last[1] - 6, 12)}" font-size="12" fill="var(--fg)">${esc(lv)}${suffix}</text>
+    <text x="${P}" y="${H - 3}" font-size="10" fill="var(--mut)">${esc(labels[0] ?? "")}</text>
+    <text x="${W - P - 30}" y="${H - 3}" font-size="10" fill="var(--mut)">${esc(labels[labels.length - 1] ?? "")}</text>
+  </svg>`;
+}
+
+function renderProgress() {
+  const d = D, f = d.form;
+  const st = d.stage;
+  const delta = f.delta > 0 ? `<span class="up">+${f.delta}</span>` : f.delta < 0 ? `<span class="down">${f.delta}</span>` : "0";
+  const rec = d.rec || [], ps = d.ps || [];
+  $("#prog").innerHTML = `
+    <p class="mut">Данные на ${esc(d.at)}. Свежие: кнопка «📊 Прогресс» после /app.${d.cut ? " Показаны последние точки, старые не влезли в ссылку." : ""}</p>
+    <div class="card"><div class="row"><h2>Ступень</h2><span class="mut">ранг ${esc(d.rank)}</span></div>
+      <div class="big">${st === null ? "?" : st}<span class="mut" style="font-size:18px"> / 10</span></div>
+      <div class="bar"><i style="width:${(st || 0) * 10}%"></i></div>
+      <p class="mut">Растет только экзаменом ступени, не падает.</p></div>
+    <div class="card"><div class="row"><h2>Форма</h2><span class="mut">сегодня ${delta}</span></div>
+      <div class="big">${f.now}</div>
+      <p class="mut">Оценка дня пока ${f.today}/100: повторы 40, урок 40, речь 20. Пропуск дня снимает 10%.</p>
+      ${chart(f.s, [f.start, "сегодня"], { min: 0 })}</div>
+    <div class="card"><div class="row"><h2>Серия</h2><span class="mut">лучшая ${d.streak[1]}</span></div>
+      <div class="big">${d.streak[0]}<span class="mut" style="font-size:18px"> дн.</span></div></div>
+    <div class="card"><h2>Достижения</h2><div class="ach">
+      ${d.ach.map(([t, got, p]) => `<div class="${got ? "got" : "no"}">${got ? "🏆" : "🔒"} ${esc(t)}<br><span class="mut">${esc(p)}</span></div>`).join("")}
+    </div></div>
+    <div class="card"><h2>Темп речи, слов в минуту</h2>${chart(rec.map((r) => r[1]), rec.map((r) => r[0]))}</div>
+    <div class="card"><h2>Паузы длиннее 2 с, в минуту</h2>${chart(rec.map((r) => r[2]), rec.map((r) => r[0]), { min: 0 })}</div>
+    <div class="card"><h2>Past simple верно, %</h2>${chart(ps.map((r) => r[1]), ps.map((r) => r[0]), { suffix: "%", min: 0, max: 100 })}</div>`;
+}
+
+// ───────────── задания
+const KEY = () => "ans-" + (D.tasks ? D.tasks.date : "");
+function saveLocal() { try { localStorage.setItem(KEY(), JSON.stringify(ANS)); } catch (e) { /* только удобство */ } }
+function loadLocal() { try { return JSON.parse(localStorage.getItem(KEY()) || "{}"); } catch (e) { return {}; } }
+const norm = (s) => String(s).trim().toLowerCase().replace(/[.!?]+$/, "").replace(/\s+/g, " ");
+const isRight = (ans, v) => [].concat(ans).some((a) => norm(a) === norm(v));
+
+function renderTasks() {
+  const t = D.tasks;
+  if (!t) { $("#task").innerHTML = `<div class="card">Заданий на сегодня нет. Их кладет репетитор после урока.</div>`; return; }
+  ANS = loadLocal();
+  $("#task").innerHTML = (D.sent ? `<div class="card mut">Ответы сегодня уже отправлены. Можно отправить еще раз, репетитор увидит обе версии.</div>` : "") +
+    t.items.map((it, k) => `<div class="card task" id="it-${esc(it.id)}"><p><b>${k + 1}.</b> ${esc(it.prompt)}</p>${body(it)}<div class="res" id="r-${esc(it.id)}"></div></div>`).join("") +
+    `<button id="send" class="primary">Отправить ответы</button><div class="res" id="send-res"></div>`;
+  t.items.forEach(wire);
+  $("#send").onclick = sendAnswers;
+  if (IN_TG) { TG.MainButton.setText("Отправить ответы"); TG.MainButton.onClick(sendAnswers); TG.MainButton.show(); }
+}
+
+function body(it) {
+  const v = ANS[it.id] ?? "";
+  if (it.type === "choice") return `<div class="opts">${it.options.map((o) => `<button data-o="${esc(o)}">${esc(o)}</button>`).join("")}</div>`;
+  if (it.type === "gap") return `<input value="${esc(v)}" placeholder="слово${it.hint ? ", подсказка: " + esc(it.hint) : ""}"><div class="opts" style="margin-top:8px"><button data-check>Проверить</button></div>`;
+  if (it.type === "fix") return `<textarea placeholder="исправленная фраза целиком">${esc(v)}</textarea>`;
+  if (it.type === "timer") return `<div class="timer" data-t>${fmt(it.rounds[0])}</div><div class="opts">${it.rounds.map((s, i) => `<button data-r="${i}">Раунд ${i + 1}: ${fmt(s)}</button>`).join("")}<button data-stop>Стоп</button></div><p class="mut">Говори голосовым в чат бота, таймер держит время.</p>`;
+  return `<p class="mut">Неизвестный тип задания: ${esc(it.type)}</p>`;
+}
+
+const fmt = (s) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+let TIMER = null;
+
+function wire(it) {
+  const box = $(`#it-${CSS.escape(it.id)}`), res = $(`#r-${CSS.escape(it.id)}`);
+  const verdict = (v) => {
+    if (it.answer === undefined) { res.textContent = "Сохранено, проверит репетитор."; return; }
+    res.innerHTML = isRight(it.answer, v) ? `<span class="up">✅ Верно</span>` : `<span class="down">❌ Верно: ${esc([].concat(it.answer)[0])}</span>`;
+  };
+  if (it.type === "choice") {
+    box.querySelectorAll("[data-o]").forEach((b) => {
+      if (ANS[it.id] === b.dataset.o) { b.classList.add("on"); verdict(b.dataset.o); }
+      b.onclick = () => {
+        box.querySelectorAll("[data-o]").forEach((x) => x.classList.remove("on"));
+        b.classList.add("on"); ANS[it.id] = b.dataset.o; saveLocal(); verdict(b.dataset.o);
+      };
+    });
+  } else if (it.type === "gap") {
+    const inp = box.querySelector("input");
+    inp.oninput = () => { ANS[it.id] = inp.value; saveLocal(); res.textContent = ""; };
+    box.querySelector("[data-check]").onclick = () => {
+      if (!inp.value.trim()) { res.innerHTML = `<span class="down">Сначала впиши слово.</span>`; return; }
+      ANS[it.id] = inp.value; saveLocal(); verdict(inp.value);
+    };
+  } else if (it.type === "fix") {
+    const ta = box.querySelector("textarea");
+    ta.oninput = () => { ANS[it.id] = ta.value; saveLocal(); res.textContent = "Сохранено, проверит репетитор."; };
+  } else if (it.type === "timer") {
+    const out = box.querySelector("[data-t]");
+    const done = new Set(ANS[it.id] || []);
+    if (done.size) res.textContent = `Пройдено раундов: ${[...done].map((i) => i + 1).join(", ")}`;
+    box.querySelectorAll("[data-r]").forEach((b) => b.onclick = () => {
+      clearInterval(TIMER);
+      const i = +b.dataset.r; let left = it.rounds[i];
+      out.textContent = fmt(left); res.textContent = `Идет раунд ${i + 1}. Говори!`;
+      TIMER = setInterval(() => {
+        left -= 1; out.textContent = fmt(Math.max(left, 0));
+        if (left <= 0) {
+          clearInterval(TIMER); done.add(i); ANS[it.id] = [...done].sort(); saveLocal();
+          res.textContent = `Раунд ${i + 1} закончен. Пройдено: ${[...done].map((x) => x + 1).join(", ")}`;
+          try { TG && TG.HapticFeedback && TG.HapticFeedback.notificationOccurred("success"); } catch (e) {}
+        }
+      }, 1000);
+    });
+    box.querySelector("[data-stop]").onclick = () => { clearInterval(TIMER); res.textContent = "Остановлено, раунд не засчитан."; };
+  }
+}
+
+function sendAnswers() {
+  const out = $("#send-res"), btn = $("#send");
+  try {
+    const payload = JSON.stringify({ date: D.tasks.date, answers: ANS });
+    const bytes = new Blob([payload]).size;
+    if (bytes > LIMIT) { out.innerHTML = `<span class="down">Слишком длинно: ${bytes} байт из ${LIMIT}. Сократи ответы в «исправь фразу».</span>`; return; }
+    const filled = D.tasks.items.filter((it) => ANS[it.id] !== undefined && ANS[it.id] !== "" && !(Array.isArray(ANS[it.id]) && !ANS[it.id].length)).length;
+    if (!IN_TG) { out.innerHTML = `<span class="down">Страница открыта не из Telegram: отправка работает только из кнопки «📊 Прогресс» в чате бота. Готово к отправке: ${filled} из ${D.tasks.items.length}, ${bytes} байт.</span>`; return; }
+    btn.disabled = true; btn.textContent = `Отправляю ${filled} из ${D.tasks.items.length}...`;
+    TG.sendData(payload);   // закрывает мини-апп; бот ответит в чате
+  } catch (e) {
+    btn.disabled = false; btn.textContent = "Отправить ответы";
+    out.innerHTML = `<span class="down">Не отправилось: ${esc(e.message || e)}. Если открыл из кнопки под сообщением, открой из кнопки «📊 Прогресс» внизу чата.</span>`;
+  }
+}
+
+// ───────────── старт
+function tab(name) {
+  $("#t-prog").classList.toggle("on", name === "prog"); $("#t-task").classList.toggle("on", name === "task");
+  $("#prog").classList.toggle("hidden", name !== "prog"); $("#task").classList.toggle("hidden", name !== "task");
+}
+$("#t-prog").onclick = () => tab("prog");
+$("#t-task").onclick = () => tab("task");
+
+(async () => {
+  const z = new URLSearchParams((window.__HASH || "").slice(1)).get("z");
+  if (!z) { showErr(["В ссылке нет данных. Открой мини-апп кнопкой «📊 Прогресс» в чате бота (/app обновит кнопку)."]); return; }
+  try { D = await decode(z); } catch (e) { showErr([`Данные в ссылке повреждены (${e.message || e}). Отправь боту /app и открой новую кнопку.`]); return; }
+  showErr(D.err || []);
+  if (!D.form) return;   // бот прислал только ошибку
+  renderProgress(); renderTasks();
+  if (D.tasks && !D.sent) tab("task");
+})().catch((e) => showErr([`Сбой страницы: ${e.message || e}`]));
+window.addEventListener("error", (e) => showErr([`Сбой страницы: ${e.message}`]));
+</script>
+</body>
+</html>
