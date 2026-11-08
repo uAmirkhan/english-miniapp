@@ -5,9 +5,9 @@
     "B2": "Без подсказок, плюс два трудных вопроса"
   },
   "cats": [
-    {"id": "work", "title": "Работа", "color": "pink"},
-    {"id": "life", "title": "Жизнь", "color": "teal"},
-    {"id": "travel", "title": "Путешествия", "color": "green"}
+    {"id": "work", "title": "Работа", "color": "coral"},
+    {"id": "life", "title": "Жизнь", "color": "sage"},
+    {"id": "travel", "title": "Путешествия", "color": "honey"}
   ],
   "writing": [
     "Апдейт заказчику: релиз сдвигается на неделю из-за бага в оплате. Причина, новая дата, что делаете.",
@@ -21,7 +21,7 @@
     {
       "id": "talk", "cat": "quick", "kind": "pool", "pick": 3,
       "title": "Просто поговорить", "sub": "Три вопроса на свободную тему, отвечай голосом",
-      "icon": "message-circle-heart", "color": "teal", "who": "Alex",
+      "icon": "message-circle-heart", "color": "sage", "who": "Alex",
       "goals": [
         {"t": "Сказать 150+ слов за разговор", "min_words": 150},
         {"t": "Рассказать в прошедшем времени", "kw": ["was ", "were ", "went", "did ", "had ", "made", "saw "]},
@@ -46,18 +46,18 @@
     {
       "id": "story", "cat": "quick", "kind": "words", "pick": 5,
       "title": "История из твоих слов", "sub": "Пять слов из трекера, собери из них рассказ",
-      "icon": "scroll-text", "color": "green", "who": "Alex",
+      "icon": "scroll-text", "color": "honey", "who": "Alex",
       "goals": [],
       "phrases": ["It all started when ...", "Then ...", "In the end, ..."]
     },
     {
       "id": "writing", "cat": "quick", "kind": "writing",
       "title": "Письмо по-английски", "sub": "Короткий рабочий текст, проверит репетитор",
-      "icon": "pen-line", "color": "indigo"
+      "icon": "pen-line", "color": "plum"
     },
     {
       "id": "hr", "cat": "work", "title": "HR-собеседование", "sub": "Первое интервью с рекрутером на роль PM",
-      "icon": "briefcase", "tile": "violet", "who": "Anna, recruiter",
+      "icon": "briefcase", "tile": "coral", "who": "Anna, recruiter",
       "goals": [
         {"t": "Рассказать о себе и опыте", "kw": ["experience", "years", "worked", "working as", "team", "managed", "manager"]},
         {"t": "Объяснить, почему ищешь работу", "kw": ["looking for", "grow", "growth", "challenge", "next step", "the reason", "because"]},
