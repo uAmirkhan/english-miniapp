@@ -1,0 +1,344 @@
+{
+  "levels": {
+    "A2": "Реплики с переводом и готовыми фразами",
+    "B1": "Перевод по кнопке «Подсказка»",
+    "B2": "Без подсказок, плюс два трудных вопроса"
+  },
+  "cats": [
+    {"id": "work", "title": "Работа", "color": "pink"},
+    {"id": "life", "title": "Жизнь", "color": "teal"},
+    {"id": "travel", "title": "Путешествия", "color": "green"}
+  ],
+  "writing": [
+    "Апдейт заказчику: релиз сдвигается на неделю из-за бага в оплате. Причина, новая дата, что делаете.",
+    "Ответ рекрутеру: вакансия интересна, предложи два слота для звонка.",
+    "Итог ретро для команды: две проблемы спринта и два действия с владельцами.",
+    "Попроси коллегу сделать ревью до четверга и объясни, почему это срочно.",
+    "О себе для LinkedIn: 4-5 предложений, опыт и что ищешь."
+  ],
+  "quick": ["talk", "hr", "story", "writing"],
+  "scenarios": [
+    {
+      "id": "talk", "cat": "quick", "kind": "pool", "pick": 3,
+      "title": "Просто поговорить", "sub": "Три вопроса на свободную тему, отвечай голосом",
+      "icon": "message-circle-heart", "color": "teal", "who": "Alex",
+      "goals": [
+        {"t": "Сказать 150+ слов за разговор", "min_words": 150},
+        {"t": "Рассказать в прошедшем времени", "kw": ["was ", "were ", "went", "did ", "had ", "made", "saw "]},
+        {"t": "Связки и примеры", "kw": ["because", "for example", "for instance", "however", "that's why", "on the other hand", "although"]}
+      ],
+      "phrases": ["To be honest, ...", "For example, ...", "That's why ...", "On the other hand, ..."],
+      "pool": [
+        {"en": "What did you do last weekend?", "ru": "Что делал в прошлые выходные?"},
+        {"en": "Tell me about a place you'd like to visit and why.", "ru": "Куда хотел бы поехать и почему?"},
+        {"en": "What's the best decision you've made this year?", "ru": "Лучшее решение этого года?"},
+        {"en": "Describe your perfect working day.", "ru": "Опиши идеальный рабочий день."},
+        {"en": "What skill would you like to learn, and why?", "ru": "Какой навык хочешь освоить и зачем?"},
+        {"en": "Tell me about a film or series you watched recently.", "ru": "Расскажи о недавно просмотренном фильме или сериале."},
+        {"en": "What do you like and dislike about remote work?", "ru": "Что нравится и не нравится в удаленке?"},
+        {"en": "Tell me about a mistake you learned from.", "ru": "Расскажи об ошибке, которая тебя чему-то научила."},
+        {"en": "What would you do with a free month?", "ru": "Что сделал бы со свободным месяцем?"},
+        {"en": "Describe your hometown to a foreigner.", "ru": "Опиши свой город иностранцу."},
+        {"en": "Which app on your phone is the most useful, and why?", "ru": "Самое полезное приложение в телефоне и почему?"},
+        {"en": "Tell me about a person who influenced you.", "ru": "Расскажи о человеке, который на тебя повлиял."}
+      ]
+    },
+    {
+      "id": "story", "cat": "quick", "kind": "words", "pick": 5,
+      "title": "История из твоих слов", "sub": "Пять слов из трекера, собери из них рассказ",
+      "icon": "scroll-text", "color": "green", "who": "Alex",
+      "goals": [],
+      "phrases": ["It all started when ...", "Then ...", "In the end, ..."]
+    },
+    {
+      "id": "writing", "cat": "quick", "kind": "writing",
+      "title": "Письмо по-английски", "sub": "Короткий рабочий текст, проверит репетитор",
+      "icon": "pen-line", "color": "indigo"
+    },
+    {
+      "id": "hr", "cat": "work", "title": "HR-собеседование", "sub": "Первое интервью с рекрутером на роль PM",
+      "icon": "briefcase", "tile": "violet", "who": "Anna, recruiter",
+      "goals": [
+        {"t": "Рассказать о себе и опыте", "kw": ["experience", "years", "worked", "working as", "team", "managed", "manager"]},
+        {"t": "Объяснить, почему ищешь работу", "kw": ["looking for", "grow", "growth", "challenge", "next step", "the reason", "because"]},
+        {"t": "Сильная сторона с примером", "kw": ["strength", "good at", "for example", "for instance", "once "]},
+        {"t": "Задать свой вопрос о компании", "kw": ["could you tell", "i'd like to know", "i would like to know", "what does", "how does", "how big", "how many people", "what are the next"]}
+      ],
+      "phrases": ["I've been working as ... for ... years.", "I'm looking for a role where I can ...", "One of my strengths is ... For example, ...", "Could you tell me more about ...?"],
+      "turns": [
+        {"en": "Hi, thanks for joining the call! Could you tell me a little about yourself?", "ru": "Расскажите немного о себе."},
+        {"en": "Why are you looking for a new job right now?", "ru": "Почему вы сейчас ищете работу?"},
+        {"en": "What kind of projects have you managed? How big were the teams?", "ru": "Какими проектами вы руководили? Какого размера были команды?"},
+        {"en": "What would you say is your main strength as a project manager?", "ru": "Ваша главная сильная сторона как проектного менеджера?"},
+        {"en": "Do you have any questions for me about the company or the role?", "ru": "Есть ли у вас вопросы о компании или роли?"}
+      ],
+      "hard": [
+        {"en": "I see you were a team manager, not a PM. Why should we hire you as a PM?", "ru": "Вы были тимменеджером, а не PM. Почему мы должны взять вас на PM?"},
+        {"en": "What are your salary expectations?", "ru": "Какие у вас ожидания по зарплате?"}
+      ]
+    },
+    {
+      "id": "pm", "cat": "work", "title": "Интервью с руководителем", "sub": "Кейсы PM: сроки, риски, приоритеты",
+      "icon": "laptop", "who": "Mark, Head of Delivery",
+      "goals": [
+        {"t": "Рассказать случай по шагам", "kw": ["we had", "first", "then", "after that", "as a result", "in the end"]},
+        {"t": "Показать работу с рисками", "kw": ["risk", "mitigat", "plan b", "backup", "escalat"]},
+        {"t": "Объяснить приоритизацию", "kw": ["priorit", "impact", "value", "effort", "must have", "urgent"]},
+        {"t": "Назвать результат в цифрах", "kw": ["percent", "%", " days", " weeks", " hours", "reduced", "increased", "saved", "faster"]}
+      ],
+      "phrases": ["We had a situation where ...", "First, I ... Then, I ...", "As a result, we ...", "I prioritised by impact and effort."],
+      "turns": [
+        {"en": "Tell me about a project that was at risk of missing its deadline. What did you do?", "ru": "Расскажите о проекте, который рисковал сорвать срок. Что вы сделали?"},
+        {"en": "How do you decide what goes into the next sprint when everything is urgent?", "ru": "Как решаете, что берете в спринт, когда срочно все?"},
+        {"en": "A senior developer disagrees with your estimate. How do you handle it?", "ru": "Сеньор-разработчик не согласен с вашей оценкой. Ваши действия?"},
+        {"en": "How do you report project status to stakeholders?", "ru": "Как вы отчитываетесь о статусе проекта перед стейкхолдерами?"},
+        {"en": "Which result of your work are you most proud of?", "ru": "Каким результатом своей работы вы гордитесь больше всего?"}
+      ],
+      "hard": [
+        {"en": "What would you do differently in that project now?", "ru": "Что бы вы сейчас сделали в том проекте иначе?"},
+        {"en": "Your team misses the sprint goal three times in a row. What's your plan?", "ru": "Команда третий спринт подряд не достигает цели. Ваш план?"}
+      ]
+    },
+    {
+      "id": "salary", "cat": "work", "title": "Переговоры о зарплате", "sub": "Обсудить оффер и договориться об условиях",
+      "icon": "wallet", "who": "Olga, HR manager",
+      "goals": [
+        {"t": "Не назвать цифру первым, спросить вилку", "kw": ["range", "budget", "band", "what is the", "what's the"]},
+        {"t": "Обосновать свою цену", "kw": ["experience", "market", "value", "result", "based on"]},
+        {"t": "Обсудить не только деньги", "kw": ["remote", "bonus", "vacation", "equipment", "education", "insurance", "review", "schedule"]},
+        {"t": "Договориться о следующем шаге", "kw": ["in writing", "send", "next step", "by friday", "tomorrow", "confirm", "think about it"]}
+      ],
+      "phrases": ["Could you share the budget range for this role?", "Based on my experience and the market, ...", "Is there any flexibility on ...?", "Could you send the offer in writing?"],
+      "turns": [
+        {"en": "We'd like to make you an offer! But first, what salary are you expecting?", "ru": "Хотим сделать оффер. Но сначала: какую зарплату вы ожидаете?"},
+        {"en": "Our budget for this role is a bit lower than that. Would that work for you?", "ru": "Наш бюджет немного ниже. Вам подойдет?"},
+        {"en": "Why do you think you're worth this amount?", "ru": "Почему вы считаете, что стоите этих денег?"},
+        {"en": "Besides salary, is there anything else that's important for you?", "ru": "Кроме зарплаты, что для вас еще важно?"},
+        {"en": "Great. So what are the next steps from your side?", "ru": "Отлично. Какие следующие шаги с вашей стороны?"}
+      ],
+      "hard": [
+        {"en": "Another candidate asked for less. Can you match that?", "ru": "Другой кандидат попросил меньше. Готовы на ту же сумму?"},
+        {"en": "We need your answer by tomorrow. Can you decide now?", "ru": "Ответ нужен до завтра. Можете решить прямо сейчас?"}
+      ]
+    },
+    {
+      "id": "standup", "cat": "work", "title": "Дейли-стендап", "sub": "Рассказать команде о работе и попросить помощи",
+      "icon": "users", "who": "Team",
+      "goals": [
+        {"t": "Что сделано вчера", "kw": ["yesterday", "finished", "completed", "i did", "worked on"]},
+        {"t": "План на сегодня", "kw": ["today", "going to", "i'll", "i will", "plan"]},
+        {"t": "Назвать блокер", "kw": ["block", "stuck", "waiting for", "depend", "issue", "problem"]},
+        {"t": "Попросить помощи со сроком", "kw": ["could you", "can you", "can someone", "help", "by tomorrow", "by friday", "by the end"]}
+      ],
+      "phrases": ["Yesterday I finished ...", "Today I'm going to ...", "I'm blocked by ...", "Could you help me with ... by ...?"],
+      "turns": [
+        {"en": "Good morning, everyone! Let's start. What did you work on yesterday?", "ru": "Над чем работал вчера?"},
+        {"en": "Okay. What's your plan for today?", "ru": "Какой план на сегодня?"},
+        {"en": "Is anything blocking you?", "ru": "Что-то блокирует?"},
+        {"en": "Who do you need help from, and by when?", "ru": "От кого нужна помощь и к какому сроку?"}
+      ],
+      "hard": [
+        {"en": "The release is on Thursday. Are we still on track?", "ru": "Релиз в четверг. Успеваем?"},
+        {"en": "Can you give a quick update on the client's bug?", "ru": "Коротко: что с багом клиента?"}
+      ]
+    },
+    {
+      "id": "delay", "cat": "work", "title": "Сдвиг сроков", "sub": "Сказать заказчику, что релиз переносится",
+      "icon": "alarm-clock", "who": "Mr. Peterson, client",
+      "goals": [
+        {"t": "Сказать новость прямо", "kw": ["delay", "move the", "postpone", "won't be ready", "not be ready", "late", "new date"]},
+        {"t": "Объяснить причину", "kw": ["because", "the reason", "due to", "caused"]},
+        {"t": "Предложить варианты", "kw": ["option", "suggest", "alternative", "instead", "first version", "part of"]},
+        {"t": "Назвать дату и как будешь держать в курсе", "kw": ["next week", "monday", "tuesday", "wednesday", "thursday", "friday", "keep you", "update you", "every day"]}
+      ],
+      "phrases": ["I have to be honest with you: ...", "The main reason is ...", "I'd suggest two options: ...", "I'll keep you updated every ..."],
+      "turns": [
+        {"en": "Hi! I hope you're calling with good news about the release?", "ru": "Надеюсь, звоните с хорошими новостями о релизе?"},
+        {"en": "Why is this happening? We planned everything a month ago.", "ru": "Почему так? Мы все спланировали месяц назад."},
+        {"en": "What can you offer us now?", "ru": "Что вы можете предложить?"},
+        {"en": "How can I be sure this won't happen again?", "ru": "Как мне быть уверенным, что это не повторится?"},
+        {"en": "Okay. When will I hear from you next?", "ru": "Ладно. Когда следующий раз выйдете на связь?"}
+      ],
+      "hard": [
+        {"en": "My boss will be very unhappy. Can't you just add more people?", "ru": "Мой начальник будет недоволен. Добавьте людей, и все."},
+        {"en": "Can we at least release the main features without testing?", "ru": "Может, выпустим основное без тестирования?"}
+      ]
+    },
+    {
+      "id": "demo", "cat": "work", "title": "Презентация проекта", "sub": "Рассказать о проекте и ответить на вопросы",
+      "icon": "presentation", "who": "Product team",
+      "goals": [
+        {"t": "Какую проблему решает", "kw": ["problem", "pain", "users need", "solve", "struggle"]},
+        {"t": "Результат и цифры", "kw": ["result", "metric", "percent", "%", "users", "grew", "saved"]},
+        {"t": "Следующие шаги", "kw": ["next step", "roadmap", "going to", "plan to", "next quarter", "next month"]},
+        {"t": "Ответ на вопрос по пунктам", "kw": ["good question", "first", "second", "in short", "two reasons"]}
+      ],
+      "phrases": ["The problem we're solving is ...", "So far, we've ...", "Our next step is ...", "Good question. In short, ..."],
+      "turns": [
+        {"en": "Thanks for joining. Let's start: what problem does your project solve?", "ru": "Какую проблему решает ваш проект?"},
+        {"en": "How does it work? Walk us through it.", "ru": "Как это работает? Проведите нас по шагам."},
+        {"en": "What results do you have so far?", "ru": "Какие результаты уже есть?"},
+        {"en": "What are the next steps?", "ru": "Какие следующие шаги?"},
+        {"en": "Why should we invest more time in this?", "ru": "Почему стоит вкладывать в это еще время?"}
+      ],
+      "hard": [
+        {"en": "Our competitor already has this. Why build our own?", "ru": "У конкурента это уже есть. Зачем делать свое?"},
+        {"en": "What's the biggest risk in your plan?", "ru": "Главный риск вашего плана?"}
+      ]
+    },
+    {
+      "id": "smalltalk", "cat": "work", "title": "Small talk с коллегой", "sub": "Непринужденный разговор у кофемашины",
+      "icon": "coffee", "who": "Sam, colleague",
+      "goals": [
+        {"t": "Рассказать о себе", "kw": ["weekend", "went", "watched", "played", "visited", "i was"]},
+        {"t": "Задать встречный вопрос", "kw": ["what about you", "and you", "how about you", "do you", "have you"]},
+        {"t": "Показать интерес", "kw": ["really", "sounds", "interesting", "cool", "great", "nice"]},
+        {"t": "Вежливо закончить", "kw": ["got to go", "have to go", "see you", "catch up", "talk later"]}
+      ],
+      "phrases": ["Not bad, thanks! And you?", "That sounds great!", "Oh, really? Tell me more.", "I've got to run, see you later!"],
+      "turns": [
+        {"en": "Hey! How's it going? How was your weekend?", "ru": "Привет! Как дела? Как выходные?"},
+        {"en": "Nice! Any plans for the holidays?", "ru": "Здорово! Планы на праздники есть?"},
+        {"en": "Have you watched anything good recently?", "ru": "Смотрел что-нибудь хорошее недавно?"},
+        {"en": "By the way, how do you like working here so far?", "ru": "Кстати, как тебе здесь работается?"},
+        {"en": "Oh, I have a meeting in two minutes!", "ru": "Ой, у меня встреча через две минуты!"}
+      ],
+      "hard": [
+        {"en": "What do you think about the new office policy?", "ru": "Что думаешь о новых правилах офиса?"},
+        {"en": "Do you do any sports?", "ru": "Занимаешься спортом?"}
+      ]
+    },
+    {
+      "id": "support", "cat": "life", "title": "Звонок в поддержку", "sub": "Объяснить проблему с заказом и добиться решения",
+      "icon": "headset", "who": "Kate, support",
+      "goals": [
+        {"t": "Описать проблему", "kw": ["order", "arrived", "broken", "wrong", "didn't", "haven't received", "damaged"]},
+        {"t": "Сказать, чего хочешь", "kw": ["refund", "replace", "exchange", "money back", "new one"]},
+        {"t": "Настоять вежливо", "kw": ["i understand", "however", "but i", "i'd like to speak", "manager", "law"]},
+        {"t": "Подтвердить итог", "kw": ["confirm", "email", "how long", "when will", "reference", "ticket"]}
+      ],
+      "phrases": ["I'm calling about my order ...", "Unfortunately, it arrived ...", "I'd like a refund, please.", "Could you confirm that by email?"],
+      "turns": [
+        {"en": "Thank you for calling. How can I help you today?", "ru": "Чем могу помочь?"},
+        {"en": "I'm sorry to hear that. Could you give me your order number?", "ru": "Сожалею. Назовите номер заказа."},
+        {"en": "Thank you. What exactly is wrong with the item?", "ru": "Что именно не так с товаром?"},
+        {"en": "What would you like us to do?", "ru": "Что вы хотите, чтобы мы сделали?"},
+        {"en": "Is there anything else I can help you with?", "ru": "Могу еще чем-то помочь?"}
+      ],
+      "hard": [
+        {"en": "I'm afraid the return period is over.", "ru": "Боюсь, срок возврата истек."},
+        {"en": "Our system shows the order was delivered correctly.", "ru": "По нашей системе заказ доставлен правильно."}
+      ]
+    },
+    {
+      "id": "doctor", "cat": "life", "title": "У врача", "sub": "Описать симптомы и понять рекомендации",
+      "icon": "stethoscope", "who": "Dr. Wilson",
+      "goals": [
+        {"t": "Описать симптомы", "kw": ["pain", "hurts", "ache", "fever", "cough", "sore", "feel"]},
+        {"t": "Сказать, с какого времени", "kw": ["since", "for two", "for three", "for a week", "days ago", "started"]},
+        {"t": "Спросить о лечении", "kw": ["should i", "how often", "how long", "can i", "side effect"]},
+        {"t": "Переспросить непонятное", "kw": ["sorry", "could you repeat", "what does", "mean", "say that again"]}
+      ],
+      "phrases": ["I've had a ... for ... days.", "It hurts when I ...", "How often should I take it?", "Sorry, could you repeat that?"],
+      "turns": [
+        {"en": "Hello, please have a seat. What brings you here today?", "ru": "Что вас беспокоит?"},
+        {"en": "How long have you had these symptoms?", "ru": "Как давно эти симптомы?"},
+        {"en": "Are you taking any medicine right now?", "ru": "Принимаете сейчас какие-то лекарства?"},
+        {"en": "I'll prescribe you something. Take it twice a day after meals.", "ru": "Выпишу лекарство. Дважды в день после еды."},
+        {"en": "Do you have any questions?", "ru": "Есть вопросы?"}
+      ],
+      "hard": [
+        {"en": "Do you have any allergies?", "ru": "Есть аллергия?"},
+        {"en": "Have you had this problem before?", "ru": "Раньше такое было?"}
+      ]
+    },
+    {
+      "id": "shop", "cat": "life", "title": "В магазине одежды", "sub": "Найти размер, примерить и обменять вещь",
+      "icon": "shirt", "who": "Liam, shop assistant",
+      "goals": [
+        {"t": "Спросить размер", "kw": ["size", "medium", "large", "small", "fit"]},
+        {"t": "Примерить", "kw": ["try on", "try it", "fitting room"]},
+        {"t": "Узнать цену или скидку", "kw": ["how much", "price", "discount", "sale", "cost"]},
+        {"t": "Обмен или возврат", "kw": ["exchange", "return", "receipt", "refund"]}
+      ],
+      "phrases": ["Do you have this in a medium?", "Can I try it on?", "Is there a discount?", "Can I return it if it doesn't fit?"],
+      "turns": [
+        {"en": "Hi there! Can I help you find something?", "ru": "Помочь что-то найти?"},
+        {"en": "What size do you usually wear?", "ru": "Какой размер обычно носите?"},
+        {"en": "Here you are. The fitting room is over there. How does it fit?", "ru": "Примерочная там. Как сидит?"},
+        {"en": "It's 80 dollars. How would you like to pay?", "ru": "80 долларов. Как будете платить?"},
+        {"en": "Anything else I can do for you?", "ru": "Еще чем-то помочь?"}
+      ],
+      "hard": [
+        {"en": "Sorry, we don't have this in your size.", "ru": "Вашего размера нет."},
+        {"en": "This item is final sale, so no returns.", "ru": "Это финальная распродажа, возврата нет."}
+      ]
+    },
+    {
+      "id": "cafe", "cat": "travel", "title": "В кафе", "sub": "Сделать заказ, уточнить блюдо и расплатиться",
+      "icon": "utensils", "who": "Ben, waiter",
+      "goals": [
+        {"t": "Заказать еду и напиток", "kw": ["i'd like", "i'll have", "can i get", "could i have", "coffee", "tea", "water", "juice"]},
+        {"t": "Спросить о блюде", "kw": ["what's in", "does it", "is it spicy", "contain", "ingredient", "vegetarian"]},
+        {"t": "Попросить изменить или добавить", "kw": ["without", "extra", "instead", "change", "add "]},
+        {"t": "Попросить счет и расплатиться", "kw": ["bill", "check", "pay", "card", "cash"]}
+      ],
+      "phrases": ["I'd like the ..., please.", "What's in the ...?", "Could I have it without ...?", "Can I have the bill, please?"],
+      "turns": [
+        {"en": "Hi, welcome! Are you ready to order?", "ru": "Готовы заказать?"},
+        {"en": "Great choice. Anything to drink?", "ru": "Что будете пить?"},
+        {"en": "Do you have any questions about the menu?", "ru": "Есть вопросы по меню?"},
+        {"en": "Would you like anything else?", "ru": "Что-нибудь еще?"},
+        {"en": "How was everything?", "ru": "Как вам все?"}
+      ],
+      "hard": [
+        {"en": "Sorry, we've run out of that today. Can I suggest something else?", "ru": "Это сегодня закончилось. Предложить другое?"},
+        {"en": "Would you like to leave a tip?", "ru": "Оставите чаевые?"}
+      ]
+    },
+    {
+      "id": "hotel", "cat": "travel", "title": "Заселение в отель", "sub": "Заселиться и решить проблему с номером",
+      "icon": "building-2", "who": "Mia, receptionist",
+      "goals": [
+        {"t": "Назвать бронь", "kw": ["reservation", "booked", "booking", "my name is"]},
+        {"t": "Спросить об услугах", "kw": ["breakfast", "wifi", "wi-fi", "check-out", "what time", "parking"]},
+        {"t": "Описать проблему с номером", "kw": ["doesn't work", "not working", "broken", "noisy", "dirty", "air conditioning", "shower"]},
+        {"t": "Добиться решения", "kw": ["another room", "change the room", "fix", "send someone", "discount"]}
+      ],
+      "phrases": ["I have a reservation under the name ...", "What time is breakfast?", "The ... in my room doesn't work.", "Could I move to another room?"],
+      "turns": [
+        {"en": "Good evening! Do you have a reservation?", "ru": "У вас есть бронь?"},
+        {"en": "Could I see your passport, please?", "ru": "Можно паспорт?"},
+        {"en": "Here's your key, room 512. Any questions?", "ru": "Ваш ключ, номер 512. Есть вопросы?"},
+        {"en": "Hello, reception. How can I help?", "ru": "Ресепшен, чем помочь? (ты звонишь из номера)"},
+        {"en": "I'm so sorry. What would you like us to do?", "ru": "Простите. Что нам сделать?"}
+      ],
+      "hard": [
+        {"en": "I'm afraid the only free room is more expensive.", "ru": "Свободен только номер дороже."},
+        {"en": "Check-out is at 10 a.m. Late check-out costs extra.", "ru": "Выезд в 10. Поздний выезд платный."}
+      ]
+    },
+    {
+      "id": "airport", "cat": "travel", "title": "Регистрация в аэропорту", "sub": "Сдать багаж, выбрать место, узнать про выход",
+      "icon": "plane", "who": "Tom, check-in agent",
+      "goals": [
+        {"t": "Документы и рейс", "kw": ["passport", "ticket", "booking", "flying to", "flight"]},
+        {"t": "Багаж", "kw": ["bag", "baggage", "luggage", "suitcase", "carry-on"]},
+        {"t": "Выбрать место", "kw": ["seat", "window", "aisle"]},
+        {"t": "Уточнить посадку", "kw": ["gate", "boarding", "what time", "delay"]}
+      ],
+      "phrases": ["I'm flying to ...", "I have one suitcase to check in.", "Could I have a window seat?", "Which gate is it?"],
+      "turns": [
+        {"en": "Good morning! Where are you flying today?", "ru": "Куда летите?"},
+        {"en": "Can I see your passport and ticket, please?", "ru": "Паспорт и билет, пожалуйста."},
+        {"en": "Are you checking in any bags?", "ru": "Будете сдавать багаж?"},
+        {"en": "Would you prefer a window or an aisle seat?", "ru": "Место у окна или у прохода?"},
+        {"en": "Here's your boarding pass. Any questions?", "ru": "Ваш посадочный. Вопросы?"}
+      ],
+      "hard": [
+        {"en": "Your bag is three kilos overweight. That's 50 euros.", "ru": "Перевес три кило. С вас 50 евро."},
+        {"en": "Your flight is delayed by two hours.", "ru": "Рейс задерживается на два часа."}
+      ]
+    }
+  ]
+}

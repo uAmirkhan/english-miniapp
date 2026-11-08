@@ -3,151 +3,371 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>English: прогресс</title>
+<title>English с Khan</title>
 <!-- Данные приходят во фрагменте ссылки (#z=...), фрагмент не уходит на сервер.
      Читаем его ДО скрипта Telegram: тот дописывает в hash свои параметры. -->
 <script>window.__HASH = location.hash;</script>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: var(--tg-theme-bg-color, #fff); --fg: var(--tg-theme-text-color, #1b1b1f);
-  --mut: var(--tg-theme-hint-color, #8a8a93); --card: var(--tg-theme-secondary-bg-color, #f2f2f5);
-  --acc: var(--tg-theme-button-color, #2f7cf6); --acc-fg: var(--tg-theme-button-text-color, #fff);
-  --ok: #1f9d55; --bad: #d64545; --warn: #c98a00;
+  --bg: #f4f5fb; --card: #fff; --fg: #1c1d2b; --mut: #6b6f85; --line: #e6e8f2;
+  --acc: #3b4fe4; --acc-2: #7b4dff; --acc-soft: #e4e8ff; --ok: #1f9d64; --bad: #d64545;
+  --teal-bg: #d8f2f1; --teal: #0f7c80; --violet-bg: #ece3fc; --violet: #7a3fe0;
+  --indigo-bg: #e2e6fc; --indigo: #3346d3; --green-bg: #dbf0e4; --green: #1d7a4f;
+  --pink-bg: #fde3ee; --pink: #c2185b; --orange-bg: #ffe8d4; --orange: #d9601a;
+  --shadow: 0 1px 2px rgba(28, 29, 43, .04), 0 6px 18px rgba(28, 29, 43, .06);
+  color-scheme: light;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not(.tg) { --bg: #17181c; --fg: #ececf1; --card: #23252b; --mut: #8d8f99; }
+:root[data-theme="dark"] {
+  --bg: #111219; --card: #1b1d28; --fg: #eef0fb; --mut: #9a9db4; --line: #2a2d3d;
+  --acc: #7086ff; --acc-2: #a07bff; --acc-soft: #252a4a; --ok: #46c98a; --bad: #ff6b6b;
+  --teal-bg: #15302f; --teal: #5fd0cb; --violet-bg: #2a2140; --violet: #b996ff;
+  --indigo-bg: #1f2547; --indigo: #8d9cff; --green-bg: #16301f; --green: #63d095;
+  --pink-bg: #3a1a29; --pink: #ff7fb0; --orange-bg: #3a2414; --orange: #ffa25f;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 6px 18px rgba(0, 0, 0, .25);
+  color-scheme: dark;
 }
-* { box-sizing: border-box; }
-body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-main { max-width: 560px; margin: 0 auto; padding: 12px 16px 96px; }
-.tabs { display: flex; gap: 8px; position: sticky; top: 0; background: var(--bg); padding: 8px 0; z-index: 2; }
-.tabs button { flex: 1; }
-button { font: inherit; border: 0; border-radius: 10px; padding: 10px 12px; background: var(--card); color: var(--fg); cursor: pointer; }
-button.on, button.primary { background: var(--acc); color: var(--acc-fg); }
-button:disabled { opacity: .5; }
-.card button { background: var(--bg); border: 1px solid color-mix(in srgb, var(--mut) 45%, transparent); }
-.card button.on { background: var(--acc); color: var(--acc-fg); border-color: var(--acc); }
-.card { background: var(--card); border-radius: 14px; padding: 14px; margin: 10px 0; }
-.row { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
-.big { font-size: 44px; font-weight: 700; line-height: 1; }
-.mut { color: var(--mut); font-size: 13px; }
-.up { color: var(--ok); } .down { color: var(--bad); }
-.err { background: color-mix(in srgb, var(--bad) 15%, var(--bg)); border-left: 4px solid var(--bad); }
-.bar { height: 10px; border-radius: 6px; background: color-mix(in srgb, var(--mut) 25%, transparent); overflow: hidden; margin-top: 8px; }
-.bar > i { display: block; height: 100%; background: var(--acc); }
-.ach { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
-.ach div { padding: 10px; border-radius: 10px; background: var(--bg); font-size: 13px; }
-.ach .got { outline: 2px solid var(--ok); }
-.ach .no { opacity: .55; }
-svg { width: 100%; height: 120px; display: block; }
-h2 { font-size: 15px; margin: 0 0 6px; }
-.task p { margin: 0 0 8px; font-size: 16px; }
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 500 15px/1.45 Manrope, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+main { max-width: 560px; margin: 0 auto; padding: 18px 16px calc(96px + env(safe-area-inset-bottom)); }
+h1 { font-size: 30px; font-weight: 800; letter-spacing: -.02em; margin: 4px 0 4px; line-height: 1.15; }
+h2 { font-size: 21px; font-weight: 800; margin: 26px 0 12px; letter-spacing: -.01em; }
+h3 { font-size: 17px; font-weight: 700; margin: 0; }
+p { margin: 0; }
+.mut { color: var(--mut); font-size: 13.5px; }
+.lead { color: var(--mut); font-size: 16px; }
+.hidden { display: none !important; }
+.ic { width: 24px; height: 24px; flex: none; display: block; }
+button { font: inherit; color: inherit; border: 0; background: none; cursor: pointer; padding: 0; }
+button:disabled { opacity: .55; cursor: default; }
+
+/* появление карточек */
+.in > * { animation: up .38s cubic-bezier(.2, .8, .2, 1) both; }
+.in > *:nth-child(2) { animation-delay: .04s; } .in > *:nth-child(3) { animation-delay: .08s; }
+.in > *:nth-child(4) { animation-delay: .12s; } .in > *:nth-child(5) { animation-delay: .16s; }
+.in > *:nth-child(n+6) { animation-delay: .2s; }
+@keyframes up { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .in > * { animation: none; } }
+.press { transition: transform .12s ease; }
+.press:active { transform: scale(.97); }
+
+.head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 99px; background: var(--card); box-shadow: var(--shadow); font-weight: 700; font-size: 14px; white-space: nowrap; }
+.pill .ic { width: 16px; height: 16px; }
+
+.card { background: var(--card); border-radius: 22px; padding: 16px; box-shadow: var(--shadow); margin: 12px 0; }
+.err { border-left: 4px solid var(--bad); }
+.err b { color: var(--bad); }
+
+/* плитки 2x2 */
+.tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 18px; }
+.tile { position: relative; overflow: hidden; text-align: left; border-radius: 24px; padding: 16px 14px 18px; min-height: 172px; background: var(--t-bg); box-shadow: inset 0 -4px 0 rgba(0, 0, 0, .06); }
+.tile::after { content: ""; position: absolute; width: 110px; height: 110px; border-radius: 50%; right: -30px; top: -34px; background: var(--t-fg); opacity: .09; }
+.tile .sq { width: 54px; height: 54px; border-radius: 16px; display: grid; place-items: center; background: var(--t-fg); color: #fff; margin-bottom: 16px; box-shadow: 0 6px 14px color-mix(in srgb, var(--t-fg) 35%, transparent); }
+.tile .sq .ic { width: 28px; height: 28px; }
+.tile h3 { font-size: 16.5px; line-height: 1.2; margin-bottom: 4px; }
+.tile p { color: color-mix(in srgb, var(--fg) 70%, var(--t-bg)); font-size: 13.5px; line-height: 1.3; }
+.c-teal { --t-bg: var(--teal-bg); --t-fg: var(--teal); } .c-violet { --t-bg: var(--violet-bg); --t-fg: var(--violet); }
+.c-indigo { --t-bg: var(--indigo-bg); --t-fg: var(--indigo); } .c-green { --t-bg: var(--green-bg); --t-fg: var(--green); }
+.c-pink { --t-bg: var(--pink-bg); --t-fg: var(--pink); } .c-orange { --t-bg: var(--orange-bg); --t-fg: var(--orange); }
+
+/* строки сценариев */
+.row { display: flex; align-items: center; gap: 14px; width: 100%; text-align: left; background: var(--card); border-radius: 22px; padding: 16px; box-shadow: var(--shadow); margin: 10px 0; }
+.row .dot { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: var(--t-bg); color: var(--t-fg); flex: none; }
+.row .tx { flex: 1; min-width: 0; }
+.row .tx p { color: var(--mut); font-size: 14px; line-height: 1.35; margin-top: 2px; }
+.badge { flex: none; font-size: 13px; font-weight: 700; padding: 5px 11px; border-radius: 99px; background: var(--acc-soft); color: var(--acc); }
+.badge.ok { background: color-mix(in srgb, var(--ok) 16%, transparent); color: var(--ok); }
+
+/* главная */
+.hero { position: relative; overflow: hidden; color: #fff; border-radius: 26px; padding: 20px; margin-top: 14px; background: linear-gradient(135deg, #3b4fe4 0%, #7b4dff 100%); box-shadow: 0 12px 28px rgba(80, 70, 230, .3); }
+.hero::before, .hero::after { content: ""; position: absolute; border-radius: 50%; background: rgba(255, 255, 255, .1); }
+.hero::before { width: 180px; height: 180px; right: -50px; top: -70px; }
+.hero::after { width: 120px; height: 120px; right: 60px; bottom: -70px; }
+.hero .big { font-size: 52px; font-weight: 800; line-height: 1; letter-spacing: -.03em; }
+.hero .sub { opacity: .85; font-size: 14px; }
+.hero .stats { display: flex; gap: 10px; margin-top: 16px; position: relative; z-index: 1; }
+.hero .stat { flex: 1; background: rgba(255, 255, 255, .16); border-radius: 16px; padding: 10px 12px; }
+.hero .stat b { display: block; font-size: 20px; }
+.hero .stat span { font-size: 12.5px; opacity: .85; }
+.delta { display: inline-block; font-size: 14px; font-weight: 700; padding: 3px 9px; border-radius: 99px; background: rgba(255, 255, 255, .22); vertical-align: middle; margin-left: 8px; }
+.todo { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.todo:last-child { border-bottom: 0; padding-bottom: 2px; } .todo:first-child { padding-top: 2px; }
+.todo .chk { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; border: 2px solid var(--line); color: transparent; flex: none; }
+.todo.done .chk { background: var(--ok); border-color: var(--ok); color: #fff; }
+.todo .chk .ic { width: 16px; height: 16px; }
+.todo .tx { flex: 1; } .todo .tx p { color: var(--mut); font-size: 13px; }
+.todo button { font-weight: 700; color: var(--acc); background: var(--acc-soft); border-radius: 99px; padding: 7px 14px; font-size: 14px; }
+.ring { display: flex; align-items: center; gap: 16px; }
+.ring svg { width: 92px; height: 92px; flex: none; transform: rotate(-90deg); }
+.ring circle { fill: none; stroke-width: 10; }
+.ring .bgc { stroke: var(--acc-soft); }
+.ring .fgc { stroke: url(#rg); stroke-linecap: round; transition: stroke-dashoffset 1s cubic-bezier(.2, .8, .2, 1); }
+.ring .num { font-size: 34px; font-weight: 800; line-height: 1; }
+.rank { display: inline-flex; align-items: center; gap: 6px; margin-top: 6px; font-weight: 700; font-size: 13px; padding: 4px 10px; border-radius: 99px; background: var(--orange-bg); color: var(--orange); }
+.rank .ic { width: 15px; height: 15px; }
+
+/* прогресс */
+.kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.kpi { background: var(--card); border-radius: 20px; padding: 14px; box-shadow: var(--shadow); }
+.kpi .ic { color: var(--t-fg); width: 22px; height: 22px; margin-bottom: 8px; }
+.kpi b { font-size: 26px; font-weight: 800; display: block; line-height: 1.1; }
+.chart { width: 100%; height: 130px; display: block; margin-top: 10px; overflow: visible; }
+.ach { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
+.ach div { border-radius: 16px; padding: 12px; background: var(--bg); font-size: 13.5px; font-weight: 700; display: flex; gap: 10px; align-items: center; }
+.ach .ic { width: 22px; height: 22px; flex: none; }
+.ach .got { background: var(--orange-bg); } .ach .got .ic { color: var(--orange); }
+.ach .no { opacity: .55; } .ach span { display: block; font-weight: 500; color: var(--mut); font-size: 12px; }
+
+/* задания */
+.task p.q { font-size: 16px; font-weight: 600; margin-bottom: 10px; }
 .opts { display: flex; gap: 8px; flex-wrap: wrap; }
-input, textarea { width: 100%; font: inherit; padding: 10px; border-radius: 10px; border: 1px solid color-mix(in srgb, var(--mut) 40%, transparent); background: var(--bg); color: var(--fg); }
-textarea { min-height: 60px; resize: vertical; }
-.res { margin-top: 6px; font-size: 14px; min-height: 1em; }
-.timer { font-size: 56px; font-weight: 700; text-align: center; font-variant-numeric: tabular-nums; }
-#send { width: 100%; padding: 14px; font-size: 16px; }
-.hidden { display: none; }
+.chip { border: 1.5px solid var(--line); border-radius: 99px; padding: 9px 16px; font-weight: 700; background: var(--card); }
+.chip.on { background: var(--acc); color: #fff; border-color: var(--acc); }
+input, textarea { width: 100%; font: inherit; padding: 12px 14px; border-radius: 14px; border: 1.5px solid var(--line); background: var(--bg); color: var(--fg); outline: none; }
+input:focus, textarea:focus { border-color: var(--acc); }
+textarea { min-height: 76px; resize: vertical; }
+.res { margin-top: 8px; font-size: 14px; min-height: 1em; font-weight: 600; }
+.up { color: var(--ok); } .down { color: var(--bad); }
+.timer { font-size: 56px; font-weight: 800; text-align: center; font-variant-numeric: tabular-nums; margin: 4px 0 10px; }
+.btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 15px; border-radius: 18px; font-weight: 800; font-size: 16px; background: var(--acc); color: #fff; box-shadow: 0 8px 20px color-mix(in srgb, var(--acc) 35%, transparent); }
+.btn.soft { background: var(--acc-soft); color: var(--acc); box-shadow: none; }
+.btn .ic { width: 20px; height: 20px; }
+.bar { height: 10px; border-radius: 6px; background: var(--acc-soft); overflow: hidden; margin-top: 10px; }
+.bar > i { display: block; height: 100%; border-radius: 6px; background: linear-gradient(90deg, var(--acc), var(--acc-2)); transition: width .6s ease; }
+.cards-hero { display: flex; align-items: center; gap: 14px; }
+.cards-hero .num { font-size: 40px; font-weight: 800; line-height: 1; }
+
+/* нижнее меню */
+nav { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; background: color-mix(in srgb, var(--card) 92%, transparent); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-top: 1px solid var(--line); padding: 8px 8px calc(8px + env(safe-area-inset-bottom)); }
+nav div { max-width: 560px; margin: 0 auto; display: flex; }
+nav button { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: 12px; font-weight: 700; color: var(--mut); padding: 4px 0; }
+nav button .ic { width: 26px; height: 26px; transition: transform .2s; }
+nav button.on { color: var(--acc); } nav button.on .ic { transform: translateY(-2px); }
+
+/* шторка */
+.veil { position: fixed; inset: 0; z-index: 10; background: rgba(10, 12, 30, .45); opacity: 0; pointer-events: none; transition: opacity .25s; }
+.veil.open { opacity: 1; pointer-events: auto; }
+.sheet { position: fixed; left: 0; right: 0; bottom: 0; z-index: 11; max-height: 88vh; overflow-y: auto; background: var(--card); border-radius: 28px 28px 0 0; padding: 22px 20px calc(20px + env(safe-area-inset-bottom)); transform: translateY(105%); transition: transform .32s cubic-bezier(.2, .8, .2, 1); }
+.sheet.open { transform: none; }
+.sheet > div { max-width: 560px; margin: 0 auto; }
+.sheet .x { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; color: var(--mut); background: var(--bg); flex: none; }
+.sheet h1 { font-size: 26px; margin: 0; }
+.sheet .cap { font-size: 12.5px; font-weight: 800; letter-spacing: .06em; color: var(--mut); text-transform: uppercase; margin: 20px 0 8px; }
+.goal { display: flex; gap: 10px; align-items: flex-start; padding: 5px 0; font-size: 15.5px; }
+.goal .ic { width: 20px; height: 20px; color: var(--ok); margin-top: 1px; }
+.lvl { display: flex; gap: 8px; flex-wrap: wrap; }
+.lvl .chip { padding: 10px 18px; }
+.note { margin: 18px 0 16px; font-size: 14px; color: var(--mut); }
+.toast { position: fixed; left: 16px; right: 16px; bottom: calc(86px + env(safe-area-inset-bottom)); z-index: 20; max-width: 528px; margin: 0 auto; background: #1c1d2b; color: #fff; padding: 13px 16px; border-radius: 16px; font-size: 14px; box-shadow: 0 10px 30px rgba(0, 0, 0, .25); opacity: 0; transform: translateY(10px); transition: .25s; pointer-events: none; }
+.toast.show { opacity: 1; transform: none; }
+:root[data-theme="dark"] .toast { background: #343a66; }
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3b4fe4"/><stop offset="1" stop-color="#7b4dff"/></linearGradient>
+<linearGradient id="ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5b6cff" stop-opacity=".35"/><stop offset="1" stop-color="#5b6cff" stop-opacity="0"/></linearGradient></defs></svg>
 <main>
-  <div class="tabs"><button id="t-prog" class="on">Прогресс</button><button id="t-task">Задания</button></div>
   <div id="errs"></div>
-  <section id="prog"></section>
-  <section id="task" class="hidden"></section>
+  <section id="home"></section>
+  <section id="learn" class="hidden"></section>
+  <section id="practice" class="hidden"></section>
+  <section id="stats" class="hidden"></section>
 </main>
+<nav><div>
+  <button data-tab="home" class="on"></button>
+  <button data-tab="learn"></button>
+  <button data-tab="practice"></button>
+  <button data-tab="stats"></button>
+</div></nav>
+<div class="veil" id="veil"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true"><div id="sheet-body"></div></div>
+<div class="toast" id="toast"></div>
 <script>
 "use strict";
+const ICONS = {"building-2":{"body": "<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M10 22v-6.57M12 11h.01M12 7h.01M14 15.43V22m1-6a5 5 0 0 0-6 0m7-5h.01M16 7h.01M8 11h.01M8 7h.01\"/><rect width=\"16\" height=\"20\" x=\"4\" y=\"2\" rx=\"2\"/></g>"},"house":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8\"/><path d=\"M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\"/></g>","book-open":"<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 5v16m8.001-2A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2a5 5 0 0 1 4-2z\"/>","bot":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M12 8V4H8\"/><rect width=\"16\" height=\"12\" x=\"4\" y=\"8\" rx=\"2\"/><path d=\"M2 14h2m16 0h2m-7-1v2m-6-2v2\"/></g>","chart-line":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M3 3v16a2 2 0 0 0 2 2h16\"/><path d=\"m19 9l-5 5l-4-4l-3 3\"/></g>","message-circle-heart":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092a10 10 0 1 0-4.777-4.719\"/><path d=\"M7.828 13.07A3 3 0 0 1 12 8.764a3 3 0 0 1 5.004 2.224a3 3 0 0 1-.832 2.083l-3.447 3.62a1 1 0 0 1-1.45-.001z\"/></g>","mic":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M12 19v3m7-12v2a7 7 0 0 1-14 0v-2\"/><rect width=\"6\" height=\"13\" x=\"9\" y=\"2\" rx=\"3\"/></g>","pen-line":"<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M13 21h8m.174-14.188a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z\"/>","scroll-text":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M15 12h-5m5-4h-5m9 9V5a2 2 0 0 0-2-2H4\"/><path d=\"M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3\"/></g>","laptop":"<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M18 5a2 2 0 0 1 2 2v8.526a2 2 0 0 0 .212.897l1.068 2.127a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45l1.068-2.127A2 2 0 0 0 4 15.526V7a2 2 0 0 1 2-2zm2.054 10.987H3.946\"/>","briefcase":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16\"/><rect width=\"20\" height=\"14\" x=\"2\" y=\"6\" rx=\"2\"/></g>","wallet":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1\"/><path d=\"M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4\"/></g>","users":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M16 3.128a4 4 0 0 1 0 7.744M22 21v-2a4 4 0 0 0-3-3.87\"/><circle cx=\"9\" cy=\"7\" r=\"4\"/></g>","git-pull-request":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><circle cx=\"18\" cy=\"18\" r=\"3\"/><circle cx=\"6\" cy=\"6\" r=\"3\"/><path d=\"M13 6h3a2 2 0 0 1 2 2v7M6 9v12\"/></g>","presentation":"<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M2 3h20m-1 0v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3m4 18l5-5l5 5\"/>","headset":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2z\"/><path d=\"M21 16v2a4 4 0 0 1-4 4h-5\"/></g>","coffee":"<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M10 2v2m4-2v2m2 4a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1M6 2v2\"/>","stethoscope":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M11 2v2M5 2v2m0-1H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1\"/><path d=\"M8 15a6 6 0 0 0 12 0v-3\"/><circle cx=\"20\" cy=\"10\" r=\"2\"/></g>","shirt":"<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23\"/>","utensils":"<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2M7 2v20m14-7V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2zm0 0v7\"/>","building-complex":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M10 12h4m-4-4h4m0 13v-3a2 2 0 0 0-4 0v3\"/><path d=\"M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2\"/><path d=\"M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16\"/></g>","plane":"<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8L4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1l3 2l2 3l1-1v-3l3-2l3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2\"/>","flame":"<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0a5 5 0 0 1 1-3a1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4\"/>","trophy":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M10 14.66V17a1 1 0 0 1-1 1a2 2 0 0 0-2 2v2m7-7.34V17a1 1 0 0 0 1 1a2 2 0 0 1 2 2v2m.916-12H19.5A2.5 2.5 0 0 0 22 7.5V5a1 1 0 0 0-1-1h-3M4 22h16\"/><path d=\"M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z\"/><path d=\"M6.084 10H4.5A2.5 2.5 0 0 1 2 7.5V5a1 1 0 0 1 1-1h3\"/></g>","lock":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><rect width=\"18\" height=\"11\" x=\"3\" y=\"11\" rx=\"2\" ry=\"2\"/><path d=\"M7 11V7a5 5 0 0 1 10 0v4\"/></g>","repeat":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"m17 2l4 4l-4 4\"/><path d=\"M3 11v-1a4 4 0 0 1 4-4h14M7 22l-4-4l4-4\"/><path d=\"M21 13v1a4 4 0 0 1-4 4H3\"/></g>","check":"<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M20 6L9 17l-5-5\"/>","x":"<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M18 6L6 18M6 6l12 12\"/>","play":"<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z\"/>","sparkles":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594zM20 2v4m2-2h-4\"/><circle cx=\"4\" cy=\"20\" r=\"2\"/></g>","target":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><circle cx=\"12\" cy=\"12\" r=\"6\"/><circle cx=\"12\" cy=\"12\" r=\"2\"/></g>","clock":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M12 6v6l4 2\"/></g>","lightbulb":"<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M15 14c.2-1 .7-1.7 1.5-2.5c1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5c.7.7 1.3 1.5 1.5 2.5m0 4h6m-5 4h4\"/>","calendar-check":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M8 2v3m8-3v3\"/><rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\"/><path d=\"M3 9h18M9 15l2 2l4-4\"/></g>","handshake":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"m11 17l2 2a1 1 0 1 0 3-3\"/><path d=\"m14 14l2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4\"/><path d=\"m21 3l1 11h-2M3 3L2 14l6.5 6.5a1 1 0 1 0 3-3M3 4h8\"/></g>","alarm-clock":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><circle cx=\"12\" cy=\"13\" r=\"8\"/><path d=\"M12 9v4l2 2M5 3L2 6m20 0l-3-3M6.38 18.7L4 21m13.64-2.33L20 21\"/></g>","layers":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z\"/><path d=\"M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12\"/><path d=\"M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17\"/></g>"};
 const TG = window.Telegram && Telegram.WebApp;
 const IN_TG = !!(TG && TG.platform && TG.platform !== "unknown");
-if (IN_TG) { document.documentElement.classList.add("tg"); TG.ready(); TG.expand(); }
-const $ = (s) => document.querySelector(s);
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const ic = (n) => `<svg class="ic" viewBox="0 0 24 24" aria-hidden="true">${ICONS[n] || ICONS.sparkles}</svg>`;
 const LIMIT = 4096;   // sendData режется по БАЙТАМ, не символам
-let D = null, ANS = {};
+let D = null, CAT = null, ANS = {}, TAB = "home";
+const ERRS = [];
 
+// ───────────── тема: Telegram сам говорит, светлая или темная
+function theme() {
+  const dark = IN_TG ? TG.colorScheme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  document.documentElement.dataset.theme = dark ? "dark" : "light";
+  if (IN_TG) {
+    const bg = getComputedStyle(document.documentElement).getPropertyValue("--bg").trim();
+    try { TG.setHeaderColor(bg); TG.setBackgroundColor(bg); } catch (e) { /* старый клиент */ }
+  }
+}
+if (IN_TG) { TG.ready(); TG.expand(); TG.onEvent("themeChanged", theme); }
+theme();
+
+const haptic = (k = "light") => { try { IN_TG && TG.HapticFeedback.impactOccurred(k); } catch (e) {} };
+function toast(msg, ms = 4200) {
+  const t = $("#toast"); t.textContent = msg; t.classList.add("show");
+  clearTimeout(toast.h); toast.h = setTimeout(() => t.classList.remove("show"), ms);
+}
 function showErr(list) {
-  $("#errs").innerHTML = list.length ? `<div class="card err"><b>Ошибки данных</b><br>${list.map(esc).join("<br>")}</div>` : "";
+  ERRS.push(...list);
+  $("#errs").innerHTML = ERRS.length ? `<div class="card err"><b>Ошибки данных</b><br>${ERRS.map(esc).join("<br>")}</div>` : "";
+}
+
+// sendData закрывает мини-апп, бот отвечает в чате. Работает только из кнопки внизу чата.
+function send(obj, what) {
+  const payload = JSON.stringify(obj);
+  const bytes = new Blob([payload]).size;
+  if (bytes > LIMIT) { toast(`Слишком длинно: ${bytes} байт из ${LIMIT}. Сократи текст.`); return false; }
+  if (!IN_TG) { toast(`Страница открыта не из Telegram. ${what} работает из кнопки «📊 Прогресс» внизу чата бота.`); return false; }
+  try { haptic("medium"); TG.sendData(payload); }
+  catch (e) { toast(`Не отправилось: ${e.message || e}. Открой мини-апп кнопкой «📊 Прогресс» внизу чата.`); return false; }
+  setTimeout(() => toast("Telegram не закрыл окно, значит команда не ушла. Открой мини-апп кнопкой «📊 Прогресс» внизу чата, не под сообщением.", 7000), 4000);
+  return true;
 }
 
 async function decode(z) {
   const b64 = z.replace(/-/g, "+").replace(/_/g, "/") + "===".slice((z.length + 3) % 4);
   const bytes = Uint8Array.from(atob(b64), (c) => c.charCodeAt(0));
-  if (!("DecompressionStream" in window)) throw new Error("Этот Telegram слишком старый: нет DecompressionStream. Обнови приложение.");
+  if (!("DecompressionStream" in window)) throw new Error("этот Telegram слишком старый: нет DecompressionStream, обнови приложение");
   const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream("deflate-raw"));
   return JSON.parse(await new Response(stream).text());
 }
 
-function chart(values, labels, { suffix = "", max = null, min = null } = {}) {
+// ───────────── вкладки
+const TABS = { home: ["house", "Главная"], learn: ["book-open", "Учить"], practice: ["mic", "Практика"], stats: ["chart-line", "Прогресс"] };
+$$("nav button").forEach((b) => {
+  const [i, t] = TABS[b.dataset.tab]; b.innerHTML = ic(i) + t;
+  b.onclick = () => { haptic(); tab(b.dataset.tab); };
+});
+function tab(name) {
+  TAB = name;
+  $$("nav button").forEach((b) => b.classList.toggle("on", b.dataset.tab === name));
+  for (const k of Object.keys(TABS)) {
+    const el = $("#" + k); el.classList.toggle("hidden", k !== name);
+    if (k === name) { el.classList.remove("in"); void el.offsetWidth; el.classList.add("in"); }
+  }
+  scrollTo({ top: 0 });
+}
+
+// ───────────── графики
+function chart(values, labels, { suffix = "", max = null, min = null, area = false } = {}) {
   const pts = values.map((v, i) => [i, v]).filter(([, v]) => v !== null && v !== undefined);
-  if (!pts.length) return `<p class="mut">Пока нет данных.</p>`;
-  const W = 300, H = 110, P = 18;
+  if (!pts.length) return `<p class="mut" style="margin-top:8px">Пока нет данных.</p>`;
+  const W = 300, H = 120, P = 14;
   const lo = min ?? Math.min(...pts.map((p) => p[1])), hi = max ?? Math.max(...pts.map((p) => p[1]));
   const span = hi - lo || 1, n = Math.max(values.length - 1, 1);
-  const xy = pts.map(([i, v]) => [P + (i / n) * (W - 2 * P), H - P - ((v - lo) / span) * (H - 2 * P)]);
+  const xy = pts.map(([i, v]) => [P + (i / n) * (W - 2 * P), H - 22 - ((v - lo) / span) * (H - 22 - P)]);
+  const line = xy.map((p) => p.map((x) => x.toFixed(1)).join(",")).join(" ");
   const last = xy[xy.length - 1], lv = pts[pts.length - 1][1];
-  return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img">
-    <polyline fill="none" stroke="var(--acc)" stroke-width="2.5" vector-effect="non-scaling-stroke" points="${xy.map((p) => p.join(",")).join(" ")}"/>
-    ${xy.map((p) => `<circle cx="${p[0]}" cy="${p[1]}" r="2.5" fill="var(--acc)"/>`).join("")}
-    <text x="${Math.min(last[0], W - 40)}" y="${Math.max(last[1] - 6, 12)}" font-size="12" fill="var(--fg)">${esc(lv)}${suffix}</text>
-    <text x="${P}" y="${H - 3}" font-size="10" fill="var(--mut)">${esc(labels[0] ?? "")}</text>
-    <text x="${W - P - 30}" y="${H - 3}" font-size="10" fill="var(--mut)">${esc(labels[labels.length - 1] ?? "")}</text>
-  </svg>`;
+  const fill = area && xy.length > 1 ? `<polygon fill="url(#ag)" points="${xy[0][0]},${H - 22} ${line} ${last[0]},${H - 22}"/>` : "";
+  return `<svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img">${fill}
+    <polyline fill="none" stroke="var(--acc)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke" points="${line}"/>
+    <circle cx="${last[0]}" cy="${last[1]}" r="4.5" fill="var(--card)" stroke="var(--acc)" stroke-width="3" vector-effect="non-scaling-stroke"/>
+    <text x="${Math.min(last[0], W - 44)}" y="${Math.max(last[1] - 10, 12)}" font-size="13" font-weight="800" fill="var(--fg)">${esc(lv)}${suffix}</text>
+    <text x="${P}" y="${H - 4}" font-size="11" fill="var(--mut)">${esc(labels[0] ?? "")}</text>
+    <text x="${W - P}" y="${H - 4}" font-size="11" fill="var(--mut)" text-anchor="end">${esc(labels[labels.length - 1] ?? "")}</text></svg>`;
 }
 
-function renderProgress() {
-  const d = D, f = d.form;
-  const st = d.stage;
-  const delta = f.delta > 0 ? `<span class="up">+${f.delta}</span>` : f.delta < 0 ? `<span class="down">${f.delta}</span>` : "0";
-  const rec = d.rec || [], ps = d.ps || [];
-  $("#prog").innerHTML = `
-    <p class="mut">Данные на ${esc(d.at)}. Свежие: кнопка «📊 Прогресс» после /app.${d.cut ? " Показаны последние точки, старые не влезли в ссылку." : ""}</p>
-    <div class="card"><div class="row"><h2>Ступень</h2><span class="mut">ранг ${esc(d.rank)}</span></div>
-      <div class="big">${st === null ? "?" : st}<span class="mut" style="font-size:18px"> / 10</span></div>
-      <div class="bar"><i style="width:${(st || 0) * 10}%"></i></div>
-      <p class="mut">Растет только экзаменом ступени, не падает.</p></div>
-    <div class="card"><div class="row"><h2>Форма</h2><span class="mut">сегодня ${delta}</span></div>
-      <div class="big">${f.now}</div>
-      <p class="mut">Оценка дня пока ${f.today}/100: повторы 40, урок 40, речь 20. Пропуск дня снимает 10%.</p>
-      ${chart(f.s, [f.start, "сегодня"], { min: 0 })}</div>
-    <div class="card"><div class="row"><h2>Серия</h2><span class="mut">лучшая ${d.streak[1]}</span></div>
-      <div class="big">${d.streak[0]}<span class="mut" style="font-size:18px"> дн.</span></div></div>
-    <div class="card"><h2>Достижения</h2><div class="ach">
-      ${d.ach.map(([t, got, p]) => `<div class="${got ? "got" : "no"}">${got ? "🏆" : "🔒"} ${esc(t)}<br><span class="mut">${esc(p)}</span></div>`).join("")}
-    </div></div>
-    <div class="card"><h2>Темп речи, слов в минуту</h2>${chart(rec.map((r) => r[1]), rec.map((r) => r[0]))}</div>
-    <div class="card"><h2>Паузы длиннее 2 с, в минуту</h2>${chart(rec.map((r) => r[2]), rec.map((r) => r[0]), { min: 0 })}</div>
-    <div class="card"><h2>Past simple верно, %</h2>${chart(ps.map((r) => r[1]), ps.map((r) => r[0]), { suffix: "%", min: 0, max: 100 })}</div>`;
+// ───────────── главная
+function renderHome() {
+  const name = (IN_TG && TG.initDataUnsafe && TG.initDataUnsafe.user && TG.initDataUnsafe.user.first_name) || "Khan";
+  if (!D || !D.form) {
+    $("#home").innerHTML = `<h1>Привет, ${esc(name)}!</h1><p class="lead">Данных о прогрессе нет, но практика работает.</p>
+      <button class="btn press" style="margin-top:18px" data-go="practice">${ic("mic")}К практике</button>`;
+    return wireGo($("#home"));
+  }
+  const f = D.form, st = D.stage ?? 0;
+  const delta = f.delta > 0 ? `+${f.delta}` : `${f.delta}`;
+  const t = D.tasks, filled = t ? t.items.filter((it) => has(ANS[it.id])).length : 0;
+  const todo = [
+    [!!D.plan, "calendar-check", "План дня", D.plan ? "Пришел в чат в 9:00" : "Репетитор еще не положил план", null],
+    [D.due === 0, "layers", "Карточки", D.due === null ? "Трекер не читается" : D.due ? `${D.due} к повтору` : "Все повторено", D.due ? ["review", "Повторить"] : null],
+    [t ? D.sent : true, "target", "Задания", t ? (D.sent ? "Ответы отправлены" : `Готово ${filled} из ${t.items.length}, не отправлены`) : "На сегодня нет", t && !D.sent ? ["learn", "Открыть"] : null],
+    [D.prt > 0, "mic", "Разговор", D.prt ? `Сцен сегодня: ${D.prt}, речи ${D.min} мин` : (D.min ? `Речи ${D.min} мин` : "Одна сцена 5 минут"), D.prt ? null : ["practice", "Начать"]],
+  ];
+  const left = todo.filter((x) => !x[0]).length;
+  const R = 38, C = 2 * Math.PI * R;
+  const pick = suggest();
+  $("#home").innerHTML = `
+    <div class="head"><div><h1>Привет, ${esc(name)}!</h1><p class="lead">${left ? `На сегодня осталось ${left} из ${todo.length}` : "День закрыт, отличная работа"}</p></div>
+      <span class="pill">${ic("flame")}${D.streak[0]}</span></div>
+    <div class="hero"><div class="sub">Форма</div>
+      <div class="big">${f.now}<span class="delta">${delta}&nbsp;за день</span></div>
+      <div class="sub" style="margin-top:6px">Оценка дня ${f.today} из 100</div>
+      <div class="stats"><div class="stat"><b>${D.streak[0]} дн.</b><span>серия, лучшая ${D.streak[1]}</span></div>
+        <div class="stat"><b>${D.min || 0} мин</b><span>речи сегодня</span></div></div></div>
+    <h2>Сегодня</h2>
+    <div class="card">${todo.map(([done, i, h, p, act]) => `<div class="todo ${done ? "done" : ""}"><div class="chk">${ic("check")}</div>
+      <div class="tx"><h3>${h}</h3><p>${esc(p)}</p></div>${act ? `<button class="press" data-act="${act[0]}">${act[1]}</button>` : ""}</div>`).join("")}</div>
+    ${pick ? `<h2>Попробуй сегодня</h2>${rowHtml(pick)}` : ""}
+    <h2>Ступень</h2>
+    <div class="card ring"><svg viewBox="0 0 92 92"><circle class="bgc" cx="46" cy="46" r="${R}"/><circle class="fgc" cx="46" cy="46" r="${R}" stroke-dasharray="${C}" stroke-dashoffset="${C}" data-off="${C * (1 - st / 10)}"/></svg>
+      <div><div class="num">${D.stage === null ? "?" : st}<span class="mut" style="font-size:16px"> / 10</span></div>
+        <span class="rank">${ic("trophy")}${esc(D.rank)}</span>
+        <p class="mut" style="margin-top:6px">Растет только экзаменом ступени и не падает.</p></div></div>
+    <p class="mut" style="text-align:center;margin-top:14px">Данные на ${esc(D.at)}${D.cut ? ", старые точки графиков не влезли" : ""}</p>`;
+  requestAnimationFrame(() => setTimeout(() => $$(".fgc").forEach((c) => c.style.strokeDashoffset = c.dataset.off), 60));
+  $$("[data-act]", $("#home")).forEach((b) => b.onclick = () => {
+    const a = b.dataset.act;
+    if (a === "review") send({ kind: "review" }, "Повтор");
+    else tab(a);
+  });
+  wireRows($("#home"));
+}
+const wireGo = (root) => $$("[data-go]", root).forEach((b) => b.onclick = () => tab(b.dataset.go));
+
+// сцена дня: самая давно не пройденная из рабочих
+function suggest() {
+  if (!CAT) return null;
+  const pr = (D && D.pr) || {};
+  const work = CAT.scenarios.filter((s) => s.cat === "work");
+  return work.slice().sort((a, b) => ((pr[a.id] || [0])[0] - (pr[b.id] || [0])[0]))[new Date().getDate() % 2] || null;
 }
 
-// ───────────── задания
-const KEY = () => "ans-" + (D.tasks ? D.tasks.date : "");
+// ───────────── учить
+const KEY = () => "ans-" + (D && D.tasks ? D.tasks.date : "");
 function saveLocal() { try { localStorage.setItem(KEY(), JSON.stringify(ANS)); } catch (e) { /* только удобство */ } }
 function loadLocal() { try { return JSON.parse(localStorage.getItem(KEY()) || "{}"); } catch (e) { return {}; } }
 const norm = (s) => String(s).trim().toLowerCase().replace(/[.!?]+$/, "").replace(/\s+/g, " ");
 const isRight = (ans, v) => [].concat(ans).some((a) => norm(a) === norm(v));
+const has = (v) => v !== undefined && v !== "" && !(Array.isArray(v) && !v.length);
 
-function renderTasks() {
-  const t = D.tasks;
-  if (!t) { $("#task").innerHTML = `<div class="card">Заданий на сегодня нет. Их кладет репетитор после урока.</div>`; return; }
-  ANS = loadLocal();
-  $("#task").innerHTML = (D.sent ? `<div class="card mut">Ответы сегодня уже отправлены. Можно отправить еще раз, репетитор увидит обе версии.</div>` : "") +
-    t.items.map((it, k) => `<div class="card task" id="it-${esc(it.id)}"><p><b>${k + 1}.</b> ${esc(it.prompt)}</p>${body(it)}<div class="res" id="r-${esc(it.id)}"></div></div>`).join("") +
-    `<button id="send" class="primary">Отправить ответы</button><div class="res" id="send-res"></div>`;
-  t.items.forEach(wire);
-  $("#send").onclick = sendAnswers;
-  if (IN_TG) { TG.MainButton.setText("Отправить ответы"); TG.MainButton.onClick(sendAnswers); }
+function renderLearn() {
+  const due = D ? D.due : null, t = D && D.tasks;
+  ANS = t ? loadLocal() : {};
+  $("#learn").innerHTML = `<h1>Учить</h1><p class="lead">Карточки из трекера и задания от репетитора</p>
+    <div class="card c-violet" style="background:var(--violet-bg);margin-top:18px">
+      <div class="cards-hero"><div class="tile" style="padding:0;min-height:0;background:none;box-shadow:none"><div class="sq" style="margin:0">${ic("layers")}</div></div>
+        <div style="flex:1"><div class="num">${due ?? "?"}</div><p class="mut">${due === null ? "трекер не читается" : "карточек к повтору сегодня"}</p></div></div>
+      ${due ? `<button class="btn press" style="margin-top:14px;background:var(--violet)" id="go-review">${ic("repeat")}Повторить в чате</button>` : ""}</div>
+    <h2>Задания</h2>
+    ${!t ? `<div class="card"><p>Заданий на сегодня нет.</p><p class="mut" style="margin-top:4px">Их кладет репетитор после урока.</p></div>` :
+      (D.sent ? `<div class="card"><p class="mut">Ответы сегодня уже отправлены. Можно отправить еще раз, репетитор увидит обе версии.</p></div>` : "") +
+      `<div class="card"><div class="head"><h3>Сделано</h3><span class="mut" id="t-cnt"></span></div><div class="bar"><i id="t-bar" style="width:0"></i></div></div>` +
+      t.items.map((it, k) => `<div class="card task" id="it-${esc(it.id)}"><p class="q">${k + 1}. ${esc(it.prompt)}</p>${body(it)}<div class="res" id="r-${esc(it.id)}"></div></div>`).join("") +
+      `<button class="btn press" id="send-tasks">${ic("check")}Отправить ответы</button>`}`;
+  const r = $("#go-review"); if (r) r.onclick = () => send({ kind: "review" }, "Повтор");
+  if (t) { t.items.forEach(wire); $("#send-tasks").onclick = sendAnswers; count(); }
+}
+function count() {
+  const t = D.tasks, n = t.items.filter((it) => has(ANS[it.id])).length;
+  $("#t-cnt").textContent = `${n} из ${t.items.length}`; $("#t-bar").style.width = `${100 * n / t.items.length}%`;
 }
 
 function body(it) {
   const v = ANS[it.id] ?? "";
-  if (it.type === "choice") return `<div class="opts">${it.options.map((o) => `<button data-o="${esc(o)}">${esc(o)}</button>`).join("")}</div>`;
-  if (it.type === "gap") return `<input value="${esc(v)}" placeholder="слово${it.hint ? ", подсказка: " + esc(it.hint) : ""}"><div class="opts" style="margin-top:8px"><button data-check>Проверить</button></div>`;
+  if (it.type === "choice") return `<div class="opts">${it.options.map((o) => `<button class="chip press" data-o="${esc(o)}">${esc(o)}</button>`).join("")}</div>`;
+  if (it.type === "gap") return `<input value="${esc(v)}" placeholder="слово${it.hint ? ", подсказка: " + esc(it.hint) : ""}"><div class="opts" style="margin-top:10px"><button class="chip press" data-check>Проверить</button></div>`;
   if (it.type === "fix") return `<textarea placeholder="исправленная фраза целиком">${esc(v)}</textarea>`;
-  if (it.type === "timer") return `<div class="timer" data-t>${fmt(it.rounds[0])}</div><div class="opts">${it.rounds.map((s, i) => `<button data-r="${i}">Раунд ${i + 1}: ${fmt(s)}</button>`).join("")}<button data-stop>Стоп</button></div><p class="mut">Говори голосовым в чат бота, таймер держит время.</p>`;
+  if (it.type === "timer") return `<div class="timer" data-t>${fmt(it.rounds[0])}</div><div class="opts">${it.rounds.map((s, i) => `<button class="chip press" data-r="${i}">Раунд ${i + 1}: ${fmt(s)}</button>`).join("")}<button class="chip press" data-stop>Стоп</button></div><p class="mut" style="margin-top:8px">Говори голосовым в чат бота, таймер держит время.</p>`;
   return `<p class="mut">Неизвестный тип задания: ${esc(it.type)}</p>`;
 }
 
@@ -156,87 +376,183 @@ let TIMER = null;
 
 function wire(it) {
   const box = $(`#it-${CSS.escape(it.id)}`), res = $(`#r-${CSS.escape(it.id)}`);
+  const save = (v) => { ANS[it.id] = v; saveLocal(); count(); };
   const verdict = (v) => {
     if (it.answer === undefined) { res.textContent = "Сохранено, проверит репетитор."; return; }
-    res.innerHTML = isRight(it.answer, v) ? `<span class="up">✅ Верно</span>` : `<span class="down">❌ Верно: ${esc([].concat(it.answer)[0])}</span>`;
+    const ok = isRight(it.answer, v); haptic(ok ? "light" : "rigid");
+    res.innerHTML = ok ? `<span class="up">Верно!</span>` : `<span class="down">Верно: ${esc([].concat(it.answer)[0])}</span>`;
   };
   if (it.type === "choice") {
-    box.querySelectorAll("[data-o]").forEach((b) => {
+    $$("[data-o]", box).forEach((b) => {
       if (ANS[it.id] === b.dataset.o) { b.classList.add("on"); verdict(b.dataset.o); }
-      b.onclick = () => {
-        box.querySelectorAll("[data-o]").forEach((x) => x.classList.remove("on"));
-        b.classList.add("on"); ANS[it.id] = b.dataset.o; saveLocal(); verdict(b.dataset.o);
-      };
+      b.onclick = () => { $$("[data-o]", box).forEach((x) => x.classList.remove("on")); b.classList.add("on"); save(b.dataset.o); verdict(b.dataset.o); };
     });
   } else if (it.type === "gap") {
-    const inp = box.querySelector("input");
-    inp.oninput = () => { ANS[it.id] = inp.value; saveLocal(); res.textContent = ""; };
-    box.querySelector("[data-check]").onclick = () => {
+    const inp = $("input", box);
+    inp.oninput = () => { save(inp.value); res.textContent = ""; };
+    $("[data-check]", box).onclick = () => {
       if (!inp.value.trim()) { res.innerHTML = `<span class="down">Сначала впиши слово.</span>`; return; }
-      ANS[it.id] = inp.value; saveLocal(); verdict(inp.value);
+      save(inp.value); verdict(inp.value);
     };
   } else if (it.type === "fix") {
-    const ta = box.querySelector("textarea");
-    ta.oninput = () => { ANS[it.id] = ta.value; saveLocal(); res.textContent = "Сохранено, проверит репетитор."; };
+    const ta = $("textarea", box);
+    ta.oninput = () => { save(ta.value); res.textContent = "Сохранено, проверит репетитор."; };
   } else if (it.type === "timer") {
-    const out = box.querySelector("[data-t]");
-    const done = new Set(ANS[it.id] || []);
+    const out = $("[data-t]", box), done = new Set(ANS[it.id] || []);
     if (done.size) res.textContent = `Пройдено раундов: ${[...done].map((i) => i + 1).join(", ")}`;
-    box.querySelectorAll("[data-r]").forEach((b) => b.onclick = () => {
+    $$("[data-r]", box).forEach((b) => b.onclick = () => {
       clearInterval(TIMER);
       const i = +b.dataset.r; let left = it.rounds[i];
       out.textContent = fmt(left); res.textContent = `Идет раунд ${i + 1}. Говори!`;
       TIMER = setInterval(() => {
         left -= 1; out.textContent = fmt(Math.max(left, 0));
         if (left <= 0) {
-          clearInterval(TIMER); done.add(i); ANS[it.id] = [...done].sort(); saveLocal();
+          clearInterval(TIMER); done.add(i); save([...done].sort());
           res.textContent = `Раунд ${i + 1} закончен. Пройдено: ${[...done].map((x) => x + 1).join(", ")}`;
-          try { TG && TG.HapticFeedback && TG.HapticFeedback.notificationOccurred("success"); } catch (e) {}
+          try { IN_TG && TG.HapticFeedback.notificationOccurred("success"); } catch (e) {}
         }
       }, 1000);
     });
-    box.querySelector("[data-stop]").onclick = () => { clearInterval(TIMER); res.textContent = "Остановлено, раунд не засчитан."; };
+    $("[data-stop]", box).onclick = () => { clearInterval(TIMER); res.textContent = "Остановлено, раунд не засчитан."; };
   }
 }
 
 function sendAnswers() {
-  const out = $("#send-res"), btn = $("#send");
-  tab("task");                  // итог пишется под кнопкой: вкладка должна быть видна
-  try {
-    const payload = JSON.stringify({ date: D.tasks.date, answers: ANS });
-    const bytes = new Blob([payload]).size;
-    if (bytes > LIMIT) { out.innerHTML = `<span class="down">Слишком длинно: ${bytes} байт из ${LIMIT}. Сократи ответы в «исправь фразу».</span>`; return; }
-    const filled = D.tasks.items.filter((it) => ANS[it.id] !== undefined && ANS[it.id] !== "" && !(Array.isArray(ANS[it.id]) && !ANS[it.id].length)).length;
-    if (!IN_TG) { out.innerHTML = `<span class="down">Страница открыта не из Telegram: отправка работает только из кнопки «📊 Прогресс» в чате бота. Готово к отправке: ${filled} из ${D.tasks.items.length}, ${bytes} байт.</span>`; return; }
-    btn.disabled = true; btn.textContent = `Отправляю ${filled} из ${D.tasks.items.length}...`;
-    TG.sendData(payload);   // закрывает мини-апп; бот ответит в чате
-    setTimeout(() => {      // окно не закрылось: Telegram отправку не принял
-      btn.disabled = false; btn.textContent = "Отправить ответы";
-      out.innerHTML = `<span class="down">Telegram не закрыл окно, значит ответы не ушли. Открой мини-апп кнопкой «📊 Прогресс» внизу чата (не под сообщением) и нажми еще раз.</span>`;
-    }, 4000);
-  } catch (e) {
-    btn.disabled = false; btn.textContent = "Отправить ответы";
-    out.innerHTML = `<span class="down">Не отправилось: ${esc(e.message || e)}. Если открыл из кнопки под сообщением, открой из кнопки «📊 Прогресс» внизу чата.</span>`;
+  const filled = D.tasks.items.filter((it) => has(ANS[it.id])).length;
+  if (send({ kind: "tasks", date: D.tasks.date, answers: ANS }, "Отправка ответов")) {
+    const b = $("#send-tasks"); b.disabled = true; b.textContent = `Отправляю ${filled} из ${D.tasks.items.length}...`;
+    setTimeout(() => { b.disabled = false; b.innerHTML = ic("check") + "Отправить ответы"; }, 4000);
   }
 }
 
-// ───────────── старт
-function tab(name) {
-  $("#t-prog").classList.toggle("on", name === "prog"); $("#t-task").classList.toggle("on", name === "task");
-  $("#prog").classList.toggle("hidden", name !== "prog"); $("#task").classList.toggle("hidden", name !== "task");
-  if (IN_TG && D && D.tasks) { name === "task" ? TG.MainButton.show() : TG.MainButton.hide(); }
+// ───────────── практика
+const byId = (id) => CAT && CAT.scenarios.find((s) => s.id === id);
+const catColor = (s) => s.color || ((CAT.cats.find((c) => c.id === s.cat) || {}).color) || "indigo";
+function rowHtml(s) {
+  const p = D && D.pr && D.pr[s.id];
+  const badge = p ? `<span class="badge ok">${p[2] ? `${p[1]}/${p[2]}` : "✓"} · ${p[0]}×</span>` : "";
+  return `<button class="row press c-${catColor(s)}" data-sc="${esc(s.id)}"><div class="dot">${ic(s.icon)}</div>
+    <div class="tx"><h3>${esc(s.title)}</h3><p>${esc(s.sub)}</p></div>${badge}</button>`;
 }
-$("#t-prog").onclick = () => tab("prog");
-$("#t-task").onclick = () => tab("task");
+function wireRows(root) { $$("[data-sc]", root).forEach((b) => b.onclick = () => { haptic(); openScenario(b.dataset.sc); }); }
 
+function renderPractice() {
+  if (!CAT) { $("#practice").innerHTML = `<h1>Практика</h1><div class="card err"><b>Сценарии не загрузились.</b><br>Проверь интернет и открой мини-апп заново.</div>`; return; }
+  const quick = CAT.quick.map(byId).filter(Boolean);
+  $("#practice").innerHTML = `
+    <div class="head"><h1>Практика</h1>${D && D.prt ? `<span class="pill">${ic("sparkles")}${D.prt} сегодня</span>` : ""}</div>
+    <p class="lead">Сцены по сценариям: собеседник пишет в чат, ты отвечаешь голосом</p>
+    <div class="tiles">${quick.map((s) => `<button class="tile press c-${s.tile || catColor(s)}" data-sc="${esc(s.id)}"><div class="sq">${ic(s.icon)}</div><h3>${esc(s.title)}</h3><p>${esc(s.sub)}</p></button>`).join("")}</div>
+    ${CAT.cats.map((c) => `<h2>${esc(c.title)}</h2>${CAT.scenarios.filter((s) => s.cat === c.id).map(rowHtml).join("")}`).join("")}`;
+  wireRows($("#practice"));
+}
+
+function openSheet(html) {
+  $("#sheet-body").innerHTML = html;
+  $("#veil").classList.add("open"); $("#sheet").classList.add("open");
+  $("#sheet").scrollTop = 0;
+  $$("[data-close]", $("#sheet")).forEach((b) => b.onclick = closeSheet);
+  if (IN_TG) { try { TG.BackButton.show(); } catch (e) {} }
+}
+function closeSheet() {
+  $("#veil").classList.remove("open"); $("#sheet").classList.remove("open");
+  if (IN_TG) { try { TG.BackButton.hide(); } catch (e) {} }
+}
+$("#veil").onclick = closeSheet;
+if (IN_TG) { try { TG.BackButton.onClick(closeSheet); } catch (e) {} }
+
+function lvlGet(id) { try { return localStorage.getItem("lvl-" + id) || "B1"; } catch (e) { return "B1"; } }
+function lvlSet(id, v) { try { localStorage.setItem("lvl-" + id, v); } catch (e) {} }
+
+function openScenario(id) {
+  const s = byId(id);
+  if (!s) { toast("Такого сценария нет. Обнови мини-апп: /app в чате."); return; }
+  if (s.kind === "writing") return openWriting(s);
+  let lvl = lvlGet(id);
+  const goals = s.kind === "words" ? ["Бот возьмет 5 слов из твоего трекера", "Собери из них короткую историю голосом", "Итог покажет, какие слова прозвучали"] : s.goals.map((g) => g.t);
+  const hard = s.hard ? s.hard.length : 0;
+  const levels = Object.entries(CAT.levels).filter(([k]) => k !== "B2" || hard || s.kind !== "scenario");
+  openSheet(`
+    <div class="head"><h1>${esc(s.title)}</h1><button class="x" data-close aria-label="Закрыть">${ic("x")}</button></div>
+    <p class="lead" style="margin-top:8px">${esc(s.sub)}.${s.who ? ` Собеседник: ${esc(s.who)}.` : ""}</p>
+    <div class="cap">Твоя цель: выполнить все пункты</div>
+    ${goals.map((g) => `<div class="goal">${ic("check")}<span>${esc(g)}</span></div>`).join("")}
+    <div class="cap">Сложность</div>
+    <div class="lvl">${levels.map(([k]) => `<button class="chip press${k === lvl ? " on" : ""}" data-l="${k}">${k}</button>`).join("")}</div>
+    <p class="mut" id="lvl-d" style="margin-top:8px"></p>
+    <p class="note"><span id="n-turns"></span>. Отвечай в чате голосовым или текстом. В конце бот покажет цели по ключевым словам, число слов и темп. Смысл и грамматику разберет репетитор на уроке.</p>
+    <button class="btn press" id="go">${ic("play")}Начать</button>`);
+  const desc = () => {
+    $("#lvl-d").textContent = CAT.levels[lvl] || "";
+    $("#n-turns").textContent = s.turns ? `${s.turns.length + (lvl === "B2" ? hard : 0)} реплик` : s.kind === "pool" ? `${s.pick} вопроса` : "Две реплики";
+  };
+  desc();
+  $$("[data-l]", $("#sheet")).forEach((b) => b.onclick = () => {
+    haptic(); lvl = b.dataset.l; lvlSet(id, lvl);
+    $$("[data-l]", $("#sheet")).forEach((x) => x.classList.toggle("on", x === b)); desc();
+  });
+  $("#go").onclick = () => send({ kind: "practice", id, level: lvl }, "Запуск сцены");
+}
+
+function openWriting(s) {
+  const prompts = CAT.writing || [];
+  let k = 0;
+  const draft = () => { try { return localStorage.getItem("w-draft") || ""; } catch (e) { return ""; } };
+  openSheet(`
+    <div class="head"><h1>${esc(s.title)}</h1><button class="x" data-close aria-label="Закрыть">${ic("x")}</button></div>
+    <p class="lead" style="margin-top:8px">Напиши по-английски, репетитор разберет ошибки на уроке.</p>
+    <div class="cap">Тема</div>
+    <div class="opts" id="wp">${prompts.map((p, i) => `<button class="chip press${i ? "" : " on"}" data-p="${i}">${i + 1}</button>`).join("")}</div>
+    <p style="margin:12px 0" id="wp-t">${esc(prompts[0] || "")}</p>
+    <textarea id="wt" style="min-height:150px" placeholder="Your text in English...">${esc(draft())}</textarea>
+    <p class="mut" id="wc" style="margin:6px 0 16px"></p>
+    <button class="btn press" id="wsend">${ic("pen-line")}Отправить репетитору</button>`);
+  const wt = $("#wt"), wc = () => { const n = (wt.value.match(/[A-Za-z']+/g) || []).length; $("#wc").textContent = `${n} слов`; };
+  wc();
+  wt.oninput = () => { wc(); try { localStorage.setItem("w-draft", wt.value); } catch (e) {} };
+  $$("[data-p]", $("#sheet")).forEach((b) => b.onclick = () => {
+    k = +b.dataset.p; $$("[data-p]", $("#sheet")).forEach((x) => x.classList.toggle("on", x === b)); $("#wp-t").textContent = prompts[k];
+  });
+  $("#wsend").onclick = () => {
+    if (!wt.value.trim()) { toast("Сначала напиши текст."); return; }
+    if (send({ kind: "writing", prompt: prompts[k], text: wt.value.trim() }, "Отправка текста")) { try { localStorage.removeItem("w-draft"); } catch (e) {} }
+  };
+}
+
+// ───────────── прогресс
+function renderStats() {
+  if (!D || !D.form) { $("#stats").innerHTML = `<h1>Прогресс</h1><div class="card"><p>Данных нет. Отправь боту /app и открой мини-апп кнопкой внизу чата.</p></div>`; return; }
+  const f = D.form, rec = D.rec || [], ps = D.ps || [];
+  const got = D.ach.filter((a) => a[1]).length;
+  const pr = Object.entries(D.pr || {}).map(([id, v]) => [byId(id), v]).filter(([s]) => s).sort((a, b) => b[1][0] - a[1][0]);
+  $("#stats").innerHTML = `<h1>Прогресс</h1><p class="lead">Форма, речь и достижения</p>
+    <div class="kpis" style="margin-top:18px">
+      <div class="kpi c-indigo">${ic("chart-line")}<b>${f.now}</b><span class="mut">форма</span></div>
+      <div class="kpi c-orange">${ic("flame")}<b>${D.streak[0]}</b><span class="mut">дн. подряд, рекорд ${D.streak[1]}</span></div>
+      <div class="kpi c-violet">${ic("trophy")}<b>${got}</b><span class="mut">из ${D.ach.length} достижений</span></div>
+      <div class="kpi c-teal">${ic("mic")}<b>${Object.values(D.pr || {}).reduce((a, v) => a + v[0], 0)}</b><span class="mut">сцен пройдено</span></div></div>
+    <div class="card"><h3>Форма за 30 дней</h3><p class="mut">Пропуск дня снимает 10%, воскресенье не снимает</p>${chart(f.s, [f.start, "сегодня"], { min: 0, area: true })}</div>
+    <div class="card"><h3>Темп речи</h3><p class="mut">слов в минуту</p>${chart(rec.map((r) => r[1]), rec.map((r) => r[0]), { area: true })}</div>
+    <div class="card"><h3>Паузы длиннее 2 с</h3><p class="mut">в минуту, чем ниже, тем лучше</p>${chart(rec.map((r) => r[2]), rec.map((r) => r[0]), { min: 0 })}</div>
+    <div class="card"><h3>Past simple верно</h3><p class="mut">в рассказах, %</p>${chart(ps.map((r) => r[1]), ps.map((r) => r[0]), { suffix: "%", min: 0, max: 100 })}</div>
+    ${pr.length ? `<h2>Сцены</h2>${pr.map(([s, v]) => `<div class="row c-${catColor(s)}"><div class="dot">${ic(s.icon)}</div><div class="tx"><h3>${esc(s.title)}</h3><p>${v[0]} раз${v[2] ? `, лучшее ${v[1]} из ${v[2]} целей` : ""}</p></div></div>`).join("")}` : ""}
+    <h2>Достижения</h2>
+    <div class="card"><div class="ach">${D.ach.map(([t, g, p]) => `<div class="${g ? "got" : "no"}">${ic(g ? "trophy" : "lock")}<div>${esc(t)}<span>${esc(p)}</span></div></div>`).join("")}</div></div>`;
+}
+
+// ───────────── старт
 (async () => {
   const z = new URLSearchParams((window.__HASH || "").slice(1)).get("z");
-  if (!z) { showErr(["В ссылке нет данных. Открой мини-апп кнопкой «📊 Прогресс» в чате бота (/app обновит кнопку)."]); return; }
-  try { D = await decode(z); } catch (e) { showErr([`Данные в ссылке повреждены (${e.message || e}). Отправь боту /app и открой новую кнопку.`]); return; }
-  showErr(D.err || []);
-  if (!D.form) return;   // бот прислал только ошибку
-  renderProgress(); renderTasks();
-  if (D.tasks && !D.sent) tab("task");
+  const catP = fetch("scenarios.json", { cache: "no-cache" }).then((r) => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+    .then((c) => { CAT = c; }).catch((e) => showErr([`Сценарии не загрузились: ${e.message || e}`]));
+  if (!z) showErr(["В ссылке нет данных. Открой мини-апп кнопкой «📊 Прогресс» в чате бота (/app обновит кнопку)."]);
+  else {
+    try { D = await decode(z); showErr(D.err || []); }
+    catch (e) { showErr([`Данные в ссылке повреждены (${e.message || e}). Отправь боту /app и открой новую кнопку.`]); }
+  }
+  await catP;
+  renderLearn(); renderPractice(); renderStats(); renderHome();
+  tab(D && D.tasks && !D.sent && TAB === "home" ? "home" : TAB);
 })().catch((e) => showErr([`Сбой страницы: ${e.message || e}`]));
 window.addEventListener("error", (e) => showErr([`Сбой страницы: ${e.message}`]));
 </script>
