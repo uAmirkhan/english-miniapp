@@ -139,7 +139,7 @@ function renderTasks() {
     `<button id="send" class="primary">Отправить ответы</button><div class="res" id="send-res"></div>`;
   t.items.forEach(wire);
   $("#send").onclick = sendAnswers;
-  if (IN_TG) { TG.MainButton.setText("Отправить ответы"); TG.MainButton.onClick(sendAnswers); TG.MainButton.show(); }
+  if (IN_TG) { TG.MainButton.setText("Отправить ответы"); TG.MainButton.onClick(sendAnswers); }
 }
 
 function body(it) {
@@ -201,6 +201,7 @@ function wire(it) {
 
 function sendAnswers() {
   const out = $("#send-res"), btn = $("#send");
+  tab("task");                  // итог пишется под кнопкой: вкладка должна быть видна
   try {
     const payload = JSON.stringify({ date: D.tasks.date, answers: ANS });
     const bytes = new Blob([payload]).size;
@@ -209,6 +210,10 @@ function sendAnswers() {
     if (!IN_TG) { out.innerHTML = `<span class="down">Страница открыта не из Telegram: отправка работает только из кнопки «📊 Прогресс» в чате бота. Готово к отправке: ${filled} из ${D.tasks.items.length}, ${bytes} байт.</span>`; return; }
     btn.disabled = true; btn.textContent = `Отправляю ${filled} из ${D.tasks.items.length}...`;
     TG.sendData(payload);   // закрывает мини-апп; бот ответит в чате
+    setTimeout(() => {      // окно не закрылось: Telegram отправку не принял
+      btn.disabled = false; btn.textContent = "Отправить ответы";
+      out.innerHTML = `<span class="down">Telegram не закрыл окно, значит ответы не ушли. Открой мини-апп кнопкой «📊 Прогресс» внизу чата (не под сообщением) и нажми еще раз.</span>`;
+    }, 4000);
   } catch (e) {
     btn.disabled = false; btn.textContent = "Отправить ответы";
     out.innerHTML = `<span class="down">Не отправилось: ${esc(e.message || e)}. Если открыл из кнопки под сообщением, открой из кнопки «📊 Прогресс» внизу чата.</span>`;
@@ -219,6 +224,7 @@ function sendAnswers() {
 function tab(name) {
   $("#t-prog").classList.toggle("on", name === "prog"); $("#t-task").classList.toggle("on", name === "task");
   $("#prog").classList.toggle("hidden", name !== "prog"); $("#task").classList.toggle("hidden", name !== "task");
+  if (IN_TG && D && D.tasks) { name === "task" ? TG.MainButton.show() : TG.MainButton.hide(); }
 }
 $("#t-prog").onclick = () => tab("prog");
 $("#t-task").onclick = () => tab("task");
