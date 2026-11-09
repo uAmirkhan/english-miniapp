@@ -10,185 +10,196 @@
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
+/* «Синяя тетрадь» (VISION v1.0): фон и текст из темы Telegram, чернильный синий на действиях,
+   три цвета видов работы (речь, точность, словарь), коралл только у серии и праздника. */
 :root {
-  --bg: #fbf6ef; --card: #fff; --fg: #2b2420; --mut: #8a7f76; --line: #efe5d8;
-  --acc: #f0713e; --acc-dk: #d35a2b; --acc-soft: #fde6da; --ok: #4f9a5b; --ok-dk: #3d7d48; --bad: #d9534f; --gold: #e9a92c;
-  --coral-bg: #fde4d8; --coral: #e8693a; --honey-bg: #fcefcf; --honey: #c98a12; --sage-bg: #e4eedd; --sage: #5a8c55;
-  --rose-bg: #fbe3e6; --rose: #d2566b; --plum-bg: #efe5f3; --plum: #8d5ba6; --sand-bg: #f3eadd; --sand: #a7794b;
+  --bg: var(--tg-theme-bg-color, #ffffff); --fg: var(--tg-theme-text-color, #1d2433);
+  --mut: var(--tg-theme-hint-color, #7a8294); --bg2: var(--tg-theme-secondary-bg-color, #f3f4f8);
+  --ink: #2b3a67; --on-ink: #ffffff;
+  --speech: #7a5cc7; --prec: #2e9e6b; --vocab: #3d7bd9; --coral: #e4572e;
+  --ok: #2e9e6b; --bad: #c8463a;
   color-scheme: light;
 }
 :root[data-theme="dark"] {
-  --bg: #1b1714; --card: #26201c; --fg: #f5ede6; --mut: #a89c92; --line: #3a312a;
-  --acc: #ff8a57; --acc-dk: #c9643a; --acc-soft: #3f2a20; --ok: #7cc387; --ok-dk: #4f8f5a; --bad: #ff7a74; --gold: #f2c25b;
-  --coral-bg: #3d2519; --coral: #ff9b70; --honey-bg: #3a2e14; --honey: #f2c25b; --sage-bg: #22301f; --sage: #8fc487;
-  --rose-bg: #3a1f24; --rose: #f08a9a; --plum-bg: #2f2336; --plum: #c49bdb; --sand-bg: #352b20; --sand: #d7ae80;
+  --bg: var(--tg-theme-bg-color, #17212b); --fg: var(--tg-theme-text-color, #f5f5f5);
+  --mut: var(--tg-theme-hint-color, #8696a8); --bg2: var(--tg-theme-secondary-bg-color, #232e3c);
+  --ink: #8fa3e8; --on-ink: #10162b;
+  --speech: #b39dff; --prec: #5bcb95; --vocab: #7fb0ff; --coral: #ff8a65;
+  --ok: #5bcb95; --bad: #ff7a74;
   color-scheme: dark;
 }
+:root {
+  --card: var(--bg2); --line: color-mix(in srgb, var(--fg) 10%, var(--bg)); --track: color-mix(in srgb, var(--fg) 9%, var(--bg));
+  --acc: var(--ink);
+}
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-body { margin: 0; background: var(--bg); color: var(--fg); font: 700 15px/1.45 Nunito, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-main { max-width: 560px; margin: 0 auto; padding: 16px 16px calc(100px + env(safe-area-inset-bottom)); }
-h1 { font-size: 30px; font-weight: 900; letter-spacing: -.01em; margin: 6px 0 2px; line-height: 1.15; }
-h2 { font-size: 20px; font-weight: 900; margin: 26px 0 12px; }
-h3 { font-size: 17px; font-weight: 800; margin: 0; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 500 15px/1.45 Onest, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+main { max-width: 560px; margin: 0 auto; padding: 16px 16px calc(96px + env(safe-area-inset-bottom)); }
+h1 { font-size: 25px; font-weight: 800; letter-spacing: -.01em; margin: 2px 0 0; line-height: 1.2; }
+h2 { font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--mut); margin: 26px 0 4px; }
+h3 { font-size: 16px; font-weight: 600; margin: 0; }
 p { margin: 0; }
-.mut { color: var(--mut); font-size: 14px; font-weight: 700; }
-.lead { color: var(--mut); font-size: 16px; font-weight: 700; }
+.mut { color: var(--mut); font-size: 14px; font-weight: 500; }
+.sm { font-size: 12.5px; }
+.lead { color: var(--mut); font-size: 15px; font-weight: 500; }
 .hidden { display: none !important; }
 .ic { width: 24px; height: 24px; flex: none; display: block; }
 button { font: inherit; color: inherit; border: 0; background: none; cursor: pointer; padding: 0; }
 button:disabled { opacity: .55; cursor: default; }
 
-/* появление и отклик: короткие, без навязчивости */
-.in > * { animation: up .35s cubic-bezier(.2, .8, .2, 1) both; }
-.in > *:nth-child(2) { animation-delay: .04s; } .in > *:nth-child(3) { animation-delay: .08s; }
-.in > *:nth-child(4) { animation-delay: .12s; } .in > *:nth-child(n+5) { animation-delay: .16s; }
-@keyframes up { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
-@keyframes pop { 0% { transform: scale(.6); opacity: 0; } 70% { transform: scale(1.08); } 100% { transform: scale(1); opacity: 1; } }
-@media (prefers-reduced-motion: reduce) { .in > * { animation: none; } }
+/* движение: короткое, при reduced-motion выключено целиком */
+.in > * { animation: up .25s cubic-bezier(.2, .8, .2, 1) both; }
+.in > *:nth-child(2) { animation-delay: .03s; } .in > *:nth-child(3) { animation-delay: .06s; }
+.in > *:nth-child(n+4) { animation-delay: .09s; }
+@keyframes up { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@keyframes pulse { 50% { transform: scaleY(1.3); } }
+.press { transition: transform .1s ease; }
+.press:active { transform: scale(.985); }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
 
-/* карточки: плоские, с кромкой */
-.card { background: var(--card); border: 2px solid var(--line); border-radius: 20px; padding: 16px; margin: 12px 0; }
-.err { border-color: var(--bad); }
+/* ───── главная */
+.hd { display: flex; align-items: flex-start; gap: 12px; }
+.hd > div { flex: 1; min-width: 0; }
+.streak { display: inline-flex; align-items: center; gap: 4px; color: var(--coral); font-weight: 700; font-size: 16px; margin-top: 4px; }
+.streak .ic { width: 22px; height: 22px; }
+
+.lvl { margin-top: 20px; }
+.lvl-hd { display: flex; align-items: center; gap: 10px; }
+.lvl-hd b { font-size: 34px; font-weight: 800; color: var(--ink); line-height: 1; letter-spacing: -.02em; white-space: nowrap; }
+.lvl-hd b.no { font-size: 22px; }
+.lvl-hd span { font-size: 12.5px; color: var(--mut); line-height: 1.4; }
+.track { position: relative; height: 16px; display: flex; gap: 3px; margin: 14px 0 6px; }
+.track > i { position: relative; display: block; height: 100%; background: var(--track); border-radius: 4px; overflow: hidden; }
+.track > i > u { position: absolute; left: 0; top: 0; bottom: 0; background: var(--ink); }
+.track > i.cur { background: color-mix(in srgb, var(--ink) 16%, var(--bg)); }   /* текущая полоса видна и на ее нижней границе */
+.track > i.cur > u { background: linear-gradient(90deg, var(--ink), color-mix(in srgb, var(--ink) 55%, var(--bg))); }
+/* штрих в два цвета: чернила видны на пустой части, светлые полосы на залитой, зона ± читается по обе стороны отметки */
+.zone { position: absolute; top: 0; bottom: 0; border-radius: 4px; background: repeating-linear-gradient(45deg, color-mix(in srgb, var(--ink) 38%, transparent) 0 3px, color-mix(in srgb, var(--bg) 55%, transparent) 3px 6px); }
+.stale { margin-top: 20px; padding: 12px 0; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--line); font-size: 14px; }
+.stale b { font-weight: 700; }
+.mark { position: absolute; top: -6px; width: 4px; height: 28px; margin-left: -2px; border-radius: 2px; background: var(--fg); box-shadow: 0 0 0 2px var(--bg); }
+.mark.ghost { opacity: .25; box-shadow: none; }
+.mark.pulse { animation: pulse .6s ease-out 2; }
+.lab { display: flex; gap: 3px; font-size: 11.5px; color: var(--mut); }
+.need { margin: 10px 0 0; padding-left: 18px; font-size: 13px; color: var(--mut); }
+.need li { margin: 2px 0; }
+.subs { display: flex; gap: 14px; margin-top: 14px; align-items: flex-end; }
+.subs > div { flex: 1; min-width: 0; font-size: 11.5px; color: var(--mut); }
+.subs i { display: block; height: 5px; border-radius: 3px; background: var(--track); margin-top: 4px; overflow: hidden; }
+.subs i u { display: block; height: 100%; background: var(--c); }
+.subs .fz u { opacity: .45; }
+.subs > .st { flex: none; text-align: right; }
+.subs .st b { display: block; font-size: 15px; font-weight: 700; color: var(--fg); line-height: 1.1; }
+
+.now { margin-top: 22px; width: 100%; display: flex; align-items: center; gap: 12px; text-align: left; background: var(--ink); color: var(--on-ink); border-radius: 14px; padding: 14px 16px; font-weight: 700; font-size: 16px; line-height: 1.3; }
+.now > span { flex: 1; min-width: 0; }
+.now small { display: block; font-weight: 500; font-size: 12.5px; opacity: .78; margin-top: 2px; }
+.now.quiet { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--ink) 40%, transparent); }
+.now.quiet small { color: var(--mut); opacity: 1; }
+
+.todo { display: flex; align-items: center; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--line); }
+.todo:last-child { border-bottom: 0; }
+.todo .chk { width: 22px; height: 22px; border-radius: 50%; border: 2px solid color-mix(in srgb, var(--c) 50%, var(--bg)); flex: none; display: grid; place-items: center; color: transparent; }
+.todo.done .chk { background: var(--c); border-color: var(--c); color: var(--bg); }
+.todo .chk .ic { width: 13px; height: 13px; }
+.todo .tx { flex: 1; min-width: 0; }
+.todo .tx b { display: block; font-weight: 600; font-size: 15px; }
+.todo .tx span { font-size: 12.5px; color: var(--mut); }
+.todo .go { flex: none; color: var(--ink); font-weight: 700; font-size: 14px; padding: 8px 0 8px 10px; }
+
+.goal-l { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; font-size: 14px; margin-top: 6px; }
+.goal-l b { font-weight: 700; font-size: 15px; }
+.goal-l .sp { color: var(--speech); font-weight: 600; }
+.goal-l .sp.no { color: var(--mut); font-weight: 500; }
+.gbar { height: 5px; border-radius: 3px; background: var(--track); margin: 8px 0 14px; overflow: hidden; }
+.gbar u { display: block; height: 100%; background: var(--ink); }
+.week { display: flex; justify-content: space-between; }
+.day { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11.5px; color: var(--mut); width: 36px; }
+.day i { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; position: relative; background: conic-gradient(var(--ink) calc(var(--p) * 1%), var(--track) 0); }
+.day i::after { content: ""; position: absolute; inset: 4px; border-radius: 50%; background: var(--bg); }
+.day.met i { background: var(--ink); color: var(--on-ink); } .day.met i::after { display: none; }
+.day i .ic { width: 14px; height: 14px; position: relative; z-index: 1; }
+.day.rest i { background: var(--track); color: var(--mut); } .day.rest i::after { display: none; }
+.day.future i { background: var(--track); opacity: .5; } .day.future i::after { display: none; }
+.day.today span { color: var(--fg); font-weight: 700; }
+.foot { text-align: center; margin-top: 22px; font-size: 12px; color: var(--mut); }
+
+/* ───── «Учить», «Практика», «Прогресс» (F5): строки и пробел вместо плиток, иконка цветом вида работы без подложки */
+.card { background: var(--card); border-radius: 14px; padding: 14px 16px; margin: 12px 0; }   /* только ошибки данных */
+.err { box-shadow: inset 0 0 0 1.5px var(--bad); }
 .err b { color: var(--bad); }
-.press { transition: transform .1s ease, box-shadow .1s ease; }
-.press:active { transform: translateY(2px); }
-
-/* верхняя полоса: серия и опыт */
-.top { display: flex; gap: 8px; justify-content: space-between; align-items: center; }
-.chips { display: flex; gap: 6px; }
-.stat { display: inline-flex; align-items: center; gap: 5px; padding: 6px 11px; border-radius: 99px; border: 2px solid var(--line); background: var(--card); font-weight: 900; font-size: 15px; white-space: nowrap; }
-.stat .ic { width: 18px; height: 18px; }
-.s-fire { color: var(--acc); } .s-xp { color: var(--gold); }
-
-/* цель дня */
-.goal-card { display: flex; gap: 16px; align-items: center; }
-.ring { position: relative; width: 104px; height: 104px; flex: none; }
-.ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
-.ring circle { fill: none; stroke-width: 11; }
-.ring .bgc { stroke: var(--acc-soft); }
-.ring .fgc { stroke: var(--acc); stroke-linecap: round; transition: stroke-dashoffset 1.1s cubic-bezier(.2, .8, .2, 1); }
-.ring.done .fgc { stroke: var(--ok); }
-.ring .c { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; line-height: 1; }
-.ring .c b { font-size: 26px; font-weight: 900; display: block; }
-.ring .c span { font-size: 12px; color: var(--mut); }
-.week { display: flex; justify-content: space-between; margin-top: 16px; padding-top: 14px; border-top: 2px solid var(--line); }
-.day { display: flex; flex-direction: column; align-items: center; gap: 5px; font-size: 12px; color: var(--mut); width: 36px; }
-.day i { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: conic-gradient(var(--acc) calc(var(--p) * 1%), var(--acc-soft) 0); position: relative; }
-.day i::after { content: ""; position: absolute; inset: 5px; border-radius: 50%; background: var(--card); }
-.day.met i { background: var(--acc); } .day.met i::after { display: none; }
-.day.met i .ic { width: 16px; height: 16px; color: #fff; position: relative; z-index: 1; }
-.day.rest i { background: var(--line); } .day.rest i::after { display: none; }
-.day.rest i .ic { width: 14px; height: 14px; color: var(--mut); z-index: 1; }
-.day.today span { color: var(--acc); font-weight: 900; }
-.day.future i { background: var(--line); opacity: .55; } .day.future i::after { display: none; }
-
-/* лига */
-.league { display: flex; align-items: center; gap: 14px; width: 100%; text-align: left; }
-.badge-lg { width: 56px; height: 56px; border-radius: 18px; display: grid; place-items: center; color: #fff; flex: none; background: var(--lc); box-shadow: 0 4px 0 color-mix(in srgb, var(--lc) 70%, #000); }
-.badge-lg .ic { width: 30px; height: 30px; }
-.league .tx { flex: 1; min-width: 0; }
-.lbar { position: relative; height: 12px; border-radius: 8px; background: var(--line); margin-top: 8px; }
-.lbar > i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 8px; background: var(--lc); transition: width .9s cubic-bezier(.2, .8, .2, 1); }
-.lbar > em { position: absolute; top: -3px; bottom: -3px; width: 3px; border-radius: 2px; background: var(--bad); opacity: .6; }
-.chev { color: var(--mut); width: 20px; height: 20px; }
-.ladder { display: flex; flex-direction: column-reverse; gap: 8px; }
-.rung { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 16px; border: 2px solid var(--line); }
-.rung .badge-lg { width: 38px; height: 38px; border-radius: 12px; box-shadow: none; } .rung .badge-lg .ic { width: 20px; height: 20px; }
-.rung.cur { border-color: var(--lc); background: color-mix(in srgb, var(--lc) 12%, transparent); }
-.rung.locked { opacity: .45; }
-.rung span { margin-left: auto; font-size: 13px; color: var(--mut); }
-
-/* быстрые режимы: карточки со значком и наградой */
-.modes { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
-.mode { display: flex; flex-direction: column; gap: 10px; text-align: left; border-radius: 20px; padding: 14px; background: var(--card); border: 2px solid var(--line); box-shadow: 0 4px 0 var(--line); }
-.mode:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--line); }
-.mode .sq { width: 44px; height: 44px; border-radius: 14px; display: grid; place-items: center; background: var(--t-bg); color: var(--t-fg); }
-.mode h3 { font-size: 16px; line-height: 1.2; }
-.mode p { color: var(--mut); font-size: 13px; line-height: 1.3; flex: 1; }
-.mode .pill { align-self: flex-start; }
-.c-coral { --t-bg: var(--coral-bg); --t-fg: var(--coral); } .c-honey { --t-bg: var(--honey-bg); --t-fg: var(--honey); }
-.c-sage { --t-bg: var(--sage-bg); --t-fg: var(--sage); } .c-rose { --t-bg: var(--rose-bg); --t-fg: var(--rose); }
-.c-plum { --t-bg: var(--plum-bg); --t-fg: var(--plum); } .c-sand { --t-bg: var(--sand-bg); --t-fg: var(--sand); }
-
-/* строки сценариев */
-.row { display: flex; align-items: center; gap: 14px; width: 100%; text-align: left; background: var(--card); border: 2px solid var(--line); border-radius: 20px; padding: 14px; margin: 10px 0; box-shadow: 0 3px 0 var(--line); }
-.row:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--line); }
-.row .dot { width: 48px; height: 48px; border-radius: 15px; display: grid; place-items: center; background: var(--t-bg); color: var(--t-fg); flex: none; }
-.row .tx { flex: 1; min-width: 0; }
-.row .tx p { color: var(--mut); font-size: 14px; line-height: 1.35; margin-top: 2px; }
-.pill { flex: none; font-size: 13px; font-weight: 900; padding: 4px 10px; border-radius: 99px; background: var(--honey-bg); color: var(--honey); white-space: nowrap; }
-.pill.ok { background: color-mix(in srgb, var(--ok) 16%, transparent); color: var(--ok); }
-
-/* сегодня */
-.todo { display: flex; align-items: center; gap: 12px; padding: 11px 0; border-bottom: 2px solid var(--line); }
-.todo:last-child { border-bottom: 0; padding-bottom: 0; } .todo:first-child { padding-top: 0; }
-.todo .chk { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; border: 2.5px solid var(--line); color: transparent; flex: none; }
-.todo.done .chk { background: var(--ok); border-color: var(--ok); color: #fff; }
-.todo .chk .ic { width: 15px; height: 15px; }
-.todo .tx { flex: 1; } .todo .tx p { color: var(--mut); font-size: 13.5px; }
-.todo button { font-weight: 900; color: var(--acc); background: var(--acc-soft); border-radius: 99px; padding: 7px 14px; font-size: 14px; }
-
-/* прогресс */
-.kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
-.kpi { background: var(--card); border: 2px solid var(--line); border-radius: 20px; padding: 14px; }
-.kpi .ic { color: var(--t-fg); width: 22px; height: 22px; margin-bottom: 8px; }
-.kpi b { font-size: 24px; font-weight: 900; display: block; line-height: 1.1; }
+.empty { margin-top: 8px; font-size: 14px; color: var(--mut); }
+.item { display: flex; align-items: center; gap: 14px; width: 100%; text-align: left; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.list > .item:last-child { border-bottom: 0; }
+.item > .ic { color: var(--c, var(--ink)); }
+.item .tx { flex: 1; min-width: 0; }
+.item .tx b { display: block; font-weight: 600; font-size: 15px; line-height: 1.3; }
+.item .tx span { display: block; font-size: 12.5px; color: var(--mut); line-height: 1.35; margin-top: 1px; }
+.item .go { flex: none; color: var(--ink); font-weight: 700; font-size: 14px; padding: 8px 0 8px 10px; }
+.item .pass { flex: none; display: inline-flex; align-items: center; gap: 3px; font-size: 12.5px; font-weight: 600; color: var(--c); white-space: nowrap; }
+.item .pass .ic { width: 15px; height: 15px; }
+.list.tight .item { padding: 7px 0; gap: 12px; border-bottom: 0; }
+.list.tight .item > .ic { width: 18px; height: 18px; }
+.list.tight .item .tx b { font-size: 14px; font-weight: 500; }
+.list.tight .item.no { color: var(--mut); }
+.list.tight .item small { flex: none; font-size: 12.5px; color: var(--mut); }
+/* быстрые режимы одной строкой: три колонки текста между линиями, без фона */
+.quick { display: flex; margin-top: 18px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.quick button { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px; text-align: left; padding: 12px 10px; }
+.quick button + button { border-left: 1px solid var(--line); }
+.quick button:first-child { padding-left: 0; }
+.quick .ic { color: var(--c); }
+.quick b { font-weight: 600; font-size: 14px; line-height: 1.25; overflow-wrap: break-word; hyphens: auto; }   /* длинное слово переносится, а не налезает на соседа */
+/* сцена дня: метка цветом речи, действие чернилами; остальные строки тихие */
+.item.pick .tx em { display: block; font-style: normal; font-size: 11.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--c); }
+.item.pick .tx b { font-weight: 700; font-size: 16px; }
 .chart { width: 100%; height: 130px; display: block; margin-top: 10px; overflow: visible; }
-.ach { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
-.ach div { border-radius: 16px; padding: 12px; background: var(--bg); font-size: 13.5px; font-weight: 800; display: flex; gap: 10px; align-items: center; }
-.ach .ic { width: 22px; height: 22px; flex: none; }
-.ach .got { background: var(--honey-bg); } .ach .got .ic { color: var(--honey); }
-.ach .no { opacity: .5; } .ach span { display: block; font-weight: 700; color: var(--mut); font-size: 12px; }
-
-/* задания и формы */
-.task p.q { font-size: 16px; font-weight: 800; margin-bottom: 10px; }
+.blk { padding: 16px 0; border-bottom: 1px solid var(--line); }
+.blk h3 b { font-weight: 800; }
+.lg-line { margin-top: 24px; font-size: 12.5px; color: var(--mut); }
+.lg-line span { white-space: nowrap; }
+.lg-line b { color: var(--fg); font-weight: 700; }
+.task { padding: 16px 0; border-bottom: 1px solid var(--line); }
+.task p.q { font-size: 16px; font-weight: 600; margin-bottom: 10px; }
+.task p.q i { font-style: normal; color: var(--prec); font-weight: 700; margin-right: 6px; }
 .opts { display: flex; gap: 8px; flex-wrap: wrap; }
-.chip { border: 2px solid var(--line); border-radius: 14px; padding: 9px 16px; font-weight: 800; background: var(--card); box-shadow: 0 3px 0 var(--line); }
-.chip:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--line); }
-.chip.on { background: var(--acc-soft); color: var(--acc); border-color: var(--acc); box-shadow: 0 3px 0 var(--acc); }
-input, textarea { width: 100%; font: inherit; font-weight: 700; padding: 12px 14px; border-radius: 14px; border: 2px solid var(--line); background: var(--bg); color: var(--fg); outline: none; }
-input:focus, textarea:focus { border-color: var(--acc); }
+.chip { border-radius: 12px; padding: 9px 16px; font-weight: 600; background: var(--bg); box-shadow: inset 0 0 0 1.5px var(--line); }
+.chip.on { color: var(--ink); box-shadow: inset 0 0 0 2px var(--ink); }
+input, textarea { width: 100%; font: inherit; padding: 12px 14px; border-radius: 12px; border: 1.5px solid var(--line); background: var(--bg); color: var(--fg); outline: none; }
+input:focus, textarea:focus { border-color: var(--ink); }
 textarea { min-height: 76px; resize: vertical; }
-.res { margin-top: 8px; font-size: 14px; min-height: 1em; font-weight: 800; }
+.res { margin-top: 8px; font-size: 14px; min-height: 1em; font-weight: 600; }
 .up { color: var(--ok); } .down { color: var(--bad); }
-.timer { font-size: 56px; font-weight: 900; text-align: center; font-variant-numeric: tabular-nums; margin: 4px 0 10px; }
-.btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 14px; border-radius: 16px; font-weight: 900; font-size: 16px; letter-spacing: .02em; text-transform: uppercase; background: var(--acc); color: #fff; box-shadow: 0 4px 0 var(--acc-dk); }
-.btn:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--acc-dk); }
-.btn.green { background: var(--ok); box-shadow: 0 4px 0 var(--ok-dk); }
+.timer { font-size: 56px; font-weight: 800; text-align: center; font-variant-numeric: tabular-nums; margin: 4px 0 10px; }
+.btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 14px; border-radius: 14px; font-weight: 700; font-size: 16px; background: var(--ink); color: var(--on-ink); }
 .btn .ic { width: 20px; height: 20px; }
-.bar { height: 12px; border-radius: 8px; background: var(--line); overflow: hidden; margin-top: 10px; }
-.bar > i { display: block; height: 100%; border-radius: 8px; background: var(--acc); transition: width .6s ease; }
-.mini { display: flex; align-items: center; gap: 12px; }
-.mini .sq { width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; background: var(--t-bg); color: var(--t-fg); flex: none; }
 
-/* нижнее меню */
-nav { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; background: var(--card); border-top: 2px solid var(--line); padding: 8px 8px calc(8px + env(safe-area-inset-bottom)); }
+/* нижнее меню: активная вкладка чернилами, без плашки */
+nav { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; background: var(--bg); border-top: 1px solid var(--line); padding: 8px 8px calc(8px + env(safe-area-inset-bottom)); }
 nav div { max-width: 560px; margin: 0 auto; display: flex; gap: 6px; }
-nav button { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px; font-size: 12px; font-weight: 800; color: var(--mut); padding: 6px 0 4px; border-radius: 14px; border: 2px solid transparent; }
-nav button .ic { width: 25px; height: 25px; }
-nav button.on { color: var(--acc); background: var(--acc-soft); border-color: color-mix(in srgb, var(--acc) 35%, transparent); }
+nav button { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px; font-size: 11.5px; font-weight: 500; color: var(--mut); padding: 4px 0; }
+nav button .ic { width: 24px; height: 24px; }
+nav button.on { color: var(--ink); font-weight: 700; }
 
 /* шторка */
-.veil { position: fixed; inset: 0; z-index: 10; background: rgba(30, 20, 12, .45); opacity: 0; pointer-events: none; transition: opacity .25s; }
+.veil { position: fixed; inset: 0; z-index: 10; background: rgba(10, 14, 28, .45); opacity: 0; pointer-events: none; transition: opacity .2s; }
 .veil.open { opacity: 1; pointer-events: auto; }
-.sheet { position: fixed; left: 0; right: 0; bottom: 0; z-index: 11; max-height: 88vh; overflow-y: auto; background: var(--card); border-radius: 26px 26px 0 0; padding: 22px 20px calc(20px + env(safe-area-inset-bottom)); transform: translateY(105%); transition: transform .32s cubic-bezier(.2, .8, .2, 1); }
+.sheet { position: fixed; left: 0; right: 0; bottom: 0; z-index: 11; max-height: 88vh; overflow-y: auto; background: var(--bg); border-radius: 20px 20px 0 0; padding: 22px 20px calc(20px + env(safe-area-inset-bottom)); transform: translateY(105%); transition: transform .25s cubic-bezier(.2, .8, .2, 1); }
 .sheet.open { transform: none; }
 .sheet > div { max-width: 560px; margin: 0 auto; }
-.sheet .x { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; color: var(--mut); background: var(--bg); flex: none; }
-.sheet h1 { font-size: 26px; margin: 0; }
-.cap { font-size: 12.5px; font-weight: 900; letter-spacing: .07em; color: var(--mut); text-transform: uppercase; margin: 20px 0 8px; }
-.goal { display: flex; gap: 10px; align-items: flex-start; padding: 5px 0; font-size: 15.5px; }
+.sheet .x { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; color: var(--mut); flex: none; }
+.sheet h1 { font-size: 22px; margin: 0; }
+.sheet h1 .ic { display: inline-block; width: 26px; height: 26px; vertical-align: -5px; margin-right: 8px; color: var(--c, var(--ink)); }
+.cap { font-size: 12.5px; font-weight: 700; letter-spacing: .06em; color: var(--mut); text-transform: uppercase; margin: 20px 0 8px; }
+.goal { display: flex; gap: 10px; align-items: flex-start; padding: 5px 0; font-size: 15px; }
 .goal .ic { width: 20px; height: 20px; color: var(--ok); margin-top: 1px; }
-.note { margin: 18px 0 16px; font-size: 14px; color: var(--mut); }
+.goal .gd { flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--c, var(--mut)); margin: 9px 6px 0; opacity: .7; }
+.note { margin: 16px 0; font-size: 14px; color: var(--mut); }
 .head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
-.celebrate { text-align: center; padding: 6px 0 4px; }
-.celebrate .badge-lg { margin: 0 auto 14px; width: 84px; height: 84px; border-radius: 26px; animation: pop .6s cubic-bezier(.2, .8, .2, 1) both; }
-.celebrate .badge-lg .ic { width: 44px; height: 44px; }
-.toast { position: fixed; left: 16px; right: 16px; bottom: calc(90px + env(safe-area-inset-bottom)); z-index: 20; max-width: 528px; margin: 0 auto; background: #2b2420; color: #fff; padding: 13px 16px; border-radius: 16px; font-size: 14px; opacity: 0; transform: translateY(10px); transition: .25s; pointer-events: none; }
+.toast { position: fixed; left: 16px; right: 16px; bottom: calc(86px + env(safe-area-inset-bottom)); z-index: 20; max-width: 528px; margin: 0 auto; background: var(--fg); color: var(--bg); padding: 13px 16px; border-radius: 14px; font-size: 14px; opacity: 0; transform: translateY(10px); transition: .2s; pointer-events: none; }
 .toast.show { opacity: 1; transform: none; }
-:root[data-theme="dark"] .toast { background: #4a3a30; }
 #confetti { position: fixed; inset: 0; z-index: 30; pointer-events: none; }
 </style>
 </head>
@@ -212,15 +223,15 @@ nav button.on { color: var(--acc); background: var(--acc-soft); border-color: co
 <canvas id="confetti" class="hidden"></canvas>
 <script>
 "use strict";
-const ICONS = {"house":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8\"/><path d=\"M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\"/></g>","book-open":"<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 5v16m8.001-2A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2a5 5 0 0 1 4-2z\"/>","chart-line":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M3 3v16a2 2 0 0 0 2 2h16\"/><path d=\"m19 9l-5 5l-4-4l-3 3\"/></g>","message-circle-heart":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092a10 10 0 1 0-4.777-4.719\"/><path d=\"M7.828 13.07A3 3 0 0 1 12 8.764a3 3 0 0 1 5.004 2.224a3 3 0 0 1-.832 2.083l-3.447 3.62a1 1 0 0 1-1.45-.001z\"/></g>","mic":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M12 19v3m7-12v2a7 7 0 0 1-14 0v-2\"/><rect width=\"6\" height=\"13\" x=\"9\" y=\"2\" rx=\"3\"/></g>","pen-line":"<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M13 21h8m.174-14.188a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z\"/>","scroll-text":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M15 12h-5m5-4h-5m9 9V5a2 2 0 0 0-2-2H4\"/><path d=\"M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3\"/></g>","laptop":"<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M18 5a2 2 0 0 1 2 2v8.526a2 2 0 0 0 .212.897l1.068 2.127a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45l1.068-2.127A2 2 0 0 0 4 15.526V7a2 2 0 0 1 2-2zm2.054 10.987H3.946\"/>","briefcase":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16\"/><rect width=\"20\" height=\"14\" x=\"2\" y=\"6\" rx=\"2\"/></g>","wallet":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1\"/><path d=\"M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4\"/></g>","users":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M16 3.128a4 4 0 0 1 0 7.744M22 21v-2a4 4 0 0 0-3-3.87\"/><circle cx=\"9\" cy=\"7\" r=\"4\"/></g>","presentation":"<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M2 3h20m-1 0v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3m4 18l5-5l5 5\"/>","headset":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2z\"/><path d=\"M21 16v2a4 4 0 0 1-4 4h-5\"/></g>","coffee":"<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M10 2v2m4-2v2m2 4a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1M6 2v2\"/>","stethoscope":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M11 2v2M5 2v2m0-1H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1\"/><path d=\"M8 15a6 6 0 0 0 12 0v-3\"/><circle cx=\"20\" cy=\"10\" r=\"2\"/></g>","shirt":"<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23\"/>","utensils":"<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2M7 2v20m14-7V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2zm0 0v7\"/>","plane":"<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8L4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1l3 2l2 3l1-1v-3l3-2l3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2\"/>","flame":"<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0a5 5 0 0 1 1-3a1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4\"/>","trophy":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M10 14.66V17a1 1 0 0 1-1 1a2 2 0 0 0-2 2v2m7-7.34V17a1 1 0 0 0 1 1a2 2 0 0 1 2 2v2m.916-12H19.5A2.5 2.5 0 0 0 22 7.5V5a1 1 0 0 0-1-1h-3M4 22h16\"/><path d=\"M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z\"/><path d=\"M6.084 10H4.5A2.5 2.5 0 0 1 2 7.5V5a1 1 0 0 1 1-1h3\"/></g>","repeat":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"m17 2l4 4l-4 4\"/><path d=\"M3 11v-1a4 4 0 0 1 4-4h14M7 22l-4-4l4-4\"/><path d=\"M21 13v1a4 4 0 0 1-4 4H3\"/></g>","check":"<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M20 6L9 17l-5-5\"/>","x":"<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M18 6L6 18M6 6l12 12\"/>","play":"<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z\"/>","alarm-clock":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><circle cx=\"12\" cy=\"13\" r=\"8\"/><path d=\"M12 9v4l2 2M5 3L2 6m20 0l-3-3M6.38 18.7L4 21m13.64-2.33L20 21\"/></g>","layers":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z\"/><path d=\"M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12\"/><path d=\"M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17\"/></g>","gem":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M10.5 3L8 9l4 13l4-13l-2.5-6\"/><path d=\"M17 3a2 2 0 0 1 1.6.8l3 4a2 2 0 0 1 .013 2.382l-7.99 10.986a2 2 0 0 1-3.247 0l-7.99-10.986A2 2 0 0 1 2.4 7.8l2.998-3.997A2 2 0 0 1 7 3zM2 9h20\"/></g>","zap":"<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M15.914 4a1.5 1.5 0 0 0-2.474-1.561l-9 9A1.5 1.5 0 0 0 5.5 14h4.002a.5.5 0 0 1 .471.666L8.086 20a1.5 1.5 0 0 0 2.475 1.56l9-9A1.5 1.5 0 0 0 18.5 10h-3.997a.5.5 0 0 1-.472-.667z\"/>","crown":"<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294zM5 21h14\"/>","chevron-right":"<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"m9 18l6-6l-6-6\"/>","moon":"<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401\"/>","star":"<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.12 2.12 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.12 2.12 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.12 2.12 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.12 2.12 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.12 2.12 0 0 0 1.597-1.16z\"/>","graduation-cap":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0zM22 10v6\"/><path d=\"M6 12.5V16a6 3 0 0 0 12 0v-3.5\"/></g>","shield":"<path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z\"/>","building-2":"<g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M10 22v-6.57M12 11h.01M12 7h.01M14 15.43V22m1-6a5 5 0 0 0-6 0m7-5h.01M16 7h.01M8 11h.01M8 7h.01\"/><rect width=\"16\" height=\"20\" x=\"4\" y=\"2\" rx=\"2\"/></g>"};
+const ICONS = {"house":"<path fill=\"currentColor\" d=\"m219.31 108.68l-80-80a16 16 0 0 0-22.62 0l-80 80A15.87 15.87 0 0 0 32 120v96a8 8 0 0 0 8 8h64a8 8 0 0 0 8-8v-56h32v56a8 8 0 0 0 8 8h64a8 8 0 0 0 8-8v-96a15.87 15.87 0 0 0-4.69-11.32M208 208h-48v-56a8 8 0 0 0-8-8h-48a8 8 0 0 0-8 8v56H48v-88l80-80l80 80Z\"/>","book-open":"<path fill=\"currentColor\" d=\"M232 48h-72a40 40 0 0 0-32 16a40 40 0 0 0-32-16H24a8 8 0 0 0-8 8v144a8 8 0 0 0 8 8h72a24 24 0 0 1 24 24a8 8 0 0 0 16 0a24 24 0 0 1 24-24h72a8 8 0 0 0 8-8V56a8 8 0 0 0-8-8M96 192H32V64h64a24 24 0 0 1 24 24v112a39.8 39.8 0 0 0-24-8m128 0h-64a39.8 39.8 0 0 0-24 8V88a24 24 0 0 1 24-24h64Z\"/>","chart-line":"<path fill=\"currentColor\" d=\"M232 208a8 8 0 0 1-8 8H32a8 8 0 0 1-8-8V48a8 8 0 0 1 16 0v108.69l50.34-50.35a8 8 0 0 1 11.32 0L128 132.69L180.69 80H160a8 8 0 0 1 0-16h40a8 8 0 0 1 8 8v40a8 8 0 0 1-16 0V91.31l-58.34 58.35a8 8 0 0 1-11.32 0L96 123.31l-56 56V200h184a8 8 0 0 1 8 8\"/>","mic":"<path fill=\"currentColor\" d=\"M128 176a48.05 48.05 0 0 0 48-48V64a48 48 0 0 0-96 0v64a48.05 48.05 0 0 0 48 48M96 64a32 32 0 0 1 64 0v64a32 32 0 0 1-64 0Zm40 143.6V240a8 8 0 0 1-16 0v-32.4A80.11 80.11 0 0 1 48 128a8 8 0 0 1 16 0a64 64 0 0 0 128 0a8 8 0 0 1 16 0a80.11 80.11 0 0 1-72 79.6\"/>","repeat":"<path fill=\"currentColor\" d=\"M24 128a72.08 72.08 0 0 1 72-72h108.69l-10.35-10.34a8 8 0 0 1 11.32-11.32l24 24a8 8 0 0 1 0 11.32l-24 24a8 8 0 0 1-11.32-11.32L204.69 72H96a56.06 56.06 0 0 0-56 56a8 8 0 0 1-16 0m200-8a8 8 0 0 0-8 8a56.06 56.06 0 0 1-56 56H51.31l10.35-10.34a8 8 0 0 0-11.32-11.32l-24 24a8 8 0 0 0 0 11.32l24 24a8 8 0 0 0 11.32-11.32L51.31 200H160a72.08 72.08 0 0 0 72-72a8 8 0 0 0-8-8\"/>","check":"<path fill=\"currentColor\" d=\"m229.66 77.66l-128 128a8 8 0 0 1-11.32 0l-56-56a8 8 0 0 1 11.32-11.32L96 188.69L218.34 66.34a8 8 0 0 1 11.32 11.32\"/>","x":"<path fill=\"currentColor\" d=\"M205.66 194.34a8 8 0 0 1-11.32 11.32L128 139.31l-66.34 66.35a8 8 0 0 1-11.32-11.32L116.69 128L50.34 61.66a8 8 0 0 1 11.32-11.32L128 116.69l66.34-66.35a8 8 0 0 1 11.32 11.32L139.31 128Z\"/>","play":"<path fill=\"currentColor\" d=\"M232.4 114.49L88.32 26.35a16 16 0 0 0-16.2-.3A15.86 15.86 0 0 0 64 39.87v176.26A15.94 15.94 0 0 0 80 232a16.07 16.07 0 0 0 8.36-2.35l144.04-88.14a15.81 15.81 0 0 0 0-27ZM80 215.94V40l143.83 88Z\"/>","moon":"<path fill=\"currentColor\" d=\"M233.54 142.23a8 8 0 0 0-8-2a88.08 88.08 0 0 1-109.8-109.8a8 8 0 0 0-10-10a104.84 104.84 0 0 0-52.91 37A104 104 0 0 0 136 224a103.1 103.1 0 0 0 62.52-20.88a104.84 104.84 0 0 0 37-52.91a8 8 0 0 0-1.98-7.98m-44.64 48.11A88 88 0 0 1 65.66 67.11a89 89 0 0 1 31.4-26A106 106 0 0 0 96 56a104.11 104.11 0 0 0 104 104a106 106 0 0 0 14.92-1.06a89 89 0 0 1-26.02 31.4\"/>","star":"<path fill=\"currentColor\" d=\"M239.18 97.26A16.38 16.38 0 0 0 224.92 86l-59-4.76l-22.78-55.09a16.36 16.36 0 0 0-30.27 0L90.11 81.23L31.08 86a16.46 16.46 0 0 0-9.37 28.86l45 38.83L53 211.75a16.38 16.38 0 0 0 24.5 17.82l50.5-31.08l50.53 31.08A16.4 16.4 0 0 0 203 211.75l-13.76-58.07l45-38.83a16.43 16.43 0 0 0 4.94-17.59m-15.34 5.47l-48.7 42a8 8 0 0 0-2.56 7.91l14.88 62.8a.37.37 0 0 1-.17.48c-.18.14-.23.11-.38 0l-54.72-33.65a8 8 0 0 0-8.38 0l-54.72 33.67c-.15.09-.19.12-.38 0a.37.37 0 0 1-.17-.48l14.88-62.8a8 8 0 0 0-2.56-7.91l-48.7-42c-.12-.1-.23-.19-.13-.5s.18-.27.33-.29l63.92-5.16a8 8 0 0 0 6.72-4.94l24.62-59.61c.08-.17.11-.25.35-.25s.27.08.35.25L153 91.86a8 8 0 0 0 6.75 4.92l63.92 5.16c.15 0 .24 0 .33.29s0 .4-.16.5\"/>","lock":"<path fill=\"currentColor\" d=\"M208 80h-32V56a48 48 0 0 0-96 0v24H48a16 16 0 0 0-16 16v112a16 16 0 0 0 16 16h160a16 16 0 0 0 16-16V96a16 16 0 0 0-16-16M96 56a32 32 0 0 1 64 0v24H96Zm112 152H48V96h160zm-68-56a12 12 0 1 1-12-12a12 12 0 0 1 12 12\"/>","arrow-right":"<path fill=\"currentColor\" d=\"m221.66 133.66l-72 72a8 8 0 0 1-11.32-11.32L196.69 136H40a8 8 0 0 1 0-16h156.69l-58.35-58.34a8 8 0 0 1 11.32-11.32l72 72a8 8 0 0 1 0 11.32\"/>","user-sound-duotone":"<g fill=\"currentColor\"><path d=\"M168 108a60 60 0 1 1-60-60a60 60 0 0 1 60 60\" opacity=\".2\"/><path d=\"M144 165.68a68 68 0 1 0-71.9 0c-20.65 6.76-39.23 19.39-54.17 37.17a8 8 0 0 0 12.25 10.3C50.25 189.19 77.91 176 108 176s57.75 13.19 77.88 37.15a8 8 0 1 0 12.25-10.3c-14.95-17.78-33.53-30.41-54.13-37.17M56 108a52 52 0 1 1 52 52a52.06 52.06 0 0 1-52-52m151.36-42.4a108.36 108.36 0 0 1 0 84.8a8 8 0 0 1-7.36 4.86a8 8 0 0 1-7.36-11.15a92.26 92.26 0 0 0 0-72.22a8 8 0 0 1 14.72-6.29M248 108a139 139 0 0 1-11.29 55.15a8 8 0 0 1-14.7-6.3a124.43 124.43 0 0 0 0-97.7a8 8 0 1 1 14.7-6.3A139 139 0 0 1 248 108\"/></g>","puzzle-piece-duotone":"<g fill=\"currentColor\"><path d=\"M204 168a28 28 0 0 0 12-2.69V208a8 8 0 0 1-8 8H64a8 8 0 0 1-8-8v-42.69a28 28 0 1 1 0-50.62V72a8 8 0 0 1 8-8h46.69a28 28 0 1 1 50.61 0H208a8 8 0 0 1 8 8v42.69A28 28 0 1 0 204 168\" opacity=\".2\"/><path d=\"M220.27 158.54a8 8 0 0 0-7.7-.46a20 20 0 1 1 0-36.16a8 8 0 0 0 11.43-7.23V72a16 16 0 0 0-16-16h-36.22a35 35 0 0 0 .22-4a36.15 36.15 0 0 0-11.36-26.25a36 36 0 0 0-60.55 23.63a36.6 36.6 0 0 0 .14 6.62H64a16 16 0 0 0-16 16v32.22a35 35 0 0 0-4-.22a36.12 36.12 0 0 0-26.24 11.36a35.7 35.7 0 0 0-9.69 27a36.08 36.08 0 0 0 33.31 33.6a36.6 36.6 0 0 0 6.62-.14V208a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16v-42.69a8 8 0 0 0-3.73-6.77M208 208H64v-42.69a8 8 0 0 0-11.43-7.23a20 20 0 1 1 0-36.16A8 8 0 0 0 64 114.69V72h46.69a8 8 0 0 0 7.23-11.43a20 20 0 1 1 36.16 0A8 8 0 0 0 161.31 72H208v32.23a35.7 35.7 0 0 0-6.62-.14A36 36 0 0 0 204 176a35 35 0 0 0 4-.22Z\"/></g>","note-pencil-duotone":"<g fill=\"currentColor\"><path d=\"m200 88l-72 72H96v-32l72-72Z\" opacity=\".2\"/><path d=\"m229.66 58.34l-32-32a8 8 0 0 0-11.32 0l-96 96A8 8 0 0 0 88 128v32a8 8 0 0 0 8 8h32a8 8 0 0 0 5.66-2.34l96-96a8 8 0 0 0 0-11.32M124.69 152H104v-20.69l64-64L188.69 88ZM200 76.69L179.31 56L192 43.31L212.69 64ZM224 128v80a16 16 0 0 1-16 16H48a16 16 0 0 1-16-16V48a16 16 0 0 1 16-16h80a8 8 0 0 1 0 16H48v160h160v-80a8 8 0 0 1 16 0\"/></g>","identification-card-duotone":"<g fill=\"currentColor\"><path d=\"M216 48H40a8 8 0 0 0-8 8v144a8 8 0 0 0 8 8h176a8 8 0 0 0 8-8V56a8 8 0 0 0-8-8M96 144a24 24 0 1 1 24-24a24 24 0 0 1-24 24\" opacity=\".2\"/><path d=\"M200 112a8 8 0 0 1-8 8h-40a8 8 0 0 1 0-16h40a8 8 0 0 1 8 8m-8 24h-40a8 8 0 0 0 0 16h40a8 8 0 0 0 0-16m40-80v144a16 16 0 0 1-16 16H40a16 16 0 0 1-16-16V56a16 16 0 0 1 16-16h176a16 16 0 0 1 16 16m-16 144V56H40v144zm-80.26-34a8 8 0 1 1-15.5 4c-2.63-10.26-13.06-18-24.25-18s-21.61 7.74-24.25 18a8 8 0 1 1-15.5-4a39.84 39.84 0 0 1 17.19-23.34a32 32 0 1 1 45.12 0a39.76 39.76 0 0 1 17.2 23.34ZM96 136a16 16 0 1 0-16-16a16 16 0 0 0 16 16\"/></g>","kanban-duotone":"<g fill=\"currentColor\"><path d=\"M216 56v64h-56V56ZM40 208a8 8 0 0 0 8 8h40a8 8 0 0 0 8-8v-88H40Z\" opacity=\".2\"/><path d=\"M216 48H40a8 8 0 0 0-8 8v152a16 16 0 0 0 16 16h40a16 16 0 0 0 16-16v-48h48v16a16 16 0 0 0 16 16h40a16 16 0 0 0 16-16V56a8 8 0 0 0-8-8m-8 64h-40V64h40ZM88 64v48H48V64Zm0 144H48v-80h40Zm16-64V64h48v80Zm64 32v-48h40v48Z\"/></g>","scales-duotone":"<g fill=\"currentColor\"><path d=\"m56 88l32 80c0 17.67-20 24-32 24s-32-6.33-32-24Zm144-32l-32 80c0 17.67 20 24 32 24s32-6.33 32-24Z\" opacity=\".2\"/><path d=\"m239.43 133l-32-80a8 8 0 0 0-9.16-4.84L136 62V40a8 8 0 0 0-16 0v25.58L54.26 80.19A8 8 0 0 0 48.57 85v.06l-32 79.94a7.9 7.9 0 0 0-.57 3c0 23.31 24.54 32 40 32s40-8.69 40-32a7.9 7.9 0 0 0-.57-3L66.92 93.77L120 82v126h-16a8 8 0 0 0 0 16h48a8 8 0 0 0 0-16h-16V78.42l51-11.32l-26.43 65.9a7.9 7.9 0 0 0-.57 3c0 23.31 24.54 32 40 32s40-8.69 40-32a7.9 7.9 0 0 0-.57-3M56 184c-7.53 0-22.76-3.61-23.93-14.64L56 109.54l23.93 59.82C78.76 180.39 63.53 184 56 184m144-32c-7.53 0-22.76-3.61-23.93-14.64L200 77.54l23.93 59.82C222.76 148.39 207.53 152 200 152\"/></g>","sun-horizon-duotone":"<g fill=\"currentColor\"><path d=\"M192 144a64.3 64.3 0 0 1-2 16H66a64 64 0 1 1 126-16\" opacity=\".2\"/><path d=\"M240 152h-40.45a74 74 0 0 0 .45-8a72 72 0 0 0-144 0a74 74 0 0 0 .45 8H16a8 8 0 0 0 0 16h224a8 8 0 0 0 0-16m-168-8a56 56 0 1 1 111.41 8H72.59a56 56 0 0 1-.59-8m144 56a8 8 0 0 1-8 8H48a8 8 0 0 1 0-16h160a8 8 0 0 1 8 8M72.84 43.58a8 8 0 0 1 14.32-7.16l8 16a8 8 0 0 1-14.32 7.16Zm-56 48.84a8 8 0 0 1 10.74-3.57l16 8a8 8 0 0 1-7.16 14.31l-16-8a8 8 0 0 1-3.58-10.74m192 15.16a8 8 0 0 1 3.58-10.73l16-8a8 8 0 1 1 7.16 14.31l-16 8a8 8 0 0 1-10.74-3.58m-48-55.16l8-16a8 8 0 0 1 14.32 7.16l-8 16a8 8 0 1 1-14.32-7.16\"/></g>","calendar-x-duotone":"<g fill=\"currentColor\"><path d=\"M216 48v40H40V48a8 8 0 0 1 8-8h160a8 8 0 0 1 8 8\" opacity=\".2\"/><path d=\"M208 32h-24v-8a8 8 0 0 0-16 0v8H88v-8a8 8 0 0 0-16 0v8H48a16 16 0 0 0-16 16v160a16 16 0 0 0 16 16h160a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16M72 48v8a8 8 0 0 0 16 0v-8h80v8a8 8 0 0 0 16 0v-8h24v32H48V48Zm136 160H48V96h160zm-50.34-74.34L139.31 152l18.35 18.34a8 8 0 0 1-11.32 11.32L128 163.31l-18.34 18.35a8 8 0 0 1-11.32-11.32L116.69 152l-18.35-18.34a8 8 0 0 1 11.32-11.32L128 140.69l18.34-18.35a8 8 0 0 1 11.32 11.32\"/></g>","rocket-launch-duotone":"<g fill=\"currentColor\"><path d=\"M184 120v61.65a8 8 0 0 1-2.34 5.65l-34.35 34.35a8 8 0 0 1-13.57-4.53L128 176Zm-48-48H74.35a8 8 0 0 0-5.65 2.34l-34.35 34.35a8 8 0 0 0 4.53 13.57L80 128ZM40 216c37.65 0 50.69-19.69 54.56-28.18l-26.38-26.38C59.69 165.31 40 178.35 40 216\" opacity=\".2\"/><path d=\"M223.85 47.12a16 16 0 0 0-15-15c-12.58-.75-44.73.4-71.41 27.07L132.69 64H74.36A15.9 15.9 0 0 0 63 68.68L28.7 103a16 16 0 0 0 9.07 27.16l38.47 5.37l44.21 44.21l5.37 38.49a15.94 15.94 0 0 0 10.78 12.92a16.1 16.1 0 0 0 5.1.83a15.9 15.9 0 0 0 11.3-4.68l34.32-34.3a15.9 15.9 0 0 0 4.68-11.36v-58.33l4.77-4.77c26.68-26.68 27.83-58.83 27.08-71.42M74.36 80h42.33l-39.53 39.52L40 114.34Zm74.41-9.45a76.65 76.65 0 0 1 59.11-22.47a76.46 76.46 0 0 1-22.42 59.16L128 164.68L91.32 128ZM176 181.64L141.67 216l-5.19-37.17L176 139.31Zm-74.16 9.5C97.34 201 82.29 224 40 224a8 8 0 0 1-8-8c0-42.29 23-57.34 32.86-61.85a8 8 0 0 1 6.64 14.56c-6.43 2.93-20.62 12.36-23.12 38.91c26.55-2.5 36-16.69 38.91-23.12a8 8 0 1 1 14.56 6.64Z\"/></g>","hand-waving-duotone":"<g fill=\"currentColor\"><path d=\"M184 213.27A80 80 0 0 1 74.7 184l-40-69.32a20 20 0 0 1 34.64-20L55.08 70a20 20 0 0 1 34.65-20l6.92 12a20 20 0 0 1 34.64-20l30 52A20 20 0 0 1 196 74l17.31 30A80 80 0 0 1 184 213.27\" opacity=\".2\"/><path d=\"m220.17 100l-17.31-30a28 28 0 0 0-38.24-10.25a27.7 27.7 0 0 0-9 8.34L138.2 38a28 28 0 0 0-48.48 0a28 28 0 0 0-41.57 36l1.59 2.76A27.7 27.7 0 0 0 38 80.41a28 28 0 0 0-10.24 38.25l40 69.32a87.47 87.47 0 0 0 53.43 41a88.6 88.6 0 0 0 22.92 3a88 88 0 0 0 76.06-132Zm-6.66 62.64A72 72 0 0 1 81.62 180l-40-69.32a12 12 0 0 1 20.78-12L81.63 132a8 8 0 1 0 13.85-8L62 66a12 12 0 1 1 20.78-12L114 108a8 8 0 1 0 13.85-8l-24.28-42a12 12 0 1 1 20.78-12l33.42 57.9a48 48 0 0 0-5.54 60.6a8 8 0 0 0 13.24-9a32 32 0 0 1 7.31-43.5a8 8 0 0 0 2.13-10.4L168.23 90A12 12 0 1 1 189 78l17.31 30a71.56 71.56 0 0 1 7.2 54.62ZM184.25 31.71A8 8 0 0 1 194 26a59.62 59.62 0 0 1 36.53 28l.33.57a8 8 0 1 1-13.85 8l-.33-.57a43.67 43.67 0 0 0-26.8-20.5a8 8 0 0 1-5.63-9.79M80.89 237a8 8 0 0 1-11.23 1.33A119.6 119.6 0 0 1 40.06 204a8 8 0 0 1 13.86-8a103.7 103.7 0 0 0 25.64 29.72A8 8 0 0 1 80.89 237\"/></g>","megaphone-duotone":"<g fill=\"currentColor\"><path d=\"M240 120a40 40 0 0 1-40 40h-40V80h40a40 40 0 0 1 40 40\" opacity=\".2\"/><path d=\"M248 120a48.05 48.05 0 0 0-48-48h-39.8c-2.91-.17-53.62-3.74-101.91-44.24A16 16 0 0 0 32 40v160a16 16 0 0 0 26.29 12.25c37.77-31.68 77-40.76 93.71-43.3v31.72a16 16 0 0 0 7.12 13.33l11 7.33A16 16 0 0 0 194.5 212l11.77-44.36A48.07 48.07 0 0 0 248 120M48 199.93V40c42.81 35.91 86.63 45 104 47.24v65.48c-17.35 2.28-61.16 11.35-104 47.21m131 8v.11l-11-7.33V168h21.6ZM200 152h-32V88h32a32 32 0 1 1 0 64\"/></g>","heartbeat-duotone":"<g fill=\"currentColor\"><path d=\"M232 102c0 66-104 122-104 122S24 168 24 102a54 54 0 0 1 54-54c22.59 0 41.94 12.31 50 32c8.06-19.69 27.41-32 50-32a54 54 0 0 1 54 54\" opacity=\".2\"/><path d=\"M72 144H32a8 8 0 0 1 0-16h35.72l13.62-20.44a8 8 0 0 1 13.32 0l25.34 38l9.34-14A8 8 0 0 1 136 128h24a8 8 0 0 1 0 16h-19.72l-13.62 20.44a8 8 0 0 1-13.32 0L88 126.42l-9.34 14A8 8 0 0 1 72 144M178 40c-20.65 0-38.73 8.88-50 23.89C116.73 48.88 98.65 40 78 40a62.07 62.07 0 0 0-62 62v2.25a8 8 0 1 0 16-.5V102a46.06 46.06 0 0 1 46-46c19.45 0 35.78 10.36 42.6 27a8 8 0 0 0 14.8 0c6.82-16.67 23.15-27 42.6-27a46.06 46.06 0 0 1 46 46c0 53.61-77.76 102.15-96 112.8c-10.83-6.31-42.63-26-66.68-52.21a8 8 0 1 0-11.8 10.82c31.17 34 72.93 56.68 74.69 57.63a8 8 0 0 0 7.58 0C136.21 228.66 240 172 240 102a62.07 62.07 0 0 0-62-62\"/></g>","ruler-duotone":"<g fill=\"currentColor\"><path d=\"M229.66 90.34L90.34 229.66a8 8 0 0 1-11.31 0L26.34 177a8 8 0 0 1 0-11.31L165.66 26.34a8 8 0 0 1 11.31 0L229.66 79a8 8 0 0 1 0 11.34\" opacity=\".2\"/><path d=\"m235.32 73.37l-52.69-52.68a16 16 0 0 0-22.63 0L20.68 160a16 16 0 0 0 0 22.63l52.69 52.68a16 16 0 0 0 22.63 0L235.32 96a16 16 0 0 0 0-22.63M84.68 224L32 171.31l32-32l26.34 26.35a8 8 0 0 0 11.32-11.32L75.31 128L96 107.31l26.34 26.35a8 8 0 0 0 11.32-11.32L107.31 96L128 75.31l26.34 26.35a8 8 0 0 0 11.32-11.32L139.31 64l32-32L224 84.69Z\"/></g>","receipt-duotone":"<g fill=\"currentColor\"><path d=\"M224 56v152l-32-16l-32 16l-32-16l-32 16l-32-16l-32 16V56a8 8 0 0 1 8-8h176a8 8 0 0 1 8 8\" opacity=\".2\"/><path d=\"M72 104a8 8 0 0 1 8-8h96a8 8 0 0 1 0 16H80a8 8 0 0 1-8-8m8 40h96a8 8 0 0 0 0-16H80a8 8 0 0 0 0 16m152-88v152a8 8 0 0 1-11.58 7.15L192 200.94l-28.42 14.21a8 8 0 0 1-7.16 0L128 200.94l-28.42 14.21a8 8 0 0 1-7.16 0L64 200.94l-28.42 14.21A8 8 0 0 1 24 208V56a16 16 0 0 1 16-16h176a16 16 0 0 1 16 16m-16 0H40v139.06l20.42-10.22a8 8 0 0 1 7.16 0L96 199.06l28.42-14.22a8 8 0 0 1 7.16 0L160 199.06l28.42-14.22a8 8 0 0 1 7.16 0L216 195.06Z\"/></g>","key-duotone":"<g fill=\"currentColor\"><path d=\"M232 98.36c-1.27 38.56-33.33 69.64-71.91 69.64a71.7 71.7 0 0 1-26.92-5.17L120 176H96v24H72v24H40a8 8 0 0 1-8-8v-28.69a8 8 0 0 1 2.34-5.65l58.83-58.83A71.7 71.7 0 0 1 88 95.91c0-38.58 31.08-70.64 69.64-71.87A72 72 0 0 1 232 98.36\" opacity=\".2\"/><path d=\"M216.57 39.43a80 80 0 0 0-132.66 81.35L28.69 176A15.86 15.86 0 0 0 24 187.31V216a16 16 0 0 0 16 16h32a8 8 0 0 0 8-8v-16h16a8 8 0 0 0 8-8v-16h16a8 8 0 0 0 5.66-2.34l9.56-9.57A79.7 79.7 0 0 0 160 176h.1a80 80 0 0 0 56.47-136.57M224 98.1c-1.09 34.09-29.75 61.86-63.89 61.9H160a63.7 63.7 0 0 1-23.65-4.51a8 8 0 0 0-8.84 1.68L116.69 168H96a8 8 0 0 0-8 8v16H72a8 8 0 0 0-8 8v16H40v-28.69l58.83-58.82a8 8 0 0 0 1.68-8.84A63.7 63.7 0 0 1 96 95.92c0-34.14 27.81-62.8 61.9-63.89A64 64 0 0 1 224 98.1M192 76a12 12 0 1 1-12-12a12 12 0 0 1 12 12\"/></g>","suitcase-rolling-duotone":"<g fill=\"currentColor\"><path d=\"M200 64v144a8 8 0 0 1-8 8H64a8 8 0 0 1-8-8V64a8 8 0 0 1 8-8h128a8 8 0 0 1 8 8\" opacity=\".2\"/><path d=\"M104 88v96a8 8 0 0 1-16 0V88a8 8 0 0 1 16 0m24-8a8 8 0 0 0-8 8v96a8 8 0 0 0 16 0V88a8 8 0 0 0-8-8m32 0a8 8 0 0 0-8 8v96a8 8 0 0 0 16 0V88a8 8 0 0 0-8-8m48-16v144a16 16 0 0 1-16 16h-16v16a8 8 0 0 1-16 0v-16H96v16a8 8 0 0 1-16 0v-16H64a16 16 0 0 1-16-16V64a16 16 0 0 1 16-16h24V24a24 24 0 0 1 24-24h32a24 24 0 0 1 24 24v24h24a16 16 0 0 1 16 16M104 48h48V24a8 8 0 0 0-8-8h-32a8 8 0 0 0-8 8Zm88 160V64H64v144z\"/></g>","house-duotone":"<g fill=\"currentColor\"><path d=\"M216 120v96h-64v-64h-48v64H40v-96a8 8 0 0 1 2.34-5.66l80-80a8 8 0 0 1 11.32 0l80 80A8 8 0 0 1 216 120\" opacity=\".2\"/><path d=\"m219.31 108.68l-80-80a16 16 0 0 0-22.62 0l-80 80A15.87 15.87 0 0 0 32 120v96a8 8 0 0 0 8 8h64a8 8 0 0 0 8-8v-56h32v56a8 8 0 0 0 8 8h64a8 8 0 0 0 8-8v-96a15.87 15.87 0 0 0-4.69-11.32M208 208h-48v-56a8 8 0 0 0-8-8h-48a8 8 0 0 0-8 8v56H48v-88l80-80l80 80Z\"/></g>","book-open-duotone":"<g fill=\"currentColor\"><path d=\"M232 56v144h-72a32 32 0 0 0-32 32a32 32 0 0 0-32-32H24V56h72a32 32 0 0 1 32 32a32 32 0 0 1 32-32Z\" opacity=\".2\"/><path d=\"M232 48h-72a40 40 0 0 0-32 16a40 40 0 0 0-32-16H24a8 8 0 0 0-8 8v144a8 8 0 0 0 8 8h72a24 24 0 0 1 24 24a8 8 0 0 0 16 0a24 24 0 0 1 24-24h72a8 8 0 0 0 8-8V56a8 8 0 0 0-8-8M96 192H32V64h64a24 24 0 0 1 24 24v112a39.8 39.8 0 0 0-24-8m128 0h-64a39.8 39.8 0 0 0-24 8V88a24 24 0 0 1 24-24h64Z\"/></g>","chart-line-up-duotone":"<g fill=\"currentColor\"><path d=\"M224 64v144H32V48h176a16 16 0 0 1 16 16\" opacity=\".2\"/><path d=\"M232 208a8 8 0 0 1-8 8H32a8 8 0 0 1-8-8V48a8 8 0 0 1 16 0v108.69l50.34-50.35a8 8 0 0 1 11.32 0L128 132.69L180.69 80H160a8 8 0 0 1 0-16h40a8 8 0 0 1 8 8v40a8 8 0 0 1-16 0V91.31l-58.34 58.35a8 8 0 0 1-11.32 0L96 123.31l-56 56V200h184a8 8 0 0 1 8 8\"/></g>","microphone-duotone":"<g fill=\"currentColor\"><path d=\"M168 64v64a40 40 0 0 1-40 40a40 40 0 0 1-40-40V64a40 40 0 0 1 40-40a40 40 0 0 1 40 40\" opacity=\".2\"/><path d=\"M128 176a48.05 48.05 0 0 0 48-48V64a48 48 0 0 0-96 0v64a48.05 48.05 0 0 0 48 48M96 64a32 32 0 0 1 64 0v64a32 32 0 0 1-64 0Zm40 143.6V240a8 8 0 0 1-16 0v-32.4A80.11 80.11 0 0 1 48 128a8 8 0 0 1 16 0a64 64 0 0 0 128 0a8 8 0 0 1 16 0a80.11 80.11 0 0 1-72 79.6\"/></g>","chat-teardrop-text-duotone":"<g fill=\"currentColor\"><path d=\"M224 124a92 92 0 0 1-92 92H48a8 8 0 0 1-8-8v-84a92 92 0 0 1 92-92a92 92 0 0 1 92 92\" opacity=\".2\"/><path d=\"M172 112a8 8 0 0 1-8 8H96a8 8 0 0 1 0-16h68a8 8 0 0 1 8 8m-8 24H96a8 8 0 0 0 0 16h68a8 8 0 0 0 0-16m68-12a100.11 100.11 0 0 1-100 100H48a16 16 0 0 1-16-16v-84a100 100 0 0 1 200 0m-16 0a84 84 0 0 0-168 0v84h84a84.09 84.09 0 0 0 84-84\"/></g>","flame-duotone":"<g fill=\"currentColor\"><path d=\"M208 144a80 80 0 0 1-77.94 80A40 40 0 0 0 168 184c0-40-40-64-40-64s-40 24-40 64a40 40 0 0 0 37.94 40A80 80 0 0 1 48 144c0-72 80-120 80-120s80 48 80 120\" opacity=\".2\"/><path d=\"M173.79 51.48a221.3 221.3 0 0 0-41.67-34.34a8 8 0 0 0-8.24 0a221.3 221.3 0 0 0-41.67 34.34C54.59 80.48 40 112.47 40 144a88 88 0 0 0 176 0c0-31.53-14.59-63.52-42.21-92.52M96 184c0-27.67 22.53-47.28 32-54.3c9.48 7 32 26.63 32 54.3a32 32 0 0 1-64 0m77.27 15.93A47.8 47.8 0 0 0 176 184c0-44-42.09-69.79-43.88-70.86a8 8 0 0 0-8.24 0C122.09 114.21 80 140 80 184a47.8 47.8 0 0 0 2.73 15.93A71.88 71.88 0 0 1 56 144c0-34.41 20.4-63.15 37.52-81.19A216.2 216.2 0 0 1 128 33.54a215.8 215.8 0 0 1 34.48 29.27C193.49 95.5 200 125 200 144a71.88 71.88 0 0 1-26.73 55.93\"/></g>","cards-duotone":"<g fill=\"currentColor\"><path d=\"M192 88v112a8 8 0 0 1-8 8H40a8 8 0 0 1-8-8V88a8 8 0 0 1 8-8h144a8 8 0 0 1 8 8\" opacity=\".2\"/><path d=\"M184 72H40a16 16 0 0 0-16 16v112a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16V88a16 16 0 0 0-16-16m0 128H40V88h144zm48-144v120a8 8 0 0 1-16 0V56H64a8 8 0 0 1 0-16h152a16 16 0 0 1 16 16\"/></g>","list-checks-duotone":"<g fill=\"currentColor\"><path d=\"M216 64v128h-88V64Z\" opacity=\".2\"/><path d=\"M224 128a8 8 0 0 1-8 8h-88a8 8 0 0 1 0-16h88a8 8 0 0 1 8 8m-96-56h88a8 8 0 0 0 0-16h-88a8 8 0 0 0 0 16m88 112h-88a8 8 0 0 0 0 16h88a8 8 0 0 0 0-16M82.34 42.34L56 68.69L45.66 58.34a8 8 0 0 0-11.32 11.32l16 16a8 8 0 0 0 11.32 0l32-32a8 8 0 0 0-11.32-11.32m0 64L56 132.69l-10.34-10.35a8 8 0 0 0-11.32 11.32l16 16a8 8 0 0 0 11.32 0l32-32a8 8 0 0 0-11.32-11.32m0 64L56 196.69l-10.34-10.35a8 8 0 0 0-11.32 11.32l16 16a8 8 0 0 0 11.32 0l32-32a8 8 0 0 0-11.32-11.32\"/></g>","seal-check-duotone":"<g fill=\"currentColor\"><path d=\"M232 128c0 12.51-17.82 21.95-22.68 33.69c-4.68 11.32 1.42 30.65-7.78 39.85s-28.53 3.1-39.85 7.78C150 214.18 140.5 232 128 232s-22-17.82-33.69-22.68c-11.32-4.68-30.65 1.42-39.85-7.78s-3.1-28.53-7.78-39.85C41.82 150 24 140.5 24 128s17.82-22 22.68-33.69c4.68-11.31-1.42-30.65 7.78-39.85s28.54-3.1 39.85-7.78C106.05 41.82 115.5 24 128 24s22 17.82 33.69 22.68c11.32 4.68 30.65-1.42 39.85 7.78s3.1 28.53 7.78 39.85C214.18 106.05 232 115.5 232 128\" opacity=\".2\"/><path d=\"M225.86 102.82c-3.77-3.94-7.67-8-9.14-11.57c-1.36-3.27-1.44-8.69-1.52-13.94c-.15-9.76-.31-20.82-8-28.51s-18.75-7.85-28.51-8c-5.25-.08-10.67-.16-13.94-1.52c-3.56-1.47-7.63-5.37-11.57-9.14C146.28 23.51 138.44 16 128 16s-18.27 7.51-25.18 14.14c-3.94 3.77-8 7.67-11.57 9.14c-3.25 1.36-8.69 1.44-13.94 1.52c-9.76.15-20.82.31-28.51 8s-7.8 18.75-8 28.51c-.08 5.25-.16 10.67-1.52 13.94c-1.47 3.56-5.37 7.63-9.14 11.57C23.51 109.72 16 117.56 16 128s7.51 18.27 14.14 25.18c3.77 3.94 7.67 8 9.14 11.57c1.36 3.27 1.44 8.69 1.52 13.94c.15 9.76.31 20.82 8 28.51s18.75 7.85 28.51 8c5.25.08 10.67.16 13.94 1.52c3.56 1.47 7.63 5.37 11.57 9.14c6.9 6.63 14.74 14.14 25.18 14.14s18.27-7.51 25.18-14.14c3.94-3.77 8-7.67 11.57-9.14c3.27-1.36 8.69-1.44 13.94-1.52c9.76-.15 20.82-.31 28.51-8s7.85-18.75 8-28.51c.08-5.25.16-10.67 1.52-13.94c1.47-3.56 5.37-7.63 9.14-11.57c6.63-6.9 14.14-14.74 14.14-25.18s-7.51-18.27-14.14-25.18m-11.55 39.29c-4.79 5-9.75 10.17-12.38 16.52c-2.52 6.1-2.63 13.07-2.73 19.82c-.1 7-.21 14.33-3.32 17.43s-10.39 3.22-17.43 3.32c-6.75.1-13.72.21-19.82 2.73c-6.35 2.63-11.52 7.59-16.52 12.38S132 224 128 224s-9.15-4.92-14.11-9.69s-10.17-9.75-16.52-12.38c-6.1-2.52-13.07-2.63-19.82-2.73c-7-.1-14.33-.21-17.43-3.32s-3.22-10.39-3.32-17.43c-.1-6.75-.21-13.72-2.73-19.82c-2.63-6.35-7.59-11.52-12.38-16.52S32 132 32 128s4.92-9.15 9.69-14.11s9.75-10.17 12.38-16.52c2.52-6.1 2.63-13.07 2.73-19.82c.1-7 .21-14.33 3.32-17.43s10.39-3.22 17.43-3.32c6.75-.1 13.72-.21 19.82-2.73c6.35-2.63 11.52-7.59 16.52-12.38S124 32 128 32s9.15 4.92 14.11 9.69s10.17 9.75 16.52 12.38c6.1 2.52 13.07 2.63 19.82 2.73c7 .1 14.33.21 17.43 3.32s3.22 10.39 3.32 17.43c.1 6.75.21 13.72 2.73 19.82c2.63 6.35 7.59 11.52 12.38 16.52S224 124 224 128s-4.92 9.15-9.69 14.11m-40.65-43.77a8 8 0 0 1 0 11.32l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 0\"/></g>"};  // Phosphor (MIT), viewBox 256
 const TG = window.Telegram && Telegram.WebApp;
 const IN_TG = !!(TG && TG.platform && TG.platform !== "unknown");
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-const ic = (n, cls = "") => `<svg class="ic ${cls}" viewBox="0 0 24 24" aria-hidden="true">${ICONS[n] || ICONS.star}</svg>`;
+const ic = (n, cls = "") => `<svg class="ic ${cls}" viewBox="0 0 256 256" aria-hidden="true">${ICONS[n] || ICONS.star}</svg>`;
+const dm = (s) => (s = String(s || "")).length >= 10 ? `${s.slice(8, 10)}.${s.slice(5, 7)}` : s;
 const LIMIT = 4096;   // sendData режется по БАЙТАМ, не символам
-const LEAGUE_COLORS = ["#c98a5a", "#9aa7b3", "#e9a92c", "#3d7bd9", "#d9415a", "#2fa36b", "#9b59d0", "#c8a98a", "#4a423c", "#38b6d9"];
 const DAYS = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
 let D = null, CAT = null, ANS = {}, TAB = "home";
 const ERRS = [];
@@ -269,93 +280,52 @@ async function decode(z) {
 }
 
 // ───────────── вкладки
-const TABS = { home: ["house", "Главная"], learn: ["book-open", "Учить"], practice: ["mic", "Практика"], stats: ["chart-line", "Прогресс"] };
-$$("nav button").forEach((b) => {
-  const [i, t] = TABS[b.dataset.tab]; b.innerHTML = ic(i) + t;
-  b.onclick = () => { haptic(); tab(b.dataset.tab); };
-});
+// активная вкладка: duotone-иконка и чернила, остальные regular
+const TABS = { home: ["house", "Главная"], learn: ["book-open", "Учить"], practice: ["microphone", "Практика", "mic"], stats: ["chart-line-up", "Прогресс", "chart-line"] };
+$$("nav button").forEach((b) => { b.onclick = () => { haptic(); tab(b.dataset.tab); }; });
 function tab(name) {
   TAB = name;
-  $$("nav button").forEach((b) => b.classList.toggle("on", b.dataset.tab === name));
+  $$("nav button").forEach((b) => {
+    const [i, t, reg] = TABS[b.dataset.tab], on = b.dataset.tab === name;
+    b.classList.toggle("on", on); b.innerHTML = ic(on ? i + "-duotone" : reg || i) + t;
+  });
   for (const k of Object.keys(TABS)) {
     const el = $("#" + k); el.classList.toggle("hidden", k !== name);
     if (k === name) { el.classList.remove("in"); void el.offsetWidth; el.classList.add("in"); }
   }
   scrollTo({ top: 0 });
-  animate($("#" + name));
-}
-
-// числа и полосы набегают от нуля: маленькая награда за открытие
-function animate(root) {
-  requestAnimationFrame(() => setTimeout(() => {
-    $$("[data-off]", root).forEach((c) => c.style.strokeDashoffset = c.dataset.off);
-    $$("[data-w]", root).forEach((b) => b.style.width = b.dataset.w);
-    $$("[data-count]", root).forEach((el) => {
-      const to = +el.dataset.count, t0 = performance.now();
-      if (!to || matchMedia("(prefers-reduced-motion: reduce)").matches) { el.textContent = to; return; }
-      const step = (t) => { const k = Math.min((t - t0) / 700, 1); el.textContent = Math.round(to * (1 - Math.pow(1 - k, 3))); if (k < 1) requestAnimationFrame(step); };
-      requestAnimationFrame(step);
-    });
-  }, 60));
 }
 
 // ───────────── графики
-function chart(values, labels, { suffix = "", max = null, min = null, area = false } = {}) {
-  const pts = values.map((v, i) => [i, v]).filter(([, v]) => v !== null && v !== undefined);
-  if (!pts.length) return `<p class="mut" style="margin-top:8px">Пока нет данных.</p>`;
+function chart(values, labels, { suffix = "", max = null, min = null, area = false, c = "--ink" } = {}) {
+  const pts = values.map((v, i) => [i, v]).filter(([, v]) => typeof v === "number");
+  if (!pts.length) return `<p class="empty">Пока нет данных.</p>`;
   const W = 300, H = 120, P = 14;
   const lo = min ?? Math.min(...pts.map((p) => p[1])), hi = max ?? Math.max(...pts.map((p) => p[1]));
   const span = hi - lo || 1, n = Math.max(values.length - 1, 1);
   const xy = pts.map(([i, v]) => [P + (i / n) * (W - 2 * P), H - 22 - ((v - lo) / span) * (H - 22 - P)]);
   const line = xy.map((p) => p.map((x) => x.toFixed(1)).join(",")).join(" ");
   const last = xy[xy.length - 1], lv = pts[pts.length - 1][1];
-  const fill = area && xy.length > 1 ? `<polygon fill="var(--acc)" opacity=".12" points="${xy[0][0]},${H - 22} ${line} ${last[0]},${H - 22}"/>` : "";
+  const fill = area && xy.length > 1 ? `<polygon fill="var(${c})" opacity=".12" points="${xy[0][0]},${H - 22} ${line} ${last[0]},${H - 22}"/>` : "";
   return `<svg class="chart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img">${fill}
-    <polyline fill="none" stroke="var(--acc)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke" points="${line}"/>
-    <circle cx="${last[0]}" cy="${last[1]}" r="4.5" fill="var(--card)" stroke="var(--acc)" stroke-width="3" vector-effect="non-scaling-stroke"/>
-    <text x="${Math.min(last[0], W - 44)}" y="${Math.max(last[1] - 10, 12)}" font-size="13" font-weight="900" fill="var(--fg)">${esc(lv)}${suffix}</text>
+    <polyline fill="none" stroke="var(${c})" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke" points="${line}"/>
+    <circle cx="${last[0]}" cy="${last[1]}" r="4.5" fill="var(--bg)" stroke="var(${c})" stroke-width="3" vector-effect="non-scaling-stroke"/>
+    <text x="${last[0] > 60 ? last[0] - 10 : last[0] + 10}" y="${Math.max(last[1] - 10, 12)}" text-anchor="${last[0] > 60 ? "end" : "start"}" font-size="13" font-weight="900" fill="var(--fg)">${esc(lv)}${suffix}</text>
     <text x="${P}" y="${H - 4}" font-size="11" fill="var(--mut)">${esc(labels[0] ?? "")}</text>
     <text x="${W - P}" y="${H - 4}" font-size="11" fill="var(--mut)" text-anchor="end">${esc(labels[labels.length - 1] ?? "")}</text></svg>`;
 }
 
-// ───────────── лиги
-const LEAGUES = ["Бронза", "Серебро", "Золото", "Сапфир", "Рубин", "Изумруд", "Аметист", "Жемчуг", "Обсидиан", "Алмаз"];
-const badge = (k) => `<div class="badge-lg" style="--lc:${LEAGUE_COLORS[k]}">${ic(k >= 9 ? "crown" : k >= 3 ? "gem" : "shield")}</div>`;
-function leagueText(lg) {
-  if (lg.up === null) return lg.sum >= lg.down ? "Вершина. Держи неделю выше порога" : `До безопасной зоны ${lg.down - lg.sum}`;
-  if (lg.sum >= lg.up) return `Зона повышения! В понедельник ${LEAGUES[lg.k + 1]}`;
-  if (lg.k > 0 && lg.sum < lg.down) return `Еще ${lg.down - lg.sum}, чтобы не опуститься`;
-  return `До повышения ${lg.up - lg.sum}`;
-}
-function openLadder() {
-  const lg = D.xp.lg;
-  openSheet(`<div class="head"><h1>Лиги</h1><button class="x" data-close aria-label="Закрыть">${ic("x")}</button></div>
-    <p class="lead" style="margin-top:8px">Неделя с понедельника по воскресенье. Набрал порог, поднимаешься. Меньше нижнего порога, опускаешься. Соперник один: ты прошлой недели.</p>
-    <div class="ladder" style="margin-top:16px">${LEAGUES.map((n, k) => `<div class="rung ${k === lg.k ? "cur" : ""} ${k > lg.best + 1 && k !== lg.k ? "locked" : ""}" style="--lc:${LEAGUE_COLORS[k]}">${badge(k)}<h3>${n}</h3><span>${k < 9 ? `↑ ${150 + 50 * k}` : "вершина"}${k ? ` · ↓ ${60 + 30 * k}` : ""}</span></div>`).join("")}</div>
-    <p class="note">Опыт: карточка 2-3, минута речи 10, сцена 10 и 5 за каждую цель, письмо до 25, урок с репетитором 40. Цель дня ${D.xp.goal}.</p>`);
-}
-
-// праздник раз в день и при повышении; падение лиги без шума
+// праздник нормы раз в день; лиги на главной не всплывают (SPEC v4 F3, их место в «Прогрессе», F5)
 function celebrate() {
-  if (!D || !D.xp) return;
-  const today = new Date().toISOString().slice(0, 10), lg = D.xp.lg;
-  const lastK = +store.get("lg-k", lg.k);
-  store.set("lg-k", lg.k);
-  if (lg.k > lastK) {
-    confetti();
-    openSheet(`<div class="celebrate">${badge(lg.k)}<h1>Лига ${esc(lg.name)}!</h1>
-      <p class="lead" style="margin:8px 0 18px">Прошлая неделя закрыта выше порога. Следующий порог: ${lg.up ?? "вершина"}.</p>
-      <button class="btn press" data-close>Дальше</button></div>`);
-  } else if (D.xp.today >= D.xp.goal && store.get("goal-day") !== today) {
-    store.set("goal-day", today); confetti(); toast(`Цель дня взята: ${D.xp.today} опыта.`);
-  }
+  if (!fresh() || !D.norm || store.get("goal-day") === D.day) return;
+  store.set("goal-day", D.day); confetti(); toast(`Норма дня взята: ${D.xp.today} опыта и речь.`);
 }
 function confetti() {
   if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   try { IN_TG && TG.HapticFeedback.notificationOccurred("success"); } catch (e) {}
   const cv = $("#confetti"), cx = cv.getContext("2d"), dpr = devicePixelRatio || 1;
   cv.classList.remove("hidden"); cv.width = innerWidth * dpr; cv.height = innerHeight * dpr; cx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  const cols = ["#f0713e", "#e9a92c", "#5a8c55", "#d2566b", "#8d5ba6"];
+  const cols = ["#e4572e", "#2b3a67", "#7a5cc7", "#2e9e6b", "#3d7bd9"];
   const ps = Array.from({ length: 70 }, () => ({ x: innerWidth / 2 + (Math.random() - .5) * 80, y: innerHeight * .35, vx: (Math.random() - .5) * 9, vy: -Math.random() * 9 - 4, r: Math.random() * 6, c: cols[Math.random() * cols.length | 0], w: 6 + Math.random() * 5 }));
   const t0 = performance.now();
   const frame = (t) => {
@@ -367,66 +337,142 @@ function confetti() {
 }
 
 // ───────────── главная
+// шкала A2 → B2 (SPEC v4 F3.1): сегменты полос, отметка L, штрихованная зона ±, подшкалы цветами видов работы
+// полосы как в level.BANDS, шкала L 30-75 целиком
+const SEG = [["A2", 30, 45], ["B1", 45, 52], ["B1+", 52, 59], ["B2", 59, 66], ["сильный B2", 66, 75]];
+const L_MIN = 30, L_MAX = 75;
+const pos = (v) => Math.max(0, Math.min(100, (v - L_MIN) / (L_MAX - L_MIN) * 100));
+const at = (v) => `left:clamp(2px, ${pos(v)}%, calc(100% - 2px))`;     // отметка на краях 30 и 75 не уходит за трек
+const SUBS = [["f", "Беглость", "--speech"], ["a", "Точность", "--prec"], ["v", "Словарь", "--vocab"]];
+function levelHtml(lv) {
+  const ok = lv && lv.st === "ok" && typeof lv.L === "number";
+  const L = ok ? Math.max(L_MIN, Math.min(L_MAX, lv.L)) : null;
+  const segs = SEG.map(([, lo, hi], i) => {
+    const f = L === null ? 0 : Math.max(0, Math.min(1, (L - lo) / (hi - lo)));
+    const cur = L !== null && L >= lo && (L < hi || i === SEG.length - 1);       // и на нижней границе полосы
+    return `<i style="flex:${hi - lo}" class="${cur ? "cur" : ""}"><u style="width:${100 * f}%"></u></i>`;
+  }).join("");
+  let marks = "";
+  if (ok) {
+    const prev = +store.get("lvl-L", L), lo = Math.max(L_MIN, L - lv.pm), hi = Math.min(L_MAX, L + lv.pm);
+    store.set("lvl-L", L);
+    if (prev !== L) marks += `<span class="mark ghost" style="${at(prev)}"></span>`;
+    marks += `<span class="zone" style="left:${pos(lo)}%;width:${pos(hi) - pos(lo)}%"></span>
+      <span class="mark${prev !== L ? " pulse" : ""}" style="${at(L)}"></span>`;
+  }
+  const chk = ok && lv.chk ? ` · контроль ${lv.chk.L} (${lv.chk.diff > 0 ? "+" : ""}${lv.chk.diff})` : "";
+  const head = ok
+    ? `<b>${esc(lv.b)}</b><span>${L} ± ${lv.pm} · ${lv.to ? `до B2 осталось ${lv.to}` : "B2 взят"}<br>замер ${esc(dm(lv.d))}${esc(chk)}</span>`
+    : lv && lv.st === "error" ? `<b class="no">шкала не посчиталась</b><span>причина в ошибках данных сверху</span>`
+    : lv && lv.st === "none" ? `<b class="no">не оценен</b><span>числа нет, пока мало замеров${lv.d ? `<br>последний замер ${esc(dm(lv.d))}` : ""}</span>`
+    : `<b class="no">нет данных</b><span>бот не прислал шкалу: /app в чате</span>`;
+  const need = lv && lv.st === "none" && lv.need && lv.need.length ? `<ul class="need">${lv.need.map((n) => `<li>нужно: ${esc(n)}</li>`).join("")}</ul>` : "";
+  const sub = (lv && lv.sub) || {};
+  const subs = SUBS.map(([k, t, c]) => {
+    const s = sub[k] || {}, v = typeof s.v === "number" ? s.v : null;
+    const tip = v === null ? "нет данных" : `${v} из 100${s.s === "frozen" ? ", заморожено с " + dm(s.d) : ""}`;
+    return `<div class="${s.s === "frozen" ? "fz" : ""}" style="--c:var(${c})" title="${esc(tip)}">${t}<i><u style="width:${v ?? 0}%"></u></i></div>`;
+  }).join("");
+  const stg = D && typeof D.stage === "number" ? D.stage : null;
+  return `<div class="lvl"><div class="lvl-hd">${head}</div>
+    <div class="track">${segs}${marks}</div>
+    <div class="lab">${SEG.map(([n, lo, hi]) => `<span style="flex:${hi - lo}">${n}</span>`).join("")}</div>${need}
+    <div class="subs">${subs}<div class="st">Ступени<b>${stg === null ? "?" : stg} из 10</b></div></div></div>`;
+}
+
+// кнопка «Сейчас» (SPEC v4 F3, CR-12): карточки первыми всегда → норма взята: тихая → голосовое, если речи нет → сцена дня → задания
+function nowStep() {
+  const pick = suggest();
+  const scene = (s) => ({ k: "scene", icon: "chat-teardrop-text-duotone", t: pick ? `Сейчас: ${pick.title}` : "Сейчас: сцена",
+    s, go: () => (pick ? openScenario(pick.id) : tab("practice")) });
+  const sceneSub = pick && pick.turns ? `сцена дня, ${pick.turns.length} реплик, до ${maxXp(pick)} опыта` : "сцена дня, около 5 минут";
+  if (!D || !D.xp) return scene("данных о норме нет, практика работает");
+  if (!fresh()) return { k: "refresh", icon: "repeat", t: "Обновить", s: "бот пришлет свежую кнопку мини-аппа", go: refresh };
+  const left = Math.max(D.xp.goal - D.xp.today, 0), t = D.tasks;
+  if (D.due) return { k: "cards", icon: "cards-duotone", t: `Сейчас: ${D.due} карточек`,
+    s: `около ${Math.max(1, Math.round(D.due * 13 / 60))} мин${D.norm ? ", норма уже взята" : `, +${Math.min(Math.round(D.due * 2.5), 999)} к норме дня`}`,
+    go: () => send({ kind: "review" }, "Повтор") };
+  if (D.norm) return { k: "rest", quiet: true, icon: "seal-check-duotone", t: "Норма взята", s: `можно сверху: ${pick ? pick.title : "сцена"}`, go: scene().go };
+  if (!D.sp) return { k: "voice", icon: "microphone-duotone", t: "Сейчас: голосовое 2 минуты", s: "речь дня и замер беглости, +20 опыта", go: openVoice };
+  if (!D.prt) return scene(sceneSub);
+  if (t && !D.sent) {
+    const n = t.items.filter((it) => has(ANS[it.id])).length;
+    return { k: "tasks", icon: "list-checks-duotone", t: `Сейчас: задания, ${t.items.length}`, s: `готово ${n}, ответы ждет репетитор`, go: () => tab("learn") };
+  }
+  return scene(`до нормы ${left} опыта: ${sceneSub}`);
+}
+
+// день данных: ссылка живет в постоянной клавиатуре, поэтому утром она вчерашняя.
+// Норму, речь и неделю показываем только по данным сегодняшнего дня и только от бота, который их шлет.
+const localDay = (d = new Date()) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+const fresh = () => !!(D && D.xp && D.day === localDay() && D.sp !== undefined && D.vs !== undefined && Array.isArray(D.wk));
+const refresh = () => send({ kind: "refresh" }, "Обновление");
+
+// голосовое не уходит через sendData: его пишут в чат бота, мини-апп только закрывается
+function openVoice() {
+  openSheet(`<div class="head"><h1>Голосовое 2 минуты</h1><button class="x" data-close aria-label="Закрыть">${ic("x")}</button></div>
+    <p class="lead" style="margin-top:8px">Запиши голосовое 2 минуты в чат бота. Тема любая: что делал вчера, проект, планы на неделю.</p>
+    <p class="note">От 60 секунд это речь дня для нормы, от 90 секунд запись идет в шкалу беглости. Бот пришлет темп и паузы.</p>
+    <button class="btn press" id="to-chat">${ic("mic")}Закрыть и записать</button>`);
+  $("#to-chat").onclick = () => {
+    if (IN_TG) { try { TG.close(); return; } catch (e) {} }
+    toast("Открой чат бота в Telegram и запиши голосовое на 2 минуты.");
+  };
+}
+
 function renderHome() {
   const name = (IN_TG && TG.initDataUnsafe && TG.initDataUnsafe.user && TG.initDataUnsafe.user.first_name) || "Khan";
-  if (!D || !D.form || !D.xp) {
-    $("#home").innerHTML = `<h1>Привет, ${esc(name)}!</h1><p class="lead">Данных о прогрессе нет, но практика работает.</p>
-      <button class="btn press" style="margin-top:18px" id="go-pr">${ic("mic")}К практике</button>`;
-    $("#go-pr").onclick = () => tab("practice");
-    return;
-  }
-  const x = D.xp, lg = x.lg, st = D.stage ?? 0;
-  const R = 44, C = 2 * Math.PI * R, pct = Math.min(x.today / x.goal, 1), done = x.today >= x.goal;
-  const wd = (new Date().getDay() + 6) % 7;
-  const t = D.tasks, filled = t ? t.items.filter((it) => has(ANS[it.id])).length : 0;
-  const todo = [
-    [D.due === 0, "Карточки", D.due === null ? "Трекер не читается" : D.due ? `${D.due} к повтору, около ${2 * D.due} опыта` : "Все повторено", D.due ? ["review", "Повторить"] : null],
-    [D.prt > 0, "Разговор", D.prt ? `Сцен сегодня: ${D.prt}, речи ${D.min} мин` : "Одна сцена, 5 минут, до 30 опыта", D.prt ? null : ["practice", "Начать"]],
-    [t ? D.sent : true, "Задания", t ? (D.sent ? "Ответы отправлены" : `Готово ${filled} из ${t.items.length}, не отправлены`) : "На сегодня нет", t && !D.sent ? ["learn", "Открыть"] : null],
-    [!!D.plan, "План дня", D.plan ? "Пришел в чат в 9:00" : "Репетитор еще не положил план", null],
-  ];
-  const pick = suggest();
-  const left = x.goal - x.today;
-  const hint = done ? "Взята. Все сверху идет в лигу" : D.due ? `Еще ${left}: около ${Math.ceil(left / 2.5)} карточек или одна сцена` : `Еще ${left}: одна сцена или 2 минуты речи`;
-  const span = lg.up ?? Math.max(lg.down, lg.sum, 1);
-  $("#home").innerHTML = `
-    <div class="top"><h1>Привет, ${esc(name)}</h1>
-      <div class="chips"><span class="stat s-fire">${ic("flame")}${D.streak[0]}</span><span class="stat s-xp">${ic("zap")}${x.total}</span></div></div>
-    <div class="card" style="margin-top:14px">
-      <div class="goal-card"><div class="ring ${done ? "done" : ""}"><svg viewBox="0 0 104 104"><circle class="bgc" cx="52" cy="52" r="${R}"/><circle class="fgc" cx="52" cy="52" r="${R}" stroke-dasharray="${C}" stroke-dashoffset="${C}" data-off="${C * (1 - pct)}"/></svg>
-        <div class="c"><div><b data-count="${x.today}">0</b><span>из ${x.goal}</span></div></div></div>
-        <div><h3>Цель дня</h3><p class="mut" style="margin-top:4px">${esc(hint)}</p></div></div>
+  const day = new Date().toLocaleDateString("ru-RU", { weekday: "long", day: "numeric", month: "long" });
+  const ok = fresh();
+  const streak = ok && D.streak && D.streak[0] ? `<span class="streak" title="дней подряд">${ic("flame-duotone")}${D.streak[0]}</span>` : "";
+  const st = nowStep();
+  let today = "", goal = "", stale = "";
+  if (D && D.xp && !ok) {
+    const from = D.day ? dm(D.day) : String(D.at || "").slice(0, 5);
+    stale = `<p class="stale"><b>Данные от ${esc(from)}${D.day === localDay() ? " без нормы дня" : ""}.</b> Норма, речь и неделя в них не сегодняшние. Обнови:</p>`;
+  } else if (D && D.xp) {
+    const pick = suggest(), t = D.tasks, lf = D.level && D.level.sub && D.level.sub.f;
+    const rows = [];
+    if (D.due !== null && D.due !== undefined)
+      rows.push(["--vocab", D.due === 0, "Карточки", D.due ? `${D.due} к повтору` : "все повторено", D.due ? ["Начать", () => send({ kind: "review" }, "Повтор")] : null]);
+    // строку закрывает только голосовое от 60 с; речь дня из сцены говорится отдельно и честно
+    rows.push(["--speech", !!D.vs, "Голосовое 2 минуты", D.vs ? `есть, сегодня ${D.min} мин` :
+      `${D.sp ? "речь дня есть из сцены, " : ""}замер беглости${lf && lf.d ? ", последний " + dm(lf.d) : ""}`, D.vs ? null : ["Записать", openVoice]]);
+    // сцену закрывает только законченная сцена: брошенная и письмо не в счет
+    rows.push(["--speech", D.prt > 0, D.prt ? "Сцена" : pick ? `Сцена: ${pick.title}` : "Сцена",
+      D.prt ? `законченных сегодня: ${D.prt}` : pick && pick.turns ? `${pick.turns.length} реплик, до ${maxXp(pick)} опыта` : "около 5 минут",
+      D.prt ? null : ["Начать", () => (pick ? openScenario(pick.id) : tab("practice"))]]);
+    if (t) {
+      const n = t.items.filter((it) => has(ANS[it.id])).length;
+      rows.push(["--prec", !!D.sent, "Задания", D.sent ? "ответы отправлены" : `готово ${n} из ${t.items.length}`, D.sent ? null : ["Открыть", () => tab("learn")]]);
+    }
+    today = `<h2>Сегодня</h2>${rows.map(([c, done, h, p, act], i) => `<div class="todo${done ? " done" : ""}" style="--c:var(${c})"><span class="chk">${ic("check")}</span>
+      <div class="tx"><b>${esc(h)}</b><span>${esc(p)}</span></div>${act ? `<button class="go press" data-row="${i}">${act[0]}</button>` : ""}</div>`).join("")}`;
+    const x = D.xp, wk = D.wk, wd = (new Date(D.day + "T12:00:00").getDay() + 6) % 7;   // неделя от дня данных
+    goal = `<h2>Норма дня</h2><div class="goal-l"><span><b>${x.today} из ${x.goal}</b> опыта</span><span class="sp${D.sp ? "" : " no"}">речь ${D.sp ? "есть" : "нужна"}</span></div>
+      <div class="gbar"><u style="width:${Math.min(100, 100 * x.today / x.goal)}%"></u></div>
       <div class="week">${DAYS.map((d, i) => {
-        const v = lg.week[i] || 0, met = v >= x.goal;
+        const [v, sp] = wk[i] || [0, 0], met = v >= x.goal && sp;
         const cls = met ? "met" : i > wd ? "future" : i === 6 && !v ? "rest" : "";
-        const inner = met ? ic("check") : cls === "rest" ? ic("moon") : "";
-        return `<div class="day ${cls} ${i === wd ? "today" : ""}"><i style="--p:${Math.min(100, Math.round(100 * v / x.goal))}">${inner}</i><span>${d}</span></div>`;
-      }).join("")}</div></div>
-    <button class="card league press" id="lg" style="--lc:${LEAGUE_COLORS[lg.k]}">${badge(lg.k)}
-      <div class="tx"><h3>Лига ${esc(lg.name)}</h3>
-        <div class="lbar"><i style="width:0" data-w="${Math.min(100, 100 * lg.sum / span)}%"></i>${lg.k && lg.up ? `<em style="left:${100 * lg.down / span}%"></em>` : ""}</div>
-        <p class="mut" style="margin-top:6px">${lg.sum} за неделю. ${esc(leagueText(lg))}</p></div>${ic("chevron-right", "chev")}</button>
-    <h2>Сегодня</h2>
-    <div class="card">${todo.map(([ok, h, p, act]) => `<div class="todo ${ok ? "done" : ""}"><div class="chk">${ic("check")}</div>
-      <div class="tx"><h3>${h}</h3><p>${esc(p)}</p></div>${act ? `<button class="press" data-act="${act[0]}">${act[1]}</button>` : ""}</div>`).join("")}</div>
-    ${pick ? `<h2>Сцена дня</h2>${rowHtml(pick)}` : ""}
-    <div class="card mini c-plum" style="margin-top:20px"><div class="sq">${ic("graduation-cap")}</div>
-      <div style="flex:1"><h3>Ступень ${D.stage === null ? "?" : st} из 10</h3><p class="mut">Растет только экзаменом у репетитора</p></div></div>
-    <p class="mut" style="text-align:center;margin-top:14px;font-size:12.5px">Данные на ${esc(D.at)}${D.cut ? ", старые точки графиков не влезли" : ""}</p>`;
-  $$("[data-act]", $("#home")).forEach((b) => b.onclick = () => {
-    const a = b.dataset.act;
-    if (a === "review") send({ kind: "review" }, "Повтор");
-    else tab(a);
-  });
-  $("#lg").onclick = () => { haptic(); openLadder(); };
-  wireRows($("#home"));
+        const p = Math.min(sp ? 100 : 90, Math.round(100 * v / x.goal));   // без речи круг не замыкается
+        return `<div class="day ${cls}${i === wd ? " today" : ""}"><i style="--p:${p}">${met ? ic("check") : cls === "rest" ? ic("moon") : ""}</i><span>${d}</span></div>`;
+      }).join("")}</div>`;
+    renderHome.acts = rows.map((r) => r[4] && r[4][1]);
+  }
+  $("#home").innerHTML = `<div class="hd"><div><p class="mut sm">${esc(day[0].toUpperCase() + day.slice(1))}</p><h1>Привет, ${esc(name)}</h1></div>${streak}</div>
+    ${levelHtml(D && D.level)}${stale}
+    <button class="now press${st.quiet ? " quiet" : ""}" id="now" data-k="${st.k}">${ic(st.icon)}<span>${esc(st.t)}<small>${esc(st.s)}</small></span>${ic("arrow-right")}</button>
+    ${today}${goal}
+    ${D && D.at ? `<p class="foot">Данные на ${esc(D.at)}${D.cut ? ", старые точки графиков не влезли" : ""}</p>` : ""}`;
+  $("#now").onclick = () => { haptic("medium"); st.go(); };
+  $$("[data-row]", $("#home")).forEach((b) => b.onclick = () => { haptic(); renderHome.acts[+b.dataset.row](); });
 }
 
 // сцена дня: одна из двух наименее пройденных рабочих
 function suggest() {
   if (!CAT) return null;
   const pr = (D && D.pr) || {};
-  const work = CAT.scenarios.filter((s) => s.cat === "work");
+  const work = CAT.scenarios.filter((s) => s.cat === "interview" || s.cat === "team");
   return work.slice().sort((a, b) => ((pr[a.id] || [0])[0] - (pr[b.id] || [0])[0]))[new Date().getDate() % 2] || null;
 }
 
@@ -441,17 +487,26 @@ const has = (v) => v !== undefined && v !== "" && !(Array.isArray(v) && !v.lengt
 function renderLearn() {
   const due = D ? D.due : null, t = D && D.tasks;
   ANS = t ? loadLocal() : {};
+  // карточки цветом словаря, задания цветом точности: те же цвета, что в шкале и в «Сегодня» на главной
+  // числа нет: трекер не читается (null) или ссылка урезана (поля нет) — честное «?», а не «все повторено»
+  const known = typeof due === "number";
+  const cardsHead = !known ? "? к повтору" : due ? `${due} к повтору` : "Все повторено";
+  const cardsSub = !known ? (due === null ? "трекер не читается" : "числа нет в ссылке, обнови")
+    : due ? `около ${Math.max(1, Math.round(due * 13 / 60))} мин, около ${Math.round(due * 2.5)} опыта (2-3 за карточку)` : "на сегодня карточек нет";
+  const cardsAct = known ? (due ? ["go-review", "Повторить"] : null) : D && due === undefined ? ["go-refresh", "Обновить"] : null;
   $("#learn").innerHTML = `<h1>Учить</h1><p class="lead">Карточки из трекера и задания от репетитора</p>
-    <div class="card" style="margin-top:16px"><div class="mini c-coral"><div class="sq">${ic("layers")}</div>
-      <div style="flex:1"><h3>${due ?? "?"} к повтору</h3><p class="mut">${due === null ? "трекер не читается" : due ? `около ${2 * due} опыта` : "на сегодня все повторено"}</p></div></div>
-      ${due ? `<button class="btn press" style="margin-top:14px" id="go-review">${ic("repeat")}Повторить в чате</button>` : ""}</div>
+    <h2>Карточки</h2>
+    <div class="list"><div class="item" style="--c:var(--vocab)">${ic("cards-duotone")}
+      <div class="tx"><b>${cardsHead}</b><span>${cardsSub}</span></div>
+      ${cardsAct ? `<button class="go press" id="${cardsAct[0]}">${cardsAct[1]}</button>` : ""}</div></div>
     <h2>Задания</h2>
-    ${!t ? `<div class="card"><p>Заданий на сегодня нет.</p><p class="mut" style="margin-top:4px">Их кладет репетитор после урока.</p></div>` :
-      (D.sent ? `<div class="card"><p class="mut">Ответы сегодня уже отправлены. Можно отправить еще раз, репетитор увидит обе версии.</p></div>` : "") +
-      `<div class="card"><div class="head"><h3>Сделано</h3><span class="mut" id="t-cnt"></span></div><div class="bar"><i id="t-bar" style="width:0"></i></div></div>` +
-      t.items.map((it, k) => `<div class="card task" id="it-${esc(it.id)}"><p class="q">${k + 1}. ${esc(it.prompt)}</p>${body(it)}<div class="res" id="r-${esc(it.id)}"></div></div>`).join("") +
-      `<button class="btn green press" id="send-tasks">${ic("check")}Отправить ответы</button>`}`;
-  const r = $("#go-review"); if (r) r.onclick = () => send({ kind: "review" }, "Повтор");
+    ${!t ? `<p class="empty">${D && !("tasks" in D) ? "Задания в ссылку не попали, обнови: /app в чате." : "Заданий на сегодня нет. Их кладет репетитор после урока."}</p>` :
+      `<div class="goal-l"><span><b id="t-cnt"></b> готово</span><span class="mut">${D.sent ? "уже отправлены, можно еще раз" : "ответы ждет репетитор"}</span></div>
+      <div class="gbar"><u id="t-bar" style="width:0;background:var(--prec)"></u></div>` +
+      t.items.map((it, k) => `<div class="task" id="it-${esc(it.id)}"><p class="q"><i>${k + 1}</i>${esc(it.prompt)}</p>${body(it)}<div class="res" id="r-${esc(it.id)}"></div></div>`).join("") +
+      `<button class="btn press" id="send-tasks" style="margin-top:18px">${ic("check")}Отправить ответы</button>`}`;
+  const r = $("#go-review"); if (r) r.onclick = () => { haptic(); send({ kind: "review" }, "Повтор"); };
+  const rf = $("#go-refresh"); if (rf) rf.onclick = () => { haptic(); refresh(); };
   if (t) { t.items.forEach(wire); $("#send-tasks").onclick = sendAnswers; count(); }
 }
 function count() {
@@ -524,24 +579,27 @@ function sendAnswers() {
 
 // ───────────── практика
 const byId = (id) => CAT && CAT.scenarios.find((s) => s.id === id);
-const catColor = (s) => s.color || ((CAT.cats.find((c) => c.id === s.cat) || {}).color) || "coral";
+// цвет по виду работы, а не по разделу (VISION: три смысловых цвета): сцены и разговор — речь,
+// рассказ из слов трекера — словарь, письмо — точность. Цвета из scenarios.json (пастель Word Trip) не берем.
+const kindColor = (s) => s.kind === "words" ? "--vocab" : s.kind === "writing" ? "--prec" : "--speech";
 const maxXp = (s) => s.kind === "writing" ? 25 : s.kind === "words" ? 10 + 5 * (s.pick || 5) : 10 + 5 * (s.goals || []).length;
-function rowHtml(s) {
-  const p = D && D.pr && D.pr[s.id];
-  const pill = p ? `<span class="pill ok">${p[2] ? `${p[1]}/${p[2]}` : "✓"} · ${p[0]}×</span>` : `<span class="pill">+${maxXp(s)}</span>`;
-  return `<button class="row c-${catColor(s)}" data-sc="${esc(s.id)}"><div class="dot">${ic(s.icon)}</div>
-    <div class="tx"><h3>${esc(s.title)}</h3><p>${esc(s.sub)}</p></div>${pill}</button>`;
+function rowHtml(s, pick) {
+  const p = D && D.pr && D.pr[s.id], today = pick && pick.id === s.id;
+  const pass = p ? `<span class="pass" title="пройдена ${p[0]} раз${p[2] ? `, лучшее ${p[1]} из ${p[2]} целей` : ""}">${ic("check")}${p[2] ? `${p[1]}/${p[2]}` : `${p[0]}×`}</span>` : "";
+  // сцена дня (та же, что в «Сейчас» и «Сегодня» на главной): метка и действие, остальные строки тихие
+  return `<button class="item press${today ? " pick" : ""}" style="--c:var(${kindColor(s)})" data-sc="${esc(s.id)}">${ic(s.icon)}
+    <div class="tx">${today ? `<em>Сцена дня</em>` : ""}<b>${esc(s.title)}</b><span>${esc(s.sub)}</span></div>${today ? `<span class="go">Начать</span>` : pass}</button>`;
 }
 function wireRows(root) { $$("[data-sc]", root).forEach((b) => b.onclick = () => { haptic(); openScenario(b.dataset.sc); }); }
 
 function renderPractice() {
   if (!CAT) { $("#practice").innerHTML = `<h1>Практика</h1><div class="card err"><b>Сценарии не загрузились.</b><br>Проверь интернет и открой мини-апп заново.</div>`; return; }
-  const quick = CAT.quick.map(byId).filter(Boolean);
+  const quick = CAT.quick.map(byId).filter(Boolean), pick = suggest();
   $("#practice").innerHTML = `
     <h1>Практика</h1>
-    <p class="lead">Собеседник пишет в чат, ты отвечаешь голосом. Каждая цель сцены дает 5 опыта</p>
-    <div class="modes">${quick.map((s) => `<button class="mode c-${s.tile || catColor(s)}" data-sc="${esc(s.id)}"><div class="sq">${ic(s.icon)}</div><h3>${esc(s.title)}</h3><p>${esc(s.sub)}</p><span class="pill">+${maxXp(s)}</span></button>`).join("")}</div>
-    ${CAT.cats.map((c) => `<h2>${esc(c.title)}</h2>${CAT.scenarios.filter((s) => s.cat === c.id).map(rowHtml).join("")}`).join("")}`;
+    <p class="lead">Собеседник пишет в чат, ты отвечаешь голосом</p>
+    <div class="quick">${quick.map((s) => `<button class="press" style="--c:var(${kindColor(s)})" data-sc="${esc(s.id)}">${ic(s.icon)}<b>${esc(s.title)}</b></button>`).join("")}</div>
+    ${CAT.cats.map((c) => `<h2>${esc(c.title)}</h2><div class="list">${CAT.scenarios.filter((s) => s.cat === c.id).map((s) => rowHtml(s, pick)).join("")}</div>`).join("")}`;
   wireRows($("#practice"));
 }
 
@@ -568,10 +626,10 @@ function openScenario(id) {
   const hard = s.hard ? s.hard.length : 0;
   const levels = Object.keys(CAT.levels).filter((k) => k !== "B2" || hard || s.kind !== "scenario");
   openSheet(`
-    <div class="head"><h1>${esc(s.title)}</h1><button class="x" data-close aria-label="Закрыть">${ic("x")}</button></div>
+    <div class="head" style="--c:var(${kindColor(s)})"><h1>${ic(s.icon)}${esc(s.title)}</h1><button class="x" data-close aria-label="Закрыть">${ic("x")}</button></div>
     <p class="lead" style="margin-top:8px">${esc(s.sub)}.${s.who ? ` Собеседник: ${esc(s.who)}.` : ""}</p>
-    <div class="cap">Цели, по 5 опыта за каждую</div>
-    ${goals.map((g) => `<div class="goal">${ic("check")}<span>${esc(g)}</span></div>`).join("")}
+    <div class="cap">Цели</div>
+    <div style="--c:var(${kindColor(s)})">${goals.map((g) => `<div class="goal"><i class="gd"></i><span>${esc(g)}</span></div>`).join("")}</div>
     <div class="cap">Сложность</div>
     <div class="opts">${levels.map((k) => `<button class="chip${k === lvl ? " on" : ""}" data-l="${k}">${k}</button>`).join("")}</div>
     <p class="mut" id="lvl-d" style="margin-top:8px"></p>
@@ -593,14 +651,14 @@ function openWriting(s) {
   const prompts = CAT.writing || [];
   let k = 0;
   openSheet(`
-    <div class="head"><h1>${esc(s.title)}</h1><button class="x" data-close aria-label="Закрыть">${ic("x")}</button></div>
-    <p class="lead" style="margin-top:8px">Напиши по-английски, репетитор разберет ошибки на уроке. До 25 опыта.</p>
+    <div class="head" style="--c:var(${kindColor(s)})"><h1>${ic(s.icon)}${esc(s.title)}</h1><button class="x" data-close aria-label="Закрыть">${ic("x")}</button></div>
+    <p class="lead" style="margin-top:8px">Напиши по-английски, репетитор разберет ошибки на уроке.</p>
     <div class="cap">Тема</div>
     <div class="opts">${prompts.map((p, i) => `<button class="chip${i ? "" : " on"}" data-p="${i}">${i + 1}</button>`).join("")}</div>
     <p style="margin:12px 0" id="wp-t">${esc(prompts[0] || "")}</p>
     <textarea id="wt" style="min-height:150px" placeholder="Your text in English...">${esc(store.get("w-draft", ""))}</textarea>
     <p class="mut" id="wc" style="margin:6px 0 16px"></p>
-    <button class="btn press" id="wsend">${ic("pen-line")}Отправить репетитору</button>`);
+    <button class="btn press" id="wsend">${ic("note-pencil-duotone")}Отправить репетитору</button>`);
   const wt = $("#wt"), wc = () => { const n = (wt.value.match(/[A-Za-z']+/g) || []).length; $("#wc").textContent = `${n} слов`; };
   wc();
   wt.oninput = () => { wc(); store.set("w-draft", wt.value); };
@@ -615,23 +673,33 @@ function openWriting(s) {
 
 // ───────────── прогресс
 function renderStats() {
-  if (!D || !D.form || !D.xp) { $("#stats").innerHTML = `<h1>Прогресс</h1><div class="card"><p>Данных нет. Отправь боту /app и открой мини-апп кнопкой внизу чата.</p></div>`; return; }
-  const f = D.form, rec = D.rec || [], ps = D.ps || [];
-  const got = D.ach.filter((a) => a[1]).length;
+  if (!D || !D.form || !D.xp) { $("#stats").innerHTML = `<h1>Прогресс</h1><p class="empty">Данных нет. Отправь боту /app и открой мини-апп кнопкой внизу чата.</p>`; return; }
+  const f = D.form, rec = D.rec || [], ps = D.ps || [], lg = D.xp.lg || {}, st = D.streak || [0, 0];
+  // награды компактно: взятые и по одной ближайшей невзятой из каждого ряда (серия, карточки, ступени).
+  // Награды за лиги остаются в данных, но не на виду: лиги тихие, их место одна строка внизу.
+  const all = (D.ach || []).filter((a) => !String(a[0]).startsWith("Лига ")), got = all.filter((a) => a[1]).length, seen = new Set();
+  const ach = [...all.filter((a) => a[1]), ...all.filter((a) => {
+    const k = String(a[0]).replace(/\d+/g, "#").replace(/карточ[а-я]+/, "карточ");   // «1 карточка» и «10 карточек» один ряд
+    return !a[1] && !seen.has(k) && seen.add(k);
+  })];
   const pr = Object.entries(D.pr || {}).map(([id, v]) => [byId(id), v]).filter(([s]) => s).sort((a, b) => b[1][0] - a[1][0]);
-  $("#stats").innerHTML = `<h1>Прогресс</h1><p class="lead">Опыт, форма, речь и награды</p>
-    <div class="kpis">
-      <div class="kpi c-honey">${ic("zap")}<b data-count="${D.xp.total}">0</b><span class="mut">опыта всего</span></div>
-      <div class="kpi c-coral">${ic("flame")}<b>${D.streak[0]}</b><span class="mut">дн. подряд, рекорд ${D.streak[1]}</span></div>
-      <div class="kpi" style="--t-fg:${LEAGUE_COLORS[D.xp.lg.k]}">${ic("gem")}<b>${esc(D.xp.lg.name)}</b><span class="mut">лучшая ${esc(LEAGUES[D.xp.lg.best])}</span></div>
-      <div class="kpi c-plum">${ic("trophy")}<b>${got}</b><span class="mut">из ${D.ach.length} наград</span></div></div>
-    <div class="card"><h3>Форма ${f.now}</h3><p class="mut">Как рейтинг в игре: растет от хороших дней, пропуск снимает 10%, воскресенье не снимает</p>${chart(f.s, [f.start, "сегодня"], { min: 0, area: true })}</div>
-    <div class="card"><h3>Темп речи</h3><p class="mut">слов в минуту</p>${chart(rec.map((r) => r[1]), rec.map((r) => r[0]), { area: true })}</div>
-    <div class="card"><h3>Паузы длиннее 2 с</h3><p class="mut">в минуту, чем ниже, тем лучше</p>${chart(rec.map((r) => r[2]), rec.map((r) => r[0]), { min: 0 })}</div>
-    <div class="card"><h3>Past simple верно</h3><p class="mut">в рассказах, %</p>${chart(ps.map((r) => r[1]), ps.map((r) => r[0]), { suffix: "%", min: 0, max: 100 })}</div>
-    ${pr.length ? `<h2>Сцены</h2>${pr.map(([s, v]) => `<div class="row c-${catColor(s)}" style="box-shadow:none"><div class="dot">${ic(s.icon)}</div><div class="tx"><h3>${esc(s.title)}</h3><p>${v[0]} раз${v[2] ? `, лучшее ${v[1]} из ${v[2]} целей` : ""}</p></div></div>`).join("")}` : ""}
-    <h2>Награды</h2>
-    <div class="card"><div class="ach">${D.ach.map(([t, g, p]) => `<div class="${g ? "got" : "no"}">${ic(g ? "trophy" : "lock")}<div>${esc(t)}<span>${esc(p)}</span></div></div>`).join("")}</div></div>`;
+  const blk = (h, sub, ch) => `<div class="blk"><h3>${h}</h3><p class="mut">${sub}</p>${ch}</div>`;
+  // SPEC v4 F5: речь первой, форма под именем «Регулярность», лига и опыт одной строкой внизу; название лиги только из данных бота.
+  // Вчерашняя ссылка (урок 2026-11-09): неделю не выдаем за текущую, строка говорит, от какого дня данные
+  const ok = fresh(), from = D.day ? dm(D.day) : String(D.at || "").slice(0, 5);
+  const week = ok ? `${lg.sum ?? 0} за неделю${typeof lg.prev === "number" ? `, прошлая ${lg.prev}` : ""}` : `данные от ${esc(from)}, обнови`;
+  const lgLine = lg.name ? `Лига <b>${esc(lg.name)}</b> · ${week} · ` : ok ? "" : `Данные от ${esc(from)} · `;
+  $("#stats").innerHTML = `<h1>Прогресс</h1><p class="lead">Речь, регулярность и награды</p>
+    <h2>Речь</h2>
+    ${blk("Темп речи", "слов в минуту", chart(rec.map((r) => r[1]), rec.map((r) => r[0]), { min: 0, c: "--speech" }))}
+    ${blk("Паузы длиннее 2 с", "в минуту, чем ниже, тем лучше", chart(rec.map((r) => r[2]), rec.map((r) => r[0]), { min: 0, c: "--speech" }))}
+    ${blk("Past simple верно", "в рассказах, %", chart(ps.map((r) => r[1]), ps.map((r) => r[0]), { suffix: "%", min: 0, max: 100, c: "--prec" }))}
+    <h2>Регулярность</h2>
+    ${blk(`<b>${f.now}</b>`, `серия ${st[0]}, рекорд ${st[1]}; пропуск дня снимает 10%`, chart(f.s, [f.start, ok ? "сегодня" : from], { min: 0, area: true, c: "--fg" }))}
+    ${pr.length ? `<h2>Сцены</h2><div class="list tight">${pr.map(([s, v]) => `<div class="item" style="--c:var(${kindColor(s)})">${ic(s.icon)}<div class="tx"><b>${esc(s.title)}</b></div><small>${v[0]} раз${v[2] ? `, лучшее ${v[1]} из ${v[2]}` : ""}</small></div>`).join("")}</div>` : ""}
+    <h2>Награды · ${got} из ${all.length}</h2>
+    <div class="list tight">${ach.map(([t, g, p]) => `<div class="item${g ? "" : " no"}" style="--c:var(${g ? "--fg" : "--mut"})">${ic(g ? "seal-check-duotone" : "lock")}<div class="tx"><b>${esc(t)}</b></div><small>${esc(p)}</small></div>`).join("")}</div>
+    <p class="lg-line">${lgLine}<span>опыта всего <b>${D.xp.total}</b></span></p>`;
 }
 
 // ───────────── старт
