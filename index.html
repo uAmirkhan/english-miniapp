@@ -176,6 +176,35 @@ textarea { min-height: 76px; resize: vertical; }
 .btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 14px; border-radius: 14px; font-weight: 700; font-size: 16px; background: var(--ink); color: var(--on-ink); }
 .btn .ic { width: 20px; height: 20px; }
 
+/* шторка шкалы (F4) */
+.lvl[role=button] { cursor: pointer; border-radius: 12px; outline-offset: 4px; }
+.lvl[role=button]:focus-visible { outline: 2px solid var(--ink); }
+.lvl .more { display: block; margin-top: 8px; font-size: 12.5px; color: var(--ink); font-weight: 600; }
+.sb { padding: 14px 0; border-bottom: 1px solid var(--line); }
+.sb-hd { display: flex; align-items: baseline; gap: 10px; }
+.sb-hd h3 { flex: 1; color: var(--c); display: flex; align-items: center; gap: 8px; }
+.sb-hd h3 .ic { width: 22px; height: 22px; }
+.sb-hd b { font-size: 20px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.sb-hd b small { font-size: 12.5px; font-weight: 500; color: var(--mut); }
+.sb i.bar { display: block; height: 6px; border-radius: 3px; background: var(--track); margin: 8px 0 6px; overflow: hidden; }
+.sb i.bar u { display: block; height: 100%; background: var(--c); }
+.sb.fz i.bar u { opacity: .45; }
+.sb .meta { font-size: 12.5px; color: var(--mut); }
+.sb .tag { font-weight: 700; color: var(--c); }
+.sb.fz .tag, .sb.no .tag { color: var(--mut); }
+.sb .hint { margin-top: 6px; font-size: 14px; }
+.sb .hint b { font-weight: 700; }
+.ladder { display: flex; gap: 3px; margin-top: 10px; }
+.ladder > div { flex: 1; min-width: 0; text-align: center; font-size: 11px; color: var(--mut); }
+.ladder .cells { display: flex; gap: 3px; margin-top: 4px; }
+.ladder .cells i { flex: 1; height: 26px; border-radius: 5px; background: var(--track); display: grid; place-items: center; font-style: normal; font-size: 11.5px; font-weight: 700; color: var(--mut); }
+.ladder .cells i.done { background: color-mix(in srgb, var(--c) 30%, var(--bg)); color: var(--fg); }
+.ladder .cells i.cur { background: var(--c); color: var(--on-ink); }
+.chkbox { margin-top: 16px; padding: 12px 0; border-top: 2px solid var(--ink); font-size: 14px; }
+.chkbox b { font-weight: 700; }
+.sb .ladder + .meta { margin-top: 10px; }
+.gse { margin-top: 14px; font-size: 12.5px; color: var(--mut); }
+
 /* нижнее меню: активная вкладка чернилами, без плашки */
 nav { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; background: var(--bg); border-top: 1px solid var(--line); padding: 8px 8px calc(8px + env(safe-area-inset-bottom)); }
 nav div { max-width: 560px; margin: 0 auto; display: flex; gap: 6px; }
@@ -188,6 +217,7 @@ nav button.on { color: var(--ink); font-weight: 700; }
 .veil.open { opacity: 1; pointer-events: auto; }
 .sheet { position: fixed; left: 0; right: 0; bottom: 0; z-index: 11; max-height: 88vh; overflow-y: auto; background: var(--bg); border-radius: 20px 20px 0 0; padding: 22px 20px calc(20px + env(safe-area-inset-bottom)); transform: translateY(105%); transition: transform .25s cubic-bezier(.2, .8, .2, 1); }
 .sheet.open { transform: none; }
+.sheet:focus { outline: none; }
 .sheet > div { max-width: 560px; margin: 0 auto; }
 .sheet .x { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; color: var(--mut); flex: none; }
 .sheet h1 { font-size: 22px; margin: 0; }
@@ -297,6 +327,12 @@ function tab(name) {
 }
 
 // ───────────── графики
+// первая показанная точка «Регулярности»: ряд дневной и кончается днем данных, после урезания старых точек начало сдвигается
+function formStart(f) {
+  if (!D.day || !f.s || !f.s.length) return f.start;
+  const d = new Date(D.day + "T12:00:00"); d.setDate(d.getDate() - (f.s.length - 1));
+  return `${String(d.getDate()).padStart(2, "0")}.${String(d.getMonth() + 1).padStart(2, "0")}`;
+}
 function chart(values, labels, { suffix = "", max = null, min = null, area = false, c = "--ink" } = {}) {
   const pts = values.map((v, i) => [i, v]).filter(([, v]) => typeof v === "number");
   if (!pts.length) return `<p class="empty">Пока нет данных.</p>`;
@@ -339,11 +375,18 @@ function confetti() {
 // ───────────── главная
 // шкала A2 → B2 (SPEC v4 F3.1): сегменты полос, отметка L, штрихованная зона ±, подшкалы цветами видов работы
 // полосы как в level.BANDS, шкала L 30-75 целиком
+// F7: ссылка урезана (tasks.cut): текстов нет, есть n и items [{id,type}]
+const tasksCut = (t) => !!(t && t.cut);
+const toChat = () => send({ kind: "tasks_chat" }, "Задания в чат");
+const tasksN = (t) => (t.cut && typeof t.n === "number" ? t.n : t.items.length);
 const SEG = [["A2", 30, 45], ["B1", 45, 52], ["B1+", 52, 59], ["B2", 59, 66], ["сильный B2", 66, 75]];
 const L_MIN = 30, L_MAX = 75;
 const pos = (v) => Math.max(0, Math.min(100, (v - L_MIN) / (L_MAX - L_MIN) * 100));
 const at = (v) => `left:clamp(2px, ${pos(v)}%, calc(100% - 2px))`;     // отметка на краях 30 и 75 не уходит за трек
 const SUBS = [["f", "Беглость", "--speech"], ["a", "Точность", "--prec"], ["v", "Словарь", "--vocab"]];
+// ступени: нет отметок [x] (v подшкалы пуст) = «не сданы», а не 0; 0 только когда ступень 0 сдана
+const stageNone = () => { const t = D && D.level && D.level.sub && D.level.sub.t; return !!t && typeof t.v !== "number"; };
+const stageNow = () => stageNone() ? null : D && typeof D.stage === "number" ? D.stage : null;
 function levelHtml(lv) {
   const ok = lv && lv.st === "ok" && typeof lv.L === "number";
   const L = ok ? Math.max(L_MIN, Math.min(L_MAX, lv.L)) : null;
@@ -373,11 +416,48 @@ function levelHtml(lv) {
     const tip = v === null ? "нет данных" : `${v} из 100${s.s === "frozen" ? ", заморожено с " + dm(s.d) : ""}`;
     return `<div class="${s.s === "frozen" ? "fz" : ""}" style="--c:var(${c})" title="${esc(tip)}">${t}<i><u style="width:${v ?? 0}%"></u></i></div>`;
   }).join("");
-  const stg = D && typeof D.stage === "number" ? D.stage : null;
-  return `<div class="lvl"><div class="lvl-hd">${head}</div>
+  const stg = stageNow();
+  return `<div class="lvl" id="lvl-open" role="button" tabindex="0" aria-label="Подробности шкалы уровня"><div class="lvl-hd">${head}</div>
     <div class="track">${segs}${marks}</div>
     <div class="lab">${SEG.map(([n, lo, hi]) => `<span style="flex:${hi - lo}">${n}</span>`).join("")}</div>${need}
-    <div class="subs">${subs}<div class="st">Ступени<b>${stg === null ? "?" : stg} из 10</b></div></div></div>`;
+    <div class="subs">${subs}<div class="st">Ступени<b>${stg === null ? (stageNone() ? "не сданы" : "?") : stg + " из 10"}</b></div></div><span class="more">Подробности</span></div>`;
+}
+
+// шторка «Подробности шкалы» (SPEC v4 F4)
+// ранги ступеней программы репетитора: Бронза 0-2 и Алмаз 8-10 по SPEC, Серебро 3-4 и Золото 5-7 как считал progress.rank до F5, в программе рангов нет.
+// ponytail: на странице program-b2-strong.md данных рангов нет, поэтому зашито здесь; известный долг, источник правды там.
+const RANKS = [["Бронза", 0, 2], ["Серебро", 3, 4], ["Золото", 5, 7], ["Алмаз", 8, 10]];
+function subHtml(t, c, s, ladder) {
+  s = s || {};
+  const v = typeof s.v === "number" ? s.v : null, frz = s.s === "frozen" && !ladder;
+  let tag, meta;
+  if (v === null) { tag = "нет данных"; meta = ""; }
+  else if (frz) { tag = `заморожено с ${dm(s.d)}`; meta = "давно не обновлялось, значение держится"; }
+  else if (s.s === "fresh") { tag = "обновлено"; meta = s.d ? `замер ${dm(s.d)}` : ""; }
+  else { tag = ladder ? "по последней отметке" : "замер"; meta = s.d ? ` ${dm(s.d)}` : ""; }
+  const stg = ladder ? (stageNone() ? null : D && typeof D.stage === "number" ? D.stage : v !== null ? Math.round(v / 10) : null) : null;
+  const num = ladder ? (stg === null ? `<b style="font-size:15px">не сданы</b>` : `<b>${stg}<small> из 10</small></b>`) : v === null ? `<b>—</b>` : ladder ? `<b>${stg}<small> из 10</small></b>` : `<b>${v}<small> из 100</small></b>`;
+  const lad = !ladder ? "" : `<div class="ladder">${RANKS.map(([n, lo, hi]) => `<div style="flex:${hi - lo + 1}">${n}<div class="cells">${
+    Array.from({ length: hi - lo + 1 }, (_, i) => lo + i).map((k) => `<i class="${stg === k ? "cur" : stg !== null && k < stg ? "done" : ""}">${k}</i>`).join("")}</div></div>`).join("")}</div>`;
+  return `<div class="sb${frz ? " fz" : ""}${v === null ? " no" : ""}" style="--c:var(${c})">
+    <div class="sb-hd"><h3>${ic(t[1])}${t[0]}</h3>${num}</div>
+    ${ladder ? "" : `<i class="bar"><u style="width:${v ?? 0}%"></u></i>`}${lad}
+    <p class="meta"><span class="tag">${esc(tag)}</span>${meta ? " · " + esc(meta.trim()) : ""}</p>
+    ${s.h ? `<p class="hint"><b>Что поднимет:</b> ${esc(s.h)}</p>` : ""}${s.n ? `<p class="meta" style="margin-top:4px">${esc(s.n)}</p>` : ""}</div>`;
+}
+function openLevel() {
+  const lv = D && D.level, ok = lv && lv.st === "ok" && typeof lv.L === "number", sub = (lv && lv.sub) || {};
+  const head = ok ? `${esc(lv.b)}, ${lv.L} ± ${lv.pm}` : lv && lv.st === "none" ? "Не оценен" : "Нет данных";
+  const need = lv && lv.st === "none" && lv.need && lv.need.length
+    ? `<h2 class="cap">Что нужно для оценки</h2><ul class="need" style="font-size:14px">${lv.need.map((n) => `<li>${esc(n)}</li>`).join("")}</ul>` : "";
+  const chk = lv && lv.chk ? `<div class="chkbox"><b>Контрольный замер репетитора:</b> ${esc(lv.chk.L)}, ${esc(dm(lv.chk.date))}${
+    typeof lv.chk.diff === "number" ? `<br><span class="mut">расхождение со шкалой ${lv.chk.diff > 0 ? "+" : ""}${lv.chk.diff}</span>` : ""}</div>` : "";
+  const T = [["Беглость", "microphone-duotone"], ["Точность", "seal-check-duotone"], ["Словарь", "cards-duotone"]];
+  openSheet(`<div class="head"><h1>${head}</h1><button class="x" data-close aria-label="Закрыть">${ic("x")}</button></div>
+    <p class="lead" style="margin-top:4px">Из чего сложена шкала</p>${need}
+    ${[["f", "--speech"], ["a", "--prec"], ["v", "--vocab"]].map(([k, c], i) => subHtml(T[i], c, sub[k], false)).join("")}
+    ${subHtml(["Ступени", "list-checks-duotone"], "--ink", sub.t, true)}${chk}
+    <p class="gse">Шкала L считается по образцу GSE, не официальный балл.</p>`);
 }
 
 // кнопка «Сейчас» (SPEC v4 F3, CR-12): карточки первыми всегда → норма взята: тихая → голосовое, если речи нет → сцена дня → задания
@@ -396,8 +476,8 @@ function nowStep() {
   if (!D.sp) return { k: "voice", icon: "microphone-duotone", t: "Сейчас: голосовое 2 минуты", s: "речь дня и замер беглости, +20 опыта", go: openVoice };
   if (!D.prt) return scene(sceneSub);
   if (t && !D.sent) {
-    const n = t.items.filter((it) => has(ANS[it.id])).length;
-    return { k: "tasks", icon: "list-checks-duotone", t: `Сейчас: задания, ${t.items.length}`, s: `готово ${n}, ответы ждет репетитор`, go: () => tab("learn") };
+    const n = tasksCut(t) ? 0 : t.items.filter((it) => has(ANS[it.id])).length;
+    return { k: "tasks", icon: "list-checks-duotone", t: `Сейчас: задания, ${tasksN(t)}`, s: tasksCut(t) ? "тексты пришлет бот в чат" : `готово ${n}, ответы ждет репетитор`, go: () => (tasksCut(t) ? toChat() : tab("learn")) };
   }
   return scene(`до нормы ${left} опыта: ${sceneSub}`);
 }
@@ -443,8 +523,8 @@ function renderHome() {
       D.prt ? `законченных сегодня: ${D.prt}` : pick && pick.turns ? `${pick.turns.length} реплик, до ${maxXp(pick)} опыта` : "около 5 минут",
       D.prt ? null : ["Начать", () => (pick ? openScenario(pick.id) : tab("practice"))]]);
     if (t) {
-      const n = t.items.filter((it) => has(ANS[it.id])).length;
-      rows.push(["--prec", !!D.sent, "Задания", D.sent ? "ответы отправлены" : `готово ${n} из ${t.items.length}`, D.sent ? null : ["Открыть", () => tab("learn")]]);
+      const n = tasksCut(t) ? 0 : t.items.filter((it) => has(ANS[it.id])).length;
+      rows.push(["--prec", !!D.sent, "Задания", D.sent ? "ответы отправлены" : tasksCut(t) ? `${tasksN(t)} заданий: тексты пришлет бот в чат` : `готово ${n} из ${tasksN(t)}`, D.sent ? null : tasksCut(t) ? ["Прислать", toChat] : ["Открыть", () => tab("learn")]]);
     }
     today = `<h2>Сегодня</h2>${rows.map(([c, done, h, p, act], i) => `<div class="todo${done ? " done" : ""}" style="--c:var(${c})"><span class="chk">${ic("check")}</span>
       <div class="tx"><b>${esc(h)}</b><span>${esc(p)}</span></div>${act ? `<button class="go press" data-row="${i}">${act[0]}</button>` : ""}</div>`).join("")}`;
@@ -464,6 +544,9 @@ function renderHome() {
     <button class="now press${st.quiet ? " quiet" : ""}" id="now" data-k="${st.k}">${ic(st.icon)}<span>${esc(st.t)}<small>${esc(st.s)}</small></span>${ic("arrow-right")}</button>
     ${today}${goal}
     ${D && D.at ? `<p class="foot">Данные на ${esc(D.at)}${D.cut ? ", старые точки графиков не влезли" : ""}</p>` : ""}`;
+  const lo = $("#lvl-open");
+  lo.onclick = () => { haptic(); openLevel(); };
+  lo.onkeydown = (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openLevel(); } };
   $("#now").onclick = () => { haptic("medium"); st.go(); };
   $$("[data-row]", $("#home")).forEach((b) => b.onclick = () => { haptic(); renderHome.acts[+b.dataset.row](); });
 }
@@ -486,7 +569,7 @@ const has = (v) => v !== undefined && v !== "" && !(Array.isArray(v) && !v.lengt
 
 function renderLearn() {
   const due = D ? D.due : null, t = D && D.tasks;
-  ANS = t ? loadLocal() : {};
+  ANS = t && !tasksCut(t) ? loadLocal() : {};
   // карточки цветом словаря, задания цветом точности: те же цвета, что в шкале и в «Сегодня» на главной
   // числа нет: трекер не читается (null) или ссылка урезана (поля нет) — честное «?», а не «все повторено»
   const known = typeof due === "number";
@@ -500,14 +583,17 @@ function renderLearn() {
       <div class="tx"><b>${cardsHead}</b><span>${cardsSub}</span></div>
       ${cardsAct ? `<button class="go press" id="${cardsAct[0]}">${cardsAct[1]}</button>` : ""}</div></div>
     <h2>Задания</h2>
-    ${!t ? `<p class="empty">${D && !("tasks" in D) ? "Задания в ссылку не попали, обнови: /app в чате." : "Заданий на сегодня нет. Их кладет репетитор после урока."}</p>` :
+    ${t && tasksCut(t) ? `<div class="list"><div class="item" style="--c:var(--prec)">${ic("list-checks-duotone")}
+      <div class="tx"><b>${tasksN(t)} заданий</b><span>тексты пришлет бот в чат</span></div><button class="go press" id="go-chat">Прислать в чат</button></div></div>` :
+    !t ? `<p class="empty">${D && !("tasks" in D) ? "Задания в ссылку не попали, обнови: /app в чате." : "Заданий на сегодня нет. Их кладет репетитор после урока."}</p>` :
       `<div class="goal-l"><span><b id="t-cnt"></b> готово</span><span class="mut">${D.sent ? "уже отправлены, можно еще раз" : "ответы ждет репетитор"}</span></div>
       <div class="gbar"><u id="t-bar" style="width:0;background:var(--prec)"></u></div>` +
       t.items.map((it, k) => `<div class="task" id="it-${esc(it.id)}"><p class="q"><i>${k + 1}</i>${esc(it.prompt)}</p>${body(it)}<div class="res" id="r-${esc(it.id)}"></div></div>`).join("") +
       `<button class="btn press" id="send-tasks" style="margin-top:18px">${ic("check")}Отправить ответы</button>`}`;
   const r = $("#go-review"); if (r) r.onclick = () => { haptic(); send({ kind: "review" }, "Повтор"); };
   const rf = $("#go-refresh"); if (rf) rf.onclick = () => { haptic(); refresh(); };
-  if (t) { t.items.forEach(wire); $("#send-tasks").onclick = sendAnswers; count(); }
+  const gc = $("#go-chat"); if (gc) gc.onclick = toChat;
+  if (t && !tasksCut(t)) { t.items.forEach(wire); $("#send-tasks").onclick = sendAnswers; count(); }
 }
 function count() {
   const t = D.tasks, n = t.items.filter((it) => has(ANS[it.id])).length;
@@ -603,18 +689,33 @@ function renderPractice() {
   wireRows($("#practice"));
 }
 
+let SHEET_FROM = null;
 function openSheet(html) {
+  if (!$("#sheet").classList.contains("open")) SHEET_FROM = document.activeElement;
   $("#sheet-body").innerHTML = html;
   $("#veil").classList.add("open"); $("#sheet").classList.add("open");
   $("#sheet").scrollTop = 0;
   $$("[data-close]", $("#sheet")).forEach((b) => b.onclick = closeSheet);
+  $("#sheet").tabIndex = -1; $("#sheet").focus({ preventScroll: true });
   if (IN_TG) { try { TG.BackButton.show(); } catch (e) {} }
 }
 function closeSheet() {
   $("#veil").classList.remove("open"); $("#sheet").classList.remove("open");
+  if (SHEET_FROM && SHEET_FROM.isConnected) { try { SHEET_FROM.focus({ preventScroll: true }); } catch (e) {} }
+  SHEET_FROM = null;
   if (IN_TG) { try { TG.BackButton.hide(); } catch (e) {} }
 }
 $("#veil").onclick = closeSheet;
+addEventListener("keydown", (e) => {
+  const sh = $("#sheet"); if (!sh.classList.contains("open")) return;
+  if (e.key === "Escape") return closeSheet();
+  if (e.key !== "Tab") return;
+  const f = [...sh.querySelectorAll("button, [href], input, textarea, [tabindex]:not([tabindex='-1'])")].filter((x) => !x.disabled);
+  if (!f.length) return;
+  const a = document.activeElement, first = f[0], last = f[f.length - 1];
+  if (e.shiftKey && (a === first || a === sh)) { e.preventDefault(); last.focus(); }
+  else if (!e.shiftKey && a === last) { e.preventDefault(); first.focus(); }
+});
 if (IN_TG) { try { TG.BackButton.onClick(closeSheet); } catch (e) {} }
 
 function openScenario(id) {
@@ -695,7 +796,7 @@ function renderStats() {
     ${blk("Паузы длиннее 2 с", "в минуту, чем ниже, тем лучше", chart(rec.map((r) => r[2]), rec.map((r) => r[0]), { min: 0, c: "--speech" }))}
     ${blk("Past simple верно", "в рассказах, %", chart(ps.map((r) => r[1]), ps.map((r) => r[0]), { suffix: "%", min: 0, max: 100, c: "--prec" }))}
     <h2>Регулярность</h2>
-    ${blk(`<b>${f.now}</b>`, `серия ${st[0]}, рекорд ${st[1]}; пропуск дня снимает 10%`, chart(f.s, [f.start, ok ? "сегодня" : from], { min: 0, area: true, c: "--fg" }))}
+    ${blk(`<b>${f.now}</b>`, `серия ${st[0]}, рекорд ${st[1]}; пропуск дня снимает 10%`, chart(f.s, [formStart(f), ok ? "сегодня" : from], { min: 0, area: true, c: "--fg" }))}
     ${pr.length ? `<h2>Сцены</h2><div class="list tight">${pr.map(([s, v]) => `<div class="item" style="--c:var(${kindColor(s)})">${ic(s.icon)}<div class="tx"><b>${esc(s.title)}</b></div><small>${v[0]} раз${v[2] ? `, лучшее ${v[1]} из ${v[2]}` : ""}</small></div>`).join("")}</div>` : ""}
     <h2>Награды · ${got} из ${all.length}</h2>
     <div class="list tight">${ach.map(([t, g, p]) => `<div class="item${g ? "" : " no"}" style="--c:var(${g ? "--fg" : "--mut"})">${ic(g ? "seal-check-duotone" : "lock")}<div class="tx"><b>${esc(t)}</b></div><small>${esc(p)}</small></div>`).join("")}</div>
