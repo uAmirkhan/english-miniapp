@@ -138,6 +138,29 @@ button:disabled { opacity: .55; cursor: default; }
 .err { box-shadow: inset 0 0 0 1.5px var(--bad); }
 .err b { color: var(--bad); }
 .empty { margin-top: 8px; font-size: 14px; color: var(--mut); }
+/* F9 разбор речи: смысл держат зачеркивание, подчеркивание, пунктир и подписи, цвет только усиливает (cvetovaya-politika) */
+.k-b { --c: var(--vocab); } .k-f { --c: var(--mut); } .k-t { --c: var(--ink); }
+.k-b .fx-to { text-decoration-style: dashed; }   /* бан-лист: пунктирное подчеркивание, репетитор: сплошное */
+.fx-from { text-decoration: line-through; text-decoration-thickness: 1.5px; color: color-mix(in srgb, var(--bad) 78%, var(--bg)); font-weight: 500; }
+.fx-to { color: var(--ok); font-weight: 800; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.fx-fil { text-decoration: line-through; text-decoration-thickness: 1.5px; color: var(--mut); }
+.fx-n { font-size: 10px; font-weight: 800; color: var(--c); margin-left: 1px; }
+.fx-k { display: inline-block; font-style: normal; font-size: 11.5px; font-weight: 700; padding: 1px 8px; border-radius: 20px; color: var(--c); border: 1px solid color-mix(in srgb, var(--c) 55%, var(--bg)); white-space: nowrap; }
+.fbk { display: block; width: 100%; text-align: left; margin-top: 6px; padding: 12px 0 4px; }
+.fbk-hd { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.fbk-hd b { font-weight: 700; font-size: 15px; } .fbk-hd span { font-size: 12.5px; color: var(--mut); }
+.fbl { padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+.fbl small { display: block; margin-top: 3px; font-size: 12.5px; color: var(--mut); line-height: 1.35; }
+.fbk .go { display: flex; align-items: center; gap: 6px; padding: 10px 0 6px; color: var(--ink); font-weight: 700; font-size: 14px; }
+.fbk .go .ic { width: 16px; height: 16px; }
+.fx-text { font-size: 16px; line-height: 1.9; margin: 8px 0 4px; overflow-wrap: anywhere; }
+.fx-leg { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12.5px; color: var(--mut); margin: 6px 0 2px; }
+.fx-row { display: flex; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--line); }
+.fx-row > i { flex: none; width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; font-weight: 800; font-size: 11px; line-height: 1; font-style: normal; color: var(--c); border: 1.5px solid var(--c); margin-top: 2px; }
+.fx-row p { margin: 0; font-size: 15px; } .fx-row span { display: block; font-size: 12.5px; color: var(--mut); margin-top: 3px; line-height: 1.35; }
+.fx-nav { display: flex; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; margin: 12px 0 0; }
+.fx-nav button { flex: 1; padding: 8px 10px; font-size: 13.5px; font-weight: 600; color: var(--mut); }
+.fx-nav button.on { background: var(--ink); color: var(--on-ink); }
 .item { display: flex; align-items: center; gap: 14px; width: 100%; text-align: left; padding: 12px 0; border-bottom: 1px solid var(--line); }
 .list > .item:last-child { border-bottom: 0; }
 .item > .ic { color: var(--c, var(--ink)); }
@@ -569,8 +592,13 @@ function renderHome() {
         !D.due ? null : app ? (cst.k === "sent" ? null : [cst.act, cst.go]) : ["Начать", () => send({ kind: "review" }, "Повтор")]]);
     }
     // строку закрывает только голосовое от 60 с; речь дня из сцены говорится отдельно и честно
-    rows.push(["--speech", !!D.vs, "Голосовое 2 минуты", D.vs ? `есть, сегодня ${D.min} мин` :
-      `${D.sp ? "речь дня есть из сцены, " : ""}замер беглости${lf && lf.d ? ", последний " + dm(lf.d) : ""}`, D.vs ? null : ["Записать", openVoice]]);
+    // F9: есть разбор сегодняшнего голосового -> строка ведет в него (одно нажатие)
+    const fb0 = D.fb && D.fb.v && D.fb.v[0], fbToday = !!(fb0 && String(fb0.d).slice(0, 5) === dm(D.day));
+    rows.push(["--speech", !!D.vs, "Голосовое 2 минуты", D.vs ? `есть, сегодня ${D.min} мин${fbToday ? ", разбор готов" : ""}` :
+      `${D.sp ? "речь дня есть из сцены, " : ""}замер беглости${lf && lf.d ? ", последний " + dm(lf.d) : ""}`,
+      fbToday && D.vs ? ["Разбор", () => openFb(0)] : D.vs ? null : ["Записать", openVoice]]);
+    // голосовое сегодня есть, но короче 60 с: «Записать» остается, разбор отдельной строкой (замер беглости и разбор не смешиваем)
+    if (fbToday && !D.vs) rows.push(["--speech", false, "Разбор голосового", `${fb0.wpm ? fb0.wpm + " слов в минуту, " : ""}сегодня в ${String(fb0.d).slice(6)}`, ["Открыть", () => openFb(0)]]);
     // сцену закрывает только законченная сцена: брошенная и письмо не в счет
     rows.push(["--speech", D.prt > 0, D.prt ? "Сцена" : pick ? `Сцена: ${pick.title}` : "Сцена",
       D.prt ? `законченных сегодня: ${D.prt}` : pick && pick.turns ? `${pick.turns.length} реплик, до ${maxXp(pick)} опыта` : "около 5 минут",
@@ -889,15 +917,83 @@ function rowHtml(s, pick) {
 }
 function wireRows(root) { $$("[data-sc]", root).forEach((b) => b.onclick = () => { haptic(); openScenario(b.dataset.sc); }); }
 
+// ───────────── F9: разбор речи (SPEC 2.2). D.fb.v[i] = {d, t: сегменты, u: невнятные слова, dur, w, wpm, ps, pl, fl}; сегмент: текст или [от, на, вид, пояснение?]
+// виды: b бан-лист, f паразит, t репетитор (ошибки отмечает только он). Невнятные слова списком: позиции в тексте бот не знает. Бот размечает по спискам, смысл и грамматику разбирает репетитор.
+const FB_LABEL = { b: "бан-лист", f: "паразит", t: "разбор репетитора" };
+const FB_NOTE = { b: "слово из бан-листа", f: "слово-паразит, лучше пауза", t: "правка репетитора" };
+const fbEdits = (v) => (v.t || []).filter(Array.isArray).map((s) => ({ from: String(s[0]), to: String(s[1] || ""), k: s[2], note: s[3] || FB_NOTE[s[2]] || "" }));
+function fbTop(v) {                                            // 3 главные: репетитор, бан-лист, паразиты
+  const seen = new Map();
+  for (const e of fbEdits(v)) {
+    const key = e.k + "|" + e.from.toLowerCase(), x = seen.get(key);
+    if (x) x.n++; else seen.set(key, { ...e, n: 1 });
+  }
+  return [...seen.values()].sort((a, b) => "tbf".indexOf(a.k) - "tbf".indexOf(b.k)).slice(0, 3);
+}
+const fbWhat = (e) => e.k === "f" ? `<s class="fx-fil">${esc(e.from)}</s>${e.n > 1 ? ` ×${e.n}` : ""}`
+  : `<s class="fx-from">${esc(e.from)}</s>${e.to ? ` → <b class="fx-to">${esc(e.to)}</b>` : ""}${e.n > 1 ? ` ×${e.n}` : ""}`;
+const fbLine = (e) => `<div class="fbl k-${e.k}"><em class="fx-k">${FB_LABEL[e.k]}</em> ${fbWhat(e)}<small>${esc(e.note)}</small></div>`;
+function fbText(v) {                                           // номера у правок со сменой слова: по ним список ниже
+  let n = 0;
+  return (v.t || []).map((s) => {
+    if (!Array.isArray(s)) return esc(s);
+    if (s[2] === "f") return `<s class="fx-fil">${esc(s[0])}</s>`;
+    n++;
+    return `<span class="k-${s[2]}"><s class="fx-from">${esc(s[0])}</s>${s[1] ? ` <b class="fx-to">${esc(s[1])}</b>` : ""}<sup class="fx-n">${n}</sup></span>`;
+  }).join("");
+}
+const EMPTY_FB = "Бот отмечает только паразиты и слова из бан-листа. Ошибки разберет репетитор после урока.";
+const fbTempo = (v) => v.wpm ? `${v.wpm} слов в минуту, цель 115` : "";
+function fbBlock() {
+  const vs = D && D.fb && D.fb.v;
+  if (!vs || !vs.length) {
+    if (!(D && D.xp)) return "";
+    return D.fbcut ? `<h2>Разбор речи</h2><p class="empty">Разбор не влез в ссылку, обнови: <button class="link" id="fb-refresh">пришли свежую кнопку</button></p>`
+      : `<h2>Разбор речи</h2><p class="empty">Разбор появится после голосового: запиши его в чат бота.</p>`;
+  }
+  const v = vs[0], top = fbTop(v);
+  return `<h2>Разбор речи</h2><button class="fbk press" id="fb-open" aria-label="Открыть разбор голосового">
+    <div class="fbk-hd"><b>Голосовое ${esc(v.d)}</b><span>${esc(fbTempo(v))}</span></div>
+    ${top.length ? top.map(fbLine).join("") : `<p class="mut" style="margin:8px 0">${EMPTY_FB}${D.fb.nb ? " Бан-лист пока не подключен." : ""}</p>`}
+    <span class="go">Весь текст и правки ${ic("arrow-right")}</span></button>`;
+}
+function openFb(i = 0) {
+  const vs = (D && D.fb && D.fb.v) || [], v = vs[i];
+  if (!v) return;
+  const list = fbEdits(v).filter((e) => e.k !== "f"), unc = v.u || [];
+  const tutor = list.some((e) => e.k === "t");
+  const pl = (v.pl || []).map((x) => `${x} с`).join(", ");
+  openSheet(`<div class="head"><h1>Разбор речи</h1><button class="x" data-close aria-label="Закрыть">${ic("x")}</button></div>
+    <p class="mut" style="margin-top:6px">Голосовое ${esc(v.d)}${v.dur ? `, ${Math.round(v.dur)} с` : ""}${v.w ? `, ${v.w} слов` : ""}</p>
+    ${vs.length > 1 ? `<div class="fx-nav">${vs.map((x, k) => `<button class="${k === i ? "on" : ""}" data-fbv="${k}">${k ? "Прошлое" : "Последнее"} ${esc(String(x.d).slice(0, 5))}</button>`).join("")}</div>` : ""}
+    <p class="cap">Темп и паузы</p>
+    <p style="margin:0">${v.wpm ? `<b>${v.wpm}</b> слов в минуту, цель 115` : "темп не посчитан"}${v.ps !== undefined && v.ps !== null ? `. Паузы дольше 2 с: ${v.ps}${pl ? ` (${esc(pl)})` : ""}` : ""}${v.fl !== undefined && v.fl !== null ? `. Паразитов uh/um: ${v.fl}` : ""}.</p>
+    <p class="cap">Весь текст</p>
+    <div class="fx-text">${fbText(v)}</div>
+    ${v.cut ? `<p class="mut" style="margin:4px 0 0">Текст укорочен, полный — в чате.</p>` : ""}
+    <div class="fx-leg"><span><s class="fx-from">было</s> <b class="fx-to">стало</b> правка</span><span><s class="fx-fil">uh</s> паразит</span></div>
+    ${unc.length ? `<p class="mut" style="margin:6px 0 0">Невнятно: ${esc(unc.join(", "))}</p>` : ""}
+    <p class="cap">Правки${list.length ? `: ${list.length}` : ""}</p>
+    ${list.length ? list.map((e, k) => `<div class="fx-row k-${e.k}"><i>${k + 1}</i><div><p><s class="fx-from">${esc(e.from)}</s>${e.to ? ` → <b class="fx-to">${esc(e.to)}</b>` : ""}</p>
+      <span><em class="fx-k">${FB_LABEL[e.k]}</em> ${esc(e.note)}</span></div></div>`).join("") : `<p class="mut">${EMPTY_FB}</p>`}
+    ${tutor ? "" : `<p class="note" style="margin:10px 0 0">Правок репетитора к этому голосовому пока нет.</p>`}
+    ${D.fb.nb ? `<p class="note" style="margin:10px 0 0">Бан-лист пока не подключен: слов из него в разметке нет.</p>` : ""}
+    <p class="note">Это быстрая разметка бота по спискам: пустой разбор не значит «ошибок нет». Полный разбор смысла и грамматики делает репетитор на уроке.</p>`);
+  $$("[data-fbv]", $("#sheet")).forEach((b) => b.onclick = () => openFb(+b.dataset.fbv));
+}
+
 function renderPractice() {
   if (!CAT) { $("#practice").innerHTML = `<h1>Практика</h1><div class="card err"><b>Сценарии не загрузились.</b><br>Проверь интернет и открой мини-апп заново.</div>`; return; }
   const quick = CAT.quick.map(byId).filter(Boolean), pick = suggest();
   $("#practice").innerHTML = `
     <h1>Практика</h1>
     <p class="lead">Собеседник пишет в чат, ты отвечаешь голосом</p>
+    ${fbBlock()}
     <div class="quick">${quick.map((s) => `<button class="press" style="--c:var(${kindColor(s)})" data-sc="${esc(s.id)}">${ic(s.icon)}<b>${esc(s.title)}</b></button>`).join("")}</div>
     ${CAT.cats.map((c) => `<h2>${esc(c.title)}</h2><div class="list">${CAT.scenarios.filter((s) => s.cat === c.id).map((s) => rowHtml(s, pick)).join("")}</div>`).join("")}`;
   wireRows($("#practice"));
+  const fr = $("#fb-refresh"); if (fr) fr.onclick = refresh;
+  const fo = $("#fb-open"); if (fo) fo.onclick = () => { haptic(); openFb(0); };
 }
 
 let SHEET_FROM = null;
