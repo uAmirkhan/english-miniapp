@@ -20,16 +20,22 @@
   --bg: #f7f3ec; --surf: #fffdf8; --top: #f7f3ec; --bg2: var(--surf);
   --fg: #2a2521; --mut: #6f665c; --mut3: #8b8175;
   --ink: #34498f; --on-ink: #ffffff;
+  --edge: #1f2f66; --pill: #e9edf9;   /* нижняя кромка главных кнопок и фон пилюли действия */
+  --speech-bg: #efe9fa; --prec-bg: #e3f1ea; --vocab-bg: #f6ecd4;   /* пастель плиток практики по виду работы */
+  --row: var(--surf); --row-sh: 0 1px 0 rgba(42, 37, 33, .06), 0 6px 18px rgba(52, 73, 143, .06);
   --speech: #6b47b8; --prec: #16684a; --vocab: #8a5a0c; --coral: #a63f17;
   --ok: #16684a; --bad: #ab2f45;
   color-scheme: light;
 }
 :root[data-theme="dark"] {   /* темная «Какао» */
-  --bg: #2e2520; --surf: #3b302a; --top: #2e2520; --bg2: var(--surf);
+  --bg: #2e2520; --surf: #44382f; --top: #2e2520; --bg2: var(--surf);
   --fg: #f6ece3; --mut: #bdab9c; --mut3: #94826f;
   --ink: #a3b3ff; --on-ink: #1b1d2e;
+  --edge: #6f7fd0; --pill: #3a4170;
+  --speech-bg: #3d3253; --prec-bg: #284034; --vocab-bg: #4b3e22;   /* темные аналоги пастели */
+  --row: var(--surf); --row-sh: none;   /* в «Какао» карточку держит слой светлее фона, не тень */
   --speech: #c8aaff; --prec: #62c896; --vocab: #f3cd78; --coral: #ffa070;
-  --ok: #62c896; --bad: #f27d8e;
+  --ok: #62c896; --bad: #f68f9d;
   color-scheme: dark;
 }
 :root[data-theme="dark"][data-pal="grafit"] {   /* запасной «Графит» */
@@ -42,15 +48,15 @@
   --acc: var(--ink);
 }
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-body { margin: 0; background: var(--page, var(--bg)); color: var(--fg); font: 500 15px/1.45 Onest, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-main { max-width: 560px; margin: 0 auto; padding: 16px 16px calc(96px + env(safe-area-inset-bottom)); }
-h1 { font-size: 25px; font-weight: 800; letter-spacing: -.01em; margin: 2px 0 0; line-height: 1.2; }
-h2 { font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--mut); margin: 26px 0 4px; }
-h3 { font-size: 16px; font-weight: 600; margin: 0; }
+body { margin: 0; background: var(--page, var(--bg)); color: var(--fg); font: 500 17px/1.45 Onest, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+main { max-width: 560px; margin: 0 auto; padding: 24px 24px calc(104px + env(safe-area-inset-bottom)); }
+h1 { font-size: 31px; font-weight: 700; letter-spacing: -.01em; margin: 2px 0 0; line-height: 1.15; }
+h2 { font-size: 14px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--mut); margin: 38px 0 12px; }
+h3 { font-size: 17px; font-weight: 600; margin: 0; }
 p { margin: 0; }
 .mut { color: var(--mut); font-size: 14px; font-weight: 500; }
-.sm { font-size: 12.5px; }
-.lead { color: var(--mut); font-size: 15px; font-weight: 500; }
+.sm { font-size: 14px; }
+.lead { color: var(--mut); font-size: 17px; font-weight: 500; margin-top: 6px; }
 .hidden { display: none !important; }
 .ic { width: 24px; height: 24px; flex: none; display: block; }
 button { font: inherit; color: inherit; border: 0; background: none; cursor: pointer; padding: 0; }
@@ -63,151 +69,154 @@ button:disabled { opacity: .55; cursor: default; }
 @keyframes up { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 @keyframes pulse { 50% { transform: scaleY(1.3); } }
 .press { transition: transform .1s ease; }
-.press:active { transform: scale(.985); }
+.press:active { transform: scale(.98); }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
 
 /* ───── главная */
 .hd { display: flex; align-items: flex-start; gap: 12px; }
 .hd > div { flex: 1; min-width: 0; }
-.streak { display: inline-flex; align-items: center; gap: 4px; color: var(--coral); font-weight: 700; font-size: 16px; margin-top: 4px; }
+.streak { display: inline-flex; align-items: center; gap: 4px; color: var(--coral); font-weight: 700; font-size: 17px; margin-top: 6px; }
 .streak .ic { width: 22px; height: 22px; }
 
-.lvl { margin-top: 20px; }
+.lvl { margin-top: 28px; }
 .lvl-hd { display: flex; align-items: center; gap: 10px; }
 .lvl-hd b { font-size: 34px; font-weight: 800; color: var(--ink); line-height: 1; letter-spacing: -.02em; white-space: nowrap; }
 .lvl-hd b.no { font-size: 22px; }
-.lvl-hd span { font-size: 12.5px; color: var(--mut); line-height: 1.4; }
-.lvl-hd span small { font-size: 11.5px; }
-.lvl .best { margin: 10px 0 0; font-size: 13.5px; line-height: 1.4; color: var(--fg); }
+.lvl-hd span { font-size: 15px; color: var(--mut); line-height: 1.4; }
+.lvl .best { margin: 14px 0 0; font-size: 15px; line-height: 1.4; color: var(--fg); }
 .lvl .best b { font-weight: 600; }
-.best-s { margin: 10px 0 0; font-size: 14px; line-height: 1.4; }
-.track { position: relative; height: 16px; display: flex; gap: 3px; margin: 14px 0 6px; }
+.best-s { margin: 12px 0 0; font-size: 16px; line-height: 1.4; }
+.track { position: relative; height: 16px; display: flex; gap: 3px; margin: 20px 0 8px; }
 .track > i { position: relative; display: block; height: 100%; background: var(--track); border-radius: 4px; overflow: hidden; }
 .track > i > u { position: absolute; left: 0; top: 0; bottom: 0; background: var(--ink); }
 .track > i.cur { background: color-mix(in srgb, var(--ink) 16%, var(--bg)); }   /* текущая полоса видна и на ее нижней границе */
 .track > i.cur > u { background: linear-gradient(90deg, var(--ink), color-mix(in srgb, var(--ink) 55%, var(--bg))); }
 /* штрих в два цвета: чернила видны на пустой части, светлые полосы на залитой, зона ± читается по обе стороны отметки */
 .zone { position: absolute; top: 0; bottom: 0; border-radius: 4px; background: repeating-linear-gradient(45deg, color-mix(in srgb, var(--ink) 38%, transparent) 0 3px, color-mix(in srgb, var(--bg) 55%, transparent) 3px 6px); }
-.stale { margin-top: 20px; padding: 12px 0; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--line); font-size: 14px; }
+.stale { margin-top: 24px; padding: 14px 0; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--line); font-size: 15px; }
 .stale b { font-weight: 700; }
 .mark { position: absolute; top: -6px; width: 4px; height: 28px; margin-left: -2px; border-radius: 2px; background: var(--fg); box-shadow: 0 0 0 2px var(--bg); }
 .mark.ghost { opacity: .25; box-shadow: none; }
 .mark.pulse { animation: pulse .6s ease-out 2; }
-.lab { display: flex; gap: 3px; font-size: 11.5px; color: var(--mut); }
-.need { margin: 10px 0 0; padding-left: 18px; font-size: 13px; color: var(--mut); }
+.lab { display: flex; gap: 3px; font-size: 14px; color: var(--mut); }
+.lab span { white-space: nowrap; }
+.lab span:last-child { display: flex; justify-content: flex-end; }   /* длинная подпись растет влево, а не за край */
+.need { margin: 12px 0 0; padding-left: 20px; font-size: 15px; color: var(--mut); }
 .need li { margin: 2px 0; }
-.subs { display: flex; gap: 14px; margin-top: 14px; align-items: flex-end; }
-.subs > div { flex: 1; min-width: 0; font-size: 11.5px; color: var(--mut); }
-.subs i { display: block; height: 5px; border-radius: 3px; background: var(--track); margin-top: 4px; overflow: hidden; }
+.subs { display: flex; gap: 12px; margin-top: 20px; align-items: flex-end; }
+.subs > div { flex: 1; min-width: 0; font-size: 14px; color: var(--mut); }
+.subs i { display: block; height: 6px; border-radius: 3px; background: var(--track); margin-top: 6px; overflow: hidden; }
 .subs i u { display: block; height: 100%; background: var(--c); }
 .subs .fz u { opacity: .45; }
 .subs > .st { flex: none; text-align: right; }
-.subs .st b { display: block; font-size: 15px; font-weight: 700; color: var(--fg); line-height: 1.1; }
+.subs .st b { display: block; font-size: 17px; font-weight: 700; color: var(--fg); line-height: 1.1; }
 
-.now { margin-top: 22px; width: 100%; display: flex; align-items: center; gap: 12px; text-align: left; background: var(--ink); color: var(--on-ink); border-radius: 14px; padding: 14px 16px; font-weight: 700; font-size: 16px; line-height: 1.3; }
+/* объем нажимаемого: твердая нижняя кромка своего (не зеленого) оттенка; при нажатии кнопка садится на 4px, кромка уходит */
+.now { margin-top: 28px; width: 100%; min-height: 64px; display: flex; align-items: center; gap: 14px; text-align: left; background: var(--ink); color: var(--on-ink); border-radius: 16px; padding: 16px 20px; font-weight: 700; font-size: 17px; line-height: 1.3; box-shadow: 0 4px 0 var(--edge); transition: transform .08s, box-shadow .08s; }
+.now.press:active, .btn.press:active { transform: translateY(4px); box-shadow: 0 0 0 var(--edge); }
 .now > span { flex: 1; min-width: 0; }
-.now small { display: block; font-weight: 500; font-size: 12.5px; opacity: .78; margin-top: 2px; }
-.now.quiet { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--ink) 40%, transparent); }
+.now small { display: block; font-weight: 500; font-size: 14px; opacity: .85; margin-top: 2px; }
+.now.quiet { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--ink) 40%, transparent), 0 4px 0 color-mix(in srgb, var(--ink) 22%, transparent); }
+.now.quiet.press:active { box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--ink) 40%, transparent), 0 0 0 transparent; }
 .now.quiet small { color: var(--mut); opacity: 1; }
 
-.todo { display: flex; align-items: center; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--line); }
-.todo:last-child { border-bottom: 0; }
-.todo .chk { width: 22px; height: 22px; border-radius: 50%; border: 2px solid color-mix(in srgb, var(--c) 50%, var(--bg)); flex: none; display: grid; place-items: center; color: transparent; }
+.todo { display: flex; align-items: center; gap: 12px; min-height: 72px; padding: 14px 12px 14px 16px; margin-bottom: 10px; background: var(--row); border-radius: 20px; box-shadow: var(--row-sh); }
+.todo .chk { width: 26px; height: 26px; border-radius: 50%; border: 2px solid color-mix(in srgb, var(--c) 50%, var(--bg)); flex: none; display: grid; place-items: center; color: transparent; }
 .todo.done .chk { background: var(--c); border-color: var(--c); color: var(--bg); }
-.todo .chk .ic { width: 13px; height: 13px; }
+.todo .chk .ic { width: 15px; height: 15px; }
+.todo.done .chk { animation: pop .25s ease-out; }
+@keyframes pop { 0% { transform: scale(.6); } 60% { transform: scale(1.1); } 100% { transform: scale(1); } }
 .todo .tx { flex: 1; min-width: 0; }
-.todo .tx b { display: block; font-weight: 600; font-size: 15px; }
-.todo .tx span { font-size: 12.5px; color: var(--mut); }
-.todo .go { flex: none; color: var(--ink); font-weight: 700; font-size: 14px; padding: 8px 0 8px 10px; }
+.todo .tx b { display: block; font-weight: 600; font-size: 17px; line-height: 1.3; }
+.todo .tx span { font-size: 14px; color: var(--mut); line-height: 1.35; }
+/* действие справа пилюлей, зона нажатия 44px */
+.todo .go, .item .go { flex: none; min-height: 44px; display: inline-flex; align-items: center; padding: 0 14px; border-radius: 999px; background: var(--pill); color: var(--ink); font-weight: 700; font-size: 15px; }
 
-.goal-l { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; font-size: 14px; margin-top: 6px; }
-.goal-l b { font-weight: 700; font-size: 15px; }
+.goal-l { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; font-size: 15px; margin-top: 6px; }
+.goal-l b { font-weight: 700; font-size: 17px; }
 .goal-l .sp { color: var(--speech); font-weight: 600; }
 .goal-l .sp.no { color: var(--mut); font-weight: 500; }
-.gbar { height: 5px; border-radius: 3px; background: var(--track); margin: 8px 0 14px; overflow: hidden; }
-.gbar u { display: block; height: 100%; background: var(--ink); }
+.gbar { height: 6px; border-radius: 3px; background: var(--track); margin: 10px 0 18px; overflow: hidden; }
+.gbar u { display: block; height: 100%; background: var(--ink); transition: width .6s cubic-bezier(.2, .8, .2, 1); }
 .week { display: flex; justify-content: space-between; }
-.day { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11.5px; color: var(--mut); width: 36px; }
-.day i { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; position: relative; background: conic-gradient(var(--ink) calc(var(--p) * 1%), var(--track) 0); }
+.day { display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 14px; color: var(--mut); width: 40px; }
+.day i { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; position: relative; background: conic-gradient(var(--ink) calc(var(--p) * 1%), var(--track) 0); }
 .day i::after { content: ""; position: absolute; inset: 4px; border-radius: 50%; background: var(--bg); }
 .day.met i { background: var(--ink); color: var(--on-ink); } .day.met i::after { display: none; }
 .day i .ic { width: 14px; height: 14px; position: relative; z-index: 1; }
 .day.rest i { background: var(--track); color: var(--mut); } .day.rest i::after { display: none; }
 .day.future i { background: var(--track); opacity: .5; } .day.future i::after { display: none; }
 .day.today span { color: var(--fg); font-weight: 700; }
-.foot { text-align: center; margin-top: 22px; font-size: 12px; color: var(--mut); }
+.foot { text-align: center; margin-top: 36px; font-size: 14px; color: var(--mut); }
 
 /* ───── «Учить», «Практика», «Прогресс» (F5): строки и пробел вместо плиток, иконка цветом вида работы без подложки */
 .card { background: var(--card); border-radius: 14px; padding: 14px 16px; margin: 12px 0; }   /* только ошибки данных */
 .err { box-shadow: inset 0 0 0 1.5px var(--bad); }
 .err b { color: var(--bad); }
-.empty { margin-top: 8px; font-size: 14px; color: var(--mut); }
+.empty { margin-top: 8px; font-size: 16px; color: var(--mut); }
 /* F9 разбор речи: смысл держат зачеркивание, подчеркивание, пунктир и подписи, цвет только усиливает (cvetovaya-politika) */
 .k-b { --c: var(--vocab); } .k-f { --c: var(--mut); } .k-t { --c: var(--ink); }
 .k-b .fx-to { text-decoration-style: dashed; }   /* бан-лист: пунктирное подчеркивание, репетитор: сплошное */
 .fx-from { text-decoration: line-through; text-decoration-thickness: 1.5px; color: color-mix(in srgb, var(--bad) 78%, var(--bg)); font-weight: 500; }
 .fx-to { color: var(--ok); font-weight: 800; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
 .fx-fil { text-decoration: line-through; text-decoration-thickness: 1.5px; color: var(--mut); }
-.fx-n { font-size: 10px; font-weight: 800; color: var(--c); margin-left: 1px; }
-.fx-k { display: inline-block; font-style: normal; font-size: 11.5px; font-weight: 700; padding: 1px 8px; border-radius: 20px; color: var(--c); border: 1px solid color-mix(in srgb, var(--c) 55%, var(--bg)); white-space: nowrap; }
+.fx-n { font-size: 14px; font-weight: 800; color: var(--c); margin-left: 1px; }
+.fx-k { display: inline-block; font-style: normal; font-size: 14px; font-weight: 700; padding: 1px 10px; border-radius: 20px; color: var(--c); border: 1px solid color-mix(in srgb, var(--c) 55%, var(--bg)); white-space: nowrap; }
 .fbk { display: block; width: 100%; text-align: left; margin-top: 6px; padding: 12px 0 4px; }
 .fbk-hd { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; }
-.fbk-hd b { font-weight: 700; font-size: 15px; } .fbk-hd span { font-size: 12.5px; color: var(--mut); }
-.fbl { padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
-.fbl small { display: block; margin-top: 3px; font-size: 12.5px; color: var(--mut); line-height: 1.35; }
-.fbk .go { display: flex; align-items: center; gap: 6px; padding: 10px 0 6px; color: var(--ink); font-weight: 700; font-size: 14px; }
+.fbk-hd b { font-weight: 700; font-size: 17px; } .fbk-hd span { font-size: 14px; color: var(--mut); }
+.fbl { padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 16px; }
+.fbl small { display: block; margin-top: 3px; font-size: 14px; color: var(--mut); line-height: 1.35; }
+.fbk .go { display: flex; align-items: center; gap: 6px; min-height: 44px; padding: 10px 0 6px; color: var(--ink); font-weight: 700; font-size: 15px; }
 .fbk .go .ic { width: 16px; height: 16px; }
-.fx-text { font-size: 16px; line-height: 1.9; margin: 8px 0 4px; overflow-wrap: anywhere; }
-.fx-leg { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12.5px; color: var(--mut); margin: 6px 0 2px; }
+.fx-text { font-size: 17px; line-height: 1.9; margin: 8px 0 4px; overflow-wrap: anywhere; }
+.fx-leg { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 14px; color: var(--mut); margin: 6px 0 2px; }
 .fx-row { display: flex; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--line); }
-.fx-row > i { flex: none; width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; font-weight: 800; font-size: 11px; line-height: 1; font-style: normal; color: var(--c); border: 1.5px solid var(--c); margin-top: 2px; }
-.fx-row p { margin: 0; font-size: 15px; } .fx-row span { display: block; font-size: 12.5px; color: var(--mut); margin-top: 3px; line-height: 1.35; }
+.fx-row > i { flex: none; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; font-weight: 800; font-size: 14px; line-height: 1; font-style: normal; color: var(--c); border: 1.5px solid var(--c); margin-top: 2px; }
+.fx-row p { margin: 0; font-size: 16px; } .fx-row span { display: block; font-size: 14px; color: var(--mut); margin-top: 3px; line-height: 1.35; }
 .fx-nav { display: flex; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; margin: 12px 0 0; }
-.fx-nav button { flex: 1; padding: 8px 10px; font-size: 13.5px; font-weight: 600; color: var(--mut); }
+.fx-nav button { flex: 1; min-height: 44px; padding: 10px; font-size: 15px; font-weight: 600; color: var(--mut); }
 .fx-nav button.on { background: var(--ink); color: var(--on-ink); }
-.item { display: flex; align-items: center; gap: 14px; width: 100%; text-align: left; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.item { display: flex; align-items: center; gap: 16px; width: 100%; min-height: 72px; text-align: left; padding: 14px 0; border-bottom: 1px solid var(--line); }
 .list > .item:last-child { border-bottom: 0; }
 .item > .ic { color: var(--c, var(--ink)); }
 .item .tx { flex: 1; min-width: 0; }
-.item .tx b { display: block; font-weight: 600; font-size: 15px; line-height: 1.3; }
-.item .tx span { display: block; font-size: 12.5px; color: var(--mut); line-height: 1.35; margin-top: 1px; }
-.item .go { flex: none; color: var(--ink); font-weight: 700; font-size: 14px; padding: 8px 0 8px 10px; }
-.item .pass { flex: none; display: inline-flex; align-items: center; gap: 3px; font-size: 12.5px; font-weight: 600; color: var(--c); white-space: nowrap; }
+.item .tx b { display: block; font-weight: 600; font-size: 17px; line-height: 1.3; }
+.item .tx span { display: block; font-size: 14px; color: var(--mut); line-height: 1.4; margin-top: 2px; }
+.item .pass { flex: none; display: inline-flex; align-items: center; gap: 3px; font-size: 14px; font-weight: 600; color: var(--c); white-space: nowrap; }
 .item .pass .ic { width: 15px; height: 15px; }
-.list.tight .item { padding: 7px 0; gap: 12px; border-bottom: 0; }
+.list.tight .item { padding: 8px 0; min-height: 44px; gap: 12px; border-bottom: 0; }
 .list.tight .item > .ic { width: 18px; height: 18px; }
-.list.tight .item .tx b { font-size: 14px; font-weight: 500; }
+.list.tight .item .tx b { font-size: 16px; font-weight: 500; }
 .list.tight .item.no { color: var(--mut); }
-.list.tight .item small { flex: none; font-size: 12.5px; color: var(--mut); }
-/* быстрые режимы одной строкой: три колонки текста между линиями, без фона */
-.quick { display: flex; margin-top: 18px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.quick button { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px; text-align: left; padding: 12px 10px; }
-.quick button + button { border-left: 1px solid var(--line); }
-.quick button:first-child { padding-left: 0; }
-.quick .ic { color: var(--c); }
-.quick b { font-weight: 600; font-size: 14px; line-height: 1.25; overflow-wrap: break-word; hyphens: auto; }   /* длинное слово переносится, а не налезает на соседа */
+.list.tight .item small { flex: none; font-size: 14px; color: var(--mut); }
+/* быстрые режимы: три плитки с пастельной заливкой по виду работы */
+.quick { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 28px; }
+.quick button { min-width: 0; min-height: 96px; display: flex; flex-direction: column; justify-content: space-between; gap: 8px; text-align: left; padding: 14px 12px; border-radius: 20px; background: var(--pt); }
+.quick .ic { width: 28px; height: 28px; color: var(--c); }
+.quick b { font-weight: 700; font-size: 15px; line-height: 1.25; overflow-wrap: break-word; hyphens: auto; }   /* длинное слово переносится, а не налезает на соседа */
 /* сцена дня: метка цветом речи, действие чернилами; остальные строки тихие */
-.item.pick .tx em { display: block; font-style: normal; font-size: 11.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--c); }
-.item.pick .tx b { font-weight: 700; font-size: 16px; }
+.item.pick .tx em { display: block; font-style: normal; font-size: 14px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--c); }
+.item.pick .tx b { font-weight: 700; font-size: 17px; }
 .chart { width: 100%; height: 130px; display: block; margin-top: 10px; overflow: visible; }
-.blk { padding: 16px 0; border-bottom: 1px solid var(--line); }
+.blk { padding: 20px 0; border-bottom: 1px solid var(--line); }
 .blk h3 b { font-weight: 800; }
-.lg-line { margin-top: 24px; font-size: 12.5px; color: var(--mut); }
+.lg-line { margin-top: 28px; font-size: 14px; color: var(--mut); }
 .lg-line span { white-space: nowrap; }
 .lg-line b { color: var(--fg); font-weight: 700; }
-.task { padding: 16px 0; border-bottom: 1px solid var(--line); }
-.task p.q { font-size: 16px; font-weight: 600; margin-bottom: 10px; }
+.task { padding: 20px 0; border-bottom: 1px solid var(--line); }
+.task p.q { font-size: 17px; font-weight: 600; margin-bottom: 12px; }
 .task p.q i { font-style: normal; color: var(--prec); font-weight: 700; margin-right: 6px; }
 .opts { display: flex; gap: 8px; flex-wrap: wrap; }
-.chip { border-radius: 12px; padding: 9px 16px; font-weight: 600; background: var(--bg); box-shadow: inset 0 0 0 1.5px var(--line); }
+.chip { border-radius: 14px; min-height: 44px; padding: 9px 18px; font-weight: 600; background: var(--bg); box-shadow: inset 0 0 0 1.5px var(--line); }
 .chip.on { color: var(--ink); box-shadow: inset 0 0 0 2px var(--ink); }
-input, textarea { width: 100%; font: inherit; padding: 12px 14px; border-radius: 12px; border: 1.5px solid var(--line); background: var(--bg); color: var(--fg); outline: none; }
+input, textarea { width: 100%; font: inherit; min-height: 48px; padding: 12px 14px; border-radius: 14px; border: 1.5px solid var(--line); background: var(--bg); color: var(--fg); outline: none; }
 input:focus, textarea:focus { border-color: var(--ink); }
 textarea { min-height: 76px; resize: vertical; }
-.res { margin-top: 8px; font-size: 14px; min-height: 1em; font-weight: 600; }
+.res { margin-top: 8px; font-size: 15px; min-height: 1em; font-weight: 600; }
 .up { color: var(--ok); } .down { color: var(--bad); }
 .timer { font-size: 56px; font-weight: 800; text-align: center; font-variant-numeric: tabular-nums; margin: 4px 0 10px; }
-.btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 14px; border-radius: 14px; font-weight: 700; font-size: 16px; background: var(--ink); color: var(--on-ink); }
+.btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 56px; padding: 14px; border-radius: 16px; font-weight: 700; font-size: 17px; background: var(--ink); color: var(--on-ink); box-shadow: 0 4px 0 var(--edge); transition: transform .08s, box-shadow .08s; }
 .btn .ic { width: 20px; height: 20px; }
 
 /* ───── карточки повтора в странице (F8): лист тетради — линия цветом вида работы, вопрос крупно, ответ чернилами */
@@ -216,88 +225,95 @@ textarea { min-height: 76px; resize: vertical; }
 .cs-n { font-size: 14px; font-weight: 700; color: var(--mut); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .cs-on nav { display: none; }                 /* сессия карточек без меню, выход крестиком */
 .cs-on main { padding-bottom: calc(150px + env(safe-area-inset-bottom)); }
-.cs-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 6; background: var(--surf); border-top: 1px solid var(--line); padding: 12px 16px calc(14px + env(safe-area-inset-bottom)); }
+.cs-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 6; background: var(--surf); border-top: 1px solid var(--line); padding: 14px 24px calc(16px + env(safe-area-inset-bottom)); }
 .cs-bar > div { max-width: 560px; margin: 0 auto; }
 .cs-bar .btn { min-height: 56px; }
 .cs-bar .grades { margin-top: 0; }
 .cs-bar .link { display: block; width: 100%; min-height: 48px; margin: 0; text-align: center; }
-.next { margin-top: 4px; font-size: 15px; }
+.next { margin-top: 4px; font-size: 16px; }
 .next b { font-weight: 700; color: var(--ink); }
 .xb { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; color: var(--mut); flex: none; }
-.fc { margin-top: 18px; padding: 0 0 4px; }
-.fc em { display: block; font-style: normal; font-size: 11.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--c); }
-.fc .q { font-size: 22px; font-weight: 700; line-height: 1.3; margin-top: 10px; overflow-wrap: anywhere; }
-.fc .a { margin-top: 18px; padding-top: 14px; border-top: 1px dashed color-mix(in srgb, var(--fg) 22%, var(--bg)); font-size: 19px; font-weight: 600; line-height: 1.35; color: var(--ink); overflow-wrap: anywhere; }
+.fc { margin-top: 24px; padding: 0 0 4px; }
+.fc em { display: block; font-style: normal; font-size: 14px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--c); }
+.fc .q { font-size: 24px; font-weight: 700; line-height: 1.3; margin-top: 10px; overflow-wrap: anywhere; }
+.fc .a { margin-top: 18px; padding-top: 14px; border-top: 1px dashed color-mix(in srgb, var(--fg) 22%, var(--bg)); font-size: 20px; font-weight: 600; line-height: 1.35; color: var(--ink); overflow-wrap: anywhere; }
 .fc .mine { margin-top: 8px; font-size: 14px; color: var(--mut); overflow-wrap: anywhere; }
 .fc input { margin-top: 18px; }
 .grades { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 22px; }
-.grades small { display: block; margin-top: 3px; font-size: 12px; font-weight: 500; opacity: .8; }
-.grades button { min-height: 64px; padding: 12px 4px; border-radius: 14px; font-weight: 700; font-size: 14px; line-height: 1.2; color: var(--c); background: color-mix(in srgb, var(--c) 9%, var(--bg)); box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--c) 55%, transparent); }
+.grades small { display: block; margin-top: 3px; font-size: 14px; font-weight: 500; opacity: .8; }
+.grades button { min-height: 72px; padding: 12px 4px; border-radius: 16px; font-weight: 700; font-size: 15px; line-height: 1.2; color: var(--c); background: color-mix(in srgb, var(--c) 9%, var(--bg)); box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--c) 55%, transparent); }
 .tally { display: flex; margin-top: 18px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.tally > div { flex: 1; padding: 12px 0; font-size: 12.5px; color: var(--mut); }
+.tally > div { flex: 1; padding: 14px 0; font-size: 14px; color: var(--mut); }
 .tally > div + div { padding-left: 12px; border-left: 1px solid var(--line); }
 .tally b { display: block; font-size: 26px; font-weight: 800; color: var(--c); line-height: 1.1; font-variant-numeric: tabular-nums; }
-.sent { margin-top: 18px; padding: 12px 0; border-top: 2px solid var(--ok); font-size: 14px; }
+.sent { margin-top: 24px; padding: 14px 0; border-top: 2px solid var(--ok); font-size: 15px; }
 .sent b { font-weight: 700; color: var(--ok); }
-.link { display: inline-block; margin-top: 10px; color: var(--ink); font-weight: 600; font-size: 14px; padding: 6px 0; }
+.link { display: inline-flex; align-items: center; min-height: 44px; margin-top: 6px; color: var(--ink); font-weight: 600; font-size: 16px; padding: 6px 0; }
 
 /* шторка шкалы (F4) */
 .lvl[role=button] { cursor: pointer; border-radius: 12px; outline-offset: 4px; }
 .lvl[role=button]:focus-visible { outline: 2px solid var(--ink); }
-.lvl .more { display: block; margin-top: 8px; font-size: 12.5px; color: var(--ink); font-weight: 600; }
-.sb { padding: 14px 0; border-bottom: 1px solid var(--line); }
+.lvl .more { display: block; margin-top: 16px; font-size: 15px; color: var(--ink); font-weight: 600; }
+.car { position: relative; display: flex; gap: 12px; margin: 16px -24px 0; padding: 0 24px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding: 0 24px; scrollbar-width: none; overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; }
+.car::-webkit-scrollbar { display: none; }
+.car:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
+.slide { flex: 0 0 100%; min-width: 0; scroll-snap-align: start; scroll-snap-stop: always; background: var(--bg); border-radius: 20px; padding: 20px; }
+.dots { display: flex; justify-content: center; margin: 2px 0 0; }
+.dots button { width: 44px; height: 44px; display: grid; place-items: center; }
+.dots i { display: block; width: 8px; height: 8px; border-radius: 4px; background: color-mix(in srgb, var(--fg) 28%, var(--surf)); transition: width .2s, background .2s; }
+.dots button[aria-current="true"] i { width: 24px; background: var(--ink); }
 .sb-hd { display: flex; align-items: baseline; gap: 10px; }
 .sb-hd h3 { flex: 1; color: var(--c); display: flex; align-items: center; gap: 8px; }
-.sb-hd h3 .ic { width: 22px; height: 22px; }
-.sb-hd b { font-size: 20px; font-weight: 800; font-variant-numeric: tabular-nums; }
-.sb-hd b small { font-size: 12.5px; font-weight: 500; color: var(--mut); }
-.sb i.bar { display: block; height: 6px; border-radius: 3px; background: var(--track); margin: 8px 0 6px; overflow: hidden; }
+.sb-hd h3 .ic { width: 24px; height: 24px; }
+.sb-hd b { font-size: 32px; font-weight: 700; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.sb-hd b small { font-size: 14px; font-weight: 500; color: var(--mut); }
+.sb i.bar { display: block; height: 8px; border-radius: 4px; background: var(--track); margin: 14px 0 12px; overflow: hidden; }
 .sb i.bar u { display: block; height: 100%; background: var(--c); }
 .sb.fz i.bar u { opacity: .45; }
-.sb .meta { font-size: 12.5px; color: var(--mut); }
+.sb .meta { font-size: 15px; color: var(--mut); }
 .sb .tag { font-weight: 700; color: var(--c); }
 .sb.fz .tag, .sb.no .tag { color: var(--mut); }
-.sb .hint { margin-top: 6px; font-size: 14px; }
+.sb .hint { margin-top: 10px; font-size: 16px; }
 .sb .hint b { font-weight: 700; }
-.ladder { display: flex; gap: 3px; margin-top: 10px; }
-.ladder > div { flex: 1; min-width: 0; text-align: center; font-size: 11px; color: var(--mut); }
+.ladder { display: flex; gap: 3px; margin-top: 14px; }
+.ladder > div { flex: 1; min-width: 0; text-align: center; font-size: 14px; color: var(--mut); white-space: nowrap; }
 .ladder .cells { display: flex; gap: 3px; margin-top: 4px; }
-.ladder .cells i { flex: 1; height: 26px; border-radius: 5px; background: var(--track); display: grid; place-items: center; font-style: normal; font-size: 11.5px; font-weight: 700; color: var(--mut); }
+.ladder .cells i { flex: 1; height: 32px; border-radius: 6px; background: var(--track); display: grid; place-items: center; font-style: normal; font-size: 14px; font-weight: 700; color: var(--mut); }
 .ladder .cells i.done { background: color-mix(in srgb, var(--c) 30%, var(--bg)); color: var(--fg); }
 .ladder .cells i.cur { background: var(--c); color: var(--on-ink); }
-.chkbox { margin-top: 16px; padding: 12px 0; border-top: 2px solid var(--ink); font-size: 14px; }
+.chkbox { margin-top: 20px; padding: 14px 0; border-top: 2px solid var(--ink); font-size: 16px; }
 .chkbox b { font-weight: 700; }
 .sb .ladder + .meta { margin-top: 10px; }
-.gse { margin-top: 14px; font-size: 12.5px; color: var(--mut); }
+.gse { margin-top: 16px; font-size: 14px; color: var(--mut); }
 
 /* нижнее меню: активная вкладка чернилами, без плашки */
 nav { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; background: var(--surf); border-top: 1px solid var(--line); padding: 8px 8px calc(8px + env(safe-area-inset-bottom)); }
 nav div { max-width: 560px; margin: 0 auto; display: flex; gap: 6px; }
-nav button { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px; font-size: 11.5px; font-weight: 500; color: var(--mut); padding: 4px 0; }
+nav button { flex: 1; min-height: 52px; display: flex; flex-direction: column; align-items: center; gap: 2px; font-size: 14px; font-weight: 500; color: var(--mut); padding: 4px 0; }
 nav button .ic { width: 24px; height: 24px; }
 nav button.on { color: var(--ink); font-weight: 700; }
 
 /* шторка */
-.thm { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 22px; color: var(--mut); font-size: 14px; }
+.thm { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 38px; color: var(--mut); font-size: 15px; }
 .thm > div { display: flex; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
-.thm button { padding: 8px 12px; font-size: 13.5px; font-weight: 600; color: var(--mut); }
+.thm button { min-height: 44px; padding: 8px 14px; font-size: 15px; font-weight: 600; color: var(--mut); }
 .thm button.on { background: var(--ink); color: var(--on-ink); }
 .veil { position: fixed; inset: 0; z-index: 10; background: rgba(10, 14, 28, .45); opacity: 0; pointer-events: none; transition: opacity .2s; }
 .veil.open { opacity: 1; pointer-events: auto; }
-.sheet { position: fixed; left: 0; right: 0; bottom: 0; z-index: 11; max-height: 88vh; overflow-y: auto; background: var(--surf); border-radius: 20px 20px 0 0; padding: 22px 20px calc(20px + env(safe-area-inset-bottom)); transform: translateY(105%); transition: transform .25s cubic-bezier(.2, .8, .2, 1); }
+.sheet { position: fixed; left: 0; right: 0; bottom: 0; z-index: 11; max-height: 88vh; overflow-y: auto; background: var(--surf); border-radius: 20px 20px 0 0; padding: 24px 24px calc(24px + env(safe-area-inset-bottom)); transform: translateY(105%); transition: transform .25s cubic-bezier(.2, .8, .2, 1); }
 .sheet.open { transform: none; }
 .sheet:focus { outline: none; }
 .sheet > div { max-width: 560px; margin: 0 auto; }
-.sheet .x { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; color: var(--mut); flex: none; }
-.sheet h1 { font-size: 22px; margin: 0; }
+.sheet .x { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; color: var(--mut); flex: none; }
+.sheet h1 { font-size: 24px; margin: 0; }
 .sheet h1 .ic { display: inline-block; width: 26px; height: 26px; vertical-align: -5px; margin-right: 8px; color: var(--c, var(--ink)); }
-.cap { font-size: 12.5px; font-weight: 700; letter-spacing: .06em; color: var(--mut); text-transform: uppercase; margin: 20px 0 8px; }
-.goal { display: flex; gap: 10px; align-items: flex-start; padding: 5px 0; font-size: 15px; }
+.cap { font-size: 14px; font-weight: 700; letter-spacing: .06em; color: var(--mut); text-transform: uppercase; margin: 28px 0 10px; }
+.goal { display: flex; gap: 10px; align-items: flex-start; padding: 6px 0; font-size: 16px; }
 .goal .ic { width: 20px; height: 20px; color: var(--ok); margin-top: 1px; }
 .goal .gd { flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--c, var(--mut)); margin: 9px 6px 0; opacity: .7; }
-.note { margin: 16px 0; font-size: 14px; color: var(--mut); }
+.note { margin: 16px 0; font-size: 15px; color: var(--mut); }
 .head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
-.toast { position: fixed; left: 16px; right: 16px; bottom: calc(86px + env(safe-area-inset-bottom)); z-index: 20; max-width: 528px; margin: 0 auto; background: var(--fg); color: var(--bg); padding: 13px 16px; border-radius: 14px; font-size: 14px; opacity: 0; transform: translateY(10px); transition: .2s; pointer-events: none; }
+.toast { position: fixed; left: 24px; right: 24px; bottom: calc(86px + env(safe-area-inset-bottom)); z-index: 20; max-width: 512px; margin: 0 auto; background: var(--fg); color: var(--bg); padding: 14px 18px; border-radius: 16px; font-size: 15px; opacity: 0; transform: translateY(10px); transition: .2s; pointer-events: none; }
 .toast.show { opacity: 1; transform: none; }
 #confetti { position: fixed; inset: 0; z-index: 30; pointer-events: none; }
 </style>
@@ -461,7 +477,10 @@ const SUBS = [["f", "Беглость", "--speech"], ["a", "Точность", "
 const stageNone = () => { const t = D && D.level && D.level.sub && D.level.sub.t; return !!t && typeof t.v !== "number"; };
 const stageNow = () => stageNone() ? null : D && typeof D.stage === "number" ? D.stage : null;
 // слова вместо чисел: пункты шкалы, подсказки бота простым языком, «сильнее всего поднимет»
-const pts = (n) => `${n} ${n % 10 === 1 && n % 100 !== 11 ? "пункт" : [2, 3, 4].includes(n % 10) && ![12, 13, 14].includes(n % 100) ? "пункта" : "пунктов"}`;
+// склонение по числу: 1 / 2-4 / 5-20; 11-14 всегда третья форма. cnt даёт «число слово»
+const plural = (n, a, b, c) => { const m = Math.abs(n) % 100, k = m % 10; return m > 10 && m < 15 ? c : k === 1 ? a : k > 1 && k < 5 ? b : c; };
+const cnt = (n, a, b, c) => `${n} ${plural(n, a, b, c)}`;
+const pts = (n) => cnt(n, "пункт", "пункта", "пунктов");
 // подшкала с наибольшим весом × отставанием, у которой есть число и подсказка с делом (не «нет данных»)
 const SUB_W = { f: .30, a: .30, v: .15, t: .25 };
 function bestSub(lv) {
@@ -485,10 +504,8 @@ function levelHtml(lv) {
     marks += `<span class="zone" style="left:${pos(lo)}%;width:${pos(hi) - pos(lo)}%"></span>
       <span class="mark${prev !== L ? " pulse" : ""}" style="${at(L)}"></span>`;
   }
-  const chk = ok && lv.chk ? ` · репетитор оценил в ${lv.chk.L}` : "";
-  const prec = ok ? (lv.pm > 5 ? "оценка примерная, станет точнее после новых записей" : "оценка довольно точная") : "";
-  const head = ok
-    ? `<b>${esc(lv.b)}</b><span>${lv.to ? `до B2 еще ${pts(lv.to)}` : "B2 взят"}<br>последняя запись ${esc(dm(lv.d))}${esc(chk)}<br><small>${prec}</small></span>`
+  const head = ok   // две строки, не три: примерность оценки и проверка репетитора живут в шторке
+    ? `<b>${esc(lv.b)}</b><span>${lv.to ? `до B2 еще ${pts(lv.to)}` : "B2 взят"}<br>последняя запись ${esc(dm(lv.d))}</span>`
     : lv && lv.st === "error" ? `<b class="no">шкала не посчиталась</b><span>причина в ошибках данных сверху</span>`
     : lv && lv.st === "none" ? `<b class="no">не оценен</b><span>числа нет, пока мало записей${lv.d ? `<br>последняя запись ${esc(dm(lv.d))}` : ""}</span>`
     : `<b class="no">нет данных</b><span>бот не прислал шкалу: /app в чате</span>`;
@@ -537,13 +554,21 @@ function openLevel() {
   const chk = lv && lv.chk ? `<div class="chkbox"><b>Проверка репетитора:</b> ${esc(lv.chk.L)}, ${esc(dm(lv.chk.date))}${
     typeof lv.chk.diff === "number" ? `<br><span class="mut">${lv.chk.diff === 0 ? "совпало со шкалой" : `на ${Math.abs(lv.chk.diff)} ${lv.chk.diff > 0 ? "выше" : "ниже"}, чем шкала`}</span>` : ""}</div>` : "";
   const T = [["Беглость", "microphone-duotone"], ["Точность", "seal-check-duotone"], ["Словарь", "cards-duotone"]];
+  const NM = ["Беглость", "Точность", "Словарь", "Экзамены"];
+  const slides = [["f", "--speech"], ["a", "--prec"], ["v", "--vocab"]].map(([k, c], i) => subHtml(T[i], c, sub[k], false))
+    .concat(subHtml(["Экзамены", "list-checks-duotone"], "--ink", sub.t, true));
   openSheet(`<div class="head"><h1>${head}</h1><button class="x" data-close aria-label="Закрыть">${ic("x")}</button></div>
     ${ok ? `<p class="note" style="margin-top:4px">Оценка примерная: точность ±${lv.pm} пунктов. С новыми записями она становится точнее.</p>` : ""}
     ${(() => { const bs = ok ? bestSub(lv) : null; return bs ? `<p class="best-s"><b>Сильнее всего поднимет:</b> ${esc(bs[1].h)}</p>` : ""; })()}
     <p class="lead" style="margin-top:8px">Из чего сложена шкала</p>${need}
-    ${[["f", "--speech"], ["a", "--prec"], ["v", "--vocab"]].map(([k, c], i) => subHtml(T[i], c, sub[k], false)).join("")}
-    ${subHtml(["Экзамены", "list-checks-duotone"], "--ink", sub.t, true)}${chk}
+    <div class="car" id="car" tabindex="0" role="group" aria-label="Подшкалы, листай вбок">${slides.map((h, i) => `<section class="slide" aria-label="${NM[i]}, ${i + 1} из ${slides.length}">${h}</section>`).join("")}</div>
+    <div class="dots" id="dots">${NM.map((n, i) => `<button data-i="${i}" aria-label="${n}" aria-current="${i === 0}"><i></i></button>`).join("")}</div>${chk}
     <p class="gse">Шкала своя, устроена как GSE у Pearson. Это не сертификат.</p>`);
+  // блоки по одному: горизонтальный scroll-snap, точки следят за прокруткой и нажимаются
+  const car = $("#car"), dots = $$("#dots button");
+  const stepW = () => car.children[1].offsetLeft - car.children[0].offsetLeft;
+  car.onscroll = () => { const k = Math.max(0, Math.min(slides.length - 1, Math.round(car.scrollLeft / stepW()))); dots.forEach((b, i) => b.setAttribute("aria-current", String(i === k))); };
+  dots.forEach((b) => b.onclick = () => car.scrollTo({ left: +b.dataset.i * stepW(), behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }));
 }
 
 // кнопка «Сейчас» (SPEC v4 F3, CR-12): карточки первыми всегда → норма взята: тихая → голосовое, если речи нет → сцена дня → задания
@@ -551,13 +576,13 @@ function nowStep(skipCards = false) {
   const pick = suggest();
   const scene = (s) => ({ k: "scene", icon: "chat-teardrop-text-duotone", t: pick ? `Сейчас: ${pick.title}` : "Сейчас: сцена",
     s, go: () => (pick ? openScenario(pick.id) : tab("practice")) });
-  const sceneSub = pick && pick.turns ? `сцена дня, ${pick.turns.length} реплик, до ${maxXp(pick)} опыта` : "сцена дня, около 5 минут";
+  const sceneSub = pick && pick.turns ? `сцена дня, ${cnt(pick.turns.length, "реплика", "реплики", "реплик")}, до ${maxXp(pick)} опыта` : "сцена дня, около 5 минут";
   if (!D || !D.xp) return scene("данных о цели дня нет, практика работает");
   if (!fresh()) return { k: "refresh", icon: "repeat", t: "Обновить", s: "бот пришлет свежую кнопку мини-аппа", go: refresh };
   const left = Math.max(D.xp.goal - D.xp.today, 0), t = D.tasks;
   const cst = cardsState();                    // F8: сессия в странице; skipCards — «дальше» на итоге повтора
   if (D.due && !skipCards && cst.k !== "sent" && cst.k !== "none") {
-    if (cst.k === "chat") return { k: "cards", icon: "cards-duotone", t: `Сейчас: ${D.due} карточек`,
+    if (cst.k === "chat") return { k: "cards", icon: "cards-duotone", t: `Сейчас: ${cnt(D.due, "карточка", "карточки", "карточек")}`,
       s: `около ${Math.max(1, Math.round(D.due * 13 / 60))} мин${D.norm ? ", цель дня уже взята" : `, +${Math.min(Math.round(D.due * 2.5), 999)} к цели дня`}`,
       go: () => send({ kind: "review" }, "Повтор") };
     return { k: "cards", icon: "cards-duotone", t: cst.k === "new" ? `Сейчас: ${cst.now.replace(/^\S/, (x) => x.toLowerCase())}` : cst.now, s: cst.sub, go: cst.go };
@@ -615,14 +640,14 @@ function renderHome() {
       `${D.sp ? "речь дня есть из сцены, " : ""}бот посчитает темп${lf && lf.d ? ", последняя запись " + dm(lf.d) : ""}`,
       fbToday && D.vs ? ["Разбор", () => openFb(0)] : D.vs ? null : ["Записать", openVoice]]);
     // голосовое сегодня есть, но короче 60 с: «Записать» остается, разбор отдельной строкой (замер беглости и разбор не смешиваем)
-    if (fbToday && !D.vs) rows.push(["--speech", false, "Разбор голосового", `${fb0.wpm ? fb0.wpm + " слов в минуту, " : ""}сегодня в ${String(fb0.d).slice(6)}`, ["Открыть", () => openFb(0)]]);
+    if (fbToday && !D.vs) rows.push(["--speech", false, "Разбор голосового", `${fb0.wpm ? cnt(fb0.wpm, "слово", "слова", "слов") + " в минуту, " : ""}сегодня в ${String(fb0.d).slice(6)}`, ["Открыть", () => openFb(0)]]);
     // сцену закрывает только законченная сцена: брошенная и письмо не в счет
     rows.push(["--speech", D.prt > 0, D.prt ? "Сцена" : pick ? `Сцена: ${pick.title}` : "Сцена",
-      D.prt ? `законченных сегодня: ${D.prt}` : pick && pick.turns ? `${pick.turns.length} реплик, до ${maxXp(pick)} опыта` : "около 5 минут",
+      D.prt ? `законченных сегодня: ${D.prt}` : pick && pick.turns ? `${cnt(pick.turns.length, "реплика", "реплики", "реплик")}, до ${maxXp(pick)} опыта` : "около 5 минут",
       D.prt ? null : ["Начать", () => (pick ? openScenario(pick.id) : tab("practice"))]]);
     if (t) {
       const n = tasksCut(t) ? 0 : t.items.filter((it) => has(ANS[it.id])).length;
-      rows.push(["--prec", !!D.sent, "Задания", D.sent ? "ответы отправлены" : tasksCut(t) ? `${tasksN(t)} заданий: тексты пришлет бот в чат` : `готово ${n} из ${tasksN(t)}`, D.sent ? null : tasksCut(t) ? ["Прислать", toChat] : ["Открыть", () => tab("learn")]]);
+      rows.push(["--prec", !!D.sent, "Задания", D.sent ? "ответы отправлены" : tasksCut(t) ? `${cnt(tasksN(t), "задание", "задания", "заданий")}: тексты пришлет бот в чат` : `готово ${n} из ${tasksN(t)}`, D.sent ? null : tasksCut(t) ? ["Прислать", toChat] : ["Открыть", () => tab("learn")]]);
     }
     today = `<h2>Сегодня</h2>${rows.map(([c, done, h, p, act], i) => `<div class="todo${done ? " done" : ""}" style="--c:var(${c})"><span class="chk">${ic("check")}</span>
       <div class="tx"><b>${esc(h)}</b><span>${esc(p)}</span></div>${act ? `<button class="go press" data-row="${i}">${act[0]}</button>` : ""}</div>`).join("")}`;
@@ -685,7 +710,7 @@ function renderLearn() {
       ${cardsAct ? `<button class="go press" id="${cardsAct[0]}">${cardsAct[1]}</button>` : ""}</div></div>
     <h2>Задания</h2>
     ${t && tasksCut(t) ? `<div class="list"><div class="item" style="--c:var(--prec)">${ic("list-checks-duotone")}
-      <div class="tx"><b>${tasksN(t)} заданий</b><span>тексты пришлет бот в чат</span></div><button class="go press" id="go-chat">Прислать в чат</button></div></div>` :
+      <div class="tx"><b>${cnt(tasksN(t), "задание", "задания", "заданий")}</b><span>тексты пришлет бот в чат</span></div><button class="go press" id="go-chat">Прислать в чат</button></div></div>` :
     !t ? `<p class="empty">${D && !("tasks" in D) ? "Задания в ссылку не попали, обнови: /app в чате." : "Заданий на сегодня нет. Их кладет репетитор после урока."}</p>` :
       `<div class="goal-l"><span><b id="t-cnt"></b> готово</span><span class="mut">${D.sent ? "уже отправлены, можно еще раз" : "ответы ждет репетитор"}</span></div>
       <div class="gbar"><u id="t-bar" style="width:0;background:var(--prec)"></u></div>` +
@@ -775,7 +800,7 @@ function when(step, g) {
   const s = { y: step + 1, h: step, n: 0 }[g];
   if (s >= 5) return "в архив";
   const d = IVL[s];
-  return d === 1 ? "завтра" : `через ${d} ${d < 5 ? "дня" : "дней"}`;
+  return d === 1 ? "завтра" : `через ${cnt(d, "день", "дня", "дней")}`;
 }
 const cards = () => (D && Array.isArray(D.cards) ? D.cards : []);
 const STAGE = (step) => (step <= 0 ? "новое" : step <= 2 ? "закрепляется" : "почти выучено");   // вместо «шаг N»
@@ -839,7 +864,7 @@ function cardsState() {
   if (v.done >= n) return { k: "graded", now: `Сохранить повтор, ${n} из ${n}`, sub: "все оценены, осталось сохранить", act: "Открыть", go };
   if (v.done) return { k: "mid", now: `Продолжить ${v.done + 1} из ${n}`, sub: `остановился на ${v.done + 1} из ${n}, около ${min} мин`, act: "Продолжить", go };
   if (D.day !== localDay()) return { k: "stale", now: "Обновить", sub: `карточки от ${dm(D.day)}, обнови`, act: "Обновить", go: refresh };
-  return { k: "new", now: `Повторить ${n} карточек`, sub: `около ${min} мин${more ? `, еще ${more} в следующей сессии` : ""}`, act: "Начать", go };
+  return { k: "new", now: `Повторить ${cnt(n, "карточка", "карточки", "карточек")}`, sub: `около ${min} мин${more ? `, еще ${more} в следующей сессии` : ""}`, act: "Начать", go };
 }
 
 function openCards() {
@@ -927,7 +952,7 @@ const kindColor = (s) => s.kind === "words" ? "--vocab" : s.kind === "writing" ?
 const maxXp = (s) => s.kind === "writing" ? 25 : s.kind === "words" ? 10 + 5 * (s.pick || 5) : 10 + 5 * (s.goals || []).length;
 function rowHtml(s, pick) {
   const p = D && D.pr && D.pr[s.id], today = pick && pick.id === s.id;
-  const pass = p ? `<span class="pass" title="пройдена ${p[0]} раз${p[2] ? `, лучшее ${p[1]} из ${p[2]} целей` : ""}">${ic("check")}${p[2] ? `${p[1]}/${p[2]}` : `${p[0]}×`}</span>` : "";
+  const pass = p ? `<span class="pass" title="пройдена ${cnt(p[0], "раз", "раза", "раз")}${p[2] ? `, лучшее ${p[1]} из ${p[2]} целей` : ""}">${ic("check")}${p[2] ? `${p[1]}/${p[2]}` : `${p[0]}×`}</span>` : "";
   // сцена дня (та же, что в «Сейчас» и «Сегодня» на главной): метка и действие, остальные строки тихие
   return `<button class="item press${today ? " pick" : ""}" style="--c:var(${kindColor(s)})" data-sc="${esc(s.id)}">${ic(s.icon)}
     <div class="tx">${today ? `<em>Сцена дня</em>` : ""}<b>${esc(s.title)}</b><span>${esc(s.sub)}</span></div>${today ? `<span class="go">Начать</span>` : pass}</button>`;
@@ -960,7 +985,7 @@ function fbText(v) {                                           // номера �
   }).join("");
 }
 const EMPTY_FB = "Бот отмечает только паразиты и слова из бан-листа. Ошибки разберет репетитор после урока.";
-const fbTempo = (v) => v.wpm ? `${v.wpm} слов в минуту, цель 115` : "";
+const fbTempo = (v) => v.wpm ? `${cnt(v.wpm, "слово", "слова", "слов")} в минуту, цель 115` : "";
 function fbBlock() {
   const vs = D && D.fb && D.fb.v;
   if (!vs || !vs.length) {
@@ -981,10 +1006,10 @@ function openFb(i = 0) {
   const tutor = list.some((e) => e.k === "t");
   const pl = (v.pl || []).map((x) => `${x} с`).join(", ");
   openSheet(`<div class="head"><h1>Разбор речи</h1><button class="x" data-close aria-label="Закрыть">${ic("x")}</button></div>
-    <p class="mut" style="margin-top:6px">Голосовое ${esc(v.d)}${v.dur ? `, ${Math.round(v.dur)} с` : ""}${v.w ? `, ${v.w} слов` : ""}</p>
+    <p class="mut" style="margin-top:6px">Голосовое ${esc(v.d)}${v.dur ? `, ${Math.round(v.dur)} с` : ""}${v.w ? `, ${cnt(v.w, "слово", "слова", "слов")}` : ""}</p>
     ${vs.length > 1 ? `<div class="fx-nav">${vs.map((x, k) => `<button class="${k === i ? "on" : ""}" data-fbv="${k}">${k ? "Прошлое" : "Последнее"} ${esc(String(x.d).slice(0, 5))}</button>`).join("")}</div>` : ""}
     <p class="cap">Темп и паузы</p>
-    <p style="margin:0">${v.wpm ? `<b>${v.wpm}</b> слов в минуту, цель 115` : "темп не посчитан"}${v.ps !== undefined && v.ps !== null ? `. Паузы дольше 2 с: ${v.ps}${pl ? ` (${esc(pl)})` : ""}` : ""}${v.fl !== undefined && v.fl !== null ? `. Паразитов uh/um: ${v.fl}` : ""}.</p>
+    <p style="margin:0">${v.wpm ? `<b>${v.wpm}</b> ${plural(v.wpm, "слово", "слова", "слов")} в минуту, цель 115` : "темп не посчитан"}${v.ps !== undefined && v.ps !== null ? `. Паузы дольше 2 с: ${v.ps}${pl ? ` (${esc(pl)})` : ""}` : ""}${v.fl !== undefined && v.fl !== null ? `. Паразитов uh/um: ${v.fl}` : ""}.</p>
     <p class="cap">Весь текст</p>
     <div class="fx-text">${fbText(v)}</div>
     ${v.cut ? `<p class="mut" style="margin:4px 0 0">Текст укорочен, полный — в чате.</p>` : ""}
@@ -1006,7 +1031,7 @@ function renderPractice() {
     <h1>Практика</h1>
     <p class="lead">Собеседник пишет в чат, ты отвечаешь голосом</p>
     ${fbBlock()}
-    <div class="quick">${quick.map((s) => `<button class="press" style="--c:var(${kindColor(s)})" data-sc="${esc(s.id)}">${ic(s.icon)}<b>${esc(s.title)}</b></button>`).join("")}</div>
+    <div class="quick">${quick.map((s) => `<button class="press" style="--c:var(${kindColor(s)});--pt:var(${kindColor(s)}-bg)" data-sc="${esc(s.id)}">${ic(s.icon)}<b>${esc(s.title)}</b></button>`).join("")}</div>
     ${CAT.cats.map((c) => `<h2>${esc(c.title)}</h2><div class="list">${CAT.scenarios.filter((s) => s.cat === c.id).map((s) => rowHtml(s, pick)).join("")}</div>`).join("")}`;
   wireRows($("#practice"));
   const fr = $("#fb-refresh"); if (fr) fr.onclick = refresh;
@@ -1062,7 +1087,7 @@ function openScenario(id) {
     <button class="btn press" id="go">${ic("play")}Начать</button>`);
   const desc = () => {
     $("#lvl-d").textContent = CAT.levels[lvl] || "";
-    $("#n-turns").textContent = s.turns ? `${s.turns.length + (lvl === "B2" ? hard : 0)} реплик` : s.kind === "pool" ? `${s.pick} вопроса` : "Две реплики";
+    $("#n-turns").textContent = s.turns ? cnt(s.turns.length + (lvl === "B2" ? hard : 0), "реплика", "реплики", "реплик") : s.kind === "pool" ? cnt(s.pick, "вопрос", "вопроса", "вопросов") : "Две реплики";
   };
   desc();
   $$("[data-l]", $("#sheet")).forEach((b) => b.onclick = () => {
@@ -1084,7 +1109,7 @@ function openWriting(s) {
     <textarea id="wt" style="min-height:150px" placeholder="Your text in English...">${esc(store.get("w-draft", ""))}</textarea>
     <p class="mut" id="wc" style="margin:6px 0 16px"></p>
     <button class="btn press" id="wsend">${ic("note-pencil-duotone")}Отправить репетитору</button>`);
-  const wt = $("#wt"), wc = () => { const n = (wt.value.match(/[A-Za-z']+/g) || []).length; $("#wc").textContent = `${n} слов`; };
+  const wt = $("#wt"), wc = () => { const n = (wt.value.match(/[A-Za-z']+/g) || []).length; $("#wc").textContent = `${cnt(n, "слово", "слова", "слов")}`; };
   wc();
   wt.oninput = () => { wc(); store.set("w-draft", wt.value); };
   $$("[data-p]", $("#sheet")).forEach((b) => b.onclick = () => {
@@ -1120,8 +1145,8 @@ function renderStats() {
     ${blk("Паузы длиннее 2 с", "в минуту, чем ниже, тем лучше", chart(rec.map((r) => r[2]), rec.map((r) => r[0]), { min: 0, c: "--speech" }))}
     ${blk("Past simple верно", "в рассказах, %", chart(ps.map((r) => r[1]), ps.map((r) => r[0]), { suffix: "%", min: 0, max: 100, c: "--prec" }))}
     <h2>Ровность занятий</h2>
-    ${blk(`<b>${st[0]}</b> дней подряд`, `рекорд ${st[1]}. Кривая растет с каждым днем занятий, пропуск дня снимает с нее 10%`, chart(f.s, [formStart(f), ok ? "сегодня" : from], { min: 0, area: true, c: "--fg" }))}
-    ${pr.length ? `<h2>Сцены</h2><div class="list tight">${pr.map(([s, v]) => `<div class="item" style="--c:var(${kindColor(s)})">${ic(s.icon)}<div class="tx"><b>${esc(s.title)}</b></div><small>${v[0]} раз${v[2] ? `, лучшее ${v[1]} из ${v[2]}` : ""}</small></div>`).join("")}</div>` : ""}
+    ${blk(`<b>${st[0]}</b> ${plural(st[0], "день", "дня", "дней")} подряд`, `рекорд ${st[1]}. Кривая растет с каждым днем занятий, пропуск дня снимает с нее 10%`, chart(f.s, [formStart(f), ok ? "сегодня" : from], { min: 0, area: true, c: "--fg" }))}
+    ${pr.length ? `<h2>Сцены</h2><div class="list tight">${pr.map(([s, v]) => `<div class="item" style="--c:var(${kindColor(s)})">${ic(s.icon)}<div class="tx"><b>${esc(s.title)}</b></div><small>${cnt(v[0], "раз", "раза", "раз")}${v[2] ? `, лучшее ${v[1]} из ${v[2]}` : ""}</small></div>`).join("")}</div>` : ""}
     <h2>Награды · ${got} из ${all.length}</h2>
     <div class="list tight">${ach.map(([t, g, p]) => `<div class="item${g ? "" : " no"}" style="--c:var(${g ? "--fg" : "--mut"})">${ic(g ? "seal-check-duotone" : "lock")}<div class="tx"><b>${esc(t)}</b></div><small>${esc(p)}</small></div>`).join("")}</div>
     <p class="lg-line">${lgLine}<span>опыта всего <b>${D.xp.total}</b></span></p>
