@@ -12,30 +12,37 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-/* «Синяя тетрадь» (VISION v1.0): фон и текст из темы Telegram, чернильный синий на действиях,
-   три цвета видов работы (речь, точность, словарь), коралл только у серии и праздника. */
-:root {
-  --bg: var(--tg-theme-bg-color, #ffffff); --fg: var(--tg-theme-text-color, #1d2433);
-  --mut: var(--tg-theme-hint-color, #7a8294); --bg2: var(--tg-theme-secondary-bg-color, #f3f4f8);
-  --ink: #2b3a67; --on-ink: #ffffff;
-  --speech: #7a5cc7; --prec: #2e9e6b; --vocab: #3d7bd9; --coral: #e4572e;
-  --ok: #2e9e6b; --bad: #c8463a;
+/* Цветовая политика (CR-17, research/cvetovaya-politika.md): тепло в фоне и слоях, холодный синий только на действиях,
+   один цвет на смысл. Фон Telegram не используется. Светлая «Лен» и темная «Какао»; «Графит» запасной одним атрибутом data-pal="grafit".
+   --bg фон, --surf слой, --top цвет шапки Telegram, --mut текст 2, --mut3 текст 3 (метки, неактивное),
+   --ink действие, --speech речь, --prec точность, --vocab словарь, --ok верно, --bad правка, --coral серия и праздник. */
+:root, :root[data-theme="light"] {   /* светлая «Лен» */
+  --bg: #f7f3ec; --surf: #fffdf8; --top: #f7f3ec; --bg2: var(--surf);
+  --fg: #2a2521; --mut: #6f665c; --mut3: #8b8175;
+  --ink: #34498f; --on-ink: #ffffff;
+  --speech: #6b47b8; --prec: #16684a; --vocab: #8a5a0c; --coral: #a63f17;
+  --ok: #16684a; --bad: #ab2f45;
   color-scheme: light;
 }
-:root[data-theme="dark"] {
-  --bg: var(--tg-theme-bg-color, #17212b); --fg: var(--tg-theme-text-color, #f5f5f5);
-  --mut: var(--tg-theme-hint-color, #8696a8); --bg2: var(--tg-theme-secondary-bg-color, #232e3c);
-  --ink: #8fa3e8; --on-ink: #10162b;
-  --speech: #b39dff; --prec: #5bcb95; --vocab: #7fb0ff; --coral: #ff8a65;
-  --ok: #5bcb95; --bad: #ff7a74;
+:root[data-theme="dark"] {   /* темная «Какао» */
+  --bg: #2e2520; --surf: #3b302a; --top: #2e2520; --bg2: var(--surf);
+  --fg: #f6ece3; --mut: #bdab9c; --mut3: #94826f;
+  --ink: #a3b3ff; --on-ink: #1b1d2e;
+  --speech: #c8aaff; --prec: #62c896; --vocab: #f3cd78; --coral: #ffa070;
+  --ok: #62c896; --bad: #f27d8e;
   color-scheme: dark;
 }
+:root[data-theme="dark"][data-pal="grafit"] {   /* запасной «Графит» */
+  --bg: #2b2824; --surf: #37332e; --top: #2b2824;
+  --fg: #f3ede4; --mut: #b5ab9e;
+}
+:root[data-theme="dark"] ::placeholder { color: var(--mut); }
 :root {
   --card: var(--bg2); --line: color-mix(in srgb, var(--fg) 10%, var(--bg)); --track: color-mix(in srgb, var(--fg) 9%, var(--bg));
   --acc: var(--ink);
 }
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-body { margin: 0; background: var(--bg); color: var(--fg); font: 500 15px/1.45 Onest, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+body { margin: 0; background: var(--page, var(--bg)); color: var(--fg); font: 500 15px/1.45 Onest, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
 main { max-width: 560px; margin: 0 auto; padding: 16px 16px calc(96px + env(safe-area-inset-bottom)); }
 h1 { font-size: 25px; font-weight: 800; letter-spacing: -.01em; margin: 2px 0 0; line-height: 1.2; }
 h2 { font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--mut); margin: 26px 0 4px; }
@@ -176,6 +183,37 @@ textarea { min-height: 76px; resize: vertical; }
 .btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 14px; border-radius: 14px; font-weight: 700; font-size: 16px; background: var(--ink); color: var(--on-ink); }
 .btn .ic { width: 20px; height: 20px; }
 
+/* ───── карточки повтора в странице (F8): лист тетради — линия цветом вида работы, вопрос крупно, ответ чернилами */
+.cs-top { display: flex; align-items: center; gap: 12px; }
+.cs-top h1 { flex: 1; }
+.cs-n { font-size: 14px; font-weight: 700; color: var(--mut); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.cs-on nav { display: none; }                 /* сессия карточек без меню, выход крестиком */
+.cs-on main { padding-bottom: calc(150px + env(safe-area-inset-bottom)); }
+.cs-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 6; background: var(--surf); border-top: 1px solid var(--line); padding: 12px 16px calc(14px + env(safe-area-inset-bottom)); }
+.cs-bar > div { max-width: 560px; margin: 0 auto; }
+.cs-bar .btn { min-height: 56px; }
+.cs-bar .grades { margin-top: 0; }
+.cs-bar .link { display: block; width: 100%; min-height: 48px; margin: 0; text-align: center; }
+.next { margin-top: 4px; font-size: 15px; }
+.next b { font-weight: 700; color: var(--ink); }
+.xb { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; color: var(--mut); flex: none; }
+.fc { margin-top: 18px; padding: 0 0 4px; }
+.fc em { display: block; font-style: normal; font-size: 11.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--c); }
+.fc .q { font-size: 22px; font-weight: 700; line-height: 1.3; margin-top: 10px; overflow-wrap: anywhere; }
+.fc .a { margin-top: 18px; padding-top: 14px; border-top: 1px dashed color-mix(in srgb, var(--fg) 22%, var(--bg)); font-size: 19px; font-weight: 600; line-height: 1.35; color: var(--ink); overflow-wrap: anywhere; }
+.fc .mine { margin-top: 8px; font-size: 14px; color: var(--mut); overflow-wrap: anywhere; }
+.fc input { margin-top: 18px; }
+.grades { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 22px; }
+.grades small { display: block; margin-top: 3px; font-size: 12px; font-weight: 500; opacity: .8; }
+.grades button { min-height: 64px; padding: 12px 4px; border-radius: 14px; font-weight: 700; font-size: 14px; line-height: 1.2; color: var(--c); background: color-mix(in srgb, var(--c) 9%, var(--bg)); box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--c) 55%, transparent); }
+.tally { display: flex; margin-top: 18px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.tally > div { flex: 1; padding: 12px 0; font-size: 12.5px; color: var(--mut); }
+.tally > div + div { padding-left: 12px; border-left: 1px solid var(--line); }
+.tally b { display: block; font-size: 26px; font-weight: 800; color: var(--c); line-height: 1.1; font-variant-numeric: tabular-nums; }
+.sent { margin-top: 18px; padding: 12px 0; border-top: 2px solid var(--ok); font-size: 14px; }
+.sent b { font-weight: 700; color: var(--ok); }
+.link { display: inline-block; margin-top: 10px; color: var(--ink); font-weight: 600; font-size: 14px; padding: 6px 0; }
+
 /* шторка шкалы (F4) */
 .lvl[role=button] { cursor: pointer; border-radius: 12px; outline-offset: 4px; }
 .lvl[role=button]:focus-visible { outline: 2px solid var(--ink); }
@@ -206,16 +244,20 @@ textarea { min-height: 76px; resize: vertical; }
 .gse { margin-top: 14px; font-size: 12.5px; color: var(--mut); }
 
 /* нижнее меню: активная вкладка чернилами, без плашки */
-nav { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; background: var(--bg); border-top: 1px solid var(--line); padding: 8px 8px calc(8px + env(safe-area-inset-bottom)); }
+nav { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; background: var(--surf); border-top: 1px solid var(--line); padding: 8px 8px calc(8px + env(safe-area-inset-bottom)); }
 nav div { max-width: 560px; margin: 0 auto; display: flex; gap: 6px; }
 nav button { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px; font-size: 11.5px; font-weight: 500; color: var(--mut); padding: 4px 0; }
 nav button .ic { width: 24px; height: 24px; }
 nav button.on { color: var(--ink); font-weight: 700; }
 
 /* шторка */
+.thm { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 22px; color: var(--mut); font-size: 14px; }
+.thm > div { display: flex; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.thm button { padding: 8px 12px; font-size: 13.5px; font-weight: 600; color: var(--mut); }
+.thm button.on { background: var(--ink); color: var(--on-ink); }
 .veil { position: fixed; inset: 0; z-index: 10; background: rgba(10, 14, 28, .45); opacity: 0; pointer-events: none; transition: opacity .2s; }
 .veil.open { opacity: 1; pointer-events: auto; }
-.sheet { position: fixed; left: 0; right: 0; bottom: 0; z-index: 11; max-height: 88vh; overflow-y: auto; background: var(--bg); border-radius: 20px 20px 0 0; padding: 22px 20px calc(20px + env(safe-area-inset-bottom)); transform: translateY(105%); transition: transform .25s cubic-bezier(.2, .8, .2, 1); }
+.sheet { position: fixed; left: 0; right: 0; bottom: 0; z-index: 11; max-height: 88vh; overflow-y: auto; background: var(--surf); border-radius: 20px 20px 0 0; padding: 22px 20px calc(20px + env(safe-area-inset-bottom)); transform: translateY(105%); transition: transform .25s cubic-bezier(.2, .8, .2, 1); }
 .sheet.open { transform: none; }
 .sheet:focus { outline: none; }
 .sheet > div { max-width: 560px; margin: 0 auto; }
@@ -267,16 +309,20 @@ let D = null, CAT = null, ANS = {}, TAB = "home";
 const ERRS = [];
 const store = { get(k, d) { try { return localStorage.getItem(k) ?? d; } catch (e) { return d; } }, set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
 
-// ───────────── тема: Telegram сам говорит, светлая или темная
+// ───────────── тема: авто (Telegram, вне него система) / светлая / темная; выбор помнится
+const THEMES = [["auto", "Авто"], ["light", "Светлая"], ["dark", "Темная"]];
 function theme() {
-  const dark = IN_TG ? TG.colorScheme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  const pick = store.get("theme", "auto");
+  const sys = IN_TG ? TG.colorScheme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  const dark = pick === "dark" || (pick !== "light" && sys);
   document.documentElement.dataset.theme = dark ? "dark" : "light";
   if (IN_TG) {
-    const bg = getComputedStyle(document.documentElement).getPropertyValue("--bg").trim();
-    try { TG.setHeaderColor(bg); TG.setBackgroundColor(bg); } catch (e) { /* старый клиент */ }
+    const cs = getComputedStyle(document.documentElement), v = (n) => cs.getPropertyValue(n).trim();
+    try { TG.setHeaderColor(v("--top")); TG.setBackgroundColor(v("--bg")); TG.setBottomBarColor(v("--surf")); } catch (e) { /* старый клиент */ }
   }
 }
 if (IN_TG) { TG.ready(); TG.expand(); TG.onEvent("themeChanged", theme); }
+else try { matchMedia("(prefers-color-scheme: dark)").addEventListener("change", theme); } catch (e) {}
 theme();
 
 const haptic = (k = "light") => { try { IN_TG && TG.HapticFeedback.impactOccurred(k); } catch (e) {} };
@@ -361,7 +407,7 @@ function confetti() {
   try { IN_TG && TG.HapticFeedback.notificationOccurred("success"); } catch (e) {}
   const cv = $("#confetti"), cx = cv.getContext("2d"), dpr = devicePixelRatio || 1;
   cv.classList.remove("hidden"); cv.width = innerWidth * dpr; cv.height = innerHeight * dpr; cx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  const cols = ["#e4572e", "#2b3a67", "#7a5cc7", "#2e9e6b", "#3d7bd9"];
+  const cs = getComputedStyle(document.documentElement), cols = ["--coral", "--ink", "--speech", "--prec", "--vocab"].map((n) => cs.getPropertyValue(n).trim());
   const ps = Array.from({ length: 70 }, () => ({ x: innerWidth / 2 + (Math.random() - .5) * 80, y: innerHeight * .35, vx: (Math.random() - .5) * 9, vy: -Math.random() * 9 - 4, r: Math.random() * 6, c: cols[Math.random() * cols.length | 0], w: 6 + Math.random() * 5 }));
   const t0 = performance.now();
   const frame = (t) => {
@@ -461,7 +507,7 @@ function openLevel() {
 }
 
 // кнопка «Сейчас» (SPEC v4 F3, CR-12): карточки первыми всегда → норма взята: тихая → голосовое, если речи нет → сцена дня → задания
-function nowStep() {
+function nowStep(skipCards = false) {
   const pick = suggest();
   const scene = (s) => ({ k: "scene", icon: "chat-teardrop-text-duotone", t: pick ? `Сейчас: ${pick.title}` : "Сейчас: сцена",
     s, go: () => (pick ? openScenario(pick.id) : tab("practice")) });
@@ -469,9 +515,13 @@ function nowStep() {
   if (!D || !D.xp) return scene("данных о норме нет, практика работает");
   if (!fresh()) return { k: "refresh", icon: "repeat", t: "Обновить", s: "бот пришлет свежую кнопку мини-аппа", go: refresh };
   const left = Math.max(D.xp.goal - D.xp.today, 0), t = D.tasks;
-  if (D.due) return { k: "cards", icon: "cards-duotone", t: `Сейчас: ${D.due} карточек`,
-    s: `около ${Math.max(1, Math.round(D.due * 13 / 60))} мин${D.norm ? ", норма уже взята" : `, +${Math.min(Math.round(D.due * 2.5), 999)} к норме дня`}`,
-    go: () => send({ kind: "review" }, "Повтор") };
+  const cst = cardsState();                    // F8: сессия в странице; skipCards — «дальше» на итоге повтора
+  if (D.due && !skipCards && cst.k !== "sent" && cst.k !== "none") {
+    if (cst.k === "chat") return { k: "cards", icon: "cards-duotone", t: `Сейчас: ${D.due} карточек`,
+      s: `около ${Math.max(1, Math.round(D.due * 13 / 60))} мин${D.norm ? ", норма уже взята" : `, +${Math.min(Math.round(D.due * 2.5), 999)} к норме дня`}`,
+      go: () => send({ kind: "review" }, "Повтор") };
+    return { k: "cards", icon: "cards-duotone", t: cst.k === "new" ? `Сейчас: ${cst.now.replace(/^\S/, (x) => x.toLowerCase())}` : cst.now, s: cst.sub, go: cst.go };
+  }
   if (D.norm) return { k: "rest", quiet: true, icon: "seal-check-duotone", t: "Норма взята", s: `можно сверху: ${pick ? pick.title : "сцена"}`, go: scene().go };
   if (!D.sp) return { k: "voice", icon: "microphone-duotone", t: "Сейчас: голосовое 2 минуты", s: "речь дня и замер беглости, +20 опыта", go: openVoice };
   if (!D.prt) return scene(sceneSub);
@@ -513,8 +563,11 @@ function renderHome() {
   } else if (D && D.xp) {
     const pick = suggest(), t = D.tasks, lf = D.level && D.level.sub && D.level.sub.f;
     const rows = [];
-    if (D.due !== null && D.due !== undefined)
-      rows.push(["--vocab", D.due === 0, "Карточки", D.due ? `${D.due} к повтору` : "все повторено", D.due ? ["Начать", () => send({ kind: "review" }, "Повтор")] : null]);
+    if (D.due !== null && D.due !== undefined) {
+      const cst = cardsState(), app = cst.k !== "chat" && cst.k !== "none";
+      rows.push(["--vocab", D.due === 0 || cst.k === "sent", "Карточки", !D.due ? "все повторено" : app ? cst.sub : `${D.due} к повтору`,
+        !D.due ? null : app ? (cst.k === "sent" ? null : [cst.act, cst.go]) : ["Начать", () => send({ kind: "review" }, "Повтор")]]);
+    }
     // строку закрывает только голосовое от 60 с; речь дня из сцены говорится отдельно и честно
     rows.push(["--speech", !!D.vs, "Голосовое 2 минуты", D.vs ? `есть, сегодня ${D.min} мин` :
       `${D.sp ? "речь дня есть из сцены, " : ""}замер беглости${lf && lf.d ? ", последний " + dm(lf.d) : ""}`, D.vs ? null : ["Записать", openVoice]]);
@@ -574,9 +627,12 @@ function renderLearn() {
   // числа нет: трекер не читается (null) или ссылка урезана (поля нет) — честное «?», а не «все повторено»
   const known = typeof due === "number";
   const cardsHead = !known ? "? к повтору" : due ? `${due} к повтору` : "Все повторено";
-  const cardsSub = !known ? (due === null ? "трекер не читается" : "числа нет в ссылке, обнови")
+  let cardsSub = !known ? (due === null ? "трекер не читается" : "числа нет в ссылке, обнови")
     : due ? `около ${Math.max(1, Math.round(due * 13 / 60))} мин, около ${Math.round(due * 2.5)} опыта (2-3 за карточку)` : "на сегодня карточек нет";
-  const cardsAct = known ? (due ? ["go-review", "Повторить"] : null) : D && due === undefined ? ["go-refresh", "Обновить"] : null;
+  let cardsAct = known ? (due ? ["go-review", "Повторить"] : null) : D && due === undefined ? ["go-refresh", "Обновить"] : null;
+  // F8: карточки в ссылке — сессия в странице; начать новую можно только по сегодняшним данным, начатую — доделать всегда
+  const cst = cardsState();
+  if (cst.k !== "chat" && cst.k !== "none") { cardsSub = cst.sub; cardsAct = ["go-cards", cst.act]; }
   $("#learn").innerHTML = `<h1>Учить</h1><p class="lead">Карточки из трекера и задания от репетитора</p>
     <h2>Карточки</h2>
     <div class="list"><div class="item" style="--c:var(--vocab)">${ic("cards-duotone")}
@@ -591,6 +647,7 @@ function renderLearn() {
       t.items.map((it, k) => `<div class="task" id="it-${esc(it.id)}"><p class="q"><i>${k + 1}</i>${esc(it.prompt)}</p>${body(it)}<div class="res" id="r-${esc(it.id)}"></div></div>`).join("") +
       `<button class="btn press" id="send-tasks" style="margin-top:18px">${ic("check")}Отправить ответы</button>`}`;
   const r = $("#go-review"); if (r) r.onclick = () => { haptic(); send({ kind: "review" }, "Повтор"); };
+  const gc0 = $("#go-cards"); if (gc0) gc0.onclick = () => { haptic(); cst.go(); };
   const rf = $("#go-refresh"); if (rf) rf.onclick = () => { haptic(); refresh(); };
   const gc = $("#go-chat"); if (gc) gc.onclick = toChat;
   if (t && !tasksCut(t)) { t.items.forEach(wire); $("#send-tasks").onclick = sendAnswers; count(); }
@@ -661,6 +718,160 @@ function sendAnswers() {
     const b = $("#send-tasks"); b.disabled = true; b.textContent = `Отправляю ${filled} из ${D.tasks.items.length}...`;
     setTimeout(() => { b.disabled = false; b.innerHTML = ic("check") + "Отправить ответы"; }, 4000);
   }
+}
+
+// ───────────── карточки повтора (SPEC v2.0 F8): вопрос → ответ → оценка, прогресс в localStorage, одна отправка в конце
+// карточка в ссылке: [раздел 0-2, ключ-crc, вопрос, ответ, шаг, дата повтора]; шаг и дата уходят назад, бот по ним сверяет трекер
+const SEC = [["Слово", "--vocab"], ["Практикум", "--prec"], ["Ошибка", "--prec"]];
+const GR = [["n", "Не вспомнил", "--bad"], ["h", "С подсказкой", "--ink"], ["y", "Вспомнил", "--ok"]];   // вспомнил под большим пальцем
+// когда карточка вернется: как tracker_io.next_state и INTERVAL (шаг → дней), шаг 5 уходит в архив
+const IVL = [1, 3, 7, 14, 30];
+function when(step, g) {
+  const s = { y: step + 1, h: step, n: 0 }[g];
+  if (s >= 5) return "в архив";
+  const d = IVL[s];
+  return d === 1 ? "завтра" : `через ${d} ${d < 5 ? "дня" : "дней"}`;
+}
+const cards = () => (D && Array.isArray(D.cards) ? D.cards : []);
+const STAGE = (step) => (step <= 0 ? "новое" : step <= 2 ? "закрепляется" : "почти выучено");   // вместо «шаг N»
+
+// <pure> чистые функции сессии; их гоняет node в tests/test_cards_app.py
+// Прогресс хранится по карточке (ключ+шаг+дата), а не по списку: новая кнопка с добавленным словом сохраняет оценки,
+// карточку, у которой шаг или дата сменились, спрашивает заново.
+const cardKey = (c) => `${c[1]}|${c[4]}|${c[5]}`;
+function csView(cards, s) {
+  const keys = cards.map(cardKey), g = (s && s.g) || {}, sent = (s && s.sent) || {};
+  const done = keys.filter((k) => g[k]).length, i = keys.findIndex((k) => !g[k]);
+  const unsent = keys.filter((k) => g[k] && !sent[k]).length;
+  return { n: keys.length, done, i: i < 0 ? keys.length : i, unsent, sent: keys.length > 0 && done === keys.length && unsent === 0 };
+}
+// sendData: строка [ключ-crc, раздел, шаг, дата, оценка, свой ответ?], текстов вопросов и ответов нет.
+// Не влезает: свои ответы укорачиваются пропорционально, по символам (Array.from не рвет суррогатные пары).
+function packGrades(cards, s, sid, limit) {
+  const size = (o) => new TextEncoder().encode(JSON.stringify(o)).length;
+  const g = (s && s.g) || {};
+  const rows = cards.filter((c) => g[cardKey(c)]).map((c) => { const x = g[cardKey(c)]; return [c[1], c[0], c[4], c[5], x[0], String(x[1] || "")]; });
+  const obj = { kind: "grades", sid, g: rows }, cut = new Set();
+  for (let guard = 0; size(obj) > limit && rows.some((r) => r[5]) && guard < 200; guard++) {
+    const tot = rows.reduce((t, r) => t + size(r[5]), 0);
+    const k = Math.min(0.95, Math.max(0, 1 - (size(obj) - limit + 16 * rows.length) / Math.max(tot, 1)));
+    rows.forEach((r, j) => {
+      const cp = Array.from(r[5]), n = Math.floor(cp.length * k);
+      if (n < cp.length) { r[5] = cp.slice(0, n).join(""); cut.add(j); }
+    });
+  }
+  rows.forEach((r) => { if (!r[5]) r.pop(); });
+  return { obj, cut: cut.size, bytes: size(obj) };
+}
+// </pure>
+
+// хранилище: одна запись на день данных; отказ localStorage виден в сессии, а не молчит
+const csKey = () => `cs-${D && D.day}`;
+let CS = null, CS_FAIL = false;
+function csLoad() {
+  try {
+    const s = JSON.parse(localStorage.getItem(csKey()) || "null");
+    return s && s.g && typeof s.g === "object" && !Array.isArray(s.g) ? s : null;
+  } catch (e) { CS_FAIL = true; return null; }
+}
+function csSave() { try { localStorage.setItem(csKey(), JSON.stringify(CS)); CS_FAIL = false; } catch (e) { CS_FAIL = true; } }
+function csClean() {                                           // сессии старше 2 дней и старый формат ключа уходят
+  try {
+    const lim = new Date(); lim.setDate(lim.getDate() - 2); const min = localDay(lim);
+    for (const k of Object.keys(localStorage)) if (k.startsWith("cs-") && (k.length !== 13 || k.slice(3) < min)) localStorage.removeItem(k);
+  } catch (e) {}
+}
+csClean();
+
+// одна правда о карточках для «Сейчас», строки «Сегодня» и «Учить»
+function cardsState() {
+  const due = D ? D.due : null, cs = cards(), known = typeof due === "number";
+  if (!cs.length) return { k: known && due ? "chat" : "none" };
+  const v = csView(cs, csLoad()), n = v.n, more = known ? Math.max(due - n, 0) : 0;
+  const min = Math.max(1, Math.round((n - v.done) * 13 / 60));
+  const go = () => openCards();
+  if (v.sent) return { k: "sent", now: "Повтор отправлен", sub: "ждем ответ бота в чате", act: "Открыть", go };
+  if (v.done >= n) return { k: "graded", now: `Сохранить повтор, ${n} из ${n}`, sub: "все оценены, осталось сохранить", act: "Открыть", go };
+  if (v.done) return { k: "mid", now: `Продолжить ${v.done + 1} из ${n}`, sub: `остановился на ${v.done + 1} из ${n}, около ${min} мин`, act: "Продолжить", go };
+  if (D.day !== localDay()) return { k: "stale", now: "Обновить", sub: `карточки от ${dm(D.day)}, обнови`, act: "Обновить", go: refresh };
+  return { k: "new", now: `Повторить ${n} карточек`, sub: `около ${min} мин${more ? `, еще ${more} в следующей сессии` : ""}`, act: "Начать", go };
+}
+
+function openCards() {
+  const s = csLoad();
+  CS = s || { sid: (D.day || localDay()).replace(/-/g, "") + Math.random().toString(36).slice(2, 8), g: {}, sent: {}, cur: null };
+  CS.sent = CS.sent || {};
+  csSave();
+  document.body.classList.add("cs-on");                       // сессия без меню: оценки внизу под пальцем
+  try { IN_TG && TG.enableClosingConfirmation(); } catch (e) {}
+  tab("learn"); renderCards();
+}
+function closeCards() {
+  CS = null; document.body.classList.remove("cs-on");
+  try { IN_TG && TG.disableClosingConfirmation(); } catch (e) {}
+  renderLearn(); renderHome(); tab("learn");
+}
+const failNote = () => (CS_FAIL ? `<p class="card err"><b>Прогресс не сохраняется:</b> хранилище Telegram недоступно. Не закрывай окно до «Сохранить».</p>` : "");
+
+function renderCards() {
+  const cs = cards(), v = csView(cs, CS), n = v.n, el = $("#learn");
+  if (v.i >= n) return renderCardsDone();
+  const c = cs[v.i], key = cardKey(c), [kind, col] = SEC[c[0]] || SEC[0], err = c[0] === 2;
+  if (!CS.cur || CS.cur.key !== key) CS.cur = { key, shown: false, draft: "" };
+  const cur = CS.cur;
+  el.innerHTML = `<div class="cs-top"><h1>Карточки</h1><span class="cs-n">${v.done + 1} из ${n}</span><button class="xb" id="cs-x" aria-label="Закрыть, прогресс сохранится">${ic("x")}</button></div>
+    <div class="gbar"><u style="width:${100 * v.done / n}%;background:var(--vocab)"></u></div>${failNote()}
+    <div class="fc" style="--c:var(${col})"><em>${kind} · ${err ? "на урок" : STAGE(+c[4])}</em>
+      <p class="q">${err ? "Исправь: " : ""}${esc(c[2])}</p>
+      ${cur.shown ? `<p class="a">${esc(c[3])}</p>${cur.draft.trim() ? `<p class="mine">Твой ответ: ${esc(cur.draft.trim())}</p>` : ""}${err ? `<p class="mine">Ошибку двигает репетитор на уроке, оценка уйдет ему в журнал.</p>` : ""}`
+        : `<input id="cs-mine" maxlength="200" autocomplete="off" placeholder="свой ответ, можно пропустить" value="${esc(cur.draft)}">`}
+    </div>
+    <div class="cs-bar"><div>${cur.shown ? `<div class="grades">${GR.map(([g, t, cc]) => `<button class="press" data-g="${g}" style="--c:var(${cc})">${t}<small>${err ? "в журнал" : when(+c[4], g)}</small></button>`).join("")}</div>`
+      : `<button class="btn press" id="cs-show">Показать ответ</button>`}</div></div>`;
+  $("#cs-x").onclick = () => { haptic(); closeCards(); };
+  const inp = $("#cs-mine");
+  if (inp) {
+    inp.oninput = () => { cur.draft = inp.value; csSave(); };
+    inp.onkeydown = (e) => { if (e.key === "Enter") { e.preventDefault(); $("#cs-show").click(); } };
+  }
+  const sh = $("#cs-show");
+  if (sh) sh.onclick = () => { haptic(); cur.shown = true; csSave(); renderCards(); };
+  $$("[data-g]", el).forEach((b) => b.onclick = () => {
+    haptic(b.dataset.g === "y" ? "light" : "rigid");
+    CS.g[key] = [b.dataset.g, Array.from(cur.draft.trim()).slice(0, 200).join("")];
+    CS.cur = null; csSave(); renderCards();
+  });
+}
+
+function renderCardsDone() {
+  const cs = cards(), v = csView(cs, CS), n = v.n, cnt = { y: 0, h: 0, n: 0 };
+  cs.forEach((c) => { const x = CS.g[cardKey(c)]; if (x && x[0] in cnt) cnt[x[0]] += 1; });
+  const errs = cs.some((c) => c[0] === 2), more = typeof D.due === "number" && D.due > n;
+  const nx = nowStep(true), next = nx.quiet ? `норма взята, ${nx.s}` : nx.t.replace(/^Сейчас: /, "");   // та же логика, что «Сейчас»
+  $("#learn").innerHTML = `<div class="cs-top"><h1>Итог повтора</h1><button class="xb" id="cs-x" aria-label="Закрыть">${ic("x")}</button></div>
+    <div class="gbar"><u style="width:100%;background:var(--vocab)"></u></div>${failNote()}
+    <div class="tally">${GR.slice().reverse().map(([g, t, c]) => `<div style="--c:var(${c})"><b>${cnt[g]}</b>${t.toLowerCase()}</div>`).join("")}</div>
+    <p class="note">${errs ? "Ошибки уйдут репетитору в журнал, трекер их не двигает. " : ""}${more ? "Остальные карточки придут в следующей сессии." : ""}</p>
+    <p class="next">Дальше: <b>${esc(next)}</b></p>
+    ${v.sent ? `<p class="sent"><b>Отправлено.</b> Ждем ответ бота в чате: он запишет оценки в трекер и пришлет свежую кнопку.</p>` : ""}
+    <div class="cs-bar"><div>${v.sent ? `<button class="link" id="cs-save">Бот не ответил? Отправить еще раз</button>`
+      : `<button class="btn press" id="cs-save">${ic("check")}Сохранить</button>`}</div></div>`;
+  $("#cs-x").onclick = () => { haptic(); closeCards(); };
+  $("#cs-save").onclick = () => {
+    const p = packGrades(cs, CS, CS.sid, LIMIT);
+    if (p.bytes > LIMIT) { toast(`Оценки не влезают в отправку: ${p.bytes} байт из ${LIMIT}.`); return; }
+    const go = () => {
+      if (!send(p.obj, "Сохранение повтора")) return;
+      cs.forEach((c) => { if (CS.g[cardKey(c)]) CS.sent[cardKey(c)] = 1; });   // бот принимает пару (sid, ключ) один раз
+      csSave();
+      try { IN_TG && TG.disableClosingConfirmation(); } catch (e) {}
+      renderCardsDone();
+    };
+    if (!p.cut) return go();
+    const msg = `Свои ответы не влезают в отправку целиком: ${p.cut} будут укорочены. Оценки целы. Сохранить?`;
+    if (IN_TG && TG.showConfirm) { try { return TG.showConfirm(msg, (ok) => ok && go()); } catch (e) {} }
+    if (confirm(msg)) go();
+  };
 }
 
 // ───────────── практика
@@ -800,7 +1011,9 @@ function renderStats() {
     ${pr.length ? `<h2>Сцены</h2><div class="list tight">${pr.map(([s, v]) => `<div class="item" style="--c:var(${kindColor(s)})">${ic(s.icon)}<div class="tx"><b>${esc(s.title)}</b></div><small>${v[0]} раз${v[2] ? `, лучшее ${v[1]} из ${v[2]}` : ""}</small></div>`).join("")}</div>` : ""}
     <h2>Награды · ${got} из ${all.length}</h2>
     <div class="list tight">${ach.map(([t, g, p]) => `<div class="item${g ? "" : " no"}" style="--c:var(${g ? "--fg" : "--mut"})">${ic(g ? "seal-check-duotone" : "lock")}<div class="tx"><b>${esc(t)}</b></div><small>${esc(p)}</small></div>`).join("")}</div>
-    <p class="lg-line">${lgLine}<span>опыта всего <b>${D.xp.total}</b></span></p>`;
+    <p class="lg-line">${lgLine}<span>опыта всего <b>${D.xp.total}</b></span></p>
+    <div class="thm"><span>Тема</span><div role="group" aria-label="Тема">${THEMES.map(([k, t]) => `<button class="press${store.get("theme", "auto") === k ? " on" : ""}" data-th="${k}">${t}</button>`).join("")}</div></div>`;
+  $("#stats").querySelectorAll("[data-th]").forEach((b) => b.onclick = () => { store.set("theme", b.dataset.th); theme(); renderStats(); });
 }
 
 // ───────────── старт
