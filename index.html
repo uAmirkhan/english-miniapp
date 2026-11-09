@@ -77,6 +77,10 @@ button:disabled { opacity: .55; cursor: default; }
 .lvl-hd b { font-size: 34px; font-weight: 800; color: var(--ink); line-height: 1; letter-spacing: -.02em; white-space: nowrap; }
 .lvl-hd b.no { font-size: 22px; }
 .lvl-hd span { font-size: 12.5px; color: var(--mut); line-height: 1.4; }
+.lvl-hd span small { font-size: 11.5px; }
+.lvl .best { margin: 10px 0 0; font-size: 13.5px; line-height: 1.4; color: var(--fg); }
+.lvl .best b { font-weight: 600; }
+.best-s { margin: 10px 0 0; font-size: 14px; line-height: 1.4; }
 .track { position: relative; height: 16px; display: flex; gap: 3px; margin: 14px 0 6px; }
 .track > i { position: relative; display: block; height: 100%; background: var(--track); border-radius: 4px; overflow: hidden; }
 .track > i > u { position: absolute; left: 0; top: 0; bottom: 0; background: var(--ink); }
@@ -423,7 +427,7 @@ function chart(values, labels, { suffix = "", max = null, min = null, area = fal
 // праздник нормы раз в день; лиги на главной не всплывают (SPEC v4 F3, их место в «Прогрессе», F5)
 function celebrate() {
   if (!fresh() || !D.norm || store.get("goal-day") === D.day) return;
-  store.set("goal-day", D.day); confetti(); toast(`Норма дня взята: ${D.xp.today} опыта и речь.`);
+  store.set("goal-day", D.day); confetti(); toast(`Цель дня выполнена: ${D.xp.today} опыта и речь.`);
 }
 function confetti() {
   if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -456,6 +460,15 @@ const SUBS = [["f", "Беглость", "--speech"], ["a", "Точность", "
 // ступени: нет отметок [x] (v подшкалы пуст) = «не сданы», а не 0; 0 только когда ступень 0 сдана
 const stageNone = () => { const t = D && D.level && D.level.sub && D.level.sub.t; return !!t && typeof t.v !== "number"; };
 const stageNow = () => stageNone() ? null : D && typeof D.stage === "number" ? D.stage : null;
+// слова вместо чисел: пункты шкалы, подсказки бота простым языком, «сильнее всего поднимет»
+const pts = (n) => `${n} ${n % 10 === 1 && n % 100 !== 11 ? "пункт" : [2, 3, 4].includes(n % 10) && ![12, 13, 14].includes(n % 100) ? "пункта" : "пунктов"}`;
+// подшкала с наибольшим весом × отставанием, у которой есть число и подсказка с делом (не «нет данных»)
+const SUB_W = { f: .30, a: .30, v: .15, t: .25 };
+function bestSub(lv) {
+  const sub = (lv && lv.sub) || {};
+  return Object.keys(SUB_W).map((k) => [k, sub[k]]).filter(([, s]) => s && typeof s.v === "number" && s.h && !/^нет данных/.test(s.h))
+    .sort((a, b) => SUB_W[b[0]] * (100 - b[1].v) - SUB_W[a[0]] * (100 - a[1].v))[0] || null;
+}
 function levelHtml(lv) {
   const ok = lv && lv.st === "ok" && typeof lv.L === "number";
   const L = ok ? Math.max(L_MIN, Math.min(L_MAX, lv.L)) : null;
@@ -472,24 +485,26 @@ function levelHtml(lv) {
     marks += `<span class="zone" style="left:${pos(lo)}%;width:${pos(hi) - pos(lo)}%"></span>
       <span class="mark${prev !== L ? " pulse" : ""}" style="${at(L)}"></span>`;
   }
-  const chk = ok && lv.chk ? ` · контроль ${lv.chk.L} (${lv.chk.diff > 0 ? "+" : ""}${lv.chk.diff})` : "";
+  const chk = ok && lv.chk ? ` · репетитор оценил в ${lv.chk.L}` : "";
+  const prec = ok ? (lv.pm > 5 ? "оценка примерная, станет точнее после новых записей" : "оценка довольно точная") : "";
   const head = ok
-    ? `<b>${esc(lv.b)}</b><span>${L} ± ${lv.pm} · ${lv.to ? `до B2 осталось ${lv.to}` : "B2 взят"}<br>замер ${esc(dm(lv.d))}${esc(chk)}</span>`
+    ? `<b>${esc(lv.b)}</b><span>${lv.to ? `до B2 еще ${pts(lv.to)}` : "B2 взят"}<br>последняя запись ${esc(dm(lv.d))}${esc(chk)}<br><small>${prec}</small></span>`
     : lv && lv.st === "error" ? `<b class="no">шкала не посчиталась</b><span>причина в ошибках данных сверху</span>`
-    : lv && lv.st === "none" ? `<b class="no">не оценен</b><span>числа нет, пока мало замеров${lv.d ? `<br>последний замер ${esc(dm(lv.d))}` : ""}</span>`
+    : lv && lv.st === "none" ? `<b class="no">не оценен</b><span>числа нет, пока мало записей${lv.d ? `<br>последняя запись ${esc(dm(lv.d))}` : ""}</span>`
     : `<b class="no">нет данных</b><span>бот не прислал шкалу: /app в чате</span>`;
   const need = lv && lv.st === "none" && lv.need && lv.need.length ? `<ul class="need">${lv.need.map((n) => `<li>нужно: ${esc(n)}</li>`).join("")}</ul>` : "";
   const sub = (lv && lv.sub) || {};
   const subs = SUBS.map(([k, t, c]) => {
     const s = sub[k] || {}, v = typeof s.v === "number" ? s.v : null;
-    const tip = v === null ? "нет данных" : `${v} из 100${s.s === "frozen" ? ", заморожено с " + dm(s.d) : ""}`;
+    const tip = v === null ? "нет данных" : `${v} из 100${s.s === "frozen" ? ", не обновлялось с " + dm(s.d) : ""}`;
     return `<div class="${s.s === "frozen" ? "fz" : ""}" style="--c:var(${c})" title="${esc(tip)}">${t}<i><u style="width:${v ?? 0}%"></u></i></div>`;
   }).join("");
-  const stg = stageNow();
+  const stg = stageNow(), bs = ok ? bestSub(lv) : null;
+  const best = bs ? `<p class="best">Сильнее всего поднимет: <b>${esc(bs[1].h)}</b></p>` : "";
   return `<div class="lvl" id="lvl-open" role="button" tabindex="0" aria-label="Подробности шкалы уровня"><div class="lvl-hd">${head}</div>
     <div class="track">${segs}${marks}</div>
-    <div class="lab">${SEG.map(([n, lo, hi]) => `<span style="flex:${hi - lo}">${n}</span>`).join("")}</div>${need}
-    <div class="subs">${subs}<div class="st">Ступени<b>${stg === null ? (stageNone() ? "не сданы" : "?") : stg + " из 10"}</b></div></div><span class="more">Подробности</span></div>`;
+    <div class="lab">${SEG.map(([n, lo, hi]) => `<span style="flex:${hi - lo}">${n}</span>`).join("")}</div>${need}${best}
+    <div class="subs">${subs}<div class="st">Экзамены<b>${stg === null ? (stageNone() ? "впереди" : "?") : stg + " из 10"}</b></div></div><span class="more">Подробности</span></div>`;
 }
 
 // шторка «Подробности шкалы» (SPEC v4 F4)
@@ -501,9 +516,9 @@ function subHtml(t, c, s, ladder) {
   const v = typeof s.v === "number" ? s.v : null, frz = s.s === "frozen" && !ladder;
   let tag, meta;
   if (v === null) { tag = "нет данных"; meta = ""; }
-  else if (frz) { tag = `заморожено с ${dm(s.d)}`; meta = "давно не обновлялось, значение держится"; }
-  else if (s.s === "fresh") { tag = "обновлено"; meta = s.d ? `замер ${dm(s.d)}` : ""; }
-  else { tag = ladder ? "по последней отметке" : "замер"; meta = s.d ? ` ${dm(s.d)}` : ""; }
+  else if (frz) { tag = `не обновлялось с ${dm(s.d)}`; meta = "значение осталось прежним"; }
+  else if (s.s === "fresh") { tag = "обновлено"; meta = s.d ? `запись ${dm(s.d)}` : ""; }
+  else { tag = ladder ? "по последнему экзамену" : "последняя запись"; meta = s.d ? ` ${dm(s.d)}` : ""; }
   const stg = ladder ? (stageNone() ? null : D && typeof D.stage === "number" ? D.stage : v !== null ? Math.round(v / 10) : null) : null;
   const num = ladder ? (stg === null ? `<b style="font-size:15px">не сданы</b>` : `<b>${stg}<small> из 10</small></b>`) : v === null ? `<b>—</b>` : ladder ? `<b>${stg}<small> из 10</small></b>` : `<b>${v}<small> из 100</small></b>`;
   const lad = !ladder ? "" : `<div class="ladder">${RANKS.map(([n, lo, hi]) => `<div style="flex:${hi - lo + 1}">${n}<div class="cells">${
@@ -516,17 +531,19 @@ function subHtml(t, c, s, ladder) {
 }
 function openLevel() {
   const lv = D && D.level, ok = lv && lv.st === "ok" && typeof lv.L === "number", sub = (lv && lv.sub) || {};
-  const head = ok ? `${esc(lv.b)}, ${lv.L} ± ${lv.pm}` : lv && lv.st === "none" ? "Не оценен" : "Нет данных";
+  const head = ok ? `${esc(lv.b)}${lv.to ? `, до B2 еще ${pts(lv.to)}` : ", B2 взят"}` : lv && lv.st === "none" ? "Не оценен" : "Нет данных";
   const need = lv && lv.st === "none" && lv.need && lv.need.length
     ? `<h2 class="cap">Что нужно для оценки</h2><ul class="need" style="font-size:14px">${lv.need.map((n) => `<li>${esc(n)}</li>`).join("")}</ul>` : "";
-  const chk = lv && lv.chk ? `<div class="chkbox"><b>Контрольный замер репетитора:</b> ${esc(lv.chk.L)}, ${esc(dm(lv.chk.date))}${
-    typeof lv.chk.diff === "number" ? `<br><span class="mut">расхождение со шкалой ${lv.chk.diff > 0 ? "+" : ""}${lv.chk.diff}</span>` : ""}</div>` : "";
+  const chk = lv && lv.chk ? `<div class="chkbox"><b>Проверка репетитора:</b> ${esc(lv.chk.L)}, ${esc(dm(lv.chk.date))}${
+    typeof lv.chk.diff === "number" ? `<br><span class="mut">${lv.chk.diff === 0 ? "совпало со шкалой" : `на ${Math.abs(lv.chk.diff)} ${lv.chk.diff > 0 ? "выше" : "ниже"}, чем шкала`}</span>` : ""}</div>` : "";
   const T = [["Беглость", "microphone-duotone"], ["Точность", "seal-check-duotone"], ["Словарь", "cards-duotone"]];
   openSheet(`<div class="head"><h1>${head}</h1><button class="x" data-close aria-label="Закрыть">${ic("x")}</button></div>
-    <p class="lead" style="margin-top:4px">Из чего сложена шкала</p>${need}
+    ${ok ? `<p class="note" style="margin-top:4px">Оценка примерная: точность ±${lv.pm} пунктов. С новыми записями она становится точнее.</p>` : ""}
+    ${(() => { const bs = ok ? bestSub(lv) : null; return bs ? `<p class="best-s"><b>Сильнее всего поднимет:</b> ${esc(bs[1].h)}</p>` : ""; })()}
+    <p class="lead" style="margin-top:8px">Из чего сложена шкала</p>${need}
     ${[["f", "--speech"], ["a", "--prec"], ["v", "--vocab"]].map(([k, c], i) => subHtml(T[i], c, sub[k], false)).join("")}
-    ${subHtml(["Ступени", "list-checks-duotone"], "--ink", sub.t, true)}${chk}
-    <p class="gse">Шкала L считается по образцу GSE, не официальный балл.</p>`);
+    ${subHtml(["Экзамены", "list-checks-duotone"], "--ink", sub.t, true)}${chk}
+    <p class="gse">Шкала своя, устроена как GSE у Pearson. Это не сертификат.</p>`);
 }
 
 // кнопка «Сейчас» (SPEC v4 F3, CR-12): карточки первыми всегда → норма взята: тихая → голосовое, если речи нет → сцена дня → задания
@@ -535,24 +552,24 @@ function nowStep(skipCards = false) {
   const scene = (s) => ({ k: "scene", icon: "chat-teardrop-text-duotone", t: pick ? `Сейчас: ${pick.title}` : "Сейчас: сцена",
     s, go: () => (pick ? openScenario(pick.id) : tab("practice")) });
   const sceneSub = pick && pick.turns ? `сцена дня, ${pick.turns.length} реплик, до ${maxXp(pick)} опыта` : "сцена дня, около 5 минут";
-  if (!D || !D.xp) return scene("данных о норме нет, практика работает");
+  if (!D || !D.xp) return scene("данных о цели дня нет, практика работает");
   if (!fresh()) return { k: "refresh", icon: "repeat", t: "Обновить", s: "бот пришлет свежую кнопку мини-аппа", go: refresh };
   const left = Math.max(D.xp.goal - D.xp.today, 0), t = D.tasks;
   const cst = cardsState();                    // F8: сессия в странице; skipCards — «дальше» на итоге повтора
   if (D.due && !skipCards && cst.k !== "sent" && cst.k !== "none") {
     if (cst.k === "chat") return { k: "cards", icon: "cards-duotone", t: `Сейчас: ${D.due} карточек`,
-      s: `около ${Math.max(1, Math.round(D.due * 13 / 60))} мин${D.norm ? ", норма уже взята" : `, +${Math.min(Math.round(D.due * 2.5), 999)} к норме дня`}`,
+      s: `около ${Math.max(1, Math.round(D.due * 13 / 60))} мин${D.norm ? ", цель дня уже взята" : `, +${Math.min(Math.round(D.due * 2.5), 999)} к цели дня`}`,
       go: () => send({ kind: "review" }, "Повтор") };
     return { k: "cards", icon: "cards-duotone", t: cst.k === "new" ? `Сейчас: ${cst.now.replace(/^\S/, (x) => x.toLowerCase())}` : cst.now, s: cst.sub, go: cst.go };
   }
-  if (D.norm) return { k: "rest", quiet: true, icon: "seal-check-duotone", t: "Норма взята", s: `можно сверху: ${pick ? pick.title : "сцена"}`, go: scene().go };
-  if (!D.sp) return { k: "voice", icon: "microphone-duotone", t: "Сейчас: голосовое 2 минуты", s: "речь дня и замер беглости, +20 опыта", go: openVoice };
+  if (D.norm) return { k: "rest", quiet: true, icon: "seal-check-duotone", t: "Цель дня взята", s: `можно сверху: ${pick ? pick.title : "сцена"}`, go: scene().go };
+  if (!D.sp) return { k: "voice", icon: "microphone-duotone", t: "Сейчас: голосовое 2 минуты", s: "речь дня и темп речи, +20 опыта", go: openVoice };
   if (!D.prt) return scene(sceneSub);
   if (t && !D.sent) {
     const n = tasksCut(t) ? 0 : t.items.filter((it) => has(ANS[it.id])).length;
     return { k: "tasks", icon: "list-checks-duotone", t: `Сейчас: задания, ${tasksN(t)}`, s: tasksCut(t) ? "тексты пришлет бот в чат" : `готово ${n}, ответы ждет репетитор`, go: () => (tasksCut(t) ? toChat() : tab("learn")) };
   }
-  return scene(`до нормы ${left} опыта: ${sceneSub}`);
+  return scene(`до цели дня ${left} опыта: ${sceneSub}`);
 }
 
 // день данных: ссылка живет в постоянной клавиатуре, поэтому утром она вчерашняя.
@@ -565,7 +582,7 @@ const refresh = () => send({ kind: "refresh" }, "Обновление");
 function openVoice() {
   openSheet(`<div class="head"><h1>Голосовое 2 минуты</h1><button class="x" data-close aria-label="Закрыть">${ic("x")}</button></div>
     <p class="lead" style="margin-top:8px">Запиши голосовое 2 минуты в чат бота. Тема любая: что делал вчера, проект, планы на неделю.</p>
-    <p class="note">От 60 секунд это речь дня для нормы, от 90 секунд запись идет в шкалу беглости. Бот пришлет темп и паузы.</p>
+    <p class="note">От 60 секунд это речь дня для цели, от 90 секунд запись идет в шкалу уровня. Бот пришлет темп и паузы.</p>
     <button class="btn press" id="to-chat">${ic("mic")}Закрыть и записать</button>`);
   $("#to-chat").onclick = () => {
     if (IN_TG) { try { TG.close(); return; } catch (e) {} }
@@ -582,7 +599,7 @@ function renderHome() {
   let today = "", goal = "", stale = "";
   if (D && D.xp && !ok) {
     const from = D.day ? dm(D.day) : String(D.at || "").slice(0, 5);
-    stale = `<p class="stale"><b>Данные от ${esc(from)}${D.day === localDay() ? " без нормы дня" : ""}.</b> Норма, речь и неделя в них не сегодняшние. Обнови:</p>`;
+    stale = `<p class="stale"><b>Данные от ${esc(from)}${D.day === localDay() ? " без цели дня" : ""}.</b> Цель дня, речь и неделя в них не сегодняшние. Обнови:</p>`;
   } else if (D && D.xp) {
     const pick = suggest(), t = D.tasks, lf = D.level && D.level.sub && D.level.sub.f;
     const rows = [];
@@ -595,7 +612,7 @@ function renderHome() {
     // F9: есть разбор сегодняшнего голосового -> строка ведет в него (одно нажатие)
     const fb0 = D.fb && D.fb.v && D.fb.v[0], fbToday = !!(fb0 && String(fb0.d).slice(0, 5) === dm(D.day));
     rows.push(["--speech", !!D.vs, "Голосовое 2 минуты", D.vs ? `есть, сегодня ${D.min} мин${fbToday ? ", разбор готов" : ""}` :
-      `${D.sp ? "речь дня есть из сцены, " : ""}замер беглости${lf && lf.d ? ", последний " + dm(lf.d) : ""}`,
+      `${D.sp ? "речь дня есть из сцены, " : ""}бот посчитает темп${lf && lf.d ? ", последняя запись " + dm(lf.d) : ""}`,
       fbToday && D.vs ? ["Разбор", () => openFb(0)] : D.vs ? null : ["Записать", openVoice]]);
     // голосовое сегодня есть, но короче 60 с: «Записать» остается, разбор отдельной строкой (замер беглости и разбор не смешиваем)
     if (fbToday && !D.vs) rows.push(["--speech", false, "Разбор голосового", `${fb0.wpm ? fb0.wpm + " слов в минуту, " : ""}сегодня в ${String(fb0.d).slice(6)}`, ["Открыть", () => openFb(0)]]);
@@ -610,7 +627,7 @@ function renderHome() {
     today = `<h2>Сегодня</h2>${rows.map(([c, done, h, p, act], i) => `<div class="todo${done ? " done" : ""}" style="--c:var(${c})"><span class="chk">${ic("check")}</span>
       <div class="tx"><b>${esc(h)}</b><span>${esc(p)}</span></div>${act ? `<button class="go press" data-row="${i}">${act[0]}</button>` : ""}</div>`).join("")}`;
     const x = D.xp, wk = D.wk, wd = (new Date(D.day + "T12:00:00").getDay() + 6) % 7;   // неделя от дня данных
-    goal = `<h2>Норма дня</h2><div class="goal-l"><span><b>${x.today} из ${x.goal}</b> опыта</span><span class="sp${D.sp ? "" : " no"}">речь ${D.sp ? "есть" : "нужна"}</span></div>
+    goal = `<h2>Цель дня</h2><div class="goal-l"><span><b>${x.today} из ${x.goal}</b> опыта</span><span class="sp${D.sp ? "" : " no"}">речь ${D.sp ? "есть" : "нужна"}</span></div>
       <div class="gbar"><u style="width:${Math.min(100, 100 * x.today / x.goal)}%"></u></div>
       <div class="week">${DAYS.map((d, i) => {
         const [v, sp] = wk[i] || [0, 0], met = v >= x.goal && sp;
@@ -875,7 +892,7 @@ function renderCardsDone() {
   const cs = cards(), v = csView(cs, CS), n = v.n, cnt = { y: 0, h: 0, n: 0 };
   cs.forEach((c) => { const x = CS.g[cardKey(c)]; if (x && x[0] in cnt) cnt[x[0]] += 1; });
   const errs = cs.some((c) => c[0] === 2), more = typeof D.due === "number" && D.due > n;
-  const nx = nowStep(true), next = nx.quiet ? `норма взята, ${nx.s}` : nx.t.replace(/^Сейчас: /, "");   // та же логика, что «Сейчас»
+  const nx = nowStep(true), next = nx.quiet ? `цель дня взята, ${nx.s}` : nx.t.replace(/^Сейчас: /, "");   // та же логика, что «Сейчас»
   $("#learn").innerHTML = `<div class="cs-top"><h1>Итог повтора</h1><button class="xb" id="cs-x" aria-label="Закрыть">${ic("x")}</button></div>
     <div class="gbar"><u style="width:100%;background:var(--vocab)"></u></div>${failNote()}
     <div class="tally">${GR.slice().reverse().map(([g, t, c]) => `<div style="--c:var(${c})"><b>${cnt[g]}</b>${t.toLowerCase()}</div>`).join("")}</div>
@@ -1097,13 +1114,13 @@ function renderStats() {
   const ok = fresh(), from = D.day ? dm(D.day) : String(D.at || "").slice(0, 5);
   const week = ok ? `${lg.sum ?? 0} за неделю${typeof lg.prev === "number" ? `, прошлая ${lg.prev}` : ""}` : `данные от ${esc(from)}, обнови`;
   const lgLine = lg.name ? `Лига <b>${esc(lg.name)}</b> · ${week} · ` : ok ? "" : `Данные от ${esc(from)} · `;
-  $("#stats").innerHTML = `<h1>Прогресс</h1><p class="lead">Речь, регулярность и награды</p>
+  $("#stats").innerHTML = `<h1>Прогресс</h1><p class="lead">Речь, ровность занятий и награды</p>
     <h2>Речь</h2>
     ${blk("Темп речи", "слов в минуту", chart(rec.map((r) => r[1]), rec.map((r) => r[0]), { min: 0, c: "--speech" }))}
     ${blk("Паузы длиннее 2 с", "в минуту, чем ниже, тем лучше", chart(rec.map((r) => r[2]), rec.map((r) => r[0]), { min: 0, c: "--speech" }))}
     ${blk("Past simple верно", "в рассказах, %", chart(ps.map((r) => r[1]), ps.map((r) => r[0]), { suffix: "%", min: 0, max: 100, c: "--prec" }))}
-    <h2>Регулярность</h2>
-    ${blk(`<b>${f.now}</b>`, `серия ${st[0]}, рекорд ${st[1]}; пропуск дня снимает 10%`, chart(f.s, [formStart(f), ok ? "сегодня" : from], { min: 0, area: true, c: "--fg" }))}
+    <h2>Ровность занятий</h2>
+    ${blk(`<b>${st[0]}</b> дней подряд`, `рекорд ${st[1]}. Кривая растет с каждым днем занятий, пропуск дня снимает с нее 10%`, chart(f.s, [formStart(f), ok ? "сегодня" : from], { min: 0, area: true, c: "--fg" }))}
     ${pr.length ? `<h2>Сцены</h2><div class="list tight">${pr.map(([s, v]) => `<div class="item" style="--c:var(${kindColor(s)})">${ic(s.icon)}<div class="tx"><b>${esc(s.title)}</b></div><small>${v[0]} раз${v[2] ? `, лучшее ${v[1]} из ${v[2]}` : ""}</small></div>`).join("")}</div>` : ""}
     <h2>Награды · ${got} из ${all.length}</h2>
     <div class="list tight">${ach.map(([t, g, p]) => `<div class="item${g ? "" : " no"}" style="--c:var(${g ? "--fg" : "--mut"})">${ic(g ? "seal-check-duotone" : "lock")}<div class="tx"><b>${esc(t)}</b></div><small>${esc(p)}</small></div>`).join("")}</div>
