@@ -1044,8 +1044,8 @@ function fbEngine(v) {
     ${v.rc ? `<p class="cap">Изученные правила</p>${v.rc.length ? v.rc.map((c) => `<div class="fbl">${esc(RC[c[0]] || c[0])}: ${esc(c[1])}<small>«${esc(c[2])}»</small></div>`).join("") : `<p class="mut">Повода для пройденных правил не было.</p>`}` : ""}
     ${(v.bt || []).length ? `<p class="cap">Сказать лучше</p>${v.bt.map((b) => `<div class="fbl">«${esc(b[0])}»<small>→ ${esc(b[1])}</small></div>`).join("")}` : ""}
     ${v.ma ? `<p class="cap">Образец B2</p><p style="margin:0"><i>${esc(v.ma)}</i></p>` : ""}
-    <p class="cap">Оценки 1-5</p>
-    <p style="margin:0">${names.map((n, k) => `${n} <b>${sc[k] || "—"}</b>`).join(" · ")}</p>`;
+    <p class="cap">Оценки из 100</p>
+    <p style="margin:0">${names.map((n, k) => `${n} <b>${sc[k] ? sc[k] * 20 : "—"}</b>`).join(" · ")}${(() => { const g = sc.filter((x) => x); return g.length ? `<br><b>Итог ${Math.round(g.reduce((a, b) => a + b, 0) * 20 / g.length)}/100</b>` : ""; })()}</p>`;
 }
 function openFb(i = 0) {
   const vs = (D && D.fb && D.fb.v) || [], v = vs[i];
