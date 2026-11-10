@@ -1,0 +1,340 @@
+{
+ "id": "14",
+ "full": false,
+ "title": "Products and customers",
+ "theme": "Продукт и клиенты: обратная связь, поддержка, цены",
+ "can_do": [
+  "Уверенно использовать фразовые глаголы работы: set it up, turn it down, look into it.",
+  "Ставить местоимение внутрь фразового глагола: fill it in, not fill in it.",
+  "Говорить устойчивыми парами: depend on, responsible for, make a decision.",
+  "Ответить клиенту на жалобу и пообещать следующий шаг.",
+  "Рассказать, как продукт работает с обратной связью клиентов."
+ ],
+ "rules": [
+  {
+   "id": "14-A",
+   "title": "Phrasal verbs",
+   "points": [
+    {
+     "id": "14-1",
+     "title": "Phrasal verbs: set it up, turn it down",
+     "b1_or_b2": "B2",
+     "explain_ru": "У многих фразовых глаголов дополнение может стоять в двух местах: set up the server или set the server up. Если дополнение местоимение (it, them, him), оно всегда стоит посередине: set it up, а не set up it. Есть глаголы, которые не разделяются: look into the problem, deal with customers, run into issues. У них дополнение всегда после частицы.",
+     "examples": [
+      {
+       "en": "Can you set up a call with the client? Sure, I'll set it up for Tuesday.",
+       "ru": "Можешь назначить созвон с клиентом? Конечно, назначу на вторник."
+      },
+      {
+       "en": "They offered us a discount, but we turned it down.",
+       "ru": "Нам предложили скидку, но мы отказались."
+      },
+      {
+       "en": "Please fill in the form and send it back.",
+       "ru": "Пожалуйста, заполните форму и отправьте обратно."
+      },
+      {
+       "en": "We're looking into the complaint right now.",
+       "ru": "Мы прямо сейчас разбираемся с жалобой."
+      },
+      {
+       "en": "If the price is too high, customers give up and leave.",
+       "ru": "Если цена слишком высокая, клиенты сдаются и уходят."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "The client sent a long list of requests, and we turned down it.",
+      "right": "The client sent a long list of requests, and we turned it down.",
+      "why_ru": "В русском местоимение может стоять где угодно. В английском it, them, him у разделяемого фразового глагола всегда стоит между глаголом и частицей."
+     }
+    }
+   ]
+  },
+  {
+   "id": "14-B",
+   "title": "Work collocations",
+   "points": [
+    {
+     "id": "14-2",
+     "title": "Collocations and dependent prepositions",
+     "b1_or_b2": "B1",
+     "explain_ru": "Многие слова ходят парами с определенным предлогом или глаголом, и русский перевод тут подводит: depend on (не of), interested in, responsible for, complain about, pay for; make a decision, make a mistake, do research, take a risk, give feedback. Учить парой, а не отдельным словом.",
+     "examples": [
+      {
+       "en": "The price depends on the number of users.",
+       "ru": "Цена зависит от количества пользователей."
+      },
+      {
+       "en": "She's responsible for customer support in Europe.",
+       "ru": "Она отвечает за поддержку клиентов в Европе."
+      },
+      {
+       "en": "We need to make a decision about pricing by Friday.",
+       "ru": "Нам нужно принять решение по ценам до пятницы."
+      },
+      {
+       "en": "Several customers complained about the new layout.",
+       "ru": "Несколько клиентов пожаловались на новый интерфейс."
+      },
+      {
+       "en": "I'd like to give you some feedback on the demo.",
+       "ru": "Я хотел бы дать тебе обратную связь по демо."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "The final price depends of the contract.",
+      "right": "The final price depends on the contract.",
+      "why_ru": "Русское \"зависит от\" просит from или of. В английском depend всегда идет с on."
+     }
+    }
+   ]
+  }
+ ],
+ "words": [
+  {
+   "en": "customer",
+   "ru": "клиент, покупатель",
+   "example": "Every customer gets a reply within a day.",
+   "stress": "CUS-tom-er",
+   "pm": false
+  },
+  {
+   "en": "feedback",
+   "ru": "обратная связь",
+   "example": "We collect feedback after every release.",
+   "stress": "FEED-back",
+   "pm": false
+  },
+  {
+   "en": "complaint",
+   "ru": "жалоба",
+   "example": "The complaint was about hidden fees.",
+   "stress": "com-PLAINT",
+   "pm": false
+  },
+  {
+   "en": "refund",
+   "ru": "возврат денег",
+   "example": "The customer asked for a full refund.",
+   "stress": "RE-fund",
+   "pm": false
+  },
+  {
+   "en": "discount",
+   "ru": "скидка",
+   "example": "Annual plans come with a 20% discount.",
+   "stress": "DIS-count",
+   "pm": false
+  },
+  {
+   "en": "subscription",
+   "ru": "подписка",
+   "example": "She cancelled her subscription after a month.",
+   "stress": "sub-SCRIP-tion",
+   "pm": false
+  },
+  {
+   "en": "loyal",
+   "ru": "лояльный, верный",
+   "example": "Loyal customers forgive small bugs.",
+   "stress": "LOY-al",
+   "pm": false
+  },
+  {
+   "en": "satisfied",
+   "ru": "довольный",
+   "example": "Most users were satisfied with the new design.",
+   "stress": "SAT-is-fied",
+   "pm": false
+  },
+  {
+   "en": "value for money",
+   "ru": "соотношение цены и качества",
+   "example": "Customers say the product is good value for money.",
+   "stress": "val-ue for MON-ey",
+   "pm": false
+  },
+  {
+   "en": "follow up",
+   "ru": "напомнить, вернуться к вопросу",
+   "example": "I'll follow up with the client tomorrow.",
+   "stress": "fol-low UP",
+   "pm": false
+  },
+  {
+   "en": "turn down",
+   "ru": "отклонить, отказать",
+   "example": "We had to turn down their custom request.",
+   "stress": "turn DOWN",
+   "pm": false
+  },
+  {
+   "en": "look into",
+   "ru": "разобраться, изучить",
+   "example": "Support is looking into the payment problem.",
+   "stress": "look IN-to",
+   "pm": false
+  },
+  {
+   "en": "set up",
+   "ru": "настроить, организовать",
+   "example": "Can you set up a meeting with the sales team?",
+   "stress": "set UP",
+   "pm": false
+  },
+  {
+   "en": "sign up",
+   "ru": "зарегистрироваться",
+   "example": "Two thousand people signed up in the first week.",
+   "stress": "sign UP",
+   "pm": false
+  },
+  {
+   "en": "pricing",
+   "ru": "ценообразование, цены",
+   "example": "We're changing our pricing next quarter.",
+   "stress": "PRIC-ing",
+   "pm": true
+  },
+  {
+   "en": "churn",
+   "ru": "отток клиентов",
+   "example": "Churn went down after we improved onboarding.",
+   "stress": "CHURN",
+   "pm": true
+  },
+  {
+   "en": "onboarding",
+   "ru": "знакомство нового пользователя с продуктом",
+   "example": "A good onboarding takes less than five minutes.",
+   "stress": "ON-board-ing",
+   "pm": true
+  },
+  {
+   "en": "retention",
+   "ru": "удержание",
+   "example": "Retention is our main metric this year.",
+   "stress": "re-TEN-tion",
+   "pm": true
+  },
+  {
+   "en": "support ticket",
+   "ru": "обращение в поддержку",
+   "example": "Each support ticket gets a priority.",
+   "stress": "sup-PORT tick-et",
+   "pm": true
+  },
+  {
+   "en": "upsell",
+   "ru": "продать более дорогой план",
+   "example": "We try to upsell teams to the business plan.",
+   "stress": "UP-sell",
+   "pm": true
+  }
+ ],
+ "placement": [
+  {
+   "rule_point": "14-1",
+   "b1_or_b2": "B2",
+   "items": [
+    {
+     "id": "14-pl-01",
+     "rule_point": "14-1",
+     "rung": "recognize",
+     "prompt": "The client offered a lower price, but we ___.",
+     "options": [
+      "turned it down",
+      "turned down it",
+      "turned it"
+     ],
+     "answers": [
+      "turned it down"
+     ],
+     "hint_choice": [
+      "turned it down",
+      "turned down it"
+     ]
+    },
+    {
+     "id": "14-pl-02",
+     "rule_point": "14-1",
+     "rung": "fill",
+     "prompt": "The new printer has arrived. Can you set ___ up? (one word)",
+     "answers": [
+      "it"
+     ],
+     "hint_choice": [
+      "it",
+      "them"
+     ]
+    },
+    {
+     "id": "14-pl-03",
+     "rule_point": "14-1",
+     "rung": "fix",
+     "prompt": "We received your complaint, and we're looking it into.",
+     "answers": [
+      "We received your complaint, and we're looking into it.",
+      "We received your complaint, and we are looking into it."
+     ],
+     "hint_choice": [
+      "looking into it",
+      "looking it into"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "14-2",
+   "b1_or_b2": "B1",
+   "items": [
+    {
+     "id": "14-pl-04",
+     "rule_point": "14-2",
+     "rung": "recognize",
+     "prompt": "The final price depends ___ the number of licences.",
+     "options": [
+      "on",
+      "of",
+      "from"
+     ],
+     "answers": [
+      "on"
+     ],
+     "hint_choice": [
+      "on",
+      "of"
+     ]
+    },
+    {
+     "id": "14-pl-05",
+     "rule_point": "14-2",
+     "rung": "fill",
+     "prompt": "We need to ___ a decision before the end of the week.",
+     "answers": [
+      "make",
+      "take"
+     ],
+     "hint_choice": [
+      "make",
+      "do"
+     ]
+    },
+    {
+     "id": "14-pl-06",
+     "rule_point": "14-2",
+     "rung": "fix",
+     "prompt": "She is responsible of the onboarding process.",
+     "answers": [
+      "She is responsible for the onboarding process.",
+      "She's responsible for the onboarding process."
+     ],
+     "hint_choice": [
+      "for",
+      "of"
+     ]
+    }
+   ]
+  }
+ ]
+}

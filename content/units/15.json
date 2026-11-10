@@ -1,0 +1,431 @@
+{
+ "id": "15",
+ "full": false,
+ "title": "Arguments and opinions",
+ "theme": "Споры и мнения: переговоры, компромиссы",
+ "can_do": [
+  "Связать прошлое решение с сегодняшним результатом: If we had..., we would... now.",
+  "Не согласиться мягко: I'd say..., It seems to me that..., I'm not sure that...",
+  "Признать чужой довод и сказать свой: Admittedly..., but...",
+  "Выделить главное: What I mean is..., The thing is...",
+  "Провести короткие переговоры о сроке или объеме работ."
+ ],
+ "rules": [
+  {
+   "id": "15-A",
+   "title": "Mixed conditionals",
+   "points": [
+    {
+     "id": "15-1",
+     "title": "Mixed conditionals (basic)",
+     "b1_or_b2": "B2",
+     "explain_ru": "Смешанное условное связывает разные времена. Условие в прошлом и результат сейчас: If I had taken that job, I would live in Berlin now (если бы тогда, то сейчас). Условие вообще, а результат в прошлом: If I were more patient, I wouldn't have argued with him (будь я терпеливее, я бы тогда не спорил). Формы: if + had + третья форма → would + глагол; if + прошедшее → would have + третья форма.",
+     "examples": [
+      {
+       "en": "If we had hired a tester earlier, we wouldn't have so many bugs now.",
+       "ru": "Если бы мы раньше наняли тестировщика, сейчас у нас не было бы столько багов."
+      },
+      {
+       "en": "If I had accepted their offer, I would be working in sales now.",
+       "ru": "Если бы я принял их предложение, сейчас работал бы в продажах."
+      },
+      {
+       "en": "If she spoke German, she would have got the job.",
+       "ru": "Если бы она говорила по-немецки, она бы получила эту работу."
+      },
+      {
+       "en": "If the contract were clearer, we wouldn't have argued last week.",
+       "ru": "Если бы контракт был понятнее, мы бы не спорили на прошлой неделе."
+      },
+      {
+       "en": "If they hadn't cut the budget, the product would be ready by now.",
+       "ru": "Если бы не урезали бюджет, продукт был бы уже готов."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "If I took that offer last year, I would be rich now.",
+      "right": "If I had taken that offer last year, I would be rich now.",
+      "why_ru": "В русском \"если бы\" одно на все времена. В английском условие о прошлом требует had + третья форма, даже когда результат относится к сегодняшнему дню."
+     }
+    }
+   ]
+  },
+  {
+   "id": "15-B",
+   "title": "Opinion language",
+   "points": [
+    {
+     "id": "15-2",
+     "title": "Softening and conceding: I'd say, it seems, admittedly",
+     "b1_or_b2": "B2",
+     "c1": true,
+     "explain_ru": "Чтобы не спорить в лоб, мнение смягчают: I'd say..., It seems (to me) that..., I'm not sure that..., I tend to think... Уступка: признать часть правды, потом сказать свое: Admittedly, the price is high, but... / That's a fair point, but... Это не правило, а набор готовых фраз: достаточно 3-4, но уверенно.",
+     "examples": [
+      {
+       "en": "I'd say the risk is higher than we think.",
+       "ru": "Я бы сказал, что риск выше, чем мы думаем."
+      },
+      {
+       "en": "It seems to me that the client wants speed, not features.",
+       "ru": "Мне кажется, клиенту нужна скорость, а не функции."
+      },
+      {
+       "en": "Admittedly, the new plan costs more, but it saves time.",
+       "ru": "Надо признать, новый план дороже, но экономит время."
+      },
+      {
+       "en": "That's a fair point, but we can't change the date now.",
+       "ru": "Справедливо, но сейчас мы не можем сдвинуть дату."
+      },
+      {
+       "en": "I'm not sure that's the best option for the team.",
+       "ru": "Не уверен, что это лучший вариант для команды."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "You are not right, the deadline is impossible.",
+      "right": "I'm not sure that's realistic. I'd say the deadline is very tight.",
+      "why_ru": "Прямое \"вы не правы\" по-русски звучит нормально, а в английском рабочем споре резко. Несогласие начинают со смягчения."
+     }
+    },
+    {
+     "id": "15-3",
+     "title": "Emphasis: What I mean is..., The thing is...",
+     "b1_or_b2": "B2",
+     "explain_ru": "Чтобы выделить главное, фразу перестраивают: What I mean is..., What we need is..., The thing is..., The point is... После What-части стоит is, а дальше главное: What worries me is the timeline. Так звучит увереннее, чем \"I want to say that...\".",
+     "examples": [
+      {
+       "en": "What I mean is that we need one owner for the release.",
+       "ru": "Я имею в виду, что у релиза должен быть один владелец."
+      },
+      {
+       "en": "The thing is, nobody has tested it on real users.",
+       "ru": "Дело в том, что никто не проверял это на реальных пользователях."
+      },
+      {
+       "en": "What worries me is the budget, not the deadline.",
+       "ru": "Меня беспокоит бюджет, а не срок."
+      },
+      {
+       "en": "The point is that we promised this feature in March.",
+       "ru": "Суть в том, что мы обещали эту функцию в марте."
+      },
+      {
+       "en": "What we need now is a clear decision.",
+       "ru": "Что нам сейчас нужно, так это четкое решение."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "What I mean that we need more time.",
+      "right": "What I mean is that we need more time.",
+      "why_ru": "В русском \"я имею в виду, что\" обходится без связки. В английском после What I mean обязательно is."
+     }
+    }
+   ]
+  }
+ ],
+ "words": [
+  {
+   "en": "argument",
+   "ru": "довод; спор",
+   "example": "Her strongest argument was the cost of delay.",
+   "stress": "AR-gu-ment",
+   "pm": false
+  },
+  {
+   "en": "disagree",
+   "ru": "не соглашаться",
+   "example": "I disagree, but I understand your point.",
+   "stress": "dis-a-GREE",
+   "pm": false
+  },
+  {
+   "en": "point of view",
+   "ru": "точка зрения",
+   "example": "From the user's point of view, it's confusing.",
+   "stress": "point of VIEW",
+   "pm": false
+  },
+  {
+   "en": "convince",
+   "ru": "убедить",
+   "example": "We couldn't convince the sponsor to wait.",
+   "stress": "con-VINCE",
+   "pm": false
+  },
+  {
+   "en": "persuade",
+   "ru": "уговорить",
+   "example": "She persuaded the team to try the new process.",
+   "stress": "per-SUADE",
+   "pm": false
+  },
+  {
+   "en": "objection",
+   "ru": "возражение",
+   "example": "Are there any objections to the new date?",
+   "stress": "ob-JEC-tion",
+   "pm": false
+  },
+  {
+   "en": "reasonable",
+   "ru": "разумный",
+   "example": "Two weeks sounds like a reasonable estimate.",
+   "stress": "REA-son-a-ble",
+   "pm": false
+  },
+  {
+   "en": "fair point",
+   "ru": "справедливое замечание",
+   "example": "That's a fair point, let's add a buffer.",
+   "stress": "fair POINT",
+   "pm": false
+  },
+  {
+   "en": "in favour of",
+   "ru": "за (что-то)",
+   "example": "Most people were in favour of a later release.",
+   "stress": "in FA-vour of",
+   "pm": false
+  },
+  {
+   "en": "against",
+   "ru": "против",
+   "example": "The finance team is against the extra hires.",
+   "stress": "a-GAINST",
+   "pm": false
+  },
+  {
+   "en": "evidence",
+   "ru": "доказательства, данные",
+   "example": "Do we have any evidence that users want this?",
+   "stress": "EV-i-dence",
+   "pm": false
+  },
+  {
+   "en": "assume",
+   "ru": "предполагать",
+   "example": "Let's not assume the client will agree.",
+   "stress": "as-SUME",
+   "pm": false
+  },
+  {
+   "en": "meet halfway",
+   "ru": "пойти навстречу, найти середину",
+   "example": "Can we meet halfway and ship half the scope?",
+   "stress": "meet HALF-way",
+   "pm": false
+  },
+  {
+   "en": "common ground",
+   "ru": "общая позиция",
+   "example": "We found common ground on the budget.",
+   "stress": "com-mon GROUND",
+   "pm": false
+  },
+  {
+   "en": "concern",
+   "ru": "беспокойство, опасение",
+   "example": "My main concern is the testing time.",
+   "stress": "con-CERN",
+   "pm": false
+  },
+  {
+   "en": "trade-off",
+   "ru": "компромисс, выбор с потерей",
+   "example": "Speed versus quality is the classic trade-off.",
+   "stress": "TRADE-off",
+   "pm": true
+  },
+  {
+   "en": "negotiate",
+   "ru": "вести переговоры",
+   "example": "We negotiated a two-week extension.",
+   "stress": "ne-GO-ti-ate",
+   "pm": true
+  },
+  {
+   "en": "compromise",
+   "ru": "компромисс",
+   "example": "The compromise was a smaller first release.",
+   "stress": "COM-pro-mise",
+   "pm": true
+  },
+  {
+   "en": "priority",
+   "ru": "приоритет",
+   "example": "Security is our top priority this quarter.",
+   "stress": "pri-OR-i-ty",
+   "pm": true
+  },
+  {
+   "en": "push back",
+   "ru": "возражать, не соглашаться",
+   "example": "It's fine to push back on unrealistic dates.",
+   "stress": "push BACK",
+   "pm": true
+  }
+ ],
+ "placement": [
+  {
+   "rule_point": "15-1",
+   "b1_or_b2": "B2",
+   "items": [
+    {
+     "id": "15-pl-01",
+     "rule_point": "15-1",
+     "rung": "recognize",
+     "prompt": "If I had studied finance, I ___ a bank now.",
+     "options": [
+      "would be running",
+      "would have run",
+      "will run"
+     ],
+     "answers": [
+      "would be running"
+     ],
+     "hint_choice": [
+      "would be running",
+      "would have run"
+     ]
+    },
+    {
+     "id": "15-pl-02",
+     "rule_point": "15-1",
+     "rung": "fill",
+     "prompt": "If we ___ (not / lose) our key client last year, we wouldn't be cutting costs now.",
+     "answers": [
+      "hadn't lost",
+      "had not lost"
+     ],
+     "hint_choice": [
+      "hadn't lost",
+      "didn't lose"
+     ]
+    },
+    {
+     "id": "15-pl-03",
+     "rule_point": "15-1",
+     "rung": "fix",
+     "prompt": "If I would know Spanish, I would have taken the job in Madrid.",
+     "answers": [
+      "If I knew Spanish, I would have taken the job in Madrid.",
+      "If I knew Spanish, I'd have taken the job in Madrid.",
+      "If I had known Spanish, I would have taken the job in Madrid.",
+      "If I had known Spanish, I'd have taken the job in Madrid.",
+      "If I'd known Spanish, I would have taken the job in Madrid.",
+      "If I'd known Spanish, I'd have taken the job in Madrid."
+     ],
+     "hint_choice": [
+      "knew",
+      "would know"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "15-2",
+   "b1_or_b2": "B2",
+   "items": [
+    {
+     "id": "15-pl-04",
+     "rule_point": "15-2",
+     "rung": "recognize",
+     "prompt": "___, the plan is expensive, but it is safer.",
+     "options": [
+      "Admittedly",
+      "Although",
+      "Despite"
+     ],
+     "answers": [
+      "Admittedly"
+     ],
+     "hint_choice": [
+      "Admittedly",
+      "Although"
+     ]
+    },
+    {
+     "id": "15-pl-05",
+     "rule_point": "15-2",
+     "rung": "fill",
+     "prompt": "I'd ___ the deadline is too tight. (one word)",
+     "answers": [
+      "say"
+     ],
+     "hint_choice": [
+      "say",
+      "tell"
+     ]
+    },
+    {
+     "id": "15-pl-06",
+     "rule_point": "15-2",
+     "rung": "transform",
+     "prompt": "Make it softer, start with \"I'm not sure\": This plan is the best option.",
+     "answers": [
+      "I'm not sure that this plan is the best option.",
+      "I'm not sure this plan is the best option.",
+      "I am not sure that this plan is the best option.",
+      "I am not sure this plan is the best option."
+     ],
+     "hint_choice": [
+      "I'm not sure this",
+      "I'm not sure is this"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "15-3",
+   "b1_or_b2": "B2",
+   "items": [
+    {
+     "id": "15-pl-07",
+     "rule_point": "15-3",
+     "rung": "recognize",
+     "prompt": "What I need from you ___ a clear answer.",
+     "options": [
+      "is",
+      "that",
+      "are"
+     ],
+     "answers": [
+      "is"
+     ],
+     "hint_choice": [
+      "is",
+      "that"
+     ]
+    },
+    {
+     "id": "15-pl-08",
+     "rule_point": "15-3",
+     "rung": "fill",
+     "prompt": "What worries me ___ the budget, not the deadline. (one word)",
+     "answers": [
+      "is"
+     ],
+     "hint_choice": [
+      "is",
+      "it"
+     ]
+    },
+    {
+     "id": "15-pl-09",
+     "rule_point": "15-3",
+     "rung": "fix",
+     "prompt": "What I mean that the client is unhappy with the delay.",
+     "answers": [
+      "What I mean is that the client is unhappy with the delay.",
+      "What I mean is the client is unhappy with the delay."
+     ],
+     "hint_choice": [
+      "is that",
+      "that"
+     ]
+    }
+   ]
+  }
+ ]
+}

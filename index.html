@@ -320,6 +320,20 @@ nav button.on { color: var(--ink); font-weight: 700; }
 .toast { position: fixed; left: 24px; right: 24px; bottom: calc(86px + env(safe-area-inset-bottom)); z-index: 20; max-width: 512px; margin: 0 auto; background: var(--fg); color: var(--bg); padding: 14px 18px; border-radius: 16px; font-size: 15px; opacity: 0; transform: translateY(10px); transition: .2s; pointer-events: none; }
 .toast.show { opacity: 1; transform: none; }
 #confetti { position: fixed; inset: 0; z-index: 30; pointer-events: none; }
+/* курс F15: день юнита, правило, упражнения */
+.day-h { margin: -4px 0 14px; font-size: 15px; color: var(--mut); }
+.rule > p { font-size: 17px; line-height: 1.5; margin-top: 12px; }
+.ex-l > div { padding: 10px 0; border-bottom: 1px solid var(--line); }
+.ex-l > div:last-child { border-bottom: 0; }
+.ex-l b { display: block; font-weight: 600; font-size: 17px; line-height: 1.35; overflow-wrap: anywhere; }
+.ex-l b small { font-weight: 500; font-size: 14px; color: var(--mut); margin-left: 6px; }
+.ex-l span { display: block; font-size: 15px; color: var(--mut); line-height: 1.4; margin-top: 2px; }
+.trap { padding: 14px 16px; border-radius: 16px; background: var(--row); box-shadow: var(--row-sh); border: 1px solid var(--line); }
+.trap p + p { margin-top: 8px; }
+.trap s { color: var(--bad); font-size: 17px; } .trap b { color: var(--ok); font-size: 17px; }
+.fc .opts { margin-top: 18px; }
+.fc textarea { margin-top: 18px; }
+.verdict { margin-top: 16px; font-size: 18px; font-weight: 700; }
 </style>
 </head>
 <body>
@@ -606,6 +620,8 @@ function nowStep(skipCards = false) {
       go: () => send({ kind: "review" }, "Повтор") };
     return { k: "cards", icon: "cards-duotone", t: cst.k === "new" ? `Сейчас: ${cst.now.replace(/^\S/, (x) => x.toLowerCase())}` : cst.now, s: cst.sub, go: cst.go };
   }
+  const cn = courseNow();                      // F15: после повтора — новое или тест юнита, потом практика дня
+  if (cn) return cn;
   if (D.norm) return { k: "rest", quiet: true, icon: "seal-check-duotone", t: "Цель дня взята", s: `можно сверху: ${pick ? pick.title : "сцена"}`, go: scene().go };
   if (!D.sp) return { k: "voice", icon: "microphone-duotone", t: "Сейчас: голосовое 2 минуты", s: "речь дня и темп речи, +20 опыта", go: openVoice };
   if (!D.prt) return scene(sceneSub);
@@ -652,6 +668,7 @@ function renderHome() {
       rows.push(["--vocab", D.due === 0 || cst.k === "sent", "Карточки", !D.due ? "все повторено" : app ? cst.sub : `${D.due} к повтору`,
         !D.due ? null : app ? (cst.k === "sent" ? null : [cst.act, cst.go]) : ["Начать", () => send({ kind: "review" }, "Повтор")]]);
     }
+    rows.push(...courseRows());           // F15: шаги дня юнита после повтора
     // строку закрывает только голосовое от 60 с; речь дня из сцены говорится отдельно и честно
     // F9: есть разбор сегодняшнего голосового -> строка ведет в него (одно нажатие)
     const fb0 = D.fb && D.fb.v && D.fb.v[0], fbToday = !!(fb0 && String(fb0.d).slice(0, 5) === dm(D.day));
@@ -668,7 +685,7 @@ function renderHome() {
       const n = tasksCut(t) ? 0 : t.items.filter((it) => has(ANS[it.id])).length;
       rows.push(["--prec", !!D.sent, "Задания", D.sent ? "ответы отправлены" : tasksCut(t) ? `${cnt(tasksN(t), "задание", "задания", "заданий")}: тексты пришлет бот в чат` : `готово ${n} из ${tasksN(t)}`, D.sent ? null : tasksCut(t) ? ["Прислать", toChat] : ["Открыть", () => tab("learn")]]);
     }
-    today = `<h2>Сегодня</h2>${rows.map(([c, done, h, p, act], i) => `<div class="todo${done ? " done" : ""}" style="--c:var(${c})"><span class="chk">${ic("check")}</span>
+    today = `<h2>Сегодня</h2>${courseHead()}${rows.map(([c, done, h, p, act], i) => `<div class="todo${done ? " done" : ""}" style="--c:var(${c})"><span class="chk">${ic("check")}</span>
       <div class="tx"><b>${esc(h)}</b><span>${esc(p)}</span></div>${act ? `<button class="go press" data-row="${i}">${act[0]}</button>` : ""}</div>`).join("")}`;
     const x = D.xp, wk = D.wk, wd = (new Date(D.day + "T12:00:00").getDay() + 6) % 7;   // неделя от дня данных
     goal = `<h2>Цель дня</h2><div class="goal-l"><span><b>${x.today} из ${x.goal}</b> опыта</span><span class="sp${D.sp ? "" : " no"}">речь ${D.sp ? "есть" : "нужна"}</span></div>
@@ -1014,9 +1031,21 @@ function fbBlock() {
   }
   const v = vs[0], top = fbTop(v);
   return `<h2>Разбор речи</h2><button class="fbk press" id="fb-open" aria-label="Открыть разбор голосового">
-    <div class="fbk-hd"><b>Голосовое ${esc(v.d)}</b><span>${esc(fbTempo(v))}</span></div>
+    <div class="fbk-hd"><b>${v.txt ? "Текст" : "Голосовое"} ${esc(v.d)}</b><span>${esc(fbTempo(v))}</span></div>
     ${top.length ? top.map(fbLine).join("") : `<p class="mut" style="margin:8px 0">${EMPTY_FB}${D.fb.nb ? " Бан-лист пока не подключен." : ""}</p>`}
     <span class="go">Весь текст и правки ${ic("arrow-right")}</span></button>`;
+}
+// F13: разбор движка в той же шторке. top [от, на, правило · юнит], rc [ok|err|missed, правило, цитата], bt [от, на], ma образец, sc [точность, словарь, связность, беглость]
+const RC = { ok: "✓ верно", err: "✗ с ошибкой", missed: "○ мог применить" };
+function fbEngine(v) {
+  const sc = v.sc || [], names = ["Точность", "Словарь", "Связность", "Беглость"];
+  return `<p class="cap">Топ-3 ошибки</p>
+    ${(v.top || []).length ? v.top.map((e, k) => `<div class="fx-row k-t"><i>${k + 1}</i><div><p><s class="fx-from">${esc(e[0])}</s> → <b class="fx-to">${esc(e[1])}</b></p><span>${esc(e[2])}</span></div></div>`).join("") : `<p class="mut">Ошибок не нашел.</p>`}
+    ${v.rc ? `<p class="cap">Изученные правила</p>${v.rc.length ? v.rc.map((c) => `<div class="fbl">${esc(RC[c[0]] || c[0])}: ${esc(c[1])}<small>«${esc(c[2])}»</small></div>`).join("") : `<p class="mut">Повода для пройденных правил не было.</p>`}` : ""}
+    ${(v.bt || []).length ? `<p class="cap">Сказать лучше</p>${v.bt.map((b) => `<div class="fbl">«${esc(b[0])}»<small>→ ${esc(b[1])}</small></div>`).join("")}` : ""}
+    ${v.ma ? `<p class="cap">Образец B2</p><p style="margin:0"><i>${esc(v.ma)}</i></p>` : ""}
+    <p class="cap">Оценки 1-5</p>
+    <p style="margin:0">${names.map((n, k) => `${n} <b>${sc[k] || "—"}</b>`).join(" · ")}</p>`;
 }
 function openFb(i = 0) {
   const vs = (D && D.fb && D.fb.v) || [], v = vs[i];
@@ -1025,7 +1054,7 @@ function openFb(i = 0) {
   const tutor = list.some((e) => e.k === "t");
   const pl = (v.pl || []).map((x) => `${x} с`).join(", ");
   openSheet(`<div class="head"><h1>Разбор речи</h1><button class="x" data-close aria-label="Закрыть">${ic("x")}</button></div>
-    <p class="mut" style="margin-top:6px">Голосовое ${esc(v.d)}${v.dur ? `, ${Math.round(v.dur)} с` : ""}${v.w ? `, ${cnt(v.w, "слово", "слова", "слов")}` : ""}</p>
+    <p class="mut" style="margin-top:6px">${v.txt ? "Текст" : "Голосовое"} ${esc(v.d)}${v.dur ? `, ${Math.round(v.dur)} с` : ""}${v.w ? `, ${cnt(v.w, "слово", "слова", "слов")}` : ""}</p>
     ${vs.length > 1 ? `<div class="fx-nav">${vs.map((x, k) => `<button class="${k === i ? "on" : ""}" data-fbv="${k}">${k ? "Прошлое" : "Последнее"} ${esc(String(x.d).slice(0, 5))}</button>`).join("")}</div>` : ""}
     <p class="cap">Темп и паузы</p>
     <p style="margin:0">${v.wpm ? `<b>${v.wpm}</b> ${plural(v.wpm, "слово", "слова", "слов")} в минуту, цель 115` : "темп не посчитан"}${v.ps !== undefined && v.ps !== null ? `. Паузы дольше 2 с: ${v.ps}${pl ? ` (${esc(pl)})` : ""}` : ""}${v.fl !== undefined && v.fl !== null ? `. Паразитов uh/um: ${v.fl}` : ""}.</p>
@@ -1034,12 +1063,12 @@ function openFb(i = 0) {
     ${v.cut ? `<p class="mut" style="margin:4px 0 0">Текст укорочен, полный — в чате.</p>` : ""}
     <div class="fx-leg"><span><s class="fx-from">было</s> <b class="fx-to">стало</b> правка</span><span><s class="fx-fil">uh</s> паразит</span></div>
     ${unc.length ? `<p class="mut" style="margin:6px 0 0">Невнятно: ${esc(unc.join(", "))}</p>` : ""}
-    <p class="cap">Правки${list.length ? `: ${list.length}` : ""}</p>
+    ${v.sc ? "" : `<p class="cap">Правки${list.length ? `: ${list.length}` : ""}</p>
     ${list.length ? list.map((e, k) => `<div class="fx-row k-${e.k}"><i>${k + 1}</i><div><p><s class="fx-from">${esc(e.from)}</s>${e.to ? ` → <b class="fx-to">${esc(e.to)}</b>` : ""}</p>
-      <span><em class="fx-k">${FB_LABEL[e.k]}</em> ${esc(e.note)}</span></div></div>`).join("") : `<p class="mut">${EMPTY_FB}</p>`}
-    ${tutor ? "" : `<p class="note" style="margin:10px 0 0">Правок репетитора к этому голосовому пока нет.</p>`}
+      <span><em class="fx-k">${FB_LABEL[e.k]}</em> ${esc(e.note)}</span></div></div>`).join("") : `<p class="mut">${EMPTY_FB}</p>`}`}
+    ${v.sc ? fbEngine(v) : `${tutor ? "" : `<p class="note" style="margin:10px 0 0">Правок репетитора к этому голосовому пока нет.</p>`}
     ${D.fb.nb ? `<p class="note" style="margin:10px 0 0">Бан-лист пока не подключен: слов из него в разметке нет.</p>` : ""}
-    <p class="note">Это быстрая разметка бота по спискам: пустой разбор не значит «ошибок нет». Полный разбор смысла и грамматики делает репетитор на уроке.</p>`);
+    <p class="note">Это быстрая разметка бота по спискам: пустой разбор не значит «ошибок нет». Полный разбор смысла и грамматики делает репетитор на уроке.</p>`}`);
   $$("[data-fbv]", $("#sheet")).forEach((b) => b.onclick = () => openFb(+b.dataset.fbv));
 }
 
@@ -1173,6 +1202,187 @@ function renderStats() {
   $("#stats").querySelectorAll("[data-th]").forEach((b) => b.onclick = () => { store.set("theme", b.dataset.th); theme(); renderStats(); });
 }
 
+// ───────────── курс F15: день юнита, «Новое» и тест с проверкой на устройстве
+// Во фрагменте только D.c: юнит, день, id упражнений, прогресс. Текст курса — content/units/NN.json рядом со страницей.
+// NORM-START  нормализация content/schema.md; те же кейсы tests/norm_cases.json гоняет test_day (Python day.check и этот chk)
+const NO_ART = ["-", "no article", "nothing", "none", "x", "0", "no"];
+const nrm = (s) => String(s ?? "").toLowerCase().normalize("NFKD").replace(/\p{M}/gu, "")
+  .replace(/[’‘ʼ`]/g, "'").replace(/[.,!?;:"()“”]/g, " ").replace(/\s+/g, " ").trim();
+function chk(ex, v) {
+  const a = nrm(v);
+  if (!a) return false;
+  if (ex.rung === "free") return new RegExp(ex.check_regex).test(a);
+  const acc = (ex.answers || []).map(nrm);
+  if (acc.some((x) => NO_ART.includes(x))) acc.push(...NO_ART);
+  return acc.includes(a);
+}
+// NORM-END
+let CU = null, CUERR = "", CR = null;
+const C = () => (D && D.c && D.c.dt === localDay() ? D.c : null);   // курс только по сегодняшним данным
+const RUNG = { recognize: "узнай", fill: "подставь", transform: "преобразуй", translate: "переведи", fix: "исправь ошибку", free: "свободно" };
+function courseLoad() {
+  const c = D && D.c;
+  if (!c || c.rest) return Promise.resolve();
+  return fetch(`content/${c.u.includes("-") ? "review" : "units"}/${c.u}.json`, { cache: "no-cache" })
+    .then((r) => { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+    .then((u) => { CU = u; }).catch((e) => { CUERR = `Текст юнита не загрузился: ${e.message || e}`; showErr([CUERR]); });
+}
+const cuEx = (id) => CU && [...(CU.exercises || []), ...((CU.test || {}).items || [])].find((e) => e.id === id);
+const cuPoint = (id) => CU && (CU.rules || []).flatMap((r) => r.points).find((p) => p.id === id);
+const crKey = (m) => `cr-${D.c.dt}-${D.c.u}-${m}`;
+function crLoad(m) { try { return C() ? JSON.parse(store.get(crKey(m), "null")) : null; } catch (e) { return null; } }
+function crSave() { store.set(crKey(CR.m), JSON.stringify(CR)); }
+const testIds = () => ((CU && CU.test && CU.test.items) || []).map((e) => e.id);
+
+function courseNow() {                                          // для «Сейчас»: новое или тест, потом практика дня
+  const c = C();
+  if (!c || c.rest) return null;
+  const ns = crLoad("new"), ts = crLoad("test");
+  if (c.t && !c.td && !(ts && ts.sent)) return { k: "test", icon: "list-checks-duotone", t: `Сейчас: тест юнита${c.tr ? ", пересдача" : ""}`,
+    s: `${cnt(testIds().length, "задание", "задания", "заданий")}, от 80% дальше новый юнит`, go: () => openCourse("test") };
+  if (c.ex && c.ex.length && !c.nd && !(ns && ns.sent)) {
+    const p = cuPoint(c.pt);
+    return { k: "new", icon: "book-open-duotone", t: `Сейчас: новое${p ? ", " + p.title : ""}`,
+      s: `${ns && ns.i ? `остановился на ${ns.i + 1}, ` : ""}правило и ${cnt(c.ex.length, "упражнение", "упражнения", "упражнений")}, 10 минут`, go: () => openCourse("new") };
+  }
+  if (c.pr && !c.prd) return { k: "day_practice", icon: "microphone-duotone", t: `Сейчас: практика, ${c.pr}`,
+    s: "15 минут, задание с целевыми словами пришлет бот в чат", go: () => send({ kind: "day_practice" }, "Практика дня") };
+  return null;
+}
+
+function courseHead() {
+  const c = C();
+  if (!c) return "";
+  const name = c.u.includes("-") ? `Контрольная неделя ${c.u}` : `Юнит ${+c.u}${c.ph === "extra" ? ", добор" : ""}`;
+  if (c.bf) return `<p class="day-h">Курс начинается завтра: ${esc(name.toLowerCase())}</p>`;
+  if (c.fill) return `<p class="day-h">${esc(name)}: юнит еще наполняется, курс стоит до появления упражнений и теста</p>`;
+  return `<p class="day-h">${esc(name)}${CU ? ": " + esc(CU.theme || CU.title) : ""}. ${c.rest ? "Сегодня отдых" : `День ${c.d} из ${c.n}`}</p>`;
+}
+
+function courseRows() {                                         // строки «Сегодня»: [цвет, сделано, заголовок, подпись, [кнопка, действие]]
+  const c = C();
+  if (!c || c.rest) return [];
+  const rows = [], ns = crLoad("new"), ts = crLoad("test");
+  if (c.ex && c.ex.length) {
+    const p = cuPoint(c.pt), done = !!(c.nd || (ns && ns.sent));
+    rows.push(["--prec", done, p ? `Новое: ${p.title}` : "Новое: смешанные упражнения",
+      done ? "результаты отправлены" : `${cnt(c.ex.length, "упражнение", "упражнения", "упражнений")}${c.w ? " и блок слов" : ""}, 10 минут`,
+      done ? null : [ns && ns.i ? "Дальше" : "Начать", () => openCourse("new")]]);
+  }
+  if (c.t) {
+    const done = !!(c.td || (ts && ts.sent));
+    rows.push(["--prec", done, `Тест юнита${c.tr ? ", пересдача" : ""}`, done ? "результаты отправлены" : `${cnt(testIds().length, "задание", "задания", "заданий")}, нужно 80%`,
+      done ? null : [ts && ts.i ? "Дальше" : "Начать", () => openCourse("test")]]);
+  }
+  if (c.pr) rows.push(["--speech", !!c.prd, `Практика: ${c.pr}`, c.prd ? "ответ есть" : "15 минут, задание пришлет бот в чат",
+    c.prd ? null : ["В чат", () => send({ kind: "day_practice" }, "Практика дня")]]);
+  const ls = CU && CU.listening;
+  if (ls) rows.push(["--vocab", !!c.bgd, "Фон: слушание 20 минут", ls.title, c.bgd ? null : ["Слушать", openBg]]);
+  return rows;
+}
+
+function openBg() {
+  const ls = CU.listening;
+  openSheet(`<div class="head"><h1>Слушание дня</h1><button class="x" data-close aria-label="Закрыть">${ic("x")}</button></div>
+    <p class="lead" style="margin-top:8px">${esc(ls.title)}</p><p class="note">${esc(ls.source || "")}. Фоном, вне урока, около 20 минут.</p>
+    <button class="btn press" id="bg-open">${ic("play")}Открыть выпуск</button>
+    <button class="link" id="bg-done" style="width:100%;justify-content:center;margin-top:12px">Прослушал, отметить</button>`);
+  $("#bg-open").onclick = () => { try { IN_TG ? TG.openLink(ls.url) : window.open(ls.url, "_blank"); } catch (e) { location.href = ls.url; } };
+  $("#bg-done").onclick = () => send({ kind: "bg", u: D.c.u }, "Отметка фона");
+}
+
+function openCourse(m) {
+  if (!CU) { toast(CUERR || "Текст юнита еще грузится, попробуй через секунду."); return; }
+  const s = crLoad(m);
+  CR = s && s.m === m ? s : { m, i: 0, r: {}, rule: m === "new" && !!cuPoint(D.c.pt), sent: 0, cur: null };
+  CR.ids = m === "test" ? testIds() : D.c.ex;
+  crSave();
+  document.body.classList.add("cs-on");
+  tab("learn"); renderCourse();
+}
+function closeCourse() { CR = null; document.body.classList.remove("cs-on"); renderLearn(); renderHome(); tab("home"); }
+
+function renderCourse() {
+  const el = $("#learn"), m = CR.m, ids = CR.ids, n = ids.length;
+  const title = m === "test" ? "Тест юнита" : "Новое";
+  const top = (h, k = "") => `<div class="cs-top"><h1>${h}</h1>${k}<button class="xb" id="cr-x" aria-label="Закрыть, прогресс сохранится">${ic("x")}</button></div>`;
+  const bar = (inner) => `<div class="cs-bar"><div>${inner}</div></div>`;
+  const wireX = () => { $("#cr-x").onclick = () => { haptic(); closeCourse(); }; };
+  if (CR.rule) {                                                 // правило: объяснение, 5 примеров, типичная ошибка
+    const p = cuPoint(D.c.pt), t = p.ru_trap;
+    el.innerHTML = top(title) + `<div class="rule"><p class="lead">${esc(p.title)}</p><p>${esc(p.explain_ru)}</p>
+      <h2>Примеры</h2><div class="ex-l">${p.examples.map((x) => `<div><b>${esc(x.en)}</b><span>${esc(x.ru)}</span></div>`).join("")}</div>
+      <h2>Типичная ошибка</h2><div class="trap"><p><s>${esc(t.wrong)}</s></p><p><b>${esc(t.right)}</b></p><p class="mut">${esc(t.why_ru)}</p></div>
+      ${D.c.w && CU.words ? `<h2>Слова юнита</h2><div class="ex-l">${CU.words.map((w) => `<div><b>${esc(w.en)}<small>${esc(w.stress)}</small></b><span>${esc(w.ru)}. ${esc(w.example)}</span></div>`).join("")}</div>` : ""}</div>`
+      + bar(`<button class="btn press" id="cr-go">К упражнениям, ${n}</button>`);
+    wireX();
+    $("#cr-go").onclick = () => { haptic(); CR.rule = false; crSave(); renderCourse(); $("#sc").scrollTo({ top: 0 }); };
+    return;
+  }
+  const vals = ids.map((id) => CR.r[id]).filter(Boolean);
+  if (CR.i >= n) {                                               // итог и одна отправка
+    const ok = vals.filter((v) => v[0]).length, h = vals.filter((v) => !v[0] && v[1] && v[3]).length, pct = n ? Math.round(100 * ok / n) : 0;
+    el.innerHTML = top(m === "test" ? "Итог теста" : "Итог нового") + `<div class="gbar"><u style="width:100%;background:var(--prec)"></u></div>
+      <div class="tally"><div style="--c:var(--ok)"><b>${ok}</b>верно сразу</div>${m === "new" ? `<div style="--c:var(--vocab)"><b>${h}</b>с подсказкой</div>` : ""}<div style="--c:var(--bad)"><b>${vals.length - ok - h}</b>не вышло</div></div>
+      <p class="next" style="margin-top:16px">${m === "test" ? `${pct}%: <b>${pct >= 80 ? "тест сдан, со следующего дня дальше по курсу" : "меньше 80%, будет добор по слабым пунктам и пересдача"}</b>`
+        : "Дальше: <b>практика дня</b>, задание пришлет бот в чат"}</p>
+      ${CR.sent ? `<p class="sent"><b>Отправлено.</b> Ждем ответ бота в чате: он запишет результаты в базу.</p>` : ""}`
+      + bar(CR.sent ? `<button class="link" id="cr-send">Бот не ответил? Отправить еще раз</button>` : `<button class="btn press" id="cr-send">${ic("check")}Отправить результаты</button>`);
+    wireX();
+    $("#cr-send").onclick = () => {
+      const rows = ids.filter((id) => CR.r[id]).map((id) => {
+        const [ok1, hint, v] = CR.r[id], ex = cuEx(id);
+        return ok1 && ex && ex.rung !== "free" ? [id, 1, 0] : [id, ok1, hint, Array.from(String(v)).slice(0, 120).join("")];
+      });
+      let obj = { kind: m, u: D.c.u, r: rows };
+      if (new Blob([JSON.stringify(obj)]).size > LIMIT) obj = { kind: m, u: D.c.u, r: rows.map((r) => r.slice(0, 3)) };   // тексты не влезли: счет важнее
+      if (send(obj, "Отправка результатов")) { CR.sent = 1; crSave(); renderCourse(); }
+    };
+    return;
+  }
+  const ex = cuEx(ids[CR.i]);
+  if (!ex) { CR.i += 1; crSave(); return renderCourse(); }        // упражнения нет в файле (курс обновился): пропуск
+  if (!CR.cur || CR.cur.id !== ex.id) CR.cur = { id: ex.id, v: "", st: "ask" };
+  const cur = CR.cur, right = (ex.answers || [])[0] || ex.model || "";
+  const hints = (ex.hint_choice || []).length === 2 ? (ex.id.charCodeAt(ex.id.length - 1) % 2 ? [ex.hint_choice[1], ex.hint_choice[0]] : ex.hint_choice.slice()) : [];
+  let body = `<div class="fc" style="--c:var(--prec)"><em>${RUNG[ex.rung] || ex.rung}</em><p class="q">${esc(ex.prompt)}</p>`;
+  if (cur.st === "ask") {
+    body += ex.rung === "recognize" && ex.options ? `<div class="opts">${ex.options.map((o) => `<button class="chip press" data-o="${esc(o)}">${esc(o)}</button>`).join("")}</div>`
+      : `<textarea id="cr-in" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="${ex.rung === "fill" ? "что встает в пропуск" : "ответ по-английски"}">${esc(cur.v)}</textarea>`;
+  } else {
+    body += `<p class="mine">Твой ответ: ${esc(cur.v)}</p>`;
+    if (cur.st === "ok") body += `<p class="verdict up">Верно</p>${ex.rung === "free" ? `<p class="a">Образец: ${esc(ex.model)}</p>` : ""}`;
+    if (cur.st === "hint") body += `<p class="verdict down">Не так. Подсказка: как лучше?</p><div class="opts">${hints.map((o) => `<button class="chip press" data-h="${esc(o)}">${esc(o)}</button>`).join("")}</div>`;
+    if (cur.st === "done") body += `<p class="verdict ${cur.hok ? "up" : "down"}">${cur.hok ? "Верно, с подсказкой" : cur.pick ? "Не то. Как надо:" : "Не так. Как надо:"}</p><p class="a">${esc(right)}</p>`;
+  }
+  body += "</div>";
+  el.innerHTML = top(title, `<span class="cs-n">${CR.i + 1} из ${n}</span>`) + `<div class="gbar"><u style="width:${100 * CR.i / n}%;background:var(--prec)"></u></div>` + body
+    + bar(cur.st === "ask" ? (ex.rung === "recognize" && ex.options ? `<p class="mut" style="text-align:center">Выбери вариант</p>` : `<button class="btn press" id="cr-check">Проверить</button>`)
+      : cur.st === "hint" ? `<p class="mut" style="text-align:center">Выбери из двух</p>` : `<button class="btn press" id="cr-next">Дальше</button>`);
+  wireX();
+  const answer = (v) => {
+    cur.v = v;
+    if (chk(ex, v)) { CR.r[ex.id] = [1, 0, v]; cur.st = "ok"; haptic("light"); }
+    else if (m === "new" && hints.length) { cur.st = "hint"; haptic("rigid"); }      // подсказка выбором из двух только в «Новом», в тесте нет
+    else { CR.r[ex.id] = [0, 0, v]; cur.st = "done"; haptic("rigid"); }
+    crSave(); renderCourse();
+  };
+  $$("[data-o]", el).forEach((b) => b.onclick = () => answer(b.dataset.o));
+  $$("[data-h]", el).forEach((b) => b.onclick = () => {
+    cur.pick = b.dataset.h; cur.hok = b.dataset.h === ex.hint_choice[0];          // первый вариант подсказки верный (схема курса)
+    CR.r[ex.id] = [0, 1, cur.v, cur.hok ? 1 : 0]; cur.st = "done"; haptic(cur.hok ? "light" : "rigid"); crSave(); renderCourse();
+  });
+  const inp = $("#cr-in");
+  if (inp) {
+    inp.oninput = () => { cur.v = inp.value; crSave(); };
+    inp.onkeydown = (e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); $("#cr-check").click(); } };
+  }
+  const ck = $("#cr-check");
+  if (ck) ck.onclick = () => { if (!inp.value.trim()) { toast("Напиши ответ"); return; } answer(inp.value); };
+  const nx = $("#cr-next");
+  if (nx) nx.onclick = () => { haptic(); CR.i += 1; CR.cur = null; crSave(); renderCourse(); };
+}
+
 // ───────────── старт
 (async () => {
   const z = new URLSearchParams((window.__HASH || "").slice(1)).get("z");
@@ -1184,8 +1394,10 @@ function renderStats() {
     catch (e) { showErr([`Данные в ссылке повреждены (${e.message || e}). Отправь боту /app и открой новую кнопку.`]); }
   }
   await catP;
+  await courseLoad();
   renderLearn(); renderPractice(); renderStats(); renderHome();
   tab("home");
+  if (new URLSearchParams((window.__HASH || "").slice(1)).get("o") === "fb" && D && D.fb && D.fb.v && D.fb.v.length) { tab("practice"); openFb(0); }   // кнопка «Открыть разбор» (F13)
   setTimeout(celebrate, 700);
 })().catch((e) => showErr([`Сбой страницы: ${e.message || e}`]));
 window.addEventListener("error", (e) => showErr([`Сбой страницы: ${e.message}`]));

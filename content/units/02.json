@@ -1,0 +1,2757 @@
+{
+ "id": "02",
+ "full": true,
+ "title": "Career: telling your work story",
+ "theme": "Карьера: рассказ о себе и своем опыте",
+ "can_do": [
+  "Рассказать о своем пути: общий итог (I've worked...) и детали с датами (In 2022 I moved...).",
+  "Сказать, как долго что-то длится, через for, since и How long...?",
+  "Рассказать, чем занимаешься последнее время: I've been working on...",
+  "Правильно назвать профессию: I'm a..., I work as an...",
+  "Ответить на \"Tell me about yourself\" на собеседовании IT PM за полторы-две минуты."
+ ],
+ "rules": [
+  {
+   "id": "02-A",
+   "title": "Present perfect and past simple",
+   "points": [
+    {
+     "id": "02-1",
+     "title": "Present perfect or past simple",
+     "b1_or_b2": "B1",
+     "explain_ru": "Present perfect (have/has + третья форма) связывает прошлое с сейчас: опыт за всю жизнь (I've managed remote teams), результат, который виден сейчас (We've launched the app, it's live), период, который еще не закончился (this year, so far, today). Как только появляется законченное время (last year, in 2023, two weeks ago, when I was a student) или вопрос When...?, нужен past simple. В рассказе о карьере обычно так: общий итог в present perfect, а детали с датами в past simple. В американском английском с just, already, ever, never часто ставят past simple (I just finished): курс принимает оба варианта, но сам держится британской нормы.",
+     "examples": [
+      {
+       "en": "I've managed three product launches so far.",
+       "ru": "На моем счету уже три запуска продукта."
+      },
+      {
+       "en": "We launched the new version last March.",
+       "ru": "Мы выпустили новую версию в марте прошлого года."
+      },
+      {
+       "en": "Have you ever worked with an outside vendor? Yes, I worked with one at my last job.",
+       "ru": "Ты когда-нибудь работал с подрядчиком? Да, на прошлой работе."
+      },
+      {
+       "en": "She has just finished the quarterly report.",
+       "ru": "Она только что закончила квартальный отчет."
+      },
+      {
+       "en": "I haven't had a single day off this month.",
+       "ru": "В этом месяце у меня не было ни одного выходного."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "We have released the update two weeks ago.",
+      "right": "We released the update two weeks ago.",
+      "why_ru": "В русском одно прошедшее время на оба случая. В английском законченная дата (ago, last year, in 2022, yesterday) не уживается с have + третья форма: дата есть, значит past simple."
+     }
+    },
+    {
+     "id": "02-2",
+     "title": "Present perfect continuous: what you have been doing",
+     "b1_or_b2": "B1",
+     "explain_ru": "have/has been + -ing значит: действие началось в прошлом и идет до сих пор (I've been working here since spring) или только что закончилось, и виден его след (Sorry I'm late, I've been talking to a client). Форма показывает процесс и длительность. Если важны результат или количество (how many, how much), нужен present perfect без -ing: I've written three reports (сколько сделал) против I've been writing reports all morning (чем был занят). Глаголы состояния (know, be, like, have в значении \"иметь\") остаются без -ing: I've known her for years.",
+     "examples": [
+      {
+       "en": "I've been working as a product manager for four years.",
+       "ru": "Я работаю продакт-менеджером четыре года."
+      },
+      {
+       "en": "We've been testing the new checkout since Monday.",
+       "ru": "Мы тестируем новое оформление заказа с понедельника."
+      },
+      {
+       "en": "You look tired. Have you been working late?",
+       "ru": "Ты выглядишь уставшим. Задерживался на работе?"
+      },
+      {
+       "en": "She's been interviewing candidates all day, so she's exhausted.",
+       "ru": "Она весь день проводит собеседования, поэтому вымотана."
+      },
+      {
+       "en": "How long have you been leading this team?",
+       "ru": "Как долго ты руководишь этой командой?"
+      }
+     ],
+     "ru_trap": {
+      "wrong": "I work here for three years.",
+      "right": "I've been working here for three years.",
+      "why_ru": "По-русски \"работаю три года\" стоит в настоящем времени. В английском длительность до сейчас (for three years) требует have been + -ing или have + третья форма; настоящее время с for звучит ошибкой."
+     }
+    },
+    {
+     "id": "02-3",
+     "title": "for, since, ago and How long...?",
+     "b1_or_b2": "B1",
+     "explain_ru": "For + отрезок времени (for three years, for a month, for ages): сколько длится. Since + точка начала (since 2021, since March, since I joined the company): с какого момента. Оба обычно идут с present perfect: I've lived here for two years или since 2024. Вопрос о длительности: How long have you...? Ago устроено иначе: оно отсчитывает назад от сейчас и идет с past simple: I joined two years ago.",
+     "examples": [
+      {
+       "en": "I've been in IT for almost six years.",
+       "ru": "Я в айти почти шесть лет."
+      },
+      {
+       "en": "We've used this tool since the beginning of the project.",
+       "ru": "Мы пользуемся этим инструментом с начала проекта."
+      },
+      {
+       "en": "She has been our team lead since she joined in 2023.",
+       "ru": "Она наш тимлид с тех пор, как пришла в 2023 году."
+      },
+      {
+       "en": "How long have you known your manager? For about a year.",
+       "ru": "Сколько ты знаешь своего руководителя? Около года."
+      },
+      {
+       "en": "I joined the company three years ago, so I've worked here for three years.",
+       "ru": "Я пришел в компанию три года назад, так что работаю здесь три года."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "I work at this company since 2022.",
+      "right": "I've worked at this company since 2022.",
+      "why_ru": "Русское \"работаю с 2022 года\" стоит в настоящем. Since в английском требует перфекта: have worked или have been working. Вторая частая ошибка: during three years вместо for three years."
+     }
+    }
+   ]
+  },
+  {
+   "id": "02-B",
+   "title": "Articles with jobs",
+   "points": [
+    {
+     "id": "02-4",
+     "title": "a / an with jobs: I'm a..., I work as an...",
+     "b1_or_b2": "B1",
+     "explain_ru": "Когда говоришь, кем человек работает, перед профессией нужен a или an: she's a designer, he's an engineer. An ставят перед гласным звуком (an analyst, an engineer, an HR manager: \"эйч\" начинается с гласного звука), a перед согласным звуком (a UX designer: \"ю\" звучит как \"й\"). То же после work as и become: I work as a business analyst. Артикля нет во множественном числе (They're developers) и когда должность звучит как титул единственного человека: He became CEO in 2020.",
+     "examples": [
+      {
+       "en": "I'm a project manager at a logistics company.",
+       "ru": "Я проектный менеджер в логистической компании."
+      },
+      {
+       "en": "Before that, I worked as an analyst for two years.",
+       "ru": "До этого я два года работал аналитиком."
+      },
+      {
+       "en": "My sister is an HR manager, and her husband is a UX designer.",
+       "ru": "Моя сестра HR-менеджер, а ее муж UX-дизайнер."
+      },
+      {
+       "en": "We're looking for an experienced QA engineer.",
+       "ru": "Мы ищем опытного QA-инженера."
+      },
+      {
+       "en": "She started as a junior developer and became CTO eight years later.",
+       "ru": "Она начинала младшим разработчиком и через восемь лет стала техническим директором."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "My brother is engineer.",
+      "right": "My brother is an engineer.",
+      "why_ru": "В русском артиклей нет, поэтому \"брат инженер\" переносится как есть. В английском профессия одного человека почти всегда идет с a или an. Это одна из самых живучих ошибок русскоязычных, поэтому артикли возвращаются карточкой в каждом юните."
+     }
+    }
+   ]
+  }
+ ],
+ "words": [
+  {
+   "en": "career",
+   "ru": "карьера, профессиональный путь",
+   "example": "She started her career in a call centre.",
+   "stress": "ca-REER",
+   "pm": false
+  },
+  {
+   "en": "experience",
+   "ru": "опыт",
+   "example": "I have five years of experience in e-commerce.",
+   "stress": "ex-PE-ri-ence",
+   "pm": false
+  },
+  {
+   "en": "achievement",
+   "ru": "достижение",
+   "example": "My biggest achievement so far is cutting our release time in half.",
+   "stress": "a-CHIEVE-ment",
+   "pm": false
+  },
+  {
+   "en": "responsibility",
+   "ru": "обязанность, зона ответственности",
+   "example": "Planning the sprint is one of my main responsibilities.",
+   "stress": "re-spon-si-BIL-i-ty",
+   "pm": false
+  },
+  {
+   "en": "promotion",
+   "ru": "повышение",
+   "example": "He got a promotion after the project was delivered on time.",
+   "stress": "pro-MO-tion",
+   "pm": false
+  },
+  {
+   "en": "colleague",
+   "ru": "коллега",
+   "example": "A former colleague recommended me for this role.",
+   "stress": "COL-league",
+   "pm": false
+  },
+  {
+   "en": "employer",
+   "ru": "работодатель",
+   "example": "My previous employer paid for my English classes.",
+   "stress": "em-PLOY-er",
+   "pm": false
+  },
+  {
+   "en": "position",
+   "ru": "должность, позиция",
+   "example": "I'm applying for the position of project manager.",
+   "stress": "po-SI-tion",
+   "pm": false
+  },
+  {
+   "en": "background",
+   "ru": "предыдущий опыт, образование",
+   "example": "I have a background in teaching, which helps me explain plans.",
+   "stress": "BACK-ground",
+   "pm": false
+  },
+  {
+   "en": "skill",
+   "ru": "навык",
+   "example": "Negotiation is a skill you can learn.",
+   "stress": "SKILL",
+   "pm": false
+  },
+  {
+   "en": "apply for",
+   "ru": "подавать заявку, откликаться",
+   "example": "I've applied for three jobs this week.",
+   "stress": "ap-PLY for",
+   "pm": false
+  },
+  {
+   "en": "be in charge of",
+   "ru": "отвечать за, руководить",
+   "example": "I was in charge of a team of eight people.",
+   "stress": "be in CHARGE of",
+   "pm": false
+  },
+  {
+   "en": "switch careers",
+   "ru": "сменить профессию",
+   "example": "She switched careers at thirty and never looked back.",
+   "stress": "switch ca-REERS",
+   "pm": false
+  },
+  {
+   "en": "hire",
+   "ru": "нанимать",
+   "example": "We've hired two new designers this year.",
+   "stress": "HIRE",
+   "pm": false
+  },
+  {
+   "en": "resign",
+   "ru": "уволиться по собственному желанию",
+   "example": "He resigned because he wanted to start his own company.",
+   "stress": "re-SIGN",
+   "pm": false
+  },
+  {
+   "en": "take on",
+   "ru": "брать на себя (задачу, роль)",
+   "example": "I've taken on more responsibility since my manager left.",
+   "stress": "take ON",
+   "pm": false
+  },
+  {
+   "en": "so far",
+   "ru": "пока что, на данный момент",
+   "example": "So far we've interviewed twenty users.",
+   "stress": "so FAR",
+   "pm": false
+  },
+  {
+   "en": "recently",
+   "ru": "недавно, в последнее время",
+   "example": "I've recently started mentoring a junior colleague.",
+   "stress": "RE-cent-ly",
+   "pm": false
+  },
+  {
+   "en": "scope",
+   "ru": "объем работ, границы проекта",
+   "example": "The client tried to add new features, so we had to protect the scope.",
+   "stress": "SCOPE",
+   "pm": true
+  },
+  {
+   "en": "delivery",
+   "ru": "поставка результата, выполнение в срок",
+   "example": "I'm responsible for delivery: dates, risks and the release plan.",
+   "stress": "de-LIV-er-y",
+   "pm": true
+  },
+  {
+   "en": "deadline",
+   "ru": "срок сдачи",
+   "example": "We haven't missed a single deadline this quarter.",
+   "stress": "DEAD-line",
+   "pm": true
+  },
+  {
+   "en": "stakeholder",
+   "ru": "заинтересованная сторона",
+   "example": "I meet the key stakeholders every Monday to review progress.",
+   "stress": "STAKE-hold-er",
+   "pm": true
+  },
+  {
+   "en": "cross-functional team",
+   "ru": "кросс-функциональная команда",
+   "example": "I've been leading a cross-functional team of developers, designers and analysts.",
+   "stress": "cross-func-tion-al TEAM",
+   "pm": true
+  },
+  {
+   "en": "ship",
+   "ru": "выпускать (продукт, фичу)",
+   "example": "We shipped the first version in four months.",
+   "stress": "SHIP",
+   "pm": true
+  },
+  {
+   "en": "roadmap",
+   "ru": "дорожная карта продукта",
+   "example": "The roadmap has changed twice since January.",
+   "stress": "ROAD-map",
+   "pm": true
+  }
+ ],
+ "chunks": [
+  {
+   "en": "I've been working in ... for ...",
+   "ru": "Я работаю в ... уже ...",
+   "example": "I've been working in e-commerce for about five years."
+  },
+  {
+   "en": "Before that, I worked as...",
+   "ru": "До этого я работал...",
+   "example": "Before that, I worked as a support specialist at a bank."
+  },
+  {
+   "en": "I was responsible for...",
+   "ru": "Я отвечал за...",
+   "example": "I was responsible for the release plan and the budget."
+  },
+  {
+   "en": "Over the last two years, I've...",
+   "ru": "За последние два года я...",
+   "example": "Over the last two years, I've shipped four major features."
+  },
+  {
+   "en": "One of my biggest achievements so far is...",
+   "ru": "Одно из главных моих достижений на сегодня...",
+   "example": "One of my biggest achievements so far is a payment flow that cut drop-off by a third."
+  },
+  {
+   "en": "That's when I realised...",
+   "ru": "Тогда я понял...",
+   "example": "That's when I realised I enjoyed planning more than coding."
+  },
+  {
+   "en": "I moved into ... because...",
+   "ru": "Я перешел в ..., потому что...",
+   "example": "I moved into product management because I wanted to work closer to users."
+  },
+  {
+   "en": "What I enjoy most about my job is...",
+   "ru": "Больше всего в работе мне нравится...",
+   "example": "What I enjoy most about my job is solving problems with the team."
+  },
+  {
+   "en": "Right now I'm looking for...",
+   "ru": "Сейчас я ищу...",
+   "example": "Right now I'm looking for a role where I can own a product end to end."
+  },
+  {
+   "en": "In a nutshell, ...",
+   "ru": "Если коротко, ...",
+   "example": "In a nutshell, I turn messy ideas into clear plans."
+  }
+ ],
+ "exercises": [
+  {
+   "id": "02-ex-001",
+   "rule_point": "02-1",
+   "rung": "recognize",
+   "prompt": "I ___ my current job in 2021.",
+   "options": [
+    "started",
+    "have started",
+    "had started"
+   ],
+   "answers": [
+    "started"
+   ],
+   "hint_choice": [
+    "started",
+    "have started"
+   ]
+  },
+  {
+   "id": "02-ex-002",
+   "rule_point": "02-1",
+   "rung": "recognize",
+   "prompt": "We ___ three releases so far this year.",
+   "options": [
+    "have shipped",
+    "shipped",
+    "ship"
+   ],
+   "answers": [
+    "have shipped"
+   ],
+   "hint_choice": [
+    "have shipped",
+    "shipped"
+   ]
+  },
+  {
+   "id": "02-ex-003",
+   "rule_point": "02-1",
+   "rung": "recognize",
+   "prompt": "___ a remote team?",
+   "options": [
+    "Have you ever managed",
+    "Have you ever manage",
+    "Are you ever managed"
+   ],
+   "answers": [
+    "Have you ever managed"
+   ],
+   "hint_choice": [
+    "Have you ever managed",
+    "Have you ever manage"
+   ]
+  },
+  {
+   "id": "02-ex-004",
+   "rule_point": "02-1",
+   "rung": "recognize",
+   "prompt": "Two years ago she ___ from a bank to a start-up.",
+   "options": [
+    "moved",
+    "has moved",
+    "have moved"
+   ],
+   "answers": [
+    "moved"
+   ],
+   "hint_choice": [
+    "moved",
+    "has moved"
+   ]
+  },
+  {
+   "id": "02-ex-005",
+   "rule_point": "02-1",
+   "rung": "fill",
+   "prompt": "I ___ (work) with this client before, so I know what they expect.",
+   "answers": [
+    "have worked",
+    "'ve worked",
+    "worked"
+   ],
+   "hint_choice": [
+    "have worked",
+    "work"
+   ]
+  },
+  {
+   "id": "02-ex-006",
+   "rule_point": "02-1",
+   "rung": "fill",
+   "prompt": "When ___ (you / join) the company?",
+   "answers": [
+    "did you join"
+   ],
+   "hint_choice": [
+    "did you join",
+    "have you joined"
+   ]
+  },
+  {
+   "id": "02-ex-007",
+   "rule_point": "02-1",
+   "rung": "fill",
+   "prompt": "Our team ___ (not / miss) a deadline this quarter.",
+   "answers": [
+    "hasn't missed",
+    "has not missed"
+   ],
+   "hint_choice": [
+    "hasn't missed",
+    "didn't miss"
+   ]
+  },
+  {
+   "id": "02-ex-008",
+   "rule_point": "02-1",
+   "rung": "fill",
+   "prompt": "Last month we ___ (hire) two new developers.",
+   "answers": [
+    "hired"
+   ],
+   "hint_choice": [
+    "hired",
+    "have hired"
+   ]
+  },
+  {
+   "id": "02-ex-009",
+   "rule_point": "02-1",
+   "rung": "transform",
+   "prompt": "Add \"last year\": I have changed jobs.",
+   "answers": [
+    "I changed jobs last year.",
+    "Last year I changed jobs."
+   ],
+   "hint_choice": [
+    "changed",
+    "have changed"
+   ]
+  },
+  {
+   "id": "02-ex-010",
+   "rule_point": "02-1",
+   "rung": "transform",
+   "prompt": "Add \"so far\": We launched two products.",
+   "answers": [
+    "We have launched two products so far.",
+    "We've launched two products so far.",
+    "So far we have launched two products.",
+    "So far we've launched two products."
+   ],
+   "hint_choice": [
+    "have launched",
+    "launched"
+   ]
+  },
+  {
+   "id": "02-ex-011",
+   "rule_point": "02-1",
+   "rung": "transform",
+   "prompt": "Ask when it happened: She has left the company.",
+   "answers": [
+    "When did she leave the company?"
+   ],
+   "hint_choice": [
+    "did she leave",
+    "has she left"
+   ]
+  },
+  {
+   "id": "02-ex-012",
+   "rule_point": "02-1",
+   "rung": "transform",
+   "prompt": "Make a question with \"ever\": You worked with a designer.",
+   "answers": [
+    "Have you ever worked with a designer?",
+    "Did you ever work with a designer?"
+   ],
+   "hint_choice": [
+    "Have you ever worked",
+    "Did you ever worked"
+   ]
+  },
+  {
+   "id": "02-ex-013",
+   "rule_point": "02-1",
+   "rung": "translate",
+   "prompt": "Я никогда не работал в большой компании.",
+   "answers": [
+    "I have never worked at a big company.",
+    "I have never worked at a large company.",
+    "I have never worked in a big company.",
+    "I have never worked in a large company.",
+    "I have never worked for a big company.",
+    "I have never worked for a large company.",
+    "I've never worked at a big company.",
+    "I've never worked at a large company.",
+    "I've never worked in a big company.",
+    "I've never worked in a large company.",
+    "I've never worked for a big company.",
+    "I've never worked for a large company.",
+    "I never worked at a big company.",
+    "I never worked at a large company.",
+    "I never worked in a big company.",
+    "I never worked in a large company.",
+    "I never worked for a big company.",
+    "I never worked for a large company."
+   ],
+   "hint_choice": [
+    "have never worked",
+    "never work"
+   ]
+  },
+  {
+   "id": "02-ex-014",
+   "rule_point": "02-1",
+   "rung": "translate",
+   "prompt": "Мы запустили приложение в прошлом году.",
+   "answers": [
+    "We launched the app last year.",
+    "We launched our app last year.",
+    "Last year we launched the app.",
+    "Last year we launched our app."
+   ],
+   "hint_choice": [
+    "launched",
+    "have launched"
+   ]
+  },
+  {
+   "id": "02-ex-015",
+   "rule_point": "02-1",
+   "rung": "translate",
+   "prompt": "Она только что закончила презентацию.",
+   "answers": [
+    "She has just finished the presentation.",
+    "She has just finished her presentation.",
+    "She's just finished the presentation.",
+    "She's just finished her presentation.",
+    "She just finished the presentation.",
+    "She just finished her presentation."
+   ],
+   "hint_choice": [
+    "has just finished",
+    "just finish"
+   ]
+  },
+  {
+   "id": "02-ex-016",
+   "rule_point": "02-1",
+   "rung": "translate",
+   "prompt": "Когда ты сменил работу?",
+   "answers": [
+    "When did you change jobs?",
+    "When did you change your job?"
+   ],
+   "hint_choice": [
+    "did you change",
+    "have you changed"
+   ]
+  },
+  {
+   "id": "02-ex-017",
+   "rule_point": "02-1",
+   "rung": "fix",
+   "prompt": "I have seen him at the conference last Friday.",
+   "answers": [
+    "I saw him at the conference last Friday."
+   ],
+   "hint_choice": [
+    "saw",
+    "have seen"
+   ]
+  },
+  {
+   "id": "02-ex-018",
+   "rule_point": "02-1",
+   "rung": "fix",
+   "prompt": "This year we finished five projects, and the year isn't over yet.",
+   "answers": [
+    "This year we have finished five projects, and the year isn't over yet.",
+    "This year we've finished five projects, and the year isn't over yet."
+   ],
+   "hint_choice": [
+    "have finished",
+    "finished"
+   ]
+  },
+  {
+   "id": "02-ex-019",
+   "rule_point": "02-1",
+   "rung": "fix",
+   "prompt": "When have you started working in IT?",
+   "answers": [
+    "When did you start working in IT?"
+   ],
+   "hint_choice": [
+    "did you start",
+    "have you started"
+   ]
+  },
+  {
+   "id": "02-ex-020",
+   "rule_point": "02-1",
+   "rung": "fix",
+   "prompt": "So far I never worked abroad, but I'd like to try it.",
+   "answers": [
+    "So far I have never worked abroad, but I'd like to try it.",
+    "So far I've never worked abroad, but I'd like to try it.",
+    "So far I haven't worked abroad, but I'd like to try it.",
+    "So far I have not worked abroad, but I'd like to try it."
+   ],
+   "hint_choice": [
+    "have never worked",
+    "never worked"
+   ]
+  },
+  {
+   "id": "02-ex-021",
+   "rule_point": "02-1",
+   "rung": "free",
+   "prompt": "Name one thing you have done this year and say exactly when you did it.",
+   "model": "I've finally learned to drive. I passed the test in May.",
+   "check_regex": "(\\bhave|\\bhas|'ve|'s)\\s+(never\\s+|already\\s+|just\\s+|ever\\s+|recently\\s+|finally\\s+)?\\w+\\b",
+   "hint_choice": [
+    "I've learned ... I passed",
+    "I learned ... I've passed"
+   ]
+  },
+  {
+   "id": "02-ex-022",
+   "rule_point": "02-1",
+   "rung": "free",
+   "prompt": "Name two things you have never done at work, and one thing you did for the first time last month.",
+   "model": "I've never fired anyone and I've never worked night shifts. Last month I gave my first talk at a meetup.",
+   "check_regex": "(\\bhave|\\bhas|'ve|'s)\\s+(never\\s+|already\\s+|just\\s+|ever\\s+|recently\\s+|finally\\s+)?\\w+\\b",
+   "hint_choice": [
+    "I've never",
+    "I never"
+   ]
+  },
+  {
+   "id": "02-ex-023",
+   "rule_point": "02-1",
+   "rung": "free",
+   "prompt": "What has changed in your team or class since last year? Two sentences.",
+   "model": "We've moved to a new office and two people have left. Our old manager retired in June.",
+   "check_regex": "(\\bhave|\\bhas|'ve|'s)\\s+(never\\s+|already\\s+|just\\s+|ever\\s+|recently\\s+|finally\\s+)?\\w+\\b",
+   "hint_choice": [
+    "have left",
+    "left"
+   ]
+  },
+  {
+   "id": "02-ex-024",
+   "rule_point": "02-1",
+   "rung": "free",
+   "prompt": "Answer the question: \"Have you ever had to work with a difficult client?\"",
+   "model": "Yes, I have. Last year a client changed the scope three times in one month, so we agreed on a strict change process.",
+   "check_regex": "\\b(have|has)\\b",
+   "hint_choice": [
+    "Yes, I have",
+    "Yes, I did"
+   ]
+  },
+  {
+   "id": "02-ex-025",
+   "rule_point": "02-2",
+   "rung": "recognize",
+   "prompt": "I ___ on this feature since Monday, and it's almost ready.",
+   "options": [
+    "have been working",
+    "am working",
+    "work"
+   ],
+   "answers": [
+    "have been working"
+   ],
+   "hint_choice": [
+    "have been working",
+    "am working"
+   ]
+  },
+  {
+   "id": "02-ex-026",
+   "rule_point": "02-2",
+   "rung": "recognize",
+   "prompt": "She ___ candidates all morning, so she needs a break.",
+   "options": [
+    "has been interviewing",
+    "interviews",
+    "will interview"
+   ],
+   "answers": [
+    "has been interviewing"
+   ],
+   "hint_choice": [
+    "has been interviewing",
+    "interviews"
+   ]
+  },
+  {
+   "id": "02-ex-027",
+   "rule_point": "02-2",
+   "rung": "recognize",
+   "prompt": "How long ___ for this company?",
+   "options": [
+    "have you been working",
+    "are you working",
+    "do you work"
+   ],
+   "answers": [
+    "have you been working"
+   ],
+   "hint_choice": [
+    "have you been working",
+    "are you working"
+   ]
+  },
+  {
+   "id": "02-ex-028",
+   "rule_point": "02-2",
+   "rung": "recognize",
+   "prompt": "I ___ my manager for ten years.",
+   "options": [
+    "have known",
+    "have been knowing",
+    "know"
+   ],
+   "answers": [
+    "have known"
+   ],
+   "hint_choice": [
+    "have known",
+    "have been knowing"
+   ]
+  },
+  {
+   "id": "02-ex-029",
+   "rule_point": "02-2",
+   "rung": "fill",
+   "prompt": "We ___ (test) the new release since Friday.",
+   "answers": [
+    "have been testing",
+    "'ve been testing",
+    "have tested",
+    "'ve tested"
+   ],
+   "hint_choice": [
+    "have been testing",
+    "are testing"
+   ]
+  },
+  {
+   "id": "02-ex-030",
+   "rule_point": "02-2",
+   "rung": "fill",
+   "prompt": "It ___ (rain) all day, so the office is half empty.",
+   "answers": [
+    "has been raining",
+    "'s been raining",
+    "has rained"
+   ],
+   "hint_choice": [
+    "has been raining",
+    "is raining"
+   ]
+  },
+  {
+   "id": "02-ex-031",
+   "rule_point": "02-2",
+   "rung": "fill",
+   "prompt": "Sorry I'm late. I ___ (talk) to a client.",
+   "answers": [
+    "have been talking",
+    "'ve been talking",
+    "was talking"
+   ],
+   "hint_choice": [
+    "have been talking",
+    "am talking"
+   ]
+  },
+  {
+   "id": "02-ex-032",
+   "rule_point": "02-2",
+   "rung": "fill",
+   "prompt": "How long ___ (you / learn) English?",
+   "answers": [
+    "have you been learning",
+    "have you learned",
+    "have you learnt"
+   ],
+   "hint_choice": [
+    "have you been learning",
+    "are you learning"
+   ]
+  },
+  {
+   "id": "02-ex-033",
+   "rule_point": "02-2",
+   "rung": "transform",
+   "prompt": "Join into one sentence with \"since\": I started looking for a new job in May. I'm still looking.",
+   "answers": [
+    "I have been looking for a new job since May.",
+    "I've been looking for a new job since May.",
+    "I have looked for a new job since May.",
+    "I've looked for a new job since May."
+   ],
+   "hint_choice": [
+    "have been looking",
+    "am looking"
+   ]
+  },
+  {
+   "id": "02-ex-034",
+   "rule_point": "02-2",
+   "rung": "transform",
+   "prompt": "Show the process with \"all day\": I have written emails.",
+   "answers": [
+    "I have been writing emails all day.",
+    "I've been writing emails all day."
+   ],
+   "hint_choice": [
+    "have been writing",
+    "have written"
+   ]
+  },
+  {
+   "id": "02-ex-035",
+   "rule_point": "02-2",
+   "rung": "transform",
+   "prompt": "Make a question with \"How long\": They have been working remotely.",
+   "answers": [
+    "How long have they been working remotely?"
+   ],
+   "hint_choice": [
+    "have they been",
+    "are they"
+   ]
+  },
+  {
+   "id": "02-ex-036",
+   "rule_point": "02-2",
+   "rung": "transform",
+   "prompt": "Make it negative: She has been sleeping well.",
+   "answers": [
+    "She hasn't been sleeping well.",
+    "She has not been sleeping well."
+   ],
+   "hint_choice": [
+    "hasn't been",
+    "isn't"
+   ]
+  },
+  {
+   "id": "02-ex-037",
+   "rule_point": "02-2",
+   "rung": "translate",
+   "prompt": "Мы работаем над этим проектом с марта.",
+   "answers": [
+    "We have been working on this project since March.",
+    "We have worked on this project since March.",
+    "We've been working on this project since March.",
+    "We've worked on this project since March."
+   ],
+   "hint_choice": [
+    "have been working",
+    "are working"
+   ]
+  },
+  {
+   "id": "02-ex-038",
+   "rule_point": "02-2",
+   "rung": "translate",
+   "prompt": "Я жду ответа от клиента уже неделю.",
+   "answers": [
+    "I have been waiting for an answer from the client for a week now.",
+    "I have been waiting for an answer from the client for a week.",
+    "I have been waiting for a reply from the client for a week now.",
+    "I have been waiting for a reply from the client for a week.",
+    "I have been waiting for a response from the client for a week now.",
+    "I have been waiting for a response from the client for a week.",
+    "I have waited for an answer from the client for a week now.",
+    "I have waited for an answer from the client for a week.",
+    "I have waited for a reply from the client for a week now.",
+    "I have waited for a reply from the client for a week.",
+    "I have waited for a response from the client for a week now.",
+    "I have waited for a response from the client for a week.",
+    "I've been waiting for an answer from the client for a week now.",
+    "I've been waiting for an answer from the client for a week.",
+    "I've been waiting for a reply from the client for a week now.",
+    "I've been waiting for a reply from the client for a week.",
+    "I've been waiting for a response from the client for a week now.",
+    "I've been waiting for a response from the client for a week.",
+    "I've waited for an answer from the client for a week now.",
+    "I've waited for an answer from the client for a week.",
+    "I've waited for a reply from the client for a week now.",
+    "I've waited for a reply from the client for a week.",
+    "I've waited for a response from the client for a week now.",
+    "I've waited for a response from the client for a week."
+   ],
+   "hint_choice": [
+    "have been waiting",
+    "am waiting"
+   ]
+  },
+  {
+   "id": "02-ex-039",
+   "rule_point": "02-2",
+   "rung": "translate",
+   "prompt": "Чем ты занимался все утро?",
+   "answers": [
+    "What have you been doing all morning?"
+   ],
+   "hint_choice": [
+    "have you been doing",
+    "did you do"
+   ]
+  },
+  {
+   "id": "02-ex-040",
+   "rule_point": "02-2",
+   "rung": "translate",
+   "prompt": "Она давно ищет работу?",
+   "answers": [
+    "Has she been looking for a job for a long time?",
+    "Has she been looking for work for a long time?"
+   ],
+   "hint_choice": [
+    "Has she been looking",
+    "Is she looking"
+   ]
+  },
+  {
+   "id": "02-ex-041",
+   "rule_point": "02-2",
+   "rung": "fix",
+   "prompt": "I work in this team for two years.",
+   "answers": [
+    "I have been working in this team for two years.",
+    "I've been working in this team for two years.",
+    "I have worked in this team for two years.",
+    "I've worked in this team for two years."
+   ],
+   "hint_choice": [
+    "have been working",
+    "work"
+   ]
+  },
+  {
+   "id": "02-ex-042",
+   "rule_point": "02-2",
+   "rung": "fix",
+   "prompt": "We have been knowing each other since school.",
+   "answers": [
+    "We have known each other since school.",
+    "We've known each other since school."
+   ],
+   "hint_choice": [
+    "have known",
+    "have been knowing"
+   ]
+  },
+  {
+   "id": "02-ex-043",
+   "rule_point": "02-2",
+   "rung": "fix",
+   "prompt": "She has been write the documentation all week.",
+   "answers": [
+    "She has been writing the documentation all week."
+   ],
+   "hint_choice": [
+    "has been writing",
+    "has been write"
+   ]
+  },
+  {
+   "id": "02-ex-044",
+   "rule_point": "02-2",
+   "rung": "fix",
+   "prompt": "How long are you working on this bug?",
+   "answers": [
+    "How long have you been working on this bug?"
+   ],
+   "hint_choice": [
+    "have you been working",
+    "are you working"
+   ]
+  },
+  {
+   "id": "02-ex-045",
+   "rule_point": "02-2",
+   "rung": "free",
+   "prompt": "What have you been doing lately to grow professionally?",
+   "model": "I've been reading a lot about product analytics, and I've been taking an online course on SQL.",
+   "check_regex": "(\\bhave|\\bhas|'ve|'s)\\s+been\\s+\\w+ing\\b",
+   "hint_choice": [
+    "have been reading",
+    "am reading"
+   ]
+  },
+  {
+   "id": "02-ex-046",
+   "rule_point": "02-2",
+   "rung": "free",
+   "prompt": "A colleague looks exhausted. Write two sentences: guess what they have been doing.",
+   "model": "They've been working late every night. I think they've been dealing with that angry client all week.",
+   "check_regex": "(\\bhave|\\bhas|'ve|'s)\\s+been\\s+\\w+ing\\b",
+   "hint_choice": [
+    "have been working",
+    "are working"
+   ]
+  },
+  {
+   "id": "02-ex-047",
+   "rule_point": "02-2",
+   "rung": "free",
+   "prompt": "Describe a project you have been working on recently: what it is, how long, with whom.",
+   "model": "I've been working on a booking app for three months with two developers and a designer.",
+   "check_regex": "(\\bhave|\\bhas|'ve|'s)\\s+been\\s+\\w+ing\\b",
+   "hint_choice": [
+    "have been working",
+    "work"
+   ]
+  },
+  {
+   "id": "02-ex-048",
+   "rule_point": "02-2",
+   "rung": "free",
+   "prompt": "Write about a habit you have been trying to build this year.",
+   "model": "I've been trying to go to bed before midnight, and I've been running twice a week.",
+   "check_regex": "(\\bhave|\\bhas|'ve|'s)\\s+been\\s+\\w+ing\\b",
+   "hint_choice": [
+    "have been trying",
+    "am trying"
+   ]
+  },
+  {
+   "id": "02-ex-049",
+   "rule_point": "02-3",
+   "rung": "recognize",
+   "prompt": "I've worked here ___ 2022.",
+   "options": [
+    "for",
+    "since",
+    "ago"
+   ],
+   "answers": [
+    "since"
+   ],
+   "hint_choice": [
+    "since",
+    "for"
+   ]
+  },
+  {
+   "id": "02-ex-050",
+   "rule_point": "02-3",
+   "rung": "recognize",
+   "prompt": "She has been our team lead ___ three years.",
+   "options": [
+    "for",
+    "since",
+    "ago"
+   ],
+   "answers": [
+    "for"
+   ],
+   "hint_choice": [
+    "for",
+    "since"
+   ]
+  },
+  {
+   "id": "02-ex-051",
+   "rule_point": "02-3",
+   "rung": "recognize",
+   "prompt": "We've used this tool ___ the project started.",
+   "options": [
+    "for",
+    "since",
+    "ago"
+   ],
+   "answers": [
+    "since"
+   ],
+   "hint_choice": [
+    "since",
+    "for"
+   ]
+  },
+  {
+   "id": "02-ex-052",
+   "rule_point": "02-3",
+   "rung": "recognize",
+   "prompt": "I joined the company two years ___.",
+   "options": [
+    "for",
+    "since",
+    "ago"
+   ],
+   "answers": [
+    "ago"
+   ],
+   "hint_choice": [
+    "ago",
+    "since"
+   ]
+  },
+  {
+   "id": "02-ex-053",
+   "rule_point": "02-3",
+   "rung": "fill",
+   "prompt": "They have been partners ___ more than ten years.",
+   "answers": [
+    "for"
+   ],
+   "hint_choice": [
+    "for",
+    "since"
+   ]
+  },
+  {
+   "id": "02-ex-054",
+   "rule_point": "02-3",
+   "rung": "fill",
+   "prompt": "He hasn't taken a day off ___ March.",
+   "answers": [
+    "since"
+   ],
+   "hint_choice": [
+    "since",
+    "for"
+   ]
+  },
+  {
+   "id": "02-ex-055",
+   "rule_point": "02-3",
+   "rung": "fill",
+   "prompt": "I've known her ___ we were at university.",
+   "answers": [
+    "since"
+   ],
+   "hint_choice": [
+    "since",
+    "for"
+   ]
+  },
+  {
+   "id": "02-ex-056",
+   "rule_point": "02-3",
+   "rung": "fill",
+   "prompt": "We've been waiting for feedback ___ ages.",
+   "answers": [
+    "for"
+   ],
+   "hint_choice": [
+    "for",
+    "since"
+   ]
+  },
+  {
+   "id": "02-ex-057",
+   "rule_point": "02-3",
+   "rung": "transform",
+   "prompt": "Rewrite with \"for\" (we arrived in November 2023, it is now November 2026): I have been here since November 2023.",
+   "answers": [
+    "I have been here for three years.",
+    "I have been here for about three years.",
+    "I have been here for almost three years.",
+    "I have been here for nearly three years.",
+    "I have been here for exactly three years.",
+    "I've been here for three years.",
+    "I've been here for about three years.",
+    "I've been here for almost three years.",
+    "I've been here for nearly three years.",
+    "I've been here for exactly three years."
+   ],
+   "hint_choice": [
+    "for three years",
+    "since three years"
+   ]
+  },
+  {
+   "id": "02-ex-058",
+   "rule_point": "02-3",
+   "rung": "transform",
+   "prompt": "Rewrite with \"since\" (we moved in in May): We have had this office for six months.",
+   "answers": [
+    "We have had this office since May.",
+    "We've had this office since May."
+   ],
+   "hint_choice": [
+    "since May",
+    "for May"
+   ]
+  },
+  {
+   "id": "02-ex-059",
+   "rule_point": "02-3",
+   "rung": "transform",
+   "prompt": "Ask a question with \"How long\": She has worked as a designer since 2020.",
+   "answers": [
+    "How long has she worked as a designer?",
+    "How long has she been working as a designer?"
+   ],
+   "hint_choice": [
+    "How long has she",
+    "How long does she"
+   ]
+  },
+  {
+   "id": "02-ex-060",
+   "rule_point": "02-3",
+   "rung": "transform",
+   "prompt": "Rewrite with \"ago\": I have been at this company for two years.",
+   "answers": [
+    "I joined this company two years ago.",
+    "I joined the company two years ago.",
+    "I started at this company two years ago.",
+    "I started at the company two years ago.",
+    "I came to this company two years ago.",
+    "I came to the company two years ago."
+   ],
+   "hint_choice": [
+    "two years ago",
+    "for two years ago"
+   ]
+  },
+  {
+   "id": "02-ex-061",
+   "rule_point": "02-3",
+   "rung": "translate",
+   "prompt": "Я работаю в этой компании с 2021 года.",
+   "answers": [
+    "I have worked at this company since 2021.",
+    "I have worked for this company since 2021.",
+    "I have worked in this company since 2021.",
+    "I have been working at this company since 2021.",
+    "I have been working for this company since 2021.",
+    "I have been working in this company since 2021.",
+    "I've worked at this company since 2021.",
+    "I've worked for this company since 2021.",
+    "I've worked in this company since 2021.",
+    "I've been working at this company since 2021.",
+    "I've been working for this company since 2021.",
+    "I've been working in this company since 2021."
+   ],
+   "hint_choice": [
+    "have worked since",
+    "work since"
+   ]
+  },
+  {
+   "id": "02-ex-062",
+   "rule_point": "02-3",
+   "rung": "translate",
+   "prompt": "Мы знакомы десять лет.",
+   "answers": [
+    "We have known each other for ten years.",
+    "We've known each other for ten years."
+   ],
+   "hint_choice": [
+    "for ten years",
+    "since ten years"
+   ]
+  },
+  {
+   "id": "02-ex-063",
+   "rule_point": "02-3",
+   "rung": "translate",
+   "prompt": "Сколько ты уже работаешь тестировщиком?",
+   "answers": [
+    "How long have you worked as a tester?",
+    "How long have you worked as a QA engineer?",
+    "How long have you worked as a software tester?",
+    "How long have you been working as a tester?",
+    "How long have you been working as a QA engineer?",
+    "How long have you been working as a software tester?",
+    "How long have you been a tester?",
+    "How long have you been a QA engineer?",
+    "How long have you been a software tester?"
+   ],
+   "hint_choice": [
+    "How long have you",
+    "How long do you"
+   ]
+  },
+  {
+   "id": "02-ex-064",
+   "rule_point": "02-3",
+   "rung": "translate",
+   "prompt": "Она ушла из банка два года назад.",
+   "answers": [
+    "She left the bank two years ago."
+   ],
+   "hint_choice": [
+    "left ... ago",
+    "has left ... ago"
+   ]
+  },
+  {
+   "id": "02-ex-065",
+   "rule_point": "02-3",
+   "rung": "fix",
+   "prompt": "I am living in Kazan since 2019.",
+   "answers": [
+    "I have lived in Kazan since 2019.",
+    "I have been living in Kazan since 2019.",
+    "I've lived in Kazan since 2019.",
+    "I've been living in Kazan since 2019."
+   ],
+   "hint_choice": [
+    "have lived",
+    "am living"
+   ]
+  },
+  {
+   "id": "02-ex-066",
+   "rule_point": "02-3",
+   "rung": "fix",
+   "prompt": "We have been friends since ten years.",
+   "answers": [
+    "We have been friends for ten years.",
+    "We've been friends for ten years."
+   ],
+   "hint_choice": [
+    "for ten years",
+    "since ten years"
+   ]
+  },
+  {
+   "id": "02-ex-067",
+   "rule_point": "02-3",
+   "rung": "fix",
+   "prompt": "She has worked here during five years.",
+   "answers": [
+    "She has worked here for five years.",
+    "She's worked here for five years."
+   ],
+   "hint_choice": [
+    "for five years",
+    "during five years"
+   ]
+  },
+  {
+   "id": "02-ex-068",
+   "rule_point": "02-3",
+   "rung": "fix",
+   "prompt": "I have joined the team two months ago.",
+   "answers": [
+    "I joined the team two months ago."
+   ],
+   "hint_choice": [
+    "joined",
+    "have joined"
+   ]
+  },
+  {
+   "id": "02-ex-069",
+   "rule_point": "02-3",
+   "rung": "free",
+   "prompt": "How long have you done your main activity (work or study)? Use \"for\" and \"since\".",
+   "model": "I've worked in customer support for two years, since I finished college.",
+   "check_regex": "\\b(for|since)\\b",
+   "hint_choice": [
+    "for two years",
+    "since two years"
+   ]
+  },
+  {
+   "id": "02-ex-070",
+   "rule_point": "02-3",
+   "rung": "free",
+   "prompt": "Write about something you have owned for a long time.",
+   "model": "I've had this backpack for eight years. I've carried it to every job since my first interview.",
+   "check_regex": "\\b(for|since)\\b",
+   "hint_choice": [
+    "for eight years",
+    "since eight years"
+   ]
+  },
+  {
+   "id": "02-ex-071",
+   "rule_point": "02-3",
+   "rung": "free",
+   "prompt": "Write two sentences about a friend: how long you have known each other and since when.",
+   "model": "I've known Paul for twelve years. We've been friends since our first week at school.",
+   "check_regex": "\\b(for|since)\\b",
+   "hint_choice": [
+    "for twelve years",
+    "since twelve years"
+   ]
+  },
+  {
+   "id": "02-ex-072",
+   "rule_point": "02-3",
+   "rung": "free",
+   "prompt": "When did you start learning English, and how long have you been learning it?",
+   "model": "I started at school, so I've been learning it for more than ten years.",
+   "check_regex": "\\b(for|since|ago)\\b",
+   "hint_choice": [
+    "for ten years",
+    "since ten years"
+   ]
+  },
+  {
+   "id": "02-ex-073",
+   "rule_point": "02-4",
+   "rung": "recognize",
+   "prompt": "My father is ___ engineer.",
+   "options": [
+    "a",
+    "an",
+    "no article"
+   ],
+   "answers": [
+    "an"
+   ],
+   "hint_choice": [
+    "an",
+    "a"
+   ]
+  },
+  {
+   "id": "02-ex-074",
+   "rule_point": "02-4",
+   "rung": "recognize",
+   "prompt": "She works as ___ UX designer.",
+   "options": [
+    "a",
+    "an",
+    "no article"
+   ],
+   "answers": [
+    "a"
+   ],
+   "hint_choice": [
+    "a",
+    "an"
+   ]
+  },
+  {
+   "id": "02-ex-075",
+   "rule_point": "02-4",
+   "rung": "recognize",
+   "prompt": "They are ___ developers at a bank.",
+   "options": [
+    "a",
+    "an",
+    "no article"
+   ],
+   "answers": [
+    "no article"
+   ],
+   "hint_choice": [
+    "no article",
+    "a"
+   ]
+  },
+  {
+   "id": "02-ex-076",
+   "rule_point": "02-4",
+   "rung": "recognize",
+   "prompt": "I'm ___ HR manager.",
+   "options": [
+    "a",
+    "an",
+    "no article"
+   ],
+   "answers": [
+    "an"
+   ],
+   "hint_choice": [
+    "an",
+    "a"
+   ]
+  },
+  {
+   "id": "02-ex-077",
+   "rule_point": "02-4",
+   "rung": "fill",
+   "prompt": "Before that, I worked as ___ analyst.",
+   "answers": [
+    "an"
+   ],
+   "hint_choice": [
+    "an",
+    "a"
+   ]
+  },
+  {
+   "id": "02-ex-078",
+   "rule_point": "02-4",
+   "rung": "fill",
+   "prompt": "Is your brother ___ doctor?",
+   "answers": [
+    "a"
+   ],
+   "hint_choice": [
+    "a",
+    "an"
+   ]
+  },
+  {
+   "id": "02-ex-079",
+   "rule_point": "02-4",
+   "rung": "fill",
+   "prompt": "We need ___ experienced tester.",
+   "answers": [
+    "an"
+   ],
+   "hint_choice": [
+    "an",
+    "a"
+   ]
+  },
+  {
+   "id": "02-ex-080",
+   "rule_point": "02-4",
+   "rung": "fill",
+   "prompt": "Her parents are ___ teachers. (write - if nothing is needed)",
+   "answers": [
+    "-",
+    "no article",
+    "nothing",
+    "none",
+    "x",
+    "0",
+    "no"
+   ],
+   "hint_choice": [
+    "-",
+    "a"
+   ]
+  },
+  {
+   "id": "02-ex-081",
+   "rule_point": "02-4",
+   "rung": "transform",
+   "prompt": "Make it about one person (She): They are project managers.",
+   "answers": [
+    "She is a project manager.",
+    "She's a project manager."
+   ],
+   "hint_choice": [
+    "a project manager",
+    "project manager"
+   ]
+  },
+  {
+   "id": "02-ex-082",
+   "rule_point": "02-4",
+   "rung": "transform",
+   "prompt": "Say the job with \"works as\" (web designer): Lena designs websites for a living.",
+   "answers": [
+    "Lena works as a web designer."
+   ],
+   "hint_choice": [
+    "works as a",
+    "works as"
+   ]
+  },
+  {
+   "id": "02-ex-083",
+   "rule_point": "02-4",
+   "rung": "transform",
+   "prompt": "Change the job to \"analyst\": I'm a tester.",
+   "answers": [
+    "I'm an analyst.",
+    "I am an analyst."
+   ],
+   "hint_choice": [
+    "an analyst",
+    "a analyst"
+   ]
+  },
+  {
+   "id": "02-ex-084",
+   "rule_point": "02-4",
+   "rung": "transform",
+   "prompt": "Make it plural (They): She is an engineer.",
+   "answers": [
+    "They are engineers.",
+    "They're engineers."
+   ],
+   "hint_choice": [
+    "engineers",
+    "an engineers"
+   ]
+  },
+  {
+   "id": "02-ex-085",
+   "rule_point": "02-4",
+   "rung": "translate",
+   "prompt": "Мой брат инженер.",
+   "answers": [
+    "My brother is an engineer.",
+    "My brother's an engineer."
+   ],
+   "hint_choice": [
+    "an engineer",
+    "engineer"
+   ]
+  },
+  {
+   "id": "02-ex-086",
+   "rule_point": "02-4",
+   "rung": "translate",
+   "prompt": "Я работаю аналитиком.",
+   "answers": [
+    "I work as an analyst.",
+    "I'm an analyst.",
+    "I am an analyst."
+   ],
+   "hint_choice": [
+    "as an analyst",
+    "as analyst"
+   ]
+  },
+  {
+   "id": "02-ex-087",
+   "rule_point": "02-4",
+   "rung": "translate",
+   "prompt": "Мы ищем опытного дизайнера.",
+   "answers": [
+    "We are looking for an experienced designer.",
+    "We're looking for an experienced designer."
+   ],
+   "hint_choice": [
+    "an experienced",
+    "experienced"
+   ]
+  },
+  {
+   "id": "02-ex-088",
+   "rule_point": "02-4",
+   "rung": "translate",
+   "prompt": "Они разработчики.",
+   "answers": [
+    "They are developers.",
+    "They're developers."
+   ],
+   "hint_choice": [
+    "developers",
+    "a developers"
+   ]
+  },
+  {
+   "id": "02-ex-089",
+   "rule_point": "02-4",
+   "rung": "fix",
+   "prompt": "My uncle is lawyer.",
+   "answers": [
+    "My uncle is a lawyer."
+   ],
+   "hint_choice": [
+    "a lawyer",
+    "lawyer"
+   ]
+  },
+  {
+   "id": "02-ex-090",
+   "rule_point": "02-4",
+   "rung": "fix",
+   "prompt": "She is a HR manager.",
+   "answers": [
+    "She is an HR manager."
+   ],
+   "hint_choice": [
+    "an HR",
+    "a HR"
+   ]
+  },
+  {
+   "id": "02-ex-091",
+   "rule_point": "02-4",
+   "rung": "fix",
+   "prompt": "I worked as a analyst for two years.",
+   "answers": [
+    "I worked as an analyst for two years."
+   ],
+   "hint_choice": [
+    "an analyst",
+    "a analyst"
+   ]
+  },
+  {
+   "id": "02-ex-092",
+   "rule_point": "02-4",
+   "rung": "fix",
+   "prompt": "They are a good developers.",
+   "answers": [
+    "They are good developers."
+   ],
+   "hint_choice": [
+    "good developers",
+    "a good developers"
+   ]
+  },
+  {
+   "id": "02-ex-093",
+   "rule_point": "02-4",
+   "rung": "free",
+   "prompt": "Introduce yourself and two people you know: what do they do?",
+   "model": "I'm a support specialist. My sister is an accountant, and my best friend works as a data analyst.",
+   "check_regex": "(\\b(am|is|was|as|became|become|be)|'m|'s)\\s+(a|an)\\s+\\w+",
+   "hint_choice": [
+    "is an accountant",
+    "is accountant"
+   ]
+  },
+  {
+   "id": "02-ex-094",
+   "rule_point": "02-4",
+   "rung": "free",
+   "prompt": "What did you want to be as a child, and why?",
+   "model": "I wanted to be an astronaut because I loved maps of the sky.",
+   "check_regex": "(\\b(am|is|was|as|became|become|be)|'m|'s)\\s+(a|an)\\s+\\w+",
+   "hint_choice": [
+    "be an astronaut",
+    "be astronaut"
+   ]
+  },
+  {
+   "id": "02-ex-095",
+   "rule_point": "02-4",
+   "rung": "free",
+   "prompt": "Describe the people in a team you know: who does what?",
+   "model": "Anna is a designer, Max works as a backend developer, and Lee is an analyst.",
+   "check_regex": "(\\b(am|is|was|as|became|become|be)|'m|'s)\\s+(a|an)\\s+\\w+",
+   "hint_choice": [
+    "is a designer",
+    "is designer"
+   ]
+  },
+  {
+   "id": "02-ex-096",
+   "rule_point": "02-4",
+   "rung": "free",
+   "prompt": "Write a one-line job ad: who are you looking for?",
+   "model": "We are looking for an experienced QA engineer to join our mobile team.",
+   "check_regex": "\\b(a|an)\\s+\\w+",
+   "hint_choice": [
+    "for an experienced",
+    "for experienced"
+   ]
+  }
+ ],
+ "speed_drill": {
+  "instruction_ru": "Перестрой фразу по подсказке после стрелки. Вслух, без паузы на раздумье: 10 фраз за 2 минуты.",
+  "time_limit_sec": 120,
+  "items": [
+   {
+    "id": "02-sd-01",
+    "rule_point": "02-1",
+    "cue": "I see this film. → never",
+    "answers": [
+     "I have never seen this film.",
+     "I've never seen this film.",
+     "I never saw this film."
+    ]
+   },
+   {
+    "id": "02-sd-02",
+    "rule_point": "02-1",
+    "cue": "We finish the report. → yesterday",
+    "answers": [
+     "We finished the report yesterday.",
+     "Yesterday we finished the report."
+    ]
+   },
+   {
+    "id": "02-sd-03",
+    "rule_point": "02-1",
+    "cue": "She leaves the company. → just",
+    "answers": [
+     "She has just left the company.",
+     "She's just left the company.",
+     "She just left the company."
+    ]
+   },
+   {
+    "id": "02-sd-04",
+    "rule_point": "02-1",
+    "cue": "You work abroad. → ever?",
+    "answers": [
+     "Have you ever worked abroad?",
+     "Did you ever work abroad?"
+    ]
+   },
+   {
+    "id": "02-sd-05",
+    "rule_point": "02-2",
+    "cue": "I wait for an hour. → and I'm still waiting",
+    "answers": [
+     "I have been waiting for an hour.",
+     "I've been waiting for an hour."
+    ]
+   },
+   {
+    "id": "02-sd-06",
+    "rule_point": "02-2",
+    "cue": "They test the app. → since Monday",
+    "answers": [
+     "They have been testing the app since Monday.",
+     "They've been testing the app since Monday."
+    ]
+   },
+   {
+    "id": "02-sd-07",
+    "rule_point": "02-3",
+    "cue": "I live here. → since 2020",
+    "answers": [
+     "I have lived here since 2020.",
+     "I have been living here since 2020.",
+     "I've lived here since 2020.",
+     "I've been living here since 2020."
+    ]
+   },
+   {
+    "id": "02-sd-08",
+    "rule_point": "02-3",
+    "cue": "We know each other. → for ten years",
+    "answers": [
+     "We have known each other for ten years.",
+     "We've known each other for ten years."
+    ]
+   },
+   {
+    "id": "02-sd-09",
+    "rule_point": "02-4",
+    "cue": "She / engineer",
+    "answers": [
+     "She is an engineer.",
+     "She's an engineer."
+    ]
+   },
+   {
+    "id": "02-sd-10",
+    "rule_point": "02-4",
+    "cue": "I / work as / analyst",
+    "answers": [
+     "I work as an analyst."
+    ]
+   }
+  ]
+ },
+ "reading": {
+  "title": "From the classroom to the product team",
+  "text": "Nadia Haddad has been a product manager for five years, but she didn't start in tech. After university, she worked as a history teacher in a small town. She loved her students, but after three years she felt that she had stopped growing.\n\nIn her free time she had been helping a friend's start-up with its online booking system, and she found that she enjoyed it more than marking essays. So she took an evening course in project management and applied for a junior position at a travel company. She didn't get the first job, or the second, but the third employer hired her.\n\nSince then, she has worked on four products and has led two cross-functional teams. Her biggest achievement so far is a mobile app for small hotels, which her team shipped in only five months. \"Teaching has helped me more than I expected,\" she says. \"A classroom is a room full of stakeholders. Everyone wants something different, and you have to explain the plan so clearly that they all follow it.\"\n\nFor the last six months, Nadia has been mentoring two people who are switching careers. She tells them the same thing: \"Don't hide your background. Explain what you have learned and how it helps the team.\"\n\nHas she ever regretted leaving the school? \"Never,\" she says with a smile. \"But I still check everyone's spelling like a teacher.\"",
+  "questions": [
+   {
+    "q": "How long has Nadia been a product manager?",
+    "answer": "For five years."
+   },
+   {
+    "q": "What did she do before she moved into tech?",
+    "answer": "She worked as a history teacher in a small town."
+   },
+   {
+    "q": "How did she find out that she liked this kind of work?",
+    "answer": "She had been helping a friend's start-up with its online booking system in her free time."
+   },
+   {
+    "q": "What is her biggest achievement so far?",
+    "answer": "A mobile app for small hotels that her team shipped in five months."
+   },
+   {
+    "q": "Why does she compare a classroom to a room full of stakeholders?",
+    "answer": "Everyone wants something different, and you have to explain the plan clearly so that everyone follows it."
+   },
+   {
+    "q": "What has she been doing for the last six months?",
+    "answer": "Mentoring two people who are switching careers."
+   }
+  ]
+ },
+ "listening": {
+  "url": "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english/ep-210211",
+  "title": "Working for yourself (Episode 210211, 11 Feb 2021)",
+  "source": "BBC Learning English, 6 Minute English",
+  "verified": true,
+  "verified_on": "2026-11-10",
+  "level": "B1-B2",
+  "questions": [
+   {
+    "q": "What is the best job Rob has ever had, and why?",
+    "answer": "His current job: it is creative and varied, and it is a permanent staff job with a regular income and a pension."
+   },
+   {
+    "q": "What job did Rob once do?",
+    "answer": "He worked as a paperboy, delivering newspapers."
+   },
+   {
+    "q": "Why do many people work differently now, according to Rob?",
+    "answer": "Businesses' needs change often, so they need to be agile and change the size and type of their workforce."
+   },
+   {
+    "q": "How did Carla Barker feel about giving up her permanent job?",
+    "answer": "She found it petrifying and super-scary, and she had doubts about whether she was good enough."
+   },
+   {
+    "q": "Why did Fiona Thomas leave her 9 to 5 job? Give three reasons.",
+    "answer": "She wanted creative fulfilment, flexibility to look after her mental health, and financial freedom."
+   },
+   {
+    "q": "What was a 'drummer' in the 19th century?",
+    "answer": "A travelling salesperson who tried to drum up business, that is, increase sales."
+   }
+  ],
+  "key_points": [
+   "The days of a job for life at one company are gone.",
+   "Some people choose to work for themselves; the pandemic forced others into it.",
+   "Carla Barker left a permanent job to start a business and found it frightening at first.",
+   "Fiona Thomas wanted creative fulfilment, flexibility for her mental health and financial freedom.",
+   "Freelancing brings freedom but also risk.",
+   "In the 19th century a 'drummer' was a travelling salesperson, not a musician."
+  ],
+  "shadow": {
+   "start": 0,
+   "end": 35,
+   "approx": true,
+   "text": "Hello. This is 6 Minute English from BBC Learning English. I'm Georgina. And I'm Rob. Rob, what's the best job you've ever had?"
+  }
+ },
+ "speaking": [
+  {
+   "kind": "unprepared",
+   "prompt": "No time to prepare, start straight away: what has changed in your life over the last year?",
+   "target_words": [
+    "recently",
+    "so far"
+   ],
+   "target_rules": [
+    "02-1",
+    "02-2"
+   ],
+   "min_sec": 60
+  },
+  {
+   "kind": "story",
+   "prompt": "Tell the story of your working life or studies: where you started, what you did next, what you have achieved so far and what you have been doing recently. Use at least 5 words and 3 blocks from this unit.",
+   "target_words": [
+    "career",
+    "background",
+    "experience",
+    "switch careers",
+    "achievement",
+    "take on",
+    "so far"
+   ],
+   "target_rules": [
+    "02-1",
+    "02-2",
+    "02-3",
+    "02-4"
+   ],
+   "min_sec": 120
+  },
+  {
+   "kind": "interview",
+   "prompt": "Interview question: Tell me about yourself. How long have you been working in your field, what have you delivered, and what have you been working on recently?",
+   "target_words": [
+    "delivery",
+    "scope",
+    "stakeholder",
+    "cross-functional team",
+    "achievement"
+   ],
+   "target_rules": [
+    "02-1",
+    "02-2",
+    "02-3",
+    "02-4"
+   ],
+   "min_sec": 90
+  }
+ ],
+ "unprepared": [
+  "What new skill have you learned recently, and how long have you been practising it?",
+  "What did you want to be as a child, and what have you actually done since then?",
+  "What is the most useful thing you have learned at work so far?",
+  "How long have you known your oldest friend, and how did you meet?"
+ ],
+ "writing": [
+  {
+   "genre": "letter",
+   "work": false,
+   "prompt": "Write to a friend you haven't seen for five years. Tell them what you have done since you last met, what you have been doing recently and one thing that happened last year.",
+   "words": [
+    120,
+    180
+   ],
+   "targets": {
+    "rules": [
+     "02-1",
+     "02-2",
+     "02-3"
+    ],
+    "words": [
+     "recently",
+     "so far",
+     "career"
+    ]
+   }
+  },
+  {
+   "genre": "work_update",
+   "work": true,
+   "prompt": "You have just joined a new team. Write an 'About me' message for the team chat: your role, how long you have worked in the field, two things you have delivered and what you have been working on lately.",
+   "words": [
+    120,
+    180
+   ],
+   "targets": {
+    "rules": [
+     "02-1",
+     "02-2",
+     "02-3",
+     "02-4"
+    ],
+    "words": [
+     "experience",
+     "delivery",
+     "ship",
+     "stakeholder",
+     "background"
+    ]
+   }
+  }
+ ],
+ "test": {
+  "pass_ratio": 0.8,
+  "speaking": {
+   "duration_sec": 120,
+   "warmup": "What do you do, and how long have you been doing it?",
+   "tasks": [
+    "How has your work or study changed since you started?",
+    "Tell me about a project you have been working on recently."
+   ],
+   "probe": "What is the hardest decision you have made in your career so far, and what happened after it?",
+   "unexpected": "If you could do any other job for one year, what would it be and why?"
+  },
+  "items": [
+   {
+    "id": "02-t-01",
+    "rule_point": "02-1",
+    "rung": "recognize",
+    "prompt": "We ___ the contract on 3 March.",
+    "options": [
+     "signed",
+     "have signed",
+     "sign"
+    ],
+    "answers": [
+     "signed"
+    ],
+    "hint_choice": [
+     "signed",
+     "have signed"
+    ]
+   },
+   {
+    "id": "02-t-02",
+    "rule_point": "02-1",
+    "rung": "fill",
+    "prompt": "___ (you / ever / present) to a board of directors?",
+    "answers": [
+     "Have you ever presented",
+     "Did you ever present"
+    ],
+    "hint_choice": [
+     "Have you ever presented",
+     "Did you ever presented"
+    ]
+   },
+   {
+    "id": "02-t-03",
+    "rule_point": "02-1",
+    "rung": "fill",
+    "prompt": "The client ___ (call) twice this morning, and it's only ten.",
+    "answers": [
+     "has called",
+     "'s called",
+     "called"
+    ],
+    "hint_choice": [
+     "has called",
+     "call"
+    ]
+   },
+   {
+    "id": "02-t-04",
+    "rule_point": "02-1",
+    "rung": "fix",
+    "prompt": "I have met my manager for the first time in 2023.",
+    "answers": [
+     "I met my manager for the first time in 2023."
+    ],
+    "hint_choice": [
+     "met",
+     "have met"
+    ]
+   },
+   {
+    "id": "02-t-05",
+    "rule_point": "02-1",
+    "rung": "translate",
+    "prompt": "Я уже отправил письмо.",
+    "answers": [
+     "I have already sent the email.",
+     "I have already sent the e-mail.",
+     "I have already sent the letter.",
+     "I've already sent the email.",
+     "I've already sent the e-mail.",
+     "I've already sent the letter.",
+     "I already sent the email.",
+     "I already sent the e-mail.",
+     "I already sent the letter.",
+     "I have sent the email already.",
+     "I have sent the e-mail already.",
+     "I have sent the letter already.",
+     "I've sent the email already.",
+     "I've sent the e-mail already.",
+     "I've sent the letter already.",
+     "I sent the email already.",
+     "I sent the e-mail already.",
+     "I sent the letter already."
+    ],
+    "hint_choice": [
+     "have already sent",
+     "already send"
+    ]
+   },
+   {
+    "id": "02-t-06",
+    "rule_point": "02-2",
+    "rung": "recognize",
+    "prompt": "I ___ this book for weeks, but I'm only on page 50.",
+    "options": [
+     "have been reading",
+     "read",
+     "am reading"
+    ],
+    "answers": [
+     "have been reading"
+    ],
+    "hint_choice": [
+     "have been reading",
+     "am reading"
+    ]
+   },
+   {
+    "id": "02-t-07",
+    "rule_point": "02-2",
+    "rung": "fill",
+    "prompt": "Why are your hands dirty? ___ (you / fix) the printer all this time?",
+    "answers": [
+     "Have you been fixing"
+    ],
+    "hint_choice": [
+     "Have you been fixing",
+     "Are you fixing"
+    ]
+   },
+   {
+    "id": "02-t-08",
+    "rule_point": "02-2",
+    "rung": "fill",
+    "prompt": "We ___ (discuss) the budget all morning and still haven't agreed.",
+    "answers": [
+     "have been discussing",
+     "'ve been discussing",
+     "have discussed",
+     "'ve discussed"
+    ],
+    "hint_choice": [
+     "have been discussing",
+     "are discussing"
+    ]
+   },
+   {
+    "id": "02-t-09",
+    "rule_point": "02-2",
+    "rung": "fix",
+    "prompt": "I am working here for six months.",
+    "answers": [
+     "I have been working here for six months.",
+     "I've been working here for six months.",
+     "I have worked here for six months.",
+     "I've worked here for six months."
+    ],
+    "hint_choice": [
+     "have been working",
+     "am working"
+    ]
+   },
+   {
+    "id": "02-t-10",
+    "rule_point": "02-2",
+    "rung": "translate",
+    "prompt": "Я весь день пишу документацию.",
+    "answers": [
+     "I have been writing the documentation all day.",
+     "I have been writing documentation all day.",
+     "I've been writing the documentation all day.",
+     "I've been writing documentation all day."
+    ],
+    "hint_choice": [
+     "have been writing",
+     "am writing"
+    ]
+   },
+   {
+    "id": "02-t-11",
+    "rule_point": "02-3",
+    "rung": "recognize",
+    "prompt": "We've had the same CEO ___ 2018.",
+    "options": [
+     "for",
+     "since",
+     "ago"
+    ],
+    "answers": [
+     "since"
+    ],
+    "hint_choice": [
+     "since",
+     "for"
+    ]
+   },
+   {
+    "id": "02-t-12",
+    "rule_point": "02-3",
+    "rung": "fill",
+    "prompt": "I haven't seen him ___ the conference.",
+    "answers": [
+     "since"
+    ],
+    "hint_choice": [
+     "since",
+     "for"
+    ]
+   },
+   {
+    "id": "02-t-13",
+    "rule_point": "02-3",
+    "rung": "fill",
+    "prompt": "She's been on holiday ___ two weeks.",
+    "answers": [
+     "for"
+    ],
+    "hint_choice": [
+     "for",
+     "since"
+    ]
+   },
+   {
+    "id": "02-t-14",
+    "rule_point": "02-3",
+    "rung": "fix",
+    "prompt": "I work at this bank since five years.",
+    "answers": [
+     "I have worked at this bank for five years.",
+     "I have been working at this bank for five years.",
+     "I've worked at this bank for five years.",
+     "I've been working at this bank for five years."
+    ],
+    "hint_choice": [
+     "have worked ... for",
+     "work ... since"
+    ]
+   },
+   {
+    "id": "02-t-15",
+    "rule_point": "02-3",
+    "rung": "translate",
+    "prompt": "Мы переехали в новый офис месяц назад.",
+    "answers": [
+     "We moved to a new office a month ago.",
+     "We moved to the new office a month ago.",
+     "We moved to our new office a month ago.",
+     "We moved into a new office a month ago.",
+     "We moved into the new office a month ago.",
+     "We moved into our new office a month ago."
+    ],
+    "hint_choice": [
+     "moved ... ago",
+     "have moved ... ago"
+    ]
+   },
+   {
+    "id": "02-t-16",
+    "rule_point": "02-4",
+    "rung": "recognize",
+    "prompt": "My mother is ___ accountant.",
+    "options": [
+     "a",
+     "an",
+     "no article"
+    ],
+    "answers": [
+     "an"
+    ],
+    "hint_choice": [
+     "an",
+     "a"
+    ]
+   },
+   {
+    "id": "02-t-17",
+    "rule_point": "02-4",
+    "rung": "fill",
+    "prompt": "He started as ___ intern and is now a team lead.",
+    "answers": [
+     "an"
+    ],
+    "hint_choice": [
+     "an",
+     "a"
+    ]
+   },
+   {
+    "id": "02-t-18",
+    "rule_point": "02-4",
+    "rung": "fill",
+    "prompt": "Most of my friends are ___ engineers. (write - if nothing is needed)",
+    "answers": [
+     "-",
+     "no article",
+     "nothing",
+     "none",
+     "x",
+     "0",
+     "no"
+    ],
+    "hint_choice": [
+     "-",
+     "an"
+    ]
+   },
+   {
+    "id": "02-t-19",
+    "rule_point": "02-4",
+    "rung": "fix",
+    "prompt": "I want to become a engineer.",
+    "answers": [
+     "I want to become an engineer."
+    ],
+    "hint_choice": [
+     "an engineer",
+     "a engineer"
+    ]
+   },
+   {
+    "id": "02-t-20",
+    "rule_point": "02-4",
+    "rung": "translate",
+    "prompt": "Она работает юристом.",
+    "answers": [
+     "She works as a lawyer.",
+     "She is a lawyer.",
+     "She's a lawyer."
+    ],
+    "hint_choice": [
+     "as a lawyer",
+     "as lawyer"
+    ]
+   },
+   {
+    "id": "02-t-21",
+    "rule_point": "words",
+    "rung": "recognize",
+    "prompt": "She is in ___ of a team of eight.",
+    "options": [
+     "charge",
+     "scope",
+     "career"
+    ],
+    "answers": [
+     "charge"
+    ],
+    "hint_choice": [
+     "charge",
+     "scope"
+    ]
+   },
+   {
+    "id": "02-t-22",
+    "rule_point": "words",
+    "rung": "recognize",
+    "prompt": "The client keeps adding features, so the project ___ keeps growing.",
+    "options": [
+     "scope",
+     "skill",
+     "colleague"
+    ],
+    "answers": [
+     "scope"
+    ],
+    "hint_choice": [
+     "scope",
+     "skill"
+    ]
+   },
+   {
+    "id": "02-t-23",
+    "rule_point": "words",
+    "rung": "recognize",
+    "prompt": "After two years she got a ___ to team lead.",
+    "options": [
+     "promotion",
+     "position",
+     "background"
+    ],
+    "answers": [
+     "promotion"
+    ],
+    "hint_choice": [
+     "promotion",
+     "position"
+    ]
+   },
+   {
+    "id": "02-t-24",
+    "rule_point": "words",
+    "rung": "fill",
+    "prompt": "Have you applied ___ the job yet?",
+    "answers": [
+     "for"
+    ],
+    "hint_choice": [
+     "for",
+     "to"
+    ]
+   },
+   {
+    "id": "02-t-25",
+    "rule_point": "words",
+    "rung": "recognize",
+    "prompt": "Anyone who is affected by the project is a ___.",
+    "options": [
+     "stakeholder",
+     "employer",
+     "deadline"
+    ],
+    "answers": [
+     "stakeholder"
+    ],
+    "hint_choice": [
+     "stakeholder",
+     "employer"
+    ]
+   }
+  ]
+ },
+ "placement": [
+  {
+   "rule_point": "02-1",
+   "b1_or_b2": "B1",
+   "items": [
+    {
+     "id": "02-pl-01",
+     "rule_point": "02-1",
+     "rung": "fill",
+     "prompt": "We ___ (finish) the project last week.",
+     "answers": [
+      "finished"
+     ],
+     "hint_choice": [
+      "finished",
+      "have finished"
+     ]
+    },
+    {
+     "id": "02-pl-02",
+     "rule_point": "02-1",
+     "rung": "recognize",
+     "prompt": "I ___ three interviews this week, and it's only Wednesday.",
+     "options": [
+      "have had",
+      "had",
+      "had had"
+     ],
+     "answers": [
+      "have had"
+     ],
+     "hint_choice": [
+      "have had",
+      "had"
+     ]
+    },
+    {
+     "id": "02-pl-03",
+     "rule_point": "02-1",
+     "rung": "fix",
+     "prompt": "I have finished university in 2019.",
+     "answers": [
+      "I finished university in 2019."
+     ],
+     "hint_choice": [
+      "finished",
+      "have finished"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "02-2",
+   "b1_or_b2": "B1",
+   "items": [
+    {
+     "id": "02-pl-04",
+     "rule_point": "02-2",
+     "rung": "recognize",
+     "prompt": "How long ___ English?",
+     "options": [
+      "have you been learning",
+      "are you learning",
+      "do you learn"
+     ],
+     "answers": [
+      "have you been learning"
+     ],
+     "hint_choice": [
+      "have you been learning",
+      "are you learning"
+     ]
+    },
+    {
+     "id": "02-pl-05",
+     "rule_point": "02-2",
+     "rung": "fill",
+     "prompt": "I ___ (wait) for your answer since Monday.",
+     "answers": [
+      "have been waiting",
+      "'ve been waiting",
+      "have waited",
+      "'ve waited"
+     ],
+     "hint_choice": [
+      "have been waiting",
+      "am waiting"
+     ]
+    },
+    {
+     "id": "02-pl-06",
+     "rule_point": "02-2",
+     "rung": "fix",
+     "prompt": "We are working on this app since January.",
+     "answers": [
+      "We have been working on this app since January.",
+      "We have worked on this app since January.",
+      "We've been working on this app since January.",
+      "We've worked on this app since January."
+     ],
+     "hint_choice": [
+      "have been working",
+      "are working"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "02-3",
+   "b1_or_b2": "B1",
+   "items": [
+    {
+     "id": "02-pl-07",
+     "rule_point": "02-3",
+     "rung": "recognize",
+     "prompt": "I've lived here ___ 2020.",
+     "options": [
+      "for",
+      "since",
+      "ago"
+     ],
+     "answers": [
+      "since"
+     ],
+     "hint_choice": [
+      "since",
+      "for"
+     ]
+    },
+    {
+     "id": "02-pl-08",
+     "rule_point": "02-3",
+     "rung": "fill",
+     "prompt": "She has been a manager ___ six years.",
+     "answers": [
+      "for"
+     ],
+     "hint_choice": [
+      "for",
+      "since"
+     ]
+    },
+    {
+     "id": "02-pl-09",
+     "rule_point": "02-3",
+     "rung": "fix",
+     "prompt": "I know him since we were kids.",
+     "answers": [
+      "I have known him since we were kids.",
+      "I've known him since we were kids."
+     ],
+     "hint_choice": [
+      "have known",
+      "know"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "02-4",
+   "b1_or_b2": "B1",
+   "items": [
+    {
+     "id": "02-pl-10",
+     "rule_point": "02-4",
+     "rung": "recognize",
+     "prompt": "He's ___ engineer.",
+     "options": [
+      "a",
+      "an",
+      "no article"
+     ],
+     "answers": [
+      "an"
+     ],
+     "hint_choice": [
+      "an",
+      "a"
+     ]
+    },
+    {
+     "id": "02-pl-11",
+     "rule_point": "02-4",
+     "rung": "fill",
+     "prompt": "I'd like to work as ___ designer.",
+     "answers": [
+      "a"
+     ],
+     "hint_choice": [
+      "a",
+      "an"
+     ]
+    },
+    {
+     "id": "02-pl-12",
+     "rule_point": "02-4",
+     "rung": "fix",
+     "prompt": "My sister is doctor.",
+     "answers": [
+      "My sister is a doctor."
+     ],
+     "hint_choice": [
+      "a doctor",
+      "doctor"
+     ]
+    }
+   ]
+  }
+ ]
+}

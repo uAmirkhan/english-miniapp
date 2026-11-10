@@ -1,0 +1,3316 @@
+{
+ "id": "01",
+ "full": true,
+ "title": "Journeys: telling the story of a trip",
+ "theme": "Путешествия: рассказ о поездке, которая пошла не по плану",
+ "can_do": [
+  "Рассказать историю о поездке по порядку и не съехать в настоящее время.",
+  "Показать фон события и то, что его прервало: I was waiting for the bus when...",
+  "Вернуться в рассказе назад: что случилось раньше и что долго шло до этого момента.",
+  "Подчеркнуть результат: so tired that..., such a long day that...",
+  "Ответить на вопрос собеседования о проекте или поездке, которые пошли не по плану."
+ ],
+ "rules": [
+  {
+   "id": "01-A",
+   "title": "Narrative tenses",
+   "points": [
+    {
+     "id": "01-1",
+     "title": "Past simple: irregular verbs in a story",
+     "b1_or_b2": "B1",
+     "explain_ru": "Когда рассказываешь, что было, каждое законченное действие стоит во второй форме глагола. У правильных глаголов это -ed (booked, arrived), у неправильных форму надо знать наизусть: go - went, take - took, leave - left. В вопросе и отрицании вторая форма уходит, вместо нее did и первая форма: Did you see it? I didn't see it. Главное: если начал рассказ в прошлом, держи прошлое до конца, даже когда рассказ становится живым.",
+     "examples": [
+      {
+       "en": "We left the hotel at six and caught the first bus.",
+       "ru": "Мы вышли из отеля в шесть и успели на первый автобус."
+      },
+      {
+       "en": "I forgot my charger, so I bought a new one at the airport.",
+       "ru": "Я забыл зарядку, поэтому купил новую в аэропорту."
+      },
+      {
+       "en": "The guide took us to a small village in the hills.",
+       "ru": "Гид отвез нас в маленькую деревню в горах."
+      },
+      {
+       "en": "Did you sleep on the plane? No, I didn't.",
+       "ru": "Ты спал в самолете? Нет."
+      },
+      {
+       "en": "We didn't understand the menu, so we chose at random.",
+       "ru": "Мы не поняли меню, поэтому выбрали наугад."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "Then we go to the beach and we eat fish.",
+      "right": "Then we went to the beach and ate fish.",
+      "why_ru": "По-русски живой рассказ часто идет в настоящем: \"и тут мы идем на пляж\". В английском так рассказывают анекдоты, а обычная история о прошлом держится в прошедшем времени до последней фразы."
+     }
+    },
+    {
+     "id": "01-2",
+     "title": "Past continuous: the background and the interruption",
+     "b1_or_b2": "B1",
+     "explain_ru": "was/were + -ing значит: действие было в процессе в какой-то момент прошлого. Обычно это фон истории (шел дождь, люди ждали), а на этом фоне случается короткое событие во второй форме: I was waiting for the bus when it started to rain. Длинное, фоновое: was/were + -ing. Короткое, которое его прервало: went, rang, arrived. Глаголы состояния (know, want, like, believe) в -ing обычно не ставят.",
+     "examples": [
+      {
+       "en": "It was raining when we landed in Bergen.",
+       "ru": "Шел дождь, когда мы приземлились в Бергене."
+      },
+      {
+       "en": "I was looking for my passport when the taxi arrived.",
+       "ru": "Я искал паспорт, когда приехало такси."
+      },
+      {
+       "en": "At midnight we were still sitting in the waiting room.",
+       "ru": "В полночь мы все еще сидели в зале ожидания."
+      },
+      {
+       "en": "While Tom was checking in, someone took his bag.",
+       "ru": "Пока Том регистрировался, кто-то взял его сумку."
+      },
+      {
+       "en": "What were you doing when the lights went out?",
+       "ru": "Что ты делал, когда погас свет?"
+      }
+     ],
+     "ru_trap": {
+      "wrong": "When I came in, they had dinner.",
+      "right": "When I came in, they were having dinner.",
+      "why_ru": "По-русски \"они ужинали\" значит и процесс, и факт. По-английски \"they had dinner\" после when звучит как \"поужинали, когда я вошел\", то есть уже после. Процесс в момент события передает was/were + -ing."
+     }
+    },
+    {
+     "id": "01-3",
+     "title": "Past perfect: going back in the story",
+     "b1_or_b2": "B1",
+     "explain_ru": "had + третья форма значит: это случилось раньше другого события в прошлом. Нужно, когда в рассказе ты возвращаешься назад: When we got to the station, the train had left (поезд ушел до того, как мы пришли). Если события идут по порядку, хватит обычного прошедшего: We got up, had breakfast and left. Частые соседи: already, by the time, before, never ... before, after.",
+     "examples": [
+      {
+       "en": "When we got to the gate, boarding had already finished.",
+       "ru": "Когда мы дошли до выхода, посадка уже закончилась."
+      },
+      {
+       "en": "She was nervous because she had never flown before.",
+       "ru": "Она нервничала, потому что никогда раньше не летала."
+      },
+      {
+       "en": "I realised I had left my phone in the taxi.",
+       "ru": "Я понял, что оставил телефон в такси."
+      },
+      {
+       "en": "By the time we found the beach, the sun had gone down.",
+       "ru": "К тому времени как мы нашли пляж, солнце уже село."
+      },
+      {
+       "en": "After we had paid, we walked back to the hotel.",
+       "ru": "Когда мы расплатились, мы пошли обратно в отель."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "When I arrived, the meeting already started.",
+      "right": "When I arrived, the meeting had already started.",
+      "why_ru": "В русском нет отдельного \"предпрошедшего\": порядок показывает слово \"уже\". В английском одного already мало. Без had получается, что встреча началась ровно в момент твоего прихода."
+     }
+    },
+    {
+     "id": "01-4",
+     "title": "Past perfect continuous: a long action before a past moment",
+     "b1_or_b2": "B2",
+     "explain_ru": "had been + -ing значит: долгое действие шло до какого-то момента в прошлом, и часто виден его след. We had been waiting for two hours when the bus came. Отличие от had + третья форма: здесь важны процесс и длительность (for two hours, all day, since morning), а не результат. С глаголами состояния (know, be, have в значении \"иметь\") эту форму не строят: had known, had been, had had.",
+     "examples": [
+      {
+       "en": "We had been driving for six hours when we finally saw the sea.",
+       "ru": "Мы ехали уже шесть часов, когда наконец увидели море."
+      },
+      {
+       "en": "Her eyes were red because she had been crying.",
+       "ru": "У нее были красные глаза, потому что она плакала."
+      },
+      {
+       "en": "The streets were wet. It had been raining all night.",
+       "ru": "Улицы были мокрые. Всю ночь шел дождь."
+      },
+      {
+       "en": "I had been learning Italian for a year before I moved to Milan.",
+       "ru": "Я учил итальянский год, прежде чем переехал в Милан."
+      },
+      {
+       "en": "How long had you been waiting when the ferry arrived?",
+       "ru": "Сколько ты уже ждал, когда пришел паром?"
+      }
+     ],
+     "ru_trap": {
+      "wrong": "We were waiting for two hours when the bus came.",
+      "right": "We had been waiting for two hours when the bus came.",
+      "why_ru": "По-русски \"мы ждали уже два часа\" звучит как обычное прошедшее. В английском длительность до момента в прошлом (for two hours ... when) требует had been + -ing."
+     }
+    }
+   ]
+  },
+  {
+   "id": "01-B",
+   "title": "So and such ... that",
+   "points": [
+    {
+     "id": "01-5",
+     "title": "so / such ... that: cause and result",
+     "b1_or_b2": "B2",
+     "explain_ru": "Конструкция \"так ... что\". So ставят перед прилагательным или наречием (so tired, so fast) и в сочетаниях so much, so many, so little, so few + существительное. Such ставят перед существительным, обычно с прилагательным: such a long day (один предмет, с a/an), such friendly people, such bad weather (много предметов или неисчисляемое, без a). Часть с that говорит, к чему это привело. В разговоре само that часто опускают.",
+     "examples": [
+      {
+       "en": "The hostel was so quiet that we slept until noon.",
+       "ru": "В хостеле было так тихо, что мы проспали до полудня."
+      },
+      {
+       "en": "It was such a long flight that I watched four films.",
+       "ru": "Это был такой долгий перелет, что я посмотрел четыре фильма."
+      },
+      {
+       "en": "There were so many people that we couldn't see the stage.",
+       "ru": "Было так много людей, что мы не видели сцену."
+      },
+      {
+       "en": "We had such bad weather that the boat trip was cancelled.",
+       "ru": "Погода была такая плохая, что прогулку на лодке отменили."
+      },
+      {
+       "en": "They were such kind hosts that we stayed an extra night.",
+       "ru": "Хозяева были такие добрые, что мы остались еще на одну ночь."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "It was so nice weather that we walked everywhere.",
+      "right": "It was such nice weather that we walked everywhere.",
+      "why_ru": "Русские \"так\" и \"такой\" не совпадают с so и such. Смотри на следующее слово: если дальше есть существительное (weather, a trip, people), нужен such; если только прилагательное (nice, tired), нужен so."
+     }
+    }
+   ]
+  }
+ ],
+ "words": [
+  {
+   "en": "journey",
+   "ru": "поездка, путь",
+   "example": "The journey from the airport took longer than the flight.",
+   "stress": "JOUR-ney",
+   "pm": false
+  },
+  {
+   "en": "destination",
+   "ru": "место назначения",
+   "example": "Lisbon was our final destination, but we never got there.",
+   "stress": "des-ti-NA-tion",
+   "pm": false
+  },
+  {
+   "en": "luggage",
+   "ru": "багаж",
+   "example": "Our luggage arrived two days after we did.",
+   "stress": "LUG-gage",
+   "pm": false
+  },
+  {
+   "en": "delay",
+   "ru": "задержка; задерживать",
+   "example": "There was a three-hour delay because of the fog.",
+   "stress": "de-LAY",
+   "pm": false
+  },
+  {
+   "en": "board",
+   "ru": "садиться (на самолет, поезд)",
+   "example": "We boarded the ferry just as the rain started.",
+   "stress": "BOARD",
+   "pm": false
+  },
+  {
+   "en": "departure",
+   "ru": "отправление, вылет",
+   "example": "Check the departure board before you go through security.",
+   "stress": "de-PAR-ture",
+   "pm": false
+  },
+  {
+   "en": "arrival",
+   "ru": "прибытие",
+   "example": "On arrival, we found out that the hotel was full.",
+   "stress": "ar-RI-val",
+   "pm": false
+  },
+  {
+   "en": "accommodation",
+   "ru": "жилье (в поездке)",
+   "example": "Accommodation in the old town was surprisingly cheap.",
+   "stress": "ac-com-mo-DA-tion",
+   "pm": false
+  },
+  {
+   "en": "sightseeing",
+   "ru": "осмотр достопримечательностей",
+   "example": "We did some sightseeing in the morning and rested in the afternoon.",
+   "stress": "SIGHT-see-ing",
+   "pm": false
+  },
+  {
+   "en": "itinerary",
+   "ru": "маршрут, план поездки",
+   "example": "Our itinerary had eight cities in ten days, which was too much.",
+   "stress": "i-TIN-er-ar-y",
+   "pm": false
+  },
+  {
+   "en": "landmark",
+   "ru": "известное место, ориентир",
+   "example": "The old bridge is the city's most famous landmark.",
+   "stress": "LAND-mark",
+   "pm": false
+  },
+  {
+   "en": "crowded",
+   "ru": "переполненный, людный",
+   "example": "The museum was so crowded that we left after twenty minutes.",
+   "stress": "CROWD-ed",
+   "pm": false
+  },
+  {
+   "en": "breathtaking",
+   "ru": "захватывающий дух",
+   "example": "The view from the top was absolutely breathtaking.",
+   "stress": "BREATH-tak-ing",
+   "pm": false
+  },
+  {
+   "en": "stranded",
+   "ru": "застрявший (без возможности уехать)",
+   "example": "Hundreds of passengers were stranded at the airport overnight.",
+   "stress": "STRAND-ed",
+   "pm": false
+  },
+  {
+   "en": "commute",
+   "ru": "дорога на работу; ездить на работу",
+   "example": "Her daily commute takes about an hour each way.",
+   "stress": "com-MUTE",
+   "pm": false
+  },
+  {
+   "en": "detour",
+   "ru": "объезд, крюк",
+   "example": "The road was closed, so we had to make a long detour.",
+   "stress": "DE-tour",
+   "pm": false
+  },
+  {
+   "en": "set off",
+   "ru": "отправиться в путь",
+   "example": "We set off before sunrise to avoid the traffic.",
+   "stress": "set OFF",
+   "pm": false
+  },
+  {
+   "en": "run out of",
+   "ru": "закончиться (о запасе)",
+   "example": "Halfway up the mountain we had run out of water.",
+   "stress": "run OUT of",
+   "pm": false
+  },
+  {
+   "en": "turn out",
+   "ru": "оказаться",
+   "example": "The 'short walk' turned out to be a four-hour hike.",
+   "stress": "turn OUT",
+   "pm": false
+  },
+  {
+   "en": "eventually",
+   "ru": "в итоге, в конце концов",
+   "example": "We eventually found the hotel at two in the morning.",
+   "stress": "e-VEN-tu-al-ly",
+   "pm": false
+  },
+  {
+   "en": "kick-off",
+   "ru": "стартовая встреча проекта",
+   "example": "The kick-off was moved online because half the team was stuck at the airport.",
+   "stress": "KICK-off",
+   "pm": true
+  },
+  {
+   "en": "postpone",
+   "ru": "отложить, перенести на позже",
+   "example": "We had to postpone the client workshop by a week.",
+   "stress": "post-PONE",
+   "pm": true
+  },
+  {
+   "en": "reschedule",
+   "ru": "перенести на другое время",
+   "example": "Could we reschedule the demo to Thursday morning?",
+   "stress": "re-SCHED-ule",
+   "pm": true
+  },
+  {
+   "en": "business trip",
+   "ru": "командировка",
+   "example": "Her first business trip turned out to be a small disaster.",
+   "stress": "BUS-i-ness trip",
+   "pm": true
+  },
+  {
+   "en": "offsite",
+   "ru": "выездная встреча команды",
+   "example": "The team offsite took place in a small hotel by a lake.",
+   "stress": "OFF-site",
+   "pm": true
+  }
+ ],
+ "chunks": [
+  {
+   "en": "It all started when...",
+   "ru": "Все началось с того, что...",
+   "example": "It all started when the airline cancelled our flight."
+  },
+  {
+   "en": "What I didn't know was that...",
+   "ru": "Чего я не знал, так это того, что...",
+   "example": "What I didn't know was that the museum was closed on Mondays."
+  },
+  {
+   "en": "It turned out that...",
+   "ru": "Оказалось, что...",
+   "example": "It turned out that our hotel was on the other side of the river."
+  },
+  {
+   "en": "By the time we got there, ...",
+   "ru": "К тому времени как мы добрались, ...",
+   "example": "By the time we got there, the last bus had already gone."
+  },
+  {
+   "en": "At first I thought..., but then...",
+   "ru": "Сначала я подумал..., но потом...",
+   "example": "At first I thought it was a joke, but then I saw the empty platform."
+  },
+  {
+   "en": "We had no choice but to...",
+   "ru": "Нам ничего не оставалось, кроме как...",
+   "example": "We had no choice but to sleep at the station."
+  },
+  {
+   "en": "The funny thing is, ...",
+   "ru": "Самое смешное, что...",
+   "example": "The funny thing is, we never even used the map."
+  },
+  {
+   "en": "As soon as we arrived, ...",
+   "ru": "Как только мы приехали, ...",
+   "example": "As soon as we arrived, it started to pour."
+  },
+  {
+   "en": "To cut a long story short, ...",
+   "ru": "Короче говоря, ...",
+   "example": "To cut a long story short, we missed the wedding."
+  },
+  {
+   "en": "Looking back, ...",
+   "ru": "Оглядываясь назад, ...",
+   "example": "Looking back, it was the best mistake we ever made."
+  }
+ ],
+ "exercises": [
+  {
+   "id": "01-ex-001",
+   "rule_point": "01-1",
+   "rung": "recognize",
+   "prompt": "Last summer we ___ to Lisbon by train.",
+   "options": [
+    "go",
+    "went",
+    "gone"
+   ],
+   "answers": [
+    "went"
+   ],
+   "hint_choice": [
+    "went",
+    "go"
+   ]
+  },
+  {
+   "id": "01-ex-002",
+   "rule_point": "01-1",
+   "rung": "recognize",
+   "prompt": "Marta ___ her passport at the hotel and had to go back for it.",
+   "options": [
+    "forgot",
+    "forgotten",
+    "forget"
+   ],
+   "answers": [
+    "forgot"
+   ],
+   "hint_choice": [
+    "forgot",
+    "forget"
+   ]
+  },
+  {
+   "id": "01-ex-003",
+   "rule_point": "01-1",
+   "rung": "recognize",
+   "prompt": "Our flight ___ two hours late, so we missed the last bus.",
+   "options": [
+    "leaves",
+    "left",
+    "leaved"
+   ],
+   "answers": [
+    "left"
+   ],
+   "hint_choice": [
+    "left",
+    "leaved"
+   ]
+  },
+  {
+   "id": "01-ex-004",
+   "rule_point": "01-1",
+   "rung": "recognize",
+   "prompt": "I ___ hundreds of photos on that trip, but I lost most of them.",
+   "options": [
+    "took",
+    "taked",
+    "taken"
+   ],
+   "answers": [
+    "took"
+   ],
+   "hint_choice": [
+    "took",
+    "taken"
+   ]
+  },
+  {
+   "id": "01-ex-005",
+   "rule_point": "01-1",
+   "rung": "fill",
+   "prompt": "We ___ (buy) cheap tickets two months before the trip.",
+   "answers": [
+    "bought"
+   ],
+   "hint_choice": [
+    "bought",
+    "buyed"
+   ]
+  },
+  {
+   "id": "01-ex-006",
+   "rule_point": "01-1",
+   "rung": "fill",
+   "prompt": "The guide ___ (tell) us a funny story about the castle.",
+   "answers": [
+    "told"
+   ],
+   "hint_choice": [
+    "told",
+    "telled"
+   ]
+  },
+  {
+   "id": "01-ex-007",
+   "rule_point": "01-1",
+   "rung": "fill",
+   "prompt": "On the first night I ___ (sleep) badly because of the noise.",
+   "answers": [
+    "slept"
+   ],
+   "hint_choice": [
+    "slept",
+    "sleep"
+   ]
+  },
+  {
+   "id": "01-ex-008",
+   "rule_point": "01-1",
+   "rung": "fill",
+   "prompt": "Oskar ___ (spend) almost all his money on the first day.",
+   "answers": [
+    "spent"
+   ],
+   "hint_choice": [
+    "spent",
+    "spended"
+   ]
+  },
+  {
+   "id": "01-ex-009",
+   "rule_point": "01-1",
+   "rung": "transform",
+   "prompt": "Rewrite in the past: We catch the early bus and get to the coast by noon.",
+   "answers": [
+    "We caught the early bus and got to the coast by noon."
+   ],
+   "hint_choice": [
+    "caught ... got",
+    "catch ... get"
+   ]
+  },
+  {
+   "id": "01-ex-010",
+   "rule_point": "01-1",
+   "rung": "transform",
+   "prompt": "Rewrite in the past: Lena feels tired, so she doesn't go to the museum.",
+   "answers": [
+    "Lena felt tired, so she didn't go to the museum.",
+    "Lena felt tired, so she did not go to the museum."
+   ],
+   "hint_choice": [
+    "felt ... didn't go",
+    "felt ... didn't went"
+   ]
+  },
+  {
+   "id": "01-ex-011",
+   "rule_point": "01-1",
+   "rung": "transform",
+   "prompt": "Make a question with \"Where\": They found a cheap hostel.",
+   "answers": [
+    "Where did they find a cheap hostel?"
+   ],
+   "hint_choice": [
+    "did they find",
+    "did they found"
+   ]
+  },
+  {
+   "id": "01-ex-012",
+   "rule_point": "01-1",
+   "rung": "transform",
+   "prompt": "Make it negative: I understood the driver.",
+   "answers": [
+    "I didn't understand the driver.",
+    "I did not understand the driver."
+   ],
+   "hint_choice": [
+    "didn't understand",
+    "didn't understood"
+   ]
+  },
+  {
+   "id": "01-ex-013",
+   "rule_point": "01-1",
+   "rung": "translate",
+   "prompt": "Мы встретили очень доброго водителя.",
+   "answers": [
+    "We met a very kind driver.",
+    "We met a very nice driver.",
+    "We met a very friendly driver."
+   ],
+   "hint_choice": [
+    "met",
+    "meeted"
+   ]
+  },
+  {
+   "id": "01-ex-014",
+   "rule_point": "01-1",
+   "rung": "translate",
+   "prompt": "В первый же день я потерял ключ.",
+   "answers": [
+    "I lost the key on the very first day.",
+    "I lost the key on the first day.",
+    "I lost my key on the very first day.",
+    "I lost my key on the first day.",
+    "On the very first day I lost the key.",
+    "On the very first day I lost my key.",
+    "On the first day I lost the key.",
+    "On the first day I lost my key."
+   ],
+   "hint_choice": [
+    "lost",
+    "losed"
+   ]
+  },
+  {
+   "id": "01-ex-015",
+   "rule_point": "01-1",
+   "rung": "translate",
+   "prompt": "Она не взяла с собой куртку.",
+   "answers": [
+    "She didn't take a jacket with her.",
+    "She didn't take a jacket.",
+    "She didn't take her jacket with her.",
+    "She didn't take her jacket.",
+    "She didn't bring a jacket with her.",
+    "She didn't bring a jacket.",
+    "She didn't bring her jacket with her.",
+    "She didn't bring her jacket.",
+    "She did not take a jacket with her.",
+    "She did not take a jacket.",
+    "She did not take her jacket with her.",
+    "She did not take her jacket.",
+    "She did not bring a jacket with her.",
+    "She did not bring a jacket.",
+    "She did not bring her jacket with her.",
+    "She did not bring her jacket."
+   ],
+   "hint_choice": [
+    "didn't take",
+    "didn't took"
+   ]
+  },
+  {
+   "id": "01-ex-016",
+   "rule_point": "01-1",
+   "rung": "translate",
+   "prompt": "Куда вы поехали после Праги?",
+   "answers": [
+    "Where did you go after Prague?",
+    "Where did you travel to after Prague?",
+    "Where did you travel after Prague?"
+   ],
+   "hint_choice": [
+    "did you go",
+    "did you went"
+   ]
+  },
+  {
+   "id": "01-ex-017",
+   "rule_point": "01-1",
+   "rung": "fix",
+   "prompt": "Yesterday we go to the old town and eat local food.",
+   "answers": [
+    "Yesterday we went to the old town and ate local food."
+   ],
+   "hint_choice": [
+    "went ... ate",
+    "go ... eat"
+   ]
+  },
+  {
+   "id": "01-ex-018",
+   "rule_point": "01-1",
+   "rung": "fix",
+   "prompt": "Did you saw the sea from your room?",
+   "answers": [
+    "Did you see the sea from your room?"
+   ],
+   "hint_choice": [
+    "Did you see",
+    "Did you saw"
+   ]
+  },
+  {
+   "id": "01-ex-019",
+   "rule_point": "01-1",
+   "rung": "fix",
+   "prompt": "The taxi driver bringed us to the wrong hotel.",
+   "answers": [
+    "The taxi driver brought us to the wrong hotel."
+   ],
+   "hint_choice": [
+    "brought",
+    "bringed"
+   ]
+  },
+  {
+   "id": "01-ex-020",
+   "rule_point": "01-1",
+   "rung": "fix",
+   "prompt": "I didn't knew the way, so I asked a woman at the station.",
+   "answers": [
+    "I didn't know the way, so I asked a woman at the station."
+   ],
+   "hint_choice": [
+    "didn't know",
+    "didn't knew"
+   ]
+  },
+  {
+   "id": "01-ex-021",
+   "rule_point": "01-1",
+   "rung": "free",
+   "prompt": "Write two sentences about a trip that went wrong. Use at least two of: lose, leave, forget, take.",
+   "model": "We left very early and I forgot my charger. Then my brother lost his ticket, so we took a taxi.",
+   "check_regex": "\\b(lost|left|forgot|took)\\b",
+   "hint_choice": [
+    "lost",
+    "losed"
+   ]
+  },
+  {
+   "id": "01-ex-022",
+   "rule_point": "01-1",
+   "rung": "free",
+   "prompt": "What did you do on your last day off? Three sentences, all about the past.",
+   "model": "I got up late and went to the market. I bought some fruit and met an old friend. In the evening we saw a film.",
+   "check_regex": "\\b(\\w+ed|went|got|bought|met|saw|had|made|ate|spent|did|took|came|was|were)\\b",
+   "hint_choice": [
+    "went",
+    "go"
+   ]
+  },
+  {
+   "id": "01-ex-023",
+   "rule_point": "01-1",
+   "rung": "free",
+   "prompt": "Describe the first hour of a journey: where you went and what you saw.",
+   "model": "We set off at seven and drove out of the city. The roads were empty and we saw the sunrise over the fields.",
+   "check_regex": "\\b(went|drove|saw|set off|took|left|got|came|flew|rode)\\b",
+   "hint_choice": [
+    "saw",
+    "see"
+   ]
+  },
+  {
+   "id": "01-ex-024",
+   "rule_point": "01-1",
+   "rung": "free",
+   "prompt": "A train stopped in the middle of nowhere. Write what the passengers said and did.",
+   "model": "An old man said it was normal. A woman got out of her seat and found the conductor. Nobody knew what was going on.",
+   "check_regex": "\\b(said|told|got|found|knew|thought|went|took|stood|sat)\\b",
+   "hint_choice": [
+    "said",
+    "sayed"
+   ]
+  },
+  {
+   "id": "01-ex-025",
+   "rule_point": "01-2",
+   "rung": "recognize",
+   "prompt": "We ___ on the platform at midnight.",
+   "options": [
+    "still waited",
+    "were still waiting",
+    "still wait"
+   ],
+   "answers": [
+    "were still waiting"
+   ],
+   "hint_choice": [
+    "were still waiting",
+    "still wait"
+   ]
+  },
+  {
+   "id": "01-ex-026",
+   "rule_point": "01-2",
+   "rung": "recognize",
+   "prompt": "I couldn't answer your call because I ___.",
+   "options": [
+    "drove",
+    "was driving",
+    "have driven"
+   ],
+   "answers": [
+    "was driving"
+   ],
+   "hint_choice": [
+    "was driving",
+    "drove"
+   ]
+  },
+  {
+   "id": "01-ex-027",
+   "rule_point": "01-2",
+   "rung": "recognize",
+   "prompt": "Dina ___ for the bus when an old friend called her name.",
+   "options": [
+    "waited",
+    "was waiting",
+    "has waited"
+   ],
+   "answers": [
+    "was waiting"
+   ],
+   "hint_choice": [
+    "was waiting",
+    "waited"
+   ]
+  },
+  {
+   "id": "01-ex-028",
+   "rule_point": "01-2",
+   "rung": "recognize",
+   "prompt": "The kids ___ in the sea when the lifeguard blew his whistle.",
+   "options": [
+    "swam",
+    "were swimming",
+    "are swimming"
+   ],
+   "answers": [
+    "were swimming"
+   ],
+   "hint_choice": [
+    "were swimming",
+    "swam"
+   ]
+  },
+  {
+   "id": "01-ex-029",
+   "rule_point": "01-2",
+   "rung": "fill",
+   "prompt": "Tom ___ (sleep) when the plane landed, so he missed the view.",
+   "answers": [
+    "was sleeping"
+   ],
+   "hint_choice": [
+    "was sleeping",
+    "slept"
+   ]
+  },
+  {
+   "id": "01-ex-030",
+   "rule_point": "01-2",
+   "rung": "fill",
+   "prompt": "I ___ (look) for my ticket when the inspector came in.",
+   "answers": [
+    "was looking"
+   ],
+   "hint_choice": [
+    "was looking",
+    "looked"
+   ]
+  },
+  {
+   "id": "01-ex-031",
+   "rule_point": "01-2",
+   "rung": "fill",
+   "prompt": "At seven the next morning we ___ (drive) through the mountains.",
+   "answers": [
+    "were driving"
+   ],
+   "hint_choice": [
+    "were driving",
+    "drove"
+   ]
+  },
+  {
+   "id": "01-ex-032",
+   "rule_point": "01-2",
+   "rung": "fill",
+   "prompt": "Why ___ (you / laugh) when I walked in?",
+   "answers": [
+    "were you laughing"
+   ],
+   "hint_choice": [
+    "were you laughing",
+    "did you laughing"
+   ]
+  },
+  {
+   "id": "01-ex-033",
+   "rule_point": "01-2",
+   "rung": "transform",
+   "prompt": "Join with \"when\": I was crossing the street. My phone rang.",
+   "answers": [
+    "I was crossing the street when my phone rang.",
+    "When my phone rang, I was crossing the street."
+   ],
+   "hint_choice": [
+    "was crossing ... rang",
+    "crossed ... was ringing"
+   ]
+  },
+  {
+   "id": "01-ex-034",
+   "rule_point": "01-2",
+   "rung": "transform",
+   "prompt": "Join with \"while\": Someone stole my bag. I was buying a coffee.",
+   "answers": [
+    "Someone stole my bag while I was buying a coffee.",
+    "While I was buying a coffee, someone stole my bag."
+   ],
+   "hint_choice": [
+    "was buying",
+    "bought"
+   ]
+  },
+  {
+   "id": "01-ex-035",
+   "rule_point": "01-2",
+   "rung": "transform",
+   "prompt": "Make a question with \"Where\": They were sitting in the café.",
+   "answers": [
+    "Where were they sitting?"
+   ],
+   "hint_choice": [
+    "were they sitting",
+    "did they sitting"
+   ]
+  },
+  {
+   "id": "01-ex-036",
+   "rule_point": "01-2",
+   "rung": "transform",
+   "prompt": "Make it negative: We were following the map.",
+   "answers": [
+    "We weren't following the map.",
+    "We were not following the map."
+   ],
+   "hint_choice": [
+    "weren't following",
+    "didn't following"
+   ]
+  },
+  {
+   "id": "01-ex-037",
+   "rule_point": "01-2",
+   "rung": "translate",
+   "prompt": "Когда мы приехали, шел снег.",
+   "answers": [
+    "When we arrived, it was snowing.",
+    "It was snowing when we arrived."
+   ],
+   "hint_choice": [
+    "was snowing",
+    "snowed"
+   ]
+  },
+  {
+   "id": "01-ex-038",
+   "rule_point": "01-2",
+   "rung": "translate",
+   "prompt": "Мы ужинали, когда позвонил гид.",
+   "answers": [
+    "We were having dinner when the guide called.",
+    "We were having dinner when the guide phoned.",
+    "We were having dinner when the guide rang.",
+    "We were eating dinner when the guide called.",
+    "We were eating dinner when the guide phoned.",
+    "We were eating dinner when the guide rang.",
+    "When the guide called, we were having dinner.",
+    "When the guide called, we were eating dinner.",
+    "When the guide phoned, we were having dinner.",
+    "When the guide phoned, we were eating dinner.",
+    "When the guide rang, we were having dinner.",
+    "When the guide rang, we were eating dinner."
+   ],
+   "hint_choice": [
+    "were having",
+    "had"
+   ]
+  },
+  {
+   "id": "01-ex-039",
+   "rule_point": "01-2",
+   "rung": "translate",
+   "prompt": "Что ты делал в восемь вечера?",
+   "answers": [
+    "What were you doing at eight in the evening?",
+    "What were you doing at eight pm?",
+    "What were you doing at eight p m?",
+    "What were you doing at eight o'clock in the evening?",
+    "What were you doing at 8 in the evening?",
+    "What were you doing at 8 pm?",
+    "What were you doing at 8 p m?",
+    "What were you doing at 8 o'clock in the evening?"
+   ],
+   "hint_choice": [
+    "were you doing",
+    "did you do"
+   ]
+  },
+  {
+   "id": "01-ex-040",
+   "rule_point": "01-2",
+   "rung": "translate",
+   "prompt": "Она не слушала гида.",
+   "answers": [
+    "She wasn't listening to the guide.",
+    "She was not listening to the guide."
+   ],
+   "hint_choice": [
+    "wasn't listening",
+    "didn't listening"
+   ]
+  },
+  {
+   "id": "01-ex-041",
+   "rule_point": "01-2",
+   "rung": "fix",
+   "prompt": "I was walk along the river when I saw the bridge.",
+   "answers": [
+    "I was walking along the river when I saw the bridge."
+   ],
+   "hint_choice": [
+    "was walking",
+    "was walk"
+   ]
+  },
+  {
+   "id": "01-ex-042",
+   "rule_point": "01-2",
+   "rung": "fix",
+   "prompt": "We were drove to the hotel when the tyre burst.",
+   "answers": [
+    "We were driving to the hotel when the tyre burst."
+   ],
+   "hint_choice": [
+    "were driving",
+    "were drove"
+   ]
+  },
+  {
+   "id": "01-ex-043",
+   "rule_point": "01-2",
+   "rung": "fix",
+   "prompt": "While I was waiting outside, the bus was arriving.",
+   "answers": [
+    "While I was waiting outside, the bus arrived."
+   ],
+   "hint_choice": [
+    "arrived",
+    "was arriving"
+   ]
+  },
+  {
+   "id": "01-ex-044",
+   "rule_point": "01-2",
+   "rung": "fix",
+   "prompt": "What you were doing when the alarm went off?",
+   "answers": [
+    "What were you doing when the alarm went off?"
+   ],
+   "hint_choice": [
+    "were you doing",
+    "you were doing"
+   ]
+  },
+  {
+   "id": "01-ex-045",
+   "rule_point": "01-2",
+   "rung": "free",
+   "prompt": "Describe a photo from a trip: what were people doing in the background? Two sentences.",
+   "model": "Some tourists were taking selfies by the fountain. A man was selling ice cream and two kids were feeding the pigeons.",
+   "check_regex": "\\b(was|were)\\s+\\w+ing\\b",
+   "hint_choice": [
+    "were taking",
+    "took"
+   ]
+  },
+  {
+   "id": "01-ex-046",
+   "rule_point": "01-2",
+   "rung": "free",
+   "prompt": "Something unexpected happened on a trip. What were you doing at that moment?",
+   "model": "I was reading on the train when the lights suddenly went out.",
+   "check_regex": "\\b(was|were)\\s+\\w+ing\\b",
+   "hint_choice": [
+    "was reading",
+    "read"
+   ]
+  },
+  {
+   "id": "01-ex-047",
+   "rule_point": "01-2",
+   "rung": "free",
+   "prompt": "A train suddenly stopped. Write what three passengers were doing at that moment.",
+   "model": "A student was sleeping, an old woman was knitting and a man was talking loudly on the phone.",
+   "check_regex": "\\b(was|were)\\s+\\w+ing\\b",
+   "hint_choice": [
+    "was sleeping",
+    "slept"
+   ]
+  },
+  {
+   "id": "01-ex-048",
+   "rule_point": "01-2",
+   "rung": "free",
+   "prompt": "Describe the moment you arrived somewhere new: the weather, the noise, what people were doing.",
+   "model": "When we arrived, it was raining and people were running for the buses. Someone was playing the guitar under a bridge.",
+   "check_regex": "\\b(was|were)\\s+\\w+ing\\b",
+   "hint_choice": [
+    "was raining",
+    "rained"
+   ]
+  },
+  {
+   "id": "01-ex-049",
+   "rule_point": "01-3",
+   "rung": "recognize",
+   "prompt": "When we got to the station, the train ___ ten minutes before.",
+   "options": [
+    "left",
+    "had left",
+    "has left"
+   ],
+   "answers": [
+    "had left"
+   ],
+   "hint_choice": [
+    "had left",
+    "has left"
+   ]
+  },
+  {
+   "id": "01-ex-050",
+   "rule_point": "01-3",
+   "rung": "recognize",
+   "prompt": "I recognised the town because I ___ there as a child.",
+   "options": [
+    "had been",
+    "have been",
+    "was being"
+   ],
+   "answers": [
+    "had been"
+   ],
+   "hint_choice": [
+    "had been",
+    "have been"
+   ]
+  },
+  {
+   "id": "01-ex-051",
+   "rule_point": "01-3",
+   "rung": "recognize",
+   "prompt": "She was nervous because she ___ before.",
+   "options": [
+    "had never flown",
+    "has never flown",
+    "never flies"
+   ],
+   "answers": [
+    "had never flown"
+   ],
+   "hint_choice": [
+    "had never flown",
+    "has never flown"
+   ]
+  },
+  {
+   "id": "01-ex-052",
+   "rule_point": "01-3",
+   "rung": "recognize",
+   "prompt": "By the time the police arrived, the thief ___.",
+   "options": [
+    "had disappeared",
+    "has disappeared",
+    "disappears"
+   ],
+   "answers": [
+    "had disappeared"
+   ],
+   "hint_choice": [
+    "had disappeared",
+    "has disappeared"
+   ]
+  },
+  {
+   "id": "01-ex-053",
+   "rule_point": "01-3",
+   "rung": "fill",
+   "prompt": "We couldn't check in because someone ___ (book) our room by mistake.",
+   "answers": [
+    "had booked",
+    "booked"
+   ],
+   "hint_choice": [
+    "had booked",
+    "has booked"
+   ]
+  },
+  {
+   "id": "01-ex-054",
+   "rule_point": "01-3",
+   "rung": "fill",
+   "prompt": "Marco didn't eat on the plane because he ___ (have) a big lunch.",
+   "answers": [
+    "had had",
+    "had"
+   ],
+   "hint_choice": [
+    "had had",
+    "has had"
+   ]
+  },
+  {
+   "id": "01-ex-055",
+   "rule_point": "01-3",
+   "rung": "fill",
+   "prompt": "By the time we found the beach, the sun ___ (go) down.",
+   "answers": [
+    "had gone",
+    "had already gone"
+   ],
+   "hint_choice": [
+    "had gone",
+    "has gone"
+   ]
+  },
+  {
+   "id": "01-ex-056",
+   "rule_point": "01-3",
+   "rung": "fill",
+   "prompt": "I ___ (not / see) snow before that winter.",
+   "answers": [
+    "hadn't seen",
+    "had not seen",
+    "didn't see",
+    "did not see"
+   ],
+   "hint_choice": [
+    "hadn't seen",
+    "haven't seen"
+   ]
+  },
+  {
+   "id": "01-ex-057",
+   "rule_point": "01-3",
+   "rung": "transform",
+   "prompt": "Join with \"because\": Lena was exhausted. She had walked twenty kilometres.",
+   "answers": [
+    "Lena was exhausted because she had walked twenty kilometres.",
+    "Lena was exhausted because she'd walked twenty kilometres."
+   ],
+   "hint_choice": [
+    "because she had walked",
+    "because she walked"
+   ]
+  },
+  {
+   "id": "01-ex-058",
+   "rule_point": "01-3",
+   "rung": "transform",
+   "prompt": "Start with \"After\": We paid the bill. Then we left the restaurant.",
+   "answers": [
+    "After we had paid the bill, we left the restaurant.",
+    "After we'd paid the bill, we left the restaurant.",
+    "After we paid the bill, we left the restaurant."
+   ],
+   "hint_choice": [
+    "after we had paid",
+    "after we have paid"
+   ]
+  },
+  {
+   "id": "01-ex-059",
+   "rule_point": "01-3",
+   "rung": "transform",
+   "prompt": "Start with \"By the time\": The guide arrived. Everyone left before that.",
+   "answers": [
+    "By the time the guide arrived, everyone had already left.",
+    "By the time the guide arrived, everyone had left."
+   ],
+   "hint_choice": [
+    "everyone had left",
+    "everyone has left"
+   ]
+  },
+  {
+   "id": "01-ex-060",
+   "rule_point": "01-3",
+   "rung": "transform",
+   "prompt": "Make a question: They had visited the city before.",
+   "answers": [
+    "Had they visited the city before?"
+   ],
+   "hint_choice": [
+    "Had they visited",
+    "Did they had visited"
+   ]
+  },
+  {
+   "id": "01-ex-061",
+   "rule_point": "01-3",
+   "rung": "translate",
+   "prompt": "Когда я дошел до выхода, посадка уже закончилась.",
+   "answers": [
+    "When I got to the gate, boarding had already finished.",
+    "When I got to the gate, boarding had already ended.",
+    "When I got to the gate, boarding had already closed.",
+    "When I reached the gate, boarding had already finished.",
+    "When I reached the gate, boarding had already ended.",
+    "When I reached the gate, boarding had already closed.",
+    "Boarding had already finished when I got to the gate.",
+    "Boarding had already finished when I reached the gate.",
+    "Boarding had already ended when I got to the gate.",
+    "Boarding had already ended when I reached the gate.",
+    "Boarding had already closed when I got to the gate.",
+    "Boarding had already closed when I reached the gate.",
+    "When I got to the gate, boarding was already over.",
+    "When I got to the gate, boarding was already closed.",
+    "When I reached the gate, boarding was already over.",
+    "When I reached the gate, boarding was already closed."
+   ],
+   "hint_choice": [
+    "had finished",
+    "finished"
+   ]
+  },
+  {
+   "id": "01-ex-062",
+   "rule_point": "01-3",
+   "rung": "translate",
+   "prompt": "Она поняла, что оставила телефон в такси.",
+   "answers": [
+    "She realised that she had left her phone in the taxi.",
+    "She realised that she'd left her phone in the taxi.",
+    "She realised she had left her phone in the taxi.",
+    "She realised she'd left her phone in the taxi.",
+    "She realized that she had left her phone in the taxi.",
+    "She realized that she'd left her phone in the taxi.",
+    "She realized she had left her phone in the taxi.",
+    "She realized she'd left her phone in the taxi."
+   ],
+   "hint_choice": [
+    "had left",
+    "left"
+   ]
+  },
+  {
+   "id": "01-ex-063",
+   "rule_point": "01-3",
+   "rung": "translate",
+   "prompt": "До той поездки мы никогда не были в горах.",
+   "answers": [
+    "Before that trip, we had never been to the mountains.",
+    "Before that trip, we had never been in the mountains.",
+    "Until that trip, we had never been to the mountains.",
+    "Until that trip, we had never been in the mountains.",
+    "We had never been to the mountains before that trip.",
+    "We had never been to the mountains until that trip.",
+    "We had never been in the mountains before that trip.",
+    "We had never been in the mountains until that trip."
+   ],
+   "hint_choice": [
+    "had never been",
+    "have never been"
+   ]
+  },
+  {
+   "id": "01-ex-064",
+   "rule_point": "01-3",
+   "rung": "translate",
+   "prompt": "Когда мы приехали на вокзал, поезд уже ушел.",
+   "answers": [
+    "When we got to the station, the train had already left.",
+    "When we arrived at the station, the train had already left.",
+    "When we reached the station, the train had already left.",
+    "The train had already left when we got to the station.",
+    "The train had already left when we arrived at the station.",
+    "The train had already left when we reached the station."
+   ],
+   "hint_choice": [
+    "had left",
+    "has left"
+   ]
+  },
+  {
+   "id": "01-ex-065",
+   "rule_point": "01-3",
+   "rung": "fix",
+   "prompt": "When I reached the platform, the train already left.",
+   "answers": [
+    "When I reached the platform, the train had already left."
+   ],
+   "hint_choice": [
+    "had left",
+    "left"
+   ]
+  },
+  {
+   "id": "01-ex-066",
+   "rule_point": "01-3",
+   "rung": "fix",
+   "prompt": "I was hungry because I didn't eat since the morning.",
+   "answers": [
+    "I was hungry because I hadn't eaten since the morning.",
+    "I was hungry because I had not eaten since the morning."
+   ],
+   "hint_choice": [
+    "hadn't eaten",
+    "didn't eat"
+   ]
+  },
+  {
+   "id": "01-ex-067",
+   "rule_point": "01-3",
+   "rung": "fix",
+   "prompt": "After she had took the photo, she sent it to her mum.",
+   "answers": [
+    "After she had taken the photo, she sent it to her mum."
+   ],
+   "hint_choice": [
+    "had taken",
+    "had took"
+   ]
+  },
+  {
+   "id": "01-ex-068",
+   "rule_point": "01-3",
+   "rung": "fix",
+   "prompt": "We had arrived at the hotel at 6 pm, then we had gone to dinner.",
+   "answers": [
+    "We arrived at the hotel at 6 pm, then we went to dinner.",
+    "We arrived at the hotel at 6 pm and then we went to dinner."
+   ],
+   "hint_choice": [
+    "arrived ... went",
+    "had arrived ... had gone"
+   ]
+  },
+  {
+   "id": "01-ex-069",
+   "rule_point": "01-3",
+   "rung": "free",
+   "prompt": "You were late for something important once. Say why: what had happened before?",
+   "model": "I was late for the interview because I had taken the wrong train and my phone had died.",
+   "check_regex": "(\\bhad|'d)\\s+(not\\s+|never\\s+|already\\s+|just\\s+)?\\w+",
+   "hint_choice": [
+    "had taken",
+    "took"
+   ]
+  },
+  {
+   "id": "01-ex-070",
+   "rule_point": "01-3",
+   "rung": "free",
+   "prompt": "Describe a place that had changed a lot since your previous visit.",
+   "model": "When I came back to the village, I hardly recognised it. They had built a new road and the old shop had closed.",
+   "check_regex": "(\\bhad|'d)\\s+(not\\s+|never\\s+|already\\s+|just\\s+)?\\w+",
+   "hint_choice": [
+    "had built",
+    "built"
+   ]
+  },
+  {
+   "id": "01-ex-071",
+   "rule_point": "01-3",
+   "rung": "free",
+   "prompt": "Tell about a moment when you realised you had forgotten something important.",
+   "model": "At the airport I realised I had left my passport at home, so I had to go back.",
+   "check_regex": "(\\bhad|'d)\\s+(not\\s+|never\\s+|already\\s+|just\\s+)?\\w+",
+   "hint_choice": [
+    "had left",
+    "left"
+   ]
+  },
+  {
+   "id": "01-ex-072",
+   "rule_point": "01-3",
+   "rung": "free",
+   "prompt": "Write two sentences that start with \"By the time we arrived, ...\".",
+   "model": "By the time we arrived, the concert had started. By the time we arrived, all the cheap rooms had gone.",
+   "check_regex": "(\\bhad|'d)\\s+(not\\s+|never\\s+|already\\s+|just\\s+)?\\w+",
+   "hint_choice": [
+    "had started",
+    "started"
+   ]
+  },
+  {
+   "id": "01-ex-073",
+   "rule_point": "01-4",
+   "rung": "recognize",
+   "prompt": "Her eyes were red because she ___.",
+   "options": [
+    "had been crying",
+    "has been crying",
+    "is crying"
+   ],
+   "answers": [
+    "had been crying"
+   ],
+   "hint_choice": [
+    "had been crying",
+    "has been crying"
+   ]
+  },
+  {
+   "id": "01-ex-074",
+   "rule_point": "01-4",
+   "rung": "recognize",
+   "prompt": "We ___ for two hours when the bus finally came.",
+   "options": [
+    "had been waiting",
+    "have been waiting",
+    "are waiting"
+   ],
+   "answers": [
+    "had been waiting"
+   ],
+   "hint_choice": [
+    "had been waiting",
+    "have been waiting"
+   ]
+  },
+  {
+   "id": "01-ex-075",
+   "rule_point": "01-4",
+   "rung": "recognize",
+   "prompt": "The ground was wet. It ___ all night.",
+   "options": [
+    "had been raining",
+    "has been raining",
+    "is raining"
+   ],
+   "answers": [
+    "had been raining"
+   ],
+   "hint_choice": [
+    "had been raining",
+    "has been raining"
+   ]
+  },
+  {
+   "id": "01-ex-076",
+   "rule_point": "01-4",
+   "rung": "recognize",
+   "prompt": "They were exhausted. They ___ since dawn.",
+   "options": [
+    "had been climbing",
+    "have been climbing",
+    "climb"
+   ],
+   "answers": [
+    "had been climbing"
+   ],
+   "hint_choice": [
+    "had been climbing",
+    "have been climbing"
+   ]
+  },
+  {
+   "id": "01-ex-077",
+   "rule_point": "01-4",
+   "rung": "fill",
+   "prompt": "The driver was tired because he ___ (drive) for nine hours.",
+   "answers": [
+    "had been driving",
+    "had driven"
+   ],
+   "hint_choice": [
+    "had been driving",
+    "has been driving"
+   ]
+  },
+  {
+   "id": "01-ex-078",
+   "rule_point": "01-4",
+   "rung": "fill",
+   "prompt": "I ___ (study) Spanish for a year before I went to Madrid.",
+   "answers": [
+    "had been studying",
+    "had studied"
+   ],
+   "hint_choice": [
+    "had been studying",
+    "have been studying"
+   ]
+  },
+  {
+   "id": "01-ex-079",
+   "rule_point": "01-4",
+   "rung": "fill",
+   "prompt": "We ___ (look) for the entrance for twenty minutes when a local showed us the way.",
+   "answers": [
+    "had been looking",
+    "had looked"
+   ],
+   "hint_choice": [
+    "had been looking",
+    "have been looking"
+   ]
+  },
+  {
+   "id": "01-ex-080",
+   "rule_point": "01-4",
+   "rung": "fill",
+   "prompt": "Lena's hands were dirty because she ___ (fix) her bike.",
+   "answers": [
+    "had been fixing",
+    "had fixed"
+   ],
+   "hint_choice": [
+    "had been fixing",
+    "has been fixing"
+   ]
+  },
+  {
+   "id": "01-ex-081",
+   "rule_point": "01-4",
+   "rung": "transform",
+   "prompt": "They started walking at eight. Write what was true at noon. Start with \"By noon\".",
+   "answers": [
+    "By noon they had been walking for four hours.",
+    "By noon they'd been walking for four hours.",
+    "By noon they had walked for four hours.",
+    "By noon they'd walked for four hours."
+   ],
+   "hint_choice": [
+    "had been walking",
+    "have been walking"
+   ]
+  },
+  {
+   "id": "01-ex-082",
+   "rule_point": "01-4",
+   "rung": "transform",
+   "prompt": "Show the long process: It rained for hours before we arrived.",
+   "answers": [
+    "It had been raining for hours before we arrived."
+   ],
+   "hint_choice": [
+    "had been raining",
+    "has been raining"
+   ]
+  },
+  {
+   "id": "01-ex-083",
+   "rule_point": "01-4",
+   "rung": "transform",
+   "prompt": "Make a question with \"How long\": She had been travelling for a month.",
+   "answers": [
+    "How long had she been travelling?",
+    "How long had she been traveling?"
+   ],
+   "hint_choice": [
+    "had she been",
+    "has she been"
+   ]
+  },
+  {
+   "id": "01-ex-084",
+   "rule_point": "01-4",
+   "rung": "transform",
+   "prompt": "Make it negative: He had been sleeping well.",
+   "answers": [
+    "He hadn't been sleeping well.",
+    "He had not been sleeping well."
+   ],
+   "hint_choice": [
+    "hadn't been",
+    "haven't been"
+   ]
+  },
+  {
+   "id": "01-ex-085",
+   "rule_point": "01-4",
+   "rung": "translate",
+   "prompt": "Мы ехали уже шесть часов, когда увидели море.",
+   "answers": [
+    "We had been driving for six hours when we saw the sea.",
+    "We had been travelling for six hours when we saw the sea.",
+    "We had been traveling for six hours when we saw the sea.",
+    "We'd been driving for six hours when we saw the sea.",
+    "We'd been travelling for six hours when we saw the sea.",
+    "We'd been traveling for six hours when we saw the sea.",
+    "We had driven for six hours when we saw the sea.",
+    "We had travelled for six hours when we saw the sea.",
+    "We had traveled for six hours when we saw the sea.",
+    "We'd driven for six hours when we saw the sea.",
+    "We'd travelled for six hours when we saw the sea.",
+    "We'd traveled for six hours when we saw the sea."
+   ],
+   "hint_choice": [
+    "had been driving",
+    "were driving"
+   ]
+  },
+  {
+   "id": "01-ex-086",
+   "rule_point": "01-4",
+   "rung": "translate",
+   "prompt": "Он устал, потому что весь день гулял по городу.",
+   "answers": [
+    "He was tired because he had been walking around the city all day.",
+    "He was tired because he had been walking around the town all day.",
+    "He was tired because he had been walking round the city all day.",
+    "He was tired because he had been walking round the town all day.",
+    "He was tired because he had been walking in the city all day.",
+    "He was tired because he had been walking in the town all day.",
+    "He was tired because he had walked around the city all day.",
+    "He was tired because he had walked around the town all day.",
+    "He was tired because he had walked round the city all day.",
+    "He was tired because he had walked round the town all day.",
+    "He was tired because he had walked in the city all day.",
+    "He was tired because he had walked in the town all day.",
+    "He was tired because he'd been walking around the city all day.",
+    "He was tired because he'd been walking around the town all day.",
+    "He was tired because he'd been walking round the city all day.",
+    "He was tired because he'd been walking round the town all day.",
+    "He was tired because he'd been walking in the city all day.",
+    "He was tired because he'd been walking in the town all day.",
+    "He was tired because he'd walked around the city all day.",
+    "He was tired because he'd walked around the town all day.",
+    "He was tired because he'd walked round the city all day.",
+    "He was tired because he'd walked round the town all day.",
+    "He was tired because he'd walked in the city all day.",
+    "He was tired because he'd walked in the town all day."
+   ],
+   "hint_choice": [
+    "had been walking",
+    "was walking"
+   ]
+  },
+  {
+   "id": "01-ex-087",
+   "rule_point": "01-4",
+   "rung": "translate",
+   "prompt": "Сколько ты уже ждал к тому моменту, когда он ответил?",
+   "answers": [
+    "How long had you been waiting before he answered?",
+    "How long had you been waiting before he replied?",
+    "How long had you been waiting when he answered?",
+    "How long had you been waiting when he replied?",
+    "How long had you waited before he answered?",
+    "How long had you waited before he replied?",
+    "How long had you waited when he answered?",
+    "How long had you waited when he replied?",
+    "How long did you wait before he answered?",
+    "How long did you wait before he replied?"
+   ],
+   "hint_choice": [
+    "had you been waiting",
+    "were you waiting"
+   ]
+  },
+  {
+   "id": "01-ex-088",
+   "rule_point": "01-4",
+   "rung": "translate",
+   "prompt": "Пол был мокрый: дети играли с водой.",
+   "answers": [
+    "The floor was wet because the children had been playing with water.",
+    "The floor was wet because the kids had been playing with water.",
+    "The floor was wet the children had been playing with water.",
+    "The floor was wet the kids had been playing with water."
+   ],
+   "hint_choice": [
+    "had been playing",
+    "were playing"
+   ]
+  },
+  {
+   "id": "01-ex-089",
+   "rule_point": "01-4",
+   "rung": "fix",
+   "prompt": "We were waiting for an hour when the ferry finally arrived.",
+   "answers": [
+    "We had been waiting for an hour when the ferry finally arrived."
+   ],
+   "hint_choice": [
+    "had been waiting",
+    "were waiting"
+   ]
+  },
+  {
+   "id": "01-ex-090",
+   "rule_point": "01-4",
+   "rung": "fix",
+   "prompt": "She had been knowing him for years.",
+   "answers": [
+    "She had known him for years."
+   ],
+   "hint_choice": [
+    "had known",
+    "had been knowing"
+   ]
+  },
+  {
+   "id": "01-ex-091",
+   "rule_point": "01-4",
+   "rung": "fix",
+   "prompt": "I was tired because I have been walking all day.",
+   "answers": [
+    "I was tired because I had been walking all day."
+   ],
+   "hint_choice": [
+    "had been",
+    "have been"
+   ]
+  },
+  {
+   "id": "01-ex-092",
+   "rule_point": "01-4",
+   "rung": "fix",
+   "prompt": "They had been visit Rome for a week.",
+   "answers": [
+    "They had been visiting Rome for a week."
+   ],
+   "hint_choice": [
+    "had been visiting",
+    "had been visit"
+   ]
+  },
+  {
+   "id": "01-ex-093",
+   "rule_point": "01-4",
+   "rung": "free",
+   "prompt": "Why were you exhausted after a journey? Explain with \"had been ...ing\".",
+   "model": "I was exhausted because we had been driving all night and nobody had been sleeping.",
+   "check_regex": "(had|'d) been \\w+ing",
+   "hint_choice": [
+    "had been driving",
+    "were driving"
+   ]
+  },
+  {
+   "id": "01-ex-094",
+   "rule_point": "01-4",
+   "rung": "free",
+   "prompt": "Describe someone you met on a trip: what had they been doing before you met?",
+   "model": "I met a cyclist who had been riding across Europe for three months.",
+   "check_regex": "(had|'d) been \\w+ing",
+   "hint_choice": [
+    "had been riding",
+    "was riding"
+   ]
+  },
+  {
+   "id": "01-ex-095",
+   "rule_point": "01-4",
+   "rung": "free",
+   "prompt": "Finish the story: \"When the plane finally took off, we ...\"",
+   "model": "When the plane finally took off, we had been sitting on the runway for two hours.",
+   "check_regex": "(had|'d) been \\w+ing",
+   "hint_choice": [
+    "had been sitting",
+    "were sitting"
+   ]
+  },
+  {
+   "id": "01-ex-096",
+   "rule_point": "01-4",
+   "rung": "free",
+   "prompt": "Explain why a street looked different when you arrived.",
+   "model": "The street was covered in flags because people had been celebrating all day.",
+   "check_regex": "(had|'d) been \\w+ing",
+   "hint_choice": [
+    "had been celebrating",
+    "celebrated"
+   ]
+  },
+  {
+   "id": "01-ex-097",
+   "rule_point": "01-5",
+   "rung": "recognize",
+   "prompt": "The water was ___ cold that nobody went swimming.",
+   "options": [
+    "so",
+    "such",
+    "such a"
+   ],
+   "answers": [
+    "so"
+   ],
+   "hint_choice": [
+    "so",
+    "such"
+   ]
+  },
+  {
+   "id": "01-ex-098",
+   "rule_point": "01-5",
+   "rung": "recognize",
+   "prompt": "It was ___ long queue that we gave up.",
+   "options": [
+    "so",
+    "such",
+    "such a"
+   ],
+   "answers": [
+    "such a"
+   ],
+   "hint_choice": [
+    "such a",
+    "so"
+   ]
+  },
+  {
+   "id": "01-ex-099",
+   "rule_point": "01-5",
+   "rung": "recognize",
+   "prompt": "There were ___ many tourists that we couldn't find a table.",
+   "options": [
+    "so",
+    "such",
+    "such a"
+   ],
+   "answers": [
+    "so"
+   ],
+   "hint_choice": [
+    "so",
+    "such"
+   ]
+  },
+  {
+   "id": "01-ex-100",
+   "rule_point": "01-5",
+   "rung": "recognize",
+   "prompt": "We had ___ terrible weather that the ferry was cancelled.",
+   "options": [
+    "so",
+    "such",
+    "such a"
+   ],
+   "answers": [
+    "such"
+   ],
+   "hint_choice": [
+    "such",
+    "such a"
+   ]
+  },
+  {
+   "id": "01-ex-101",
+   "rule_point": "01-5",
+   "rung": "fill",
+   "prompt": "The hostel was ___ noisy that nobody slept.",
+   "answers": [
+    "so"
+   ],
+   "hint_choice": [
+    "so",
+    "such"
+   ]
+  },
+  {
+   "id": "01-ex-102",
+   "rule_point": "01-5",
+   "rung": "fill",
+   "prompt": "It was ___ cheap ticket that we bought two.",
+   "answers": [
+    "such a"
+   ],
+   "hint_choice": [
+    "such a",
+    "so"
+   ]
+  },
+  {
+   "id": "01-ex-103",
+   "rule_point": "01-5",
+   "rung": "fill",
+   "prompt": "They gave us ___ useful advice that we never got lost.",
+   "answers": [
+    "such"
+   ],
+   "hint_choice": [
+    "such",
+    "such a"
+   ]
+  },
+  {
+   "id": "01-ex-104",
+   "rule_point": "01-5",
+   "rung": "fill",
+   "prompt": "The guide spoke ___ fast that I understood only half.",
+   "answers": [
+    "so"
+   ],
+   "hint_choice": [
+    "so",
+    "such"
+   ]
+  },
+  {
+   "id": "01-ex-105",
+   "rule_point": "01-5",
+   "rung": "transform",
+   "prompt": "Rewrite with \"such\": The hotel was so old that the lift didn't work.",
+   "answers": [
+    "It was such an old hotel that the lift didn't work.",
+    "It was such an old hotel that the lift did not work."
+   ],
+   "hint_choice": [
+    "such an old hotel",
+    "so old hotel"
+   ]
+  },
+  {
+   "id": "01-ex-106",
+   "rule_point": "01-5",
+   "rung": "transform",
+   "prompt": "Rewrite with \"so\": It was such a hot day that we stayed inside.",
+   "answers": [
+    "The day was so hot that we stayed inside.",
+    "It was so hot that we stayed inside."
+   ],
+   "hint_choice": [
+    "so hot",
+    "such hot"
+   ]
+  },
+  {
+   "id": "01-ex-107",
+   "rule_point": "01-5",
+   "rung": "transform",
+   "prompt": "Join with \"so ... that\": The road was narrow. Two cars couldn't pass.",
+   "answers": [
+    "The road was so narrow that two cars couldn't pass.",
+    "The road was so narrow that two cars could not pass."
+   ],
+   "hint_choice": [
+    "so narrow",
+    "such narrow"
+   ]
+  },
+  {
+   "id": "01-ex-108",
+   "rule_point": "01-5",
+   "rung": "transform",
+   "prompt": "Join with \"such ... that\": The people were friendly. We wanted to stay longer.",
+   "answers": [
+    "They were such friendly people that we wanted to stay longer.",
+    "These were such friendly people that we wanted to stay longer."
+   ],
+   "hint_choice": [
+    "such friendly people",
+    "such a friendly people"
+   ]
+  },
+  {
+   "id": "01-ex-109",
+   "rule_point": "01-5",
+   "rung": "translate",
+   "prompt": "Было так холодно, что мы вернулись в отель.",
+   "answers": [
+    "It was so cold that we went back to the hotel.",
+    "It was so cold that we returned to the hotel.",
+    "It was so cold that we came back to the hotel.",
+    "It was so cold that we got back to the hotel."
+   ],
+   "hint_choice": [
+    "so cold",
+    "such cold"
+   ]
+  },
+  {
+   "id": "01-ex-110",
+   "rule_point": "01-5",
+   "rung": "translate",
+   "prompt": "Это был такой интересный город, что мы остались еще на день.",
+   "answers": [
+    "It was such an interesting city that we stayed for another day.",
+    "It was such an interesting city that we stayed for one more day.",
+    "It was such an interesting city that we stayed for an extra day.",
+    "It was such an interesting city that we stayed another day.",
+    "It was such an interesting city that we stayed one more day.",
+    "It was such an interesting city that we stayed an extra day.",
+    "It was such an interesting town that we stayed for another day.",
+    "It was such an interesting town that we stayed for one more day.",
+    "It was such an interesting town that we stayed for an extra day.",
+    "It was such an interesting town that we stayed another day.",
+    "It was such an interesting town that we stayed one more day.",
+    "It was such an interesting town that we stayed an extra day."
+   ],
+   "hint_choice": [
+    "such an interesting city",
+    "so interesting city"
+   ]
+  },
+  {
+   "id": "01-ex-111",
+   "rule_point": "01-5",
+   "rung": "translate",
+   "prompt": "У нас было так мало времени, что мы не успели в музей.",
+   "answers": [
+    "We had so little time that we didn't see the museum.",
+    "We had so little time that we didn't visit the museum.",
+    "We had so little time that we didn't go to the museum.",
+    "We had so little time that we didn't make it to the museum.",
+    "We had so little time that we didn't get to the museum.",
+    "We had so little time that we did not see the museum.",
+    "We had so little time that we did not visit the museum.",
+    "We had so little time that we did not go to the museum.",
+    "We had so little time that we did not make it to the museum.",
+    "We had so little time that we did not get to the museum.",
+    "We had so little time that we couldn't see the museum.",
+    "We had so little time that we couldn't visit the museum.",
+    "We had so little time that we couldn't go to the museum.",
+    "We had so little time that we couldn't make it to the museum.",
+    "We had so little time that we couldn't get to the museum.",
+    "We had so little time that we could not see the museum.",
+    "We had so little time that we could not visit the museum.",
+    "We had so little time that we could not go to the museum.",
+    "We had so little time that we could not make it to the museum.",
+    "We had so little time that we could not get to the museum.",
+    "We had so little time that we didn't have time for the museum.",
+    "We had so little time that we did not have time for the museum.",
+    "We had so little time that we didn't manage to see the museum.",
+    "We had so little time that we didn't manage to visit the museum.",
+    "We had so little time that we didn't manage to get to the museum.",
+    "We had so little time that we did not manage to see the museum.",
+    "We had so little time that we did not manage to visit the museum.",
+    "We had so little time that we did not manage to get to the museum."
+   ],
+   "hint_choice": [
+    "so little",
+    "such little"
+   ]
+  },
+  {
+   "id": "01-ex-112",
+   "rule_point": "01-5",
+   "rung": "translate",
+   "prompt": "Там было столько туристов, что мы ушли.",
+   "answers": [
+    "There were so many tourists there that we left.",
+    "There were so many tourists that we left."
+   ],
+   "hint_choice": [
+    "so many",
+    "such many"
+   ]
+  },
+  {
+   "id": "01-ex-113",
+   "rule_point": "01-5",
+   "rung": "fix",
+   "prompt": "It was so nice weather that we walked everywhere.",
+   "answers": [
+    "It was such nice weather that we walked everywhere.",
+    "The weather was so nice that we walked everywhere."
+   ],
+   "hint_choice": [
+    "such nice weather",
+    "so nice weather"
+   ]
+  },
+  {
+   "id": "01-ex-114",
+   "rule_point": "01-5",
+   "rung": "fix",
+   "prompt": "She was such tired that she fell asleep on the bus.",
+   "answers": [
+    "She was so tired that she fell asleep on the bus."
+   ],
+   "hint_choice": [
+    "so tired",
+    "such tired"
+   ]
+  },
+  {
+   "id": "01-ex-115",
+   "rule_point": "01-5",
+   "rung": "fix",
+   "prompt": "It was such long trip that I read two books.",
+   "answers": [
+    "It was such a long trip that I read two books."
+   ],
+   "hint_choice": [
+    "such a long trip",
+    "such long trip"
+   ]
+  },
+  {
+   "id": "01-ex-116",
+   "rule_point": "01-5",
+   "rung": "fix",
+   "prompt": "We had so many fun that we forgot about the time.",
+   "answers": [
+    "We had so much fun that we forgot about the time.",
+    "We had such fun that we forgot about the time."
+   ],
+   "hint_choice": [
+    "so much fun",
+    "so many fun"
+   ]
+  },
+  {
+   "id": "01-ex-117",
+   "rule_point": "01-5",
+   "rung": "free",
+   "prompt": "Describe the best meal you had while travelling. Use \"so ... that\" or \"such ... that\".",
+   "model": "The fish was so fresh that we ordered a second plate.",
+   "check_regex": "\\b(so|such)\\b.*\\bthat\\b",
+   "hint_choice": [
+    "so fresh that",
+    "such fresh that"
+   ]
+  },
+  {
+   "id": "01-ex-118",
+   "rule_point": "01-5",
+   "rung": "free",
+   "prompt": "Describe the worst weather you had on a trip and what it led to.",
+   "model": "There was such a strong wind that all the boats stayed in the harbour.",
+   "check_regex": "\\b(so|such)\\b.*\\bthat\\b",
+   "hint_choice": [
+    "such a strong wind",
+    "so strong wind"
+   ]
+  },
+  {
+   "id": "01-ex-119",
+   "rule_point": "01-5",
+   "rung": "free",
+   "prompt": "Write about a city that surprised you: one sentence with \"so\", one with \"such\".",
+   "model": "The streets were so clean that I was shocked. It was such a calm city that we forgot about time.",
+   "check_regex": "\\bso\\b.*\\bthat\\b.*\\bsuch\\b|\\bsuch\\b.*\\bthat\\b.*\\bso\\b",
+   "hint_choice": [
+    "so clean",
+    "such clean"
+   ]
+  },
+  {
+   "id": "01-ex-120",
+   "rule_point": "01-5",
+   "rung": "free",
+   "prompt": "A journey took much longer than planned. What was the result?",
+   "model": "The traffic was so bad that we missed the first day of the festival.",
+   "check_regex": "\\b(so|such)\\b.*\\bthat\\b",
+   "hint_choice": [
+    "so bad",
+    "such bad"
+   ]
+  }
+ ],
+ "speed_drill": {
+  "instruction_ru": "Перестрой фразу по подсказке после стрелки. Вслух, без паузы на раздумье: 10 фраз за 2 минуты.",
+  "time_limit_sec": 120,
+  "items": [
+   {
+    "id": "01-sd-01",
+    "rule_point": "01-1",
+    "cue": "I see the castle. → yesterday",
+    "answers": [
+     "I saw the castle yesterday.",
+     "Yesterday I saw the castle."
+    ]
+   },
+   {
+    "id": "01-sd-02",
+    "rule_point": "01-1",
+    "cue": "She doesn't bring a map. → last week",
+    "answers": [
+     "She didn't bring a map last week.",
+     "She did not bring a map last week.",
+     "Last week she didn't bring a map.",
+     "Last week she did not bring a map."
+    ]
+   },
+   {
+    "id": "01-sd-03",
+    "rule_point": "01-1",
+    "cue": "Do they fly to Oslo? → last year",
+    "answers": [
+     "Did they fly to Oslo last year?"
+    ]
+   },
+   {
+    "id": "01-sd-04",
+    "rule_point": "01-2",
+    "cue": "I read. The phone rang. → when",
+    "answers": [
+     "I was reading when the phone rang.",
+     "When the phone rang, I was reading."
+    ]
+   },
+   {
+    "id": "01-sd-05",
+    "rule_point": "01-2",
+    "cue": "We walk. It starts to rain. → while",
+    "answers": [
+     "It started to rain while we were walking.",
+     "While we were walking, it started to rain.",
+     "It began to rain while we were walking.",
+     "While we were walking, it began to rain."
+    ]
+   },
+   {
+    "id": "01-sd-06",
+    "rule_point": "01-3",
+    "cue": "The bus left. Then we arrived. → when we arrived",
+    "answers": [
+     "When we arrived, the bus had already left.",
+     "When we arrived, the bus had left.",
+     "The bus had already left when we arrived.",
+     "The bus had left when we arrived."
+    ]
+   },
+   {
+    "id": "01-sd-07",
+    "rule_point": "01-3",
+    "cue": "She lost her ticket earlier. She was upset. → because",
+    "answers": [
+     "She was upset because she had lost her ticket.",
+     "She was upset because she'd lost her ticket.",
+     "She was upset because she lost her ticket."
+    ]
+   },
+   {
+    "id": "01-sd-08",
+    "rule_point": "01-4",
+    "cue": "He walked for hours. He was tired. → because",
+    "answers": [
+     "He was tired because he had been walking for hours.",
+     "He was tired because he had walked for hours.",
+     "He was tired because he'd been walking for hours.",
+     "He was tired because he'd walked for hours."
+    ]
+   },
+   {
+    "id": "01-sd-09",
+    "rule_point": "01-5",
+    "cue": "The room was small. We couldn't open our bags. → so ... that",
+    "answers": [
+     "The room was so small that we couldn't open our bags.",
+     "The room was so small that we could not open our bags."
+    ]
+   },
+   {
+    "id": "01-sd-10",
+    "rule_point": "01-5",
+    "cue": "It was a long queue. We gave up. → such ... that",
+    "answers": [
+     "It was such a long queue that we gave up."
+    ]
+   }
+  ]
+ },
+ "reading": {
+  "title": "The delay that made the trip",
+  "text": "Two years ago, Mira Novak decided to travel from Prague to Venice by train. She had been planning the trip for months, and she had booked every ticket in advance. Everything seemed perfect.\n\nOn the first evening, she was sitting in the restaurant car and chatting with an old couple from Ireland when the train suddenly stopped. Nobody knew why. Outside it was snowing so heavily that she couldn't see the trees next to the track. After forty minutes, the conductor came in and explained that a tree had fallen onto the line. They had to wait until a team cleared it.\n\nBy the time the train started again, Mira had missed her connection in Vienna. She was tired and a little angry, because she had been looking forward to a morning in Venice. The old couple, however, stayed calm. They had travelled across Europe many times, and they had seen much worse.\n\n\"Come with us,\" they said. \"There's a small hotel near the station in Vienna. We always stay there when something goes wrong.\"\n\nIt turned out to be such a lovely place that Mira stayed for two nights. She walked around the city, sat for hours in an old café and even went to a concert. When she finally arrived in Venice, she was three days late, but she didn't mind at all.\n\nLooking back, she says the delay was the best part of the journey. \"I had planned everything,\" she laughs, \"except the part I remember most.\"",
+  "questions": [
+   {
+    "q": "How long had Mira been planning the trip?",
+    "answer": "For months."
+   },
+   {
+    "q": "What was Mira doing when the train stopped?",
+    "answer": "She was sitting in the restaurant car and chatting with an old couple from Ireland."
+   },
+   {
+    "q": "Why did the train stop?",
+    "answer": "A tree had fallen onto the line."
+   },
+   {
+    "q": "Why was Mira a little angry?",
+    "answer": "She had missed her connection in Vienna and had been looking forward to a morning in Venice."
+   },
+   {
+    "q": "Why did the old couple stay calm?",
+    "answer": "They had travelled across Europe many times and had seen much worse."
+   },
+   {
+    "q": "How does Mira feel about the delay now?",
+    "answer": "She thinks it was the best part of the journey."
+   }
+  ]
+ },
+ "listening": {
+  "url": "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english/ep-190912",
+  "title": "Is tourism harmful? (Episode 190912, 12 Sep 2019)",
+  "source": "BBC Learning English, 6 Minute English",
+  "verified": true,
+  "verified_on": "2026-11-10",
+  "level": "B1-B2",
+  "questions": [
+   {
+    "q": "Which two European cities do the presenters talk about?",
+    "answer": "Rome and Bruges."
+   },
+   {
+    "q": "Why are more people travelling now, according to Rob?",
+    "answer": "Many people have more free time, and travel has become relatively cheaper."
+   },
+   {
+    "q": "What behaviour do people in Rome dislike, according to the journalist?",
+    "answer": "Tourists walking around bare-chested and wading in the fountains."
+   },
+   {
+    "q": "What else can you get a fine for in Rome?",
+    "answer": "Dropping litter and attaching love padlocks to historic monuments."
+   },
+   {
+    "q": "Why does Bruges want to limit cruise ships?",
+    "answer": "Cruise visitors don't stay overnight, so they don't spend much money in the city."
+   },
+   {
+    "q": "What was the most visited city in 2018, and where was London?",
+    "answer": "Bangkok; London was second."
+   }
+  ],
+  "key_points": [
+   "Cheaper travel and more free time mean more tourists, and popular places get overcrowded.",
+   "Rome introduced rules against misbehaving: no wading in fountains, no walking around bare-chested.",
+   "Rome also fines people for litter and for love padlocks on monuments.",
+   "Bruges is fighting the 'Disneyfication' of the city and will cap the number of cruise ships.",
+   "The city wants visitors who stay overnight and spend money.",
+   "Bangkok was the most visited city in 2018, London came second."
+  ],
+  "shadow": {
+   "start": 0,
+   "end": 40,
+   "approx": true,
+   "text": "Hello. This is 6 Minute English and I'm Rob. This is the programme where in just six minutes we discuss an interesting topic and teach some related English vocabulary."
+  }
+ },
+ "speaking": [
+  {
+   "kind": "unprepared",
+   "prompt": "No time to prepare, start straight away: what were you doing this time last year, and what happened next?",
+   "target_words": [
+    "eventually",
+    "turn out"
+   ],
+   "target_rules": [
+    "01-1",
+    "01-2"
+   ],
+   "min_sec": 60
+  },
+  {
+   "kind": "story",
+   "prompt": "Tell the story of a journey that went wrong: where you were going, what you were doing when the problem started, what had happened before, and how it ended. Use at least 5 words and 3 blocks from this unit.",
+   "target_words": [
+    "journey",
+    "delay",
+    "stranded",
+    "set off",
+    "run out of",
+    "eventually",
+    "detour"
+   ],
+   "target_rules": [
+    "01-1",
+    "01-2",
+    "01-3",
+    "01-4",
+    "01-5"
+   ],
+   "min_sec": 120
+  },
+  {
+   "kind": "interview",
+   "prompt": "Interview question: Tell me about a time when a project or an important trip didn't go as planned. What had happened before things went wrong, and what did you do?",
+   "target_words": [
+    "kick-off",
+    "postpone",
+    "reschedule",
+    "turn out"
+   ],
+   "target_rules": [
+    "01-1",
+    "01-3",
+    "01-4"
+   ],
+   "min_sec": 90
+  }
+ ],
+ "unprepared": [
+  "What were you doing when you last heard some really good news, and what did you do next?",
+  "Tell me about a time you got lost. Where were you going, and how did you find your way?",
+  "What happened on your first day at a new job or school? Had anyone told you what to expect?",
+  "Tell me about a day that was so busy that you forgot something important."
+ ],
+ "writing": [
+  {
+   "genre": "story",
+   "work": false,
+   "prompt": "Write a post for a travel blog called 'The day everything went wrong'. Set the scene, describe the problem and say how the day ended.",
+   "words": [
+    120,
+    180
+   ],
+   "targets": {
+    "rules": [
+     "01-1",
+     "01-2",
+     "01-3",
+     "01-5"
+    ],
+    "words": [
+     "journey",
+     "delay",
+     "crowded",
+     "eventually"
+    ]
+   }
+  },
+  {
+   "genre": "work_email",
+   "work": true,
+   "prompt": "Write an email to a client. The kick-off workshop in their city has to be postponed: your team's flight was cancelled and they were stranded at the airport overnight. Explain what happened, apologise and suggest two new dates.",
+   "words": [
+    120,
+    180
+   ],
+   "targets": {
+    "rules": [
+     "01-1",
+     "01-3",
+     "01-4"
+    ],
+    "words": [
+     "kick-off",
+     "postpone",
+     "reschedule",
+     "stranded",
+     "delay"
+    ]
+   }
+  }
+ ],
+ "test": {
+  "pass_ratio": 0.8,
+  "speaking": {
+   "duration_sec": 120,
+   "warmup": "Where did you go the last time you travelled somewhere?",
+   "tasks": [
+    "Tell me about the longest journey you have ever made. What happened on the way?",
+    "Describe a moment on a trip when something unexpected happened. What were people around you doing?"
+   ],
+   "probe": "What had already gone wrong before you set off, and how did it change the rest of the trip?",
+   "unexpected": "A friend from abroad has one day in your city. Where would you take them, and why?"
+  },
+  "items": [
+   {
+    "id": "01-t-01",
+    "rule_point": "01-1",
+    "rung": "recognize",
+    "prompt": "We ___ the museum on our last day.",
+    "options": [
+     "saw",
+     "seen",
+     "seed"
+    ],
+    "answers": [
+     "saw"
+    ],
+    "hint_choice": [
+     "saw",
+     "seen"
+    ]
+   },
+   {
+    "id": "01-t-02",
+    "rule_point": "01-1",
+    "rung": "fill",
+    "prompt": "The ferry ___ (leave) without us, so we waited for the next one.",
+    "answers": [
+     "left"
+    ],
+    "hint_choice": [
+     "left",
+     "leaved"
+    ]
+   },
+   {
+    "id": "01-t-03",
+    "rule_point": "01-1",
+    "rung": "fill",
+    "prompt": "Who ___ (drive) the car on the way back?",
+    "answers": [
+     "drove"
+    ],
+    "hint_choice": [
+     "drove",
+     "drived"
+    ]
+   },
+   {
+    "id": "01-t-04",
+    "rule_point": "01-1",
+    "rung": "fix",
+    "prompt": "Last year we fly to Rome and stay there for a week.",
+    "answers": [
+     "Last year we flew to Rome and stayed there for a week."
+    ],
+    "hint_choice": [
+     "flew ... stayed",
+     "fly ... stay"
+    ]
+   },
+   {
+    "id": "01-t-05",
+    "rule_point": "01-1",
+    "rung": "translate",
+    "prompt": "Мы не нашли наш отель и спросили дорогу.",
+    "answers": [
+     "We didn't find our hotel and asked for directions.",
+     "We didn't find our hotel and asked the way.",
+     "We did not find our hotel and asked for directions.",
+     "We did not find our hotel and asked the way.",
+     "We couldn't find our hotel and asked for directions.",
+     "We couldn't find our hotel and asked the way.",
+     "We could not find our hotel and asked for directions.",
+     "We could not find our hotel and asked the way."
+    ],
+    "hint_choice": [
+     "didn't find",
+     "didn't found"
+    ]
+   },
+   {
+    "id": "01-t-06",
+    "rule_point": "01-2",
+    "rung": "recognize",
+    "prompt": "I hurt my foot while I ___ down the hill.",
+    "options": [
+     "am running",
+     "was running",
+     "run"
+    ],
+    "answers": [
+     "was running"
+    ],
+    "hint_choice": [
+     "was running",
+     "am running"
+    ]
+   },
+   {
+    "id": "01-t-07",
+    "rule_point": "01-2",
+    "rung": "fill",
+    "prompt": "When I looked out of the window, the sun ___ (shine).",
+    "answers": [
+     "was shining"
+    ],
+    "hint_choice": [
+     "was shining",
+     "shone"
+    ]
+   },
+   {
+    "id": "01-t-08",
+    "rule_point": "01-2",
+    "rung": "fill",
+    "prompt": "They ___ (not / wear) coats, so they got cold.",
+    "answers": [
+     "weren't wearing",
+     "were not wearing"
+    ],
+    "hint_choice": [
+     "weren't wearing",
+     "didn't wearing"
+    ]
+   },
+   {
+    "id": "01-t-09",
+    "rule_point": "01-2",
+    "rung": "fix",
+    "prompt": "When the guide called us, we still shopped in the market.",
+    "answers": [
+     "When the guide called us, we were still shopping in the market."
+    ],
+    "hint_choice": [
+     "were still shopping",
+     "still shopped"
+    ]
+   },
+   {
+    "id": "01-t-10",
+    "rule_point": "01-2",
+    "rung": "translate",
+    "prompt": "Пока я спал, поезд проехал три станции.",
+    "answers": [
+     "While I was sleeping, the train passed three stations.",
+     "While I was sleeping, the train passed through three stations.",
+     "While I was sleeping, the train went through three stations.",
+     "While I slept, the train passed three stations.",
+     "While I slept, the train passed through three stations.",
+     "While I slept, the train went through three stations.",
+     "The train passed three stations while I was sleeping.",
+     "The train passed three stations while I slept.",
+     "The train passed through three stations while I was sleeping.",
+     "The train passed through three stations while I slept.",
+     "The train went through three stations while I was sleeping.",
+     "The train went through three stations while I slept."
+    ],
+    "hint_choice": [
+     "was sleeping",
+     "am sleeping"
+    ]
+   },
+   {
+    "id": "01-t-11",
+    "rule_point": "01-3",
+    "rung": "recognize",
+    "prompt": "When I opened my bag, I saw that someone ___ my camera.",
+    "options": [
+     "had taken",
+     "has taken",
+     "takes"
+    ],
+    "answers": [
+     "had taken"
+    ],
+    "hint_choice": [
+     "had taken",
+     "has taken"
+    ]
+   },
+   {
+    "id": "01-t-12",
+    "rule_point": "01-3",
+    "rung": "fill",
+    "prompt": "By the time we got to the office, the meeting ___ (start) without us.",
+    "answers": [
+     "had started",
+     "had already started"
+    ],
+    "hint_choice": [
+     "had started",
+     "has started"
+    ]
+   },
+   {
+    "id": "01-t-13",
+    "rule_point": "01-3",
+    "rung": "fill",
+    "prompt": "She ___ (never / see) the sea before that summer.",
+    "answers": [
+     "had never seen",
+     "never saw"
+    ],
+    "hint_choice": [
+     "had never seen",
+     "has never seen"
+    ]
+   },
+   {
+    "id": "01-t-14",
+    "rule_point": "01-3",
+    "rung": "fix",
+    "prompt": "By the time we found a taxi, the rain has stopped.",
+    "answers": [
+     "By the time we found a taxi, the rain had stopped."
+    ],
+    "hint_choice": [
+     "had stopped",
+     "has stopped"
+    ]
+   },
+   {
+    "id": "01-t-15",
+    "rule_point": "01-3",
+    "rung": "translate",
+    "prompt": "Когда мы вернулись, кто-то уже съел наш обед.",
+    "answers": [
+     "When we came back, someone had already eaten our lunch.",
+     "When we got back, someone had already eaten our lunch.",
+     "When we returned, someone had already eaten our lunch.",
+     "Someone had already eaten our lunch when we came back.",
+     "Someone had already eaten our lunch when we got back.",
+     "Someone had already eaten our lunch when we returned."
+    ],
+    "hint_choice": [
+     "had eaten",
+     "ate"
+    ]
+   },
+   {
+    "id": "01-t-16",
+    "rule_point": "01-4",
+    "rung": "recognize",
+    "prompt": "The children were muddy because they ___ in the garden.",
+    "options": [
+     "had been playing",
+     "have been playing",
+     "are playing"
+    ],
+    "answers": [
+     "had been playing"
+    ],
+    "hint_choice": [
+     "had been playing",
+     "have been playing"
+    ]
+   },
+   {
+    "id": "01-t-17",
+    "rule_point": "01-4",
+    "rung": "fill",
+    "prompt": "How long ___ (you / live) in Berlin before you moved to Vienna?",
+    "answers": [
+     "had you been living",
+     "had you lived",
+     "did you live"
+    ],
+    "hint_choice": [
+     "had you been living",
+     "have you been living"
+    ]
+   },
+   {
+    "id": "01-t-18",
+    "rule_point": "01-4",
+    "rung": "fill",
+    "prompt": "The pilot ___ (fly) for ten hours when he finally landed.",
+    "answers": [
+     "had been flying",
+     "had flown"
+    ],
+    "hint_choice": [
+     "had been flying",
+     "has been flying"
+    ]
+   },
+   {
+    "id": "01-t-19",
+    "rule_point": "01-4",
+    "rung": "fix",
+    "prompt": "I was waiting for her for an hour when she finally called.",
+    "answers": [
+     "I had been waiting for her for an hour when she finally called."
+    ],
+    "hint_choice": [
+     "had been waiting",
+     "was waiting"
+    ]
+   },
+   {
+    "id": "01-t-20",
+    "rule_point": "01-4",
+    "rung": "translate",
+    "prompt": "Мы шли весь день, поэтому сразу уснули.",
+    "answers": [
+     "We had been walking all day, so we fell asleep immediately.",
+     "We had been walking all day, so we fell asleep straight away.",
+     "We had been walking all day, so we fell asleep at once.",
+     "We had been walking all day, so we fell asleep right away.",
+     "We had walked all day, so we fell asleep immediately.",
+     "We had walked all day, so we fell asleep straight away.",
+     "We had walked all day, so we fell asleep at once.",
+     "We had walked all day, so we fell asleep right away."
+    ],
+    "hint_choice": [
+     "had been walking",
+     "were walking"
+    ]
+   },
+   {
+    "id": "01-t-21",
+    "rule_point": "01-5",
+    "rung": "recognize",
+    "prompt": "The museum was ___ interesting that we came back the next day.",
+    "options": [
+     "so",
+     "such",
+     "such an"
+    ],
+    "answers": [
+     "so"
+    ],
+    "hint_choice": [
+     "so",
+     "such"
+    ]
+   },
+   {
+    "id": "01-t-22",
+    "rule_point": "01-5",
+    "rung": "recognize",
+    "prompt": "It was ___ amazing trip that I still talk about it.",
+    "options": [
+     "so",
+     "such",
+     "such an"
+    ],
+    "answers": [
+     "such an"
+    ],
+    "hint_choice": [
+     "such an",
+     "so"
+    ]
+   },
+   {
+    "id": "01-t-23",
+    "rule_point": "01-5",
+    "rung": "fill",
+    "prompt": "There was ___ little light that we couldn't read the map.",
+    "answers": [
+     "so"
+    ],
+    "hint_choice": [
+     "so",
+     "such"
+    ]
+   },
+   {
+    "id": "01-t-24",
+    "rule_point": "01-5",
+    "rung": "fix",
+    "prompt": "They were so nice people that we kept in touch.",
+    "answers": [
+     "They were such nice people that we kept in touch."
+    ],
+    "hint_choice": [
+     "such nice people",
+     "so nice people"
+    ]
+   },
+   {
+    "id": "01-t-25",
+    "rule_point": "01-5",
+    "rung": "translate",
+    "prompt": "Было так жарко, что мы не выходили из номера.",
+    "answers": [
+     "It was so hot that we didn't leave the room.",
+     "It was so hot that we didn't leave our room.",
+     "It was so hot that we didn't go out of the room.",
+     "It was so hot that we didn't go out of our room.",
+     "It was so hot that we did not leave the room.",
+     "It was so hot that we did not leave our room.",
+     "It was so hot that we did not go out of the room.",
+     "It was so hot that we did not go out of our room.",
+     "It was so hot that we stayed in the room.",
+     "It was so hot that we stayed in our room."
+    ],
+    "hint_choice": [
+     "so hot",
+     "such hot"
+    ]
+   },
+   {
+    "id": "01-t-26",
+    "rule_point": "words",
+    "rung": "recognize",
+    "prompt": "We had to make a long ___ because the bridge was closed.",
+    "options": [
+     "detour",
+     "destination",
+     "departure"
+    ],
+    "answers": [
+     "detour"
+    ],
+    "hint_choice": [
+     "detour",
+     "destination"
+    ]
+   },
+   {
+    "id": "01-t-27",
+    "rule_point": "words",
+    "rung": "recognize",
+    "prompt": "All flights were cancelled and we were ___ at the airport.",
+    "options": [
+     "stranded",
+     "crowded",
+     "breathtaking"
+    ],
+    "answers": [
+     "stranded"
+    ],
+    "hint_choice": [
+     "stranded",
+     "crowded"
+    ]
+   },
+   {
+    "id": "01-t-28",
+    "rule_point": "words",
+    "rung": "recognize",
+    "prompt": "The client asked us to ___ the call to next week.",
+    "options": [
+     "postpone",
+     "board",
+     "commute"
+    ],
+    "answers": [
+     "postpone"
+    ],
+    "hint_choice": [
+     "postpone",
+     "board"
+    ]
+   },
+   {
+    "id": "01-t-29",
+    "rule_point": "words",
+    "rung": "fill",
+    "prompt": "Halfway through the hike we ran ___ of water.",
+    "answers": [
+     "out"
+    ],
+    "hint_choice": [
+     "out",
+     "off"
+    ]
+   },
+   {
+    "id": "01-t-30",
+    "rule_point": "words",
+    "rung": "fill",
+    "prompt": "We set ___ at five to beat the traffic.",
+    "answers": [
+     "off"
+    ],
+    "hint_choice": [
+     "off",
+     "out"
+    ]
+   },
+   {
+    "id": "01-t-31",
+    "rule_point": "words",
+    "rung": "recognize",
+    "prompt": "Our ___ was too ambitious: six cities in five days.",
+    "options": [
+     "itinerary",
+     "landmark",
+     "arrival"
+    ],
+    "answers": [
+     "itinerary"
+    ],
+    "hint_choice": [
+     "itinerary",
+     "landmark"
+    ]
+   }
+  ]
+ },
+ "placement": [
+  {
+   "rule_point": "01-1",
+   "b1_or_b2": "B1",
+   "items": [
+    {
+     "id": "01-pl-01",
+     "rule_point": "01-1",
+     "rung": "fill",
+     "prompt": "We ___ (take) a taxi from the station.",
+     "answers": [
+      "took"
+     ],
+     "hint_choice": [
+      "took",
+      "taked"
+     ]
+    },
+    {
+     "id": "01-pl-02",
+     "rule_point": "01-1",
+     "rung": "fix",
+     "prompt": "Yesterday I meet my friend and we go to a café.",
+     "answers": [
+      "Yesterday I met my friend and we went to a café."
+     ],
+     "hint_choice": [
+      "met ... went",
+      "meet ... go"
+     ]
+    },
+    {
+     "id": "01-pl-03",
+     "rule_point": "01-1",
+     "rung": "recognize",
+     "prompt": "___ you sleep well on the train?",
+     "options": [
+      "Did",
+      "Do",
+      "Were"
+     ],
+     "answers": [
+      "Did"
+     ],
+     "hint_choice": [
+      "Did",
+      "Were"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "01-2",
+   "b1_or_b2": "B1",
+   "items": [
+    {
+     "id": "01-pl-04",
+     "rule_point": "01-2",
+     "rung": "recognize",
+     "prompt": "It ___ when we left the house.",
+     "options": [
+      "snowed",
+      "was snowing",
+      "snows"
+     ],
+     "answers": [
+      "was snowing"
+     ],
+     "hint_choice": [
+      "was snowing",
+      "snowed"
+     ]
+    },
+    {
+     "id": "01-pl-05",
+     "rule_point": "01-2",
+     "rung": "fill",
+     "prompt": "I ___ (read) when the doorbell rang.",
+     "answers": [
+      "was reading"
+     ],
+     "hint_choice": [
+      "was reading",
+      "read"
+     ]
+    },
+    {
+     "id": "01-pl-06",
+     "rule_point": "01-2",
+     "rung": "fix",
+     "prompt": "While I was cook dinner, my phone rang.",
+     "answers": [
+      "While I was cooking dinner, my phone rang."
+     ],
+     "hint_choice": [
+      "was cooking",
+      "was cook"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "01-3",
+   "b1_or_b2": "B1",
+   "items": [
+    {
+     "id": "01-pl-07",
+     "rule_point": "01-3",
+     "rung": "recognize",
+     "prompt": "When I arrived at the party, most people ___ already.",
+     "options": [
+      "had left",
+      "have left",
+      "leave"
+     ],
+     "answers": [
+      "had left"
+     ],
+     "hint_choice": [
+      "had left",
+      "have left"
+     ]
+    },
+    {
+     "id": "01-pl-08",
+     "rule_point": "01-3",
+     "rung": "fill",
+     "prompt": "I didn't recognise him at first: he ___ (grow) a beard since our last meeting.",
+     "answers": [
+      "had grown"
+     ],
+     "hint_choice": [
+      "had grown",
+      "has grown"
+     ]
+    },
+    {
+     "id": "01-pl-09",
+     "rule_point": "01-3",
+     "rung": "fix",
+     "prompt": "When we reached the cinema, the film already started.",
+     "answers": [
+      "When we reached the cinema, the film had already started."
+     ],
+     "hint_choice": [
+      "had started",
+      "started"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "01-4",
+   "b1_or_b2": "B2",
+   "items": [
+    {
+     "id": "01-pl-10",
+     "rule_point": "01-4",
+     "rung": "recognize",
+     "prompt": "She was out of breath because she ___.",
+     "options": [
+      "had been running",
+      "has been running",
+      "runs"
+     ],
+     "answers": [
+      "had been running"
+     ],
+     "hint_choice": [
+      "had been running",
+      "has been running"
+     ]
+    },
+    {
+     "id": "01-pl-11",
+     "rule_point": "01-4",
+     "rung": "fill",
+     "prompt": "We ___ (wait) for an hour when the train finally arrived.",
+     "answers": [
+      "had been waiting",
+      "had waited"
+     ],
+     "hint_choice": [
+      "had been waiting",
+      "were waiting"
+     ]
+    },
+    {
+     "id": "01-pl-12",
+     "rule_point": "01-4",
+     "rung": "fix",
+     "prompt": "His clothes were wet because he was walking in the rain for hours.",
+     "answers": [
+      "His clothes were wet because he had been walking in the rain for hours."
+     ],
+     "hint_choice": [
+      "had been walking",
+      "was walking"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "01-5",
+   "b1_or_b2": "B2",
+   "items": [
+    {
+     "id": "01-pl-13",
+     "rule_point": "01-5",
+     "rung": "recognize",
+     "prompt": "It was ___ beautiful day that we went to the beach.",
+     "options": [
+      "so",
+      "such",
+      "such a"
+     ],
+     "answers": [
+      "such a"
+     ],
+     "hint_choice": [
+      "such a",
+      "so"
+     ]
+    },
+    {
+     "id": "01-pl-14",
+     "rule_point": "01-5",
+     "rung": "fill",
+     "prompt": "The film was ___ boring that I fell asleep.",
+     "answers": [
+      "so"
+     ],
+     "hint_choice": [
+      "so",
+      "such"
+     ]
+    },
+    {
+     "id": "01-pl-15",
+     "rule_point": "01-5",
+     "rung": "fix",
+     "prompt": "We had so good time that we didn't want to leave.",
+     "answers": [
+      "We had such a good time that we didn't want to leave."
+     ],
+     "hint_choice": [
+      "such a good time",
+      "so good time"
+     ]
+    }
+   ]
+  }
+ ]
+}

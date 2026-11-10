@@ -1,0 +1,506 @@
+{
+ "id": "12",
+ "full": false,
+ "title": "Health and news",
+ "theme": "Здоровье и новости: выгорание, медиа",
+ "can_do": [
+  "Различать stop doing и stop to do, remember doing и remember to do.",
+  "Сказать, что предпочитаешь: I'd rather..., I prefer... to...",
+  "Строить догадки о настоящем и прошлом: she must be tired, he might have left.",
+  "Пересказать новость без источника: It is said that..., He is believed to...",
+  "Поговорить о выгорании и балансе работы и жизни."
+ ],
+ "rules": [
+  {
+   "id": "12-A",
+   "title": "Verb patterns and preferences",
+   "points": [
+    {
+     "id": "12-1",
+     "title": "Gerund or infinitive: stop, remember, try, forget",
+     "b1_or_b2": "B2",
+     "explain_ru": "У некоторых глаголов смысл зависит от формы после них. stop doing: перестать делать; stop to do: остановиться, чтобы сделать. remember doing: помнить, что делал; remember to do: не забыть сделать. forget doing: забыть, что было; forget to do: забыть сделать. try doing: попробовать как способ; try to do: стараться, пытаться.",
+     "examples": [
+      {
+       "en": "I stopped checking email after 8 pm, and I sleep better.",
+       "ru": "Я перестал проверять почту после восьми вечера и сплю лучше."
+      },
+      {
+       "en": "On the way home she stopped to buy some vitamins.",
+       "ru": "По дороге домой она остановилась, чтобы купить витамины."
+      },
+      {
+       "en": "Remember to book a check-up before the end of the month.",
+       "ru": "Не забудь записаться на осмотр до конца месяца."
+      },
+      {
+       "en": "I remember feeling completely burned out that winter.",
+       "ru": "Я помню, как той зимой чувствовал себя полностью выгоревшим."
+      },
+      {
+       "en": "If you can't sleep, try turning off your phone an hour earlier.",
+       "ru": "Если не можешь уснуть, попробуй выключать телефон на час раньше."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "I stopped to smoke last year.",
+      "right": "I stopped smoking last year.",
+      "why_ru": "По-русски \"бросил курить\" с инфинитивом. В английском stop to smoke значит \"остановился, чтобы покурить\". Перестать: stop + -ing."
+     }
+    },
+    {
+     "id": "12-2",
+     "title": "would rather and prefer",
+     "b1_or_b2": "B2",
+     "explain_ru": "Would rather + первая форма без to: I'd rather work from home. Отрицание: I'd rather not. Если хочешь, чтобы другой человек что-то сделал: would rather + он + прошедшее время: I'd rather you called me tomorrow. Prefer + -ing говорит о привычке, сравнение через to: I prefer walking to driving. Would prefer + to: I'd prefer to wait.",
+     "examples": [
+      {
+       "en": "I'd rather go for a walk than sit in another meeting.",
+       "ru": "Я лучше пойду прогуляться, чем буду сидеть еще на одной встрече."
+      },
+      {
+       "en": "She'd rather not talk about her health at work.",
+       "ru": "Она предпочла бы не обсуждать здоровье на работе."
+      },
+      {
+       "en": "I'd rather you didn't share this news yet.",
+       "ru": "Я бы предпочел, чтобы ты пока не делился этой новостью."
+      },
+      {
+       "en": "He prefers running in the morning to running in the evening.",
+       "ru": "Он предпочитает бегать утром, а не вечером."
+      },
+      {
+       "en": "We'd prefer to read the full report first.",
+       "ru": "Мы бы предпочли сначала прочитать полный отчет."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "I would rather to stay at home tonight.",
+      "right": "I would rather stay at home tonight.",
+      "why_ru": "По-русски \"лучше останусь\" подсказывает инфинитив с to. После would rather to не ставят, в отличие от would prefer to."
+     }
+    }
+   ]
+  },
+  {
+   "id": "12-B",
+   "title": "Speculation and reporting",
+   "points": [
+    {
+     "id": "12-3",
+     "title": "Deduction: must be, might be, can't be, must have done",
+     "b1_or_b2": "B2",
+     "explain_ru": "Догадка по фактам. Почти уверен, что да: must be (сейчас), must have done (в прошлом). Почти уверен, что нет: can't be, can't have done. Возможно: might, may или could be, might have done. О прошлом всегда have + третья форма.",
+     "examples": [
+      {
+       "en": "She's been working twelve hours a day. She must be exhausted.",
+       "ru": "Она работает по двенадцать часов в день. Должно быть, вымотана."
+      },
+      {
+       "en": "That can't be true. The study had only ten people.",
+       "ru": "Это не может быть правдой. В исследовании было всего десять человек."
+      },
+      {
+       "en": "He might be ill. He hasn't answered since Monday.",
+       "ru": "Возможно, он заболел. Он не отвечает с понедельника."
+      },
+      {
+       "en": "The story must have come from someone inside the company.",
+       "ru": "Эта история, должно быть, пришла от кого-то внутри компании."
+      },
+      {
+       "en": "They can't have read the article properly.",
+       "ru": "Они не могли нормально прочитать статью."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "He must forget about the meeting yesterday.",
+      "right": "He must have forgotten about the meeting yesterday.",
+      "why_ru": "Русское \"он, наверное, забыл\" стоит в прошедшем. В английском догадка о прошлом строится как must + have + третья форма; must forget значит \"он обязан забыть\"."
+     }
+    },
+    {
+     "id": "12-4",
+     "title": "Passive reporting: it is said that, he is believed to",
+     "b1_or_b2": "B2",
+     "explain_ru": "В новостях часто не называют, кто именно говорит. Две схемы. It is said / believed / reported that + полное предложение: It is believed that the company will cut jobs. Или подлежащее + is said / believed + to + глагол: The company is believed to be in trouble. Если речь о прошлом: to have + третья форма: The CEO is said to have resigned.",
+     "examples": [
+      {
+       "en": "It is reported that the new law will start in March.",
+       "ru": "Сообщается, что новый закон вступит в силу в марте."
+      },
+      {
+       "en": "The app is said to be the most popular in Europe.",
+       "ru": "Говорят, что это приложение самое популярное в Европе."
+      },
+      {
+       "en": "It is believed that stress causes most sick days.",
+       "ru": "Считается, что стресс вызывает большую часть больничных."
+      },
+      {
+       "en": "The founder is thought to have left the country.",
+       "ru": "Считается, что основатель уехал из страны."
+      },
+      {
+       "en": "Thousands of users are known to have lost their data.",
+       "ru": "Известно, что тысячи пользователей потеряли данные."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "The minister is said that he resigned.",
+      "right": "The minister is said to have resigned.",
+      "why_ru": "Русское \"говорят, что он ушел\" тянет за собой that после said. Выбери одну схему: It is said that he resigned или He is said to have resigned."
+     }
+    }
+   ]
+  }
+ ],
+ "words": [
+  {
+   "en": "headline",
+   "ru": "заголовок",
+   "example": "The headline was more dramatic than the article.",
+   "stress": "HEAD-line",
+   "pm": false
+  },
+  {
+   "en": "breaking news",
+   "ru": "срочная новость",
+   "example": "The breaking news interrupted the morning show.",
+   "stress": "BREAK-ing news",
+   "pm": false
+  },
+  {
+   "en": "source",
+   "ru": "источник",
+   "example": "Always check the source before you share a story.",
+   "stress": "SOURCE",
+   "pm": false
+  },
+  {
+   "en": "rumour",
+   "ru": "слух",
+   "example": "There's a rumour that the company is for sale.",
+   "stress": "RU-mour",
+   "pm": false
+  },
+  {
+   "en": "bias",
+   "ru": "предвзятость",
+   "example": "Every news site has some bias.",
+   "stress": "BI-as",
+   "pm": false
+  },
+  {
+   "en": "coverage",
+   "ru": "освещение в СМИ",
+   "example": "The launch got a lot of media coverage.",
+   "stress": "COV-er-age",
+   "pm": false
+  },
+  {
+   "en": "claim",
+   "ru": "утверждение; утверждать",
+   "example": "The company claims the app is completely safe.",
+   "stress": "CLAIM",
+   "pm": false
+  },
+  {
+   "en": "go viral",
+   "ru": "разлететься по сети",
+   "example": "Her post about burnout went viral overnight.",
+   "stress": "go VI-ral",
+   "pm": false
+  },
+  {
+   "en": "exhausted",
+   "ru": "вымотанный",
+   "example": "After the release week everyone was exhausted.",
+   "stress": "ex-HAUST-ed",
+   "pm": false
+  },
+  {
+   "en": "symptom",
+   "ru": "симптом",
+   "example": "Poor sleep is a common symptom of stress.",
+   "stress": "SYMP-tom",
+   "pm": false
+  },
+  {
+   "en": "recover",
+   "ru": "восстановиться",
+   "example": "It took him a month to recover after the project.",
+   "stress": "re-COV-er",
+   "pm": false
+  },
+  {
+   "en": "check-up",
+   "ru": "медосмотр",
+   "example": "I have a check-up next Tuesday.",
+   "stress": "CHECK-up",
+   "pm": false
+  },
+  {
+   "en": "stressful",
+   "ru": "напряженный",
+   "example": "The last week before a launch is always stressful.",
+   "stress": "STRESS-ful",
+   "pm": false
+  },
+  {
+   "en": "cut down on",
+   "ru": "сократить (потребление)",
+   "example": "I'm trying to cut down on coffee.",
+   "stress": "cut DOWN on",
+   "pm": false
+  },
+  {
+   "en": "mental health",
+   "ru": "психическое здоровье",
+   "example": "The company now pays for mental health support.",
+   "stress": "men-tal HEALTH",
+   "pm": false
+  },
+  {
+   "en": "burnout",
+   "ru": "выгорание",
+   "example": "Burnout is common in teams with constant deadlines.",
+   "stress": "BURN-out",
+   "pm": true
+  },
+  {
+   "en": "workload",
+   "ru": "рабочая нагрузка",
+   "example": "We moved two tasks to reduce her workload.",
+   "stress": "WORK-load",
+   "pm": true
+  },
+  {
+   "en": "sick leave",
+   "ru": "больничный",
+   "example": "He's on sick leave until Friday.",
+   "stress": "SICK leave",
+   "pm": true
+  },
+  {
+   "en": "work-life balance",
+   "ru": "баланс работы и жизни",
+   "example": "Remote work improved my work-life balance.",
+   "stress": "work-life BAL-ance",
+   "pm": true
+  },
+  {
+   "en": "overtime",
+   "ru": "сверхурочная работа",
+   "example": "Regular overtime is a sign of bad planning.",
+   "stress": "O-ver-time",
+   "pm": true
+  }
+ ],
+ "placement": [
+  {
+   "rule_point": "12-1",
+   "b1_or_b2": "B2",
+   "items": [
+    {
+     "id": "12-pl-01",
+     "rule_point": "12-1",
+     "rung": "recognize",
+     "prompt": "I've stopped ___ coffee after lunch, and now I sleep much better.",
+     "options": [
+      "drinking",
+      "to drink",
+      "drink"
+     ],
+     "answers": [
+      "drinking"
+     ],
+     "hint_choice": [
+      "drinking",
+      "to drink"
+     ]
+    },
+    {
+     "id": "12-pl-02",
+     "rule_point": "12-1",
+     "rung": "fill",
+     "prompt": "Please remember ___ (send) me the report before you leave tonight.",
+     "answers": [
+      "to send"
+     ],
+     "hint_choice": [
+      "to send",
+      "sending"
+     ]
+    },
+    {
+     "id": "12-pl-03",
+     "rule_point": "12-1",
+     "rung": "fix",
+     "prompt": "I'll never forget to meet her for the first time at that conference.",
+     "answers": [
+      "I'll never forget meeting her for the first time at that conference.",
+      "I will never forget meeting her for the first time at that conference."
+     ],
+     "hint_choice": [
+      "meeting",
+      "to meet"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "12-2",
+   "b1_or_b2": "B2",
+   "items": [
+    {
+     "id": "12-pl-04",
+     "rule_point": "12-2",
+     "rung": "recognize",
+     "prompt": "I'm tired. I'd rather ___ at home today.",
+     "options": [
+      "stay",
+      "to stay",
+      "staying"
+     ],
+     "answers": [
+      "stay"
+     ],
+     "hint_choice": [
+      "stay",
+      "to stay"
+     ]
+    },
+    {
+     "id": "12-pl-05",
+     "rule_point": "12-2",
+     "rung": "fill",
+     "prompt": "I'd rather you ___ (not / tell) anyone about this yet.",
+     "answers": [
+      "didn't tell",
+      "did not tell"
+     ],
+     "hint_choice": [
+      "didn't tell",
+      "don't tell"
+     ]
+    },
+    {
+     "id": "12-pl-06",
+     "rule_point": "12-2",
+     "rung": "fix",
+     "prompt": "She would rather to work alone on this task.",
+     "answers": [
+      "She would rather work alone on this task.",
+      "She'd rather work alone on this task."
+     ],
+     "hint_choice": [
+      "rather work",
+      "rather to work"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "12-3",
+   "b1_or_b2": "B2",
+   "items": [
+    {
+     "id": "12-pl-07",
+     "rule_point": "12-3",
+     "rung": "recognize",
+     "prompt": "He hasn't answered any messages since Monday. He ___ ill, but nobody knows for sure.",
+     "options": [
+      "might be",
+      "must be",
+      "can't be"
+     ],
+     "answers": [
+      "might be"
+     ],
+     "hint_choice": [
+      "might be",
+      "must be"
+     ]
+    },
+    {
+     "id": "12-pl-08",
+     "rule_point": "12-3",
+     "rung": "fill",
+     "prompt": "She's been answering emails since six in the morning. She ___ (be) exhausted.",
+     "answers": [
+      "must be"
+     ],
+     "hint_choice": [
+      "must be",
+      "must have"
+     ]
+    },
+    {
+     "id": "12-pl-09",
+     "rule_point": "12-3",
+     "rung": "fix",
+     "prompt": "He must forget about our call yesterday, because he didn't join.",
+     "answers": [
+      "He must have forgotten about our call yesterday, because he didn't join."
+     ],
+     "hint_choice": [
+      "must have forgotten",
+      "must forget"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "12-4",
+   "b1_or_b2": "B2",
+   "items": [
+    {
+     "id": "12-pl-10",
+     "rule_point": "12-4",
+     "rung": "recognize",
+     "prompt": "The company is believed ___ thousands of users last year.",
+     "options": [
+      "to have lost",
+      "to lose",
+      "that it lost"
+     ],
+     "answers": [
+      "to have lost"
+     ],
+     "hint_choice": [
+      "to have lost",
+      "to lose"
+     ]
+    },
+    {
+     "id": "12-pl-11",
+     "rule_point": "12-4",
+     "rung": "fill",
+     "prompt": "It ___ (say) that the CEO will step down next month.",
+     "answers": [
+      "is said"
+     ],
+     "hint_choice": [
+      "is said",
+      "says"
+     ]
+    },
+    {
+     "id": "12-pl-12",
+     "rule_point": "12-4",
+     "rung": "transform",
+     "prompt": "Start with \"The minister\": It is reported that the minister has resigned.",
+     "answers": [
+      "The minister is reported to have resigned."
+     ],
+     "hint_choice": [
+      "to have resigned",
+      "to resign"
+     ]
+    }
+   ]
+  }
+ ]
+}

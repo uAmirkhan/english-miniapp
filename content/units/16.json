@@ -1,0 +1,348 @@
+{
+ "id": "16",
+ "full": false,
+ "title": "Education and learning",
+ "theme": "Образование: обучение, навыки",
+ "can_do": [
+  "Усилить утверждение: I do think..., She did finish...",
+  "Подчеркнуть результат: so useful that..., such a good course that...",
+  "Узнавать инверсию в тексте: Never have I..., Not only did she...",
+  "Рассказать, как учишься новому навыку и что сработало.",
+  "Ответить на вопрос собеседования о том, как ты развиваешься."
+ ],
+ "rules": [
+  {
+   "id": "16-A",
+   "title": "Emphasis",
+   "points": [
+    {
+     "id": "16-1",
+     "title": "Emphasis with so, such and do, does, did",
+     "b1_or_b2": "B2",
+     "explain_ru": "Чтобы усилить мысль, используют so и such (повтор юнита 1: so + прилагательное, such + существительное) и вспомогательный do, does, did перед глаголом в утвердительном предложении: I do understand your point (я правда понимаю). Время показывает do, does или did, а сам глагол стоит в первой форме: She did finish the course. Ударение падает на do.",
+     "examples": [
+      {
+       "en": "I do think online courses work, but only with deadlines.",
+       "ru": "Я действительно думаю, что онлайн-курсы работают, но только со сроками."
+      },
+      {
+       "en": "She did pass the exam in the end.",
+       "ru": "В итоге она все-таки сдала экзамен."
+      },
+      {
+       "en": "The teacher was so patient that nobody felt stupid.",
+       "ru": "Учитель был таким терпеливым, что никто не чувствовал себя глупо."
+      },
+      {
+       "en": "It was such a useful workshop that we asked for a second one.",
+       "ru": "Это был такой полезный воркшоп, что мы попросили второй."
+      },
+      {
+       "en": "He does know the material. He's just nervous.",
+       "ru": "Он действительно знает материал. Просто нервничает."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "I did finished the course last year.",
+      "right": "I did finish the course last year.",
+      "why_ru": "Прошлое уже показано словом did, поэтому глагол после него в первой форме. Русскому уху хочется поставить прошедшее дважды."
+     }
+    }
+   ]
+  },
+  {
+   "id": "16-B",
+   "title": "Inversion (recognition only)",
+   "points": [
+    {
+     "id": "16-2",
+     "title": "Inversion after negative words: recognise it",
+     "b1_or_b2": "B2",
+     "c1": true,
+     "explain_ru": "Это уровень C1: на B2 такую конструкцию достаточно узнавать в тексте, говорить так самому не обязательно. Если фраза начинается с отрицательного или ограничительного слова (Never, Not only, Hardly, Rarely, Only later), порядок слов дальше как в вопросе: Never have I seen..., Not only did she finish... Смысл простой: это усиление. Never have I seen such a mess = I have never seen such a mess.",
+     "examples": [
+      {
+       "en": "Never have I seen such a motivated class.",
+       "ru": "Никогда я не видел такого мотивированного класса."
+      },
+      {
+       "en": "Not only did she finish the course, she also became a mentor.",
+       "ru": "Она не только закончила курс, но и стала наставником."
+      },
+      {
+       "en": "Hardly had the lesson started when the lights went out.",
+       "ru": "Едва урок начался, как погас свет."
+      },
+      {
+       "en": "Rarely do students read the whole manual.",
+       "ru": "Студенты редко читают руководство целиком."
+      },
+      {
+       "en": "Only later did I understand why the method worked.",
+       "ru": "Только позже я понял, почему метод работал."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "Never I have seen such a strict teacher.",
+      "right": "Never have I seen such a strict teacher.",
+      "why_ru": "Если never стоит в начале, порядок как в вопросе. Для B2 проще и вполне нормально оставить обычный порядок: I have never seen such a strict teacher."
+     }
+    }
+   ]
+  }
+ ],
+ "words": [
+  {
+   "en": "curriculum",
+   "ru": "учебная программа",
+   "example": "The curriculum changes every two years.",
+   "stress": "cur-RIC-u-lum",
+   "pm": false
+  },
+  {
+   "en": "degree",
+   "ru": "диплом, степень",
+   "example": "She has a degree in economics.",
+   "stress": "de-GREE",
+   "pm": false
+  },
+  {
+   "en": "tuition",
+   "ru": "обучение; плата за обучение",
+   "example": "Tuition fees went up again this year.",
+   "stress": "tu-I-tion",
+   "pm": false
+  },
+  {
+   "en": "lecture",
+   "ru": "лекция",
+   "example": "The lecture was recorded, so I watched it later.",
+   "stress": "LEC-ture",
+   "pm": false
+  },
+  {
+   "en": "assignment",
+   "ru": "задание",
+   "example": "The final assignment was a real project for a client.",
+   "stress": "as-SIGN-ment",
+   "pm": false
+  },
+  {
+   "en": "graduate",
+   "ru": "выпускник",
+   "example": "Most graduates find a job within six months.",
+   "stress": "GRAD-u-ate",
+   "pm": false
+  },
+  {
+   "en": "qualification",
+   "ru": "квалификация, документ об образовании",
+   "example": "You don't need a formal qualification for this role.",
+   "stress": "qual-i-fi-CA-tion",
+   "pm": false
+  },
+  {
+   "en": "self-taught",
+   "ru": "самоучка",
+   "example": "He's a self-taught designer.",
+   "stress": "self-TAUGHT",
+   "pm": false
+  },
+  {
+   "en": "hands-on",
+   "ru": "практический",
+   "example": "I prefer hands-on courses with real tasks.",
+   "stress": "hands-ON",
+   "pm": false
+  },
+  {
+   "en": "revise",
+   "ru": "повторять (к экзамену)",
+   "example": "I revised for two weeks before the exam.",
+   "stress": "re-VISE",
+   "pm": false
+  },
+  {
+   "en": "fail",
+   "ru": "провалить",
+   "example": "He failed the first test but passed the second.",
+   "stress": "FAIL",
+   "pm": false
+  },
+  {
+   "en": "drop out",
+   "ru": "бросить учебу",
+   "example": "She dropped out of university to start a company.",
+   "stress": "drop OUT",
+   "pm": false
+  },
+  {
+   "en": "catch up",
+   "ru": "догнать",
+   "example": "I missed two lessons, so I need to catch up.",
+   "stress": "catch UP",
+   "pm": false
+  },
+  {
+   "en": "take notes",
+   "ru": "делать записи",
+   "example": "I always take notes by hand.",
+   "stress": "take NOTES",
+   "pm": false
+  },
+  {
+   "en": "enrol",
+   "ru": "записаться (на курс)",
+   "example": "Over a hundred people enrolled in the course.",
+   "stress": "en-ROL",
+   "pm": false
+  },
+  {
+   "en": "learning curve",
+   "ru": "кривая обучения, время на освоение",
+   "example": "The new tool has a steep learning curve.",
+   "stress": "LEARN-ing curve",
+   "pm": true
+  },
+  {
+   "en": "upskill",
+   "ru": "повысить квалификацию",
+   "example": "The company pays for courses to upskill the team.",
+   "stress": "UP-skill",
+   "pm": true
+  },
+  {
+   "en": "mentoring",
+   "ru": "наставничество",
+   "example": "Mentoring helped me more than any course.",
+   "stress": "MEN-tor-ing",
+   "pm": true
+  },
+  {
+   "en": "certification",
+   "ru": "сертификация",
+   "example": "Do you have a project management certification?",
+   "stress": "cer-ti-fi-CA-tion",
+   "pm": true
+  },
+  {
+   "en": "knowledge sharing",
+   "ru": "обмен знаниями",
+   "example": "We do a knowledge sharing session every Friday.",
+   "stress": "KNOWL-edge shar-ing",
+   "pm": true
+  }
+ ],
+ "placement": [
+  {
+   "rule_point": "16-1",
+   "b1_or_b2": "B2",
+   "items": [
+    {
+     "id": "16-pl-01",
+     "rule_point": "16-1",
+     "rung": "recognize",
+     "prompt": "I ___ understand your concern, but we can't change the plan.",
+     "options": [
+      "do",
+      "am",
+      "does"
+     ],
+     "answers": [
+      "do"
+     ],
+     "hint_choice": [
+      "do",
+      "am"
+     ]
+    },
+    {
+     "id": "16-pl-02",
+     "rule_point": "16-1",
+     "rung": "fill",
+     "prompt": "He ___ pass the exam in the end, although nobody expected it. (one word)",
+     "answers": [
+      "did"
+     ],
+     "hint_choice": [
+      "did",
+      "does"
+     ]
+    },
+    {
+     "id": "16-pl-03",
+     "rule_point": "16-1",
+     "rung": "fix",
+     "prompt": "She did finished her thesis on time.",
+     "answers": [
+      "She did finish her thesis on time."
+     ],
+     "hint_choice": [
+      "did finish",
+      "did finished"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "16-2",
+   "b1_or_b2": "B2",
+   "items": [
+    {
+     "id": "16-pl-04",
+     "rule_point": "16-2",
+     "rung": "recognize",
+     "prompt": "Which sentence is correct?",
+     "options": [
+      "Never have I seen such a strict teacher.",
+      "Never I have seen such a strict teacher.",
+      "Never seen I have such a strict teacher."
+     ],
+     "answers": [
+      "Never have I seen such a strict teacher."
+     ],
+     "hint_choice": [
+      "Never have I",
+      "Never I have"
+     ]
+    },
+    {
+     "id": "16-pl-05",
+     "rule_point": "16-2",
+     "rung": "recognize",
+     "prompt": "\"Not only did he pass, he got the top mark.\" What does it mean?",
+     "options": [
+      "He passed and also got the top mark.",
+      "He didn't pass, but got a good mark.",
+      "He only passed, nothing more."
+     ],
+     "answers": [
+      "He passed and also got the top mark."
+     ],
+     "hint_choice": [
+      "passed and also",
+      "didn't pass"
+     ]
+    },
+    {
+     "id": "16-pl-06",
+     "rule_point": "16-2",
+     "rung": "recognize",
+     "prompt": "\"Hardly had the class begun when the alarm rang.\" When did the alarm ring?",
+     "options": [
+      "Just after the class began.",
+      "Long after the class began.",
+      "Before the class began."
+     ],
+     "answers": [
+      "Just after the class began."
+     ],
+     "hint_choice": [
+      "just after",
+      "long after"
+     ]
+    }
+   ]
+  }
+ ]
+}

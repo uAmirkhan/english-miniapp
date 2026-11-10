@@ -1,0 +1,3458 @@
+{
+ "id": "04",
+ "full": true,
+ "title": "Films and habits: comparing, judging, remembering",
+ "theme": "Фильмы и привычки: сравнить, оценить, вспомнить, как было раньше",
+ "can_do": [
+  "Сравнить два фильма, сервиса или инструмента и показать, насколько велика разница.",
+  "Сказать, как одно растет вместе с другим: the more..., the better.",
+  "Дать живую оценку сильными прилагательными: absolutely brilliant, really awful.",
+  "Рассказать, как было раньше (used to, would) и к чему привык сейчас (be/get used to).",
+  "Сравнить два инструмента на собеседовании и объяснить выбор."
+ ],
+ "rules": [
+  {
+   "id": "04-A",
+   "title": "Comparing",
+   "points": [
+    {
+     "id": "04-1",
+     "title": "Comparatives: much better, not as good as",
+     "b1_or_b2": "B1",
+     "explain_ru": "Короткие прилагательные (один слог и два слога на -y) получают -er: cheaper, faster, easier. Длинные получают more: more expensive, more reliable. Одно из двух, не оба сразу: не more easier. Неправильные: good - better, bad - worse, far - further. Большую разницу показывают much, far, a lot (far better, much more expensive), маленькую a bit, slightly. Одинаково: as + прилагательное + as. Меньше: not as ... as (not as good as the book).",
+     "examples": [
+      {
+       "en": "The sequel is much better than the first film.",
+       "ru": "Продолжение гораздо лучше первого фильма."
+      },
+      {
+       "en": "This plan is slightly faster but far more expensive.",
+       "ru": "Этот тариф чуть быстрее, но гораздо дороже."
+      },
+      {
+       "en": "The series isn't as funny as the book.",
+       "ru": "Сериал не такой смешной, как книга."
+      },
+      {
+       "en": "Streaming is easier than going to the cinema.",
+       "ru": "Смотреть онлайн проще, чем ходить в кино."
+      },
+      {
+       "en": "Her second film was even worse than the first.",
+       "ru": "Ее второй фильм был еще хуже первого."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "The new version is more easier to use.",
+      "right": "The new version is much easier to use.",
+      "why_ru": "В русском есть два способа, \"более простой\" и \"проще\", и они склеиваются в more + -er. В английском только один из них. Усилить разницу можно словом much или far, а не more."
+     }
+    },
+    {
+     "id": "04-2",
+     "title": "The more..., the better",
+     "b1_or_b2": "B2",
+     "explain_ru": "Когда одно растет вместе с другим: The + сравнение + подлежащее + глагол, the + сравнение + подлежащее + глагол. The more I watch it, the more I like it. The longer the film, the harder it is to stay awake. Короткие готовые формы: the sooner the better, the more the better. В обеих частях обычный порядок слов, как в утверждении, и обе части начинаются с the.",
+     "examples": [
+      {
+       "en": "The more I watch this series, the more I love the characters.",
+       "ru": "Чем больше я смотрю этот сериал, тем больше люблю героев."
+      },
+      {
+       "en": "The longer the meeting, the less people remember.",
+       "ru": "Чем дольше встреча, тем меньше люди запоминают."
+      },
+      {
+       "en": "The earlier we test it, the cheaper the fixes are.",
+       "ru": "Чем раньше протестируем, тем дешевле исправления."
+      },
+      {
+       "en": "The simpler the interface, the happier the users.",
+       "ru": "Чем проще интерфейс, тем довольнее пользователи."
+      },
+      {
+       "en": "When should we start? The sooner, the better.",
+       "ru": "Когда начинаем? Чем раньше, тем лучше."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "More I practise, more I understand.",
+      "right": "The more I practise, the more I understand.",
+      "why_ru": "В русском \"чем... тем\" отдельные слова, и the кажется лишним. В английском именно the строит эту конструкцию, без него фраза разваливается."
+     }
+    },
+    {
+     "id": "04-3",
+     "title": "Strong adjectives: absolutely brilliant, not very brilliant",
+     "b1_or_b2": "B2",
+     "explain_ru": "Обычные прилагательные усиливают словом very: very good, very tired. Сильные прилагательные уже значат \"очень\": brilliant, awful, hilarious, terrifying, fascinating, exhausted, freezing, starving, huge, tiny. С ними не говорят very, а говорят absolutely или really: absolutely hilarious, really awful. Really подходит к обоим типам. Пары для отзыва: good - brilliant, bad - awful, funny - hilarious, scary - terrifying, interesting - fascinating, tired - exhausted, cold - freezing, big - huge, small - tiny.",
+     "examples": [
+      {
+       "en": "The ending was absolutely brilliant.",
+       "ru": "Концовка была просто блестящая."
+      },
+      {
+       "en": "The first episode was very slow, but the second was fascinating.",
+       "ru": "Первая серия была очень медленной, а вторая захватывающе интересной."
+      },
+      {
+       "en": "I was absolutely exhausted after watching the whole season in one night.",
+       "ru": "Я был совершенно вымотан, после того как за одну ночь посмотрел весь сезон."
+      },
+      {
+       "en": "The cinema was freezing, so we kept our coats on.",
+       "ru": "В кинотеатре было ужасно холодно, поэтому мы не снимали куртки."
+      },
+      {
+       "en": "The app is very useful, but the new design is really awful.",
+       "ru": "Приложение очень полезное, но новый дизайн просто ужасный."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "The film was very hilarious.",
+      "right": "The film was absolutely hilarious.",
+      "why_ru": "По-русски \"очень\" ставят к любому слову. В английском very идет только к обычным прилагательным. Hilarious уже значит \"очень смешной\", к нему нужно absolutely или really."
+     }
+    }
+   ]
+  },
+  {
+   "id": "04-B",
+   "title": "Past habits and getting used to things",
+   "points": [
+    {
+     "id": "04-4",
+     "title": "used to and would for the past",
+     "b1_or_b2": "B2",
+     "explain_ru": "used to + первая форма: что было привычкой или состоянием в прошлом и больше не так. I used to watch cartoons every morning. I used to have long hair. В вопросе и отрицании: did + use to (без d): Did you use to...? I didn't use to like horror films. would + первая форма тоже описывает повторявшиеся действия, обычно в рассказе-воспоминании: Every Friday we would rent a film. Но would не подходит для состояний: не I would have long hair, а I used to have long hair. Для одного события, без повтора, нужен past simple, а не used to.",
+     "examples": [
+      {
+       "en": "I used to watch films with subtitles, but now I don't need them.",
+       "ru": "Раньше я смотрел фильмы с субтитрами, а теперь они мне не нужны."
+      },
+      {
+       "en": "When I was a kid, we would watch a film every Sunday night.",
+       "ru": "В детстве мы каждое воскресенье вечером смотрели фильм."
+      },
+      {
+       "en": "Did you use to play video games?",
+       "ru": "Ты раньше играл в видеоигры?"
+      },
+      {
+       "en": "She didn't use to like comedies.",
+       "ru": "Раньше она не любила комедии."
+      },
+      {
+       "en": "This building used to be a cinema.",
+       "ru": "Раньше в этом здании был кинотеатр."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "I used to watching films every evening.",
+      "right": "I used to watch films every evening.",
+      "why_ru": "\"Раньше делал\" (used to) и \"привык\" (be used to) звучат похоже, и -ing переходит из одной конструкции в другую. \"Раньше делал\": used to + первая форма, без -ing."
+     }
+    },
+    {
+     "id": "04-5",
+     "title": "be used to / get used to + -ing",
+     "b1_or_b2": "B2",
+     "explain_ru": "be used to + -ing или существительное: привык, для меня это обычно. get used to: привыкаю, процесс привыкания. I'm used to working late. I can't get used to the new interface. После to здесь -ing, потому что to тут предлог, а не часть инфинитива. Сравни: I used to work late (раньше работал допоздна, теперь нет) и I'm used to working late (привык работать допоздна).",
+     "examples": [
+      {
+       "en": "I'm used to watching films in English now.",
+       "ru": "Теперь я привык смотреть фильмы на английском."
+      },
+      {
+       "en": "It took me a month to get used to the new office.",
+       "ru": "Мне понадобился месяц, чтобы привыкнуть к новому офису."
+      },
+      {
+       "en": "Users aren't used to this kind of menu.",
+       "ru": "Пользователи не привыкли к такому меню."
+      },
+      {
+       "en": "You'll get used to working with remote teams.",
+       "ru": "Ты привыкнешь работать с удаленными командами."
+      },
+      {
+       "en": "She wasn't used to getting so much feedback.",
+       "ru": "Она не привыкла получать столько отзывов."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "I'm used to work on Saturdays.",
+      "right": "I'm used to working on Saturdays.",
+      "why_ru": "После to по привычке ставят первую форму, как в want to work. Но в be used to слово to предлог, а после предлога всегда -ing."
+     }
+    }
+   ]
+  }
+ ],
+ "article_card": {
+  "title": "the с превосходной степенью и same",
+  "rule_ru": "Перед превосходной степенью (the best, the most popular) и словом same всегда the. О фильмах и жанрах вообще говорят без артикля: I love comedies.",
+  "examples": [
+   {
+    "en": "It's the best series I've seen this year.",
+    "ru": "Это лучший сериал, который я видел в этом году."
+   },
+   {
+    "en": "We watched the same film twice.",
+    "ru": "Мы посмотрели один и тот же фильм дважды."
+   },
+   {
+    "en": "I don't usually like horror films.",
+    "ru": "Я обычно не люблю ужастики."
+   }
+  ],
+  "items": [
+   {
+    "id": "04-ac-01",
+    "rule_point": "articles",
+    "rung": "fill",
+    "prompt": "It's ___ funniest film of the year.",
+    "answers": [
+     "the"
+    ],
+    "hint_choice": [
+     "the",
+     "a"
+    ]
+   },
+   {
+    "id": "04-ac-02",
+    "rule_point": "articles",
+    "rung": "fill",
+    "prompt": "We both chose ___ same character.",
+    "answers": [
+     "the"
+    ],
+    "hint_choice": [
+     "the",
+     "a"
+    ]
+   },
+   {
+    "id": "04-ac-03",
+    "rule_point": "articles",
+    "rung": "fill",
+    "prompt": "I don't really like ___ musicals. (write - if nothing is needed)",
+    "answers": [
+     "-",
+     "no article",
+     "nothing",
+     "none",
+     "x",
+     "0",
+     "no"
+    ],
+    "hint_choice": [
+     "-",
+     "the"
+    ]
+   },
+   {
+    "id": "04-ac-04",
+    "rule_point": "articles",
+    "rung": "recognize",
+    "prompt": "This is ___ most expensive ticket I've ever bought.",
+    "options": [
+     "a",
+     "the",
+     "no article"
+    ],
+    "answers": [
+     "the"
+    ],
+    "hint_choice": [
+     "the",
+     "a"
+    ]
+   }
+  ]
+ },
+ "words": [
+  {
+   "en": "plot",
+   "ru": "сюжет",
+   "example": "The plot was simple, but the acting was brilliant.",
+   "stress": "PLOT",
+   "pm": false
+  },
+  {
+   "en": "character",
+   "ru": "персонаж",
+   "example": "The main character is a tired detective.",
+   "stress": "CHAR-ac-ter",
+   "pm": false
+  },
+  {
+   "en": "scene",
+   "ru": "сцена",
+   "example": "The opening scene is the best part of the film.",
+   "stress": "SCENE",
+   "pm": false
+  },
+  {
+   "en": "soundtrack",
+   "ru": "музыка к фильму",
+   "example": "I still listen to the soundtrack on my way to work.",
+   "stress": "SOUND-track",
+   "pm": false
+  },
+  {
+   "en": "sequel",
+   "ru": "продолжение",
+   "example": "The sequel isn't as good as the original.",
+   "stress": "SE-quel",
+   "pm": false
+  },
+  {
+   "en": "series",
+   "ru": "сериал",
+   "example": "We finished the whole series in a week.",
+   "stress": "SE-ries",
+   "pm": false
+  },
+  {
+   "en": "gripping",
+   "ru": "захватывающий",
+   "example": "The last episode was so gripping that I forgot to eat.",
+   "stress": "GRIP-ping",
+   "pm": false
+  },
+  {
+   "en": "predictable",
+   "ru": "предсказуемый",
+   "example": "The ending was too predictable.",
+   "stress": "pre-DICT-a-ble",
+   "pm": false
+  },
+  {
+   "en": "hilarious",
+   "ru": "уморительный",
+   "example": "Her new comedy is absolutely hilarious.",
+   "stress": "hi-LAR-i-ous",
+   "pm": false
+  },
+  {
+   "en": "terrifying",
+   "ru": "жуткий",
+   "example": "I watched the most terrifying scene with my eyes closed.",
+   "stress": "TER-ri-fy-ing",
+   "pm": false
+  },
+  {
+   "en": "overrated",
+   "ru": "переоцененный",
+   "example": "Everyone loves it, but I think it's overrated.",
+   "stress": "o-ver-RA-ted",
+   "pm": false
+  },
+  {
+   "en": "binge-watch",
+   "ru": "смотреть запоем",
+   "example": "I binge-watched the whole season on Saturday.",
+   "stress": "BINGE-watch",
+   "pm": false
+  },
+  {
+   "en": "habit",
+   "ru": "привычка",
+   "example": "Watching the news at breakfast is an old habit.",
+   "stress": "HAB-it",
+   "pm": false
+  },
+  {
+   "en": "routine",
+   "ru": "распорядок",
+   "example": "My evening routine is dinner, a walk and one episode.",
+   "stress": "rou-TINE",
+   "pm": false
+  },
+  {
+   "en": "get into",
+   "ru": "увлечься, втянуться",
+   "example": "I got into documentaries last winter.",
+   "stress": "get IN-to",
+   "pm": false
+  },
+  {
+   "en": "give up",
+   "ru": "бросить (привычку)",
+   "example": "She decided to give up watching TV in the evenings.",
+   "stress": "give UP",
+   "pm": false
+  },
+  {
+   "en": "usability",
+   "ru": "удобство использования",
+   "example": "The new version has much better usability.",
+   "stress": "u-sa-BIL-i-ty",
+   "pm": true
+  },
+  {
+   "en": "intuitive",
+   "ru": "интуитивно понятный",
+   "example": "The settings page is far more intuitive now.",
+   "stress": "in-TU-i-tive",
+   "pm": true
+  },
+  {
+   "en": "clunky",
+   "ru": "неуклюжий, неудобный",
+   "example": "The old interface was slow and clunky.",
+   "stress": "CLUNK-y",
+   "pm": true
+  },
+  {
+   "en": "user experience",
+   "ru": "пользовательский опыт",
+   "example": "Small delays can ruin the user experience.",
+   "stress": "U-ser ex-pe-ri-ence",
+   "pm": true
+  },
+  {
+   "en": "benchmark",
+   "ru": "эталон для сравнения",
+   "example": "We use the market leader as a benchmark.",
+   "stress": "BENCH-mark",
+   "pm": true
+  },
+  {
+   "en": "trade-off",
+   "ru": "компромисс, выбор с ценой",
+   "example": "Speed or quality? It's always a trade-off.",
+   "stress": "TRADE-off",
+   "pm": true
+  },
+  {
+   "en": "rating",
+   "ru": "рейтинг, оценка",
+   "example": "The app's rating went up after the update.",
+   "stress": "RA-ting",
+   "pm": true
+  }
+ ],
+ "chunks": [
+  {
+   "en": "If you ask me, ...",
+   "ru": "Если хочешь знать мое мнение, ...",
+   "example": "If you ask me, the book is much better."
+  },
+  {
+   "en": "It's not as good as...",
+   "ru": "Это не так хорошо, как...",
+   "example": "It's not as good as the first season."
+  },
+  {
+   "en": "What I like most about it is...",
+   "ru": "Больше всего мне в нем нравится...",
+   "example": "What I like most about it is the soundtrack."
+  },
+  {
+   "en": "The thing that annoyed me was...",
+   "ru": "Меня раздражало то, что...",
+   "example": "The thing that annoyed me was the slow start."
+  },
+  {
+   "en": "It's worth watching.",
+   "ru": "Стоит посмотреть.",
+   "example": "It's long, but it's worth watching."
+  },
+  {
+   "en": "I used to..., but these days...",
+   "ru": "Раньше я..., а теперь...",
+   "example": "I used to watch everything on TV, but these days I only stream."
+  },
+  {
+   "en": "It reminds me of...",
+   "ru": "Это напоминает мне...",
+   "example": "It reminds me of the films we watched as kids."
+  },
+  {
+   "en": "Compared to..., ...",
+   "ru": "По сравнению с..., ...",
+   "example": "Compared to the old app, this one is much faster."
+  },
+  {
+   "en": "I couldn't stop watching.",
+   "ru": "Я не мог оторваться.",
+   "example": "The plot was so gripping that I couldn't stop watching."
+  },
+  {
+   "en": "To be honest, I expected more.",
+   "ru": "Честно говоря, я ждал большего.",
+   "example": "To be honest, I expected more from the ending."
+  }
+ ],
+ "exercises": [
+  {
+   "id": "04-ex-001",
+   "rule_point": "04-1",
+   "rung": "recognize",
+   "prompt": "The second season is ___ than the first.",
+   "options": [
+    "more better",
+    "much better",
+    "more good"
+   ],
+   "answers": [
+    "much better"
+   ],
+   "hint_choice": [
+    "much better",
+    "more better"
+   ]
+  },
+  {
+   "id": "04-ex-002",
+   "rule_point": "04-1",
+   "rung": "recognize",
+   "prompt": "My new laptop is ___ than my old one.",
+   "options": [
+    "more faster",
+    "far faster",
+    "fastest"
+   ],
+   "answers": [
+    "far faster"
+   ],
+   "hint_choice": [
+    "far faster",
+    "more faster"
+   ]
+  },
+  {
+   "id": "04-ex-003",
+   "rule_point": "04-1",
+   "rung": "recognize",
+   "prompt": "The book isn't ___ the film.",
+   "options": [
+    "as good as",
+    "as better as",
+    "so good than"
+   ],
+   "answers": [
+    "as good as"
+   ],
+   "hint_choice": [
+    "as good as",
+    "as better as"
+   ]
+  },
+  {
+   "id": "04-ex-004",
+   "rule_point": "04-1",
+   "rung": "recognize",
+   "prompt": "Her new film is ___ than her last one.",
+   "options": [
+    "worse",
+    "more bad",
+    "worst"
+   ],
+   "answers": [
+    "worse"
+   ],
+   "hint_choice": [
+    "worse",
+    "more bad"
+   ]
+  },
+  {
+   "id": "04-ex-005",
+   "rule_point": "04-1",
+   "rung": "fill",
+   "prompt": "Streaming is ___ (cheap) than going to the cinema.",
+   "answers": [
+    "cheaper"
+   ],
+   "hint_choice": [
+    "cheaper",
+    "more cheap"
+   ]
+  },
+  {
+   "id": "04-ex-006",
+   "rule_point": "04-1",
+   "rung": "fill",
+   "prompt": "The new interface is ___ (intuitive) than the old one.",
+   "answers": [
+    "more intuitive"
+   ],
+   "hint_choice": [
+    "more intuitive",
+    "intuitiver"
+   ]
+  },
+  {
+   "id": "04-ex-007",
+   "rule_point": "04-1",
+   "rung": "fill",
+   "prompt": "This series is ___ (bad) than I expected.",
+   "answers": [
+    "worse"
+   ],
+   "hint_choice": [
+    "worse",
+    "badder"
+   ]
+  },
+  {
+   "id": "04-ex-008",
+   "rule_point": "04-1",
+   "rung": "fill",
+   "prompt": "The new cinema is a bit ___ (far) from my flat than the old one.",
+   "answers": [
+    "further",
+    "farther"
+   ],
+   "hint_choice": [
+    "further",
+    "more far"
+   ]
+  },
+  {
+   "id": "04-ex-009",
+   "rule_point": "04-1",
+   "rung": "transform",
+   "prompt": "Rewrite with \"not as ... as\": The sequel is worse than the original.",
+   "answers": [
+    "The sequel isn't as good as the original.",
+    "The sequel is not as good as the original."
+   ],
+   "hint_choice": [
+    "not as good as",
+    "not as worse as"
+   ]
+  },
+  {
+   "id": "04-ex-010",
+   "rule_point": "04-1",
+   "rung": "transform",
+   "prompt": "Show a big difference with \"much\": This app is faster than the old one.",
+   "answers": [
+    "This app is much faster than the old one."
+   ],
+   "hint_choice": [
+    "much faster",
+    "more faster"
+   ]
+  },
+  {
+   "id": "04-ex-011",
+   "rule_point": "04-1",
+   "rung": "transform",
+   "prompt": "Show a small difference with \"slightly\": The new plan is more expensive.",
+   "answers": [
+    "The new plan is slightly more expensive."
+   ],
+   "hint_choice": [
+    "slightly more expensive",
+    "slightly expensiver"
+   ]
+  },
+  {
+   "id": "04-ex-012",
+   "rule_point": "04-1",
+   "rung": "transform",
+   "prompt": "Rewrite with \"than\": The old version isn't as fast as the new one.",
+   "answers": [
+    "The new version is faster than the old one.",
+    "The old version is slower than the new one."
+   ],
+   "hint_choice": [
+    "faster than",
+    "more fast than"
+   ]
+  },
+  {
+   "id": "04-ex-013",
+   "rule_point": "04-1",
+   "rung": "translate",
+   "prompt": "Этот фильм гораздо лучше книги.",
+   "answers": [
+    "This film is much better than the book.",
+    "This film is far better than the book.",
+    "This film is a lot better than the book.",
+    "This movie is much better than the book.",
+    "This movie is far better than the book.",
+    "This movie is a lot better than the book."
+   ],
+   "hint_choice": [
+    "much better",
+    "more better"
+   ]
+  },
+  {
+   "id": "04-ex-014",
+   "rule_point": "04-1",
+   "rung": "translate",
+   "prompt": "Новая версия не такая удобная, как старая.",
+   "answers": [
+    "The new version isn't as convenient as the old one.",
+    "The new version isn't as user-friendly as the old one.",
+    "The new version isn't as easy to use as the old one.",
+    "The new version is not as convenient as the old one.",
+    "The new version is not as user-friendly as the old one.",
+    "The new version is not as easy to use as the old one."
+   ],
+   "hint_choice": [
+    "not as convenient as",
+    "not so convenient than"
+   ]
+  },
+  {
+   "id": "04-ex-015",
+   "rule_point": "04-1",
+   "rung": "translate",
+   "prompt": "Сериал чуть длиннее, чем нужно.",
+   "answers": [
+    "The series is a bit longer than it needs to be.",
+    "The series is a bit longer than necessary.",
+    "The series is a bit longer than it should be.",
+    "The series is slightly longer than it needs to be.",
+    "The series is slightly longer than necessary.",
+    "The series is slightly longer than it should be.",
+    "The series is a little longer than it needs to be.",
+    "The series is a little longer than necessary.",
+    "The series is a little longer than it should be.",
+    "The show is a bit longer than it needs to be.",
+    "The show is a bit longer than necessary.",
+    "The show is a bit longer than it should be.",
+    "The show is slightly longer than it needs to be.",
+    "The show is slightly longer than necessary.",
+    "The show is slightly longer than it should be.",
+    "The show is a little longer than it needs to be.",
+    "The show is a little longer than necessary.",
+    "The show is a little longer than it should be."
+   ],
+   "hint_choice": [
+    "a bit longer",
+    "a bit more long"
+   ]
+  },
+  {
+   "id": "04-ex-016",
+   "rule_point": "04-1",
+   "rung": "translate",
+   "prompt": "Это самый смешной фильм, который я видел.",
+   "answers": [
+    "This is the funniest film I've ever seen.",
+    "This is the funniest film I have ever seen.",
+    "This is the funniest film that I've ever seen.",
+    "This is the funniest film that I have ever seen.",
+    "This is the funniest movie I've ever seen.",
+    "This is the funniest movie I have ever seen.",
+    "This is the funniest movie that I've ever seen.",
+    "This is the funniest movie that I have ever seen.",
+    "It's the funniest film I've ever seen.",
+    "It's the funniest film I have ever seen.",
+    "It's the funniest film that I've ever seen.",
+    "It's the funniest film that I have ever seen.",
+    "It's the funniest movie I've ever seen.",
+    "It's the funniest movie I have ever seen.",
+    "It's the funniest movie that I've ever seen.",
+    "It's the funniest movie that I have ever seen.",
+    "It is the funniest film I've ever seen.",
+    "It is the funniest film I have ever seen.",
+    "It is the funniest film that I've ever seen.",
+    "It is the funniest film that I have ever seen.",
+    "It is the funniest movie I've ever seen.",
+    "It is the funniest movie I have ever seen.",
+    "It is the funniest movie that I've ever seen.",
+    "It is the funniest movie that I have ever seen.",
+    "This is the funniest film I've seen.",
+    "This is the funniest film that I've seen.",
+    "This is the funniest movie I've seen.",
+    "This is the funniest movie that I've seen.",
+    "It's the funniest film I've seen.",
+    "It's the funniest film that I've seen.",
+    "It's the funniest movie I've seen.",
+    "It's the funniest movie that I've seen.",
+    "It is the funniest film I've seen.",
+    "It is the funniest film that I've seen.",
+    "It is the funniest movie I've seen.",
+    "It is the funniest movie that I've seen."
+   ],
+   "hint_choice": [
+    "the funniest",
+    "the most funny"
+   ]
+  },
+  {
+   "id": "04-ex-017",
+   "rule_point": "04-1",
+   "rung": "fix",
+   "prompt": "The new version is more easier to use.",
+   "answers": [
+    "The new version is much easier to use.",
+    "The new version is far easier to use.",
+    "The new version is a lot easier to use.",
+    "The new version is easier to use."
+   ],
+   "hint_choice": [
+    "much easier",
+    "more easier"
+   ]
+  },
+  {
+   "id": "04-ex-018",
+   "rule_point": "04-1",
+   "rung": "fix",
+   "prompt": "This film is more good than the first one.",
+   "answers": [
+    "This film is better than the first one."
+   ],
+   "hint_choice": [
+    "better",
+    "more good"
+   ]
+  },
+  {
+   "id": "04-ex-019",
+   "rule_point": "04-1",
+   "rung": "fix",
+   "prompt": "The trailer was more interesting that the film.",
+   "answers": [
+    "The trailer was more interesting than the film."
+   ],
+   "hint_choice": [
+    "than",
+    "that"
+   ]
+  },
+  {
+   "id": "04-ex-020",
+   "rule_point": "04-1",
+   "rung": "fix",
+   "prompt": "It's not so expensive than I thought.",
+   "answers": [
+    "It's not as expensive as I thought.",
+    "It is not as expensive as I thought.",
+    "It isn't as expensive as I thought.",
+    "It's not so expensive as I thought.",
+    "It is not so expensive as I thought."
+   ],
+   "hint_choice": [
+    "as ... as",
+    "so ... than"
+   ]
+  },
+  {
+   "id": "04-ex-021",
+   "rule_point": "04-1",
+   "rung": "free",
+   "prompt": "Compare two films or series you like.",
+   "model": "The first season was much better than the second, but the ending wasn't as strong as I hoped.",
+   "check_regex": "\\b([a-z]+er|more [a-z]+|less [a-z]+|better|worse)\\b.*\\bthan\\b|\\bas [a-z]+ as\\b",
+   "hint_choice": [
+    "much better than",
+    "more better than"
+   ]
+  },
+  {
+   "id": "04-ex-022",
+   "rule_point": "04-1",
+   "rung": "free",
+   "prompt": "Compare the phone you have now with your first phone.",
+   "model": "My phone now is much faster and lighter than my first one, but the battery isn't as good.",
+   "check_regex": "\\b([a-z]+er|more [a-z]+|less [a-z]+|better|worse)\\b.*\\bthan\\b|\\bas [a-z]+ as\\b",
+   "hint_choice": [
+    "faster than",
+    "more fast than"
+   ]
+  },
+  {
+   "id": "04-ex-023",
+   "rule_point": "04-1",
+   "rung": "free",
+   "prompt": "Compare two apps for the same task.",
+   "model": "The first app is cheaper, but the second one is far more intuitive.",
+   "check_regex": "\\b([a-z]+er|more [a-z]+|less [a-z]+|better|worse)\\b|\\bas [a-z]+ as\\b",
+   "hint_choice": [
+    "far more intuitive",
+    "far intuitiver"
+   ]
+  },
+  {
+   "id": "04-ex-024",
+   "rule_point": "04-1",
+   "rung": "free",
+   "prompt": "Compare watching a film at home and at the cinema.",
+   "model": "Watching at home is cheaper and more comfortable, but the cinema is much more exciting.",
+   "check_regex": "\\b([a-z]+er|more [a-z]+|less [a-z]+|better|worse)\\b|\\bas [a-z]+ as\\b",
+   "hint_choice": [
+    "more comfortable",
+    "comfortabler"
+   ]
+  },
+  {
+   "id": "04-ex-025",
+   "rule_point": "04-2",
+   "rung": "recognize",
+   "prompt": "___ I watch it, the more I like it.",
+   "options": [
+    "The more",
+    "More",
+    "The most"
+   ],
+   "answers": [
+    "The more"
+   ],
+   "hint_choice": [
+    "The more",
+    "More"
+   ]
+  },
+  {
+   "id": "04-ex-026",
+   "rule_point": "04-2",
+   "rung": "recognize",
+   "prompt": "The longer the film, ___ I get.",
+   "options": [
+    "the more tired",
+    "more tired",
+    "the most tired"
+   ],
+   "answers": [
+    "the more tired"
+   ],
+   "hint_choice": [
+    "the more tired",
+    "more tired"
+   ]
+  },
+  {
+   "id": "04-ex-027",
+   "rule_point": "04-2",
+   "rung": "recognize",
+   "prompt": "The earlier we start, ___.",
+   "options": [
+    "the better",
+    "better",
+    "the best"
+   ],
+   "answers": [
+    "the better"
+   ],
+   "hint_choice": [
+    "the better",
+    "better"
+   ]
+  },
+  {
+   "id": "04-ex-028",
+   "rule_point": "04-2",
+   "rung": "recognize",
+   "prompt": "The more features we add, ___ the app becomes.",
+   "options": [
+    "the slower",
+    "slower",
+    "the slowest"
+   ],
+   "answers": [
+    "the slower"
+   ],
+   "hint_choice": [
+    "the slower",
+    "slower"
+   ]
+  },
+  {
+   "id": "04-ex-029",
+   "rule_point": "04-2",
+   "rung": "fill",
+   "prompt": "The ___ (simple) the design, the happier the users.",
+   "answers": [
+    "simpler"
+   ],
+   "hint_choice": [
+    "simpler",
+    "more simple"
+   ]
+  },
+  {
+   "id": "04-ex-030",
+   "rule_point": "04-2",
+   "rung": "fill",
+   "prompt": "The more I practise, the ___ (good) I get.",
+   "answers": [
+    "better"
+   ],
+   "hint_choice": [
+    "better",
+    "more good"
+   ]
+  },
+  {
+   "id": "04-ex-031",
+   "rule_point": "04-2",
+   "rung": "fill",
+   "prompt": "The ___ (soon) we fix it, the cheaper it is.",
+   "answers": [
+    "sooner"
+   ],
+   "hint_choice": [
+    "sooner",
+    "more soon"
+   ]
+  },
+  {
+   "id": "04-ex-032",
+   "rule_point": "04-2",
+   "rung": "fill",
+   "prompt": "The ___ (much) you test now, the fewer bugs you find later.",
+   "answers": [
+    "more"
+   ],
+   "hint_choice": [
+    "more",
+    "much"
+   ]
+  },
+  {
+   "id": "04-ex-033",
+   "rule_point": "04-2",
+   "rung": "transform",
+   "prompt": "Join with \"the ... the\": If we have more meetings, we do less work.",
+   "answers": [
+    "The more meetings we have, the less work we do."
+   ],
+   "hint_choice": [
+    "The more ... the less",
+    "More ... less"
+   ]
+  },
+  {
+   "id": "04-ex-034",
+   "rule_point": "04-2",
+   "rung": "transform",
+   "prompt": "Join with \"the ... the\": When a film is longer, it is more boring.",
+   "answers": [
+    "The longer the film is, the more boring it is.",
+    "The longer the film is, the more boring it gets.",
+    "The longer the film is, the more boring it becomes.",
+    "The longer the film, the more boring it is.",
+    "The longer the film, the more boring it gets.",
+    "The longer the film, the more boring it becomes.",
+    "The longer a film is, the more boring it is.",
+    "The longer a film is, the more boring it gets.",
+    "The longer a film is, the more boring it becomes."
+   ],
+   "hint_choice": [
+    "The longer ... the more boring",
+    "Longer ... more boring"
+   ]
+  },
+  {
+   "id": "04-ex-035",
+   "rule_point": "04-2",
+   "rung": "transform",
+   "prompt": "Join with \"the ... the\": If you read more, your English gets better.",
+   "answers": [
+    "The more you read, the better your English gets.",
+    "The more you read, the better your English becomes.",
+    "The more you read, the better your English is."
+   ],
+   "hint_choice": [
+    "The more ... the better",
+    "More ... better"
+   ]
+  },
+  {
+   "id": "04-ex-036",
+   "rule_point": "04-2",
+   "rung": "transform",
+   "prompt": "Answer with a short \"the ... the\" phrase: When should we start? As soon as possible.",
+   "answers": [
+    "The sooner the better."
+   ],
+   "hint_choice": [
+    "The sooner the better",
+    "Sooner better"
+   ]
+  },
+  {
+   "id": "04-ex-037",
+   "rule_point": "04-2",
+   "rung": "translate",
+   "prompt": "Чем больше я смотрю этот сериал, тем больше он мне нравится.",
+   "answers": [
+    "The more I watch this series, the more I like it.",
+    "The more I watch this series, the more I love it.",
+    "The more I watch this series, the more I enjoy it.",
+    "The more I watch this show, the more I like it.",
+    "The more I watch this show, the more I love it.",
+    "The more I watch this show, the more I enjoy it."
+   ],
+   "hint_choice": [
+    "The more ... the more",
+    "More ... more"
+   ]
+  },
+  {
+   "id": "04-ex-038",
+   "rule_point": "04-2",
+   "rung": "translate",
+   "prompt": "Чем раньше, тем лучше.",
+   "answers": [
+    "The sooner the better.",
+    "The earlier the better."
+   ],
+   "hint_choice": [
+    "The sooner",
+    "Sooner"
+   ]
+  },
+  {
+   "id": "04-ex-039",
+   "rule_point": "04-2",
+   "rung": "translate",
+   "prompt": "Чем проще интерфейс, тем лучше.",
+   "answers": [
+    "The simpler the interface is, the better.",
+    "The simpler the interface, the better."
+   ],
+   "hint_choice": [
+    "The simpler",
+    "More simple"
+   ]
+  },
+  {
+   "id": "04-ex-040",
+   "rule_point": "04-2",
+   "rung": "translate",
+   "prompt": "Чем дольше мы ждем, тем дороже это стоит.",
+   "answers": [
+    "The longer we wait, the more it costs.",
+    "The longer we wait, the more expensive it is.",
+    "The longer we wait, the more expensive it gets.",
+    "The longer we wait, the more expensive it becomes."
+   ],
+   "hint_choice": [
+    "The longer ... the more",
+    "Longer ... more"
+   ]
+  },
+  {
+   "id": "04-ex-041",
+   "rule_point": "04-2",
+   "rung": "fix",
+   "prompt": "More I practise, more I understand.",
+   "answers": [
+    "The more I practise, the more I understand.",
+    "The more I practice, the more I understand."
+   ],
+   "hint_choice": [
+    "The more",
+    "More"
+   ]
+  },
+  {
+   "id": "04-ex-042",
+   "rule_point": "04-2",
+   "rung": "fix",
+   "prompt": "The more you sleep, the most you want to sleep.",
+   "answers": [
+    "The more you sleep, the more you want to sleep."
+   ],
+   "hint_choice": [
+    "the more",
+    "the most"
+   ]
+  },
+  {
+   "id": "04-ex-043",
+   "rule_point": "04-2",
+   "rung": "fix",
+   "prompt": "The more long the meeting, the less people listen.",
+   "answers": [
+    "The longer the meeting, the less people listen.",
+    "The longer the meeting, the fewer people listen.",
+    "The longer the meeting is, the less people listen.",
+    "The longer the meeting is, the fewer people listen."
+   ],
+   "hint_choice": [
+    "The longer",
+    "The more long"
+   ]
+  },
+  {
+   "id": "04-ex-044",
+   "rule_point": "04-2",
+   "rung": "fix",
+   "prompt": "The bigger is the team, the harder is the planning.",
+   "answers": [
+    "The bigger the team is, the harder the planning is.",
+    "The bigger the team is, the harder planning is.",
+    "The bigger the team is, the harder it is to plan.",
+    "The bigger the team is, the harder the planning.",
+    "The bigger the team is, the harder planning gets.",
+    "The bigger the team is, the harder the planning gets.",
+    "The bigger the team, the harder the planning is.",
+    "The bigger the team, the harder planning is.",
+    "The bigger the team, the harder it is to plan.",
+    "The bigger the team, the harder the planning.",
+    "The bigger the team, the harder planning gets.",
+    "The bigger the team, the harder the planning gets."
+   ],
+   "hint_choice": [
+    "The bigger the team",
+    "The bigger is the team"
+   ]
+  },
+  {
+   "id": "04-ex-045",
+   "rule_point": "04-2",
+   "rung": "free",
+   "prompt": "Finish the sentence: \"The more meetings we have, ...\"",
+   "model": "The more meetings we have, the less time we have for real work.",
+   "check_regex": "\\bthe (more|less|fewer|better|worse|[a-z]+er)\\b.*\\bthe (more|less|fewer|better|worse|[a-z]+er)\\b",
+   "hint_choice": [
+    "the less time",
+    "less time"
+   ]
+  },
+  {
+   "id": "04-ex-046",
+   "rule_point": "04-2",
+   "rung": "free",
+   "prompt": "Write a \"the ... the\" sentence about learning English.",
+   "model": "The more films I watch in English, the easier it is to understand people.",
+   "check_regex": "\\bthe (more|less|fewer|better|worse|[a-z]+er)\\b.*\\bthe (more|less|fewer|better|worse|[a-z]+er)\\b",
+   "hint_choice": [
+    "the easier",
+    "easier"
+   ]
+  },
+  {
+   "id": "04-ex-047",
+   "rule_point": "04-2",
+   "rung": "free",
+   "prompt": "Write a \"the ... the\" sentence about films or series.",
+   "model": "The longer a series goes on, the worse the writing gets.",
+   "check_regex": "\\bthe (more|less|fewer|better|worse|[a-z]+er)\\b.*\\bthe (more|less|fewer|better|worse|[a-z]+er)\\b",
+   "hint_choice": [
+    "the worse",
+    "worse"
+   ]
+  },
+  {
+   "id": "04-ex-048",
+   "rule_point": "04-2",
+   "rung": "free",
+   "prompt": "Write a \"the ... the\" sentence about a team or a product.",
+   "model": "The bigger the team, the more time we spend on meetings.",
+   "check_regex": "\\bthe (more|less|fewer|better|worse|[a-z]+er)\\b.*\\bthe (more|less|fewer|better|worse|[a-z]+er)\\b",
+   "hint_choice": [
+    "the more time",
+    "more time"
+   ]
+  },
+  {
+   "id": "04-ex-049",
+   "rule_point": "04-3",
+   "rung": "recognize",
+   "prompt": "The ending was ___ brilliant.",
+   "options": [
+    "very",
+    "absolutely",
+    "a bit"
+   ],
+   "answers": [
+    "absolutely"
+   ],
+   "hint_choice": [
+    "absolutely",
+    "very"
+   ]
+  },
+  {
+   "id": "04-ex-050",
+   "rule_point": "04-3",
+   "rung": "recognize",
+   "prompt": "The film was ___ long, so I fell asleep.",
+   "options": [
+    "very",
+    "absolutely",
+    "completely"
+   ],
+   "answers": [
+    "very"
+   ],
+   "hint_choice": [
+    "very",
+    "absolutely"
+   ]
+  },
+  {
+   "id": "04-ex-051",
+   "rule_point": "04-3",
+   "rung": "recognize",
+   "prompt": "After the twelve-hour shift I was ___.",
+   "options": [
+    "very exhausted",
+    "absolutely exhausted",
+    "absolutely tired"
+   ],
+   "answers": [
+    "absolutely exhausted"
+   ],
+   "hint_choice": [
+    "absolutely exhausted",
+    "very exhausted"
+   ]
+  },
+  {
+   "id": "04-ex-052",
+   "rule_point": "04-3",
+   "rung": "recognize",
+   "prompt": "The show was ___ funny. Everyone was laughing.",
+   "options": [
+    "really",
+    "absolutely",
+    "completely"
+   ],
+   "answers": [
+    "really"
+   ],
+   "hint_choice": [
+    "really",
+    "absolutely"
+   ]
+  },
+  {
+   "id": "04-ex-053",
+   "rule_point": "04-3",
+   "rung": "fill",
+   "prompt": "The documentary was ___ fascinating. (very / absolutely)",
+   "answers": [
+    "absolutely"
+   ],
+   "hint_choice": [
+    "absolutely",
+    "very"
+   ]
+  },
+  {
+   "id": "04-ex-054",
+   "rule_point": "04-3",
+   "rung": "fill",
+   "prompt": "The plot was ___ predictable. (very / absolutely)",
+   "answers": [
+    "very"
+   ],
+   "hint_choice": [
+    "very",
+    "absolutely"
+   ]
+  },
+  {
+   "id": "04-ex-055",
+   "rule_point": "04-3",
+   "rung": "fill",
+   "prompt": "The cinema was ___ freezing. (very / absolutely)",
+   "answers": [
+    "absolutely"
+   ],
+   "hint_choice": [
+    "absolutely",
+    "very"
+   ]
+  },
+  {
+   "id": "04-ex-056",
+   "rule_point": "04-3",
+   "rung": "fill",
+   "prompt": "The first episode was ___ good. (very / absolutely)",
+   "answers": [
+    "very"
+   ],
+   "hint_choice": [
+    "very",
+    "absolutely"
+   ]
+  },
+  {
+   "id": "04-ex-057",
+   "rule_point": "04-3",
+   "rung": "transform",
+   "prompt": "Make it stronger with a strong adjective: The film was very funny.",
+   "answers": [
+    "The film was absolutely hilarious.",
+    "The film was really hilarious.",
+    "The film was hilarious."
+   ],
+   "hint_choice": [
+    "hilarious",
+    "very hilarious"
+   ]
+  },
+  {
+   "id": "04-ex-058",
+   "rule_point": "04-3",
+   "rung": "transform",
+   "prompt": "Make it stronger with a strong adjective: I was very tired after the trip.",
+   "answers": [
+    "I was absolutely exhausted after the trip.",
+    "I was really exhausted after the trip.",
+    "I was exhausted after the trip."
+   ],
+   "hint_choice": [
+    "exhausted",
+    "very exhausted"
+   ]
+  },
+  {
+   "id": "04-ex-059",
+   "rule_point": "04-3",
+   "rung": "transform",
+   "prompt": "Make it stronger with a strong adjective: The queue was very big.",
+   "answers": [
+    "The queue was absolutely huge.",
+    "The queue was absolutely enormous.",
+    "The queue was really huge.",
+    "The queue was really enormous.",
+    "The queue was huge.",
+    "The queue was enormous."
+   ],
+   "hint_choice": [
+    "huge",
+    "very huge"
+   ]
+  },
+  {
+   "id": "04-ex-060",
+   "rule_point": "04-3",
+   "rung": "transform",
+   "prompt": "Make it stronger with a strong adjective: The ending was very bad.",
+   "answers": [
+    "The ending was absolutely awful.",
+    "The ending was absolutely terrible.",
+    "The ending was absolutely dreadful.",
+    "The ending was really awful.",
+    "The ending was really terrible.",
+    "The ending was really dreadful.",
+    "The ending was awful.",
+    "The ending was terrible.",
+    "The ending was dreadful."
+   ],
+   "hint_choice": [
+    "awful",
+    "very awful"
+   ]
+  },
+  {
+   "id": "04-ex-061",
+   "rule_point": "04-3",
+   "rung": "translate",
+   "prompt": "Фильм был просто потрясающий.",
+   "answers": [
+    "The film was absolutely amazing.",
+    "The film was absolutely brilliant.",
+    "The film was absolutely fantastic.",
+    "The film was absolutely incredible.",
+    "The film was absolutely wonderful.",
+    "The film was really amazing.",
+    "The film was really brilliant.",
+    "The film was really fantastic.",
+    "The film was really incredible.",
+    "The film was really wonderful.",
+    "The film was amazing.",
+    "The film was brilliant.",
+    "The film was fantastic.",
+    "The film was incredible.",
+    "The film was wonderful.",
+    "The movie was absolutely amazing.",
+    "The movie was absolutely brilliant.",
+    "The movie was absolutely fantastic.",
+    "The movie was absolutely incredible.",
+    "The movie was absolutely wonderful.",
+    "The movie was really amazing.",
+    "The movie was really brilliant.",
+    "The movie was really fantastic.",
+    "The movie was really incredible.",
+    "The movie was really wonderful.",
+    "The movie was amazing.",
+    "The movie was brilliant.",
+    "The movie was fantastic.",
+    "The movie was incredible.",
+    "The movie was wonderful.",
+    "It was an absolutely amazing film.",
+    "It was an absolutely amazing movie.",
+    "It was an absolutely brilliant film.",
+    "It was an absolutely brilliant movie.",
+    "It was an absolutely fantastic film.",
+    "It was an absolutely fantastic movie.",
+    "It was an absolutely incredible film.",
+    "It was an absolutely incredible movie.",
+    "It was an absolutely wonderful film.",
+    "It was an absolutely wonderful movie.",
+    "It was a really amazing film.",
+    "It was a really amazing movie.",
+    "It was a really brilliant film.",
+    "It was a really brilliant movie.",
+    "It was a really fantastic film.",
+    "It was a really fantastic movie.",
+    "It was a really incredible film.",
+    "It was a really incredible movie.",
+    "It was a really wonderful film.",
+    "It was a really wonderful movie.",
+    "It was an amazing film.",
+    "It was an amazing movie.",
+    "It was a brilliant film.",
+    "It was a brilliant movie.",
+    "It was a fantastic film.",
+    "It was a fantastic movie.",
+    "It was an incredible film.",
+    "It was an incredible movie.",
+    "It was a wonderful film.",
+    "It was a wonderful movie."
+   ],
+   "hint_choice": [
+    "absolutely amazing",
+    "very amazing"
+   ]
+  },
+  {
+   "id": "04-ex-062",
+   "rule_point": "04-3",
+   "rung": "translate",
+   "prompt": "Я ужасно голодный.",
+   "answers": [
+    "I'm absolutely starving.",
+    "I'm really starving.",
+    "I'm starving.",
+    "I am absolutely starving.",
+    "I am really starving.",
+    "I am starving."
+   ],
+   "hint_choice": [
+    "starving",
+    "very starving"
+   ]
+  },
+  {
+   "id": "04-ex-063",
+   "rule_point": "04-3",
+   "rung": "translate",
+   "prompt": "Сюжет очень предсказуемый.",
+   "answers": [
+    "The plot is very predictable.",
+    "The plot is really predictable."
+   ],
+   "hint_choice": [
+    "very predictable",
+    "absolutely predictable"
+   ]
+  },
+  {
+   "id": "04-ex-064",
+   "rule_point": "04-3",
+   "rung": "translate",
+   "prompt": "Квартира крошечная.",
+   "answers": [
+    "The flat is absolutely tiny.",
+    "The flat is really tiny.",
+    "The flat is tiny.",
+    "The apartment is absolutely tiny.",
+    "The apartment is really tiny.",
+    "The apartment is tiny."
+   ],
+   "hint_choice": [
+    "tiny",
+    "very tiny"
+   ]
+  },
+  {
+   "id": "04-ex-065",
+   "rule_point": "04-3",
+   "rung": "fix",
+   "prompt": "The film was very hilarious.",
+   "answers": [
+    "The film was absolutely hilarious.",
+    "The film was really hilarious.",
+    "The film was very funny."
+   ],
+   "hint_choice": [
+    "absolutely hilarious",
+    "very hilarious"
+   ]
+  },
+  {
+   "id": "04-ex-066",
+   "rule_point": "04-3",
+   "rung": "fix",
+   "prompt": "The new office is absolutely big.",
+   "answers": [
+    "The new office is very big.",
+    "The new office is really big.",
+    "The new office is absolutely huge.",
+    "The new office is absolutely enormous.",
+    "The new office is really huge.",
+    "The new office is really enormous.",
+    "The new office is huge.",
+    "The new office is enormous."
+   ],
+   "hint_choice": [
+    "very big",
+    "absolutely big"
+   ]
+  },
+  {
+   "id": "04-ex-067",
+   "rule_point": "04-3",
+   "rung": "fix",
+   "prompt": "I was very exhausted after the release.",
+   "answers": [
+    "I was absolutely exhausted after the release.",
+    "I was really exhausted after the release.",
+    "I was very tired after the release."
+   ],
+   "hint_choice": [
+    "absolutely exhausted",
+    "very exhausted"
+   ]
+  },
+  {
+   "id": "04-ex-068",
+   "rule_point": "04-3",
+   "rung": "fix",
+   "prompt": "The last episode was very terrible.",
+   "answers": [
+    "The last episode was absolutely terrible.",
+    "The last episode was really terrible.",
+    "The last episode was very bad."
+   ],
+   "hint_choice": [
+    "absolutely terrible",
+    "very terrible"
+   ]
+  },
+  {
+   "id": "04-ex-069",
+   "rule_point": "04-3",
+   "rung": "free",
+   "prompt": "Describe the best scene of a film you remember. Use absolutely or really with a strong adjective.",
+   "model": "The final scene was absolutely brilliant, and the soundtrack was really amazing.",
+   "check_regex": "\\b(absolutely|really) (amazing|brilliant|awful|terrible|hilarious|terrifying|exhausted|freezing|starving|huge|tiny|fascinating|fantastic|enormous|incredible|wonderful|dreadful|gorgeous|furious)\\b",
+   "hint_choice": [
+    "absolutely brilliant",
+    "very brilliant"
+   ]
+  },
+  {
+   "id": "04-ex-070",
+   "rule_point": "04-3",
+   "rung": "free",
+   "prompt": "Describe a terrible day at work in two or three sentences. Use absolutely or really with a strong adjective.",
+   "model": "The meeting was absolutely awful and the coffee machine was broken. By six I was really exhausted.",
+   "check_regex": "\\b(absolutely|really) (amazing|brilliant|awful|terrible|hilarious|terrifying|exhausted|freezing|starving|huge|tiny|fascinating|fantastic|enormous|incredible|wonderful|dreadful|gorgeous|furious)\\b",
+   "hint_choice": [
+    "absolutely awful",
+    "very awful"
+   ]
+  },
+  {
+   "id": "04-ex-071",
+   "rule_point": "04-3",
+   "rung": "free",
+   "prompt": "Write a short, emotional review of an app you don't like. Use absolutely or really with a strong adjective.",
+   "model": "The new update is absolutely terrible: the menu is tiny and the app is really slow.",
+   "check_regex": "\\b(absolutely|really) (amazing|brilliant|awful|terrible|hilarious|terrifying|exhausted|freezing|starving|huge|tiny|fascinating|fantastic|enormous|incredible|wonderful|dreadful|gorgeous|furious)\\b",
+   "hint_choice": [
+    "absolutely terrible",
+    "very terrible"
+   ]
+  },
+  {
+   "id": "04-ex-072",
+   "rule_point": "04-3",
+   "rung": "free",
+   "prompt": "Describe the weather on a holiday you remember. Use absolutely or really with a strong adjective.",
+   "model": "It was absolutely freezing in the mornings, but the views were really amazing.",
+   "check_regex": "\\b(absolutely|really) (amazing|brilliant|awful|terrible|hilarious|terrifying|exhausted|freezing|starving|huge|tiny|fascinating|fantastic|enormous|incredible|wonderful|dreadful|gorgeous|furious|boiling)\\b",
+   "hint_choice": [
+    "absolutely freezing",
+    "very freezing"
+   ]
+  },
+  {
+   "id": "04-ex-073",
+   "rule_point": "04-4",
+   "rung": "recognize",
+   "prompt": "I ___ watch cartoons every morning before school.",
+   "options": [
+    "used to",
+    "use to",
+    "was used to"
+   ],
+   "answers": [
+    "used to"
+   ],
+   "hint_choice": [
+    "used to",
+    "was used to"
+   ]
+  },
+  {
+   "id": "04-ex-074",
+   "rule_point": "04-4",
+   "rung": "recognize",
+   "prompt": "___ you use to play video games?",
+   "options": [
+    "Did",
+    "Were",
+    "Do"
+   ],
+   "answers": [
+    "Did"
+   ],
+   "hint_choice": [
+    "Did",
+    "Were"
+   ]
+  },
+  {
+   "id": "04-ex-075",
+   "rule_point": "04-4",
+   "rung": "recognize",
+   "prompt": "This building ___ a cinema. Now it's a gym.",
+   "options": [
+    "used to be",
+    "would be",
+    "was used to be"
+   ],
+   "answers": [
+    "used to be"
+   ],
+   "hint_choice": [
+    "used to be",
+    "would be"
+   ]
+  },
+  {
+   "id": "04-ex-076",
+   "rule_point": "04-4",
+   "rung": "recognize",
+   "prompt": "She ___ like comedies, but now she loves them.",
+   "options": [
+    "didn't use to",
+    "wouldn't",
+    "isn't used to"
+   ],
+   "answers": [
+    "didn't use to"
+   ],
+   "hint_choice": [
+    "didn't use to",
+    "isn't used to"
+   ]
+  },
+  {
+   "id": "04-ex-077",
+   "rule_point": "04-4",
+   "rung": "fill",
+   "prompt": "When I was a child, I ___ (have) very long hair.",
+   "answers": [
+    "used to have",
+    "had"
+   ],
+   "hint_choice": [
+    "used to have",
+    "would have"
+   ]
+  },
+  {
+   "id": "04-ex-078",
+   "rule_point": "04-4",
+   "rung": "fill",
+   "prompt": "Every summer we ___ (go) to the same lake.",
+   "answers": [
+    "used to go",
+    "would go",
+    "went"
+   ],
+   "hint_choice": [
+    "used to go",
+    "use to go"
+   ]
+  },
+  {
+   "id": "04-ex-079",
+   "rule_point": "04-4",
+   "rung": "fill",
+   "prompt": "___ (you / use to) live in the city centre?",
+   "answers": [
+    "Did you use to"
+   ],
+   "hint_choice": [
+    "Did you use to",
+    "Did you used to"
+   ]
+  },
+  {
+   "id": "04-ex-080",
+   "rule_point": "04-4",
+   "rung": "fill",
+   "prompt": "I ___ (not / use to) drink coffee, but now I can't live without it.",
+   "answers": [
+    "didn't use to",
+    "did not use to",
+    "never used to"
+   ],
+   "hint_choice": [
+    "didn't use to",
+    "wasn't used to"
+   ]
+  },
+  {
+   "id": "04-ex-081",
+   "rule_point": "04-4",
+   "rung": "transform",
+   "prompt": "Rewrite with \"used to\": I played football every weekend, but I don't play it any more.",
+   "answers": [
+    "I used to play football every weekend."
+   ],
+   "hint_choice": [
+    "used to play",
+    "used to playing"
+   ]
+  },
+  {
+   "id": "04-ex-082",
+   "rule_point": "04-4",
+   "rung": "transform",
+   "prompt": "Rewrite with \"would\" (a repeated action): Every Friday we rented a film.",
+   "answers": [
+    "Every Friday we would rent a film.",
+    "We would rent a film every Friday."
+   ],
+   "hint_choice": [
+    "would rent",
+    "would rented"
+   ]
+  },
+  {
+   "id": "04-ex-083",
+   "rule_point": "04-4",
+   "rung": "transform",
+   "prompt": "Make a question: He used to work at a bank.",
+   "answers": [
+    "Did he use to work at a bank?"
+   ],
+   "hint_choice": [
+    "Did he use to",
+    "Did he used to"
+   ]
+  },
+  {
+   "id": "04-ex-084",
+   "rule_point": "04-4",
+   "rung": "transform",
+   "prompt": "Make it negative: We used to have meetings every day.",
+   "answers": [
+    "We didn't use to have meetings every day.",
+    "We did not use to have meetings every day.",
+    "We never used to have meetings every day."
+   ],
+   "hint_choice": [
+    "didn't use to",
+    "wasn't used to"
+   ]
+  },
+  {
+   "id": "04-ex-085",
+   "rule_point": "04-4",
+   "rung": "translate",
+   "prompt": "Раньше я смотрел фильмы с субтитрами.",
+   "answers": [
+    "I used to watch films with subtitles.",
+    "I used to watch movies with subtitles."
+   ],
+   "hint_choice": [
+    "used to watch",
+    "used to watching"
+   ]
+  },
+  {
+   "id": "04-ex-086",
+   "rule_point": "04-4",
+   "rung": "translate",
+   "prompt": "Раньше в этом здании был кинотеатр.",
+   "answers": [
+    "This building used to be a cinema.",
+    "This building used to be a movie theater.",
+    "This building used to be a movie theatre.",
+    "There used to be a cinema in this building.",
+    "There used to be a movie theater in this building.",
+    "There used to be a movie theatre in this building."
+   ],
+   "hint_choice": [
+    "used to be",
+    "would be"
+   ]
+  },
+  {
+   "id": "04-ex-087",
+   "rule_point": "04-4",
+   "rung": "translate",
+   "prompt": "Ты раньше занимался спортом?",
+   "answers": [
+    "Did you use to do sport?",
+    "Did you use to do sports?",
+    "Did you use to play sports?",
+    "Did you use to play sport?",
+    "Did you use to do any sport?",
+    "Did you use to do any sports?",
+    "Did you use to exercise?"
+   ],
+   "hint_choice": [
+    "Did you use to",
+    "Did you used to"
+   ]
+  },
+  {
+   "id": "04-ex-088",
+   "rule_point": "04-4",
+   "rung": "translate",
+   "prompt": "В детстве мы каждое лето ездили к бабушке.",
+   "answers": [
+    "When we were kids, we used to visit our grandmother every summer.",
+    "When we were kids, we used to visit our grandma every summer.",
+    "When we were kids, we used to see our grandmother every summer.",
+    "When we were kids, we used to see our grandma every summer.",
+    "When we were kids, we would visit our grandmother every summer.",
+    "When we were kids, we would visit our grandma every summer.",
+    "When we were kids, we would see our grandmother every summer.",
+    "When we were kids, we would see our grandma every summer.",
+    "When we were children, we used to visit our grandmother every summer.",
+    "When we were children, we used to visit our grandma every summer.",
+    "When we were children, we used to see our grandmother every summer.",
+    "When we were children, we used to see our grandma every summer.",
+    "When we were children, we would visit our grandmother every summer.",
+    "When we were children, we would visit our grandma every summer.",
+    "When we were children, we would see our grandmother every summer.",
+    "When we were children, we would see our grandma every summer.",
+    "When we were kids, we used to go to our grandmother's every summer.",
+    "When we were kids, we used to go to our grandma's every summer.",
+    "When we were kids, we would go to our grandmother's every summer.",
+    "When we were kids, we would go to our grandma's every summer.",
+    "When we were children, we used to go to our grandmother's every summer.",
+    "When we were children, we used to go to our grandma's every summer.",
+    "When we were children, we would go to our grandmother's every summer.",
+    "When we were children, we would go to our grandma's every summer.",
+    "When we were kids, we visited our grandmother every summer.",
+    "When we were kids, we visited our grandma every summer.",
+    "When we were kids, we went to see our grandmother every summer.",
+    "When we were kids, we went to see our grandma every summer.",
+    "When we were children, we visited our grandmother every summer.",
+    "When we were children, we visited our grandma every summer.",
+    "When we were children, we went to see our grandmother every summer.",
+    "When we were children, we went to see our grandma every summer."
+   ],
+   "hint_choice": [
+    "used to visit",
+    "were used to visit"
+   ]
+  },
+  {
+   "id": "04-ex-089",
+   "rule_point": "04-4",
+   "rung": "fix",
+   "prompt": "I used to watching films every evening.",
+   "answers": [
+    "I used to watch films every evening."
+   ],
+   "hint_choice": [
+    "used to watch",
+    "used to watching"
+   ]
+  },
+  {
+   "id": "04-ex-090",
+   "rule_point": "04-4",
+   "rung": "fix",
+   "prompt": "I would have a dog when I was a child.",
+   "answers": [
+    "I used to have a dog when I was a child.",
+    "I had a dog when I was a child."
+   ],
+   "hint_choice": [
+    "used to have",
+    "would have"
+   ]
+  },
+  {
+   "id": "04-ex-091",
+   "rule_point": "04-4",
+   "rung": "fix",
+   "prompt": "We use to go to the cinema every week when we were students.",
+   "answers": [
+    "We used to go to the cinema every week when we were students.",
+    "We would go to the cinema every week when we were students."
+   ],
+   "hint_choice": [
+    "used to go",
+    "use to go"
+   ]
+  },
+  {
+   "id": "04-ex-092",
+   "rule_point": "04-4",
+   "rung": "fix",
+   "prompt": "I used to go to Paris last year.",
+   "answers": [
+    "I went to Paris last year."
+   ],
+   "hint_choice": [
+    "went",
+    "used to go"
+   ]
+  },
+  {
+   "id": "04-ex-093",
+   "rule_point": "04-4",
+   "rung": "free",
+   "prompt": "What did you use to do on Saturdays as a teenager?",
+   "model": "I used to sleep until noon and then I would meet my friends in the park.",
+   "check_regex": "\\b(used to|would|didn't use to|use to) [a-z]+",
+   "hint_choice": [
+    "used to sleep",
+    "used to sleeping"
+   ]
+  },
+  {
+   "id": "04-ex-094",
+   "rule_point": "04-4",
+   "rung": "free",
+   "prompt": "Describe a family tradition from your childhood. Use \"would\".",
+   "model": "Every New Year my grandfather would tell the same story, and we would all pretend to be surprised.",
+   "check_regex": "\\bwould [a-z]+",
+   "hint_choice": [
+    "would tell",
+    "would told"
+   ]
+  },
+  {
+   "id": "04-ex-095",
+   "rule_point": "04-4",
+   "rung": "free",
+   "prompt": "What did your town or city use to be like?",
+   "model": "There used to be a big market in the centre, and people would come from all the villages around.",
+   "check_regex": "\\b(used to|would) [a-z]+",
+   "hint_choice": [
+    "used to be",
+    "would be"
+   ]
+  },
+  {
+   "id": "04-ex-096",
+   "rule_point": "04-4",
+   "rung": "free",
+   "prompt": "What did you use to believe about work before your first job?",
+   "model": "I used to think that managers just sent emails all day.",
+   "check_regex": "\\b(used to|didn't use to) [a-z]+",
+   "hint_choice": [
+    "used to think",
+    "used to thinking"
+   ]
+  },
+  {
+   "id": "04-ex-097",
+   "rule_point": "04-5",
+   "rung": "recognize",
+   "prompt": "I'm used to ___ late.",
+   "options": [
+    "work",
+    "working",
+    "worked"
+   ],
+   "answers": [
+    "working"
+   ],
+   "hint_choice": [
+    "working",
+    "work"
+   ]
+  },
+  {
+   "id": "04-ex-098",
+   "rule_point": "04-5",
+   "rung": "recognize",
+   "prompt": "It took me months to ___ the new office.",
+   "options": [
+    "get used to",
+    "used to",
+    "use to"
+   ],
+   "answers": [
+    "get used to"
+   ],
+   "hint_choice": [
+    "get used to",
+    "used to"
+   ]
+  },
+  {
+   "id": "04-ex-099",
+   "rule_point": "04-5",
+   "rung": "recognize",
+   "prompt": "Users ___ this kind of menu.",
+   "options": [
+    "aren't used to",
+    "didn't use to",
+    "don't used to"
+   ],
+   "answers": [
+    "aren't used to"
+   ],
+   "hint_choice": [
+    "aren't used to",
+    "didn't use to"
+   ]
+  },
+  {
+   "id": "04-ex-100",
+   "rule_point": "04-5",
+   "rung": "recognize",
+   "prompt": "You'll soon get used ___ with remote teams.",
+   "options": [
+    "to working",
+    "to work",
+    "working"
+   ],
+   "answers": [
+    "to working"
+   ],
+   "hint_choice": [
+    "to working",
+    "to work"
+   ]
+  },
+  {
+   "id": "04-ex-101",
+   "rule_point": "04-5",
+   "rung": "fill",
+   "prompt": "I can't get used to ___ (wake) up so early.",
+   "answers": [
+    "waking"
+   ],
+   "hint_choice": [
+    "waking",
+    "wake"
+   ]
+  },
+  {
+   "id": "04-ex-102",
+   "rule_point": "04-5",
+   "rung": "fill",
+   "prompt": "She is used to ___ (give) presentations.",
+   "answers": [
+    "giving"
+   ],
+   "hint_choice": [
+    "giving",
+    "give"
+   ]
+  },
+  {
+   "id": "04-ex-103",
+   "rule_point": "04-5",
+   "rung": "fill",
+   "prompt": "We ___ (get) used to the new tool by now.",
+   "answers": [
+    "have got",
+    "'ve got",
+    "have gotten",
+    "'ve gotten",
+    "got"
+   ],
+   "hint_choice": [
+    "have got",
+    "got"
+   ]
+  },
+  {
+   "id": "04-ex-104",
+   "rule_point": "04-5",
+   "rung": "fill",
+   "prompt": "Are you used to ___ (drive) on the left?",
+   "answers": [
+    "driving"
+   ],
+   "hint_choice": [
+    "driving",
+    "drive"
+   ]
+  },
+  {
+   "id": "04-ex-105",
+   "rule_point": "04-5",
+   "rung": "transform",
+   "prompt": "Rewrite with \"be used to\": Working on Saturdays is normal for me.",
+   "answers": [
+    "I'm used to working on Saturdays.",
+    "I am used to working on Saturdays."
+   ],
+   "hint_choice": [
+    "used to working",
+    "used to work"
+   ]
+  },
+  {
+   "id": "04-ex-106",
+   "rule_point": "04-5",
+   "rung": "transform",
+   "prompt": "Rewrite with \"get used to\": The new interface will feel normal to you soon.",
+   "answers": [
+    "You'll soon get used to the new interface.",
+    "You will soon get used to the new interface.",
+    "You'll get used to the new interface soon.",
+    "You'll get used to the new interface.",
+    "You will get used to the new interface soon.",
+    "You will get used to the new interface."
+   ],
+   "hint_choice": [
+    "will get used to",
+    "will used to"
+   ]
+  },
+  {
+   "id": "04-ex-107",
+   "rule_point": "04-5",
+   "rung": "transform",
+   "prompt": "Make it negative: I'm used to open offices.",
+   "answers": [
+    "I'm not used to open offices.",
+    "I am not used to open offices."
+   ],
+   "hint_choice": [
+    "not used to",
+    "didn't use to"
+   ]
+  },
+  {
+   "id": "04-ex-108",
+   "rule_point": "04-5",
+   "rung": "transform",
+   "prompt": "Make a question: He is used to working with clients.",
+   "answers": [
+    "Is he used to working with clients?"
+   ],
+   "hint_choice": [
+    "Is he used to",
+    "Does he used to"
+   ]
+  },
+  {
+   "id": "04-ex-109",
+   "rule_point": "04-5",
+   "rung": "translate",
+   "prompt": "Я привык рано вставать.",
+   "answers": [
+    "I'm used to getting up early.",
+    "I'm used to waking up early.",
+    "I am used to getting up early.",
+    "I am used to waking up early."
+   ],
+   "hint_choice": [
+    "used to getting up",
+    "used to get up"
+   ]
+  },
+  {
+   "id": "04-ex-110",
+   "rule_point": "04-5",
+   "rung": "translate",
+   "prompt": "Ты привыкнешь к новой команде.",
+   "answers": [
+    "You'll get used to the new team.",
+    "You'll get used to your new team.",
+    "You will get used to the new team.",
+    "You will get used to your new team."
+   ],
+   "hint_choice": [
+    "will get used to",
+    "will used to"
+   ]
+  },
+  {
+   "id": "04-ex-111",
+   "rule_point": "04-5",
+   "rung": "translate",
+   "prompt": "Она никак не может привыкнуть к новому графику.",
+   "answers": [
+    "She can't get used to the new schedule.",
+    "She can't get used to her new schedule.",
+    "She cannot get used to the new schedule.",
+    "She cannot get used to her new schedule.",
+    "She still can't get used to the new schedule.",
+    "She still can't get used to her new schedule.",
+    "She still cannot get used to the new schedule.",
+    "She still cannot get used to her new schedule.",
+    "She just can't get used to the new schedule.",
+    "She just can't get used to her new schedule.",
+    "She just cannot get used to the new schedule.",
+    "She just cannot get used to her new schedule."
+   ],
+   "hint_choice": [
+    "can't get used to",
+    "can't used to"
+   ]
+  },
+  {
+   "id": "04-ex-112",
+   "rule_point": "04-5",
+   "rung": "translate",
+   "prompt": "Мы не привыкли работать без менеджера.",
+   "answers": [
+    "We aren't used to working without a manager.",
+    "We're not used to working without a manager.",
+    "We are not used to working without a manager."
+   ],
+   "hint_choice": [
+    "used to working",
+    "used to work"
+   ]
+  },
+  {
+   "id": "04-ex-113",
+   "rule_point": "04-5",
+   "rung": "fix",
+   "prompt": "I'm used to work on Saturdays.",
+   "answers": [
+    "I'm used to working on Saturdays.",
+    "I am used to working on Saturdays."
+   ],
+   "hint_choice": [
+    "used to working",
+    "used to work"
+   ]
+  },
+  {
+   "id": "04-ex-114",
+   "rule_point": "04-5",
+   "rung": "fix",
+   "prompt": "I can't get use to this keyboard.",
+   "answers": [
+    "I can't get used to this keyboard."
+   ],
+   "hint_choice": [
+    "get used to",
+    "get use to"
+   ]
+  },
+  {
+   "id": "04-ex-115",
+   "rule_point": "04-5",
+   "rung": "fix",
+   "prompt": "She is used to give feedback.",
+   "answers": [
+    "She is used to giving feedback."
+   ],
+   "hint_choice": [
+    "used to giving",
+    "used to give"
+   ]
+  },
+  {
+   "id": "04-ex-116",
+   "rule_point": "04-5",
+   "rung": "fix",
+   "prompt": "Are you used to wear a suit at work?",
+   "answers": [
+    "Are you used to wearing a suit at work?"
+   ],
+   "hint_choice": [
+    "used to wearing",
+    "used to wear"
+   ]
+  },
+  {
+   "id": "04-ex-117",
+   "rule_point": "04-5",
+   "rung": "free",
+   "prompt": "What was hard to get used to in a new job or school?",
+   "model": "It was hard to get used to waking up at six and taking two buses.",
+   "check_regex": "\\b(used to|get used to|got used to|getting used to) ([a-z]+ing|the|my|a|this|it)\\b",
+   "hint_choice": [
+    "get used to waking",
+    "get used to wake"
+   ]
+  },
+  {
+   "id": "04-ex-118",
+   "rule_point": "04-5",
+   "rung": "free",
+   "prompt": "What are you used to now that seemed strange a year ago?",
+   "model": "I'm used to working from home now, but a year ago it felt very lonely.",
+   "check_regex": "\\b(used to|get used to|got used to|getting used to) ([a-z]+ing|the|my|a|this|it)\\b",
+   "hint_choice": [
+    "used to working",
+    "used to work"
+   ]
+  },
+  {
+   "id": "04-ex-119",
+   "rule_point": "04-5",
+   "rung": "free",
+   "prompt": "Give advice to a new colleague: what will they need to get used to?",
+   "model": "You'll need to get used to the long meetings and to writing everything in English.",
+   "check_regex": "\\b(used to|get used to|got used to|getting used to) ([a-z]+ing|the|my|a|this|it)\\b",
+   "hint_choice": [
+    "get used to writing",
+    "get used to write"
+   ]
+  },
+  {
+   "id": "04-ex-120",
+   "rule_point": "04-5",
+   "rung": "free",
+   "prompt": "Describe something you still can't get used to.",
+   "model": "I still can't get used to paying for apps every month.",
+   "check_regex": "\\b(used to|get used to|got used to|getting used to) ([a-z]+ing|the|my|a|this|it)\\b",
+   "hint_choice": [
+    "get used to paying",
+    "get used to pay"
+   ]
+  }
+ ],
+ "speed_drill": {
+  "instruction_ru": "Перестрой фразу по подсказке после стрелки. Вслух, без паузы на раздумье: 10 фраз за 2 минуты.",
+  "time_limit_sec": 120,
+  "items": [
+   {
+    "id": "04-sd-01",
+    "rule_point": "04-1",
+    "cue": "The film is good. The book is better. → not as ... as",
+    "answers": [
+     "The film isn't as good as the book.",
+     "The film is not as good as the book."
+    ]
+   },
+   {
+    "id": "04-sd-02",
+    "rule_point": "04-1",
+    "cue": "The new app is fast. The old one is slow. → much",
+    "answers": [
+     "The new app is much faster than the old one."
+    ]
+   },
+   {
+    "id": "04-sd-03",
+    "rule_point": "04-1",
+    "cue": "It's more easier now. → correct it",
+    "answers": [
+     "It's much easier now.",
+     "It's far easier now.",
+     "It's a lot easier now.",
+     "It's easier now.",
+     "It is much easier now.",
+     "It is far easier now.",
+     "It is a lot easier now.",
+     "It is easier now."
+    ]
+   },
+   {
+    "id": "04-sd-04",
+    "rule_point": "04-2",
+    "cue": "We test more. We find more bugs. → the ... the",
+    "answers": [
+     "The more we test, the more bugs we find."
+    ]
+   },
+   {
+    "id": "04-sd-05",
+    "rule_point": "04-2",
+    "cue": "Start soon. That's good. → the ... the",
+    "answers": [
+     "The sooner the better."
+    ]
+   },
+   {
+    "id": "04-sd-06",
+    "rule_point": "04-3",
+    "cue": "The show was very funny. → strong adjective",
+    "answers": [
+     "The show was absolutely hilarious.",
+     "The show was really hilarious.",
+     "The show was hilarious."
+    ]
+   },
+   {
+    "id": "04-sd-07",
+    "rule_point": "04-3",
+    "cue": "I was very tired. → strong adjective",
+    "answers": [
+     "I was absolutely exhausted.",
+     "I was really exhausted.",
+     "I was exhausted."
+    ]
+   },
+   {
+    "id": "04-sd-08",
+    "rule_point": "04-4",
+    "cue": "I played chess as a child. I don't now. → used to",
+    "answers": [
+     "I used to play chess as a child.",
+     "I used to play chess."
+    ]
+   },
+   {
+    "id": "04-sd-09",
+    "rule_point": "04-4",
+    "cue": "He worked here before. → question with \"use to\"",
+    "answers": [
+     "Did he use to work here?"
+    ]
+   },
+   {
+    "id": "04-sd-10",
+    "rule_point": "04-5",
+    "cue": "Working late is normal for me. → be used to",
+    "answers": [
+     "I'm used to working late.",
+     "I am used to working late."
+    ]
+   }
+  ]
+ },
+ "reading": {
+  "title": "Then and now: how we watch",
+  "text": "When Leo Brandt was a teenager, watching a film was an event. Every Friday his family would drive to the video shop, spend twenty minutes arguing, and come home with one film that nobody really liked. There used to be only four TV channels, and if you missed an episode, you missed it forever.\n\nToday Leo works as a UX researcher, and his habits are completely different. He watches on his phone, on the train, usually with headphones and often at double speed. \"I used to think that was terrible,\" he admits. \"Now I'm so used to it that normal speed feels painfully slow.\"\n\nHe knows that the choice is far bigger than it was in the nineties, but he isn't sure he enjoys films more. \"The more options I have, the longer I spend choosing,\" he says. \"Some evenings I scroll for forty minutes and then go to bed without watching anything.\"\n\nHis job makes him notice details that most viewers miss. A good streaming service, he says, is not the one with the biggest library but the one that is the easiest to use. \"The best apps feel invisible. The worst ones make you think about buttons instead of stories.\"\n\nHas he ever gone back to the old ways? Once a month he and his friends meet at a small cinema that still shows classic films. \"It's not as comfortable as my sofa,\" he laughs, \"but it's absolutely worth it. Nobody checks their phone, and everyone laughs at the same moment.\"",
+  "questions": [
+   {
+    "q": "What would Leo's family do every Friday?",
+    "answer": "They would drive to the video shop, argue for twenty minutes and bring home one film."
+   },
+   {
+    "q": "How does Leo usually watch films today?",
+    "answer": "On his phone on the train, with headphones and often at double speed."
+   },
+   {
+    "q": "What happens when Leo has more options?",
+    "answer": "He spends longer choosing; some evenings he scrolls for forty minutes and watches nothing."
+   },
+   {
+    "q": "What makes a good streaming service, in his opinion?",
+    "answer": "Not the biggest library but being the easiest to use."
+   },
+   {
+    "q": "Why does he still go to the small cinema?",
+    "answer": "Nobody checks their phone, and everyone laughs at the same moment."
+   }
+  ]
+ },
+ "listening": {
+  "url": "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english_2025/ep-251225",
+  "title": "Was Christmas better in the past? (Episode 251225, 25 Dec 2025)",
+  "source": "BBC Learning English, 6 Minute English",
+  "verified": true,
+  "verified_on": "2026-11-10",
+  "level": "B1-B2",
+  "questions": [
+   {
+    "q": "What did Beth and her cousins use to do at Christmas?",
+    "answer": "They used to put on a Christmas performance for the family."
+   },
+   {
+    "q": "Why did Christmas feel perfect to Neil as a child?",
+    "answer": "He lived in Canada, and it was always snowing."
+   },
+   {
+    "q": "What is nostalgia?",
+    "answer": "A feeling of happiness and also some sadness when you think about something in the past."
+   },
+   {
+    "q": "What would Daryl O'Connor's family do every Christmas morning, and what does he do now?",
+    "answer": "The children queued on the stairs while his father checked the front room for Santa Claus; he does the same with his own children."
+   },
+   {
+    "q": "Are nostalgic memories accurate, according to Catherine Loveday?",
+    "answer": "Not really: they are often rose-tinted and more positive, but that doesn't matter, because the function of memory is not accuracy."
+   },
+   {
+    "q": "What has become a popular Christmas food in Japan?",
+    "answer": "Fried chicken."
+   }
+  ],
+  "key_points": [
+   "Many people have happy memories of Christmas from their childhood.",
+   "Nostalgia is a mix of happiness and sadness when we think about the past.",
+   "People often repeat their childhood traditions with their own children.",
+   "Nostalgic memories are often rose-tinted: we remember the good parts and forget the bad ones.",
+   "According to a neuroscientist, this doesn't matter much: memory is not about accuracy.",
+   "In Japan, fried chicken has become a popular Christmas meal."
+  ],
+  "shadow": {
+   "start": 0,
+   "end": 35,
+   "approx": true,
+   "text": "Hello and welcome to 6 Minute English from BBC Learning English. I'm Beth. And I'm Neil. Now, it's Christmas time in the UK at the moment."
+  }
+ },
+ "speaking": [
+  {
+   "kind": "unprepared",
+   "prompt": "No time to prepare, start straight away: what did you use to do in the evenings as a teenager, and what do you do now?",
+   "target_words": [
+    "habit",
+    "routine",
+    "give up"
+   ],
+   "target_rules": [
+    "04-4",
+    "04-1"
+   ],
+   "min_sec": 60
+  },
+  {
+   "kind": "story",
+   "prompt": "Review a film or series you watched recently: compare it with another one, say what was brilliant and what was awful, and how your watching habits have changed. Use at least 5 words and 3 blocks from this unit.",
+   "target_words": [
+    "plot",
+    "character",
+    "gripping",
+    "predictable",
+    "overrated",
+    "binge-watch",
+    "sequel"
+   ],
+   "target_rules": [
+    "04-1",
+    "04-2",
+    "04-3",
+    "04-4"
+   ],
+   "min_sec": 120
+  },
+  {
+   "kind": "interview",
+   "prompt": "Interview question: Compare two tools or products your team has used for the same job. Which one is better and why, and what did people have to get used to?",
+   "target_words": [
+    "usability",
+    "intuitive",
+    "clunky",
+    "trade-off",
+    "benchmark"
+   ],
+   "target_rules": [
+    "04-1",
+    "04-3",
+    "04-5"
+   ],
+   "min_sec": 90
+  }
+ ],
+ "unprepared": [
+  "What did people use to do in the evenings before smartphones, and what do they do now?",
+  "Tell me about a book or a game you found absolutely brilliant. Why was it so good?",
+  "What was hard to get used to when you started your current job or studies?",
+  "Do you think the more you work, the more you achieve? Why or why not?"
+ ],
+ "writing": [
+  {
+   "genre": "review",
+   "work": false,
+   "prompt": "Write a review of a film or series for a website: the plot, the characters, what was better or worse than you expected and who should watch it.",
+   "words": [
+    120,
+    180
+   ],
+   "targets": {
+    "rules": [
+     "04-1",
+     "04-2",
+     "04-3"
+    ],
+    "words": [
+     "plot",
+     "gripping",
+     "predictable",
+     "soundtrack"
+    ]
+   }
+  },
+  {
+   "genre": "work_email",
+   "work": true,
+   "prompt": "Write a message to your team comparing two tools for the same task (for example, two task trackers). Recommend one and explain what people will need to get used to.",
+   "words": [
+    120,
+    180
+   ],
+   "targets": {
+    "rules": [
+     "04-1",
+     "04-3",
+     "04-5"
+    ],
+    "words": [
+     "usability",
+     "intuitive",
+     "trade-off",
+     "benchmark",
+     "clunky"
+    ]
+   }
+  }
+ ],
+ "test": {
+  "pass_ratio": 0.8,
+  "speaking": {
+   "duration_sec": 120,
+   "warmup": "What kind of films or series do you like?",
+   "tasks": [
+    "How have your watching habits changed over the last ten years?",
+    "Compare two places where you have lived or worked."
+   ],
+   "probe": "Some people say streaming has made films worse. Do you agree? Give reasons.",
+   "unexpected": "What is something you used to believe as a child that turned out to be wrong?"
+  },
+  "items": [
+   {
+    "id": "04-t-01",
+    "rule_point": "04-1",
+    "rung": "recognize",
+    "prompt": "This phone is ___ than that one.",
+    "options": [
+     "cheaper",
+     "more cheap",
+     "more cheaper"
+    ],
+    "answers": [
+     "cheaper"
+    ],
+    "hint_choice": [
+     "cheaper",
+     "more cheaper"
+    ]
+   },
+   {
+    "id": "04-t-02",
+    "rule_point": "04-1",
+    "rung": "fill",
+    "prompt": "The second film was ___ (good) than the first.",
+    "answers": [
+     "better"
+    ],
+    "hint_choice": [
+     "better",
+     "gooder"
+    ]
+   },
+   {
+    "id": "04-t-03",
+    "rule_point": "04-1",
+    "rung": "fill",
+    "prompt": "The new office isn't as ___ (big) as the old one.",
+    "answers": [
+     "big"
+    ],
+    "hint_choice": [
+     "big",
+     "bigger"
+    ]
+   },
+   {
+    "id": "04-t-04",
+    "rule_point": "04-1",
+    "rung": "fix",
+    "prompt": "This plan is more riskier than the other one.",
+    "answers": [
+     "This plan is much riskier than the other one.",
+     "This plan is far riskier than the other one.",
+     "This plan is a lot riskier than the other one.",
+     "This plan is riskier than the other one."
+    ],
+    "hint_choice": [
+     "riskier",
+     "more riskier"
+    ]
+   },
+   {
+    "id": "04-t-05",
+    "rule_point": "04-1",
+    "rung": "translate",
+    "prompt": "Поезд намного удобнее автобуса.",
+    "answers": [
+     "The train is much more comfortable than the bus.",
+     "The train is much more convenient than the bus.",
+     "The train is far more comfortable than the bus.",
+     "The train is far more convenient than the bus.",
+     "The train is a lot more comfortable than the bus.",
+     "The train is a lot more convenient than the bus."
+    ],
+    "hint_choice": [
+     "much more comfortable",
+     "more comfortabler"
+    ]
+   },
+   {
+    "id": "04-t-06",
+    "rule_point": "04-2",
+    "rung": "recognize",
+    "prompt": "The bigger the team, ___ it is to agree.",
+    "options": [
+     "the harder",
+     "harder",
+     "the hardest"
+    ],
+    "answers": [
+     "the harder"
+    ],
+    "hint_choice": [
+     "the harder",
+     "harder"
+    ]
+   },
+   {
+    "id": "04-t-07",
+    "rule_point": "04-2",
+    "rung": "fill",
+    "prompt": "The ___ (long) I live here, the more I like it.",
+    "answers": [
+     "longer"
+    ],
+    "hint_choice": [
+     "longer",
+     "more long"
+    ]
+   },
+   {
+    "id": "04-t-08",
+    "rule_point": "04-2",
+    "rung": "fill",
+    "prompt": "The ___ (early) we plan, the fewer problems we have.",
+    "answers": [
+     "earlier"
+    ],
+    "hint_choice": [
+     "earlier",
+     "more early"
+    ]
+   },
+   {
+    "id": "04-t-09",
+    "rule_point": "04-2",
+    "rung": "fix",
+    "prompt": "The more you work, more tired you get.",
+    "answers": [
+     "The more you work, the more tired you get."
+    ],
+    "hint_choice": [
+     "the more tired",
+     "more tired"
+    ]
+   },
+   {
+    "id": "04-t-10",
+    "rule_point": "04-2",
+    "rung": "translate",
+    "prompt": "Чем меньше слов, тем лучше.",
+    "answers": [
+     "The fewer words the better.",
+     "The less words the better."
+    ],
+    "hint_choice": [
+     "The fewer ... the better",
+     "Fewer ... better"
+    ]
+   },
+   {
+    "id": "04-t-11",
+    "rule_point": "04-3",
+    "rung": "recognize",
+    "prompt": "The view from the top was ___ amazing.",
+    "options": [
+     "absolutely",
+     "very",
+     "a bit"
+    ],
+    "answers": [
+     "absolutely"
+    ],
+    "hint_choice": [
+     "absolutely",
+     "very"
+    ]
+   },
+   {
+    "id": "04-t-12",
+    "rule_point": "04-3",
+    "rung": "fill",
+    "prompt": "The film was ___ interesting. (very / absolutely)",
+    "answers": [
+     "very"
+    ],
+    "hint_choice": [
+     "very",
+     "absolutely"
+    ]
+   },
+   {
+    "id": "04-t-13",
+    "rule_point": "04-3",
+    "rung": "fix",
+    "prompt": "The meeting was very awful.",
+    "answers": [
+     "The meeting was absolutely awful.",
+     "The meeting was really awful.",
+     "The meeting was very bad."
+    ],
+    "hint_choice": [
+     "absolutely awful",
+     "very awful"
+    ]
+   },
+   {
+    "id": "04-t-14",
+    "rule_point": "04-3",
+    "rung": "translate",
+    "prompt": "Квартира огромная.",
+    "answers": [
+     "The flat is absolutely huge.",
+     "The flat is absolutely enormous.",
+     "The flat is really huge.",
+     "The flat is really enormous.",
+     "The flat is huge.",
+     "The flat is enormous.",
+     "The apartment is absolutely huge.",
+     "The apartment is absolutely enormous.",
+     "The apartment is really huge.",
+     "The apartment is really enormous.",
+     "The apartment is huge.",
+     "The apartment is enormous."
+    ],
+    "hint_choice": [
+     "huge",
+     "very huge"
+    ]
+   },
+   {
+    "id": "04-t-15",
+    "rule_point": "04-3",
+    "rung": "fill",
+    "prompt": "I'm not just hungry, I'm ___. (one word, very hungry)",
+    "answers": [
+     "starving"
+    ],
+    "hint_choice": [
+     "starving",
+     "very hungry"
+    ]
+   },
+   {
+    "id": "04-t-16",
+    "rule_point": "04-4",
+    "rung": "recognize",
+    "prompt": "There ___ a cinema on this street. Now there's a supermarket.",
+    "options": [
+     "used to be",
+     "would be",
+     "was used to be"
+    ],
+    "answers": [
+     "used to be"
+    ],
+    "hint_choice": [
+     "used to be",
+     "would be"
+    ]
+   },
+   {
+    "id": "04-t-17",
+    "rule_point": "04-4",
+    "rung": "fill",
+    "prompt": "When I was at school, I ___ (play) the guitar every day.",
+    "answers": [
+     "used to play",
+     "would play",
+     "played"
+    ],
+    "hint_choice": [
+     "used to play",
+     "use to play"
+    ]
+   },
+   {
+    "id": "04-t-18",
+    "rule_point": "04-4",
+    "rung": "fill",
+    "prompt": "___ (you / use to) watch cartoons on Sunday mornings?",
+    "answers": [
+     "Did you use to"
+    ],
+    "hint_choice": [
+     "Did you use to",
+     "Were you used to"
+    ]
+   },
+   {
+    "id": "04-t-19",
+    "rule_point": "04-4",
+    "rung": "fix",
+    "prompt": "My parents would live in a small flat.",
+    "answers": [
+     "My parents used to live in a small flat.",
+     "My parents lived in a small flat."
+    ],
+    "hint_choice": [
+     "used to live",
+     "would live"
+    ]
+   },
+   {
+    "id": "04-t-20",
+    "rule_point": "04-4",
+    "rung": "translate",
+    "prompt": "Раньше я не любил ужастики.",
+    "answers": [
+     "I didn't use to like horror films.",
+     "I didn't use to like horror movies.",
+     "I did not use to like horror films.",
+     "I did not use to like horror movies.",
+     "I never used to like horror films.",
+     "I never used to like horror movies.",
+     "I used not to like horror films.",
+     "I used not to like horror movies."
+    ],
+    "hint_choice": [
+     "didn't use to",
+     "wasn't used to"
+    ]
+   },
+   {
+    "id": "04-t-21",
+    "rule_point": "04-5",
+    "rung": "recognize",
+    "prompt": "I'm still getting used to ___ in English.",
+    "options": [
+     "think",
+     "thinking",
+     "thought"
+    ],
+    "answers": [
+     "thinking"
+    ],
+    "hint_choice": [
+     "thinking",
+     "think"
+    ]
+   },
+   {
+    "id": "04-t-22",
+    "rule_point": "04-5",
+    "rung": "fill",
+    "prompt": "It took him a year to get used to ___ (live) abroad.",
+    "answers": [
+     "living"
+    ],
+    "hint_choice": [
+     "living",
+     "live"
+    ]
+   },
+   {
+    "id": "04-t-23",
+    "rule_point": "04-5",
+    "rung": "fill",
+    "prompt": "Are you used ___ long meetings?",
+    "answers": [
+     "to"
+    ],
+    "hint_choice": [
+     "to",
+     "with"
+    ]
+   },
+   {
+    "id": "04-t-24",
+    "rule_point": "04-5",
+    "rung": "fix",
+    "prompt": "I'm not used to speak in public.",
+    "answers": [
+     "I'm not used to speaking in public.",
+     "I am not used to speaking in public."
+    ],
+    "hint_choice": [
+     "used to speaking",
+     "used to speak"
+    ]
+   },
+   {
+    "id": "04-t-25",
+    "rule_point": "04-5",
+    "rung": "translate",
+    "prompt": "Я уже привык к новому ноутбуку.",
+    "answers": [
+     "I've already got used to the new laptop.",
+     "I've already got used to my new laptop.",
+     "I've already gotten used to the new laptop.",
+     "I've already gotten used to my new laptop.",
+     "I have already got used to the new laptop.",
+     "I have already got used to my new laptop.",
+     "I have already gotten used to the new laptop.",
+     "I have already gotten used to my new laptop.",
+     "I'm already used to the new laptop.",
+     "I'm already used to my new laptop.",
+     "I am already used to the new laptop.",
+     "I am already used to my new laptop.",
+     "I already got used to the new laptop.",
+     "I already got used to my new laptop."
+    ],
+    "hint_choice": [
+     "used to the new laptop",
+     "used to new laptop"
+    ]
+   },
+   {
+    "id": "04-t-26",
+    "rule_point": "words",
+    "rung": "recognize",
+    "prompt": "The ending was so ___ that I guessed it in the first ten minutes.",
+    "options": [
+     "predictable",
+     "gripping",
+     "hilarious"
+    ],
+    "answers": [
+     "predictable"
+    ],
+    "hint_choice": [
+     "predictable",
+     "gripping"
+    ]
+   },
+   {
+    "id": "04-t-27",
+    "rule_point": "words",
+    "rung": "recognize",
+    "prompt": "Everyone loves this film, but I think it's ___.",
+    "options": [
+     "overrated",
+     "gripping",
+     "intuitive"
+    ],
+    "answers": [
+     "overrated"
+    ],
+    "hint_choice": [
+     "overrated",
+     "gripping"
+    ]
+   },
+   {
+    "id": "04-t-28",
+    "rule_point": "words",
+    "rung": "recognize",
+    "prompt": "The new menu is so ___ that nobody needs instructions.",
+    "options": [
+     "intuitive",
+     "clunky",
+     "overrated"
+    ],
+    "answers": [
+     "intuitive"
+    ],
+    "hint_choice": [
+     "intuitive",
+     "clunky"
+    ]
+   },
+   {
+    "id": "04-t-29",
+    "rule_point": "words",
+    "rung": "fill",
+    "prompt": "I watched the whole season in one weekend. I ___-watched it.",
+    "answers": [
+     "binge"
+    ],
+    "hint_choice": [
+     "binge",
+     "bench"
+    ]
+   },
+   {
+    "id": "04-t-30",
+    "rule_point": "words",
+    "rung": "recognize",
+    "prompt": "Faster release or better quality? It's a ___.",
+    "options": [
+     "trade-off",
+     "benchmark",
+     "sequel"
+    ],
+    "answers": [
+     "trade-off"
+    ],
+    "hint_choice": [
+     "trade-off",
+     "benchmark"
+    ]
+   }
+  ]
+ },
+ "placement": [
+  {
+   "rule_point": "04-1",
+   "b1_or_b2": "B1",
+   "items": [
+    {
+     "id": "04-pl-01",
+     "rule_point": "04-1",
+     "rung": "recognize",
+     "prompt": "My new laptop is ___ than my old one.",
+     "options": [
+      "more light",
+      "lighter",
+      "more lighter"
+     ],
+     "answers": [
+      "lighter"
+     ],
+     "hint_choice": [
+      "lighter",
+      "more lighter"
+     ]
+    },
+    {
+     "id": "04-pl-02",
+     "rule_point": "04-1",
+     "rung": "fill",
+     "prompt": "This film is not as ___ (funny) as the first one.",
+     "answers": [
+      "funny"
+     ],
+     "hint_choice": [
+      "funny",
+      "funnier"
+     ]
+    },
+    {
+     "id": "04-pl-03",
+     "rule_point": "04-1",
+     "rung": "fix",
+     "prompt": "Today is more hot than yesterday.",
+     "answers": [
+      "Today is much hotter than yesterday.",
+      "Today is far hotter than yesterday.",
+      "Today is a lot hotter than yesterday.",
+      "Today is a bit hotter than yesterday.",
+      "Today is hotter than yesterday."
+     ],
+     "hint_choice": [
+      "hotter",
+      "more hot"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "04-2",
+   "b1_or_b2": "B2",
+   "items": [
+    {
+     "id": "04-pl-04",
+     "rule_point": "04-2",
+     "rung": "recognize",
+     "prompt": "___ you practise, the better you get.",
+     "options": [
+      "The more",
+      "More",
+      "The most"
+     ],
+     "answers": [
+      "The more"
+     ],
+     "hint_choice": [
+      "The more",
+      "More"
+     ]
+    },
+    {
+     "id": "04-pl-05",
+     "rule_point": "04-2",
+     "rung": "fill",
+     "prompt": "The ___ (cheap) the ticket, the more people come.",
+     "answers": [
+      "cheaper"
+     ],
+     "hint_choice": [
+      "cheaper",
+      "more cheap"
+     ]
+    },
+    {
+     "id": "04-pl-06",
+     "rule_point": "04-2",
+     "rung": "fix",
+     "prompt": "The more I sleep, the most tired I feel.",
+     "answers": [
+      "The more I sleep, the more tired I feel."
+     ],
+     "hint_choice": [
+      "the more tired",
+      "the most tired"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "04-3",
+   "b1_or_b2": "B2",
+   "items": [
+    {
+     "id": "04-pl-07",
+     "rule_point": "04-3",
+     "rung": "recognize",
+     "prompt": "The hotel room was ___ tiny.",
+     "options": [
+      "very",
+      "absolutely",
+      "a bit"
+     ],
+     "answers": [
+      "absolutely"
+     ],
+     "hint_choice": [
+      "absolutely",
+      "very"
+     ]
+    },
+    {
+     "id": "04-pl-08",
+     "rule_point": "04-3",
+     "rung": "fill",
+     "prompt": "The film was ___ long. (very / absolutely)",
+     "answers": [
+      "very"
+     ],
+     "hint_choice": [
+      "very",
+      "absolutely"
+     ]
+    },
+    {
+     "id": "04-pl-09",
+     "rule_point": "04-3",
+     "rung": "fix",
+     "prompt": "The concert was very fantastic.",
+     "answers": [
+      "The concert was absolutely fantastic.",
+      "The concert was really fantastic.",
+      "The concert was very good."
+     ],
+     "hint_choice": [
+      "absolutely fantastic",
+      "very fantastic"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "04-4",
+   "b1_or_b2": "B2",
+   "items": [
+    {
+     "id": "04-pl-10",
+     "rule_point": "04-4",
+     "rung": "recognize",
+     "prompt": "I ___ live in Berlin, but now I live in Rome.",
+     "options": [
+      "used to",
+      "use to",
+      "am used to"
+     ],
+     "answers": [
+      "used to"
+     ],
+     "hint_choice": [
+      "used to",
+      "am used to"
+     ]
+    },
+    {
+     "id": "04-pl-11",
+     "rule_point": "04-4",
+     "rung": "fill",
+     "prompt": "___ (you / use to) play football at school?",
+     "answers": [
+      "Did you use to"
+     ],
+     "hint_choice": [
+      "Did you use to",
+      "Were you used to"
+     ]
+    },
+    {
+     "id": "04-pl-12",
+     "rule_point": "04-4",
+     "rung": "fix",
+     "prompt": "I would have a cat when I was a child.",
+     "answers": [
+      "I used to have a cat when I was a child.",
+      "I had a cat when I was a child."
+     ],
+     "hint_choice": [
+      "used to have",
+      "would have"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "04-5",
+   "b1_or_b2": "B2",
+   "items": [
+    {
+     "id": "04-pl-13",
+     "rule_point": "04-5",
+     "rung": "recognize",
+     "prompt": "I'm used to ___ up early.",
+     "options": [
+      "get",
+      "getting",
+      "got"
+     ],
+     "answers": [
+      "getting"
+     ],
+     "hint_choice": [
+      "getting",
+      "get"
+     ]
+    },
+    {
+     "id": "04-pl-14",
+     "rule_point": "04-5",
+     "rung": "fill",
+     "prompt": "You'll get used ___ the noise.",
+     "answers": [
+      "to"
+     ],
+     "hint_choice": [
+      "to",
+      "with"
+     ]
+    },
+    {
+     "id": "04-pl-15",
+     "rule_point": "04-5",
+     "rung": "fix",
+     "prompt": "I can't get used to drive on the right.",
+     "answers": [
+      "I can't get used to driving on the right."
+     ],
+     "hint_choice": [
+      "used to driving",
+      "used to drive"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,334 @@
+{
+ "id": "13",
+ "full": false,
+ "title": "Problems and solutions",
+ "theme": "Проблемы и решения: первопричина, риски, обходные решения",
+ "can_do": [
+  "Противопоставить факты: although..., despite..., however, ...",
+  "Сказать, к чему привела проблема: as a result, so.",
+  "Объяснить цель действия: to..., in order to..., so that...",
+  "Рассказать об инциденте по схеме: что случилось, первопричина, что сделали, что изменили.",
+  "Ответить на вопрос собеседования о самой сложной проблеме в проекте."
+ ],
+ "rules": [
+  {
+   "id": "13-A",
+   "title": "Linking ideas",
+   "points": [
+    {
+     "id": "13-1",
+     "title": "Contrast: however, although, despite, in spite of",
+     "b1_or_b2": "B2",
+     "explain_ru": "Although + полное предложение (подлежащее и глагол): Although the test passed, the bug came back. Despite и in spite of + существительное или -ing: despite the delay, despite having a plan. После despite нет of. However начинает новое предложение и отделяется запятой: The plan was good. However, nobody followed it. But соединяет части внутри одного предложения.",
+     "examples": [
+      {
+       "en": "Although we fixed the bug, users still saw the error.",
+       "ru": "Хотя мы починили баг, пользователи все еще видели ошибку."
+      },
+      {
+       "en": "Despite the outage, we kept most of our customers.",
+       "ru": "Несмотря на сбой, мы сохранили большинство клиентов."
+      },
+      {
+       "en": "In spite of testing everything twice, we missed one case.",
+       "ru": "Несмотря на то что мы все проверили дважды, один случай пропустили."
+      },
+      {
+       "en": "The workaround is ugly. However, it will work until Friday.",
+       "ru": "Обходное решение некрасивое. Однако до пятницы оно будет работать."
+      },
+      {
+       "en": "Despite being the cheapest option, it was the riskiest.",
+       "ru": "Несмотря на то что это был самый дешевый вариант, он был самым рискованным."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "Despite of the risks, we released on time.",
+      "right": "Despite the risks, we released on time.",
+      "why_ru": "Русское \"несмотря на\" тянет за собой предлог, и получается despite of. Правильно despite без of или in spite of с of."
+     }
+    },
+    {
+     "id": "13-2",
+     "title": "Result and purpose: as a result, so that, in order to",
+     "b1_or_b2": "B1",
+     "explain_ru": "Результат: so внутри предложения, as a result или therefore в начале нового. Цель: to + глагол или in order to (официальнее); если дальше подлежащее, то so that + can/could/will/would: We added logs so that we could find the cause. Цель с глаголом через for to не выражают: не for to check, а to check.",
+     "examples": [
+      {
+       "en": "The server ran out of memory. As a result, the site went down.",
+       "ru": "На сервере кончилась память. В результате сайт упал."
+      },
+      {
+       "en": "We added extra logging to find the root cause.",
+       "ru": "Мы добавили логи, чтобы найти первопричину."
+      },
+      {
+       "en": "I wrote the steps down so that anyone could repeat the fix.",
+       "ru": "Я записал шаги, чтобы любой мог повторить исправление."
+      },
+      {
+       "en": "In order to reduce the risk, we released to 5% of users first.",
+       "ru": "Чтобы снизить риск, мы сначала выпустили на 5% пользователей."
+      },
+      {
+       "en": "Nobody owned the task, so it was forgotten.",
+       "ru": "Задачей никто не владел, поэтому о ней забыли."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "We called the vendor for to check the contract.",
+      "right": "We called the vendor to check the contract.",
+      "why_ru": "Русское \"для того чтобы\" подталкивает к for to. Цель с глаголом передают просто to или in order to; for ставят перед существительным: for a check."
+     }
+    }
+   ]
+  }
+ ],
+ "words": [
+  {
+   "en": "bottleneck",
+   "ru": "узкое место",
+   "example": "Code review became the main bottleneck.",
+   "stress": "BOT-tle-neck",
+   "pm": false
+  },
+  {
+   "en": "issue",
+   "ru": "проблема, вопрос",
+   "example": "We found the issue in the payment module.",
+   "stress": "IS-sue",
+   "pm": false
+  },
+  {
+   "en": "escalate",
+   "ru": "передать выше, эскалировать",
+   "example": "If the vendor doesn't answer by noon, escalate it.",
+   "stress": "ES-ca-late",
+   "pm": false
+  },
+  {
+   "en": "deal with",
+   "ru": "разбираться с",
+   "example": "Who is going to deal with the angry client?",
+   "stress": "DEAL with",
+   "pm": false
+  },
+  {
+   "en": "figure out",
+   "ru": "понять, разобраться",
+   "example": "It took us two days to figure out the cause.",
+   "stress": "fig-ure OUT",
+   "pm": false
+  },
+  {
+   "en": "come up with",
+   "ru": "придумать",
+   "example": "We need to come up with a simple workaround by Friday.",
+   "stress": "come UP with",
+   "pm": false
+  },
+  {
+   "en": "prevent",
+   "ru": "предотвратить",
+   "example": "Automated tests prevent the same bug from coming back.",
+   "stress": "pre-VENT",
+   "pm": false
+  },
+  {
+   "en": "affect",
+   "ru": "влиять, затрагивать",
+   "example": "The outage affected about two thousand users.",
+   "stress": "af-FECT",
+   "pm": false
+  },
+  {
+   "en": "consequence",
+   "ru": "последствие",
+   "example": "Nobody thought about the consequences of the change.",
+   "stress": "CON-se-quence",
+   "pm": false
+  },
+  {
+   "en": "temporary",
+   "ru": "временный",
+   "example": "This is a temporary fix until the next release.",
+   "stress": "TEM-po-rar-y",
+   "pm": false
+  },
+  {
+   "en": "backup plan",
+   "ru": "запасной план",
+   "example": "Always have a backup plan for the demo.",
+   "stress": "BACK-up plan",
+   "pm": false
+  },
+  {
+   "en": "setback",
+   "ru": "неудача, откат назад",
+   "example": "Losing the designer was a serious setback.",
+   "stress": "SET-back",
+   "pm": false
+  },
+  {
+   "en": "handle",
+   "ru": "справляться с, вести",
+   "example": "She handled the crisis calmly.",
+   "stress": "HAN-dle",
+   "pm": false
+  },
+  {
+   "en": "sort out",
+   "ru": "уладить, разобраться",
+   "example": "Let's sort out the access problem first.",
+   "stress": "sort OUT",
+   "pm": false
+  },
+  {
+   "en": "likely",
+   "ru": "вероятный, вероятно",
+   "example": "A delay is likely if the vendor is late again.",
+   "stress": "LIKE-ly",
+   "pm": false
+  },
+  {
+   "en": "root cause",
+   "ru": "первопричина",
+   "example": "The root cause was a missing index in the database.",
+   "stress": "ROOT cause",
+   "pm": true
+  },
+  {
+   "en": "workaround",
+   "ru": "обходное решение",
+   "example": "We shipped a workaround and fixed it properly later.",
+   "stress": "WORK-a-round",
+   "pm": true
+  },
+  {
+   "en": "mitigation",
+   "ru": "снижение риска",
+   "example": "Each risk in the register has a mitigation plan.",
+   "stress": "mit-i-GA-tion",
+   "pm": true
+  },
+  {
+   "en": "outage",
+   "ru": "сбой, отключение",
+   "example": "The outage lasted forty minutes.",
+   "stress": "OUT-age",
+   "pm": true
+  },
+  {
+   "en": "incident",
+   "ru": "инцидент",
+   "example": "We write a short report after every incident.",
+   "stress": "IN-ci-dent",
+   "pm": true
+  }
+ ],
+ "placement": [
+  {
+   "rule_point": "13-1",
+   "b1_or_b2": "B2",
+   "items": [
+    {
+     "id": "13-pl-01",
+     "rule_point": "13-1",
+     "rung": "recognize",
+     "prompt": "___ the bad weather, the delivery arrived on time.",
+     "options": [
+      "Despite",
+      "Although",
+      "However"
+     ],
+     "answers": [
+      "Despite"
+     ],
+     "hint_choice": [
+      "Despite",
+      "Although"
+     ]
+    },
+    {
+     "id": "13-pl-02",
+     "rule_point": "13-1",
+     "rung": "fill",
+     "prompt": "___ the fix was simple, it took a week to release. (one word)",
+     "answers": [
+      "Although",
+      "Though"
+     ],
+     "hint_choice": [
+      "Although",
+      "Despite"
+     ]
+    },
+    {
+     "id": "13-pl-03",
+     "rule_point": "13-1",
+     "rung": "fix",
+     "prompt": "Despite of the delay, the client was happy with the result.",
+     "answers": [
+      "Despite the delay, the client was happy with the result.",
+      "In spite of the delay, the client was happy with the result."
+     ],
+     "hint_choice": [
+      "Despite the",
+      "Despite of the"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "13-2",
+   "b1_or_b2": "B1",
+   "items": [
+    {
+     "id": "13-pl-04",
+     "rule_point": "13-2",
+     "rung": "recognize",
+     "prompt": "The database crashed. ___, we lost an hour of orders.",
+     "options": [
+      "As a result",
+      "In order to",
+      "So that"
+     ],
+     "answers": [
+      "As a result"
+     ],
+     "hint_choice": [
+      "As a result",
+      "So that"
+     ]
+    },
+    {
+     "id": "13-pl-05",
+     "rule_point": "13-2",
+     "rung": "fill",
+     "prompt": "We added a second server ___ the site wouldn't go down again. (two words)",
+     "answers": [
+      "so that"
+     ],
+     "hint_choice": [
+      "so that",
+      "for that"
+     ]
+    },
+    {
+     "id": "13-pl-06",
+     "rule_point": "13-2",
+     "rung": "fix",
+     "prompt": "I stayed late for to finish the report.",
+     "answers": [
+      "I stayed late to finish the report.",
+      "I stayed late in order to finish the report."
+     ],
+     "hint_choice": [
+      "to finish",
+      "for to finish"
+     ]
+    }
+   ]
+  }
+ ]
+}

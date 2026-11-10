@@ -1,0 +1,353 @@
+{
+ "id": "07",
+ "full": false,
+ "title": "Books and meetings: retelling what people said",
+ "theme": "Книги и встречи: пересказ книги, встречи и созвона",
+ "can_do": [
+  "Пересказать, что сказали на встрече или созвоне, со сдвигом времен.",
+  "Передать вопрос и просьбу: She asked if..., He asked me to...",
+  "Точно назвать, как человек это сказал: admitted, denied, suggested, promised, warned.",
+  "Коротко пересказать сюжет книги или фильма."
+ ],
+ "rules": [
+  {
+   "id": "07-A",
+   "title": "Reported speech",
+   "points": [
+    {
+     "id": "07-1",
+     "title": "Reported speech: tenses, questions and requests",
+     "b1_or_b2": "B1",
+     "explain_ru": "Когда пересказываешь чужие слова после said или told, время обычно сдвигается на шаг назад: is → was, will → would, can → could, has done и did → had done. Меняются и слова времени и места: tomorrow → the next day, here → there. Если сказанное верно до сих пор, сдвиг можно не делать: She said the office is closed on Mondays. Вопрос пересказывают прямым порядком: She asked if I was free, He asked where the report was. Просьбу: asked/told + кто + to + глагол.",
+     "examples": [
+      {
+       "en": "She said she was too busy to join the call.",
+       "ru": "Она сказала, что слишком занята, чтобы подключиться к созвону."
+      },
+      {
+       "en": "The client told us the budget would be approved the next day.",
+       "ru": "Клиент сказал нам, что бюджет утвердят на следующий день."
+      },
+      {
+       "en": "Max said the team had already finished the design.",
+       "ru": "Макс сказал, что команда уже закончила дизайн."
+      },
+      {
+       "en": "The director asked whether we could start earlier.",
+       "ru": "Директор спросил, можем ли мы начать раньше."
+      },
+      {
+       "en": "She asked me to send the minutes by the evening.",
+       "ru": "Она попросила меня прислать протокол к вечеру."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "He said me that the meeting was cancelled.",
+      "right": "He told me that the meeting was cancelled.",
+      "why_ru": "По-русски \"сказал мне\" звучит естественно. В английском said идет без \"кому\" (He said that...), а с \"кому\" нужен told: He told me that..."
+     }
+    },
+    {
+     "id": "07-2",
+     "title": "Reporting verbs and their patterns",
+     "b1_or_b2": "B2",
+     "explain_ru": "Вместо said точнее назвать, что человек сделал словами. У каждого такого глагола свой шаблон. admit / deny + -ing: признал, отрицал. suggest + -ing или suggest that + кто + глагол: предложил. promise / refuse / agree / offer + to: пообещал, отказался, согласился, вызвался. remind / warn / advise / ask + кто + to: напомнил, предупредил, посоветовал, попросил. Шаблон надо учить вместе с глаголом.",
+     "examples": [
+      {
+       "en": "He admitted forgetting to update the ticket.",
+       "ru": "Он признал, что забыл обновить задачу."
+      },
+      {
+       "en": "She denied deleting the file.",
+       "ru": "Она отрицала, что удалила файл."
+      },
+      {
+       "en": "Lena suggested moving the meeting to Thursday.",
+       "ru": "Лена предложила перенести встречу на четверг."
+      },
+      {
+       "en": "The vendor promised to send the fix by Friday.",
+       "ru": "Подрядчик пообещал прислать исправление к пятнице."
+      },
+      {
+       "en": "The manager reminded everyone to fill in their timesheets.",
+       "ru": "Менеджер напомнил всем заполнить табели."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "She suggested me to call the client.",
+      "right": "She suggested calling the client.",
+      "why_ru": "Русское \"предложила мне позвонить\" тянет за собой схему \"кто + to\". Suggest ее не принимает: suggested calling или suggested that I call."
+     }
+    }
+   ]
+  }
+ ],
+ "words": [
+  {
+   "en": "plot",
+   "ru": "сюжет",
+   "example": "The plot is simple, but the characters are great.",
+   "stress": "PLOT",
+   "pm": false
+  },
+  {
+   "en": "character",
+   "ru": "персонаж",
+   "example": "The main character is a retired detective.",
+   "stress": "CHAR-ac-ter",
+   "pm": false
+  },
+  {
+   "en": "novel",
+   "ru": "роман",
+   "example": "Her first novel was translated into ten languages.",
+   "stress": "NOV-el",
+   "pm": false
+  },
+  {
+   "en": "chapter",
+   "ru": "глава",
+   "example": "I fell asleep in the middle of chapter three.",
+   "stress": "CHAP-ter",
+   "pm": false
+  },
+  {
+   "en": "author",
+   "ru": "автор",
+   "example": "The author said the story was based on her own family.",
+   "stress": "AU-thor",
+   "pm": false
+  },
+  {
+   "en": "gripping",
+   "ru": "захватывающий",
+   "example": "It's a gripping story, I read it in two days.",
+   "stress": "GRIP-ping",
+   "pm": false
+  },
+  {
+   "en": "be set in",
+   "ru": "происходить (о действии книги)",
+   "example": "The book is set in Lisbon in the 1950s.",
+   "stress": "be SET in",
+   "pm": false
+  },
+  {
+   "en": "ending",
+   "ru": "концовка",
+   "example": "Everyone in the club hated the ending.",
+   "stress": "END-ing",
+   "pm": false
+  },
+  {
+   "en": "recommend",
+   "ru": "рекомендовать",
+   "example": "A colleague recommended the book to me.",
+   "stress": "rec-om-MEND",
+   "pm": false
+  },
+  {
+   "en": "summary",
+   "ru": "краткое изложение",
+   "example": "Can you give me a quick summary of the meeting?",
+   "stress": "SUM-ma-ry",
+   "pm": false
+  },
+  {
+   "en": "mention",
+   "ru": "упомянуть",
+   "example": "She mentioned that the budget might change.",
+   "stress": "MEN-tion",
+   "pm": false
+  },
+  {
+   "en": "point out",
+   "ru": "указать, заметить",
+   "example": "The designer pointed out that the button was too small.",
+   "stress": "point OUT",
+   "pm": false
+  },
+  {
+   "en": "bring up",
+   "ru": "поднять (тему)",
+   "example": "Please don't bring up the budget in front of the client.",
+   "stress": "bring UP",
+   "pm": false
+  },
+  {
+   "en": "complain",
+   "ru": "жаловаться",
+   "example": "The client complained that the reports were late.",
+   "stress": "com-PLAIN",
+   "pm": false
+  },
+  {
+   "en": "explain",
+   "ru": "объяснять",
+   "example": "She explained why the release had been delayed.",
+   "stress": "ex-PLAIN",
+   "pm": false
+  },
+  {
+   "en": "according to",
+   "ru": "по словам, согласно",
+   "example": "According to the client, the old version was faster.",
+   "stress": "ac-CORD-ing to",
+   "pm": false
+  },
+  {
+   "en": "agenda",
+   "ru": "повестка встречи",
+   "example": "The pricing question wasn't on the agenda.",
+   "stress": "a-GEN-da",
+   "pm": true
+  },
+  {
+   "en": "minutes",
+   "ru": "протокол встречи",
+   "example": "I'll send the minutes after the call.",
+   "stress": "MIN-utes",
+   "pm": true
+  },
+  {
+   "en": "action item",
+   "ru": "задача по итогам встречи",
+   "example": "Each action item has an owner and a date.",
+   "stress": "AC-tion i-tem",
+   "pm": true
+  },
+  {
+   "en": "follow up",
+   "ru": "вернуться к вопросу, напомнить",
+   "example": "I'll follow up with the vendor tomorrow.",
+   "stress": "fol-low UP",
+   "pm": true
+  },
+  {
+   "en": "takeaway",
+   "ru": "главный вывод",
+   "example": "The main takeaway was that users need a simpler start.",
+   "stress": "TAKE-a-way",
+   "pm": true
+  },
+  {
+   "en": "recap",
+   "ru": "краткий итог",
+   "example": "Let me do a quick recap of what we agreed.",
+   "stress": "RE-cap",
+   "pm": true
+  }
+ ],
+ "placement": [
+  {
+   "rule_point": "07-1",
+   "b1_or_b2": "B1",
+   "items": [
+    {
+     "id": "07-pl-01",
+     "rule_point": "07-1",
+     "rung": "recognize",
+     "prompt": "\"I can't come tomorrow.\" Last week she told me she ___ come the next day.",
+     "options": [
+      "couldn't",
+      "can't",
+      "doesn't"
+     ],
+     "answers": [
+      "couldn't"
+     ],
+     "hint_choice": [
+      "couldn't",
+      "can't"
+     ]
+    },
+    {
+     "id": "07-pl-02",
+     "rule_point": "07-1",
+     "rung": "fill",
+     "prompt": "\"Where is the report?\" Yesterday he asked me where the report ___. It's on his desk now, so he has found it.",
+     "answers": [
+      "was"
+     ],
+     "hint_choice": [
+      "was",
+      "is"
+     ]
+    },
+    {
+     "id": "07-pl-03",
+     "rule_point": "07-1",
+     "rung": "fix",
+     "prompt": "He said me that the server was down.",
+     "answers": [
+      "He told me that the server was down.",
+      "He told me the server was down.",
+      "He said that the server was down.",
+      "He said the server was down.",
+      "He said to me that the server was down.",
+      "He said to me the server was down."
+     ],
+     "hint_choice": [
+      "told me",
+      "said me"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "07-2",
+   "b1_or_b2": "B2",
+   "items": [
+    {
+     "id": "07-pl-04",
+     "rule_point": "07-2",
+     "rung": "recognize",
+     "prompt": "The developer admitted ___ the wrong branch.",
+     "options": [
+      "using",
+      "to use",
+      "use"
+     ],
+     "answers": [
+      "using"
+     ],
+     "hint_choice": [
+      "using",
+      "to use"
+     ]
+    },
+    {
+     "id": "07-pl-05",
+     "rule_point": "07-2",
+     "rung": "fill",
+     "prompt": "The vendor promised ___ (send) the update by Friday.",
+     "answers": [
+      "to send"
+     ],
+     "hint_choice": [
+      "to send",
+      "sending"
+     ]
+    },
+    {
+     "id": "07-pl-06",
+     "rule_point": "07-2",
+     "rung": "fix",
+     "prompt": "She suggested me to talk to the client.",
+     "answers": [
+      "She suggested that I talk to the client.",
+      "She suggested that I should talk to the client.",
+      "She suggested I talk to the client.",
+      "She suggested I should talk to the client.",
+      "She suggested talking to the client."
+     ],
+     "hint_choice": [
+      "suggested talking",
+      "suggested me to talk"
+     ]
+    }
+   ]
+  }
+ ]
+}

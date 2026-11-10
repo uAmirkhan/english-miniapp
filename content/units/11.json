@@ -1,0 +1,505 @@
+{
+ "id": "11",
+ "full": false,
+ "title": "People: stakeholders and personas",
+ "theme": "Люди: стейкхолдеры, коллеги, персоны пользователей",
+ "can_do": [
+  "Описать человека или роль одной фразой: the client who..., the tool that...",
+  "Добавить пояснение о человеке через запятые: Anna, who leads design, ...",
+  "Сократить описание причастным оборотом: people working remotely, the report sent yesterday.",
+  "Различать свое чувство и то, что его вызывает: I'm bored и it's boring.",
+  "Описать стейкхолдеров проекта и персону пользователя на собеседовании."
+ ],
+ "rules": [
+  {
+   "id": "11-A",
+   "title": "Relative and participle clauses",
+   "points": [
+    {
+     "id": "11-1",
+     "title": "Defining relative clauses: who, which, that, whose",
+     "b1_or_b2": "B1",
+     "explain_ru": "Определительное придаточное уточняет, о ком или о чем речь: без него фраза теряет смысл. Для людей who или that, для вещей which или that, для принадлежности whose. Если после who/which/that сразу идет новое подлежащее (the report that I wrote), местоимение можно опустить: the report I wrote. Запятых здесь нет.",
+     "examples": [
+      {
+       "en": "The client who called this morning wants a demo.",
+       "ru": "Клиент, который звонил утром, хочет демо."
+      },
+      {
+       "en": "This is the feature that users ask about most.",
+       "ru": "Это функция, о которой пользователи спрашивают чаще всего."
+      },
+      {
+       "en": "She's the designer whose prototype won the contest.",
+       "ru": "Она дизайнер, чей прототип победил в конкурсе."
+      },
+      {
+       "en": "The tool we chose last year is too slow now.",
+       "ru": "Инструмент, который мы выбрали в прошлом году, теперь слишком медленный."
+      },
+      {
+       "en": "Anyone who joins the team gets a mentor.",
+       "ru": "Каждый, кто приходит в команду, получает наставника."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "The manager which hired me has left the company.",
+      "right": "The manager who hired me has left the company.",
+      "why_ru": "Русское \"который\" одно и для людей, и для вещей. В английском which только для вещей; для людей who или that."
+     }
+    },
+    {
+     "id": "11-2",
+     "title": "Non-defining relative clauses",
+     "b1_or_b2": "B2",
+     "explain_ru": "Неопределительное придаточное добавляет сведения о том, кто и так понятен: Anna, who leads the design team, will join the call. Оно отделяется запятыми, that в нем нельзя, и местоимение не опускается. Which может относиться ко всей предыдущей фразе: The release was delayed, which annoyed the client.",
+     "examples": [
+      {
+       "en": "Our CEO, who started the company in a garage, still writes code.",
+       "ru": "Наш CEO, который основал компанию в гараже, до сих пор пишет код."
+      },
+      {
+       "en": "The new app, which took a year to build, has a rating of 4.8.",
+       "ru": "У нового приложения, которое делали год, рейтинг 4,8."
+      },
+      {
+       "en": "I spoke to Mr Grant, whose team handles billing.",
+       "ru": "Я поговорил с мистером Грантом, чья команда занимается оплатой."
+      },
+      {
+       "en": "The demo crashed twice, which was embarrassing.",
+       "ru": "Демо дважды упало, что было неловко."
+      },
+      {
+       "en": "Lisbon, where our office is, is lovely in spring.",
+       "ru": "Лиссабон, где находится наш офис, прекрасен весной."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "My manager, that is very strict, approved the plan.",
+      "right": "My manager, who is very strict, approved the plan.",
+      "why_ru": "По-русски запятая перед \"который\" стоит всегда. В английском запятые ставят только у добавочного пояснения, и в нем нельзя that: только who или which."
+     }
+    },
+    {
+     "id": "11-3",
+     "title": "Participle clauses",
+     "b1_or_b2": "B2",
+     "explain_ru": "Причастный оборот сокращает придаточное. -ing заменяет who/which + действие: people working remotely = people who work remotely. Третья форма заменяет страдательный залог: the report sent yesterday = the report which was sent yesterday. В начале фразы оборот заменяет when или because: Having checked the numbers, we approved the budget (проверив цифры). Действует в обороте то же лицо, что и в главной части.",
+     "examples": [
+      {
+       "en": "Users signing up this week get a free month.",
+       "ru": "Пользователи, которые регистрируются на этой неделе, получают бесплатный месяц."
+      },
+      {
+       "en": "The survey sent to customers had twenty questions.",
+       "ru": "Опрос, отправленный клиентам, содержал двадцать вопросов."
+      },
+      {
+       "en": "Feeling tired, she left the meeting early.",
+       "ru": "Чувствуя усталость, она ушла со встречи раньше."
+      },
+      {
+       "en": "Having checked the numbers, we approved the budget.",
+       "ru": "Проверив цифры, мы утвердили бюджет."
+      },
+      {
+       "en": "Most of the people invited to the workshop came.",
+       "ru": "Большинство приглашенных на семинар пришли."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "Walking into the office, the lights were off.",
+      "right": "Walking into the office, I noticed that the lights were off.",
+      "why_ru": "Оборот всегда относится к подлежащему главной части. Здесь получилось, что в офис вошел свет. По-русски с деепричастием та же ловушка, но в речи ее часто не замечают."
+     }
+    }
+   ]
+  },
+  {
+   "id": "11-B",
+   "title": "-ing and -ed adjectives",
+   "points": [
+    {
+     "id": "11-4",
+     "title": "Adjectives with -ing and -ed: bored or boring",
+     "b1_or_b2": "B1",
+     "explain_ru": "-ed описывает, что чувствует человек: I'm bored, she was confused. -ing описывает то, что вызывает это чувство: the meeting was boring, the instructions were confusing. Проверка вопросом: кто чувствует? Человек, значит -ed. Что вызывает чувство? Значит -ing.",
+     "examples": [
+      {
+       "en": "The instructions were confusing, so new users were confused.",
+       "ru": "Инструкция была запутанной, поэтому новые пользователи терялись."
+      },
+      {
+       "en": "I was really surprised by the results.",
+       "ru": "Я был очень удивлен результатами."
+      },
+      {
+       "en": "It's an exciting project with a tight deadline.",
+       "ru": "Это интересный проект с жестким сроком."
+      },
+      {
+       "en": "She felt exhausted after the third call.",
+       "ru": "После третьего звонка она чувствовала себя вымотанной."
+      },
+      {
+       "en": "The feedback was disappointing, but useful.",
+       "ru": "Отзыв разочаровал, но оказался полезным."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "I am very interesting in this role.",
+      "right": "I am very interested in this role.",
+      "why_ru": "Русское \"мне интересно\" легко превращается в I am interesting, а это значит \"я интересный человек\". Про свое чувство говорят с -ed."
+     }
+    }
+   ]
+  }
+ ],
+ "words": [
+  {
+   "en": "reliable",
+   "ru": "надежный",
+   "example": "She's the most reliable person on the team.",
+   "stress": "re-LI-a-ble",
+   "pm": false
+  },
+  {
+   "en": "supportive",
+   "ru": "поддерживающий",
+   "example": "My first manager was very supportive.",
+   "stress": "sup-POR-tive",
+   "pm": false
+  },
+  {
+   "en": "demanding",
+   "ru": "требовательный",
+   "example": "Our biggest client is demanding but fair.",
+   "stress": "de-MAND-ing",
+   "pm": false
+  },
+  {
+   "en": "approachable",
+   "ru": "открытый, к которому легко подойти",
+   "example": "A team lead should be approachable.",
+   "stress": "ap-PROACH-a-ble",
+   "pm": false
+  },
+  {
+   "en": "outgoing",
+   "ru": "общительный",
+   "example": "He's outgoing and talks to everyone at events.",
+   "stress": "out-GO-ing",
+   "pm": false
+  },
+  {
+   "en": "stubborn",
+   "ru": "упрямый",
+   "example": "The sponsor was stubborn about the launch date.",
+   "stress": "STUB-born",
+   "pm": false
+  },
+  {
+   "en": "easy-going",
+   "ru": "спокойный, легкий в общении",
+   "example": "Our tester is easy-going, nothing makes him panic.",
+   "stress": "eas-y-GO-ing",
+   "pm": false
+  },
+  {
+   "en": "trustworthy",
+   "ru": "заслуживающий доверия",
+   "example": "We need a trustworthy vendor for payments.",
+   "stress": "TRUST-wor-thy",
+   "pm": false
+  },
+  {
+   "en": "influential",
+   "ru": "влиятельный",
+   "example": "The CFO is the most influential person in the room.",
+   "stress": "in-flu-EN-tial",
+   "pm": false
+  },
+  {
+   "en": "get along with",
+   "ru": "ладить с",
+   "example": "I get along with most people on the team.",
+   "stress": "get a-LONG with",
+   "pm": false
+  },
+  {
+   "en": "look up to",
+   "ru": "уважать, равняться на",
+   "example": "Junior developers look up to her.",
+   "stress": "look UP to",
+   "pm": false
+  },
+  {
+   "en": "rely on",
+   "ru": "полагаться на",
+   "example": "We rely on the data team for every report.",
+   "stress": "re-LY on",
+   "pm": false
+  },
+  {
+   "en": "personality",
+   "ru": "характер, личность",
+   "example": "He has a calm personality.",
+   "stress": "per-son-AL-i-ty",
+   "pm": false
+  },
+  {
+   "en": "empathy",
+   "ru": "эмпатия, умение понять другого",
+   "example": "Good support agents show empathy.",
+   "stress": "EM-pa-thy",
+   "pm": false
+  },
+  {
+   "en": "frustrated",
+   "ru": "раздраженный, расстроенный",
+   "example": "Users were frustrated by the slow login.",
+   "stress": "frus-TRAT-ed",
+   "pm": false
+  },
+  {
+   "en": "persona",
+   "ru": "персона, портрет пользователя",
+   "example": "Our main persona is a busy clinic manager.",
+   "stress": "per-SO-na",
+   "pm": true
+  },
+  {
+   "en": "decision-maker",
+   "ru": "тот, кто принимает решение",
+   "example": "Find out who the real decision-maker is.",
+   "stress": "de-CI-sion-mak-er",
+   "pm": true
+  },
+  {
+   "en": "end user",
+   "ru": "конечный пользователь",
+   "example": "The end user never sees this setting.",
+   "stress": "end US-er",
+   "pm": true
+  },
+  {
+   "en": "sponsor",
+   "ru": "спонсор проекта",
+   "example": "The project sponsor approved the extra budget.",
+   "stress": "SPON-sor",
+   "pm": true
+  },
+  {
+   "en": "point of contact",
+   "ru": "контактное лицо",
+   "example": "Maria is our point of contact at the bank.",
+   "stress": "point of CON-tact",
+   "pm": true
+  }
+ ],
+ "placement": [
+  {
+   "rule_point": "11-1",
+   "b1_or_b2": "B1",
+   "items": [
+    {
+     "id": "11-pl-01",
+     "rule_point": "11-1",
+     "rung": "recognize",
+     "prompt": "The developer ___ wrote this module has left the company.",
+     "options": [
+      "who",
+      "which",
+      "whose"
+     ],
+     "answers": [
+      "who"
+     ],
+     "hint_choice": [
+      "who",
+      "which"
+     ]
+    },
+    {
+     "id": "11-pl-02",
+     "rule_point": "11-1",
+     "rung": "fill",
+     "prompt": "That's the colleague ___ laptop was stolen at the airport.",
+     "answers": [
+      "whose"
+     ],
+     "hint_choice": [
+      "whose",
+      "who"
+     ]
+    },
+    {
+     "id": "11-pl-03",
+     "rule_point": "11-1",
+     "rung": "fix",
+     "prompt": "The client which complained yesterday is calling again.",
+     "answers": [
+      "The client who complained yesterday is calling again.",
+      "The client that complained yesterday is calling again."
+     ],
+     "hint_choice": [
+      "who",
+      "which"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "11-2",
+   "b1_or_b2": "B2",
+   "items": [
+    {
+     "id": "11-pl-04",
+     "rule_point": "11-2",
+     "rung": "recognize",
+     "prompt": "Our office, ___ is near the river, is closed today.",
+     "options": [
+      "which",
+      "that",
+      "what"
+     ],
+     "answers": [
+      "which"
+     ],
+     "hint_choice": [
+      "which",
+      "that"
+     ]
+    },
+    {
+     "id": "11-pl-05",
+     "rule_point": "11-2",
+     "rung": "fill",
+     "prompt": "The release was delayed again, ___ upset the client.",
+     "answers": [
+      "which"
+     ],
+     "hint_choice": [
+      "which",
+      "what"
+     ]
+    },
+    {
+     "id": "11-pl-06",
+     "rule_point": "11-2",
+     "rung": "fix",
+     "prompt": "Maria, that runs the support team, is on holiday this week.",
+     "answers": [
+      "Maria, who runs the support team, is on holiday this week."
+     ],
+     "hint_choice": [
+      "who",
+      "that"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "11-3",
+   "b1_or_b2": "B2",
+   "items": [
+    {
+     "id": "11-pl-07",
+     "rule_point": "11-3",
+     "rung": "recognize",
+     "prompt": "The emails ___ last week never arrived.",
+     "options": [
+      "sent",
+      "sending",
+      "were sent"
+     ],
+     "answers": [
+      "sent"
+     ],
+     "hint_choice": [
+      "sent",
+      "sending"
+     ]
+    },
+    {
+     "id": "11-pl-08",
+     "rule_point": "11-3",
+     "rung": "fill",
+     "prompt": "People ___ (work) remotely often feel isolated.",
+     "answers": [
+      "working"
+     ],
+     "hint_choice": [
+      "working",
+      "worked"
+     ]
+    },
+    {
+     "id": "11-pl-09",
+     "rule_point": "11-3",
+     "rung": "transform",
+     "prompt": "Make it shorter, without \"who is\": The woman who is sitting by the window is our sponsor.",
+     "answers": [
+      "The woman sitting by the window is our sponsor."
+     ],
+     "hint_choice": [
+      "sitting",
+      "who sitting"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "11-4",
+   "b1_or_b2": "B1",
+   "items": [
+    {
+     "id": "11-pl-10",
+     "rule_point": "11-4",
+     "rung": "recognize",
+     "prompt": "The presentation was so ___ that half the room fell asleep.",
+     "options": [
+      "boring",
+      "bored",
+      "bore"
+     ],
+     "answers": [
+      "boring"
+     ],
+     "hint_choice": [
+      "boring",
+      "bored"
+     ]
+    },
+    {
+     "id": "11-pl-11",
+     "rule_point": "11-4",
+     "rung": "fill",
+     "prompt": "I was completely ___ (confuse) by the new interface.",
+     "answers": [
+      "confused"
+     ],
+     "hint_choice": [
+      "confused",
+      "confusing"
+     ]
+    },
+    {
+     "id": "11-pl-12",
+     "rule_point": "11-4",
+     "rung": "fix",
+     "prompt": "I'm very exciting about the new role.",
+     "answers": [
+      "I'm very excited about the new role.",
+      "I am very excited about the new role."
+     ],
+     "hint_choice": [
+      "excited",
+      "exciting"
+     ]
+    }
+   ]
+  }
+ ]
+}

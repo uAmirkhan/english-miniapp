@@ -1,0 +1,356 @@
+{
+ "id": "06",
+ "full": false,
+ "title": "Technology: what is done and who does it",
+ "theme": "Технологии: релиз, баги, release notes",
+ "can_do": [
+  "Описать процесс и результат, когда важно действие, а не тот, кто его сделал: The bug was fixed.",
+  "Написать короткие release notes в пассиве: was added, has been improved, will be removed.",
+  "Сказать, что работу сделали за тебя: I had my laptop repaired.",
+  "Рассказать о неприятности с техникой: I had my account hacked."
+ ],
+ "rules": [
+  {
+   "id": "06-A",
+   "title": "The passive",
+   "points": [
+    {
+     "id": "06-1",
+     "title": "The passive in all tenses",
+     "b1_or_b2": "B2",
+     "explain_ru": "Пассив: be в нужном времени + третья форма. Важно, что сделано, а не кто сделал. Время показывает be: is fixed (обычно), is being fixed (прямо сейчас), was fixed (в прошлом), has been fixed (уже, результат сейчас), had been fixed (раньше другого прошлого), will be fixed (в будущем), can/must be fixed (с модальными). Кто сделал, добавляют через by, только если это важно.",
+     "examples": [
+      {
+       "en": "The bug was reported by a customer on Monday.",
+       "ru": "О баге сообщил клиент в понедельник."
+      },
+      {
+       "en": "The new version is being tested right now.",
+       "ru": "Новую версию сейчас тестируют."
+      },
+      {
+       "en": "All the release notes have been translated.",
+       "ru": "Все release notes уже переведены."
+      },
+      {
+       "en": "The old login page will be removed in March.",
+       "ru": "Старую страницу входа уберут в марте."
+      },
+      {
+       "en": "The data had already been deleted when we noticed the problem.",
+       "ru": "Данные уже были удалены, когда мы заметили проблему."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "This bug fixed yesterday.",
+      "right": "This bug was fixed yesterday.",
+      "why_ru": "По-русски \"баг исправили\" обходится без вспомогательного глагола. В английском пассив без be не работает: was fixed, has been fixed."
+     }
+    },
+    {
+     "id": "06-2",
+     "title": "have something done",
+     "b1_or_b2": "B2",
+     "explain_ru": "have + предмет + третья форма: работу сделал кто-то другой, обычно за деньги или по твоей просьбе. I had my laptop repaired (мне починили ноутбук). Время показывает have: I'm having..., I had..., I'll have... В разговоре так же работает get: I got my phone fixed. Та же конструкция описывает неприятность, которая с тобой случилась: She had her bag stolen.",
+     "examples": [
+      {
+       "en": "I had my laptop repaired last week.",
+       "ru": "На прошлой неделе мне починили ноутбук."
+      },
+      {
+       "en": "We're having the office painted, so we're working from home.",
+       "ru": "В офисе делают покраску, поэтому мы работаем из дома."
+      },
+      {
+       "en": "You should get the contract checked by a lawyer.",
+       "ru": "Тебе стоит дать юристу проверить договор."
+      },
+      {
+       "en": "She had her bag stolen at the airport.",
+       "ru": "У нее украли сумку в аэропорту."
+      },
+      {
+       "en": "We'll have the servers moved to a new data centre next year.",
+       "ru": "В следующем году нам перевезут серверы в новый дата-центр."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "I repaired my laptop at a service centre.",
+      "right": "I had my laptop repaired at a service centre.",
+      "why_ru": "По-русски \"я починил ноутбук в сервисе\" никого не обманывает. По-английски I repaired значит \"я сам починил\". Если делал мастер: I had it repaired."
+     }
+    }
+   ]
+  }
+ ],
+ "words": [
+  {
+   "en": "release",
+   "ru": "релиз, выпуск; выпускать",
+   "example": "The next release is planned for Thursday.",
+   "stress": "re-LEASE",
+   "pm": false
+  },
+  {
+   "en": "bug",
+   "ru": "ошибка в программе",
+   "example": "A bug in the checkout stopped all payments.",
+   "stress": "BUG",
+   "pm": false
+  },
+  {
+   "en": "update",
+   "ru": "обновление; обновлять",
+   "example": "The update was installed on every device overnight.",
+   "stress": "UP-date",
+   "pm": false
+  },
+  {
+   "en": "feature",
+   "ru": "функция, возможность продукта",
+   "example": "Dark mode is the most requested feature.",
+   "stress": "FEA-ture",
+   "pm": false
+  },
+  {
+   "en": "crash",
+   "ru": "падать (о программе); сбой",
+   "example": "The app crashes when you upload a large photo.",
+   "stress": "CRASH",
+   "pm": false
+  },
+  {
+   "en": "fix",
+   "ru": "исправить; исправление",
+   "example": "A fix for the login problem has been released.",
+   "stress": "FIX",
+   "pm": false
+  },
+  {
+   "en": "device",
+   "ru": "устройство",
+   "example": "The app was tested on twenty devices.",
+   "stress": "de-VICE",
+   "pm": false
+  },
+  {
+   "en": "settings",
+   "ru": "настройки",
+   "example": "Notifications can be turned off in the settings.",
+   "stress": "SET-tings",
+   "pm": false
+  },
+  {
+   "en": "upgrade",
+   "ru": "переход на новую версию; обновить",
+   "example": "The upgrade to the new database took all weekend.",
+   "stress": "UP-grade",
+   "pm": false
+  },
+  {
+   "en": "backup",
+   "ru": "резервная копия",
+   "example": "A backup is made every night at two.",
+   "stress": "BACK-up",
+   "pm": false
+  },
+  {
+   "en": "user-friendly",
+   "ru": "удобный для пользователя",
+   "example": "The new interface is much more user-friendly.",
+   "stress": "u-ser-FRIEND-ly",
+   "pm": false
+  },
+  {
+   "en": "reliable",
+   "ru": "надежный",
+   "example": "We need a more reliable payment provider.",
+   "stress": "re-LI-a-ble",
+   "pm": false
+  },
+  {
+   "en": "outdated",
+   "ru": "устаревший",
+   "example": "The documentation is completely outdated.",
+   "stress": "out-DAT-ed",
+   "pm": false
+  },
+  {
+   "en": "be hacked",
+   "ru": "быть взломанным",
+   "example": "Her account was hacked last year.",
+   "stress": "be HACKED",
+   "pm": false
+  },
+  {
+   "en": "launch",
+   "ru": "запуск; запускать",
+   "example": "The launch was moved to the end of the month.",
+   "stress": "LAUNCH",
+   "pm": false
+  },
+  {
+   "en": "release notes",
+   "ru": "описание изменений в версии",
+   "example": "The release notes list every bug that was fixed.",
+   "stress": "re-LEASE notes",
+   "pm": true
+  },
+  {
+   "en": "deploy",
+   "ru": "выкатить, развернуть",
+   "example": "The new version was deployed at midnight.",
+   "stress": "de-PLOY",
+   "pm": true
+  },
+  {
+   "en": "roll back",
+   "ru": "откатить",
+   "example": "The update was rolled back after the first complaints.",
+   "stress": "roll BACK",
+   "pm": true
+  },
+  {
+   "en": "rollout",
+   "ru": "поэтапный выпуск",
+   "example": "The rollout will be done in three stages.",
+   "stress": "ROLL-out",
+   "pm": true
+  },
+  {
+   "en": "downtime",
+   "ru": "время простоя",
+   "example": "The migration caused two hours of downtime.",
+   "stress": "DOWN-time",
+   "pm": true
+  },
+  {
+   "en": "patch",
+   "ru": "заплатка, небольшое исправление",
+   "example": "A security patch will be released tomorrow.",
+   "stress": "PATCH",
+   "pm": true
+  },
+  {
+   "en": "test coverage",
+   "ru": "покрытие тестами",
+   "example": "Test coverage has been increased to eighty percent.",
+   "stress": "TEST cov-er-age",
+   "pm": true
+  }
+ ],
+ "placement": [
+  {
+   "rule_point": "06-1",
+   "b1_or_b2": "B2",
+   "items": [
+    {
+     "id": "06-pl-01",
+     "rule_point": "06-1",
+     "rung": "recognize",
+     "prompt": "Please don't touch the test server: the new feature ___ on it right now.",
+     "options": [
+      "is being tested",
+      "is testing",
+      "has tested"
+     ],
+     "answers": [
+      "is being tested"
+     ],
+     "hint_choice": [
+      "is being tested",
+      "is testing"
+     ]
+    },
+    {
+     "id": "06-pl-02",
+     "rule_point": "06-1",
+     "rung": "fill",
+     "prompt": "All our data ___ (back up) every night at 2 am.",
+     "answers": [
+      "is backed up",
+      "gets backed up",
+      "are backed up",
+      "get backed up"
+     ],
+     "hint_choice": [
+      "is backed up",
+      "backs up"
+     ]
+    },
+    {
+     "id": "06-pl-03",
+     "rule_point": "06-1",
+     "rung": "fix",
+     "prompt": "This bug fixed yesterday by the mobile team.",
+     "answers": [
+      "This bug was fixed yesterday by the mobile team.",
+      "This bug got fixed yesterday by the mobile team."
+     ],
+     "hint_choice": [
+      "was fixed",
+      "fixed"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "06-2",
+   "b1_or_b2": "B2",
+   "items": [
+    {
+     "id": "06-pl-04",
+     "rule_point": "06-2",
+     "rung": "recognize",
+     "prompt": "I didn't fix the car myself. I ___ at a garage.",
+     "options": [
+      "had it fixed",
+      "fixed it",
+      "had fixed it"
+     ],
+     "answers": [
+      "had it fixed"
+     ],
+     "hint_choice": [
+      "had it fixed",
+      "fixed it"
+     ]
+    },
+    {
+     "id": "06-pl-05",
+     "rule_point": "06-2",
+     "rung": "fill",
+     "prompt": "We ___ (have / the office / paint) next week, so we'll work from home.",
+     "answers": [
+      "are having the office painted",
+      "'re having the office painted",
+      "are getting the office painted",
+      "'re getting the office painted",
+      "will have the office painted",
+      "'ll have the office painted",
+      "are going to have the office painted",
+      "'re going to have the office painted"
+     ],
+     "hint_choice": [
+      "are having the office painted",
+      "are painting the office"
+     ]
+    },
+    {
+     "id": "06-pl-06",
+     "rule_point": "06-2",
+     "rung": "fix",
+     "prompt": "Poor Anna! She had stolen her phone on the train yesterday.",
+     "answers": [
+      "Poor Anna! She had her phone stolen on the train yesterday.",
+      "Poor Anna! She got her phone stolen on the train yesterday."
+     ],
+     "hint_choice": [
+      "had her phone stolen",
+      "had stolen her phone"
+     ]
+    }
+   ]
+  }
+ ]
+}

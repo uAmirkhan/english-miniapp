@@ -1,0 +1,3401 @@
+{
+ "id": "03",
+ "full": true,
+ "title": "Team and product: talking about people and things",
+ "theme": "Команда и продукт: кто что делает, что в продукте есть и чего не хватает",
+ "can_do": [
+  "Описать команду: сколько людей, кто чем занимается, как делят работу.",
+  "Правильно ставить a, the или ничего перед существительным в рассказе о работе.",
+  "Не терять -s: three features, every task, she works, there are two bugs.",
+  "Говорить о количестве: much, many, a lot of, a few, most, both, the whole.",
+  "Ответить на вопрос собеседования о приоритетах в бэклоге."
+ ],
+ "rules": [
+  {
+   "id": "03-A",
+   "title": "Articles and countability",
+   "points": [
+    {
+     "id": "03-1",
+     "title": "a / an, the or no article",
+     "b1_or_b2": "B1",
+     "explain_ru": "a/an ставят, когда предмет один из многих или появляется впервые: We hired a designer. the ставят, когда понятно, какой именно: его уже называли, он один в этой ситуации или его уточнили (the designer we hired, the CEO, the report you sent). Без артикля говорят о многих вообще и о неисчисляемом: Users hate long forms. Feedback matters. Помогает вопрос: знает ли собеседник, о каком именно речь? Знает: the. Любой из многих: a. Все вообще: ничего.",
+     "examples": [
+      {
+       "en": "We hired a new designer last month. The designer has already changed the onboarding.",
+       "ru": "В прошлом месяце мы наняли нового дизайнера. Дизайнер уже переделал онбординг."
+      },
+      {
+       "en": "Can you send me the report you mentioned yesterday?",
+       "ru": "Можешь прислать отчет, о котором ты говорил вчера?"
+      },
+      {
+       "en": "Users don't read long instructions.",
+       "ru": "Пользователи не читают длинные инструкции."
+      },
+      {
+       "en": "She's the only tester on the team.",
+       "ru": "Она единственный тестировщик в команде."
+      },
+      {
+       "en": "I think it's a good idea, but the timing is wrong.",
+       "ru": "Думаю, это хорошая идея, но время неудачное."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "Yesterday I had meeting with new client.",
+      "right": "Yesterday I had a meeting with a new client.",
+      "why_ru": "В русском артиклей нет, поэтому перед \"встреча\" и \"клиент\" ничего не ставится. В английском исчисляемое слово в единственном числе почти никогда не стоит голым: нужен a, the или my, this."
+     }
+    },
+    {
+     "id": "03-2",
+     "title": "Uncountable nouns: advice, information, feedback",
+     "b1_or_b2": "B1",
+     "explain_ru": "Некоторые слова в английском неисчисляемые, хотя по-русски их можно посчитать: advice, information, feedback, news, research, equipment, software, progress, knowledge, work (в значении \"работа\"). С ними нет a/an и нет -s, а глагол стоит в единственном числе: The feedback was positive. Чтобы посчитать, нужен кусок: a piece of advice, two pieces of feedback. Вместо many с ними ставят much, вместо a few ставят a little.",
+     "examples": [
+      {
+       "en": "Thanks for the feedback, it was really useful.",
+       "ru": "Спасибо за отзыв, он очень пригодился."
+      },
+      {
+       "en": "Can I give you a piece of advice?",
+       "ru": "Можно дам тебе совет?"
+      },
+      {
+       "en": "We don't have much information about the new users yet.",
+       "ru": "У нас пока мало информации о новых пользователях."
+      },
+      {
+       "en": "The news about the release was good.",
+       "ru": "Новости о релизе были хорошие."
+      },
+      {
+       "en": "We need to do some research before we start.",
+       "ru": "Нам нужно провести исследование, прежде чем начинать."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "Thank you for your advices.",
+      "right": "Thank you for your advice.",
+      "why_ru": "По-русски \"советы\" бывают во множественном числе. В английском advice неисчисляемое: без -s и без a. Один совет: a piece of advice."
+     }
+    }
+   ]
+  },
+  {
+   "id": "03-B",
+   "title": "The -s ending",
+   "points": [
+    {
+     "id": "03-3",
+     "title": "Plural -s; every and each + singular",
+     "b1_or_b2": "B1",
+     "explain_ru": "Если предметов больше одного, у существительного -s, даже когда количество уже понятно из числа или слова: three projects, many users, all my tasks, a lot of ideas. После every и each наоборот: существительное в единственном числе и глагол с -s: every task has an owner, each team member gets a laptop. Every значит \"каждый из всех\", но грамматически это один предмет. Неправильные формы запомнить: person - people, child - children.",
+     "examples": [
+      {
+       "en": "We released three new features last quarter.",
+       "ru": "В прошлом квартале мы выпустили три новые фичи."
+      },
+      {
+       "en": "Every task needs an owner and a deadline.",
+       "ru": "У каждой задачи должен быть ответственный и срок."
+      },
+      {
+       "en": "A lot of users asked for a dark mode.",
+       "ru": "Многие пользователи просили темную тему."
+      },
+      {
+       "en": "Each team member has two days for training.",
+       "ru": "У каждого члена команды два дня на обучение."
+      },
+      {
+       "en": "We talked to twenty people from five companies.",
+       "ru": "Мы поговорили с двадцатью людьми из пяти компаний."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "Every sprints ends with a demo.",
+      "right": "Every sprint ends with a demo.",
+      "why_ru": "По-русски \"все спринты\" и \"каждый спринт\" близки по смыслу, и -s переносится на every. В английском после every и each всегда одно: every sprint, each user."
+     }
+    },
+    {
+     "id": "03-4",
+     "title": "Verb -s: she works, there is / there are",
+     "b1_or_b2": "B1",
+     "explain_ru": "В настоящем времени после he, she, it и любого одного лица или предмета (my manager, the app, everyone, nobody) глагол получает -s: she works, the app crashes, everyone knows. В вопросе и отрицании -s переходит в does/doesn't, а глагол остается без -s: Does it work? It doesn't work. There is + один предмет или неисчисляемое (there is a bug, there is some feedback), there are + много (there are two bugs). Слово team в британском варианте может идти и с are: the team are happy; оба варианта верны.",
+     "examples": [
+      {
+       "en": "Our product manager talks to customers every week.",
+       "ru": "Наш продакт каждую неделю общается с клиентами."
+      },
+      {
+       "en": "The app crashes when someone uploads a big file.",
+       "ru": "Приложение падает, когда кто-то загружает большой файл."
+      },
+      {
+       "en": "Does your manager use Jira? No, she doesn't.",
+       "ru": "Твой руководитель пользуется Jira? Нет."
+      },
+      {
+       "en": "There are three open bugs, and there is one question from the client.",
+       "ru": "Открыто три бага, и есть один вопрос от клиента."
+      },
+      {
+       "en": "Everyone on the team knows the release date.",
+       "ru": "Все в команде знают дату релиза."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "He work with the backend and he don't like meetings.",
+      "right": "He works with the backend and he doesn't like meetings.",
+      "why_ru": "В русском окончание глагола меняется у всех лиц, а в английском почти никогда, поэтому -s кажется лишним. Но это единственный след третьего лица: he works, she doesn't."
+     }
+    }
+   ]
+  },
+  {
+   "id": "03-C",
+   "title": "Quantifiers and determiners",
+   "points": [
+    {
+     "id": "03-5",
+     "title": "much, many, a few, most, both, the whole",
+     "b1_or_b2": "B2",
+     "explain_ru": "Сколько: many и a few с исчисляемыми (many users, a few bugs), much и a little с неисчисляемыми (much time, a little feedback). В утверждениях вместо much и many обычно говорят a lot of: We have a lot of work. Few и little без a значат \"мало, и это плохо\": Few people came. Определители: most + существительное о всех вообще (most users), most of the + конкретная группа (most of the users we interviewed), both о двух (both options), the whole + единственное число (the whole team), all the + конкретная группа (all the tests).",
+     "examples": [
+      {
+       "en": "We don't have much time, but we have a lot of ideas.",
+       "ru": "Времени у нас мало, а идей много."
+      },
+      {
+       "en": "Most users never open the settings page.",
+       "ru": "Большинство пользователей никогда не открывают настройки."
+      },
+      {
+       "en": "Most of the people we interviewed wanted a mobile app.",
+       "ru": "Большинство опрошенных хотели мобильное приложение."
+      },
+      {
+       "en": "Both options have risks, so let's compare them.",
+       "ru": "У обоих вариантов есть риски, давай их сравним."
+      },
+      {
+       "en": "The whole team worked on the release, and all the tests passed.",
+       "ru": "Вся команда работала над релизом, и все тесты прошли."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "Most of users like the new design.",
+      "right": "Most users like the new design.",
+      "why_ru": "Русское \"большинство пользователей\" тянет за собой of. Most of нужен только перед the, my, these и местоимениями: most of the users we asked, most of them."
+     }
+    }
+   ]
+  }
+ ],
+ "article_card": {
+  "title": "a в первый раз, the потом",
+  "rule_ru": "Новый предмет в рассказе вводи через a/an. Когда он уже назван, это \"тот самый\": the. Без артикля говорят о многих вообще и о неисчисляемом.",
+  "examples": [
+   {
+    "en": "We found a bug yesterday. The bug was in the payment form.",
+    "ru": "Вчера мы нашли баг. Баг был в форме оплаты."
+   },
+   {
+    "en": "I read an article about remote teams. The article was too long.",
+    "ru": "Я прочитал статью про удаленные команды. Статья была слишком длинной."
+   },
+   {
+    "en": "Bugs are normal. The bug we found yesterday is not.",
+    "ru": "Баги это нормально. А баг, который мы нашли вчера, нет."
+   }
+  ],
+  "items": [
+   {
+    "id": "03-ac-01",
+    "rule_point": "articles",
+    "rung": "fill",
+    "prompt": "We found a bug on Friday. ___ bug was in the login form.",
+    "answers": [
+     "The"
+    ],
+    "hint_choice": [
+     "The",
+     "A"
+    ]
+   },
+   {
+    "id": "03-ac-02",
+    "rule_point": "articles",
+    "rung": "fill",
+    "prompt": "I have ___ question about the release.",
+    "answers": [
+     "a"
+    ],
+    "hint_choice": [
+     "a",
+     "the"
+    ]
+   },
+   {
+    "id": "03-ac-03",
+    "rule_point": "articles",
+    "rung": "recognize",
+    "prompt": "In general, ___ meetings are too long.",
+    "options": [
+     "the",
+     "a",
+     "no article"
+    ],
+    "answers": [
+     "no article"
+    ],
+    "hint_choice": [
+     "no article",
+     "the"
+    ]
+   },
+   {
+    "id": "03-ac-04",
+    "rule_point": "articles",
+    "rung": "fill",
+    "prompt": "She wrote ___ email to the client. The email was very polite.",
+    "answers": [
+     "an"
+    ],
+    "hint_choice": [
+     "an",
+     "a"
+    ]
+   }
+  ]
+ },
+ "words": [
+  {
+   "en": "teammate",
+   "ru": "коллега по команде",
+   "example": "My teammate reviews my code before every release.",
+   "stress": "TEAM-mate",
+   "pm": false
+  },
+  {
+   "en": "department",
+   "ru": "отдел",
+   "example": "She moved from the sales department to the product team.",
+   "stress": "de-PART-ment",
+   "pm": false
+  },
+  {
+   "en": "advice",
+   "ru": "совет, советы",
+   "example": "Can I give you a piece of advice?",
+   "stress": "ad-VICE",
+   "pm": false
+  },
+  {
+   "en": "information",
+   "ru": "информация",
+   "example": "We need more information about how people pay.",
+   "stress": "in-for-MA-tion",
+   "pm": false
+  },
+  {
+   "en": "equipment",
+   "ru": "оборудование, техника",
+   "example": "New employees get their equipment on the first day.",
+   "stress": "e-QUIP-ment",
+   "pm": false
+  },
+  {
+   "en": "research",
+   "ru": "исследование",
+   "example": "Our research shows that most users pay by card.",
+   "stress": "re-SEARCH",
+   "pm": false
+  },
+  {
+   "en": "knowledge",
+   "ru": "знания",
+   "example": "When she left, a lot of knowledge left with her.",
+   "stress": "KNOW-ledge",
+   "pm": false
+  },
+  {
+   "en": "progress",
+   "ru": "прогресс, продвижение",
+   "example": "We haven't made much progress this week.",
+   "stress": "PRO-gress",
+   "pm": false
+  },
+  {
+   "en": "workload",
+   "ru": "нагрузка",
+   "example": "The workload doubled after two developers left.",
+   "stress": "WORK-load",
+   "pm": false
+  },
+  {
+   "en": "budget",
+   "ru": "бюджет",
+   "example": "The budget for the redesign is smaller than last year.",
+   "stress": "BUD-get",
+   "pm": false
+  },
+  {
+   "en": "customer",
+   "ru": "клиент, покупатель",
+   "example": "A customer called to say the app was too slow.",
+   "stress": "CUS-tom-er",
+   "pm": false
+  },
+  {
+   "en": "user",
+   "ru": "пользователь",
+   "example": "Every user gets a free month.",
+   "stress": "U-ser",
+   "pm": false
+  },
+  {
+   "en": "rely on",
+   "ru": "полагаться на",
+   "example": "We rely on the support team for customer feedback.",
+   "stress": "re-LY on",
+   "pm": false
+  },
+  {
+   "en": "share",
+   "ru": "делиться; распределять",
+   "example": "We share the work so that nobody is overloaded.",
+   "stress": "SHARE",
+   "pm": false
+  },
+  {
+   "en": "feature",
+   "ru": "функция, фича",
+   "example": "The most popular feature is the shared calendar.",
+   "stress": "FEA-ture",
+   "pm": true
+  },
+  {
+   "en": "backlog",
+   "ru": "бэклог, список задач",
+   "example": "There are over two hundred items in the backlog.",
+   "stress": "BACK-log",
+   "pm": true
+  },
+  {
+   "en": "requirement",
+   "ru": "требование",
+   "example": "The client changed the requirements twice in one week.",
+   "stress": "re-QUIRE-ment",
+   "pm": true
+  },
+  {
+   "en": "priority",
+   "ru": "приоритет",
+   "example": "Security is our top priority this quarter.",
+   "stress": "pri-OR-i-ty",
+   "pm": true
+  },
+  {
+   "en": "feedback",
+   "ru": "обратная связь, отзывы",
+   "example": "We got a lot of feedback after the beta.",
+   "stress": "FEED-back",
+   "pm": true
+  },
+  {
+   "en": "release",
+   "ru": "релиз, выпуск",
+   "example": "The next release is planned for the end of the month.",
+   "stress": "re-LEASE",
+   "pm": true
+  },
+  {
+   "en": "estimate",
+   "ru": "оценка (сроков, объема)",
+   "example": "The developers gave an estimate of three weeks.",
+   "stress": "ES-ti-mate",
+   "pm": true
+  },
+  {
+   "en": "bottleneck",
+   "ru": "узкое место",
+   "example": "Code review became a bottleneck when the team grew.",
+   "stress": "BOT-tle-neck",
+   "pm": true
+  },
+  {
+   "en": "user story",
+   "ru": "пользовательская история",
+   "example": "Each user story has clear acceptance criteria.",
+   "stress": "U-ser sto-ry",
+   "pm": true
+  },
+  {
+   "en": "sprint",
+   "ru": "спринт",
+   "example": "Every sprint ends with a short demo.",
+   "stress": "SPRINT",
+   "pm": true
+  }
+ ],
+ "chunks": [
+  {
+   "en": "We're a team of...",
+   "ru": "Нас в команде...",
+   "example": "We're a team of seven: four developers, two testers and a designer."
+  },
+  {
+   "en": "Each of us is responsible for...",
+   "ru": "Каждый из нас отвечает за...",
+   "example": "Each of us is responsible for one part of the product."
+  },
+  {
+   "en": "Most of our users...",
+   "ru": "Большинство наших пользователей...",
+   "example": "Most of our users open the app on their phones."
+  },
+  {
+   "en": "The main problem is that...",
+   "ru": "Главная проблема в том, что...",
+   "example": "The main problem is that nobody owns the old code."
+  },
+  {
+   "en": "What our customers really need is...",
+   "ru": "Что действительно нужно нашим клиентам, так это...",
+   "example": "What our customers really need is a faster checkout."
+  },
+  {
+   "en": "There's a lot of...",
+   "ru": "Много... (неисчисляемого)",
+   "example": "There's a lot of pressure before every release."
+  },
+  {
+   "en": "The way we work is...",
+   "ru": "Мы работаем так...",
+   "example": "The way we work is simple: one goal per sprint."
+  },
+  {
+   "en": "We tend to...",
+   "ru": "Мы обычно склонны...",
+   "example": "We tend to underestimate testing."
+  },
+  {
+   "en": "It depends on...",
+   "ru": "Это зависит от...",
+   "example": "It depends on how much time the client gives us."
+  },
+  {
+   "en": "On the one hand..., on the other hand...",
+   "ru": "С одной стороны..., с другой стороны...",
+   "example": "On the one hand, the feature is popular; on the other hand, it's expensive to support."
+  }
+ ],
+ "exercises": [
+  {
+   "id": "03-ex-001",
+   "rule_point": "03-1",
+   "rung": "recognize",
+   "prompt": "We hired ___ new designer last week. She starts on Monday.",
+   "options": [
+    "a",
+    "an",
+    "the"
+   ],
+   "answers": [
+    "a"
+   ],
+   "hint_choice": [
+    "a",
+    "the"
+   ]
+  },
+  {
+   "id": "03-ex-002",
+   "rule_point": "03-1",
+   "rung": "recognize",
+   "prompt": "Can you send me ___ report we discussed this morning?",
+   "options": [
+    "a",
+    "the",
+    "no article"
+   ],
+   "answers": [
+    "the"
+   ],
+   "hint_choice": [
+    "the",
+    "a"
+   ]
+  },
+  {
+   "id": "03-ex-003",
+   "rule_point": "03-1",
+   "rung": "recognize",
+   "prompt": "In general, ___ users don't like long forms.",
+   "options": [
+    "the",
+    "a",
+    "no article"
+   ],
+   "answers": [
+    "no article"
+   ],
+   "hint_choice": [
+    "no article",
+    "the"
+   ]
+  },
+  {
+   "id": "03-ex-004",
+   "rule_point": "03-1",
+   "rung": "recognize",
+   "prompt": "She's ___ only tester on the team.",
+   "options": [
+    "a",
+    "the",
+    "no article"
+   ],
+   "answers": [
+    "the"
+   ],
+   "hint_choice": [
+    "the",
+    "a"
+   ]
+  },
+  {
+   "id": "03-ex-005",
+   "rule_point": "03-1",
+   "rung": "fill",
+   "prompt": "I have ___ idea: let's test the new menu with five users.",
+   "answers": [
+    "an"
+   ],
+   "hint_choice": [
+    "an",
+    "a"
+   ]
+  },
+  {
+   "id": "03-ex-006",
+   "rule_point": "03-1",
+   "rung": "fill",
+   "prompt": "___ meeting yesterday was far too long. We need a shorter agenda.",
+   "answers": [
+    "The"
+   ],
+   "hint_choice": [
+    "The",
+    "A"
+   ]
+  },
+  {
+   "id": "03-ex-007",
+   "rule_point": "03-1",
+   "rung": "fill",
+   "prompt": "We hired a developer and ___ analyst.",
+   "answers": [
+    "an"
+   ],
+   "hint_choice": [
+    "an",
+    "a"
+   ]
+  },
+  {
+   "id": "03-ex-008",
+   "rule_point": "03-1",
+   "rung": "fill",
+   "prompt": "In my opinion, ___ honesty is the most important thing in a team. (write - if nothing is needed)",
+   "answers": [
+    "-",
+    "no article",
+    "nothing",
+    "none",
+    "x",
+    "0",
+    "no"
+   ],
+   "hint_choice": [
+    "-",
+    "the"
+   ]
+  },
+  {
+   "id": "03-ex-009",
+   "rule_point": "03-1",
+   "rung": "transform",
+   "prompt": "Make it general (all users, not the ones we interviewed): The users we interviewed want a dark mode.",
+   "answers": [
+    "Users want a dark mode."
+   ],
+   "hint_choice": [
+    "Users want",
+    "The users want"
+   ]
+  },
+  {
+   "id": "03-ex-010",
+   "rule_point": "03-1",
+   "rung": "transform",
+   "prompt": "Make it plural: There's a bug in the app.",
+   "answers": [
+    "There are bugs in the app.",
+    "There are some bugs in the app.",
+    "There are a few bugs in the app."
+   ],
+   "hint_choice": [
+    "There are bugs",
+    "There are a bugs"
+   ]
+  },
+  {
+   "id": "03-ex-011",
+   "rule_point": "03-1",
+   "rung": "transform",
+   "prompt": "Make it singular: We need new testers.",
+   "answers": [
+    "We need a new tester."
+   ],
+   "hint_choice": [
+    "a new tester",
+    "new tester"
+   ]
+  },
+  {
+   "id": "03-ex-012",
+   "rule_point": "03-1",
+   "rung": "transform",
+   "prompt": "Make it the one we talked about yesterday: I read an article about remote teams.",
+   "answers": [
+    "I read the article about remote teams.",
+    "I've read the article about remote teams."
+   ],
+   "hint_choice": [
+    "the article",
+    "an article"
+   ]
+  },
+  {
+   "id": "03-ex-013",
+   "rule_point": "03-1",
+   "rung": "translate",
+   "prompt": "У меня завтра встреча с клиентом.",
+   "answers": [
+    "I have a meeting with a client tomorrow.",
+    "I have a meeting with the client tomorrow.",
+    "I have a meeting with my client tomorrow.",
+    "I've got a meeting with a client tomorrow.",
+    "I've got a meeting with the client tomorrow.",
+    "I've got a meeting with my client tomorrow.",
+    "I have got a meeting with a client tomorrow.",
+    "I have got a meeting with the client tomorrow.",
+    "I have got a meeting with my client tomorrow.",
+    "Tomorrow I have a meeting with a client.",
+    "Tomorrow I have a meeting with the client.",
+    "Tomorrow I have a meeting with my client.",
+    "Tomorrow I've got a meeting with a client.",
+    "Tomorrow I've got a meeting with the client.",
+    "Tomorrow I've got a meeting with my client.",
+    "Tomorrow I have got a meeting with a client.",
+    "Tomorrow I have got a meeting with the client.",
+    "Tomorrow I have got a meeting with my client.",
+    "I'm having a meeting with a client tomorrow.",
+    "I'm having a meeting with the client tomorrow.",
+    "I'm having a meeting with my client tomorrow.",
+    "I am having a meeting with a client tomorrow.",
+    "I am having a meeting with the client tomorrow.",
+    "I am having a meeting with my client tomorrow.",
+    "I have a client meeting tomorrow.",
+    "I've got a client meeting tomorrow.",
+    "I have got a client meeting tomorrow."
+   ],
+   "hint_choice": [
+    "a meeting",
+    "meeting"
+   ]
+  },
+  {
+   "id": "03-ex-014",
+   "rule_point": "03-1",
+   "rung": "translate",
+   "prompt": "Пользователи не читают инструкции.",
+   "answers": [
+    "Users don't read the instructions.",
+    "Users don't read instructions.",
+    "Users do not read the instructions.",
+    "Users do not read instructions."
+   ],
+   "hint_choice": [
+    "Users don't",
+    "The users doesn't"
+   ]
+  },
+  {
+   "id": "03-ex-015",
+   "rule_point": "03-1",
+   "rung": "translate",
+   "prompt": "Это хорошая идея, но время неудачное.",
+   "answers": [
+    "It's a good idea, but the timing is wrong.",
+    "It's a good idea, but the timing is bad.",
+    "It's a good idea, but the timing is not right.",
+    "It is a good idea, but the timing is wrong.",
+    "It is a good idea, but the timing is bad.",
+    "It is a good idea, but the timing is not right.",
+    "That's a good idea, but the timing is wrong.",
+    "That's a good idea, but the timing is bad.",
+    "That's a good idea, but the timing is not right.",
+    "That is a good idea, but the timing is wrong.",
+    "That is a good idea, but the timing is bad.",
+    "That is a good idea, but the timing is not right.",
+    "It's a good idea, but it's the wrong time.",
+    "It is a good idea, but it's the wrong time.",
+    "That's a good idea, but it's the wrong time.",
+    "That is a good idea, but it's the wrong time."
+   ],
+   "hint_choice": [
+    "a good idea",
+    "good idea"
+   ]
+  },
+  {
+   "id": "03-ex-016",
+   "rule_point": "03-1",
+   "rung": "translate",
+   "prompt": "Он единственный дизайнер в компании.",
+   "answers": [
+    "He is the only designer in the company.",
+    "He is the only designer at the company.",
+    "He's the only designer in the company.",
+    "He's the only designer at the company."
+   ],
+   "hint_choice": [
+    "the only",
+    "an only"
+   ]
+  },
+  {
+   "id": "03-ex-017",
+   "rule_point": "03-1",
+   "rung": "fix",
+   "prompt": "I had meeting with client yesterday.",
+   "answers": [
+    "I had a meeting with a client yesterday.",
+    "I had a meeting with the client yesterday.",
+    "I had a meeting with my client yesterday.",
+    "Yesterday I had a meeting with a client.",
+    "Yesterday I had a meeting with the client.",
+    "Yesterday I had a meeting with my client."
+   ],
+   "hint_choice": [
+    "a meeting",
+    "meeting"
+   ]
+  },
+  {
+   "id": "03-ex-018",
+   "rule_point": "03-1",
+   "rung": "fix",
+   "prompt": "The life is too short for long meetings.",
+   "answers": [
+    "Life is too short for long meetings."
+   ],
+   "hint_choice": [
+    "Life is",
+    "The life is"
+   ]
+  },
+  {
+   "id": "03-ex-019",
+   "rule_point": "03-1",
+   "rung": "fix",
+   "prompt": "She is best tester in our team.",
+   "answers": [
+    "She is the best tester in our team.",
+    "She is the best tester on our team.",
+    "She's the best tester in our team.",
+    "She's the best tester on our team."
+   ],
+   "hint_choice": [
+    "the best",
+    "best"
+   ]
+  },
+  {
+   "id": "03-ex-020",
+   "rule_point": "03-1",
+   "rung": "fix",
+   "prompt": "Sun was very bright, so I closed the blinds.",
+   "answers": [
+    "The sun was very bright, so I closed the blinds."
+   ],
+   "hint_choice": [
+    "The sun",
+    "Sun"
+   ]
+  },
+  {
+   "id": "03-ex-021",
+   "rule_point": "03-1",
+   "rung": "free",
+   "prompt": "Describe a new person who joined a team you know. Use a or an the first time and the after that.",
+   "model": "We hired a designer last month. The designer is from Lisbon and she already knows the product.",
+   "check_regex": "\\b(a|an)\\b.*\\bthe\\b",
+   "hint_choice": [
+    "a designer ... the designer",
+    "designer ... designer"
+   ]
+  },
+  {
+   "id": "03-ex-022",
+   "rule_point": "03-1",
+   "rung": "free",
+   "prompt": "Write two general statements about users or customers without the word \"the\".",
+   "model": "Users hate waiting. Customers rarely read long emails.",
+   "check_regex": "^(?!.*\\bthe\\b).+$",
+   "hint_choice": [
+    "Users hate",
+    "The users hate"
+   ]
+  },
+  {
+   "id": "03-ex-023",
+   "rule_point": "03-1",
+   "rung": "free",
+   "prompt": "Describe the only person in a team who does a special job.",
+   "model": "Anna is the only designer on our team, so she joins every planning meeting.",
+   "check_regex": "\\bthe only\\b",
+   "hint_choice": [
+    "the only",
+    "an only"
+   ]
+  },
+  {
+   "id": "03-ex-024",
+   "rule_point": "03-1",
+   "rung": "free",
+   "prompt": "Write about a problem you had at work and how you solved the problem.",
+   "model": "We had a problem with the payment page. The problem was a slow server, so we moved to a new one.",
+   "check_regex": "\\b(a|an)\\b.*\\bthe\\b",
+   "hint_choice": [
+    "a problem ... the problem",
+    "problem ... problem"
+   ]
+  },
+  {
+   "id": "03-ex-025",
+   "rule_point": "03-2",
+   "rung": "recognize",
+   "prompt": "Thanks for your ___. It really helped.",
+   "options": [
+    "advice",
+    "advices",
+    "an advice"
+   ],
+   "answers": [
+    "advice"
+   ],
+   "hint_choice": [
+    "advice",
+    "advices"
+   ]
+  },
+  {
+   "id": "03-ex-026",
+   "rule_point": "03-2",
+   "rung": "recognize",
+   "prompt": "We don't have ___ information about the new users.",
+   "options": [
+    "much",
+    "many",
+    "a few"
+   ],
+   "answers": [
+    "much"
+   ],
+   "hint_choice": [
+    "much",
+    "many"
+   ]
+  },
+  {
+   "id": "03-ex-027",
+   "rule_point": "03-2",
+   "rung": "recognize",
+   "prompt": "Can I give you ___? Ask questions early.",
+   "options": [
+    "a piece of advice",
+    "an advice",
+    "advices"
+   ],
+   "answers": [
+    "a piece of advice"
+   ],
+   "hint_choice": [
+    "a piece of advice",
+    "an advice"
+   ]
+  },
+  {
+   "id": "03-ex-028",
+   "rule_point": "03-2",
+   "rung": "recognize",
+   "prompt": "The feedback from the client ___ really positive last week.",
+   "options": [
+    "was",
+    "were",
+    "have been"
+   ],
+   "answers": [
+    "was"
+   ],
+   "hint_choice": [
+    "was",
+    "were"
+   ]
+  },
+  {
+   "id": "03-ex-029",
+   "rule_point": "03-2",
+   "rung": "fill",
+   "prompt": "We need to do some more ___ (research) before we decide.",
+   "answers": [
+    "research"
+   ],
+   "hint_choice": [
+    "research",
+    "researches"
+   ]
+  },
+  {
+   "id": "03-ex-030",
+   "rule_point": "03-2",
+   "rung": "fill",
+   "prompt": "How ___ feedback did we get from the survey?",
+   "answers": [
+    "much"
+   ],
+   "hint_choice": [
+    "much",
+    "many"
+   ]
+  },
+  {
+   "id": "03-ex-031",
+   "rule_point": "03-2",
+   "rung": "fill",
+   "prompt": "We got a ___ feedback, but it was very useful. (little / few)",
+   "answers": [
+    "little"
+   ],
+   "hint_choice": [
+    "little",
+    "few"
+   ]
+  },
+  {
+   "id": "03-ex-032",
+   "rule_point": "03-2",
+   "rung": "fill",
+   "prompt": "Our office has a lot of new ___ (equipment).",
+   "answers": [
+    "equipment"
+   ],
+   "hint_choice": [
+    "equipment",
+    "equipments"
+   ]
+  },
+  {
+   "id": "03-ex-033",
+   "rule_point": "03-2",
+   "rung": "transform",
+   "prompt": "Make it about one thing: I have two pieces of advice for you.",
+   "answers": [
+    "I have a piece of advice for you.",
+    "I have one piece of advice for you.",
+    "I've got a piece of advice for you.",
+    "I've got one piece of advice for you.",
+    "I have got a piece of advice for you.",
+    "I have got one piece of advice for you."
+   ],
+   "hint_choice": [
+    "a piece of advice",
+    "an advice"
+   ]
+  },
+  {
+   "id": "03-ex-034",
+   "rule_point": "03-2",
+   "rung": "transform",
+   "prompt": "Rewrite with \"much\": There isn't a lot of information.",
+   "answers": [
+    "There isn't much information.",
+    "There is not much information."
+   ],
+   "hint_choice": [
+    "much information",
+    "many informations"
+   ]
+  },
+  {
+   "id": "03-ex-035",
+   "rule_point": "03-2",
+   "rung": "transform",
+   "prompt": "Make a question with \"How much\": We spent a lot of time on research.",
+   "answers": [
+    "How much time did we spend on research?",
+    "How much time did you spend on research?"
+   ],
+   "hint_choice": [
+    "How much time",
+    "How many time"
+   ]
+  },
+  {
+   "id": "03-ex-036",
+   "rule_point": "03-2",
+   "rung": "transform",
+   "prompt": "Make it negative with \"any\": We got some useful feedback.",
+   "answers": [
+    "We didn't get any useful feedback.",
+    "We did not get any useful feedback."
+   ],
+   "hint_choice": [
+    "any feedback",
+    "any feedbacks"
+   ]
+  },
+  {
+   "id": "03-ex-037",
+   "rule_point": "03-2",
+   "rung": "translate",
+   "prompt": "Спасибо за советы!",
+   "answers": [
+    "Thanks for the advice!",
+    "Thanks for your advice!",
+    "Thank you for the advice!",
+    "Thank you for your advice!",
+    "Thanks for the tips!",
+    "Thanks for your tips!",
+    "Thank you for the tips!",
+    "Thank you for your tips!"
+   ],
+   "hint_choice": [
+    "the advice",
+    "the advices"
+   ]
+  },
+  {
+   "id": "03-ex-038",
+   "rule_point": "03-2",
+   "rung": "translate",
+   "prompt": "У нас мало информации.",
+   "answers": [
+    "We don't have much information.",
+    "We do not have much information.",
+    "We have very little information.",
+    "We have little information.",
+    "We don't have a lot of information.",
+    "We do not have a lot of information.",
+    "We haven't got much information.",
+    "We have not got much information."
+   ],
+   "hint_choice": [
+    "much information",
+    "many informations"
+   ]
+  },
+  {
+   "id": "03-ex-039",
+   "rule_point": "03-2",
+   "rung": "translate",
+   "prompt": "Новости хорошие.",
+   "answers": [
+    "The news is good.",
+    "It's good news.",
+    "It is good news.",
+    "That's good news.",
+    "That is good news."
+   ],
+   "hint_choice": [
+    "The news is",
+    "The news are"
+   ]
+  },
+  {
+   "id": "03-ex-040",
+   "rule_point": "03-2",
+   "rung": "translate",
+   "prompt": "Мне нужна твоя помощь с исследованием.",
+   "answers": [
+    "I need your help with the research.",
+    "I need your help with my research.",
+    "I need your help with this research.",
+    "I need your help with our research."
+   ],
+   "hint_choice": [
+    "the research",
+    "the researches"
+   ]
+  },
+  {
+   "id": "03-ex-041",
+   "rule_point": "03-2",
+   "rung": "fix",
+   "prompt": "Thank you for your advices.",
+   "answers": [
+    "Thank you for your advice."
+   ],
+   "hint_choice": [
+    "advice",
+    "advices"
+   ]
+  },
+  {
+   "id": "03-ex-042",
+   "rule_point": "03-2",
+   "rung": "fix",
+   "prompt": "We received many feedbacks from users.",
+   "answers": [
+    "We received a lot of feedback from users.",
+    "We received a lot of feedback from the users.",
+    "We received lots of feedback from users.",
+    "We received lots of feedback from the users.",
+    "We received much feedback from users.",
+    "We received much feedback from the users."
+   ],
+   "hint_choice": [
+    "a lot of feedback",
+    "many feedbacks"
+   ]
+  },
+  {
+   "id": "03-ex-043",
+   "rule_point": "03-2",
+   "rung": "fix",
+   "prompt": "The informations in the report are wrong.",
+   "answers": [
+    "The information in the report is wrong."
+   ],
+   "hint_choice": [
+    "information is",
+    "informations are"
+   ]
+  },
+  {
+   "id": "03-ex-044",
+   "rule_point": "03-2",
+   "rung": "fix",
+   "prompt": "She gave me an useful advice.",
+   "answers": [
+    "She gave me a useful piece of advice.",
+    "She gave me some useful advice.",
+    "She gave me useful advice.",
+    "She gave me a piece of useful advice."
+   ],
+   "hint_choice": [
+    "useful advice",
+    "an useful advice"
+   ]
+  },
+  {
+   "id": "03-ex-045",
+   "rule_point": "03-2",
+   "rung": "free",
+   "prompt": "Give a new colleague a piece of advice about your team.",
+   "model": "Here's a piece of advice: ask questions early and write everything down.",
+   "check_regex": "\\badvice\\b",
+   "hint_choice": [
+    "a piece of advice",
+    "an advice"
+   ]
+  },
+  {
+   "id": "03-ex-046",
+   "rule_point": "03-2",
+   "rung": "free",
+   "prompt": "Describe the feedback you got on a recent piece of work.",
+   "model": "The feedback was mostly positive, but my manager said the report was too long.",
+   "check_regex": "\\bfeedback\\b",
+   "hint_choice": [
+    "The feedback was",
+    "The feedbacks were"
+   ]
+  },
+  {
+   "id": "03-ex-047",
+   "rule_point": "03-2",
+   "rung": "free",
+   "prompt": "What information does a new user need on their first day?",
+   "model": "A new user needs some basic information about the menu and a short video.",
+   "check_regex": "\\binformation\\b",
+   "hint_choice": [
+    "some information",
+    "some informations"
+   ]
+  },
+  {
+   "id": "03-ex-048",
+   "rule_point": "03-2",
+   "rung": "free",
+   "prompt": "Tell a colleague some good news about a project.",
+   "model": "I've got some good news: the client loved the demo.",
+   "check_regex": "\\bnews\\b",
+   "hint_choice": [
+    "good news",
+    "a good news"
+   ]
+  },
+  {
+   "id": "03-ex-049",
+   "rule_point": "03-3",
+   "rung": "recognize",
+   "prompt": "We released three new ___ last quarter.",
+   "options": [
+    "feature",
+    "features",
+    "featured"
+   ],
+   "answers": [
+    "features"
+   ],
+   "hint_choice": [
+    "features",
+    "feature"
+   ]
+  },
+  {
+   "id": "03-ex-050",
+   "rule_point": "03-3",
+   "rung": "recognize",
+   "prompt": "Every ___ has an owner.",
+   "options": [
+    "task",
+    "tasks",
+    "the tasks"
+   ],
+   "answers": [
+    "task"
+   ],
+   "hint_choice": [
+    "task",
+    "tasks"
+   ]
+  },
+  {
+   "id": "03-ex-051",
+   "rule_point": "03-3",
+   "rung": "recognize",
+   "prompt": "Each team member ___ a laptop on the first day.",
+   "options": [
+    "gets",
+    "get",
+    "getting"
+   ],
+   "answers": [
+    "gets"
+   ],
+   "hint_choice": [
+    "gets",
+    "get"
+   ]
+  },
+  {
+   "id": "03-ex-052",
+   "rule_point": "03-3",
+   "rung": "recognize",
+   "prompt": "We interviewed twenty ___ from five companies.",
+   "options": [
+    "person",
+    "people",
+    "peoples"
+   ],
+   "answers": [
+    "people"
+   ],
+   "hint_choice": [
+    "people",
+    "peoples"
+   ]
+  },
+  {
+   "id": "03-ex-053",
+   "rule_point": "03-3",
+   "rung": "fill",
+   "prompt": "We have two ___ (tester) and one designer.",
+   "answers": [
+    "testers"
+   ],
+   "hint_choice": [
+    "testers",
+    "tester"
+   ]
+  },
+  {
+   "id": "03-ex-054",
+   "rule_point": "03-3",
+   "rung": "fill",
+   "prompt": "Every ___ (sprint) ends with a short demo.",
+   "answers": [
+    "sprint"
+   ],
+   "hint_choice": [
+    "sprint",
+    "sprints"
+   ]
+  },
+  {
+   "id": "03-ex-055",
+   "rule_point": "03-3",
+   "rung": "fill",
+   "prompt": "All my ___ (task) for today are done.",
+   "answers": [
+    "tasks"
+   ],
+   "hint_choice": [
+    "tasks",
+    "task"
+   ]
+  },
+  {
+   "id": "03-ex-056",
+   "rule_point": "03-3",
+   "rung": "fill",
+   "prompt": "Each ___ (user) gets a free month.",
+   "answers": [
+    "user"
+   ],
+   "hint_choice": [
+    "user",
+    "users"
+   ]
+  },
+  {
+   "id": "03-ex-057",
+   "rule_point": "03-3",
+   "rung": "transform",
+   "prompt": "Rewrite with \"every\": All the developers have a laptop.",
+   "answers": [
+    "Every developer has a laptop."
+   ],
+   "hint_choice": [
+    "Every developer has",
+    "Every developers have"
+   ]
+  },
+  {
+   "id": "03-ex-058",
+   "rule_point": "03-3",
+   "rung": "transform",
+   "prompt": "Rewrite with \"all\": Every meeting has an agenda.",
+   "answers": [
+    "All meetings have an agenda.",
+    "All meetings have agendas.",
+    "All the meetings have an agenda.",
+    "All the meetings have agendas."
+   ],
+   "hint_choice": [
+    "All meetings have",
+    "All meeting has"
+   ]
+  },
+  {
+   "id": "03-ex-059",
+   "rule_point": "03-3",
+   "rung": "transform",
+   "prompt": "Change the number to five: We fixed one bug.",
+   "answers": [
+    "We fixed five bugs."
+   ],
+   "hint_choice": [
+    "five bugs",
+    "five bug"
+   ]
+  },
+  {
+   "id": "03-ex-060",
+   "rule_point": "03-3",
+   "rung": "transform",
+   "prompt": "Rewrite with \"each\": All the team members got a bonus.",
+   "answers": [
+    "Each team member got a bonus.",
+    "Each of the team members got a bonus."
+   ],
+   "hint_choice": [
+    "Each team member",
+    "Each team members"
+   ]
+  },
+  {
+   "id": "03-ex-061",
+   "rule_point": "03-3",
+   "rung": "translate",
+   "prompt": "У каждого пользователя свой аккаунт.",
+   "answers": [
+    "Every user has their own account.",
+    "Every user has his or her own account.",
+    "Each user has their own account.",
+    "Each user has his or her own account."
+   ],
+   "hint_choice": [
+    "Every user has",
+    "Every users have"
+   ]
+  },
+  {
+   "id": "03-ex-062",
+   "rule_point": "03-3",
+   "rung": "translate",
+   "prompt": "Мы выпустили пять обновлений.",
+   "answers": [
+    "We released five updates.",
+    "We shipped five updates.",
+    "We have released five updates.",
+    "We have shipped five updates.",
+    "We've released five updates.",
+    "We've shipped five updates."
+   ],
+   "hint_choice": [
+    "five updates",
+    "five update"
+   ]
+  },
+  {
+   "id": "03-ex-063",
+   "rule_point": "03-3",
+   "rung": "translate",
+   "prompt": "Каждую неделю мы общаемся с клиентами.",
+   "answers": [
+    "Every week we talk to our customers.",
+    "Every week we talk to our clients.",
+    "Every week we talk to customers.",
+    "Every week we talk to clients.",
+    "Every week we talk with our customers.",
+    "Every week we talk with our clients.",
+    "Every week we talk with customers.",
+    "Every week we talk with clients.",
+    "Every week we speak to our customers.",
+    "Every week we speak to our clients.",
+    "Every week we speak to customers.",
+    "Every week we speak to clients.",
+    "Every week we speak with our customers.",
+    "Every week we speak with our clients.",
+    "Every week we speak with customers.",
+    "Every week we speak with clients.",
+    "We talk to our customers every week.",
+    "We talk to our clients every week.",
+    "We talk to customers every week.",
+    "We talk to clients every week.",
+    "We talk with our customers every week.",
+    "We talk with our clients every week.",
+    "We talk with customers every week.",
+    "We talk with clients every week.",
+    "We speak to our customers every week.",
+    "We speak to our clients every week.",
+    "We speak to customers every week.",
+    "We speak to clients every week.",
+    "We speak with our customers every week.",
+    "We speak with our clients every week.",
+    "We speak with customers every week.",
+    "We speak with clients every week.",
+    "Every week we communicate with our customers.",
+    "Every week we communicate with our clients.",
+    "Every week we communicate with customers.",
+    "Every week we communicate with clients.",
+    "We communicate with our customers every week.",
+    "We communicate with our clients every week.",
+    "We communicate with customers every week.",
+    "We communicate with clients every week."
+   ],
+   "hint_choice": [
+    "Every week",
+    "Every weeks"
+   ]
+  },
+  {
+   "id": "03-ex-064",
+   "rule_point": "03-3",
+   "rung": "translate",
+   "prompt": "Многие пользователи просили эту функцию.",
+   "answers": [
+    "A lot of users asked for this feature.",
+    "A lot of users have asked for this feature.",
+    "Many users asked for this feature.",
+    "Many users have asked for this feature.",
+    "Lots of users asked for this feature.",
+    "Lots of users have asked for this feature."
+   ],
+   "hint_choice": [
+    "users",
+    "user"
+   ]
+  },
+  {
+   "id": "03-ex-065",
+   "rule_point": "03-3",
+   "rung": "fix",
+   "prompt": "We still have twelve open ticket in the backlog.",
+   "answers": [
+    "We still have twelve open tickets in the backlog."
+   ],
+   "hint_choice": [
+    "tickets",
+    "ticket"
+   ]
+  },
+  {
+   "id": "03-ex-066",
+   "rule_point": "03-3",
+   "rung": "fix",
+   "prompt": "Every developers reviews the code.",
+   "answers": [
+    "Every developer reviews the code."
+   ],
+   "hint_choice": [
+    "Every developer",
+    "Every developers"
+   ]
+  },
+  {
+   "id": "03-ex-067",
+   "rule_point": "03-3",
+   "rung": "fix",
+   "prompt": "Each of the tester have a checklist.",
+   "answers": [
+    "Each of the testers has a checklist.",
+    "Each tester has a checklist."
+   ],
+   "hint_choice": [
+    "Each of the testers has",
+    "Each of the tester have"
+   ]
+  },
+  {
+   "id": "03-ex-068",
+   "rule_point": "03-3",
+   "rung": "fix",
+   "prompt": "A lot of customer asked about the price.",
+   "answers": [
+    "A lot of customers asked about the price.",
+    "A lot of customers have asked about the price."
+   ],
+   "hint_choice": [
+    "customers",
+    "customer"
+   ]
+  },
+  {
+   "id": "03-ex-069",
+   "rule_point": "03-3",
+   "rung": "free",
+   "prompt": "Describe a team with numbers: how many people and which roles.",
+   "model": "There are seven people on our team: four developers, two testers and one designer.",
+   "check_regex": "\\b(two|three|four|five|six|seven|eight|nine|ten|\\d+) [a-z]+s\\b",
+   "hint_choice": [
+    "four developers",
+    "four developer"
+   ]
+  },
+  {
+   "id": "03-ex-070",
+   "rule_point": "03-3",
+   "rung": "free",
+   "prompt": "Write two rules a team follows. Start each with \"Every\".",
+   "model": "Every task has an owner. Every release goes through a demo.",
+   "check_regex": "\\bevery\\b[^.]*\\b[a-z]{2,}s\\b",
+   "hint_choice": [
+    "Every task has",
+    "Every tasks have"
+   ]
+  },
+  {
+   "id": "03-ex-071",
+   "rule_point": "03-3",
+   "rung": "free",
+   "prompt": "What does a normal working day include? Use at least two plurals.",
+   "model": "My days usually include three meetings, a lot of emails and a few short breaks.",
+   "check_regex": "\\b[a-z]{3,}s\\b.*\\b[a-z]{3,}s\\b",
+   "hint_choice": [
+    "three meetings",
+    "three meeting"
+   ]
+  },
+  {
+   "id": "03-ex-072",
+   "rule_point": "03-3",
+   "rung": "free",
+   "prompt": "Describe a perk that each employee gets in a company you know.",
+   "model": "Each employee gets a free lunch and two days a year for training.",
+   "check_regex": "\\beach\\b[^.]*\\b[a-z]{2,}s\\b",
+   "hint_choice": [
+    "Each employee gets",
+    "Each employees get"
+   ]
+  },
+  {
+   "id": "03-ex-073",
+   "rule_point": "03-4",
+   "rung": "recognize",
+   "prompt": "Our product manager ___ to customers every week.",
+   "options": [
+    "talk",
+    "talks",
+    "talking"
+   ],
+   "answers": [
+    "talks"
+   ],
+   "hint_choice": [
+    "talks",
+    "talk"
+   ]
+  },
+  {
+   "id": "03-ex-074",
+   "rule_point": "03-4",
+   "rung": "recognize",
+   "prompt": "___ the app work offline?",
+   "options": [
+    "Do",
+    "Does",
+    "Is"
+   ],
+   "answers": [
+    "Does"
+   ],
+   "hint_choice": [
+    "Does",
+    "Do"
+   ]
+  },
+  {
+   "id": "03-ex-075",
+   "rule_point": "03-4",
+   "rung": "recognize",
+   "prompt": "There ___ three open bugs in the release.",
+   "options": [
+    "is",
+    "are",
+    "be"
+   ],
+   "answers": [
+    "are"
+   ],
+   "hint_choice": [
+    "are",
+    "is"
+   ]
+  },
+  {
+   "id": "03-ex-076",
+   "rule_point": "03-4",
+   "rung": "recognize",
+   "prompt": "My manager ___ like long emails.",
+   "options": [
+    "don't",
+    "doesn't",
+    "isn't"
+   ],
+   "answers": [
+    "doesn't"
+   ],
+   "hint_choice": [
+    "doesn't",
+    "don't"
+   ]
+  },
+  {
+   "id": "03-ex-077",
+   "rule_point": "03-4",
+   "rung": "fill",
+   "prompt": "The app ___ (crash) when you upload a big file.",
+   "answers": [
+    "crashes"
+   ],
+   "hint_choice": [
+    "crashes",
+    "crash"
+   ]
+  },
+  {
+   "id": "03-ex-078",
+   "rule_point": "03-4",
+   "rung": "fill",
+   "prompt": "Everyone on the team ___ (know) the deadline.",
+   "answers": [
+    "knows"
+   ],
+   "hint_choice": [
+    "knows",
+    "know"
+   ]
+  },
+  {
+   "id": "03-ex-079",
+   "rule_point": "03-4",
+   "rung": "fill",
+   "prompt": "There ___ (be) a problem with the login page right now.",
+   "answers": [
+    "is",
+    "'s"
+   ],
+   "hint_choice": [
+    "is",
+    "are"
+   ]
+  },
+  {
+   "id": "03-ex-080",
+   "rule_point": "03-4",
+   "rung": "fill",
+   "prompt": "She ___ (not / work) on Fridays.",
+   "answers": [
+    "doesn't work",
+    "does not work"
+   ],
+   "hint_choice": [
+    "doesn't work",
+    "don't work"
+   ]
+  },
+  {
+   "id": "03-ex-081",
+   "rule_point": "03-4",
+   "rung": "transform",
+   "prompt": "Rewrite about one person (My colleague): My colleagues work from home on Mondays.",
+   "answers": [
+    "My colleague works from home on Mondays."
+   ],
+   "hint_choice": [
+    "works",
+    "work"
+   ]
+  },
+  {
+   "id": "03-ex-082",
+   "rule_point": "03-4",
+   "rung": "transform",
+   "prompt": "Make a question: The new version supports dark mode.",
+   "answers": [
+    "Does the new version support dark mode?"
+   ],
+   "hint_choice": [
+    "Does ... support",
+    "Does ... supports"
+   ]
+  },
+  {
+   "id": "03-ex-083",
+   "rule_point": "03-4",
+   "rung": "transform",
+   "prompt": "Make it negative: He uses Jira.",
+   "answers": [
+    "He doesn't use Jira.",
+    "He does not use Jira."
+   ],
+   "hint_choice": [
+    "doesn't use",
+    "doesn't uses"
+   ]
+  },
+  {
+   "id": "03-ex-084",
+   "rule_point": "03-4",
+   "rung": "transform",
+   "prompt": "Rewrite with \"there\": We have two designers and one researcher on the team.",
+   "answers": [
+    "There are two designers and one researcher on the team.",
+    "There are two designers and one researcher on our team.",
+    "There are two designers and one researcher in the team.",
+    "There are two designers and one researcher in our team."
+   ],
+   "hint_choice": [
+    "There are",
+    "There is"
+   ]
+  },
+  {
+   "id": "03-ex-085",
+   "rule_point": "03-4",
+   "rung": "translate",
+   "prompt": "Она отвечает на вопросы клиентов.",
+   "answers": [
+    "She answers customers' questions.",
+    "She answers customer questions.",
+    "She answers clients' questions.",
+    "She answers client questions.",
+    "She answers questions from customers.",
+    "She answers questions from clients.",
+    "She answers the customers' questions.",
+    "She answers the clients' questions.",
+    "She responds to customers' questions.",
+    "She responds to customer questions.",
+    "She responds to clients' questions.",
+    "She responds to client questions.",
+    "She replies to customers' questions.",
+    "She replies to customer questions.",
+    "She replies to clients' questions.",
+    "She replies to client questions.",
+    "She responds to questions from customers.",
+    "She responds to questions from clients.",
+    "She replies to questions from customers.",
+    "She replies to questions from clients."
+   ],
+   "hint_choice": [
+    "answers",
+    "answer"
+   ]
+  },
+  {
+   "id": "03-ex-086",
+   "rule_point": "03-4",
+   "rung": "translate",
+   "prompt": "В отчете есть ошибка.",
+   "answers": [
+    "There is a mistake in the report.",
+    "There is an error in the report.",
+    "There's a mistake in the report.",
+    "There's an error in the report."
+   ],
+   "hint_choice": [
+    "There is",
+    "There are"
+   ]
+  },
+  {
+   "id": "03-ex-087",
+   "rule_point": "03-4",
+   "rung": "translate",
+   "prompt": "Приложение работает медленно.",
+   "answers": [
+    "The app works slowly.",
+    "The app runs slowly.",
+    "The app is slow.",
+    "The application works slowly.",
+    "The application runs slowly.",
+    "The application is slow."
+   ],
+   "hint_choice": [
+    "works",
+    "work"
+   ]
+  },
+  {
+   "id": "03-ex-088",
+   "rule_point": "03-4",
+   "rung": "translate",
+   "prompt": "Он не любит длинные встречи.",
+   "answers": [
+    "He doesn't like long meetings.",
+    "He does not like long meetings."
+   ],
+   "hint_choice": [
+    "doesn't like",
+    "don't like"
+   ]
+  },
+  {
+   "id": "03-ex-089",
+   "rule_point": "03-4",
+   "rung": "fix",
+   "prompt": "He work with the backend.",
+   "answers": [
+    "He works with the backend."
+   ],
+   "hint_choice": [
+    "works",
+    "work"
+   ]
+  },
+  {
+   "id": "03-ex-090",
+   "rule_point": "03-4",
+   "rung": "fix",
+   "prompt": "Does she knows the answer?",
+   "answers": [
+    "Does she know the answer?"
+   ],
+   "hint_choice": [
+    "Does she know",
+    "Does she knows"
+   ]
+  },
+  {
+   "id": "03-ex-091",
+   "rule_point": "03-4",
+   "rung": "fix",
+   "prompt": "There is two problems with this plan.",
+   "answers": [
+    "There are two problems with this plan."
+   ],
+   "hint_choice": [
+    "There are",
+    "There is"
+   ]
+  },
+  {
+   "id": "03-ex-092",
+   "rule_point": "03-4",
+   "rung": "fix",
+   "prompt": "Nobody in our department like this tool.",
+   "answers": [
+    "Nobody in our department likes this tool."
+   ],
+   "hint_choice": [
+    "likes",
+    "like"
+   ]
+  },
+  {
+   "id": "03-ex-093",
+   "rule_point": "03-4",
+   "rung": "free",
+   "prompt": "Describe what your manager or a colleague does on a normal day.",
+   "model": "My manager starts at nine, checks the bug reports and talks to the testers.",
+   "check_regex": "\\b(he|she|it|everyone|nobody|my \\w+|our \\w+)\\b[^.]*\\b\\w+s\\b",
+   "hint_choice": [
+    "starts",
+    "start"
+   ]
+  },
+  {
+   "id": "03-ex-094",
+   "rule_point": "03-4",
+   "rung": "free",
+   "prompt": "Describe your favourite app: what it does and what it doesn't do.",
+   "model": "It saves my notes and syncs with my laptop, but it doesn't have a dark mode.",
+   "check_regex": "\\bit\\s+(\\w+s|doesn't|does not)\\b",
+   "hint_choice": [
+    "it saves",
+    "it save"
+   ]
+  },
+  {
+   "id": "03-ex-095",
+   "rule_point": "03-4",
+   "rung": "free",
+   "prompt": "What is there in your room right now? Use \"there is\" and \"there are\".",
+   "model": "There is a big desk by the window and there are two chairs.",
+   "check_regex": "\\bthere('s| is| are)\\b",
+   "hint_choice": [
+    "There are two chairs",
+    "There is two chairs"
+   ]
+  },
+  {
+   "id": "03-ex-096",
+   "rule_point": "03-4",
+   "rung": "free",
+   "prompt": "Ask three questions about a new teammate (he or she).",
+   "model": "Does she work remotely? What does she do in her free time? Does she know Python?",
+   "check_regex": "\\bdoes\\b",
+   "hint_choice": [
+    "Does she work",
+    "Does she works"
+   ]
+  },
+  {
+   "id": "03-ex-097",
+   "rule_point": "03-5",
+   "rung": "recognize",
+   "prompt": "We don't have ___ time before the release.",
+   "options": [
+    "much",
+    "many",
+    "few"
+   ],
+   "answers": [
+    "much"
+   ],
+   "hint_choice": [
+    "much",
+    "many"
+   ]
+  },
+  {
+   "id": "03-ex-098",
+   "rule_point": "03-5",
+   "rung": "recognize",
+   "prompt": "___ users never open the settings page.",
+   "options": [
+    "Most",
+    "Most of",
+    "The most"
+   ],
+   "answers": [
+    "Most"
+   ],
+   "hint_choice": [
+    "Most",
+    "Most of"
+   ]
+  },
+  {
+   "id": "03-ex-099",
+   "rule_point": "03-5",
+   "rung": "recognize",
+   "prompt": "There are ___ open questions, but nothing serious.",
+   "options": [
+    "a few",
+    "a little",
+    "much"
+   ],
+   "answers": [
+    "a few"
+   ],
+   "hint_choice": [
+    "a few",
+    "a little"
+   ]
+  },
+  {
+   "id": "03-ex-100",
+   "rule_point": "03-5",
+   "rung": "recognize",
+   "prompt": "___ options are expensive, so let's compare them.",
+   "options": [
+    "Both",
+    "Both of",
+    "Every"
+   ],
+   "answers": [
+    "Both"
+   ],
+   "hint_choice": [
+    "Both",
+    "Both of"
+   ]
+  },
+  {
+   "id": "03-ex-101",
+   "rule_point": "03-5",
+   "rung": "fill",
+   "prompt": "We have ___ work this week, so let's skip the long meeting. (a lot of / many)",
+   "answers": [
+    "a lot of"
+   ],
+   "hint_choice": [
+    "a lot of",
+    "many"
+   ]
+  },
+  {
+   "id": "03-ex-102",
+   "rule_point": "03-5",
+   "rung": "fill",
+   "prompt": "___ of the people we interviewed wanted a mobile app. (Most / The most)",
+   "answers": [
+    "Most"
+   ],
+   "hint_choice": [
+    "Most",
+    "The most"
+   ]
+  },
+  {
+   "id": "03-ex-103",
+   "rule_point": "03-5",
+   "rung": "fill",
+   "prompt": "___ team came to the demo, even the designers. (The whole / All)",
+   "answers": [
+    "The whole"
+   ],
+   "hint_choice": [
+    "The whole",
+    "All"
+   ]
+  },
+  {
+   "id": "03-ex-104",
+   "rule_point": "03-5",
+   "rung": "fill",
+   "prompt": "I have ___ questions about the budget. (a few / a little)",
+   "answers": [
+    "a few"
+   ],
+   "hint_choice": [
+    "a few",
+    "a little"
+   ]
+  },
+  {
+   "id": "03-ex-105",
+   "rule_point": "03-5",
+   "rung": "transform",
+   "prompt": "Make it about a specific group: Most users liked the design. (the users we interviewed)",
+   "answers": [
+    "Most of the users we interviewed liked the design."
+   ],
+   "hint_choice": [
+    "Most of the users",
+    "Most of users"
+   ]
+  },
+  {
+   "id": "03-ex-106",
+   "rule_point": "03-5",
+   "rung": "transform",
+   "prompt": "Rewrite with \"the whole\": All of the team worked on Saturday.",
+   "answers": [
+    "The whole team worked on Saturday."
+   ],
+   "hint_choice": [
+    "The whole team",
+    "The whole teams"
+   ]
+  },
+  {
+   "id": "03-ex-107",
+   "rule_point": "03-5",
+   "rung": "transform",
+   "prompt": "Rewrite with \"a lot of\": We have many bugs.",
+   "answers": [
+    "We have a lot of bugs."
+   ],
+   "hint_choice": [
+    "a lot of bugs",
+    "a lot of bug"
+   ]
+  },
+  {
+   "id": "03-ex-108",
+   "rule_point": "03-5",
+   "rung": "transform",
+   "prompt": "Rewrite with \"both\": The first option and the second option are risky.",
+   "answers": [
+    "Both options are risky.",
+    "Both of the options are risky.",
+    "Both the options are risky."
+   ],
+   "hint_choice": [
+    "Both options",
+    "Both of options"
+   ]
+  },
+  {
+   "id": "03-ex-109",
+   "rule_point": "03-5",
+   "rung": "translate",
+   "prompt": "Большинство пользователей не читают инструкции.",
+   "answers": [
+    "Most users don't read the instructions.",
+    "Most users don't read instructions.",
+    "Most users do not read the instructions.",
+    "Most users do not read instructions."
+   ],
+   "hint_choice": [
+    "Most users",
+    "Most of users"
+   ]
+  },
+  {
+   "id": "03-ex-110",
+   "rule_point": "03-5",
+   "rung": "translate",
+   "prompt": "У нас мало времени.",
+   "answers": [
+    "We don't have much time.",
+    "We do not have much time.",
+    "We have very little time.",
+    "We have little time.",
+    "We don't have a lot of time.",
+    "We do not have a lot of time.",
+    "We haven't got much time.",
+    "We have not got much time."
+   ],
+   "hint_choice": [
+    "much time",
+    "many time"
+   ]
+  },
+  {
+   "id": "03-ex-111",
+   "rule_point": "03-5",
+   "rung": "translate",
+   "prompt": "Вся команда была на демо.",
+   "answers": [
+    "The whole team was at the demo.",
+    "The whole team were at the demo.",
+    "The entire team was at the demo.",
+    "The entire team were at the demo.",
+    "All the team was at the demo.",
+    "All the team were at the demo."
+   ],
+   "hint_choice": [
+    "The whole team",
+    "All team"
+   ]
+  },
+  {
+   "id": "03-ex-112",
+   "rule_point": "03-5",
+   "rung": "translate",
+   "prompt": "Оба варианта нам подходят.",
+   "answers": [
+    "Both options work for us.",
+    "Both options are fine for us.",
+    "Both options suit us.",
+    "Both options are good for us.",
+    "Both of the options work for us.",
+    "Both of the options are fine for us.",
+    "Both of the options suit us.",
+    "Both of the options are good for us.",
+    "Both the options work for us.",
+    "Both the options are fine for us.",
+    "Both the options suit us.",
+    "Both the options are good for us."
+   ],
+   "hint_choice": [
+    "Both options",
+    "Both of options"
+   ]
+  },
+  {
+   "id": "03-ex-113",
+   "rule_point": "03-5",
+   "rung": "fix",
+   "prompt": "Most of users like the new design.",
+   "answers": [
+    "Most users like the new design.",
+    "Most of the users like the new design."
+   ],
+   "hint_choice": [
+    "Most users",
+    "Most of users"
+   ]
+  },
+  {
+   "id": "03-ex-114",
+   "rule_point": "03-5",
+   "rung": "fix",
+   "prompt": "We don't have many information about the client.",
+   "answers": [
+    "We don't have much information about the client.",
+    "We do not have much information about the client."
+   ],
+   "hint_choice": [
+    "much information",
+    "many information"
+   ]
+  },
+  {
+   "id": "03-ex-115",
+   "rule_point": "03-5",
+   "rung": "fix",
+   "prompt": "All team was in the office.",
+   "answers": [
+    "The whole team was in the office.",
+    "The whole team were in the office.",
+    "The entire team was in the office.",
+    "The entire team were in the office.",
+    "All the team was in the office.",
+    "All the team were in the office."
+   ],
+   "hint_choice": [
+    "The whole team",
+    "All team"
+   ]
+  },
+  {
+   "id": "03-ex-116",
+   "rule_point": "03-5",
+   "rung": "fix",
+   "prompt": "There are little tickets left in the backlog.",
+   "answers": [
+    "There are few tickets left in the backlog.",
+    "There are a few tickets left in the backlog.",
+    "There are very few tickets left in the backlog.",
+    "There aren't many tickets left in the backlog.",
+    "There are not many tickets left in the backlog."
+   ],
+   "hint_choice": [
+    "few tickets",
+    "little tickets"
+   ]
+  },
+  {
+   "id": "03-ex-117",
+   "rule_point": "03-5",
+   "rung": "free",
+   "prompt": "Describe the workload of a team this week.",
+   "model": "We have a lot of tickets but not much time, so the whole team is busy.",
+   "check_regex": "\\b(much|many|a lot of|a few|a little|most|both|the whole|all the|none of|few|little)\\b",
+   "hint_choice": [
+    "a lot of",
+    "many of"
+   ]
+  },
+  {
+   "id": "03-ex-118",
+   "rule_point": "03-5",
+   "rung": "free",
+   "prompt": "Compare two tools a team could use. Use \"both\" or \"most\".",
+   "model": "Both tools are cheap, but most of our developers prefer the first one.",
+   "check_regex": "\\b(both|most)\\b",
+   "hint_choice": [
+    "Both tools",
+    "Both of tools"
+   ]
+  },
+  {
+   "id": "03-ex-119",
+   "rule_point": "03-5",
+   "rung": "free",
+   "prompt": "Describe what most people in an office do at lunch.",
+   "model": "Most people eat at their desks, and a few go to the park.",
+   "check_regex": "\\b(most|a few|a lot of|many|both|the whole|all the)\\b",
+   "hint_choice": [
+    "Most people",
+    "Most of people"
+   ]
+  },
+  {
+   "id": "03-ex-120",
+   "rule_point": "03-5",
+   "rung": "free",
+   "prompt": "What did you learn from a survey or a set of interviews?",
+   "model": "Most of the people we asked wanted faster delivery, and a few mentioned the price.",
+   "check_regex": "\\b(most|a few|a lot of|many|both|the whole|all the|none of)\\b",
+   "hint_choice": [
+    "Most of the people",
+    "Most of people"
+   ]
+  }
+ ],
+ "speed_drill": {
+  "instruction_ru": "Перестрой фразу по подсказке после стрелки. Вслух, без паузы на раздумье: 10 фраз за 2 минуты.",
+  "time_limit_sec": 120,
+  "items": [
+   {
+    "id": "03-sd-01",
+    "rule_point": "03-3",
+    "cue": "We have one task. → three",
+    "answers": [
+     "We have three tasks."
+    ]
+   },
+   {
+    "id": "03-sd-02",
+    "rule_point": "03-3",
+    "cue": "All developers have a laptop. → every",
+    "answers": [
+     "Every developer has a laptop."
+    ]
+   },
+   {
+    "id": "03-sd-03",
+    "rule_point": "03-4",
+    "cue": "I work from home. → she",
+    "answers": [
+     "She works from home."
+    ]
+   },
+   {
+    "id": "03-sd-04",
+    "rule_point": "03-4",
+    "cue": "They don't use Slack. → he",
+    "answers": [
+     "He doesn't use Slack.",
+     "He does not use Slack."
+    ]
+   },
+   {
+    "id": "03-sd-05",
+    "rule_point": "03-4",
+    "cue": "There is one bug. → five",
+    "answers": [
+     "There are five bugs."
+    ]
+   },
+   {
+    "id": "03-sd-06",
+    "rule_point": "03-2",
+    "cue": "We got many comments. → feedback",
+    "answers": [
+     "We got a lot of feedback.",
+     "We got lots of feedback."
+    ]
+   },
+   {
+    "id": "03-sd-07",
+    "rule_point": "03-5",
+    "cue": "We have a lot of time. → negative, much",
+    "answers": [
+     "We don't have much time.",
+     "We do not have much time."
+    ]
+   },
+   {
+    "id": "03-sd-08",
+    "rule_point": "03-5",
+    "cue": "All the team came. → the whole",
+    "answers": [
+     "The whole team came."
+    ]
+   },
+   {
+    "id": "03-sd-09",
+    "rule_point": "03-2",
+    "cue": "I need one advice. → correct it",
+    "answers": [
+     "I need a piece of advice.",
+     "I need some advice."
+    ]
+   },
+   {
+    "id": "03-sd-10",
+    "rule_point": "03-1",
+    "cue": "I have idea. → correct it",
+    "answers": [
+     "I have an idea."
+    ]
+   }
+  ]
+ },
+ "reading": {
+  "title": "A month without a manager",
+  "text": "Brightline is a small company that makes an app for local food markets. There are eleven people in the product team: five developers, two testers, a designer, a data analyst, a product manager and a support specialist. Every person on the team has a clear area, but nobody works alone.\n\nEvery Monday the team meets for thirty minutes. The product manager, Ines, brings the latest feedback from customers, and the team decides which problems to solve first. Most of the feedback is about small things: a button that is hard to find, a slow page, a confusing message. A few requests are bigger, and those go to the backlog.\n\nLast spring the team tried something new. For one month there was no manager in the room. Each developer talked to customers directly, and the testers wrote the release notes. The experiment was useful, but it wasn't easy. Some people loved the freedom. Others said they spent too much time in meetings and didn't have enough time for real work.\n\nIn the end the team kept one idea from the experiment: every developer spends one hour a week reading customer messages. \"It changed how we write code,\" says Tomas, one of the developers. \"When you read the same complaint ten times, nobody needs to explain the priority to you.\"\n\nToday the whole team still meets on Mondays, but the meeting is shorter. There is less discussion and there are more decisions.",
+  "questions": [
+   {
+    "q": "How many people are there in the product team?",
+    "answer": "Eleven."
+   },
+   {
+    "q": "What happens every Monday?",
+    "answer": "The team meets for thirty minutes, looks at customer feedback and decides which problems to solve first."
+   },
+   {
+    "q": "What is most of the feedback about?",
+    "answer": "Small things: a button that is hard to find, a slow page, a confusing message."
+   },
+   {
+    "q": "What did the team try last spring?",
+    "answer": "For a month there was no manager: developers talked to customers and testers wrote the release notes."
+   },
+   {
+    "q": "Why didn't everyone like the experiment?",
+    "answer": "Some people spent too much time in meetings and didn't have enough time for real work."
+   },
+   {
+    "q": "Which idea did the team keep?",
+    "answer": "Every developer spends one hour a week reading customer messages."
+   }
+  ]
+ },
+ "listening": {
+  "url": "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english/ep-200806",
+  "title": "No more bosses (Episode 200806, 06 Aug 2020)",
+  "source": "BBC Learning English, 6 Minute English",
+  "verified": true,
+  "verified_on": "2026-11-10",
+  "level": "B1-B2",
+  "questions": [
+   {
+    "q": "How do Neil and Georgina describe their own working relationship?",
+    "answer": "It is good; Georgina says they make a great team."
+   },
+   {
+    "q": "What is a hierarchy?",
+    "answer": "A system of organising people according to their level of importance: managers on top, workers below."
+   },
+   {
+    "q": "Which company was one of the first to try self-management, and what does it do?",
+    "answer": "Morning Star, a tomato grower in California."
+   },
+   {
+    "q": "What two principles does Doug Kirkpatrick describe?",
+    "answer": "People should not use force or coercion against each other, and people should keep the commitments they make to each other."
+   },
+   {
+    "q": "What is the possible downside of having no bosses?",
+    "answer": "Extra responsibility can mean more work and stress, and some employees may be left behind."
+   },
+   {
+    "q": "How much do excess management and bureaucracy cost the US economy every year?",
+    "answer": "3 trillion dollars."
+   }
+  ],
+  "key_points": [
+   "Many people have had a bad boss, often because workers feel managers don't listen to them.",
+   "Most companies are hierarchies, with managers on top and workers below.",
+   "At Morning Star there are no bosses: nobody can force others, and everyone must keep their commitments.",
+   "Some employees take full advantage of self-management, others may be left behind.",
+   "Everyone is still held accountable for their work.",
+   "Excess management and bureaucracy cost the US economy about 3 trillion dollars a year."
+  ],
+  "shadow": {
+   "start": 0,
+   "end": 35,
+   "approx": true,
+   "text": "Hello. This is 6 Minute English from BBC Learning English. I'm Neil. And I'm Georgina. After working together at BBC Learning English for many years, Georgina, you and I have a good working relationship, don't we?"
+  }
+ },
+ "speaking": [
+  {
+   "kind": "unprepared",
+   "prompt": "No time to prepare, start straight away: describe the people you see most days at work or at your place of study. Who does what?",
+   "target_words": [
+    "teammate",
+    "department",
+    "share"
+   ],
+   "target_rules": [
+    "03-1",
+    "03-4"
+   ],
+   "min_sec": 60
+  },
+  {
+   "kind": "story",
+   "prompt": "Describe a team you have been part of: how many people there were, who did what, how you shared the work and one thing that went wrong. Use at least 5 words and 3 blocks from this unit.",
+   "target_words": [
+    "feature",
+    "backlog",
+    "priority",
+    "workload",
+    "feedback",
+    "bottleneck",
+    "rely on"
+   ],
+   "target_rules": [
+    "03-1",
+    "03-2",
+    "03-3",
+    "03-4",
+    "03-5"
+   ],
+   "min_sec": 120
+  },
+  {
+   "kind": "interview",
+   "prompt": "Interview question: Every stakeholder wants something different in the next release. How do you decide what goes in and what waits?",
+   "target_words": [
+    "backlog",
+    "priority",
+    "requirement",
+    "feedback",
+    "estimate"
+   ],
+   "target_rules": [
+    "03-1",
+    "03-3",
+    "03-5"
+   ],
+   "min_sec": 90
+  }
+ ],
+ "unprepared": [
+  "Describe the place where you usually work or study. What is there, and what is missing?",
+  "What is the best piece of advice you have ever been given, and who gave it to you?",
+  "How should a good manager give feedback? Give an example.",
+  "Think of something you bought recently. What information did you need before you bought it, and where did you find it?"
+ ],
+ "writing": [
+  {
+   "genre": "opinion",
+   "work": false,
+   "prompt": "Is it better to work in a small team or in a big one? Give your opinion with two or three examples.",
+   "words": [
+    120,
+    180
+   ],
+   "targets": {
+    "rules": [
+     "03-3",
+     "03-4",
+     "03-5"
+    ],
+    "words": [
+     "teammate",
+     "workload",
+     "knowledge",
+     "share"
+    ]
+   }
+  },
+  {
+   "genre": "work_update",
+   "work": true,
+   "prompt": "Write a weekly update for stakeholders: what the team released, what feedback came in, how many bugs are still open and what the priorities are for next week.",
+   "words": [
+    120,
+    180
+   ],
+   "targets": {
+    "rules": [
+     "03-1",
+     "03-2",
+     "03-3",
+     "03-4"
+    ],
+    "words": [
+     "feature",
+     "feedback",
+     "priority",
+     "release",
+     "bottleneck"
+    ]
+   }
+  }
+ ],
+ "test": {
+  "pass_ratio": 0.8,
+  "speaking": {
+   "duration_sec": 120,
+   "warmup": "Tell me about the people you work or study with.",
+   "tasks": [
+    "Describe an app you use every day: what it does well and what annoys you.",
+    "How does your team share information and feedback?"
+   ],
+   "probe": "Most teams say communication is their main problem. Why do you think that is, and what actually helps?",
+   "unexpected": "If you could add one feature to your phone, what would it be?"
+  },
+  "items": [
+   {
+    "id": "03-t-01",
+    "rule_point": "03-1",
+    "rung": "recognize",
+    "prompt": "Let's meet at ___ entrance of the office.",
+    "options": [
+     "a",
+     "the",
+     "no article"
+    ],
+    "answers": [
+     "the"
+    ],
+    "hint_choice": [
+     "the",
+     "a"
+    ]
+   },
+   {
+    "id": "03-t-02",
+    "rule_point": "03-1",
+    "rung": "fill",
+    "prompt": "Our office is in ___ old building near the station.",
+    "answers": [
+     "an"
+    ],
+    "hint_choice": [
+     "an",
+     "a"
+    ]
+   },
+   {
+    "id": "03-t-03",
+    "rule_point": "03-1",
+    "rung": "fill",
+    "prompt": "I think ___ trust is important in any team. (write - if nothing is needed)",
+    "answers": [
+     "-",
+     "no article",
+     "nothing",
+     "none",
+     "x",
+     "0",
+     "no"
+    ],
+    "hint_choice": [
+     "-",
+     "the"
+    ]
+   },
+   {
+    "id": "03-t-04",
+    "rule_point": "03-1",
+    "rung": "fix",
+    "prompt": "Can you send me link to the board?",
+    "answers": [
+     "Can you send me the link to the board?",
+     "Can you send me a link to the board?"
+    ],
+    "hint_choice": [
+     "the link",
+     "link"
+    ]
+   },
+   {
+    "id": "03-t-05",
+    "rule_point": "03-1",
+    "rung": "translate",
+    "prompt": "Я прочитал статью, которую ты прислал.",
+    "answers": [
+     "I read the article that you sent me.",
+     "I read the article that you sent.",
+     "I read the article which you sent me.",
+     "I read the article which you sent.",
+     "I read the article you sent me.",
+     "I read the article you sent.",
+     "I've read the article that you sent me.",
+     "I've read the article that you sent.",
+     "I've read the article which you sent me.",
+     "I've read the article which you sent.",
+     "I've read the article you sent me.",
+     "I've read the article you sent.",
+     "I have read the article that you sent me.",
+     "I have read the article that you sent.",
+     "I have read the article which you sent me.",
+     "I have read the article which you sent.",
+     "I have read the article you sent me.",
+     "I have read the article you sent."
+    ],
+    "hint_choice": [
+     "the article",
+     "an article"
+    ]
+   },
+   {
+    "id": "03-t-06",
+    "rule_point": "03-2",
+    "rung": "recognize",
+    "prompt": "Could you give me ___ about the new process?",
+    "options": [
+     "some information",
+     "an information",
+     "informations"
+    ],
+    "answers": [
+     "some information"
+    ],
+    "hint_choice": [
+     "some information",
+     "an information"
+    ]
+   },
+   {
+    "id": "03-t-07",
+    "rule_point": "03-2",
+    "rung": "fill",
+    "prompt": "There isn't ___ progress on this task yet. (much / many)",
+    "answers": [
+     "much"
+    ],
+    "hint_choice": [
+     "much",
+     "many"
+    ]
+   },
+   {
+    "id": "03-t-08",
+    "rule_point": "03-2",
+    "rung": "fix",
+    "prompt": "We need more equipments for the new team.",
+    "answers": [
+     "We need more equipment for the new team."
+    ],
+    "hint_choice": [
+     "equipment",
+     "equipments"
+    ]
+   },
+   {
+    "id": "03-t-09",
+    "rule_point": "03-2",
+    "rung": "translate",
+    "prompt": "Это полезная информация.",
+    "answers": [
+     "This is useful information.",
+     "That is useful information.",
+     "It is useful information.",
+     "It's useful information.",
+     "That's useful information.",
+     "This information is useful."
+    ],
+    "hint_choice": [
+     "useful information",
+     "a useful information"
+    ]
+   },
+   {
+    "id": "03-t-10",
+    "rule_point": "03-2",
+    "rung": "fill",
+    "prompt": "She gave me two ___ (piece) of advice.",
+    "answers": [
+     "pieces"
+    ],
+    "hint_choice": [
+     "pieces",
+     "piece"
+    ]
+   },
+   {
+    "id": "03-t-11",
+    "rule_point": "03-3",
+    "rung": "recognize",
+    "prompt": "Each of the ___ has a mentor.",
+    "options": [
+     "developer",
+     "developers",
+     "developer's"
+    ],
+    "answers": [
+     "developers"
+    ],
+    "hint_choice": [
+     "developers",
+     "developer"
+    ]
+   },
+   {
+    "id": "03-t-12",
+    "rule_point": "03-3",
+    "rung": "fill",
+    "prompt": "We have five new ___ (customer) this month.",
+    "answers": [
+     "customers"
+    ],
+    "hint_choice": [
+     "customers",
+     "customer"
+    ]
+   },
+   {
+    "id": "03-t-13",
+    "rule_point": "03-3",
+    "rung": "fill",
+    "prompt": "Every ___ (release) needs a checklist.",
+    "answers": [
+     "release"
+    ],
+    "hint_choice": [
+     "release",
+     "releases"
+    ]
+   },
+   {
+    "id": "03-t-14",
+    "rule_point": "03-3",
+    "rung": "fix",
+    "prompt": "Every users can change their password.",
+    "answers": [
+     "Every user can change their password.",
+     "Every user can change his or her password.",
+     "All users can change their password.",
+     "All users can change their passwords."
+    ],
+    "hint_choice": [
+     "Every user",
+     "Every users"
+    ]
+   },
+   {
+    "id": "03-t-15",
+    "rule_point": "03-3",
+    "rung": "translate",
+    "prompt": "У нас три команды и два офиса.",
+    "answers": [
+     "We have three teams and two offices.",
+     "We've got three teams and two offices.",
+     "We have got three teams and two offices."
+    ],
+    "hint_choice": [
+     "teams ... offices",
+     "team ... office"
+    ]
+   },
+   {
+    "id": "03-t-16",
+    "rule_point": "03-4",
+    "rung": "recognize",
+    "prompt": "Where ___ your manager sit?",
+    "options": [
+     "do",
+     "does",
+     "is"
+    ],
+    "answers": [
+     "does"
+    ],
+    "hint_choice": [
+     "does",
+     "do"
+    ]
+   },
+   {
+    "id": "03-t-17",
+    "rule_point": "03-4",
+    "rung": "fill",
+    "prompt": "The tester ___ (check) every build.",
+    "answers": [
+     "checks"
+    ],
+    "hint_choice": [
+     "checks",
+     "check"
+    ]
+   },
+   {
+    "id": "03-t-18",
+    "rule_point": "03-4",
+    "rung": "fill",
+    "prompt": "There ___ (be) a lot of people at the demo yesterday.",
+    "answers": [
+     "were"
+    ],
+    "hint_choice": [
+     "were",
+     "was"
+    ]
+   },
+   {
+    "id": "03-t-19",
+    "rule_point": "03-4",
+    "rung": "fix",
+    "prompt": "My boss don't answer emails at weekends.",
+    "answers": [
+     "My boss doesn't answer emails at weekends.",
+     "My boss doesn't answer emails on weekends.",
+     "My boss does not answer emails at weekends.",
+     "My boss does not answer emails on weekends."
+    ],
+    "hint_choice": [
+     "doesn't answer",
+     "don't answer"
+    ]
+   },
+   {
+    "id": "03-t-20",
+    "rule_point": "03-4",
+    "rung": "translate",
+    "prompt": "Она работает в отделе продаж.",
+    "answers": [
+     "She works in the sales department.",
+     "She works in the sales team.",
+     "She works in sales."
+    ],
+    "hint_choice": [
+     "works",
+     "work"
+    ]
+   },
+   {
+    "id": "03-t-21",
+    "rule_point": "03-5",
+    "rung": "recognize",
+    "prompt": "There's ___ coffee left. Let's buy some more.",
+    "options": [
+     "little",
+     "few",
+     "many"
+    ],
+    "answers": [
+     "little"
+    ],
+    "hint_choice": [
+     "little",
+     "few"
+    ]
+   },
+   {
+    "id": "03-t-22",
+    "rule_point": "03-5",
+    "rung": "fill",
+    "prompt": "___ of my colleagues work remotely. (Most / The most)",
+    "answers": [
+     "Most"
+    ],
+    "hint_choice": [
+     "Most",
+     "The most"
+    ]
+   },
+   {
+    "id": "03-t-23",
+    "rule_point": "03-5",
+    "rung": "fill",
+    "prompt": "I spoke to ___ candidates, the man and the woman. I liked the first one more. (both / all)",
+    "answers": [
+     "both"
+    ],
+    "hint_choice": [
+     "both",
+     "all"
+    ]
+   },
+   {
+    "id": "03-t-24",
+    "rule_point": "03-5",
+    "rung": "fix",
+    "prompt": "The whole developers were at the meeting.",
+    "answers": [
+     "All the developers were at the meeting.",
+     "All of the developers were at the meeting.",
+     "All developers were at the meeting."
+    ],
+    "hint_choice": [
+     "All the developers",
+     "The whole developers"
+    ]
+   },
+   {
+    "id": "03-t-25",
+    "rule_point": "03-5",
+    "rung": "translate",
+    "prompt": "Почти все тесты прошли.",
+    "answers": [
+     "Almost all the tests passed.",
+     "Almost all of the tests passed.",
+     "Nearly all the tests passed.",
+     "Nearly all of the tests passed.",
+     "Almost all tests passed.",
+     "Nearly all tests passed."
+    ],
+    "hint_choice": [
+     "all the tests",
+     "all of tests"
+    ]
+   },
+   {
+    "id": "03-t-26",
+    "rule_point": "words",
+    "rung": "recognize",
+    "prompt": "We can't take more tasks: the team's ___ is already too high.",
+    "options": [
+     "workload",
+     "backlog",
+     "feature"
+    ],
+    "answers": [
+     "workload"
+    ],
+    "hint_choice": [
+     "workload",
+     "backlog"
+    ]
+   },
+   {
+    "id": "03-t-27",
+    "rule_point": "words",
+    "rung": "recognize",
+    "prompt": "Let's put this idea in the ___ and discuss it next sprint.",
+    "options": [
+     "backlog",
+     "budget",
+     "department"
+    ],
+    "answers": [
+     "backlog"
+    ],
+    "hint_choice": [
+     "backlog",
+     "budget"
+    ]
+   },
+   {
+    "id": "03-t-28",
+    "rule_point": "words",
+    "rung": "recognize",
+    "prompt": "Code review is a ___: everything else waits for it.",
+    "options": [
+     "bottleneck",
+     "teammate",
+     "requirement"
+    ],
+    "answers": [
+     "bottleneck"
+    ],
+    "hint_choice": [
+     "bottleneck",
+     "teammate"
+    ]
+   },
+   {
+    "id": "03-t-29",
+    "rule_point": "words",
+    "rung": "fill",
+    "prompt": "Can you give me an ___ for this task? Two days or two weeks?",
+    "answers": [
+     "estimate"
+    ],
+    "hint_choice": [
+     "estimate",
+     "estimation"
+    ]
+   },
+   {
+    "id": "03-t-30",
+    "rule_point": "words",
+    "rung": "recognize",
+    "prompt": "Which task is our top ___ this week?",
+    "options": [
+     "priority",
+     "progress",
+     "research"
+    ],
+    "answers": [
+     "priority"
+    ],
+    "hint_choice": [
+     "priority",
+     "progress"
+    ]
+   }
+  ]
+ },
+ "placement": [
+  {
+   "rule_point": "03-1",
+   "b1_or_b2": "B1",
+   "items": [
+    {
+     "id": "03-pl-01",
+     "rule_point": "03-1",
+     "rung": "recognize",
+     "prompt": "I bought ___ umbrella yesterday.",
+     "options": [
+      "a",
+      "an",
+      "the"
+     ],
+     "answers": [
+      "an"
+     ],
+     "hint_choice": [
+      "an",
+      "a"
+     ]
+    },
+    {
+     "id": "03-pl-02",
+     "rule_point": "03-1",
+     "rung": "fill",
+     "prompt": "___ moon was very bright last night.",
+     "answers": [
+      "The"
+     ],
+     "hint_choice": [
+      "The",
+      "A"
+     ]
+    },
+    {
+     "id": "03-pl-03",
+     "rule_point": "03-1",
+     "rung": "fix",
+     "prompt": "She is best developer in the company.",
+     "answers": [
+      "She is the best developer in the company.",
+      "She is the best developer at the company.",
+      "She's the best developer in the company.",
+      "She's the best developer at the company."
+     ],
+     "hint_choice": [
+      "the best",
+      "best"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "03-2",
+   "b1_or_b2": "B1",
+   "items": [
+    {
+     "id": "03-pl-04",
+     "rule_point": "03-2",
+     "rung": "recognize",
+     "prompt": "Can you give me ___ advice?",
+     "options": [
+      "some",
+      "an",
+      "many"
+     ],
+     "answers": [
+      "some"
+     ],
+     "hint_choice": [
+      "some",
+      "an"
+     ]
+    },
+    {
+     "id": "03-pl-05",
+     "rule_point": "03-2",
+     "rung": "fill",
+     "prompt": "How ___ information do you need?",
+     "answers": [
+      "much"
+     ],
+     "hint_choice": [
+      "much",
+      "many"
+     ]
+    },
+    {
+     "id": "03-pl-06",
+     "rule_point": "03-2",
+     "rung": "fix",
+     "prompt": "The news are good.",
+     "answers": [
+      "The news is good."
+     ],
+     "hint_choice": [
+      "is",
+      "are"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "03-3",
+   "b1_or_b2": "B1",
+   "items": [
+    {
+     "id": "03-pl-07",
+     "rule_point": "03-3",
+     "rung": "recognize",
+     "prompt": "We have two ___ today.",
+     "options": [
+      "meeting",
+      "meetings",
+      "meeting's"
+     ],
+     "answers": [
+      "meetings"
+     ],
+     "hint_choice": [
+      "meetings",
+      "meeting"
+     ]
+    },
+    {
+     "id": "03-pl-08",
+     "rule_point": "03-3",
+     "rung": "fill",
+     "prompt": "Every ___ (employee) has a badge.",
+     "answers": [
+      "employee"
+     ],
+     "hint_choice": [
+      "employee",
+      "employees"
+     ]
+    },
+    {
+     "id": "03-pl-09",
+     "rule_point": "03-3",
+     "rung": "fix",
+     "prompt": "I have three new task today.",
+     "answers": [
+      "I have three new tasks today."
+     ],
+     "hint_choice": [
+      "tasks",
+      "task"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "03-4",
+   "b1_or_b2": "B1",
+   "items": [
+    {
+     "id": "03-pl-10",
+     "rule_point": "03-4",
+     "rung": "recognize",
+     "prompt": "She ___ in marketing.",
+     "options": [
+      "work",
+      "works",
+      "working"
+     ],
+     "answers": [
+      "works"
+     ],
+     "hint_choice": [
+      "works",
+      "work"
+     ]
+    },
+    {
+     "id": "03-pl-11",
+     "rule_point": "03-4",
+     "rung": "fill",
+     "prompt": "There ___ (be) two people in the room now.",
+     "answers": [
+      "are"
+     ],
+     "hint_choice": [
+      "are",
+      "is"
+     ]
+    },
+    {
+     "id": "03-pl-12",
+     "rule_point": "03-4",
+     "rung": "fix",
+     "prompt": "He don't like coffee.",
+     "answers": [
+      "He doesn't like coffee.",
+      "He does not like coffee."
+     ],
+     "hint_choice": [
+      "doesn't",
+      "don't"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "03-5",
+   "b1_or_b2": "B2",
+   "items": [
+    {
+     "id": "03-pl-13",
+     "rule_point": "03-5",
+     "rung": "recognize",
+     "prompt": "We don't have ___ time.",
+     "options": [
+      "much",
+      "many",
+      "a few"
+     ],
+     "answers": [
+      "much"
+     ],
+     "hint_choice": [
+      "much",
+      "many"
+     ]
+    },
+    {
+     "id": "03-pl-14",
+     "rule_point": "03-5",
+     "rung": "fill",
+     "prompt": "___ people prefer short meetings. (Most / Most of)",
+     "answers": [
+      "Most"
+     ],
+     "hint_choice": [
+      "Most",
+      "Most of"
+     ]
+    },
+    {
+     "id": "03-pl-15",
+     "rule_point": "03-5",
+     "rung": "fix",
+     "prompt": "Both of developers are on holiday.",
+     "answers": [
+      "Both developers are on holiday.",
+      "Both of the developers are on holiday.",
+      "Both the developers are on holiday."
+     ],
+     "hint_choice": [
+      "Both developers",
+      "Both of developers"
+     ]
+    }
+   ]
+  }
+ ]
+}

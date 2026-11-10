@@ -1,0 +1,768 @@
+{
+ "id": "K1",
+ "title": "Control week 1: units 1-4 mixed",
+ "theme": "Контрольная неделя 1: все пункты юнитов 1-4 вперемешку, мини-интервью, письмо, замер",
+ "exercises": [
+  {
+   "id": "K1-rv-001",
+   "rule_point": "01-1",
+   "rung": "fill",
+   "prompt": "On our first day in Rome we ___ (eat) pizza three times.",
+   "answers": [
+    "ate"
+   ],
+   "hint_choice": [
+    "ate",
+    "eated"
+   ]
+  },
+  {
+   "id": "K1-rv-002",
+   "rule_point": "02-1",
+   "rung": "recognize",
+   "prompt": "So far this year I ___ three books in English.",
+   "options": [
+    "have read",
+    "read",
+    "am reading"
+   ],
+   "answers": [
+    "have read"
+   ],
+   "hint_choice": [
+    "have read",
+    "read"
+   ]
+  },
+  {
+   "id": "K1-rv-003",
+   "rule_point": "03-1",
+   "rung": "fill",
+   "prompt": "Could you close ___ door, please? It's cold in here.",
+   "answers": [
+    "the"
+   ],
+   "hint_choice": [
+    "the",
+    "a"
+   ]
+  },
+  {
+   "id": "K1-rv-004",
+   "rule_point": "04-1",
+   "rung": "recognize",
+   "prompt": "The new phone is ___ than the old one.",
+   "options": [
+    "much lighter",
+    "more lighter",
+    "much more light"
+   ],
+   "answers": [
+    "much lighter"
+   ],
+   "hint_choice": [
+    "much lighter",
+    "more lighter"
+   ]
+  },
+  {
+   "id": "K1-rv-005",
+   "rule_point": "01-2",
+   "rung": "fill",
+   "prompt": "We ___ (still / have) breakfast when the guide arrived.",
+   "answers": [
+    "were still having"
+   ],
+   "hint_choice": [
+    "were having",
+    "had"
+   ]
+  },
+  {
+   "id": "K1-rv-006",
+   "rule_point": "02-2",
+   "rung": "fill",
+   "prompt": "You're all wet! ___ (you / walk) in the rain?",
+   "answers": [
+    "Have you been walking"
+   ],
+   "hint_choice": [
+    "Have you been walking",
+    "Are you walking"
+   ]
+  },
+  {
+   "id": "K1-rv-007",
+   "rule_point": "03-2",
+   "rung": "fix",
+   "prompt": "Can you give me some advices about the interview?",
+   "answers": [
+    "Can you give me some advice about the interview?"
+   ],
+   "hint_choice": [
+    "advice",
+    "advices"
+   ]
+  },
+  {
+   "id": "K1-rv-008",
+   "rule_point": "04-2",
+   "rung": "transform",
+   "prompt": "Join with \"the ... the\": If the price is lower, more people buy.",
+   "answers": [
+    "The lower the price is, the more people buy.",
+    "The lower the price, the more people buy."
+   ],
+   "hint_choice": [
+    "The lower ... the more",
+    "Lower ... more"
+   ]
+  },
+  {
+   "id": "K1-rv-009",
+   "rule_point": "01-3",
+   "rung": "recognize",
+   "prompt": "When I got home, I saw that someone ___ the window.",
+   "options": [
+    "had broken",
+    "has broken",
+    "breaks"
+   ],
+   "answers": [
+    "had broken"
+   ],
+   "hint_choice": [
+    "had broken",
+    "has broken"
+   ]
+  },
+  {
+   "id": "K1-rv-010",
+   "rule_point": "02-3",
+   "rung": "fill",
+   "prompt": "I've had this laptop ___ 2022.",
+   "answers": [
+    "since"
+   ],
+   "hint_choice": [
+    "since",
+    "for"
+   ]
+  },
+  {
+   "id": "K1-rv-011",
+   "rule_point": "03-3",
+   "rung": "fill",
+   "prompt": "Each ___ (student) gets a certificate.",
+   "answers": [
+    "student"
+   ],
+   "hint_choice": [
+    "student",
+    "students"
+   ]
+  },
+  {
+   "id": "K1-rv-012",
+   "rule_point": "04-3",
+   "rung": "fill",
+   "prompt": "The last episode was ___ terrifying. (very / absolutely)",
+   "answers": [
+    "absolutely"
+   ],
+   "hint_choice": [
+    "absolutely",
+    "very"
+   ]
+  },
+  {
+   "id": "K1-rv-013",
+   "rule_point": "01-4",
+   "rung": "fill",
+   "prompt": "She was tired because she ___ (work) since six in the morning.",
+   "answers": [
+    "had been working",
+    "had worked"
+   ],
+   "hint_choice": [
+    "had been working",
+    "has been working"
+   ]
+  },
+  {
+   "id": "K1-rv-014",
+   "rule_point": "02-4",
+   "rung": "fix",
+   "prompt": "My father is engineer and my mother is teacher.",
+   "answers": [
+    "My father is an engineer and my mother is a teacher."
+   ],
+   "hint_choice": [
+    "an engineer ... a teacher",
+    "engineer ... teacher"
+   ]
+  },
+  {
+   "id": "K1-rv-015",
+   "rule_point": "03-4",
+   "rung": "fill",
+   "prompt": "Nobody in my family ___ (speak) Spanish.",
+   "answers": [
+    "speaks"
+   ],
+   "hint_choice": [
+    "speaks",
+    "speak"
+   ]
+  },
+  {
+   "id": "K1-rv-016",
+   "rule_point": "04-4",
+   "rung": "transform",
+   "prompt": "Rewrite with \"used to\": As a child I had a dog. I don't have one now.",
+   "answers": [
+    "I used to have a dog as a child.",
+    "I used to have a dog.",
+    "As a child I used to have a dog."
+   ],
+   "hint_choice": [
+    "used to have",
+    "used to having"
+   ]
+  },
+  {
+   "id": "K1-rv-017",
+   "rule_point": "01-5",
+   "rung": "fill",
+   "prompt": "It was ___ busy day that I forgot to eat.",
+   "answers": [
+    "such a"
+   ],
+   "hint_choice": [
+    "such a",
+    "so"
+   ]
+  },
+  {
+   "id": "K1-rv-018",
+   "rule_point": "03-5",
+   "rung": "recognize",
+   "prompt": "___ of the developers came to the demo.",
+   "options": [
+    "Most",
+    "The most",
+    "Most the"
+   ],
+   "answers": [
+    "Most"
+   ],
+   "hint_choice": [
+    "Most",
+    "The most"
+   ]
+  },
+  {
+   "id": "K1-rv-019",
+   "rule_point": "04-5",
+   "rung": "fill",
+   "prompt": "I'm slowly getting used to ___ (speak) English at work.",
+   "answers": [
+    "speaking"
+   ],
+   "hint_choice": [
+    "speaking",
+    "speak"
+   ]
+  },
+  {
+   "id": "K1-rv-020",
+   "rule_point": "02-1",
+   "rung": "fix",
+   "prompt": "Last month I have finished an online course.",
+   "answers": [
+    "Last month I finished an online course.",
+    "I finished an online course last month."
+   ],
+   "hint_choice": [
+    "finished",
+    "have finished"
+   ]
+  },
+  {
+   "id": "K1-rv-021",
+   "rule_point": "01-1",
+   "rung": "fix",
+   "prompt": "We was very tired, so we go to bed early.",
+   "answers": [
+    "We were very tired, so we went to bed early."
+   ],
+   "hint_choice": [
+    "were ... went",
+    "was ... go"
+   ]
+  },
+  {
+   "id": "K1-rv-022",
+   "rule_point": "03-3",
+   "rung": "fix",
+   "prompt": "We have two new developer in the team.",
+   "answers": [
+    "We have two new developers in the team.",
+    "We have two new developers on the team."
+   ],
+   "hint_choice": [
+    "developers",
+    "developer"
+   ]
+  },
+  {
+   "id": "K1-rv-023",
+   "rule_point": "04-1",
+   "rung": "translate",
+   "prompt": "Это приложение гораздо удобнее старого.",
+   "answers": [
+    "This app is much more convenient than the old one.",
+    "This app is much more user-friendly than the old one.",
+    "This app is much easier to use than the old one.",
+    "This app is far more convenient than the old one.",
+    "This app is far more user-friendly than the old one.",
+    "This app is far easier to use than the old one.",
+    "This app is a lot more convenient than the old one.",
+    "This app is a lot more user-friendly than the old one.",
+    "This app is a lot easier to use than the old one."
+   ],
+   "hint_choice": [
+    "much more convenient",
+    "more convenienter"
+   ]
+  },
+  {
+   "id": "K1-rv-024",
+   "rule_point": "02-2",
+   "rung": "translate",
+   "prompt": "Мы ищем дизайнера уже два месяца.",
+   "answers": [
+    "We have been looking for a designer for two months now.",
+    "We have been looking for a designer for two months.",
+    "We've been looking for a designer for two months now.",
+    "We've been looking for a designer for two months."
+   ],
+   "hint_choice": [
+    "have been looking",
+    "are looking"
+   ]
+  },
+  {
+   "id": "K1-rv-025",
+   "rule_point": "01-2",
+   "rung": "translate",
+   "prompt": "Когда я проснулся, светило солнце.",
+   "answers": [
+    "When I woke up, the sun was shining.",
+    "The sun was shining when I woke up."
+   ],
+   "hint_choice": [
+    "was shining",
+    "shone"
+   ]
+  },
+  {
+   "id": "K1-rv-026",
+   "rule_point": "03-1",
+   "rung": "translate",
+   "prompt": "Я купил новый телефон. Телефон очень быстрый.",
+   "answers": [
+    "I bought a new phone. The phone is very fast.",
+    "I've bought a new phone. The phone is very fast.",
+    "I have bought a new phone. The phone is very fast."
+   ],
+   "hint_choice": [
+    "a ... the",
+    "the ... a"
+   ]
+  },
+  {
+   "id": "K1-rv-027",
+   "rule_point": "04-4",
+   "rung": "fill",
+   "prompt": "When we were kids, we ___ (spend) every summer by the sea.",
+   "answers": [
+    "used to spend",
+    "would spend",
+    "spent"
+   ],
+   "hint_choice": [
+    "used to spend",
+    "use to spend"
+   ]
+  },
+  {
+   "id": "K1-rv-028",
+   "rule_point": "02-3",
+   "rung": "transform",
+   "prompt": "Rewrite with \"for\" (we started in February, it is now May): I have worked here since February.",
+   "answers": [
+    "I have worked here for three months.",
+    "I've worked here for three months."
+   ],
+   "hint_choice": [
+    "for three months",
+    "since three months"
+   ]
+  },
+  {
+   "id": "K1-rv-029",
+   "rule_point": "01-3",
+   "rung": "fill",
+   "prompt": "I couldn't pay because I ___ (leave) my wallet at home.",
+   "answers": [
+    "had left",
+    "left"
+   ],
+   "hint_choice": [
+    "had left",
+    "have left"
+   ]
+  },
+  {
+   "id": "K1-rv-030",
+   "rule_point": "03-4",
+   "rung": "recognize",
+   "prompt": "There ___ some milk in the fridge.",
+   "options": [
+    "is",
+    "are",
+    "be"
+   ],
+   "answers": [
+    "is"
+   ],
+   "hint_choice": [
+    "is",
+    "are"
+   ]
+  },
+  {
+   "id": "K1-rv-031",
+   "rule_point": "04-3",
+   "rung": "fix",
+   "prompt": "The view was very breathtaking.",
+   "answers": [
+    "The view was absolutely breathtaking.",
+    "The view was really breathtaking.",
+    "The view was very beautiful."
+   ],
+   "hint_choice": [
+    "absolutely breathtaking",
+    "very breathtaking"
+   ]
+  },
+  {
+   "id": "K1-rv-032",
+   "rule_point": "01-4",
+   "rung": "translate",
+   "prompt": "Мы ждали уже полчаса, когда пришел автобус.",
+   "answers": [
+    "We had been waiting for half an hour when the bus came.",
+    "We had been waiting for half an hour when the bus arrived.",
+    "We had waited for half an hour when the bus came.",
+    "We had waited for half an hour when the bus arrived.",
+    "We'd been waiting for half an hour when the bus came.",
+    "We'd been waiting for half an hour when the bus arrived.",
+    "We'd waited for half an hour when the bus came.",
+    "We'd waited for half an hour when the bus arrived."
+   ],
+   "hint_choice": [
+    "had been waiting",
+    "were waiting"
+   ]
+  },
+  {
+   "id": "K1-rv-033",
+   "rule_point": "02-4",
+   "rung": "fill",
+   "prompt": "She works as ___ architect.",
+   "answers": [
+    "an"
+   ],
+   "hint_choice": [
+    "an",
+    "a"
+   ]
+  },
+  {
+   "id": "K1-rv-034",
+   "rule_point": "03-2",
+   "rung": "fill",
+   "prompt": "I need ___ information about the trip. (some / an)",
+   "answers": [
+    "some"
+   ],
+   "hint_choice": [
+    "some",
+    "an"
+   ]
+  },
+  {
+   "id": "K1-rv-035",
+   "rule_point": "04-2",
+   "rung": "fill",
+   "prompt": "The ___ (late) you go to bed, the harder it is to get up.",
+   "answers": [
+    "later"
+   ],
+   "hint_choice": [
+    "later",
+    "more late"
+   ]
+  },
+  {
+   "id": "K1-rv-036",
+   "rule_point": "01-5",
+   "rung": "fix",
+   "prompt": "The music was such loud that we couldn't talk.",
+   "answers": [
+    "The music was so loud that we couldn't talk.",
+    "The music was so loud that we could not talk."
+   ],
+   "hint_choice": [
+    "so loud",
+    "such loud"
+   ]
+  },
+  {
+   "id": "K1-rv-037",
+   "rule_point": "04-5",
+   "rung": "fix",
+   "prompt": "I'm not used to wake up so early.",
+   "answers": [
+    "I'm not used to waking up so early.",
+    "I am not used to waking up so early."
+   ],
+   "hint_choice": [
+    "used to waking",
+    "used to wake"
+   ]
+  },
+  {
+   "id": "K1-rv-038",
+   "rule_point": "03-5",
+   "rung": "fix",
+   "prompt": "Most of people in our office drive to work.",
+   "answers": [
+    "Most people in our office drive to work.",
+    "Most of the people in our office drive to work."
+   ],
+   "hint_choice": [
+    "Most people",
+    "Most of people"
+   ]
+  },
+  {
+   "id": "K1-rv-039",
+   "rule_point": "01-1",
+   "rung": "translate",
+   "prompt": "Вчера я встретил старого друга.",
+   "answers": [
+    "Yesterday I met an old friend.",
+    "I met an old friend yesterday."
+   ],
+   "hint_choice": [
+    "met",
+    "meeted"
+   ]
+  },
+  {
+   "id": "K1-rv-040",
+   "rule_point": "03-3",
+   "rung": "recognize",
+   "prompt": "Every ___ needs a test.",
+   "options": [
+    "feature",
+    "features",
+    "the features"
+   ],
+   "answers": [
+    "feature"
+   ],
+   "hint_choice": [
+    "feature",
+    "features"
+   ]
+  },
+  {
+   "id": "K1-rv-041",
+   "rule_point": "02-1",
+   "rung": "translate",
+   "prompt": "Ты когда-нибудь работал удаленно?",
+   "answers": [
+    "Have you ever worked remotely?",
+    "Have you ever worked from home?",
+    "Did you ever work remotely?",
+    "Did you ever work from home?"
+   ],
+   "hint_choice": [
+    "Have you ever worked",
+    "Did you ever worked"
+   ]
+  },
+  {
+   "id": "K1-rv-042",
+   "rule_point": "03-1",
+   "rung": "recognize",
+   "prompt": "___ coffee in this office is terrible.",
+   "options": [
+    "The",
+    "A",
+    "no article"
+   ],
+   "answers": [
+    "The"
+   ],
+   "hint_choice": [
+    "The",
+    "A"
+   ]
+  },
+  {
+   "id": "K1-rv-043",
+   "rule_point": "04-1",
+   "rung": "fill",
+   "prompt": "This hotel isn't as ___ (comfortable) as the last one.",
+   "answers": [
+    "comfortable"
+   ],
+   "hint_choice": [
+    "comfortable",
+    "more comfortable"
+   ]
+  },
+  {
+   "id": "K1-rv-044",
+   "rule_point": "03-4",
+   "rung": "fix",
+   "prompt": "My sister work in a bank.",
+   "answers": [
+    "My sister works in a bank.",
+    "My sister works at a bank."
+   ],
+   "hint_choice": [
+    "works",
+    "work"
+   ]
+  },
+  {
+   "id": "K1-rv-045",
+   "rule_point": "01-2",
+   "rung": "recognize",
+   "prompt": "I ___ a shower when the phone rang, so I didn't answer.",
+   "options": [
+    "was having",
+    "had",
+    "have"
+   ],
+   "answers": [
+    "was having"
+   ],
+   "hint_choice": [
+    "was having",
+    "had"
+   ]
+  },
+  {
+   "id": "K1-rv-046",
+   "rule_point": "04-4",
+   "rung": "recognize",
+   "prompt": "___ you use to have long hair?",
+   "options": [
+    "Did",
+    "Were",
+    "Are"
+   ],
+   "answers": [
+    "Did"
+   ],
+   "hint_choice": [
+    "Did",
+    "Were"
+   ]
+  },
+  {
+   "id": "K1-rv-047",
+   "rule_point": "02-2",
+   "rung": "fill",
+   "prompt": "I ___ (learn) Spanish for six months, and I can already order food.",
+   "answers": [
+    "have been learning",
+    "'ve been learning",
+    "have learned",
+    "have learnt"
+   ],
+   "hint_choice": [
+    "have been learning",
+    "am learning"
+   ]
+  },
+  {
+   "id": "K1-rv-048",
+   "rule_point": "03-5",
+   "rung": "fill",
+   "prompt": "There are only ___ tickets left. (a few / a little)",
+   "answers": [
+    "a few"
+   ],
+   "hint_choice": [
+    "a few",
+    "a little"
+   ]
+  }
+ ],
+ "writing": {
+  "genre": "work_email",
+  "work": true,
+  "prompt": "Write an email to a new teammate. Introduce yourself and say what you have worked on so far, describe the team and how it shares the work, and give one piece of advice about what they will need to get used to.",
+  "words": [
+   120,
+   180
+  ],
+  "targets": {
+   "rules": [
+    "02-1",
+    "02-3",
+    "02-4",
+    "03-1",
+    "03-4",
+    "04-5"
+   ],
+   "words": [
+    "teammate",
+    "workload",
+    "feedback",
+    "priority",
+    "experience"
+   ]
+  }
+ },
+ "units": [
+  "01",
+  "02",
+  "03",
+  "04"
+ ],
+ "interview": {
+  "duration_sec": 300,
+  "warmup": "Tell me a little about yourself: what do you do, and how long have you been doing it?",
+  "tasks": [
+   "Tell me about a trip or a project that didn't go as planned. What had happened before things went wrong?",
+   "Describe the team you work or study with and how you share the work.",
+   "Compare how you used to work or study five years ago with how you do it now."
+  ],
+  "probe": "What is the most useful thing you have learned from a mistake, and what would you do differently now?",
+  "unexpected": "If your favourite film had a sequel, what would happen in it?"
+ },
+ "measure": {
+  "what": "доля верных ответов по каждому пункту юнитов 1-4; ошибки на 100 слов и оценки разбора F13 по мини-интервью и письму",
+  "into": "шкала уровня F22 как контрольный замер К1",
+  "pass_ratio": 0.8
+ }
+}

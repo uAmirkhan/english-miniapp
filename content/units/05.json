@@ -1,0 +1,529 @@
+{
+ "id": "05",
+ "full": false,
+ "title": "Plans and moving: talking about the future",
+ "theme": "Планы и переезд: будущее, сроки, условия",
+ "can_do": [
+  "Сказать о решении, плане и договоренности разными формами будущего.",
+  "Описать, что будет происходить и что будет сделано к сроку: I'll be working..., we'll have finished...",
+  "Связать два события в будущем через when, as soon as, until без will после них.",
+  "Обсудить условия и последствия: if, unless, as long as, provided."
+ ],
+ "rules": [
+  {
+   "id": "05-A",
+   "title": "Future forms",
+   "points": [
+    {
+     "id": "05-1",
+     "title": "will, going to or present continuous",
+     "b1_or_b2": "B1",
+     "explain_ru": "Три главных способа сказать о будущем. Present continuous (I'm meeting the client on Friday): уже договорились, есть время и место, как запись в календаре. Going to (We're going to move the release): план или намерение, решено заранее; также прогноз, когда есть признаки сейчас (Look at the queue, we're going to be late). Will: решение в момент речи (I'll check it now), обещание, предложение помощи и прогноз-мнение (I think it will work).",
+     "examples": [
+      {
+       "en": "I'm flying to Riga on Monday to meet the new team.",
+       "ru": "В понедельник я лечу в Ригу знакомиться с новой командой."
+      },
+      {
+       "en": "We're going to split the project into three milestones.",
+       "ru": "Мы собираемся разбить проект на три этапа."
+      },
+      {
+       "en": "The phone's ringing. I'll get it.",
+       "ru": "Звонит телефон. Я возьму."
+      },
+      {
+       "en": "I think the new office will be much quieter.",
+       "ru": "Думаю, в новом офисе будет гораздо тише."
+      },
+      {
+       "en": "Look at those numbers: we're going to miss the deadline.",
+       "ru": "Посмотри на цифры: мы не успеем к сроку."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "Wait, I help you with the boxes.",
+      "right": "Wait, I'll help you with the boxes.",
+      "why_ru": "По-русски \"сейчас помогу\" стоит в настоящем времени. В английском решение и предложение помощи в момент речи требуют will."
+     }
+    },
+    {
+     "id": "05-2",
+     "title": "Future continuous and future perfect",
+     "b1_or_b2": "B2",
+     "explain_ru": "Future continuous (will be + -ing): что будет идти в определенный момент будущего. This time next week I'll be packing. Future perfect (will have + третья форма): что будет уже сделано к сроку. By March we'll have moved. Сигналы: this time tomorrow, at 10 am on Friday (процесс) и by Friday, by the end of the year (результат к сроку).",
+     "examples": [
+      {
+       "en": "This time next month I'll be living in a different city.",
+       "ru": "В это время через месяц я уже буду жить в другом городе."
+      },
+      {
+       "en": "Don't call at ten, I'll be presenting the roadmap.",
+       "ru": "Не звони в десять, я буду показывать дорожную карту."
+      },
+      {
+       "en": "By Friday we'll have fixed all the critical bugs.",
+       "ru": "К пятнице мы исправим все критические баги."
+      },
+      {
+       "en": "By the end of the year she will have worked here for a decade.",
+       "ru": "К концу года она проработает здесь десять лет."
+      },
+      {
+       "en": "Will you be using the meeting room this afternoon?",
+       "ru": "Ты будешь занимать переговорку сегодня днем?"
+      }
+     ],
+     "ru_trap": {
+      "wrong": "By June we will move to the new office.",
+      "right": "By June we will have moved to the new office.",
+      "why_ru": "По-русски \"к июню мы переедем\" обходится обычным будущим. В английском by + срок требует результата к этому моменту: will have + третья форма."
+     }
+    },
+    {
+     "id": "05-3",
+     "title": "Time clauses: when, as soon as, until, before + present",
+     "b1_or_b2": "B1",
+     "explain_ru": "После when, as soon as, until, before, after, once, если речь о будущем, ставится настоящее время, а не will. I'll call you when I arrive. Will остается только в главной части. Если надо подчеркнуть завершенность, после этих слов можно present perfect: I'll send it as soon as I've checked it.",
+     "examples": [
+      {
+       "en": "I'll send you the plan as soon as the client approves it.",
+       "ru": "Я пришлю план, как только клиент его одобрит."
+      },
+      {
+       "en": "We won't start until the designer finishes the mock-ups.",
+       "ru": "Мы не начнем, пока дизайнер не закончит макеты."
+      },
+      {
+       "en": "When we move, we'll need a bigger flat.",
+       "ru": "Когда мы переедем, нам понадобится квартира побольше."
+      },
+      {
+       "en": "Please check the dependencies before you merge the code.",
+       "ru": "Пожалуйста, проверь зависимости, прежде чем вливать код."
+      },
+      {
+       "en": "I'll book the tickets once I've got the dates.",
+       "ru": "Я забронирую билеты, когда узнаю даты."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "I'll call you when I will arrive.",
+      "right": "I'll call you when I arrive.",
+      "why_ru": "По-русски в обеих частях будущее: \"позвоню, когда приеду\". В английском после when, as soon as, until будущее выражают настоящим временем."
+     }
+    }
+   ]
+  },
+  {
+   "id": "05-B",
+   "title": "Conditionals 0, 1, 2",
+   "points": [
+    {
+     "id": "05-4",
+     "title": "Conditionals 0, 1, 2 and unless, as long as, provided",
+     "b1_or_b2": "B1",
+     "explain_ru": "Нулевое: всегда так (If you heat ice, it melts): настоящее в обеих частях. Первое: реальное будущее (If the API is ready, we'll start on Monday): if + настоящее, потом will. Второе: воображаемое сейчас или маловероятное (If I had more time, I would learn Spanish): if + прошедшее, потом would. Unless = если не (We'll start on Monday unless the API is late). As long as и provided (that) = при условии, что.",
+     "examples": [
+      {
+       "en": "If the build fails, the system sends an alert.",
+       "ru": "Если сборка падает, система присылает оповещение."
+      },
+      {
+       "en": "If we get the budget, we'll hire two more developers.",
+       "ru": "Если получим бюджет, наймем еще двух разработчиков."
+      },
+      {
+       "en": "If I lived closer to the office, I would walk to work.",
+       "ru": "Если бы я жил ближе к офису, я бы ходил пешком."
+      },
+      {
+       "en": "We'll launch in May unless the payment provider delays the integration.",
+       "ru": "Мы запустимся в мае, если платежный провайдер не задержит интеграцию."
+      },
+      {
+       "en": "You can work from home as long as you join the morning call.",
+       "ru": "Можешь работать из дома, при условии что подключаешься к утреннему созвону."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "If I will have time, I will help you.",
+      "right": "If I have time, I'll help you.",
+      "why_ru": "По-русски \"если будет время\" стоит в будущем. В английском после if в реальном условии будущее не ставят: if + настоящее, а will только в главной части."
+     }
+    }
+   ]
+  }
+ ],
+ "words": [
+  {
+   "en": "relocate",
+   "ru": "переехать (по работе)",
+   "example": "The company offered to help us relocate to Lisbon.",
+   "stress": "re-lo-CATE",
+   "pm": false
+  },
+  {
+   "en": "move house",
+   "ru": "переезжать (в другое жилье)",
+   "example": "We're moving house next weekend.",
+   "stress": "move HOUSE",
+   "pm": false
+  },
+  {
+   "en": "settle in",
+   "ru": "обустроиться, освоиться",
+   "example": "It took us a month to settle in.",
+   "stress": "set-tle IN",
+   "pm": false
+  },
+  {
+   "en": "lease",
+   "ru": "договор аренды; арендовать",
+   "example": "We signed a one-year lease on a small flat.",
+   "stress": "LEASE",
+   "pm": false
+  },
+  {
+   "en": "deposit",
+   "ru": "залог, депозит",
+   "example": "The landlord asked for a two-month deposit.",
+   "stress": "de-PO-sit",
+   "pm": false
+  },
+  {
+   "en": "neighbourhood",
+   "ru": "район, окрестности",
+   "example": "We chose a quiet neighbourhood near the park.",
+   "stress": "NEIGH-bour-hood",
+   "pm": false
+  },
+  {
+   "en": "cost of living",
+   "ru": "стоимость жизни",
+   "example": "The cost of living is much higher in the capital.",
+   "stress": "cost of LIV-ing",
+   "pm": false
+  },
+  {
+   "en": "paperwork",
+   "ru": "бумажная работа, документы",
+   "example": "The paperwork for the visa took three weeks.",
+   "stress": "PA-per-work",
+   "pm": false
+  },
+  {
+   "en": "look forward to",
+   "ru": "ждать с нетерпением",
+   "example": "I'm looking forward to meeting the new team.",
+   "stress": "look FOR-ward to",
+   "pm": false
+  },
+  {
+   "en": "intend",
+   "ru": "намереваться",
+   "example": "We intend to finish the move before the holidays.",
+   "stress": "in-TEND",
+   "pm": false
+  },
+  {
+   "en": "likely",
+   "ru": "вероятный, вероятно",
+   "example": "The release is likely to slip by a week.",
+   "stress": "LIKE-ly",
+   "pm": false
+  },
+  {
+   "en": "in advance",
+   "ru": "заранее",
+   "example": "Book the movers at least two weeks in advance.",
+   "stress": "in ad-VANCE",
+   "pm": false
+  },
+  {
+   "en": "eventually",
+   "ru": "в конечном счете",
+   "example": "We'll eventually move the whole team to one office.",
+   "stress": "e-VEN-tu-al-ly",
+   "pm": false
+  },
+  {
+   "en": "postpone",
+   "ru": "отложить",
+   "example": "They had to postpone the move until spring.",
+   "stress": "post-PONE",
+   "pm": false
+  },
+  {
+   "en": "commute",
+   "ru": "дорога до работы",
+   "example": "After the move my commute will be twenty minutes.",
+   "stress": "com-MUTE",
+   "pm": false
+  },
+  {
+   "en": "roadmap",
+   "ru": "дорожная карта",
+   "example": "The roadmap shows three big releases this year.",
+   "stress": "ROAD-map",
+   "pm": true
+  },
+  {
+   "en": "milestone",
+   "ru": "контрольная точка, веха",
+   "example": "The first milestone is a working prototype by May.",
+   "stress": "MILE-stone",
+   "pm": true
+  },
+  {
+   "en": "dependency",
+   "ru": "зависимость",
+   "example": "The mobile release has a dependency on the new API.",
+   "stress": "de-PEN-den-cy",
+   "pm": true
+  },
+  {
+   "en": "estimate",
+   "ru": "оценка (сроков); оценивать",
+   "example": "Our first estimate was six weeks, but it took ten.",
+   "stress": "ES-ti-mate",
+   "pm": true
+  },
+  {
+   "en": "on track",
+   "ru": "идет по плану",
+   "example": "We're on track to finish the migration by June.",
+   "stress": "on TRACK",
+   "pm": true
+  },
+  {
+   "en": "slip",
+   "ru": "сдвинуться (о сроке)",
+   "example": "If the API is late, the launch will slip.",
+   "stress": "SLIP",
+   "pm": true
+  },
+  {
+   "en": "contingency plan",
+   "ru": "запасной план",
+   "example": "We need a contingency plan in case the vendor fails.",
+   "stress": "con-TIN-gen-cy plan",
+   "pm": true
+  }
+ ],
+ "placement": [
+  {
+   "rule_point": "05-1",
+   "b1_or_b2": "B1",
+   "items": [
+    {
+     "id": "05-pl-01",
+     "rule_point": "05-1",
+     "rung": "recognize",
+     "prompt": "The phone's ringing. ___ answer it.",
+     "options": [
+      "I'll",
+      "I answer",
+      "I answered"
+     ],
+     "answers": [
+      "I'll"
+     ],
+     "hint_choice": [
+      "I'll",
+      "I answer"
+     ]
+    },
+    {
+     "id": "05-pl-02",
+     "rule_point": "05-1",
+     "rung": "fill",
+     "prompt": "I've already agreed it with the client: I ___ (meet) her in Berlin on Monday.",
+     "answers": [
+      "am meeting",
+      "'m meeting",
+      "am going to meet",
+      "'m going to meet"
+     ],
+     "hint_choice": [
+      "am meeting",
+      "meet"
+     ]
+    },
+    {
+     "id": "05-pl-03",
+     "rule_point": "05-1",
+     "rung": "fix",
+     "prompt": "Don't worry about the boxes, I carry them.",
+     "answers": [
+      "Don't worry about the boxes, I'll carry them.",
+      "Don't worry about the boxes, I will carry them."
+     ],
+     "hint_choice": [
+      "I'll carry",
+      "I carry"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "05-2",
+   "b1_or_b2": "B2",
+   "items": [
+    {
+     "id": "05-pl-04",
+     "rule_point": "05-2",
+     "rung": "recognize",
+     "prompt": "By the end of the month, we ___ the migration.",
+     "options": [
+      "will have finished",
+      "have finished",
+      "finished"
+     ],
+     "answers": [
+      "will have finished"
+     ],
+     "hint_choice": [
+      "will have finished",
+      "have finished"
+     ]
+    },
+    {
+     "id": "05-pl-05",
+     "rule_point": "05-2",
+     "rung": "fill",
+     "prompt": "Don't call me at 3 pm tomorrow, I ___ (interview) a candidate then.",
+     "answers": [
+      "will be interviewing",
+      "'ll be interviewing",
+      "am interviewing",
+      "'m interviewing",
+      "am going to interview",
+      "'m going to interview"
+     ],
+     "hint_choice": [
+      "will be interviewing",
+      "will interview"
+     ]
+    },
+    {
+     "id": "05-pl-06",
+     "rule_point": "05-2",
+     "rung": "fix",
+     "prompt": "By the time you read this email, I will leave the office.",
+     "answers": [
+      "By the time you read this email, I will have left the office.",
+      "By the time you read this email, I'll have left the office."
+     ],
+     "hint_choice": [
+      "will have left",
+      "will leave"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "05-3",
+   "b1_or_b2": "B1",
+   "items": [
+    {
+     "id": "05-pl-07",
+     "rule_point": "05-3",
+     "rung": "recognize",
+     "prompt": "I'll send the report as soon as I ___ the numbers.",
+     "options": [
+      "get",
+      "will get",
+      "got"
+     ],
+     "answers": [
+      "get"
+     ],
+     "hint_choice": [
+      "get",
+      "will get"
+     ]
+    },
+    {
+     "id": "05-pl-08",
+     "rule_point": "05-3",
+     "rung": "fill",
+     "prompt": "We can't start until the client ___ (sign) the contract.",
+     "answers": [
+      "signs",
+      "has signed"
+     ],
+     "hint_choice": [
+      "signs",
+      "will sign"
+     ]
+    },
+    {
+     "id": "05-pl-09",
+     "rule_point": "05-3",
+     "rung": "fix",
+     "prompt": "When I will know the date, I'll tell you.",
+     "answers": [
+      "When I know the date, I'll tell you.",
+      "When I know the date, I will tell you."
+     ],
+     "hint_choice": [
+      "When I know",
+      "When I will know"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "05-4",
+   "b1_or_b2": "B1",
+   "items": [
+    {
+     "id": "05-pl-10",
+     "rule_point": "05-4",
+     "rung": "recognize",
+     "prompt": "If I ___ more money, I would buy a flat in the centre.",
+     "options": [
+      "had",
+      "have",
+      "will have"
+     ],
+     "answers": [
+      "had"
+     ],
+     "hint_choice": [
+      "had",
+      "have"
+     ]
+    },
+    {
+     "id": "05-pl-11",
+     "rule_point": "05-4",
+     "rung": "fill",
+     "prompt": "We'll miss the deadline ___ we get more people. (one word meaning \"if not\")",
+     "answers": [
+      "unless"
+     ],
+     "hint_choice": [
+      "unless",
+      "if"
+     ]
+    },
+    {
+     "id": "05-pl-12",
+     "rule_point": "05-4",
+     "rung": "fix",
+     "prompt": "If the API will be ready, we'll start on Monday.",
+     "answers": [
+      "If the API is ready, we'll start on Monday.",
+      "If the API is ready, we will start on Monday."
+     ],
+     "hint_choice": [
+      "is ready",
+      "will be ready"
+     ]
+    }
+   ]
+  }
+ ]
+}

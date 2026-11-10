@@ -1,0 +1,532 @@
+{
+ "id": "09",
+ "full": false,
+ "title": "Past decisions: retros and post-mortems",
+ "theme": "Решения в прошлом: ретро, постмортем, сожаления",
+ "can_do": [
+  "Сказать, что надо было сделать иначе: We should have tested it on more devices.",
+  "Сделать уверенную догадку о прошлом: Someone must have changed the settings.",
+  "Описать, что было бы, если бы: If we had started earlier, we would have finished on time.",
+  "Выразить сожаление о настоящем и прошлом: I wish we had more time, I wish I hadn't agreed.",
+  "Провести короткий разбор ошибки на ретро без поиска виноватых."
+ ],
+ "rules": [
+  {
+   "id": "09-A",
+   "title": "Past modals",
+   "points": [
+    {
+     "id": "09-1",
+     "title": "should have and could have",
+     "b1_or_b2": "B2",
+     "explain_ru": "should have + третья форма: надо было, но не сделали (критика или сожаление). shouldn't have: не надо было, а сделали. could have + третья форма: была возможность, но она не случилась (We could have finished earlier). Это главный язык ретро и постмортема: что пошло не так и что можно было сделать иначе.",
+     "examples": [
+      {
+       "en": "We should have tested the update on more devices.",
+       "ru": "Надо было протестировать обновление на большем числе устройств."
+      },
+      {
+       "en": "You shouldn't have promised the client a date.",
+       "ru": "Не стоило обещать клиенту дату."
+      },
+      {
+       "en": "We could have finished earlier if the specs had been clear.",
+       "ru": "Мы могли бы закончить раньше, если бы требования были понятны."
+      },
+      {
+       "en": "You could have told me about the delay!",
+       "ru": "Мог бы и сказать мне о задержке!"
+      },
+      {
+       "en": "I should have asked for help sooner.",
+       "ru": "Надо было раньше попросить помощи."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "We should test it better last week.",
+      "right": "We should have tested it better last week.",
+      "why_ru": "По-русски \"надо было протестировать\" строится как \"надо\" + прошлое. В английском should само прошедшим не бывает: о прошлом говорят should have + третья форма."
+     }
+    },
+    {
+     "id": "09-2",
+     "title": "must have, can't have, needn't have",
+     "b1_or_b2": "B2",
+     "explain_ru": "Догадки о прошлом: must have + третья форма значит \"наверняка, точно\" (The server must have restarted). can't have или couldn't have: \"не может быть, чтобы\" (She can't have seen it). Отрицание уверенной догадки строится через can't have, а не mustn't have. needn't have + третья форма: сделали, а оказалось не нужно (We needn't have printed the slides). Сравни: didn't need to print = не печатали, потому что не нужно было.",
+     "examples": [
+      {
+       "en": "The server must have restarted overnight: the logs are empty.",
+       "ru": "Сервер, видимо, перезагрузился ночью: логи пустые."
+      },
+      {
+       "en": "She can't have seen the message; she was on a plane.",
+       "ru": "Не может быть, чтобы она видела сообщение: она была в самолете."
+      },
+      {
+       "en": "We needn't have prepared so many slides: the client only wanted a demo.",
+       "ru": "Зря мы готовили столько слайдов: клиент хотел только демо."
+      },
+      {
+       "en": "Someone must have changed the settings.",
+       "ru": "Кто-то наверняка поменял настройки."
+      },
+      {
+       "en": "He couldn't have finished the task already, it's huge.",
+       "ru": "Не мог он уже закончить задачу, она огромная."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "He mustn't have seen the email.",
+      "right": "He can't have seen the email.",
+      "why_ru": "По-русски \"он, должно быть, не видел\" подталкивает к mustn't. Уверенное \"не может быть\" о прошлом по-английски can't have или couldn't have."
+     }
+    }
+   ]
+  },
+  {
+   "id": "09-B",
+   "title": "Unreal past",
+   "points": [
+    {
+     "id": "09-3",
+     "title": "Third conditional",
+     "b1_or_b2": "B2",
+     "explain_ru": "Третье условное говорит о прошлом, которого не было: if + had + третья форма, потом would have + третья форма. If we had tested it, we would have found the bug (не протестировали и не нашли). Вместо would бывают could have и might have. После if would не ставится.",
+     "examples": [
+      {
+       "en": "If we had tested it on Android, we would have found the bug.",
+       "ru": "Если бы мы протестировали на Android, мы бы нашли баг."
+      },
+      {
+       "en": "If the client hadn't changed the scope, we would have finished on time.",
+       "ru": "Если бы клиент не поменял объем работ, мы бы закончили вовремя."
+      },
+      {
+       "en": "We wouldn't have lost the data if we had made a backup.",
+       "ru": "Мы бы не потеряли данные, если бы сделали резервную копию."
+      },
+      {
+       "en": "If I had known about the risk, I would have told you.",
+       "ru": "Если бы я знал о риске, я бы тебе сказал."
+      },
+      {
+       "en": "We might have won the contract if our price had been lower.",
+       "ru": "Может, мы и выиграли бы контракт, если бы цена была ниже."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "If I would have known, I would have helped.",
+      "right": "If I had known, I would have helped.",
+      "why_ru": "По-русски \"бы\" стоит в обеих частях. В английском would только в части с результатом, а после if нужен had + третья форма."
+     }
+    },
+    {
+     "id": "09-4",
+     "title": "wish and if only",
+     "b1_or_b2": "B2",
+     "explain_ru": "wish + прошедшее время: хочется, чтобы сейчас было иначе (I wish I had more time = жаль, что времени мало). wish + had + третья форма: сожаление о прошлом (I wish I hadn't agreed = жаль, что согласился). wish + would: хочется, чтобы кто-то другой изменил поведение (I wish the client would answer). If only значит то же, но сильнее.",
+     "examples": [
+      {
+       "en": "I wish I had more time for side projects.",
+       "ru": "Жаль, что у меня мало времени на свои проекты."
+      },
+      {
+       "en": "I wish we hadn't promised such a tight deadline.",
+       "ru": "Жаль, что мы пообещали такой жесткий срок."
+      },
+      {
+       "en": "If only I had saved the file!",
+       "ru": "Если бы только я сохранил файл!"
+      },
+      {
+       "en": "She wishes she spoke German better.",
+       "ru": "Ей хотелось бы лучше говорить по-немецки."
+      },
+      {
+       "en": "I wish the client would answer my emails.",
+       "ru": "Хоть бы клиент отвечал на мои письма."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "I wish I have more time.",
+      "right": "I wish I had more time.",
+      "why_ru": "По-русски \"хотел бы, чтобы было\" прошедшее прячет. В английском после wish о настоящем время сдвигается назад: have → had, can → could."
+     }
+    }
+   ]
+  }
+ ],
+ "words": [
+  {
+   "en": "mistake",
+   "ru": "ошибка",
+   "example": "Everyone makes mistakes; the question is what we learn.",
+   "stress": "mis-TAKE",
+   "pm": false
+  },
+  {
+   "en": "regret",
+   "ru": "сожалеть; сожаление",
+   "example": "I regret not asking more questions at the start.",
+   "stress": "re-GRET",
+   "pm": false
+  },
+  {
+   "en": "in hindsight",
+   "ru": "задним числом, оглядываясь назад",
+   "example": "In hindsight, we should have hired a tester earlier.",
+   "stress": "in HIND-sight",
+   "pm": false
+  },
+  {
+   "en": "avoid",
+   "ru": "избежать",
+   "example": "How can we avoid the same problem next time?",
+   "stress": "a-VOID",
+   "pm": false
+  },
+  {
+   "en": "prevent",
+   "ru": "предотвратить",
+   "example": "A simple check would have prevented the outage.",
+   "stress": "pre-VENT",
+   "pm": false
+  },
+  {
+   "en": "overlook",
+   "ru": "упустить из виду",
+   "example": "We overlooked a small detail in the contract.",
+   "stress": "o-ver-LOOK",
+   "pm": false
+  },
+  {
+   "en": "underestimate",
+   "ru": "недооценить",
+   "example": "We underestimated the time the migration would take.",
+   "stress": "un-der-ES-ti-mate",
+   "pm": false
+  },
+  {
+   "en": "outcome",
+   "ru": "итог, результат",
+   "example": "The outcome was better than we expected.",
+   "stress": "OUT-come",
+   "pm": false
+  },
+  {
+   "en": "consequence",
+   "ru": "последствие",
+   "example": "The delay had serious consequences for the client.",
+   "stress": "CON-se-quence",
+   "pm": false
+  },
+  {
+   "en": "blame",
+   "ru": "винить; вина",
+   "example": "The goal of a retro is to learn, not to blame.",
+   "stress": "BLAME",
+   "pm": false
+  },
+  {
+   "en": "turn out",
+   "ru": "оказаться",
+   "example": "The quick fix turned out to be a bad idea.",
+   "stress": "turn OUT",
+   "pm": false
+  },
+  {
+   "en": "warning sign",
+   "ru": "тревожный сигнал",
+   "example": "There were warning signs, but nobody noticed them.",
+   "stress": "WARN-ing sign",
+   "pm": false
+  },
+  {
+   "en": "decision",
+   "ru": "решение",
+   "example": "It was the right decision at the time.",
+   "stress": "de-CI-sion",
+   "pm": false
+  },
+  {
+   "en": "improve",
+   "ru": "улучшить",
+   "example": "What can we improve in the next sprint?",
+   "stress": "im-PROVE",
+   "pm": false
+  },
+  {
+   "en": "realistic",
+   "ru": "реалистичный",
+   "example": "The plan wasn't realistic from the start.",
+   "stress": "re-a-LIS-tic",
+   "pm": false
+  },
+  {
+   "en": "retrospective",
+   "ru": "ретроспектива",
+   "example": "At the retrospective we discussed what went wrong.",
+   "stress": "ret-ro-SPEC-tive",
+   "pm": true
+  },
+  {
+   "en": "post-mortem",
+   "ru": "разбор инцидента",
+   "example": "The post-mortem showed that the alert had been switched off.",
+   "stress": "post-MOR-tem",
+   "pm": true
+  },
+  {
+   "en": "root cause",
+   "ru": "первопричина",
+   "example": "The root cause was a missing test for old devices.",
+   "stress": "ROOT cause",
+   "pm": true
+  },
+  {
+   "en": "lessons learned",
+   "ru": "выводы, извлеченные уроки",
+   "example": "We added the lessons learned to the project wiki.",
+   "stress": "LES-sons learned",
+   "pm": true
+  },
+  {
+   "en": "trade-off",
+   "ru": "компромисс между вариантами",
+   "example": "Speed against quality was a conscious trade-off.",
+   "stress": "TRADE-off",
+   "pm": true
+  },
+  {
+   "en": "action point",
+   "ru": "пункт действий",
+   "example": "Each action point from the retro has an owner.",
+   "stress": "AC-tion point",
+   "pm": true
+  },
+  {
+   "en": "outage",
+   "ru": "отказ, простой сервиса",
+   "example": "The outage lasted three hours.",
+   "stress": "OUT-age",
+   "pm": true
+  }
+ ],
+ "placement": [
+  {
+   "rule_point": "09-1",
+   "b1_or_b2": "B2",
+   "items": [
+    {
+     "id": "09-pl-01",
+     "rule_point": "09-1",
+     "rung": "recognize",
+     "prompt": "The release broke the payment page. We ___ it more carefully.",
+     "options": [
+      "should have tested",
+      "should test",
+      "must have tested"
+     ],
+     "answers": [
+      "should have tested"
+     ],
+     "hint_choice": [
+      "should have tested",
+      "should test"
+     ]
+    },
+    {
+     "id": "09-pl-02",
+     "rule_point": "09-1",
+     "rung": "fill",
+     "prompt": "Why didn't you call me yesterday? I ___ (could / help) you.",
+     "answers": [
+      "could have helped",
+      "'d have helped",
+      "would have helped"
+     ],
+     "hint_choice": [
+      "could have helped",
+      "could help"
+     ]
+    },
+    {
+     "id": "09-pl-03",
+     "rule_point": "09-1",
+     "rung": "fix",
+     "prompt": "You should told me about the problem earlier.",
+     "answers": [
+      "You should have told me about the problem earlier."
+     ],
+     "hint_choice": [
+      "should have told",
+      "should told"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "09-2",
+   "b1_or_b2": "B2",
+   "items": [
+    {
+     "id": "09-pl-04",
+     "rule_point": "09-2",
+     "rung": "recognize",
+     "prompt": "The office is dark and empty. Everyone ___ home already.",
+     "options": [
+      "must have gone",
+      "must go",
+      "can't have gone"
+     ],
+     "answers": [
+      "must have gone"
+     ],
+     "hint_choice": [
+      "must have gone",
+      "must go"
+     ]
+    },
+    {
+     "id": "09-pl-05",
+     "rule_point": "09-2",
+     "rung": "fill",
+     "prompt": "She ___ (can't / read) my email: she was on a plane all day.",
+     "answers": [
+      "can't have read",
+      "couldn't have read",
+      "cannot have read",
+      "could not have read"
+     ],
+     "hint_choice": [
+      "can't have read",
+      "mustn't have read"
+     ]
+    },
+    {
+     "id": "09-pl-06",
+     "rule_point": "09-2",
+     "rung": "fix",
+     "prompt": "He mustn't have seen the message: he was offline all day.",
+     "answers": [
+      "He can't have seen the message: he was offline all day.",
+      "He couldn't have seen the message: he was offline all day.",
+      "He cannot have seen the message: he was offline all day.",
+      "He could not have seen the message: he was offline all day."
+     ],
+     "hint_choice": [
+      "can't have seen",
+      "mustn't have seen"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "09-3",
+   "b1_or_b2": "B2",
+   "items": [
+    {
+     "id": "09-pl-07",
+     "rule_point": "09-3",
+     "rung": "recognize",
+     "prompt": "If we had started earlier, we ___ on time last month.",
+     "options": [
+      "would have finished",
+      "would finish",
+      "had finished"
+     ],
+     "answers": [
+      "would have finished"
+     ],
+     "hint_choice": [
+      "would have finished",
+      "would finish"
+     ]
+    },
+    {
+     "id": "09-pl-08",
+     "rule_point": "09-3",
+     "rung": "fill",
+     "prompt": "If the client ___ (not / change) the requirements, we would have launched in May.",
+     "answers": [
+      "hadn't changed",
+      "had not changed"
+     ],
+     "hint_choice": [
+      "hadn't changed",
+      "didn't change"
+     ]
+    },
+    {
+     "id": "09-pl-09",
+     "rule_point": "09-3",
+     "rung": "fix",
+     "prompt": "If I would have known, I would have come.",
+     "answers": [
+      "If I had known, I would have come.",
+      "If I had known, I'd have come.",
+      "If I had known, I would've come.",
+      "If I'd known, I would have come.",
+      "If I'd known, I'd have come.",
+      "If I'd known, I would've come."
+     ],
+     "hint_choice": [
+      "If I had known",
+      "If I would have known"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "09-4",
+   "b1_or_b2": "B2",
+   "items": [
+    {
+     "id": "09-pl-10",
+     "rule_point": "09-4",
+     "rung": "recognize",
+     "prompt": "I wish I ___ more time to learn Spanish, but I'm working two jobs.",
+     "options": [
+      "had",
+      "have",
+      "will have"
+     ],
+     "answers": [
+      "had"
+     ],
+     "hint_choice": [
+      "had",
+      "have"
+     ]
+    },
+    {
+     "id": "09-pl-11",
+     "rule_point": "09-4",
+     "rung": "fill",
+     "prompt": "I wish I ___ (not / agree) to such a tight deadline last month.",
+     "answers": [
+      "hadn't agreed",
+      "had not agreed"
+     ],
+     "hint_choice": [
+      "hadn't agreed",
+      "didn't agree"
+     ]
+    },
+    {
+     "id": "09-pl-12",
+     "rule_point": "09-4",
+     "rung": "fix",
+     "prompt": "If only I know the answer right now!",
+     "answers": [
+      "If only I knew the answer right now!"
+     ],
+     "hint_choice": [
+      "knew",
+      "know"
+     ]
+    }
+   ]
+  }
+ ]
+}

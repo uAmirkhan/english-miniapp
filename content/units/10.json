@@ -1,0 +1,431 @@
+{
+ "id": "10",
+ "full": false,
+ "title": "The interview: asking and answering questions",
+ "theme": "Собеседование: STAR, сильные стороны, зарплата",
+ "can_do": [
+  "Задать прямой вопрос без ошибки в порядке слов, в том числе \"кто\" и \"что\" как подлежащее.",
+  "Вежливо спросить о зарплате, команде и процессе: Could you tell me what the salary range is?",
+  "Уточнить и подтвердить через хвостик: The role is hybrid, isn't it?",
+  "Ответить на поведенческий вопрос по схеме STAR."
+ ],
+ "rules": [
+  {
+   "id": "10-A",
+   "title": "Questions",
+   "points": [
+    {
+     "id": "10-1",
+     "title": "Direct questions and subject questions",
+     "b1_or_b2": "B1",
+     "explain_ru": "Обычный вопрос: вопросительное слово + вспомогательный глагол (do, did, have, will, is) + подлежащее + глагол: Why did you leave? Если вопрос о самом подлежащем (кто сделал? что случилось?), вспомогательный глагол не нужен и порядок как в утверждении: Who wrote the spec? What happened after the launch? Сравни: Who did you call? (кому звонил ты) и Who called you? (кто звонил тебе).",
+     "examples": [
+      {
+       "en": "What do you enjoy most about your current role?",
+       "ru": "Что тебе больше всего нравится в нынешней роли?"
+      },
+      {
+       "en": "How many people did you manage on that project?",
+       "ru": "Сколькими людьми ты руководил на том проекте?"
+      },
+      {
+       "en": "Who decided to change the deadline?",
+       "ru": "Кто решил поменять срок?"
+      },
+      {
+       "en": "What happened after the launch?",
+       "ru": "Что случилось после запуска?"
+      },
+      {
+       "en": "Why are you looking for a new position?",
+       "ru": "Почему вы ищете новую позицию?"
+      }
+     ],
+     "ru_trap": {
+      "wrong": "Who did call you yesterday?",
+      "right": "Who called you yesterday?",
+      "why_ru": "Вопросы в английском приучают ставить did везде. Но если \"кто\" здесь подлежащее (кто позвонил), did не нужен: Who called you?"
+     }
+    },
+    {
+     "id": "10-2",
+     "title": "Indirect questions: polite word order",
+     "b1_or_b2": "B1",
+     "explain_ru": "Вежливый вопрос начинается с рамки: Could you tell me..., I'd like to know..., Do you know..., Can I ask... После рамки вопрос теряет вопросительный порядок: подлежащее идет перед глаголом, do/does/did исчезают. Could you tell me what the next step is? (не what is the next step). Вопрос да/нет внутри рамки идет через if или whether: Do you know if the role is remote?",
+     "examples": [
+      {
+       "en": "Could you tell me what the salary range is?",
+       "ru": "Не могли бы вы сказать, какая вилка зарплаты?"
+      },
+      {
+       "en": "I'd like to know how the team measures success.",
+       "ru": "Хотел бы узнать, как команда измеряет успех."
+      },
+      {
+       "en": "Do you know when the final decision will be made?",
+       "ru": "Вы знаете, когда будет принято окончательное решение?"
+      },
+      {
+       "en": "Can I ask why the position is open?",
+       "ru": "Можно спросить, почему открыта эта позиция?"
+      },
+      {
+       "en": "Could you tell me whether the role includes travel?",
+       "ru": "Не подскажете, предполагает ли роль командировки?"
+      }
+     ],
+     "ru_trap": {
+      "wrong": "Could you tell me what is the next step?",
+      "right": "Could you tell me what the next step is?",
+      "why_ru": "В русском порядок слов в вопросе и в утверждении одинаковый, поэтому прямой вопрос просто вставляют в рамку. В английском после рамки порядок как в утверждении: what the next step is."
+     }
+    },
+    {
+     "id": "10-3",
+     "title": "Question tags",
+     "b1_or_b2": "B2",
+     "explain_ru": "Хвостик в конце фразы (не так ли?) повторяет вспомогательный глагол из предложения и подлежащее местоимением. Утверждение, значит хвостик с not: You've worked remotely, haven't you? Отрицание, значит хвостик без not: You didn't mention the budget, did you? Если вспомогательного нет, берется do/does/did. Особые случаи: I am... aren't I?, Let's... shall we?",
+     "examples": [
+      {
+       "en": "You've worked with remote teams before, haven't you?",
+       "ru": "Вы ведь уже работали с удаленными командами?"
+      },
+      {
+       "en": "The role includes some travel, doesn't it?",
+       "ru": "Роль ведь предполагает командировки?"
+      },
+      {
+       "en": "You didn't mention the budget, did you?",
+       "ru": "Вы ведь не упоминали бюджет?"
+      },
+      {
+       "en": "It's a hybrid position, isn't it?",
+       "ru": "Это ведь гибридный формат?"
+      },
+      {
+       "en": "Let's start with your background, shall we?",
+       "ru": "Давайте начнем с вашего опыта?"
+      }
+     ],
+     "ru_trap": {
+      "wrong": "You are the hiring manager, isn't it?",
+      "right": "You are the hiring manager, aren't you?",
+      "why_ru": "Русское \"не так ли\" одно на все случаи, и его переводят как isn't it. В английском хвостик подстраивается под фразу: you are → aren't you, she has → hasn't she."
+     }
+    }
+   ]
+  }
+ ],
+ "words": [
+  {
+   "en": "strength",
+   "ru": "сильная сторона",
+   "example": "My main strength is turning vague ideas into clear plans.",
+   "stress": "STRENGTH",
+   "pm": false
+  },
+  {
+   "en": "weakness",
+   "ru": "слабая сторона",
+   "example": "One weakness I'm working on is saying no to extra tasks.",
+   "stress": "WEAK-ness",
+   "pm": false
+  },
+  {
+   "en": "salary expectations",
+   "ru": "зарплатные ожидания",
+   "example": "What are your salary expectations for this role?",
+   "stress": "SAL-a-ry ex-pec-ta-tions",
+   "pm": false
+  },
+  {
+   "en": "range",
+   "ru": "вилка, диапазон",
+   "example": "Could you share the range for this position?",
+   "stress": "RANGE",
+   "pm": false
+  },
+  {
+   "en": "benefits",
+   "ru": "льготы, соцпакет",
+   "example": "The benefits include health insurance and training.",
+   "stress": "BEN-e-fits",
+   "pm": false
+  },
+  {
+   "en": "notice period",
+   "ru": "срок уведомления перед уходом",
+   "example": "My notice period is two weeks.",
+   "stress": "NO-tice pe-ri-od",
+   "pm": false
+  },
+  {
+   "en": "candidate",
+   "ru": "кандидат",
+   "example": "They're interviewing three candidates this week.",
+   "stress": "CAN-di-date",
+   "pm": false
+  },
+  {
+   "en": "hiring manager",
+   "ru": "нанимающий менеджер",
+   "example": "The second interview is with the hiring manager.",
+   "stress": "HIR-ing man-a-ger",
+   "pm": false
+  },
+  {
+   "en": "recruiter",
+   "ru": "рекрутер",
+   "example": "The recruiter called to arrange a time.",
+   "stress": "re-CRUIT-er",
+   "pm": false
+  },
+  {
+   "en": "shortlist",
+   "ru": "короткий список; включить в него",
+   "example": "I've been shortlisted for the final round.",
+   "stress": "SHORT-list",
+   "pm": false
+  },
+  {
+   "en": "job offer",
+   "ru": "предложение о работе",
+   "example": "She got two job offers in the same week.",
+   "stress": "JOB of-fer",
+   "pm": false
+  },
+  {
+   "en": "negotiate",
+   "ru": "договариваться, вести переговоры",
+   "example": "It's normal to negotiate the start date.",
+   "stress": "ne-GO-ti-ate",
+   "pm": false
+  },
+  {
+   "en": "relevant",
+   "ru": "относящийся к делу, подходящий",
+   "example": "Tell me about a relevant project you've led.",
+   "stress": "REL-e-vant",
+   "pm": false
+  },
+  {
+   "en": "hybrid",
+   "ru": "гибридный (офис и удаленка)",
+   "example": "The role is hybrid, with two office days a week.",
+   "stress": "HY-brid",
+   "pm": false
+  },
+  {
+   "en": "situation",
+   "ru": "ситуация (S в STAR)",
+   "example": "Start with the situation: what was going on?",
+   "stress": "sit-u-A-tion",
+   "pm": false
+  },
+  {
+   "en": "challenge",
+   "ru": "трудность, вызов",
+   "example": "What was the biggest challenge on that project?",
+   "stress": "CHAL-lenge",
+   "pm": false
+  },
+  {
+   "en": "achieve",
+   "ru": "достичь",
+   "example": "What did you achieve in your first three months?",
+   "stress": "a-CHIEVE",
+   "pm": false
+  },
+  {
+   "en": "track record",
+   "ru": "подтвержденные результаты",
+   "example": "She has a strong track record of on-time delivery.",
+   "stress": "TRACK rec-ord",
+   "pm": true
+  },
+  {
+   "en": "impact",
+   "ru": "влияние, эффект",
+   "example": "What was the impact of the change on conversion?",
+   "stress": "IM-pact",
+   "pm": true
+  },
+  {
+   "en": "measurable",
+   "ru": "измеримый",
+   "example": "Try to give measurable results, like time or money saved.",
+   "stress": "MEAS-ur-a-ble",
+   "pm": true
+  },
+  {
+   "en": "stakeholder management",
+   "ru": "работа со стейкхолдерами",
+   "example": "The role needs strong stakeholder management.",
+   "stress": "STAKE-hold-er man-age-ment",
+   "pm": true
+  },
+  {
+   "en": "prioritise",
+   "ru": "расставлять приоритеты",
+   "example": "How do you prioritise when everything is urgent?",
+   "stress": "pri-OR-i-tise",
+   "pm": true
+  }
+ ],
+ "placement": [
+  {
+   "rule_point": "10-1",
+   "b1_or_b2": "B1",
+   "items": [
+    {
+     "id": "10-pl-01",
+     "rule_point": "10-1",
+     "rung": "recognize",
+     "prompt": "Who ___ the final version of the spec?",
+     "options": [
+      "wrote",
+      "does wrote",
+      "did wrote"
+     ],
+     "answers": [
+      "wrote"
+     ],
+     "hint_choice": [
+      "wrote",
+      "did wrote"
+     ]
+    },
+    {
+     "id": "10-pl-02",
+     "rule_point": "10-1",
+     "rung": "fill",
+     "prompt": "Where ___ (you / work) before your current job?",
+     "answers": [
+      "did you work",
+      "were you working",
+      "had you worked"
+     ],
+     "hint_choice": [
+      "did you work",
+      "you worked"
+     ]
+    },
+    {
+     "id": "10-pl-03",
+     "rule_point": "10-1",
+     "rung": "fix",
+     "prompt": "What did happen after the release?",
+     "answers": [
+      "What happened after the release?"
+     ],
+     "hint_choice": [
+      "What happened",
+      "What did happen"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "10-2",
+   "b1_or_b2": "B1",
+   "items": [
+    {
+     "id": "10-pl-04",
+     "rule_point": "10-2",
+     "rung": "recognize",
+     "prompt": "Could you tell me ___?",
+     "options": [
+      "when the interview starts",
+      "when does the interview start",
+      "when starts the interview"
+     ],
+     "answers": [
+      "when the interview starts"
+     ],
+     "hint_choice": [
+      "when the interview starts",
+      "when does the interview start"
+     ]
+    },
+    {
+     "id": "10-pl-05",
+     "rule_point": "10-2",
+     "rung": "fill",
+     "prompt": "I'd like to know how many people ___ (be) in the team.",
+     "answers": [
+      "are",
+      "there are"
+     ],
+     "hint_choice": [
+      "are",
+      "is"
+     ]
+    },
+    {
+     "id": "10-pl-06",
+     "rule_point": "10-2",
+     "rung": "fix",
+     "prompt": "Do you know where is the meeting room?",
+     "answers": [
+      "Do you know where the meeting room is?"
+     ],
+     "hint_choice": [
+      "where the meeting room is",
+      "where is the meeting room"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "10-3",
+   "b1_or_b2": "B2",
+   "items": [
+    {
+     "id": "10-pl-07",
+     "rule_point": "10-3",
+     "rung": "recognize",
+     "prompt": "You've managed a budget before, ___?",
+     "options": [
+      "haven't you",
+      "didn't you",
+      "don't you"
+     ],
+     "answers": [
+      "haven't you"
+     ],
+     "hint_choice": [
+      "haven't you",
+      "didn't you"
+     ]
+    },
+    {
+     "id": "10-pl-08",
+     "rule_point": "10-3",
+     "rung": "fill",
+     "prompt": "The position is fully remote, ___?",
+     "answers": [
+      "isn't it",
+      "is it not"
+     ],
+     "hint_choice": [
+      "isn't it",
+      "doesn't it"
+     ]
+    },
+    {
+     "id": "10-pl-09",
+     "rule_point": "10-3",
+     "rung": "fix",
+     "prompt": "You don't travel much for work, don't you?",
+     "answers": [
+      "You don't travel much for work, do you?"
+     ],
+     "hint_choice": [
+      "do you",
+      "don't you"
+     ]
+    }
+   ]
+  }
+ ]
+}

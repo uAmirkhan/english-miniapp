@@ -1,0 +1,351 @@
+{
+ "id": "08",
+ "full": false,
+ "title": "Teamwork: rules, duties and agreements",
+ "theme": "Работа в команде: обязанности, правила, договоренности",
+ "can_do": [
+  "Объяснить правила и обязанности в команде: must, have to, be supposed to.",
+  "Дать совет коллеге: You should...",
+  "Разделить \"не обязательно\" и \"нельзя\": don't have to, needn't, mustn't.",
+  "Договориться о зонах ответственности на встрече."
+ ],
+ "rules": [
+  {
+   "id": "08-A",
+   "title": "Obligation and advice",
+   "points": [
+    {
+     "id": "08-1",
+     "title": "must, have to, should, be supposed to",
+     "b1_or_b2": "B1",
+     "explain_ru": "Must: сильная обязанность, часто от себя или в правилах (You must wear a badge). Have to: обязанность извне, из обстоятельств (I have to finish it by six); в прошлом только had to, в будущем will have to. Should: совет, \"стоит\" (You should ask the team lead). Be supposed to: так положено по правилу или договоренности, но часто не делается (We're supposed to update the board every day).",
+     "examples": [
+      {
+       "en": "Everyone must sign the NDA before the project starts.",
+       "ru": "Все должны подписать NDA до старта проекта."
+      },
+      {
+       "en": "I have to submit the report by six.",
+       "ru": "Мне нужно сдать отчет к шести."
+      },
+      {
+       "en": "We had to cancel the demo because the server was down.",
+       "ru": "Нам пришлось отменить демо, потому что сервер лежал."
+      },
+      {
+       "en": "You should talk to the team lead before you change the scope.",
+       "ru": "Тебе стоит поговорить с тимлидом, прежде чем менять объем работ."
+      },
+      {
+       "en": "We're supposed to update the board every day, but nobody does.",
+       "ru": "Мы должны обновлять доску каждый день, но никто этого не делает."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "Yesterday I must stay late.",
+      "right": "Yesterday I had to stay late.",
+      "why_ru": "По-русски \"пришлось\" и \"должен\" легко ставятся в прошлое. У must прошедшей формы нет, о прошлом говорят had to."
+     }
+    },
+    {
+     "id": "08-2",
+     "title": "don't have to, needn't, mustn't",
+     "b1_or_b2": "B1",
+     "explain_ru": "Don't have to и needn't значат \"не обязательно, можно не делать\": You don't have to come if you're busy. Mustn't значит \"нельзя\": You mustn't share the password. Русское \"не должен\" покрывает оба смысла, поэтому сначала реши, что имеешь в виду: необязательно или запрещено. Needn't более британское и формальное, don't need to звучит естественно везде.",
+     "examples": [
+      {
+       "en": "You don't have to come to the retro if you're on holiday.",
+       "ru": "Можешь не приходить на ретро, если ты в отпуске."
+      },
+      {
+       "en": "You mustn't share the client's data outside the company.",
+       "ru": "Нельзя передавать данные клиента за пределы компании."
+      },
+      {
+       "en": "You needn't print the slides; we'll use the screen.",
+       "ru": "Слайды можно не печатать: покажем на экране."
+      },
+      {
+       "en": "In the end we didn't have to work at the weekend.",
+       "ru": "В итоге нам не пришлось работать в выходные."
+      },
+      {
+       "en": "Visitors mustn't enter the lab without a badge.",
+       "ru": "Посетителям нельзя входить в лабораторию без пропуска."
+      }
+     ],
+     "ru_trap": {
+      "wrong": "You mustn't come tomorrow, the meeting is optional.",
+      "right": "You don't have to come tomorrow, the meeting is optional.",
+      "why_ru": "Русское \"ты не должен приходить\" бывает и \"не обязан\", и \"нельзя\". Mustn't значит только \"нельзя\". Для \"не обязан\" нужен don't have to или needn't."
+     }
+    }
+   ]
+  }
+ ],
+ "words": [
+  {
+   "en": "ownership",
+   "ru": "ответственность за результат",
+   "example": "She took ownership of the onboarding process.",
+   "stress": "OWN-er-ship",
+   "pm": true
+  },
+  {
+   "en": "responsible for",
+   "ru": "ответственный за",
+   "example": "Who is responsible for the release checklist?",
+   "stress": "re-SPON-si-ble for",
+   "pm": false
+  },
+  {
+   "en": "accountable",
+   "ru": "подотчетный, отвечающий за итог",
+   "example": "The product owner is accountable for the backlog.",
+   "stress": "ac-COUNT-a-ble",
+   "pm": false
+  },
+  {
+   "en": "agreement",
+   "ru": "договоренность, соглашение",
+   "example": "We reached an agreement on the new process.",
+   "stress": "a-GREE-ment",
+   "pm": false
+  },
+  {
+   "en": "commitment",
+   "ru": "обязательство",
+   "example": "Two weeks is a realistic commitment for this task.",
+   "stress": "com-MIT-ment",
+   "pm": false
+  },
+  {
+   "en": "workload",
+   "ru": "нагрузка",
+   "example": "His workload doubled after the reorganisation.",
+   "stress": "WORK-load",
+   "pm": false
+  },
+  {
+   "en": "delegate",
+   "ru": "делегировать",
+   "example": "A good lead knows what to delegate.",
+   "stress": "DEL-e-gate",
+   "pm": false
+  },
+  {
+   "en": "priority",
+   "ru": "приоритет",
+   "example": "Security is our top priority this quarter.",
+   "stress": "pri-OR-i-ty",
+   "pm": false
+  },
+  {
+   "en": "rely on",
+   "ru": "полагаться на",
+   "example": "You can always rely on her to meet a deadline.",
+   "stress": "re-LY on",
+   "pm": false
+  },
+  {
+   "en": "compromise",
+   "ru": "компромисс",
+   "example": "In the end we found a compromise on the design.",
+   "stress": "COM-pro-mise",
+   "pm": false
+  },
+  {
+   "en": "conflict",
+   "ru": "конфликт",
+   "example": "There was a conflict between the two teams over priorities.",
+   "stress": "CON-flict",
+   "pm": false
+  },
+  {
+   "en": "support",
+   "ru": "поддерживать; поддержка",
+   "example": "The whole team supported the new rule.",
+   "stress": "sup-PORT",
+   "pm": false
+  },
+  {
+   "en": "permission",
+   "ru": "разрешение",
+   "example": "You need permission to access the production database.",
+   "stress": "per-MIS-sion",
+   "pm": false
+  },
+  {
+   "en": "be allowed to",
+   "ru": "иметь право, разрешено",
+   "example": "Interns aren't allowed to deploy on Fridays.",
+   "stress": "be al-LOWED to",
+   "pm": false
+  },
+  {
+   "en": "guideline",
+   "ru": "рекомендация, правило",
+   "example": "The code review guidelines are on the wiki.",
+   "stress": "GUIDE-line",
+   "pm": false
+  },
+  {
+   "en": "optional",
+   "ru": "необязательный",
+   "example": "The Friday demo is optional for interns.",
+   "stress": "OP-tion-al",
+   "pm": false
+  },
+  {
+   "en": "mandatory",
+   "ru": "обязательный",
+   "example": "Security training is mandatory for everyone.",
+   "stress": "MAN-da-to-ry",
+   "pm": false
+  },
+  {
+   "en": "handover",
+   "ru": "передача дел",
+   "example": "Please write a handover note before your holiday.",
+   "stress": "HAND-o-ver",
+   "pm": true
+  },
+  {
+   "en": "blocker",
+   "ru": "препятствие, блокер",
+   "example": "Any blockers? Let's discuss them after the stand-up.",
+   "stress": "BLOCK-er",
+   "pm": true
+  },
+  {
+   "en": "stand-up",
+   "ru": "ежедневная короткая встреча",
+   "example": "The stand-up shouldn't take more than fifteen minutes.",
+   "stress": "STAND-up",
+   "pm": true
+  },
+  {
+   "en": "sync",
+   "ru": "короткая встреча для сверки",
+   "example": "Let's have a quick sync with design tomorrow.",
+   "stress": "SYNC",
+   "pm": true
+  },
+  {
+   "en": "escalate",
+   "ru": "эскалировать, поднять выше",
+   "example": "If the vendor misses the date again, we'll escalate it.",
+   "stress": "ES-ca-late",
+   "pm": true
+  }
+ ],
+ "placement": [
+  {
+   "rule_point": "08-1",
+   "b1_or_b2": "B1",
+   "items": [
+    {
+     "id": "08-pl-01",
+     "rule_point": "08-1",
+     "rung": "recognize",
+     "prompt": "Yesterday the server crashed, so we ___ stay late.",
+     "options": [
+      "had to",
+      "must",
+      "should"
+     ],
+     "answers": [
+      "had to"
+     ],
+     "hint_choice": [
+      "had to",
+      "must"
+     ]
+    },
+    {
+     "id": "08-pl-02",
+     "rule_point": "08-1",
+     "rung": "fill",
+     "prompt": "We ___ (be supposed to) send an update every Friday, but we often forget.",
+     "answers": [
+      "are supposed to",
+      "'re supposed to"
+     ],
+     "hint_choice": [
+      "are supposed to",
+      "must"
+     ]
+    },
+    {
+     "id": "08-pl-03",
+     "rule_point": "08-1",
+     "rung": "fix",
+     "prompt": "You should to check the logs first.",
+     "answers": [
+      "You should check the logs first."
+     ],
+     "hint_choice": [
+      "should check",
+      "should to check"
+     ]
+    }
+   ]
+  },
+  {
+   "rule_point": "08-2",
+   "b1_or_b2": "B1",
+   "items": [
+    {
+     "id": "08-pl-04",
+     "rule_point": "08-2",
+     "rung": "recognize",
+     "prompt": "The meeting is optional. You ___ come if you're busy.",
+     "options": [
+      "don't have to",
+      "mustn't",
+      "can't"
+     ],
+     "answers": [
+      "don't have to"
+     ],
+     "hint_choice": [
+      "don't have to",
+      "mustn't"
+     ]
+    },
+    {
+     "id": "08-pl-05",
+     "rule_point": "08-2",
+     "rung": "fill",
+     "prompt": "It's a secret. You ___ tell anyone the password. (use \"must\")",
+     "answers": [
+      "mustn't",
+      "must not"
+     ],
+     "hint_choice": [
+      "mustn't",
+      "don't have to"
+     ]
+    },
+    {
+     "id": "08-pl-06",
+     "rule_point": "08-2",
+     "rung": "fix",
+     "prompt": "You mustn't bring a laptop: we have spare ones in the room.",
+     "answers": [
+      "You don't have to bring a laptop: we have spare ones in the room.",
+      "You do not have to bring a laptop: we have spare ones in the room.",
+      "You needn't bring a laptop: we have spare ones in the room.",
+      "You need not bring a laptop: we have spare ones in the room.",
+      "You don't need to bring a laptop: we have spare ones in the room.",
+      "You do not need to bring a laptop: we have spare ones in the room."
+     ],
+     "hint_choice": [
+      "don't have to",
+      "mustn't"
+     ]
+    }
+   ]
+  }
+ ]
+}
